@@ -58,36 +58,36 @@ Milkyway // 전체적으로 공유하는 파일은 Global, 뷰 위주의 파일�
   |── Global  // 델리게이트파일 및 익스텐션 관리. 서버 모델 및 서비스 파일 정리
   │   |── Delegate
   │   │     │── SceneDelegate.swift
-  │   │    └── AppDelegate.swift
+  │   │     └── AppDelegate.swift
   │   |── Enums  // 폰트 파일 연결
   │   │     └── Font+Enum.swift
   │   |── Extensions // 익스텐션 파일(약간 치트키 느낌)
   │   │     │── UITableView+Extension.swift
-  │   │    └── UIView+Extension.swift
+  │   │     └── UIView+Extension.swift
   │   |── Models // 서버 통신에 필요한 모델 파일 추가하기
   │   │     │── ....swift
-  │   │    └── Model.swift
-  │  ├── Resources 
+  │   │     └── Model.swift
+  │   ├── Resources 
   │   │     │── Assets.xcassets
-  │   │    └── LaunchScreen.storyboard
-  │  ├── Service // 서버 API 관리    
+  │   │     └── LaunchScreen.storyboard
+  │   ├── Service // 서버 API 관리    
   │   │    └── APIConstants.swift
-  │  └── Supporting Files 
+  │   └── Supporting Files 
   │         └── Info.plist
   |── Screens 
   │   └── View // 뷰 별로 파일을 만들어 줍니다(밑에 Home, Search 참조)
-  │        ├── Cell // 테이블뷰랑 콜렉션뷰 셀 파일 , xib 파일 정리
+  │         ├── Cell // 테이블뷰랑 콜렉션뷰 셀 파일 , xib 파일 정리
   │         │     └── TableviewCell / CollectionviewCell.swift
-  │        ├── Storyboards // 뷰 별 스토리보드 추가해주기
+  │         ├── Storyboards // 뷰 별 스토리보드 추가해주기
   │         │      └── View.storyboard
-  │       └── ViewControllers
+  │         └── ViewControllers
   │               └── ViewVC.swift
-  |   └── Home
-  |   └── Search
-  |     ......
- ├── Milkyway.xcdatamodeld/
- ├── Milkyway.xcworkspace/
- └── Milkyway.xcodeproj/
+  |               └── Home
+  |               └── Search
+  |                   ......
+  ├── Milkyway.xcdatamodeld/
+  ├── Milkyway.xcworkspace/
+  └── Milkyway.xcodeproj/
 ```
 
 </br>

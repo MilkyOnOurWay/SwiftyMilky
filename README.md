@@ -36,12 +36,59 @@
 </br>
 
 # 🛠 Coding Convention 
+</br>
+
+<img src="https://user-images.githubusercontent.com/68267763/103177619-7ee7b580-48bf-11eb-82eb-6c8d03f6e326.png" height="400" />
+
+
+- IBOutlet 옆에 주석으로 어떤 버튼인지 같은 거 적어놓기 !!!
+- **카멜케이스** 맞춰서 이름 정하기
+- [styleshare guide](https://github.com/xwoud/swift-style-guide) 참조해서 **더 정확하고 자세하게** 정해보자
+
 
 </br>
 </br>
 
 # 📂 Project Structure
 
+</br>
+
+```
+Milkyway // 전체적으로 공유하는 파일은 Global, 뷰 위주의 파일은 Screens
+  |── Global  // 델리게이트파일 및 익스텐션 관리. 서버 모델 및 서비스 파일 정리
+  │   |── Delegate
+  │   │     │── SceneDelegate.swift
+  │   │    └── AppDelegate.swift
+  │   |── Enums  // 폰트 파일 연결
+  │   │     └── Font+Enum.swift
+  │   |── Extensions // 익스텐션 파일(약간 치트키 느낌)
+  │   │     │── UITableView+Extension.swift
+  │   │    └── UIView+Extension.swift
+  │   |── Models // 서버 통신에 필요한 모델 파일 추가하기
+  │   │     │── ....swift
+  │   │    └── Model.swift
+  │  ├── Resources 
+  │   │     │── Assets.xcassets
+  │   │    └── LaunchScreen.storyboard
+  │  ├── Service // 서버 API 관리    
+  │   │    └── APIConstants.swift
+  │  └── Supporting Files 
+  │         └── Info.plist
+  |── Screens 
+  │   └── View // 뷰 별로 파일을 만들어 줍니다(밑에 Home, Search 참조)
+  │        ├── Cell // 테이블뷰랑 콜렉션뷰 셀 파일 , xib 파일 정리
+  │         │     └── TableviewCell / CollectionviewCell.swift
+  │        ├── Storyboards // 뷰 별 스토리보드 추가해주기
+  │         │      └── View.storyboard
+  │       └── ViewControllers
+  │               └── ViewVC.swift
+  |   └── Home
+  |   └── Search
+  |     ......
+ ├── Milkyway.xcdatamodeld/
+ ├── Milkyway.xcworkspace/
+ └── Milkyway.xcodeproj/
+```
 
 </br>
 </br>

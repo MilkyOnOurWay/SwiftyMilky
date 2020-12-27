@@ -43,7 +43,7 @@
 
 - IBOutlet 옆에 주석으로 어떤 버튼인지 같은 거 적어놓기 !!!
 - **카멜케이스** 맞춰서 이름 정하기
-- [styleshare guide](https://github.com/xwoud/swift-style-guide) 참조해서 **더 정확하고 자세하게** 정해보자
+- [styleshare guide](https://github.com/StyleShare/swift-style-guide) 참조해서 **더 정확하고 자세하게** 정해보자
 
 
 </br>

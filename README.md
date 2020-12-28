@@ -9,10 +9,24 @@
 
 |                            💛이윤진💛                            |                            이소영                            | 박유진 |
 | :----------------------------------------------------------: | :----------------------------------------------------------: | ------ |
-| <img src="https://images.velog.io/images/sso0022/post/b6ad88b5-f18a-4d61-8df8-3364c6688feb/KakaoTalk_Photo_2020-12-28-02-51-04.jpeg" height="300" /> | <img src="https://images.velog.io/images/sso0022/post/8276334a-92f7-4747-bcb9-f428956f58f5/IMG_9679%20%E1%84%87%E1%85%A9%E1%86%A8%E1%84%89%E1%85%A1%E1%84%87%E1%85%A9%E1%86%AB%202.JPG" height="300" /> |        |
+| <img src="https://images.velog.io/images/sso0022/post/b6ad88b5-f18a-4d61-8df8-3364c6688feb/KakaoTalk_Photo_2020-12-28-02-51-04.jpeg" height="300" /> | <img src="https://images.velog.io/images/sso0022/post/8276334a-92f7-4747-bcb9-f428956f58f5/IMG_9679%20%E1%84%87%E1%85%A9%E1%86%A8%E1%84%89%E1%85%A1%E1%84%87%E1%85%A9%E1%86%AB%202.JPG" height="300" /> | <img src="https://user-images.githubusercontent.com/68267763/103199866-3c5dc180-492f-11eb-8cfc-5a5c2f1ffcd5.jpeg" height="300" /> |
 
 </br>
 </br>
+</br>
+
+# 🥛 The way we work remotely ✨
+
+</br>
+
+* 기본적으로 1시부터 6시까지 게더로 출근 및 퇴근을 합니다 (야근 확률 높음)
+* 가장 먼저 퇴근하는 사람이 퇴근할 때 다함께 마지막 회의를 합니다
+* 회의를 하면서 각자 3 - 5분, 오늘 작성한 코드를 서로에게 설명해주는 시간을 가집니다
+* 오늘 일하면서 힘들었거나 잘 안풀렸던 것이 있다면 **꼭 꼭** 공유하기 !!! 
+
+</br>
+</br>
+
 
 # 🧸 Commit Message
 
@@ -108,16 +122,6 @@ Milkyway // 전체적으로 공유하는 파일은 Global, 뷰 위주의 파일�
   * [gitflow에 대하여](https://woowabros.github.io/experience/2017/10/30/baemin-mobile-git-branch-strategy.html)
 
 </br>
-</br>
-
-# 🥛 The way we work remotely ✨
-
-</br>
-
-* 기본적으로 1시부터 6시까지 게더로 출근 및 퇴근을 합니다 (야근 확률 높음)
-* 가장 먼저 퇴근하는 사람이 퇴근할 때 다함께 마지막 회의를 합니다
-* 회의를 하면서 각자 3 - 5분, 오늘 작성한 코드를 서로에게 설명해주는 시간을 가집니다
-* 오늘 일하면서 힘들었거나 잘 안풀렸던 것이 있다면 **꼭 꼭** 공유하기 !!! 
 
 
 

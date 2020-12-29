@@ -52,12 +52,7 @@
 # 🛠 Coding Convention 
 </br>
 
-<img src="https://user-images.githubusercontent.com/68267763/103177619-7ee7b580-48bf-11eb-82eb-6c8d03f6e326.png" height="400" />
-
-
-- IBOutlet 옆에 주석으로 어떤 버튼인지 같은 거 적어놓기 !!!
-- **카멜케이스** 맞춰서 이름 정하기
-- [styleshare guide](https://github.com/StyleShare/swift-style-guide) 참조해서 **더 정확하고 자세하게** 정해보자
+- [Coding convention](https://github.com/MilkyOnOurWay/SwiftyMilky/wiki/Milkyway_Coding-convention)
 
 
 </br>

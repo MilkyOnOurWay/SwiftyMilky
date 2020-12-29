@@ -42,7 +42,7 @@
 
 * 🔀 merge 할 때 
 
-* 🚀  etc
+* 🚀  etc(파일추가, 리드미 수정)
 
 * 💄 UI 수정
 
@@ -96,8 +96,8 @@ Milkyway // 전체적으로 공유하는 파일은 Global, 뷰 위주의 파일�
   │         │      └── View.storyboard
   │         └── ViewControllers
   │               └── ViewVC.swift
-  |               └── Home
-  |               └── Search
+  |  └── Home
+  |  └── Search
   |                   ......
   ├── Milkyway.xcdatamodeld/
   ├── Milkyway.xcworkspace/

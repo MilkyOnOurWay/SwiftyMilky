@@ -7,9 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F2242A1B259BAC8200455604 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2242A1A259BAC8200455604 /* TabBarController.swift */; };
+		F2242A20259BAD5400455604 /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2242A1F259BAD5400455604 /* TabBar.storyboard */; };
+		F2242A24259BAFFC00455604 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2242A23259BAFFC00455604 /* HomeVC.swift */; };
+		F2242A28259BB02100455604 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2242A27259BB02100455604 /* Home.storyboard */; };
+		F2242A32259BB15400455604 /* ReportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2242A31259BB15400455604 /* ReportVC.swift */; };
+		F2242A36259BB17200455604 /* Report.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2242A35259BB17200455604 /* Report.storyboard */; };
+		F2242A3B259BB2CF00455604 /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2242A3A259BB2CF00455604 /* SettingVC.swift */; };
+		F2242A3E259BB2DF00455604 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2242A3D259BB2DF00455604 /* Setting.storyboard */; };
+		F2242A47259BC22F00455604 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2242A46259BC22F00455604 /* LoginVC.swift */; };
+		F2242A4A259BC23A00455604 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2242A49259BC23A00455604 /* Login.storyboard */; };
 		F2BA62DE2598DE5F00A49020 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BA62DD2598DE5F00A49020 /* AppDelegate.swift */; };
 		F2BA62E02598DE5F00A49020 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BA62DF2598DE5F00A49020 /* SceneDelegate.swift */; };
-		F2BA62E22598DE5F00A49020 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BA62E12598DE5F00A49020 /* ViewController.swift */; };
 		F2BA62E82598DE5F00A49020 /* Milkyway.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F2BA62E62598DE5F00A49020 /* Milkyway.xcdatamodeld */; };
 		F2BA62EA2598DE6400A49020 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2BA62E92598DE6400A49020 /* Assets.xcassets */; };
 		F2BA62ED2598DE6400A49020 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2BA62EB2598DE6400A49020 /* LaunchScreen.storyboard */; };
@@ -31,10 +40,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F2242A1A259BAC8200455604 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		F2242A1F259BAD5400455604 /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
+		F2242A23259BAFFC00455604 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		F2242A27259BB02100455604 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		F2242A31259BB15400455604 /* ReportVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportVC.swift; sourceTree = "<group>"; };
+		F2242A35259BB17200455604 /* Report.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Report.storyboard; sourceTree = "<group>"; };
+		F2242A3A259BB2CF00455604 /* SettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVC.swift; sourceTree = "<group>"; };
+		F2242A3D259BB2DF00455604 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
+		F2242A46259BC22F00455604 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		F2242A49259BC23A00455604 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		F2BA62DA2598DE5F00A49020 /* Milkyway.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Milkyway.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2BA62DD2598DE5F00A49020 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F2BA62DF2598DE5F00A49020 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F2BA62E12598DE5F00A49020 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F2BA62E72598DE5F00A49020 /* Milkyway.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Milkyway.xcdatamodel; sourceTree = "<group>"; };
 		F2BA62E92598DE6400A49020 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F2BA62EC2598DE6400A49020 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -67,6 +85,115 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F2242A1D259BAC8700455604 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				F2242A1A259BAC8200455604 /* TabBarController.swift */,
+				F2242A1F259BAD5400455604 /* TabBar.storyboard */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		F2242A26259BB00600455604 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				F2242A2A259BB09D00455604 /* ViewControllers */,
+				F2242A2C259BB0AA00455604 /* Storyboards */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		F2242A2A259BB09D00455604 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F2242A23259BAFFC00455604 /* HomeVC.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		F2242A2C259BB0AA00455604 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				F2242A27259BB02100455604 /* Home.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		F2242A34259BB15B00455604 /* Report */ = {
+			isa = PBXGroup;
+			children = (
+				F2242A38259BB17B00455604 /* ViewControllers */,
+				F2242A39259BB18300455604 /* Storyboards */,
+			);
+			path = Report;
+			sourceTree = "<group>";
+		};
+		F2242A38259BB17B00455604 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F2242A31259BB15400455604 /* ReportVC.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		F2242A39259BB18300455604 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				F2242A35259BB17200455604 /* Report.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		F2242A40259BB2E500455604 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				F2242A41259BB2EC00455604 /* ViewControllers */,
+				F2242A42259BB2F500455604 /* Storyboards */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		F2242A41259BB2EC00455604 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F2242A3A259BB2CF00455604 /* SettingVC.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		F2242A42259BB2F500455604 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				F2242A3D259BB2DF00455604 /* Setting.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		F2242A4C259BC23F00455604 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				F2242A4E259BC26300455604 /* ViewControllers */,
+				F2242A50259BC26B00455604 /* Storyboards */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		F2242A4E259BC26300455604 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F2242A46259BC22F00455604 /* LoginVC.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		F2242A50259BC26B00455604 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				F2242A49259BC23A00455604 /* Login.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
 		F2BA62D12598DE5F00A49020 = {
 			isa = PBXGroup;
 			children = (
@@ -108,7 +235,11 @@
 		F2BA62F72598DEEA00A49020 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				F2BA62E12598DE5F00A49020 /* ViewController.swift */,
+				F2242A1D259BAC8700455604 /* TabBar */,
+				F2242A4C259BC23F00455604 /* Login */,
+				F2242A26259BB00600455604 /* Home */,
+				F2242A34259BB15B00455604 /* Report */,
+				F2242A40259BB2E500455604 /* Setting */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -235,7 +366,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2BA62ED2598DE6400A49020 /* LaunchScreen.storyboard in Resources */,
+				F2242A20259BAD5400455604 /* TabBar.storyboard in Resources */,
+				F2242A4A259BC23A00455604 /* Login.storyboard in Resources */,
 				F2BA62EA2598DE6400A49020 /* Assets.xcassets in Resources */,
+				F2242A28259BB02100455604 /* Home.storyboard in Resources */,
+				F2242A36259BB17200455604 /* Report.storyboard in Resources */,
+				F2242A3E259BB2DF00455604 /* Setting.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,16 +385,20 @@
 				F2BA63252598E6E900A49020 /* UITableView+Extension.swift in Sources */,
 				F2BA631A2598E5AA00A49020 /* UIImageView+Extension.swift in Sources */,
 				F2BA62E82598DE5F00A49020 /* Milkyway.xcdatamodeld in Sources */,
-				F2BA62E22598DE5F00A49020 /* ViewController.swift in Sources */,
+				F2242A1B259BAC8200455604 /* TabBarController.swift in Sources */,
 				F2BA63142598E56B00A49020 /* UIView+Extension.swift in Sources */,
 				F2BA62DE2598DE5F00A49020 /* AppDelegate.swift in Sources */,
+				F2242A24259BAFFC00455604 /* HomeVC.swift in Sources */,
 				F2BA630A2598E4D400A49020 /* UIViewController+Extension.swift in Sources */,
 				F2BA63302598E80000A49020 /* UIColor+Extension.swift in Sources */,
 				F2BA632D2598E7DE00A49020 /* UITabbar+Extension.swift in Sources */,
+				F2242A3B259BB2CF00455604 /* SettingVC.swift in Sources */,
 				F2BA62E02598DE5F00A49020 /* SceneDelegate.swift in Sources */,
 				F2BA63292598E74E00A49020 /* Font.swift in Sources */,
 				F2BA630E2598E52600A49020 /* UITextView+Extension.swift in Sources */,
+				F2242A47259BC22F00455604 /* LoginVC.swift in Sources */,
 				F2BA63112598E55000A49020 /* UIButton+Extension.swift in Sources */,
+				F2242A32259BB15400455604 /* ReportVC.swift in Sources */,
 				F2BA63172598E58A00A49020 /* Date+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

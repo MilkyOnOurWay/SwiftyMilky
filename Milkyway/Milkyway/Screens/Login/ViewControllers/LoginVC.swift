@@ -9,21 +9,28 @@ import UIKit
 
 class LoginVC: UIViewController {
 
+    @IBOutlet weak var startButton: UIButton!
+    @IBOutlet weak var nicknameTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setButton()
         // Do any additional setup after loading the view.
     }
     
+}
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+extension LoginVC {
+    
+    func setButton(){
+        
+        startButton.addTarget(self, action: #selector(startButtonDidTap), for: .touchUpInside)
     }
-    */
-
+    
+    @objc func startButtonDidTap(){
+        
+        let vc = UIStoryboard.init(name: "TabBar", bundle: nil).instantiateViewController(identifier: "TabBarController") as? TabBarController
+        vc?.modalPresentationStyle = .fullScreen
+        self.present(vc!, animated: true, completion: nil)
+    }
 }

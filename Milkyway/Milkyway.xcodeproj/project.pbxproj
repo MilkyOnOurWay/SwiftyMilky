@@ -19,6 +19,7 @@
 		F2242A4A259BC23A00455604 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2242A49259BC23A00455604 /* Login.storyboard */; };
 		F2242A54259C4A9B00455604 /* MyUniverseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2242A53259C4A9B00455604 /* MyUniverseVC.swift */; };
 		F2242A57259C4AA600455604 /* MyUniverse.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2242A56259C4AA600455604 /* MyUniverse.storyboard */; };
+		F2242A63259C78FD00455604 /* LoginNaviController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2242A62259C78FD00455604 /* LoginNaviController.swift */; };
 		F2BA62DE2598DE5F00A49020 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BA62DD2598DE5F00A49020 /* AppDelegate.swift */; };
 		F2BA62E02598DE5F00A49020 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BA62DF2598DE5F00A49020 /* SceneDelegate.swift */; };
 		F2BA62E82598DE5F00A49020 /* Milkyway.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F2BA62E62598DE5F00A49020 /* Milkyway.xcdatamodeld */; };
@@ -54,6 +55,7 @@
 		F2242A49259BC23A00455604 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		F2242A53259C4A9B00455604 /* MyUniverseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyUniverseVC.swift; sourceTree = "<group>"; };
 		F2242A56259C4AA600455604 /* MyUniverse.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyUniverse.storyboard; sourceTree = "<group>"; };
+		F2242A62259C78FD00455604 /* LoginNaviController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNaviController.swift; sourceTree = "<group>"; };
 		F2BA62DA2598DE5F00A49020 /* Milkyway.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Milkyway.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2BA62DD2598DE5F00A49020 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F2BA62DF2598DE5F00A49020 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				F2242A46259BC22F00455604 /* LoginVC.swift */,
+				F2242A62259C78FD00455604 /* LoginNaviController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -440,6 +443,7 @@
 				F2BA63112598E55000A49020 /* UIButton+Extension.swift in Sources */,
 				F2242A32259BB15400455604 /* ReportVC.swift in Sources */,
 				F2BA63172598E58A00A49020 /* Date+Extension.swift in Sources */,
+				F2242A63259C78FD00455604 /* LoginNaviController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

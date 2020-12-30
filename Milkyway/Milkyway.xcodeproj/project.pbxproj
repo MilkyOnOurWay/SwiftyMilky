@@ -17,6 +17,8 @@
 		F2242A3E259BB2DF00455604 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2242A3D259BB2DF00455604 /* Setting.storyboard */; };
 		F2242A47259BC22F00455604 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2242A46259BC22F00455604 /* LoginVC.swift */; };
 		F2242A4A259BC23A00455604 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2242A49259BC23A00455604 /* Login.storyboard */; };
+		F2242A54259C4A9B00455604 /* MyUniverseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2242A53259C4A9B00455604 /* MyUniverseVC.swift */; };
+		F2242A57259C4AA600455604 /* MyUniverse.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2242A56259C4AA600455604 /* MyUniverse.storyboard */; };
 		F2BA62DE2598DE5F00A49020 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BA62DD2598DE5F00A49020 /* AppDelegate.swift */; };
 		F2BA62E02598DE5F00A49020 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BA62DF2598DE5F00A49020 /* SceneDelegate.swift */; };
 		F2BA62E82598DE5F00A49020 /* Milkyway.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F2BA62E62598DE5F00A49020 /* Milkyway.xcdatamodeld */; };
@@ -50,6 +52,8 @@
 		F2242A3D259BB2DF00455604 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		F2242A46259BC22F00455604 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		F2242A49259BC23A00455604 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		F2242A53259C4A9B00455604 /* MyUniverseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyUniverseVC.swift; sourceTree = "<group>"; };
+		F2242A56259C4AA600455604 /* MyUniverse.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyUniverse.storyboard; sourceTree = "<group>"; };
 		F2BA62DA2598DE5F00A49020 /* Milkyway.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Milkyway.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2BA62DD2598DE5F00A49020 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F2BA62DF2598DE5F00A49020 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -97,8 +101,8 @@
 		F2242A26259BB00600455604 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				F2242A2A259BB09D00455604 /* ViewControllers */,
-				F2242A2C259BB0AA00455604 /* Storyboards */,
+				F2242A59259C4AB200455604 /* MyUniverse */,
+				F2242A5B259C4C4900455604 /* HomeMain */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -190,6 +194,40 @@
 			isa = PBXGroup;
 			children = (
 				F2242A49259BC23A00455604 /* Login.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		F2242A59259C4AB200455604 /* MyUniverse */ = {
+			isa = PBXGroup;
+			children = (
+				F2242A5D259C4C6200455604 /* ViewControllers */,
+				F2242A5F259C4C6800455604 /* Storyboards */,
+			);
+			path = MyUniverse;
+			sourceTree = "<group>";
+		};
+		F2242A5B259C4C4900455604 /* HomeMain */ = {
+			isa = PBXGroup;
+			children = (
+				F2242A2A259BB09D00455604 /* ViewControllers */,
+				F2242A2C259BB0AA00455604 /* Storyboards */,
+			);
+			path = HomeMain;
+			sourceTree = "<group>";
+		};
+		F2242A5D259C4C6200455604 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F2242A53259C4A9B00455604 /* MyUniverseVC.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		F2242A5F259C4C6800455604 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				F2242A56259C4AA600455604 /* MyUniverse.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -368,6 +406,7 @@
 				F2BA62ED2598DE6400A49020 /* LaunchScreen.storyboard in Resources */,
 				F2242A20259BAD5400455604 /* TabBar.storyboard in Resources */,
 				F2242A4A259BC23A00455604 /* Login.storyboard in Resources */,
+				F2242A57259C4AA600455604 /* MyUniverse.storyboard in Resources */,
 				F2BA62EA2598DE6400A49020 /* Assets.xcassets in Resources */,
 				F2242A28259BB02100455604 /* Home.storyboard in Resources */,
 				F2242A36259BB17200455604 /* Report.storyboard in Resources */,
@@ -385,6 +424,7 @@
 				F2BA63252598E6E900A49020 /* UITableView+Extension.swift in Sources */,
 				F2BA631A2598E5AA00A49020 /* UIImageView+Extension.swift in Sources */,
 				F2BA62E82598DE5F00A49020 /* Milkyway.xcdatamodeld in Sources */,
+				F2242A54259C4A9B00455604 /* MyUniverseVC.swift in Sources */,
 				F2242A1B259BAC8200455604 /* TabBarController.swift in Sources */,
 				F2BA63142598E56B00A49020 /* UIView+Extension.swift in Sources */,
 				F2BA62DE2598DE5F00A49020 /* AppDelegate.swift in Sources */,

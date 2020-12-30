@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4799C2F4CFD3497A225FA29A /* Pods_Milkyway.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F3F5BD99D092D8D80FFA68F /* Pods_Milkyway.framework */; };
 		F2242A1B259BAC8200455604 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2242A1A259BAC8200455604 /* TabBarController.swift */; };
 		F2242A20259BAD5400455604 /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2242A1F259BAD5400455604 /* TabBar.storyboard */; };
 		F2242A24259BAFFC00455604 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2242A23259BAFFC00455604 /* HomeVC.swift */; };
@@ -20,6 +21,8 @@
 		F2242A54259C4A9B00455604 /* MyUniverseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2242A53259C4A9B00455604 /* MyUniverseVC.swift */; };
 		F2242A57259C4AA600455604 /* MyUniverse.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2242A56259C4AA600455604 /* MyUniverse.storyboard */; };
 		F2242A63259C78FD00455604 /* LoginNaviController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2242A62259C78FD00455604 /* LoginNaviController.swift */; };
+		F2242A69259CD2F600455604 /* FilterResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2242A68259CD2F500455604 /* FilterResultVC.swift */; };
+		F2242A6C259CD30400455604 /* FilterResult.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2242A6B259CD30400455604 /* FilterResult.storyboard */; };
 		F2BA62DE2598DE5F00A49020 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BA62DD2598DE5F00A49020 /* AppDelegate.swift */; };
 		F2BA62E02598DE5F00A49020 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BA62DF2598DE5F00A49020 /* SceneDelegate.swift */; };
 		F2BA62E82598DE5F00A49020 /* Milkyway.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F2BA62E62598DE5F00A49020 /* Milkyway.xcdatamodeld */; };
@@ -43,6 +46,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2F3F5BD99D092D8D80FFA68F /* Pods_Milkyway.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Milkyway.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		82A4CFBF130A68D0DC76260E /* Pods-Milkyway.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Milkyway.release.xcconfig"; path = "Target Support Files/Pods-Milkyway/Pods-Milkyway.release.xcconfig"; sourceTree = "<group>"; };
+		B6E7AC1233665DEC2C3D21DC /* Pods-Milkyway.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Milkyway.debug.xcconfig"; path = "Target Support Files/Pods-Milkyway/Pods-Milkyway.debug.xcconfig"; sourceTree = "<group>"; };
 		F2242A1A259BAC8200455604 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		F2242A1F259BAD5400455604 /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
 		F2242A23259BAFFC00455604 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
@@ -56,6 +62,8 @@
 		F2242A53259C4A9B00455604 /* MyUniverseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyUniverseVC.swift; sourceTree = "<group>"; };
 		F2242A56259C4AA600455604 /* MyUniverse.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyUniverse.storyboard; sourceTree = "<group>"; };
 		F2242A62259C78FD00455604 /* LoginNaviController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNaviController.swift; sourceTree = "<group>"; };
+		F2242A68259CD2F500455604 /* FilterResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterResultVC.swift; sourceTree = "<group>"; };
+		F2242A6B259CD30400455604 /* FilterResult.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FilterResult.storyboard; sourceTree = "<group>"; };
 		F2BA62DA2598DE5F00A49020 /* Milkyway.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Milkyway.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2BA62DD2598DE5F00A49020 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F2BA62DF2598DE5F00A49020 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -85,12 +93,30 @@
 				F2BA631E2598E66F00A49020 /* SnapKit in Frameworks */,
 				F2BA63022598E3A500A49020 /* Kingfisher in Frameworks */,
 				F2BA62FE2598E31800A49020 /* Alamofire in Frameworks */,
+				4799C2F4CFD3497A225FA29A /* Pods_Milkyway.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6ABE1718CA7087CE2D53F67C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B6E7AC1233665DEC2C3D21DC /* Pods-Milkyway.debug.xcconfig */,
+				82A4CFBF130A68D0DC76260E /* Pods-Milkyway.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		9DA09BAE53911505A1F3100A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2F3F5BD99D092D8D80FFA68F /* Pods_Milkyway.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F2242A1D259BAC8700455604 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +131,7 @@
 			children = (
 				F2242A59259C4AB200455604 /* MyUniverse */,
 				F2242A5B259C4C4900455604 /* HomeMain */,
+				F2242A6E259CD30F00455604 /* FilterResult */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -235,11 +262,22 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
+		F2242A6E259CD30F00455604 /* FilterResult */ = {
+			isa = PBXGroup;
+			children = (
+				F2242A68259CD2F500455604 /* FilterResultVC.swift */,
+				F2242A6B259CD30400455604 /* FilterResult.storyboard */,
+			);
+			path = FilterResult;
+			sourceTree = "<group>";
+		};
 		F2BA62D12598DE5F00A49020 = {
 			isa = PBXGroup;
 			children = (
 				F2BA62DC2598DE5F00A49020 /* Milkyway */,
 				F2BA62DB2598DE5F00A49020 /* Products */,
+				6ABE1718CA7087CE2D53F67C /* Pods */,
+				9DA09BAE53911505A1F3100A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -342,9 +380,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F2BA62F12598DE6400A49020 /* Build configuration list for PBXNativeTarget "Milkyway" */;
 			buildPhases = (
+				88A800E966E0FAF842188714 /* [CP] Check Pods Manifest.lock */,
 				F2BA62D62598DE5F00A49020 /* Sources */,
 				F2BA62D72598DE5F00A49020 /* Frameworks */,
 				F2BA62D82598DE5F00A49020 /* Resources */,
+				C507DBE51DA516CE1DC3E279 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -409,6 +449,7 @@
 				F2BA62ED2598DE6400A49020 /* LaunchScreen.storyboard in Resources */,
 				F2242A20259BAD5400455604 /* TabBar.storyboard in Resources */,
 				F2242A4A259BC23A00455604 /* Login.storyboard in Resources */,
+				F2242A6C259CD30400455604 /* FilterResult.storyboard in Resources */,
 				F2242A57259C4AA600455604 /* MyUniverse.storyboard in Resources */,
 				F2BA62EA2598DE6400A49020 /* Assets.xcassets in Resources */,
 				F2242A28259BB02100455604 /* Home.storyboard in Resources */,
@@ -419,11 +460,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		88A800E966E0FAF842188714 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Milkyway-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C507DBE51DA516CE1DC3E279 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Milkyway/Pods-Milkyway-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Milkyway/Pods-Milkyway-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Milkyway/Pods-Milkyway-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F2BA62D62598DE5F00A49020 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2242A69259CD2F600455604 /* FilterResultVC.swift in Sources */,
 				F2BA63252598E6E900A49020 /* UITableView+Extension.swift in Sources */,
 				F2BA631A2598E5AA00A49020 /* UIImageView+Extension.swift in Sources */,
 				F2BA62E82598DE5F00A49020 /* Milkyway.xcdatamodeld in Sources */,
@@ -579,6 +663,7 @@
 		};
 		F2BA62F22598DE6400A49020 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B6E7AC1233665DEC2C3D21DC /* Pods-Milkyway.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -599,6 +684,7 @@
 		};
 		F2BA62F32598DE6400A49020 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 82A4CFBF130A68D0DC76260E /* Pods-Milkyway.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

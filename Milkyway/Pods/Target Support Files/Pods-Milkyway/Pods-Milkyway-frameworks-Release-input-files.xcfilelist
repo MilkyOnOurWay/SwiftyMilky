@@ -1,2 +1,3 @@
 ${PODS_ROOT}/Target Support Files/Pods-Milkyway/Pods-Milkyway-frameworks.sh
 ${PODS_ROOT}/NMapsMap/framework/NMapsMap.framework
+${BUILT_PRODUCTS_DIR}/XLPagerTabStrip/XLPagerTabStrip.framework

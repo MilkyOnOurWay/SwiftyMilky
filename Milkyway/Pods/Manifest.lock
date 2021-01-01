@@ -1,16 +1,20 @@
 PODS:
   - NMapsMap (3.10.1)
+  - XLPagerTabStrip (9.0.0)
 
 DEPENDENCIES:
   - NMapsMap
+  - XLPagerTabStrip (~> 9.0)
 
 SPEC REPOS:
   trunk:
     - NMapsMap
+    - XLPagerTabStrip
 
 SPEC CHECKSUMS:
   NMapsMap: 1dc27ca06eac287ce1f001a972172766dca2abe1
+  XLPagerTabStrip: 61c57fd61f611ee5f01ff1495ad6fbee8bf496c5
 
-PODFILE CHECKSUM: e61b33bed2c5414632409f1664506a0947c5b9fc
+PODFILE CHECKSUM: 4c350ef818bd92d43f08a16644ec1717436dabd5
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.10.0

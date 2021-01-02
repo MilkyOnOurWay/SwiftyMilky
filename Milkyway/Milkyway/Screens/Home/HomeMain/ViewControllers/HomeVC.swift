@@ -6,8 +6,12 @@
 //
 
 import UIKit
+import NMapsMap
 
 class HomeVC: UIViewController {
+    
+    
+    @IBOutlet var mapView: NMFMapView!
     
     override func viewDidLoad(){
         super.viewDidLoad()
@@ -15,6 +19,9 @@ class HomeVC: UIViewController {
 
     }
     
+    func setMapView() {
+        
+    }
 
     @IBAction func searchBtnClicked(_ sender: Any) {
         
@@ -26,7 +33,5 @@ class HomeVC: UIViewController {
         self.navigationController?.pushViewController(nvc, animated: true) // 다음 뷰 띄우기
         
     }
-    
-
-    
+   
 }

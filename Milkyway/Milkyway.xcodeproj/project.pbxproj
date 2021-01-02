@@ -34,17 +34,17 @@
 		F2BA62E82598DE5F00A49020 /* Milkyway.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F2BA62E62598DE5F00A49020 /* Milkyway.xcdatamodeld */; };
 		F2BA62EA2598DE6400A49020 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2BA62E92598DE6400A49020 /* Assets.xcassets */; };
 		F2BA62ED2598DE6400A49020 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2BA62EB2598DE6400A49020 /* LaunchScreen.storyboard */; };
-		F2BA62FE2598E31800A49020 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = F2BA62FD2598E31800A49020 /* SwiftPackageProductDependency */; };
-		F2BA63022598E3A500A49020 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = F2BA63012598E3A500A49020 /* SwiftPackageProductDependency */; };
-		F2BA63062598E42200A49020 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = F2BA63052598E42200A49020 /* SwiftPackageProductDependency */; };
+		F2BA62FE2598E31800A49020 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = F2BA62FD2598E31800A49020 /* Alamofire */; };
+		F2BA63022598E3A500A49020 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = F2BA63012598E3A500A49020 /* Kingfisher */; };
+		F2BA63062598E42200A49020 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = F2BA63052598E42200A49020 /* SwiftyJSON */; };
 		F2BA630A2598E4D400A49020 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BA63092598E4D400A49020 /* UIViewController+Extension.swift */; };
 		F2BA630E2598E52600A49020 /* UITextView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BA630D2598E52600A49020 /* UITextView+Extension.swift */; };
 		F2BA63112598E55000A49020 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BA63102598E55000A49020 /* UIButton+Extension.swift */; };
 		F2BA63142598E56B00A49020 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BA63132598E56B00A49020 /* UIView+Extension.swift */; };
 		F2BA63172598E58A00A49020 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BA63162598E58A00A49020 /* Date+Extension.swift */; };
 		F2BA631A2598E5AA00A49020 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BA63192598E5AA00A49020 /* UIImageView+Extension.swift */; };
-		F2BA631E2598E66F00A49020 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = F2BA631D2598E66F00A49020 /* SwiftPackageProductDependency */; };
-		F2BA63222598E6BA00A49020 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = F2BA63212598E6BA00A49020 /* SwiftPackageProductDependency */; };
+		F2BA631E2598E66F00A49020 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = F2BA631D2598E66F00A49020 /* SnapKit */; };
+		F2BA63222598E6BA00A49020 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = F2BA63212598E6BA00A49020 /* Then */; };
 		F2BA63252598E6E900A49020 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BA63242598E6E900A49020 /* UITableView+Extension.swift */; };
 		F2BA63292598E74E00A49020 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BA63282598E74E00A49020 /* Font.swift */; };
 		F2BA632D2598E7DE00A49020 /* UITabbar+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BA632C2598E7DE00A49020 /* UITabbar+Extension.swift */; };
@@ -100,11 +100,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F2BA63222598E6BA00A49020 /* BuildFile in Frameworks */,
-				F2BA63062598E42200A49020 /* BuildFile in Frameworks */,
-				F2BA631E2598E66F00A49020 /* BuildFile in Frameworks */,
-				F2BA63022598E3A500A49020 /* BuildFile in Frameworks */,
-				F2BA62FE2598E31800A49020 /* BuildFile in Frameworks */,
+				F2BA63222598E6BA00A49020 /* Then in Frameworks */,
+				F2BA63062598E42200A49020 /* SwiftyJSON in Frameworks */,
+				F2BA631E2598E66F00A49020 /* SnapKit in Frameworks */,
+				F2BA63022598E3A500A49020 /* Kingfisher in Frameworks */,
+				F2BA62FE2598E31800A49020 /* Alamofire in Frameworks */,
 				4799C2F4CFD3497A225FA29A /* Pods_Milkyway.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -490,11 +490,11 @@
 			);
 			name = Milkyway;
 			packageProductDependencies = (
-				F2BA62FD2598E31800A49020 /* SwiftPackageProductDependency */,
-				F2BA63012598E3A500A49020 /* SwiftPackageProductDependency */,
-				F2BA63052598E42200A49020 /* SwiftPackageProductDependency */,
-				F2BA631D2598E66F00A49020 /* SwiftPackageProductDependency */,
-				F2BA63212598E6BA00A49020 /* SwiftPackageProductDependency */,
+				F2BA62FD2598E31800A49020 /* Alamofire */,
+				F2BA63012598E3A500A49020 /* Kingfisher */,
+				F2BA63052598E42200A49020 /* SwiftyJSON */,
+				F2BA631D2598E66F00A49020 /* SnapKit */,
+				F2BA63212598E6BA00A49020 /* Then */,
 			);
 			productName = Milkyway;
 			productReference = F2BA62DA2598DE5F00A49020 /* Milkyway.app */;
@@ -524,11 +524,11 @@
 			);
 			mainGroup = F2BA62D12598DE5F00A49020;
 			packageReferences = (
-				F2BA62FC2598E31800A49020 /* RemoteSwiftPackageReference */,
-				F2BA63002598E3A500A49020 /* RemoteSwiftPackageReference */,
-				F2BA63042598E42200A49020 /* RemoteSwiftPackageReference */,
-				F2BA631C2598E66F00A49020 /* RemoteSwiftPackageReference */,
-				F2BA63202598E6BA00A49020 /* RemoteSwiftPackageReference */,
+				F2BA62FC2598E31800A49020 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				F2BA63002598E3A500A49020 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				F2BA63042598E42200A49020 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				F2BA631C2598E66F00A49020 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				F2BA63202598E6BA00A49020 /* XCRemoteSwiftPackageReference "Then" */,
 			);
 			productRefGroup = F2BA62DB2598DE5F00A49020 /* Products */;
 			projectDirPath = "";
@@ -772,7 +772,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = F725AJ242J;
+				DEVELOPMENT_TEAM = QPUG3J4E4B;
 				INFOPLIST_FILE = "Milkyway/Global/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -793,7 +793,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = F725AJ242J;
+				DEVELOPMENT_TEAM = QPUG3J4E4B;
 				INFOPLIST_FILE = "Milkyway/Global/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -831,7 +831,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		F2BA62FC2598E31800A49020 /* RemoteSwiftPackageReference */ = {
+		F2BA62FC2598E31800A49020 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire";
 			requirement = {
@@ -839,7 +839,7 @@
 				minimumVersion = 5.2.0;
 			};
 		};
-		F2BA63002598E3A500A49020 /* RemoteSwiftPackageReference */ = {
+		F2BA63002598E3A500A49020 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher";
 			requirement = {
@@ -847,7 +847,7 @@
 				minimumVersion = 5.15.8;
 			};
 		};
-		F2BA63042598E42200A49020 /* RemoteSwiftPackageReference */ = {
+		F2BA63042598E42200A49020 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON";
 			requirement = {
@@ -855,7 +855,7 @@
 				minimumVersion = 5.0.0;
 			};
 		};
-		F2BA631C2598E66F00A49020 /* RemoteSwiftPackageReference */ = {
+		F2BA631C2598E66F00A49020 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit";
 			requirement = {
@@ -863,7 +863,7 @@
 				minimumVersion = 5.0.0;
 			};
 		};
-		F2BA63202598E6BA00A49020 /* RemoteSwiftPackageReference */ = {
+		F2BA63202598E6BA00A49020 /* XCRemoteSwiftPackageReference "Then" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/devxoul/Then";
 			requirement = {
@@ -874,29 +874,29 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		F2BA62FD2598E31800A49020 /* SwiftPackageProductDependency */ = {
+		F2BA62FD2598E31800A49020 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = F2BA62FC2598E31800A49020 /* RemoteSwiftPackageReference */;
+			package = F2BA62FC2598E31800A49020 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
 		};
-		F2BA63012598E3A500A49020 /* SwiftPackageProductDependency */ = {
+		F2BA63012598E3A500A49020 /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = F2BA63002598E3A500A49020 /* RemoteSwiftPackageReference */;
+			package = F2BA63002598E3A500A49020 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
 		};
-		F2BA63052598E42200A49020 /* SwiftPackageProductDependency */ = {
+		F2BA63052598E42200A49020 /* SwiftyJSON */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = F2BA63042598E42200A49020 /* RemoteSwiftPackageReference */;
+			package = F2BA63042598E42200A49020 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
 			productName = SwiftyJSON;
 		};
-		F2BA631D2598E66F00A49020 /* SwiftPackageProductDependency */ = {
+		F2BA631D2598E66F00A49020 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = F2BA631C2598E66F00A49020 /* RemoteSwiftPackageReference */;
+			package = F2BA631C2598E66F00A49020 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
 		};
-		F2BA63212598E6BA00A49020 /* SwiftPackageProductDependency */ = {
+		F2BA63212598E6BA00A49020 /* Then */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = F2BA63202598E6BA00A49020 /* RemoteSwiftPackageReference */;
+			package = F2BA63202598E6BA00A49020 /* XCRemoteSwiftPackageReference "Then" */;
 			productName = Then;
 		};
 /* End XCSwiftPackageProductDependency section */

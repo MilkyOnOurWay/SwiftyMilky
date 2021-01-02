@@ -12,17 +12,58 @@ class HomeVC: UIViewController {
     
     
     @IBOutlet var mapView: NMFMapView!
+    @IBOutlet var locationBtn: UIButton!
+    
+    
+    let marker = NMFMarker()
+    var locationManager = CLLocationManager()
     
     override func viewDidLoad(){
         super.viewDidLoad()
-        
-
+        setMapLocation()
+        setMapButton()
     }
     
-    func setMapView() {
+    
+    
+    func setMapLocation() {
+        let coor = locationManager.location?.coordinate
         
+        marker.mapView = mapView
+        
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization() //권한 요청
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.startUpdatingLocation()
+    
+        move(at: coor)
     }
-
+    func move(at coordinate: CLLocationCoordinate2D?) {
+        mapView.positionMode = .direction
+    }
+    
+    func setMapButton() {
+        
+        locationBtn.setImage(UIImage(named: "plus.button"), for: UIControl.State.normal)
+        locationBtn.setImage(UIImage(named: "plus.button"), for: UIControl.State.selected)
+        locationBtn.addTarget(self, action: #selector(locationButtonDidTap), for: UIControl.Event.touchUpInside)
+    }
+    
+    @objc func locationButtonDidTap(){
+      if locationBtn.isSelected == true {
+        locationBtn.isSelected = false
+        mapView.positionMode = .direction
+        
+      } else {
+        locationBtn.isSelected = true
+        mapView.positionMode = .compass
+      }
+    }
+    
+    
+    
+    
     @IBAction func searchBtnClicked(_ sender: Any) {
         
         print("Home - searchBtnClicked")
@@ -34,4 +75,7 @@ class HomeVC: UIViewController {
         
     }
    
+}
+extension HomeVC: CLLocationManagerDelegate {
+    
 }

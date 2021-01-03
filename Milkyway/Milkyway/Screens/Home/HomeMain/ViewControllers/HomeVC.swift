@@ -63,7 +63,7 @@ class HomeVC: UIViewController {
     
     
     
-    
+    // MARK: - 검색화면으로 이동
     @IBAction func searchBtnClicked(_ sender: Any) {
         
         print("Home - searchBtnClicked")

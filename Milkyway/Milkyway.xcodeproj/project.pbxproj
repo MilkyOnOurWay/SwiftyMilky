@@ -10,6 +10,9 @@
 		4799C2F4CFD3497A225FA29A /* Pods_Milkyway.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F3F5BD99D092D8D80FFA68F /* Pods_Milkyway.framework */; };
 		6B869C0225A0B95E0068BFD2 /* InfoModifyReqVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B869C0125A0B95E0068BFD2 /* InfoModifyReqVC.swift */; };
 		6B869C0525A0B96D0068BFD2 /* InfoModifyReq.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B869C0425A0B96D0068BFD2 /* InfoModifyReq.storyboard */; };
+		6B869C0825A0BF700068BFD2 /* Modify.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B869C0725A0BF700068BFD2 /* Modify.storyboard */; };
+		6B869C0B25A0BF9C0068BFD2 /* ModifyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B869C0A25A0BF9C0068BFD2 /* ModifyVC.swift */; };
+		6B869C0E25A0CBF70068BFD2 /* ModifyConfirmVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B869C0D25A0CBF70068BFD2 /* ModifyConfirmVC.swift */; };
 		D1F2283B259F70DA0018C472 /* ReportTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F2283A259F70DA0018C472 /* ReportTabBarViewController.swift */; };
 		D1F2283F259F70EE0018C472 /* ReportTabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1F2283E259F70EE0018C472 /* ReportTabBar.storyboard */; };
 		D1F2284A259F745F0018C472 /* CafeReportMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F22849259F745F0018C472 /* CafeReportMainVC.swift */; };
@@ -57,6 +60,9 @@
 		2F3F5BD99D092D8D80FFA68F /* Pods_Milkyway.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Milkyway.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B869C0125A0B95E0068BFD2 /* InfoModifyReqVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoModifyReqVC.swift; sourceTree = "<group>"; };
 		6B869C0425A0B96D0068BFD2 /* InfoModifyReq.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InfoModifyReq.storyboard; sourceTree = "<group>"; };
+		6B869C0725A0BF700068BFD2 /* Modify.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Modify.storyboard; sourceTree = "<group>"; };
+		6B869C0A25A0BF9C0068BFD2 /* ModifyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyVC.swift; sourceTree = "<group>"; };
+		6B869C0D25A0CBF70068BFD2 /* ModifyConfirmVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyConfirmVC.swift; sourceTree = "<group>"; };
 		82A4CFBF130A68D0DC76260E /* Pods-Milkyway.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Milkyway.release.xcconfig"; path = "Target Support Files/Pods-Milkyway/Pods-Milkyway.release.xcconfig"; sourceTree = "<group>"; };
 		B6E7AC1233665DEC2C3D21DC /* Pods-Milkyway.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Milkyway.debug.xcconfig"; path = "Target Support Files/Pods-Milkyway/Pods-Milkyway.debug.xcconfig"; sourceTree = "<group>"; };
 		D1F2283A259F70DA0018C472 /* ReportTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportTabBarViewController.swift; sourceTree = "<group>"; };
@@ -258,6 +264,8 @@
 			children = (
 				F2242A23259BAFFC00455604 /* HomeVC.swift */,
 				6B869C0125A0B95E0068BFD2 /* InfoModifyReqVC.swift */,
+				6B869C0A25A0BF9C0068BFD2 /* ModifyVC.swift */,
+				6B869C0D25A0CBF70068BFD2 /* ModifyConfirmVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -267,6 +275,7 @@
 			children = (
 				F2242A27259BB02100455604 /* Home.storyboard */,
 				6B869C0425A0B96D0068BFD2 /* InfoModifyReq.storyboard */,
+				6B869C0725A0BF700068BFD2 /* Modify.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -550,6 +559,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B869C0825A0BF700068BFD2 /* Modify.storyboard in Resources */,
 				F2BA62ED2598DE6400A49020 /* LaunchScreen.storyboard in Resources */,
 				F2242A20259BAD5400455604 /* TabBar.storyboard in Resources */,
 				F2242A4A259BC23A00455604 /* Login.storyboard in Resources */,
@@ -625,10 +635,12 @@
 				F2242A1B259BAC8200455604 /* TabBarController.swift in Sources */,
 				6B869C0225A0B95E0068BFD2 /* InfoModifyReqVC.swift in Sources */,
 				F2BA63142598E56B00A49020 /* UIView+Extension.swift in Sources */,
+				6B869C0E25A0CBF70068BFD2 /* ModifyConfirmVC.swift in Sources */,
 				D1F22850259F74810018C472 /* MyReportMainVC.swift in Sources */,
 				F2BA62DE2598DE5F00A49020 /* AppDelegate.swift in Sources */,
 				F2242A24259BAFFC00455604 /* HomeVC.swift in Sources */,
 				F2BA630A2598E4D400A49020 /* UIViewController+Extension.swift in Sources */,
+				6B869C0B25A0BF9C0068BFD2 /* ModifyVC.swift in Sources */,
 				F2BA63302598E80000A49020 /* UIColor+Extension.swift in Sources */,
 				F2BA632D2598E7DE00A49020 /* UITabbar+Extension.swift in Sources */,
 				F2242A3B259BB2CF00455604 /* SettingVC.swift in Sources */,

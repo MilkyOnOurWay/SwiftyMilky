@@ -161,6 +161,8 @@
 		D1996DFB25A20AD900B8F40B /* DetailCafeMenu */ = {
 			isa = PBXGroup;
 			children = (
+				D1996E0125A20BD600B8F40B /* ViewControllers */,
+				D1996E0025A20BD000B8F40B /* Storyboards */,
 			);
 			path = DetailCafeMenu;
 			sourceTree = "<group>";
@@ -168,8 +170,38 @@
 		D1996DFC25A20AE400B8F40B /* ModifyCafeMenu */ = {
 			isa = PBXGroup;
 			children = (
+				D1996DFF25A20BAB00B8F40B /* Storyboards */,
+				D1996DFE25A20B9B00B8F40B /* ViewControllers */,
 			);
 			path = ModifyCafeMenu;
+			sourceTree = "<group>";
+		};
+		D1996DFE25A20B9B00B8F40B /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		D1996DFF25A20BAB00B8F40B /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		D1996E0025A20BD000B8F40B /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		D1996E0125A20BD600B8F40B /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		D1F22836259F705A0018C472 /* ReportTabBar */ = {

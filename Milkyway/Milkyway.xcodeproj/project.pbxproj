@@ -341,7 +341,6 @@
 			isa = PBXGroup;
 			children = (
 				D1F2285D259F787C0018C472 /* Search */,
-				F2242A59259C4AB200455604 /* MyUniverse */,
 				F2242A5B259C4C4900455604 /* HomeMain */,
 				F2242A6E259CD30F00455604 /* FilterResult */,
 			);
@@ -516,6 +515,7 @@
 				F2242A4C259BC23F00455604 /* Login */,
 				F2242A26259BB00600455604 /* Home */,
 				F2242A34259BB15B00455604 /* Report */,
+				F2242A59259C4AB200455604 /* MyUniverse */,
 				F2242A40259BB2E500455604 /* Setting */,
 			);
 			path = Screens;

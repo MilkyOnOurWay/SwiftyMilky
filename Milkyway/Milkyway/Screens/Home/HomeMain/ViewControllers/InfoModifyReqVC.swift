@@ -31,6 +31,12 @@ class InfoModifyReqVC: UIViewController {
         deleteBtn.backgroundColor = UIColor(named: "Milky")
     }
     @IBAction func modifyBtnClicked(_ sender: Any) {
+        print("Home - modifyBtnClicked")
+        guard let nvc = UIStoryboard(name: "Modify", bundle: nil).instantiateViewController(withIdentifier:"ModifyVC") as? ModifyVC else {
+            return
+        }
+        
+        self.navigationController?.pushViewController(nvc, animated: true) // 다음 뷰 띄우기
     }
     
     @IBAction func deleteBtnClicked(_ sender: Any) {

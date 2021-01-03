@@ -13,6 +13,9 @@
 		6B869C0825A0BF700068BFD2 /* Modify.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B869C0725A0BF700068BFD2 /* Modify.storyboard */; };
 		6B869C0B25A0BF9C0068BFD2 /* ModifyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B869C0A25A0BF9C0068BFD2 /* ModifyVC.swift */; };
 		6B869C0E25A0CBF70068BFD2 /* ModifyConfirmVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B869C0D25A0CBF70068BFD2 /* ModifyConfirmVC.swift */; };
+		6B869C1125A1CD140068BFD2 /* DeletePlace.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B869C1025A1CD140068BFD2 /* DeletePlace.storyboard */; };
+		6B869C1425A1CD220068BFD2 /* DeletePlaceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B869C1325A1CD210068BFD2 /* DeletePlaceVC.swift */; };
+		6B869C4425A1E8E00068BFD2 /* DeletePlaceConfirmVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B869C4325A1E8E00068BFD2 /* DeletePlaceConfirmVC.swift */; };
 		D1F2283B259F70DA0018C472 /* ReportTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F2283A259F70DA0018C472 /* ReportTabBarViewController.swift */; };
 		D1F2283F259F70EE0018C472 /* ReportTabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1F2283E259F70EE0018C472 /* ReportTabBar.storyboard */; };
 		D1F2284A259F745F0018C472 /* CafeReportMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F22849259F745F0018C472 /* CafeReportMainVC.swift */; };
@@ -63,6 +66,9 @@
 		6B869C0725A0BF700068BFD2 /* Modify.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Modify.storyboard; sourceTree = "<group>"; };
 		6B869C0A25A0BF9C0068BFD2 /* ModifyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyVC.swift; sourceTree = "<group>"; };
 		6B869C0D25A0CBF70068BFD2 /* ModifyConfirmVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyConfirmVC.swift; sourceTree = "<group>"; };
+		6B869C1025A1CD140068BFD2 /* DeletePlace.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DeletePlace.storyboard; sourceTree = "<group>"; };
+		6B869C1325A1CD210068BFD2 /* DeletePlaceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeletePlaceVC.swift; sourceTree = "<group>"; };
+		6B869C4325A1E8E00068BFD2 /* DeletePlaceConfirmVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeletePlaceConfirmVC.swift; sourceTree = "<group>"; };
 		82A4CFBF130A68D0DC76260E /* Pods-Milkyway.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Milkyway.release.xcconfig"; path = "Target Support Files/Pods-Milkyway/Pods-Milkyway.release.xcconfig"; sourceTree = "<group>"; };
 		B6E7AC1233665DEC2C3D21DC /* Pods-Milkyway.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Milkyway.debug.xcconfig"; path = "Target Support Files/Pods-Milkyway/Pods-Milkyway.debug.xcconfig"; sourceTree = "<group>"; };
 		D1F2283A259F70DA0018C472 /* ReportTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportTabBarViewController.swift; sourceTree = "<group>"; };
@@ -266,6 +272,8 @@
 				6B869C0125A0B95E0068BFD2 /* InfoModifyReqVC.swift */,
 				6B869C0A25A0BF9C0068BFD2 /* ModifyVC.swift */,
 				6B869C0D25A0CBF70068BFD2 /* ModifyConfirmVC.swift */,
+				6B869C1325A1CD210068BFD2 /* DeletePlaceVC.swift */,
+				6B869C4325A1E8E00068BFD2 /* DeletePlaceConfirmVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -276,6 +284,7 @@
 				F2242A27259BB02100455604 /* Home.storyboard */,
 				6B869C0425A0B96D0068BFD2 /* InfoModifyReq.storyboard */,
 				6B869C0725A0BF700068BFD2 /* Modify.storyboard */,
+				6B869C1025A1CD140068BFD2 /* DeletePlace.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -572,6 +581,7 @@
 				D1F2284D259F746D0018C472 /* CafeReportMain.storyboard in Resources */,
 				F2242A3E259BB2DF00455604 /* Setting.storyboard in Resources */,
 				D1F22865259F78C90018C472 /* Search.storyboard in Resources */,
+				6B869C1125A1CD140068BFD2 /* DeletePlace.storyboard in Resources */,
 				D1F22853259F748C0018C472 /* MyReportMain.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -635,6 +645,7 @@
 				F2242A1B259BAC8200455604 /* TabBarController.swift in Sources */,
 				6B869C0225A0B95E0068BFD2 /* InfoModifyReqVC.swift in Sources */,
 				F2BA63142598E56B00A49020 /* UIView+Extension.swift in Sources */,
+				6B869C4425A1E8E00068BFD2 /* DeletePlaceConfirmVC.swift in Sources */,
 				6B869C0E25A0CBF70068BFD2 /* ModifyConfirmVC.swift in Sources */,
 				D1F22850259F74810018C472 /* MyReportMainVC.swift in Sources */,
 				F2BA62DE2598DE5F00A49020 /* AppDelegate.swift in Sources */,
@@ -652,6 +663,7 @@
 				F2BA63112598E55000A49020 /* UIButton+Extension.swift in Sources */,
 				F2BA63172598E58A00A49020 /* Date+Extension.swift in Sources */,
 				F2242A63259C78FD00455604 /* LoginNaviController.swift in Sources */,
+				6B869C1425A1CD220068BFD2 /* DeletePlaceVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

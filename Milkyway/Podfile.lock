@@ -1,20 +1,24 @@
 PODS:
+  - DLRadioButton (1.4.12)
   - NMapsMap (3.10.1)
   - XLPagerTabStrip (9.0.0)
 
 DEPENDENCIES:
+  - DLRadioButton (~> 1.4)
   - NMapsMap
   - XLPagerTabStrip (~> 9.0)
 
 SPEC REPOS:
   trunk:
+    - DLRadioButton
     - NMapsMap
     - XLPagerTabStrip
 
 SPEC CHECKSUMS:
+  DLRadioButton: d7c4e225ed0e8013cef7be61455230c7557ad7c1
   NMapsMap: 1dc27ca06eac287ce1f001a972172766dca2abe1
   XLPagerTabStrip: 61c57fd61f611ee5f01ff1495ad6fbee8bf496c5
 
-PODFILE CHECKSUM: 2a9ef0a23f6d97f1d973e77fe955520e1dbe4da5
+PODFILE CHECKSUM: 9bf963064eaf0f2d81c0484666e65dd55c810376
 
 COCOAPODS: 1.10.0

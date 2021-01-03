@@ -36,10 +36,18 @@ class InfoModifyReqVC: UIViewController {
             return
         }
         
-        self.navigationController?.pushViewController(nvc, animated: true) // 다음 뷰 띄우기
+        self.navigationController?.pushViewController(nvc, animated: true)
     }
     
     @IBAction func deleteBtnClicked(_ sender: Any) {
+        print("Home - deleteBtnClicked")
+        
+        guard let deleteVC = UIStoryboard(name: "DeletePlace", bundle: nil).instantiateViewController(withIdentifier:"DeletePlaceVC") as? DeletePlaceVC else {
+            return
+        }
+        deleteVC.modalPresentationStyle = .overCurrentContext
+        present(deleteVC, animated: false, completion: nil)
+        
     }
     
 }

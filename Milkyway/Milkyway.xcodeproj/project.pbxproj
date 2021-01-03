@@ -149,6 +149,29 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D1996DFA25A20ACD00B8F40B /* CafeInfo */ = {
+			isa = PBXGroup;
+			children = (
+				D1996DFC25A20AE400B8F40B /* ModifyCafeMenu */,
+				D1996DFB25A20AD900B8F40B /* DetailCafeMenu */,
+			);
+			path = CafeInfo;
+			sourceTree = "<group>";
+		};
+		D1996DFB25A20AD900B8F40B /* DetailCafeMenu */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DetailCafeMenu;
+			sourceTree = "<group>";
+		};
+		D1996DFC25A20AE400B8F40B /* ModifyCafeMenu */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ModifyCafeMenu;
+			sourceTree = "<group>";
+		};
 		D1F22836259F705A0018C472 /* ReportTabBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -450,6 +473,7 @@
 		F2BA62F72598DEEA00A49020 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				D1996DFA25A20ACD00B8F40B /* CafeInfo */,
 				F2242A1D259BAC8700455604 /* TabBar */,
 				F2242A4C259BC23F00455604 /* Login */,
 				F2242A26259BB00600455604 /* Home */,

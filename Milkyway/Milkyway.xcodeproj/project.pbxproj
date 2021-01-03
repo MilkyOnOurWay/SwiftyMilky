@@ -16,6 +16,8 @@
 		D1F22853259F748C0018C472 /* MyReportMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1F22852259F748C0018C472 /* MyReportMain.storyboard */; };
 		D1F22861259F78C20018C472 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F22860259F78C20018C472 /* SearchVC.swift */; };
 		D1F22865259F78C90018C472 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1F22864259F78C90018C472 /* Search.storyboard */; };
+		F21384B625A1E8360016E766 /* SearchTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21384B425A1E8360016E766 /* SearchTVC.swift */; };
+		F21384B725A1E8360016E766 /* SearchTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F21384B525A1E8360016E766 /* SearchTVC.xib */; };
 		F2242A1B259BAC8200455604 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2242A1A259BAC8200455604 /* TabBarController.swift */; };
 		F2242A20259BAD5400455604 /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2242A1F259BAD5400455604 /* TabBar.storyboard */; };
 		F2242A24259BAFFC00455604 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2242A23259BAFFC00455604 /* HomeVC.swift */; };
@@ -63,6 +65,8 @@
 		D1F22852259F748C0018C472 /* MyReportMain.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyReportMain.storyboard; sourceTree = "<group>"; };
 		D1F22860259F78C20018C472 /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		D1F22864259F78C90018C472 /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
+		F21384B425A1E8360016E766 /* SearchTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTVC.swift; sourceTree = "<group>"; };
+		F21384B525A1E8360016E766 /* SearchTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTVC.xib; sourceTree = "<group>"; };
 		F2242A1A259BAC8200455604 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		F2242A1F259BAD5400455604 /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
 		F2242A23259BAFFC00455604 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
@@ -209,6 +213,7 @@
 			children = (
 				D1F2285E259F789B0018C472 /* ViewControllers */,
 				D1F2285F259F78A40018C472 /* Storyboards */,
+				F21384B925A1E83E0016E766 /* Cells */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -227,6 +232,15 @@
 				D1F22864259F78C90018C472 /* Search.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		F21384B925A1E83E0016E766 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				F21384B425A1E8360016E766 /* SearchTVC.swift */,
+				F21384B525A1E8360016E766 /* SearchTVC.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		F2242A1D259BAC8700455604 /* TabBar */ = {
@@ -546,6 +560,7 @@
 			files = (
 				F2BA62ED2598DE6400A49020 /* LaunchScreen.storyboard in Resources */,
 				F2242A20259BAD5400455604 /* TabBar.storyboard in Resources */,
+				F21384B725A1E8360016E766 /* SearchTVC.xib in Resources */,
 				F2242A4A259BC23A00455604 /* Login.storyboard in Resources */,
 				F2242A6C259CD30400455604 /* FilterResult.storyboard in Resources */,
 				D1F2283F259F70EE0018C472 /* ReportTabBar.storyboard in Resources */,
@@ -622,6 +637,7 @@
 				F2242A24259BAFFC00455604 /* HomeVC.swift in Sources */,
 				F2BA630A2598E4D400A49020 /* UIViewController+Extension.swift in Sources */,
 				F2BA63302598E80000A49020 /* UIColor+Extension.swift in Sources */,
+				F21384B625A1E8360016E766 /* SearchTVC.swift in Sources */,
 				F2BA632D2598E7DE00A49020 /* UITabbar+Extension.swift in Sources */,
 				F2242A3B259BB2CF00455604 /* SettingVC.swift in Sources */,
 				F2BA62E02598DE5F00A49020 /* SceneDelegate.swift in Sources */,
@@ -772,7 +788,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QPUG3J4E4B;
+				DEVELOPMENT_TEAM = F725AJ242J;
 				INFOPLIST_FILE = "Milkyway/Global/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -793,7 +809,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QPUG3J4E4B;
+				DEVELOPMENT_TEAM = F725AJ242J;
 				INFOPLIST_FILE = "Milkyway/Global/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (

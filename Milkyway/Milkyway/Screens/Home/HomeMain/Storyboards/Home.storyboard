@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2hd-NY-xyM" customClass="NMFMapView">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wYL-vF-cHr" customClass="NMFMapView">
                                 <rect key="frame" x="0.0" y="99" width="375" height="630"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -38,6 +38,26 @@
                                     <action selector="searchBtnClicked:" destination="IRU-0Z-IcW" eventType="touchUpInside" id="rfM-1T-mci"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JGc-rw-574">
+                                <rect key="frame" x="16" y="129" width="79" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4yy-Yg-Mze">
+                                <rect key="frame" x="116" y="129" width="54" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cDu-JI-uni">
+                                <rect key="frame" x="201" y="129" width="54" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aPd-nV-Ytc">
+                                <rect key="frame" x="286" y="129" width="54" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="eIS-ba-FWs"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -46,8 +66,12 @@
                     <navigationItem key="navigationItem" id="xDj-he-7XZ"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="filterBtn1" destination="JGc-rw-574" id="Zmv-Mi-zUd"/>
+                        <outlet property="filterBtn2" destination="4yy-Yg-Mze" id="dQR-gS-g5W"/>
+                        <outlet property="filterBtn3" destination="cDu-JI-uni" id="lFG-8m-WWk"/>
+                        <outlet property="filterBtn4" destination="aPd-nV-Ytc" id="622-rR-cep"/>
                         <outlet property="locationBtn" destination="cRC-z2-HDE" id="e4y-ZE-eob"/>
-                        <outlet property="mapView" destination="2hd-NY-xyM" id="yfg-Kl-YaT"/>
+                        <outlet property="mapView" destination="wYL-vF-cHr" id="h1K-5d-Ewd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DqF-Fe-C82" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

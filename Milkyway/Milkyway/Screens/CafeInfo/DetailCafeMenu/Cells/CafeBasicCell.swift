@@ -41,5 +41,11 @@ class CafeBasicCell: UITableViewCell {
         
     }
     
+    @IBAction func webPageClicked(_ sender: Any) {
+        
+        NotificationCenter.default.post(name: Notification.Name("webPage"), object: nil)
+        
+    }
+    
     
 }

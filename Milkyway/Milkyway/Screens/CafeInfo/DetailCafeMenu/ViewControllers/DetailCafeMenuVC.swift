@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class DetailCafeMenuVC: UIViewController {
     
@@ -133,6 +134,7 @@ extension DetailCafeMenuVC {
     
     // 노티 옵저버들
     func notiGather() {
+        NotificationCenter.default.addObserver(self, selector: #selector(webPageOpen), name: Notification.Name("webPage"), object: nil)
     }
     
     // 프로토콜 상속
@@ -170,6 +172,16 @@ extension DetailCafeMenuVC {
                             Menu(menuName: "혜리쓰소이빈라떼", selection: [3], price: "4,000원"),
                             Menu(menuName: "마다이어트하려면이거마셔라떼", selection: [1,2,3,4], price: "3,800원")
                         ])
+        
+    }
+    
+    // 셀에서 webPage버튼 누르면 여기서 실행 ... cell에서는 실행이 안되더라 흑흑
+    // cell은 present를 할 수 없어서 그런듯
+    @objc func webPageOpen() {
+        
+        guard let url = URL(string: "https://blog.naver.com/sso_0022") else { return }
+        let safariViewController = SFSafariViewController(url: url)
+        present(safariViewController, animated: true, completion: nil)
         
     }
 }

@@ -78,6 +78,9 @@
                         <rect key="frame" x="80" y="234" width="291" height="30"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <state key="normal" title="Button"/>
+                        <connections>
+                            <action selector="webPageClicked:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="SUF-oT-QIq"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="제목" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uib-H5-ood">
                         <rect key="frame" x="10" y="75" width="369" height="21"/>

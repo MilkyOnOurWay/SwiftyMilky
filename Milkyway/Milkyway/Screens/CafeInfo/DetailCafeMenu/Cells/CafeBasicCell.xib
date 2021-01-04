@@ -70,6 +70,9 @@
                         <rect key="frame" x="80" y="184" width="291" height="30"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <state key="normal" title="Button"/>
+                        <connections>
+                            <action selector="telNumClicked:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="2LT-g8-z3x"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fm9-G1-ig0">
                         <rect key="frame" x="80" y="234" width="291" height="30"/>

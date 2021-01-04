@@ -28,4 +28,18 @@ class CafeBasicCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    
+    // 전화번호 버튼 눌렸을 때
+    @IBAction func telNumClicked(_ sender: Any) {
+        let number = telNumBtn.titleLabel?.text
+        if let url = URL(string: "tel://\(number!)") {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+        else {
+            print("error")
+        }
+        
+    }
+    
+    
 }

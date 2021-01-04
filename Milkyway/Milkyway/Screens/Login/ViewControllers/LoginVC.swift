@@ -19,27 +19,34 @@ class LoginVC: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setTextfield()
         setCheckBox()
         setButton()
         setLabel()
+        setTextfield()
         // Do any additional setup after loading the view.
     }
     
+
+    @IBAction func textfieldDidTap(_ sender: Any) {
+        checkMaxLength(nicknameTextField, maxLength: 10)
+    }
 }
 
 
 extension LoginVC {
     
+   
     func setLabel(){
         
         stateLabel.isHidden = true
     }
+    
     func setTextfield(){
         
         nicknameTextField.delegate = self
         nicknameTextField.addTarget(self, action: #selector(checkRegister), for: .editingChanged)
     }
+    
     func setCheckBox(){
         checkBoxImageView.isHidden = true
     }
@@ -48,6 +55,7 @@ extension LoginVC {
     func setButton(){
         
         startButton.addTarget(self, action: #selector(startButtonDidTap), for: .touchUpInside)
+        startButton.isEnabled = false
     }
     
     func isValidNickname(_ nickname: String) -> Bool{
@@ -72,40 +80,38 @@ extension LoginVC: UITextFieldDelegate {
     @objc func checkRegister(_ textfield: UITextField) {
         
         let nickname = textfield.text
-        //변경전
-//        if !isValidNickname(nickname!){
-//            stateLabel.isHidden = false
-//            stateLabel.text = "영어, 특수문자, 이모티콘은 사용 불가합니다."
-//            countLabel.text = String(nicknameTextField.text?.count ?? 0)
+        
+//        if nickname?.count ?? 0 > 10 {
+//            textfield.resignFirstResponder()
 //
-//            return
-//        } else {
-//
-//            return
 //        }
-        //변경후
-        while nicknameTextField.text?.count ?? 0 < 11 {
-            
-            if !isValidNickname(nickname!) {
-                
-                stateLabel.isHidden = false
-                stateLabel.text = "영어, 특수문자, 이모티콘은 사용 불가합니다."
-                countLabel.text = String(nicknameTextField.text?.count ?? 0)
-                
-                
-                return
-            } else {
-                
-                return
-            }
+        
+        countLabel.text = String(nickname?.count ?? 0)
+        
+        if !isValidNickname(nickname!){
+            stateLabel.isHidden = false
+            stateLabel.text = "사용 불가한 닉네임입니다."
+            stateLabel.textColor = .red
+            return
+        }else {
+            stateLabel.isHidden = true
+            startButton.isEnabled = true
+            checkBoxImageView.isHidden = false
+            return
         }
+       
         
     }
     
-    @objc func textFieldDidChange(){
-        
-        
+    func checkMaxLength(_ textfield: UITextField, maxLength: Int){
+        if(textfield.text?.count ?? 0 > maxLength){
+            textfield.deleteBackward()
+            textfield.resignFirstResponder()
+        }
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
     
 }

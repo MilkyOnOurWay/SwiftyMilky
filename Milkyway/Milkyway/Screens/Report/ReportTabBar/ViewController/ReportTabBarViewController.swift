@@ -45,7 +45,7 @@ class ReportTabBarViewController: ButtonBarPagerTabStripViewController {
 extension ButtonBarPagerTabStripViewController {
     
     func notificationObserver() {
-        NotificationCenter.default.addObserver(self, selector: #selector(searchBtnClicked), name: Notification.Name("tapSearch"), object: nil)
+     
     }
     
     

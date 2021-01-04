@@ -17,25 +17,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="카페제보" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cXA-5F-2xB">
-                                <rect key="frame" x="155" y="405" width="104" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bfq-AH-VLP">
-                                <rect key="frame" x="259" y="114" width="47" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="search"/>
-                                <connections>
-                                    <action selector="btnClicked:" destination="YDr-zv-LRW" eventType="touchUpInside" id="Iom-li-0tc"/>
-                                </connections>
-                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uSe-lE-hrg">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Z1H-gR-KBJ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="uSe-lE-hrg" firstAttribute="leading" secondItem="Z1H-gR-KBJ" secondAttribute="leading" id="Drs-Kp-xE6"/>
+                            <constraint firstItem="uSe-lE-hrg" firstAttribute="top" secondItem="Z1H-gR-KBJ" secondAttribute="top" id="FCz-WZ-BdK"/>
+                            <constraint firstItem="Z1H-gR-KBJ" firstAttribute="trailing" secondItem="uSe-lE-hrg" secondAttribute="trailing" id="M9N-F5-Nl8"/>
+                            <constraint firstItem="Z1H-gR-KBJ" firstAttribute="bottom" secondItem="uSe-lE-hrg" secondAttribute="bottom" id="kgv-UF-gQ1"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="uSe-lE-hrg" id="tMJ-3Z-sv5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sPp-zy-vYE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

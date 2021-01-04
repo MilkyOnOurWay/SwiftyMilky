@@ -18,6 +18,13 @@
 		6B869C4425A1E8E00068BFD2 /* DeletePlaceConfirmVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B869C4325A1E8E00068BFD2 /* DeletePlaceConfirmVC.swift */; };
 		D1996E0425A2290500B8F40B /* DetailCafeMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1996E0325A2290500B8F40B /* DetailCafeMenuVC.swift */; };
 		D1996E0725A2290E00B8F40B /* DetailCafeMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1996E0625A2290E00B8F40B /* DetailCafeMenu.storyboard */; };
+		D1D95DCE25A30B7800B95F79 /* Cafe.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D95DCD25A30B7800B95F79 /* Cafe.swift */; };
+		D1D95DD325A30B9700B95F79 /* CafeBasicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D95DD125A30B9700B95F79 /* CafeBasicCell.swift */; };
+		D1D95DD425A30B9700B95F79 /* CafeBasicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1D95DD225A30B9700B95F79 /* CafeBasicCell.xib */; };
+		D1D95DD825A30BA600B95F79 /* CafeHoneyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D95DD625A30BA600B95F79 /* CafeHoneyCell.swift */; };
+		D1D95DD925A30BA600B95F79 /* CafeHoneyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1D95DD725A30BA600B95F79 /* CafeHoneyCell.xib */; };
+		D1D95DDD25A30BB100B95F79 /* CafeMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D95DDB25A30BB100B95F79 /* CafeMenuCell.swift */; };
+		D1D95DDE25A30BB100B95F79 /* CafeMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1D95DDC25A30BB100B95F79 /* CafeMenuCell.xib */; };
 		D1F2283B259F70DA0018C472 /* ReportTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F2283A259F70DA0018C472 /* ReportTabBarViewController.swift */; };
 		D1F2283F259F70EE0018C472 /* ReportTabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1F2283E259F70EE0018C472 /* ReportTabBar.storyboard */; };
 		D1F2284A259F745F0018C472 /* CafeReportMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F22849259F745F0018C472 /* CafeReportMainVC.swift */; };
@@ -77,6 +84,13 @@
 		B6E7AC1233665DEC2C3D21DC /* Pods-Milkyway.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Milkyway.debug.xcconfig"; path = "Target Support Files/Pods-Milkyway/Pods-Milkyway.debug.xcconfig"; sourceTree = "<group>"; };
 		D1996E0325A2290500B8F40B /* DetailCafeMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCafeMenuVC.swift; sourceTree = "<group>"; };
 		D1996E0625A2290E00B8F40B /* DetailCafeMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailCafeMenu.storyboard; sourceTree = "<group>"; };
+		D1D95DCD25A30B7800B95F79 /* Cafe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cafe.swift; sourceTree = "<group>"; };
+		D1D95DD125A30B9700B95F79 /* CafeBasicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeBasicCell.swift; sourceTree = "<group>"; };
+		D1D95DD225A30B9700B95F79 /* CafeBasicCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CafeBasicCell.xib; sourceTree = "<group>"; };
+		D1D95DD625A30BA600B95F79 /* CafeHoneyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeHoneyCell.swift; sourceTree = "<group>"; };
+		D1D95DD725A30BA600B95F79 /* CafeHoneyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CafeHoneyCell.xib; sourceTree = "<group>"; };
+		D1D95DDB25A30BB100B95F79 /* CafeMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeMenuCell.swift; sourceTree = "<group>"; };
+		D1D95DDC25A30BB100B95F79 /* CafeMenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CafeMenuCell.xib; sourceTree = "<group>"; };
 		D1F2283A259F70DA0018C472 /* ReportTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportTabBarViewController.swift; sourceTree = "<group>"; };
 		D1F2283E259F70EE0018C472 /* ReportTabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ReportTabBar.storyboard; sourceTree = "<group>"; };
 		D1F22849259F745F0018C472 /* CafeReportMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeReportMainVC.swift; sourceTree = "<group>"; };
@@ -165,6 +179,8 @@
 		D1996DFB25A20AD900B8F40B /* DetailCafeMenu */ = {
 			isa = PBXGroup;
 			children = (
+				D1D95DCC25A30B6D00B95F79 /* Models */,
+				D1D95DC525A30B5A00B95F79 /* Cells */,
 				D1996E0125A20BD600B8F40B /* ViewControllers */,
 				D1996E0025A20BD000B8F40B /* Storyboards */,
 			);
@@ -216,6 +232,27 @@
 				D1996E0325A2290500B8F40B /* DetailCafeMenuVC.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		D1D95DC525A30B5A00B95F79 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D1D95DD125A30B9700B95F79 /* CafeBasicCell.swift */,
+				D1D95DD225A30B9700B95F79 /* CafeBasicCell.xib */,
+				D1D95DD625A30BA600B95F79 /* CafeHoneyCell.swift */,
+				D1D95DD725A30BA600B95F79 /* CafeHoneyCell.xib */,
+				D1D95DDB25A30BB100B95F79 /* CafeMenuCell.swift */,
+				D1D95DDC25A30BB100B95F79 /* CafeMenuCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		D1D95DCC25A30B6D00B95F79 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D1D95DCD25A30B7800B95F79 /* Cafe.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		D1F22836259F705A0018C472 /* ReportTabBar */ = {
@@ -646,6 +683,7 @@
 			files = (
 				6B869C0825A0BF700068BFD2 /* Modify.storyboard in Resources */,
 				F2BA62ED2598DE6400A49020 /* LaunchScreen.storyboard in Resources */,
+				D1D95DD925A30BA600B95F79 /* CafeHoneyCell.xib in Resources */,
 				F2242A20259BAD5400455604 /* TabBar.storyboard in Resources */,
 				F21384B725A1E8360016E766 /* SearchTVC.xib in Resources */,
 				F2242A4A259BC23A00455604 /* Login.storyboard in Resources */,
@@ -653,12 +691,14 @@
 				6B869C0525A0B96D0068BFD2 /* InfoModifyReq.storyboard in Resources */,
 				D1F2283F259F70EE0018C472 /* ReportTabBar.storyboard in Resources */,
 				D1996E0725A2290E00B8F40B /* DetailCafeMenu.storyboard in Resources */,
+				D1D95DD425A30B9700B95F79 /* CafeBasicCell.xib in Resources */,
 				F2242A57259C4AA600455604 /* MyUniverse.storyboard in Resources */,
 				F2BA62EA2598DE6400A49020 /* Assets.xcassets in Resources */,
 				F2242A28259BB02100455604 /* Home.storyboard in Resources */,
 				D1F2284D259F746D0018C472 /* CafeReportMain.storyboard in Resources */,
 				F2242A3E259BB2DF00455604 /* Setting.storyboard in Resources */,
 				D1F22865259F78C90018C472 /* Search.storyboard in Resources */,
+				D1D95DDE25A30BB100B95F79 /* CafeMenuCell.xib in Resources */,
 				6B869C1125A1CD140068BFD2 /* DeletePlace.storyboard in Resources */,
 				D1F22853259F748C0018C472 /* MyReportMain.storyboard in Resources */,
 			);
@@ -718,6 +758,7 @@
 				F2BA63252598E6E900A49020 /* UITableView+Extension.swift in Sources */,
 				D1F2283B259F70DA0018C472 /* ReportTabBarViewController.swift in Sources */,
 				F2BA631A2598E5AA00A49020 /* UIImageView+Extension.swift in Sources */,
+				D1D95DDD25A30BB100B95F79 /* CafeMenuCell.swift in Sources */,
 				F2BA62E82598DE5F00A49020 /* Milkyway.xcdatamodeld in Sources */,
 				F2242A54259C4A9B00455604 /* MyUniverseVC.swift in Sources */,
 				F2242A1B259BAC8200455604 /* TabBarController.swift in Sources */,
@@ -732,7 +773,9 @@
 				6B869C0B25A0BF9C0068BFD2 /* ModifyVC.swift in Sources */,
 				F2BA63302598E80000A49020 /* UIColor+Extension.swift in Sources */,
 				F21384B625A1E8360016E766 /* SearchTVC.swift in Sources */,
+				D1D95DD325A30B9700B95F79 /* CafeBasicCell.swift in Sources */,
 				F2BA632D2598E7DE00A49020 /* UITabbar+Extension.swift in Sources */,
+				D1D95DCE25A30B7800B95F79 /* Cafe.swift in Sources */,
 				F2242A3B259BB2CF00455604 /* SettingVC.swift in Sources */,
 				F2BA62E02598DE5F00A49020 /* SceneDelegate.swift in Sources */,
 				F2BA63292598E74E00A49020 /* Font.swift in Sources */,
@@ -743,6 +786,7 @@
 				F2BA63112598E55000A49020 /* UIButton+Extension.swift in Sources */,
 				F2BA63172598E58A00A49020 /* Date+Extension.swift in Sources */,
 				F2242A63259C78FD00455604 /* LoginNaviController.swift in Sources */,
+				D1D95DD825A30BA600B95F79 /* CafeHoneyCell.swift in Sources */,
 				6B869C1425A1CD220068BFD2 /* DeletePlaceVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

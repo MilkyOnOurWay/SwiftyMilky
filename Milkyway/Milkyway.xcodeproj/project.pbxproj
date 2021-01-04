@@ -16,6 +16,8 @@
 		6B869C1125A1CD140068BFD2 /* DeletePlace.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B869C1025A1CD140068BFD2 /* DeletePlace.storyboard */; };
 		6B869C1425A1CD220068BFD2 /* DeletePlaceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B869C1325A1CD210068BFD2 /* DeletePlaceVC.swift */; };
 		6B869C4425A1E8E00068BFD2 /* DeletePlaceConfirmVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B869C4325A1E8E00068BFD2 /* DeletePlaceConfirmVC.swift */; };
+		6B869C5025A2F9960068BFD2 /* CardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B869C4E25A2F9960068BFD2 /* CardVC.swift */; };
+		6B869C5125A2F9960068BFD2 /* CardVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B869C4F25A2F9960068BFD2 /* CardVC.xib */; };
 		D1996E0425A2290500B8F40B /* DetailCafeMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1996E0325A2290500B8F40B /* DetailCafeMenuVC.swift */; };
 		D1996E0725A2290E00B8F40B /* DetailCafeMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1996E0625A2290E00B8F40B /* DetailCafeMenu.storyboard */; };
 		D1F2283B259F70DA0018C472 /* ReportTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F2283A259F70DA0018C472 /* ReportTabBarViewController.swift */; };
@@ -73,6 +75,8 @@
 		6B869C1025A1CD140068BFD2 /* DeletePlace.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DeletePlace.storyboard; sourceTree = "<group>"; };
 		6B869C1325A1CD210068BFD2 /* DeletePlaceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeletePlaceVC.swift; sourceTree = "<group>"; };
 		6B869C4325A1E8E00068BFD2 /* DeletePlaceConfirmVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeletePlaceConfirmVC.swift; sourceTree = "<group>"; };
+		6B869C4E25A2F9960068BFD2 /* CardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardVC.swift; sourceTree = "<group>"; };
+		6B869C4F25A2F9960068BFD2 /* CardVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardVC.xib; sourceTree = "<group>"; };
 		82A4CFBF130A68D0DC76260E /* Pods-Milkyway.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Milkyway.release.xcconfig"; path = "Target Support Files/Pods-Milkyway/Pods-Milkyway.release.xcconfig"; sourceTree = "<group>"; };
 		B6E7AC1233665DEC2C3D21DC /* Pods-Milkyway.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Milkyway.debug.xcconfig"; path = "Target Support Files/Pods-Milkyway/Pods-Milkyway.debug.xcconfig"; sourceTree = "<group>"; };
 		D1996E0325A2290500B8F40B /* DetailCafeMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCafeMenuVC.swift; sourceTree = "<group>"; };
@@ -351,6 +355,8 @@
 			isa = PBXGroup;
 			children = (
 				F2242A23259BAFFC00455604 /* HomeVC.swift */,
+				6B869C4E25A2F9960068BFD2 /* CardVC.swift */,
+				6B869C4F25A2F9960068BFD2 /* CardVC.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -654,6 +660,7 @@
 				D1F2283F259F70EE0018C472 /* ReportTabBar.storyboard in Resources */,
 				D1996E0725A2290E00B8F40B /* DetailCafeMenu.storyboard in Resources */,
 				F2242A57259C4AA600455604 /* MyUniverse.storyboard in Resources */,
+				6B869C5125A2F9960068BFD2 /* CardVC.xib in Resources */,
 				F2BA62EA2598DE6400A49020 /* Assets.xcassets in Resources */,
 				F2242A28259BB02100455604 /* Home.storyboard in Resources */,
 				D1F2284D259F746D0018C472 /* CafeReportMain.storyboard in Resources */,
@@ -739,6 +746,7 @@
 				D1F2284A259F745F0018C472 /* CafeReportMainVC.swift in Sources */,
 				F2BA630E2598E52600A49020 /* UITextView+Extension.swift in Sources */,
 				F2242A47259BC22F00455604 /* LoginVC.swift in Sources */,
+				6B869C5025A2F9960068BFD2 /* CardVC.swift in Sources */,
 				D1996E0425A2290500B8F40B /* DetailCafeMenuVC.swift in Sources */,
 				F2BA63112598E55000A49020 /* UIButton+Extension.swift in Sources */,
 				F2BA63172598E58A00A49020 /* Date+Extension.swift in Sources */,
@@ -884,7 +892,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = F725AJ242J;
+				DEVELOPMENT_TEAM = QPUG3J4E4B;
 				INFOPLIST_FILE = "Milkyway/Global/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -905,7 +913,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = F725AJ242J;
+				DEVELOPMENT_TEAM = QPUG3J4E4B;
 				INFOPLIST_FILE = "Milkyway/Global/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (

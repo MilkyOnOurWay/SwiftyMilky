@@ -38,13 +38,13 @@
                                 </state>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="최대 10자, 영어 및 특수문자 불가" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9c9-lM-p8D">
-                                <rect key="frame" x="30" y="342" width="314" height="34"/>
+                                <rect key="frame" x="30" y="342" width="271" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="닉네임 확인 메시지" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k6B-Oq-JIj">
-                                <rect key="frame" x="30" y="384" width="314" height="21"/>
+                                <rect key="frame" x="30" y="384" width="170" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -58,12 +58,25 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="checkmark.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="RV5-6p-87I">
+                                <rect key="frame" x="309" y="347" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0/10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eOb-pB-8Wl">
+                                <rect key="frame" x="298" y="387" width="25" height="15"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="abT-38-yWn"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="cnr-Xw-kYD"/>
                     <connections>
+                        <outlet property="checkBoxImageView" destination="RV5-6p-87I" id="Y2m-lU-BOn"/>
+                        <outlet property="countLabel" destination="eOb-pB-8Wl" id="e8D-N3-1nD"/>
                         <outlet property="nicknameTextField" destination="9c9-lM-p8D" id="hjt-pE-mSE"/>
                         <outlet property="startButton" destination="cg1-lm-N6x" id="VEO-0L-yOJ"/>
                         <outlet property="stateLabel" destination="k6B-Oq-JIj" id="5po-UW-qf9"/>
@@ -92,6 +105,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="checkmark.circle.fill" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

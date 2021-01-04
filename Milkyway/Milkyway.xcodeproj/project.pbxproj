@@ -47,6 +47,9 @@
 		D1F22865259F78C90018C472 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1F22864259F78C90018C472 /* Search.storyboard */; };
 		F21384B625A1E8360016E766 /* SearchTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21384B425A1E8360016E766 /* SearchTVC.swift */; };
 		F21384B725A1E8360016E766 /* SearchTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F21384B525A1E8360016E766 /* SearchTVC.xib */; };
+		F2142DF825A349EE00D07F3F /* SF-Pro-Text-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = F2142DF725A349EE00D07F3F /* SF-Pro-Text-Regular.otf */; };
+		F2142DFB25A349F600D07F3F /* SF-Pro-Text-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F2142DFA25A349F600D07F3F /* SF-Pro-Text-Semibold.otf */; };
+		F2142DFE25A349FF00D07F3F /* SF-Pro-Text-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F2142DFD25A349FF00D07F3F /* SF-Pro-Text-Bold.otf */; };
 		F2242A1B259BAC8200455604 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2242A1A259BAC8200455604 /* TabBarController.swift */; };
 		F2242A20259BAD5400455604 /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2242A1F259BAD5400455604 /* TabBar.storyboard */; };
 		F2242A24259BAFFC00455604 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2242A23259BAFFC00455604 /* HomeVC.swift */; };
@@ -125,6 +128,9 @@
 		D1F22864259F78C90018C472 /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		F21384B425A1E8360016E766 /* SearchTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTVC.swift; sourceTree = "<group>"; };
 		F21384B525A1E8360016E766 /* SearchTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTVC.xib; sourceTree = "<group>"; };
+		F2142DF725A349EE00D07F3F /* SF-Pro-Text-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Text-Regular.otf"; path = "../../../../../SF-Pro-Text-Regular.otf"; sourceTree = "<group>"; };
+		F2142DFA25A349F600D07F3F /* SF-Pro-Text-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Text-Semibold.otf"; path = "../../../../../SF-Pro-Text-Semibold.otf"; sourceTree = "<group>"; };
+		F2142DFD25A349FF00D07F3F /* SF-Pro-Text-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Text-Bold.otf"; path = "../../../../../SF-Pro-Text-Bold.otf"; sourceTree = "<group>"; };
 		F2242A1A259BAC8200455604 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		F2242A1F259BAD5400455604 /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
 		F2242A23259BAFFC00455604 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
@@ -415,6 +421,16 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		F2142DF625A349DC00D07F3F /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				F2142DF725A349EE00D07F3F /* SF-Pro-Text-Regular.otf */,
+				F2142DFA25A349F600D07F3F /* SF-Pro-Text-Semibold.otf */,
+				F2142DFD25A349FF00D07F3F /* SF-Pro-Text-Bold.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		F2242A1D259BAC8700455604 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -587,6 +603,7 @@
 		F2BA62F52598DED200A49020 /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				F2142DF625A349DC00D07F3F /* Fonts */,
 				F2BA63272598E72400A49020 /* Enums */,
 				F2BA63082598E4B200A49020 /* Extensions */,
 				F2BA62F92598E00A00A49020 /* Delegate */,
@@ -739,6 +756,7 @@
 				D1D95DD925A30BA600B95F79 /* CafeHoneyCell.xib in Resources */,
 				F2242A20259BAD5400455604 /* TabBar.storyboard in Resources */,
 				F21384B725A1E8360016E766 /* SearchTVC.xib in Resources */,
+				F2142DFB25A349F600D07F3F /* SF-Pro-Text-Semibold.otf in Resources */,
 				F2242A4A259BC23A00455604 /* Login.storyboard in Resources */,
 				F2242A6C259CD30400455604 /* FilterResult.storyboard in Resources */,
 				6B869C0525A0B96D0068BFD2 /* InfoModifyReq.storyboard in Resources */,
@@ -754,7 +772,9 @@
 				D154440525A33B05007773BF /* CafeMenusCell.xib in Resources */,
 				D1F2284D259F746D0018C472 /* CafeReportMain.storyboard in Resources */,
 				F2242A3E259BB2DF00455604 /* Setting.storyboard in Resources */,
+				F2142DFE25A349FF00D07F3F /* SF-Pro-Text-Bold.otf in Resources */,
 				D1F22865259F78C90018C472 /* Search.storyboard in Resources */,
+				F2142DF825A349EE00D07F3F /* SF-Pro-Text-Regular.otf in Resources */,
 				D1D95DDE25A30BB100B95F79 /* CafeMenuCell.xib in Resources */,
 				6B869C1125A1CD140068BFD2 /* DeletePlace.storyboard in Resources */,
 				D1F22853259F748C0018C472 /* MyReportMain.storyboard in Resources */,

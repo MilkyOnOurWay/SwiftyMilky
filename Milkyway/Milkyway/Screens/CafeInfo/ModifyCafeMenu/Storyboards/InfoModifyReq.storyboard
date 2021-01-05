@@ -8,6 +8,11 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Pro-Text-Regular.otf">
+            <string>SFProText-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Info Modify ReqVC-->
         <scene sceneID="jgo-EL-buJ">
@@ -17,48 +22,68 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mMT-qb-SxV">
-                                <rect key="frame" x="67" y="169" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgInfoRequest" translatesAutoresizingMaskIntoConstraints="NO" id="mMT-qb-SxV">
+                                <rect key="frame" x="88" y="170" width="199" height="201"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="제공 받으신 정보와 다른 점이 있나요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vL3-ms-nZt">
-                                <rect key="frame" x="77" y="354" width="251" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="불편을 드려 웅앵,," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ev4-fU-ejs">
+                                <rect key="frame" x="41" y="447" width="293" height="20"/>
+                                <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="불편을 드려 웅앵,," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ev4-fU-ejs">
-                                <rect key="frame" x="127" y="408" width="121" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Boc-HP-u5m">
-                                <rect key="frame" x="79" y="663" width="216" height="53"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Boc-HP-u5m">
+                                <rect key="frame" x="19" y="638" width="337" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="OGJ-Wz-QuA"/>
+                                </constraints>
                                 <state key="normal" title="장소 삭제"/>
                                 <connections>
                                     <action selector="deleteBtnClicked:" destination="5mp-r8-9mj" eventType="touchUpInside" id="S6v-et-tw3"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Do-lV-cAU">
-                                <rect key="frame" x="79" y="600" width="216" height="55"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Do-lV-cAU">
+                                <rect key="frame" x="19" y="578" width="337" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="qAc-IU-p9m"/>
+                                </constraints>
                                 <state key="normal" title="정보 수정"/>
                                 <connections>
                                     <action selector="modifyBtnClicked:" destination="5mp-r8-9mj" eventType="touchUpInside" id="BeD-eL-wos"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vL3-ms-nZt">
+                                <rect key="frame" x="35" y="411" width="304" height="20"/>
+                                <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="A9i-9C-byN"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vL3-ms-nZt" firstAttribute="leading" secondItem="A9i-9C-byN" secondAttribute="leading" constant="35" id="43G-6s-JC0"/>
+                            <constraint firstItem="A9i-9C-byN" firstAttribute="trailing" secondItem="vL3-ms-nZt" secondAttribute="trailing" constant="36" id="5Nh-6l-7kl"/>
+                            <constraint firstItem="vL3-ms-nZt" firstAttribute="top" secondItem="mMT-qb-SxV" secondAttribute="bottom" constant="40" id="DHn-EK-bFq"/>
+                            <constraint firstItem="A9i-9C-byN" firstAttribute="trailing" secondItem="mMT-qb-SxV" secondAttribute="trailing" constant="88" id="HSa-Qq-4F5"/>
+                            <constraint firstItem="A9i-9C-byN" firstAttribute="trailing" secondItem="Boc-HP-u5m" secondAttribute="trailing" constant="19" id="Hja-zG-cHM"/>
+                            <constraint firstItem="A9i-9C-byN" firstAttribute="trailing" secondItem="2Do-lV-cAU" secondAttribute="trailing" constant="19" id="Lnf-zG-JAd"/>
+                            <constraint firstItem="Boc-HP-u5m" firstAttribute="top" secondItem="2Do-lV-cAU" secondAttribute="bottom" constant="8" id="MlK-at-Chi"/>
+                            <constraint firstItem="A9i-9C-byN" firstAttribute="trailing" secondItem="Ev4-fU-ejs" secondAttribute="trailing" constant="41" id="UM9-UR-xPt"/>
+                            <constraint firstItem="mMT-qb-SxV" firstAttribute="top" secondItem="A9i-9C-byN" secondAttribute="top" constant="82" id="X9M-vu-WI4"/>
+                            <constraint firstItem="2Do-lV-cAU" firstAttribute="leading" secondItem="A9i-9C-byN" secondAttribute="leading" constant="19" id="cet-mH-s8o"/>
+                            <constraint firstItem="Ev4-fU-ejs" firstAttribute="leading" secondItem="A9i-9C-byN" secondAttribute="leading" constant="41" id="exg-rH-n5C"/>
+                            <constraint firstItem="mMT-qb-SxV" firstAttribute="leading" secondItem="A9i-9C-byN" secondAttribute="leading" constant="88" id="oTb-c4-azp"/>
+                            <constraint firstItem="Ev4-fU-ejs" firstAttribute="top" secondItem="vL3-ms-nZt" secondAttribute="bottom" constant="16" id="vit-1z-tEh"/>
+                            <constraint firstItem="2Do-lV-cAU" firstAttribute="top" secondItem="Ev4-fU-ejs" secondAttribute="bottom" constant="111" id="xYl-ar-RDh"/>
+                            <constraint firstItem="Boc-HP-u5m" firstAttribute="leading" secondItem="A9i-9C-byN" secondAttribute="leading" constant="19" id="zMo-qu-eOk"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Q6e-7f-VdL"/>
                     <connections>
                         <outlet property="deleteBtn" destination="Boc-HP-u5m" id="CFg-lZ-C9j"/>
+                        <outlet property="mainLabel" destination="vL3-ms-nZt" id="SxV-lF-jBl"/>
                         <outlet property="modifyBtn" destination="2Do-lV-cAU" id="aI1-xP-7mU"/>
+                        <outlet property="subLabel" destination="Ev4-fU-ejs" id="iz5-Pz-9JC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z8W-93-a6G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -68,7 +93,6 @@
         <!--Navigation Controller-->
         <scene sceneID="ZfY-6j-b3z">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="knz-Ux-BKO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cDX-mq-uER" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Yhl-Tw-9oy">
@@ -80,11 +104,13 @@
                         <segue destination="5mp-r8-9mj" kind="relationship" relationship="rootViewController" id="Zgp-ZX-ziC"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="knz-Ux-BKO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="24.800000000000001" y="83.497536945812811"/>
         </scene>
     </scenes>
     <resources>
+        <image name="imgInfoRequest" width="199" height="201"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

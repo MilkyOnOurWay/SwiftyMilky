@@ -60,6 +60,7 @@ class HomeVC: UIViewController {
         
     }
 }
+
 extension HomeVC: CLLocationManagerDelegate {
     
 }
@@ -67,10 +68,20 @@ extension HomeVC: CLLocationManagerDelegate {
 extension HomeVC {
     
     func setFilterButton() {
-        //shadow는 나중에
-        filterBtn1.layer.cornerRadius = filterBtn1.frame.height / 2
-//        filterBtn1.setImage(UIImage(named: "mujibang_w"), for: .normal)
-//        filterBtn1.setImage(UIImage(named: "mujibang_p"), for: .selected)
+        
+        //filterBtn1.layer.cornerRadius = filterBtn1.frame.height / 2
+        filterBtn1.setImage(UIImage(named: "decaffeine_w"), for: .normal)
+        filterBtn1.setImage(UIImage(named: "decaffeine_p"), for: .selected)
+        
+        filterBtn2.setImage(UIImage(named: "soybeanMilk_w"), for: .normal)
+        filterBtn2.setImage(UIImage(named: "soybeanMilk_p"), for: .selected)
+        
+        filterBtn3.setImage(UIImage(named: "lowfatMilk_w"), for: .normal)
+        filterBtn3.setImage(UIImage(named: "lowfatMilk_p"), for: .selected)
+        
+        filterBtn4.setImage(UIImage(named: "fatFreeMilk_w"), for: .normal)
+        filterBtn4.setImage(UIImage(named: "fatFreeMilk_p"), for: .selected)
+        
         
         filterBtn1.addTarget(self, action: #selector(filterButtonDidTap), for: UIControl.Event.touchUpInside)
         filterBtn2.addTarget(self, action: #selector(filterButtonDidTap), for: UIControl.Event.touchUpInside)

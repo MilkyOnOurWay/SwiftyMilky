@@ -55,5 +55,6 @@ extension ModifyConfirmVC {
         confirmBtn.setTitle("확인", for: .normal)
         confirmBtn.setTitleColor(.white, for: .normal)
         confirmBtn.backgroundColor = UIColor(named: "Milky")
+        confirmBtn.titleLabel?.font = UIFont(name:"SFProText-Semibold", size: 15.0)
     }
 }

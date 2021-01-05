@@ -26,6 +26,7 @@ class HomeVC: UIViewController {
     
     let marker = NMFMarker()
     var locationManager = CLLocationManager()
+    
     var cardVC:CardVC!
     
     let cardHeight:CGFloat = 400
@@ -67,7 +68,7 @@ class HomeVC: UIViewController {
         locationManager.requestWhenInUseAuthorization() //권한 요청
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.startUpdatingLocation()
-    
+        
         move(at: coor)
     }
     func move(at coordinate: CLLocationCoordinate2D?) {

@@ -61,12 +61,14 @@ extension InfoModifyReqVC {
         modifyBtn.setTitle("정보 수정", for: .normal)
         modifyBtn.setTitleColor(.white, for: .normal)
         modifyBtn.backgroundColor = UIColor(named: "Milky")
+        modifyBtn.titleLabel?.font = UIFont(name:"SFProText-Semibold", size: 15.0)
         
         deleteBtn.layer.cornerRadius = deleteBtn.frame.height / 2
         deleteBtn.setTitle("장소 삭제", for: .normal)
         deleteBtn.setTitleColor(UIColor(named: "Milky"), for: .normal)
         deleteBtn.borderWidth = 1
         deleteBtn.borderColor = UIColor(named: "Milky")
+        deleteBtn.titleLabel?.font = UIFont(name:"SFProText-Semibold", size: 15.0)
     }
 }
 

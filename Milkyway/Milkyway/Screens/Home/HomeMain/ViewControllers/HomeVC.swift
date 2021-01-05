@@ -16,6 +16,7 @@ class HomeVC: UIViewController {
     }
     
     @IBOutlet var mapView: NMFMapView!
+    
     @IBOutlet var filterBtn1: UIButton!
     @IBOutlet var filterBtn2: UIButton!
     @IBOutlet var filterBtn3: UIButton!
@@ -59,8 +60,6 @@ class HomeVC: UIViewController {
     }
     
     func setMapLocation() {
-        let coor = locationManager.location?.coordinate
-        
         marker.mapView = mapView
         
         locationManager = CLLocationManager()
@@ -69,15 +68,18 @@ class HomeVC: UIViewController {
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.startUpdatingLocation()
         
+        let coor = locationManager.location?.coordinate
         move(at: coor)
     }
+    
     func move(at coordinate: CLLocationCoordinate2D?) {
+        
         mapView.positionMode = .direction
     }
     
     func setMapButton() {
         
-        locationBtn.setImage(UIImage(named: "plus.button"), for: UIControl.State.normal)
+        locationBtn.setImage(UIImage(named: "btnCurrentLocation"), for: UIControl.State.normal)
         locationBtn.setImage(UIImage(named: "plus.button"), for: UIControl.State.selected)
         locationBtn.addTarget(self, action: #selector(locationButtonDidTap), for: UIControl.Event.touchUpInside)
     }
@@ -115,7 +117,12 @@ class HomeVC: UIViewController {
         self.navigationController?.pushViewController(nvc, animated: true) // 다음 뷰 띄우기
         
     }
+}
+extension HomeVC: CLLocationManagerDelegate {
     
+}
+
+extension HomeVC {
     // MARK: - Bottom Card Setting GitHub -> https://github.com/brianadvent/InteractiveCardViewAnimation
     
     func setBottomCard() {
@@ -215,9 +222,4 @@ class HomeVC: UIViewController {
             animator.continueAnimation(withTimingParameters: nil, durationFactor: 0)
         }
     }
-
-   
-}
-extension HomeVC: CLLocationManagerDelegate {
-    
 }

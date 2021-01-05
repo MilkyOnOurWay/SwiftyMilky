@@ -18,7 +18,6 @@ class CardVC: UIViewController {
     }
 
     func setHandler() {
-//        handleArea.layer.cornerRadius = 12
         handleBar.layer.cornerRadius = handleBar.frame.height / 2
     }
 

@@ -18,16 +18,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wYL-vF-cHr" customClass="NMFMapView" customModule="Milkyway">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wYL-vF-cHr" customClass="NMFMapView">
                                 <rect key="frame" x="0.0" y="99" width="375" height="630"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cRC-z2-HDE">
-                                <rect key="frame" x="277" y="549" width="41" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cRC-z2-HDE">
+                                <rect key="frame" x="287" y="556" width="68" height="68"/>
                                 <state key="normal">
-                                    <imageReference key="image" image="star" catalog="system" symbolScale="large"/>
+                                    <imageReference key="image" image="btnCurrentLocation" symbolScale="large"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0h9-Yl-sic">
@@ -61,6 +60,10 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="eIS-ba-FWs"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="eIS-ba-FWs" firstAttribute="trailing" secondItem="cRC-z2-HDE" secondAttribute="trailing" constant="20" id="DcQ-GB-QBe"/>
+                            <constraint firstItem="eIS-ba-FWs" firstAttribute="bottom" secondItem="cRC-z2-HDE" secondAttribute="bottom" constant="105" id="zUr-ZJ-noc"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="홈" image="house" catalog="system" selectedImage="house.fill" id="6Yn-oA-g2a"/>
                     <navigationItem key="navigationItem" id="xDj-he-7XZ"/>
@@ -80,9 +83,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="btnCurrentLocation" width="68" height="68"/>
         <image name="house" catalog="system" width="128" height="106"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
-        <image name="star" catalog="system" width="128" height="116"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -1,23 +1,23 @@
 {
   "images" : [
     {
-      "scale" : "1x",
       "filename" : "soybeanMilk.png",
-      "idiom" : "universal"
+      "idiom" : "universal",
+      "scale" : "1x"
     },
     {
-      "idiom" : "universal",
       "filename" : "soybeanMilk@2x.png",
+      "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "soybeanMilk@3x.png",
       "idiom" : "universal",
-      "scale" : "3x",
-      "filename" : "soybeanMilk@3x.png"
+      "scale" : "3x"
     }
   ],
   "info" : {
-    "version" : 1,
-    "author" : "xcode"
+    "author" : "xcode",
+    "version" : 1
   }
 }

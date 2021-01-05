@@ -1,19 +1,19 @@
 {
   "images" : [
     {
-      "scale" : "1x",
       "filename" : "btnUniverseAdded.png",
-      "idiom" : "universal"
+      "idiom" : "universal",
+      "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "btnUniverseAdded@2x.png",
-      "scale" : "2x"
+      "scale" : "2x",
+      "filename" : "btnUniverseAdded@2x.png"
     },
     {
-      "idiom" : "universal",
+      "filename" : "btnUniverseAdded@3x.png",
       "scale" : "3x",
-      "filename" : "btnUniverseAdded@3x.png"
+      "idiom" : "universal"
     }
   ],
   "info" : {

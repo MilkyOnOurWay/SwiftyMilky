@@ -39,7 +39,8 @@ class HomeVC: UIViewController {
     }
     var runningAnimations = [UIViewPropertyAnimator]()
     var animationProgressWhenInterrupted:CGFloat = 0
-        override func viewDidLoad(){
+    
+    override func viewDidLoad(){
         super.viewDidLoad()
         setMapLocation()
         setMapButton()
@@ -47,11 +48,29 @@ class HomeVC: UIViewController {
         setBottomCard()
     }
     
+    // MARK: - 검색화면으로 이동
+    @IBAction func searchBtnClicked(_ sender: Any) {
+        
+        print("Home - searchBtnClicked")
+        guard let nvc = UIStoryboard(name: "Search", bundle: nil).instantiateViewController(withIdentifier:"SearchVC") as? SearchVC else {
+            return
+        }
+        
+        self.navigationController?.pushViewController(nvc, animated: true)
+        
+    }
+}
+extension HomeVC: CLLocationManagerDelegate {
+    
+}
+
+extension HomeVC {
+    
     func setFilterButton() {
         //shadow는 나중에
         filterBtn1.layer.cornerRadius = filterBtn1.frame.height / 2
-        filterBtn1.setImage(UIImage(named: "mujibang_w"), for: .normal)
-        filterBtn1.setImage(UIImage(named: "mujibang_p"), for: .selected)
+//        filterBtn1.setImage(UIImage(named: "mujibang_w"), for: .normal)
+//        filterBtn1.setImage(UIImage(named: "mujibang_p"), for: .selected)
         
         filterBtn1.addTarget(self, action: #selector(filterButtonDidTap), for: UIControl.Event.touchUpInside)
         filterBtn2.addTarget(self, action: #selector(filterButtonDidTap), for: UIControl.Event.touchUpInside)
@@ -78,7 +97,6 @@ class HomeVC: UIViewController {
     }
     
     func setMapButton() {
-        
         locationBtn.setImage(UIImage(named: "btnCurrentLocation"), for: UIControl.State.normal)
         locationBtn.setImage(UIImage(named: "plus.button"), for: UIControl.State.selected)
         locationBtn.addTarget(self, action: #selector(locationButtonDidTap), for: UIControl.Event.touchUpInside)
@@ -106,23 +124,6 @@ class HomeVC: UIViewController {
     
     
     
-    // MARK: - 검색화면으로 이동
-    @IBAction func searchBtnClicked(_ sender: Any) {
-        
-        print("Home - searchBtnClicked")
-        guard let nvc = UIStoryboard(name: "Search", bundle: nil).instantiateViewController(withIdentifier:"SearchVC") as? SearchVC else {
-            return
-        }
-        
-        self.navigationController?.pushViewController(nvc, animated: true) // 다음 뷰 띄우기
-        
-    }
-}
-extension HomeVC: CLLocationManagerDelegate {
-    
-}
-
-extension HomeVC {
     // MARK: - Bottom Card Setting GitHub -> https://github.com/brianadvent/InteractiveCardViewAnimation
     
     func setBottomCard() {

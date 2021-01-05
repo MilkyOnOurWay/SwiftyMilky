@@ -24,6 +24,7 @@ class LoginVC: UIViewController{
         setButton()
         setLabel()
         setTextfield()
+        addKeyboardNotification()
         // Do any additional setup after loading the view.
     }
     
@@ -45,6 +46,7 @@ extension LoginVC {
     func setTextfield(){
         
         nicknameTextField.delegate = self
+        //nicknameTextField.returnKeyType = .done
         nicknameTextField.addTarget(self, action: #selector(checkRegister), for: .editingChanged)
     }
     
@@ -94,7 +96,9 @@ extension LoginVC {
         if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
             let keyboardRectangle = keyboardFrame.cgRectValue
             let keyboardHeight = keyboardRectangle.height
-            self.bottomConstraint.constant -= keyboardHeight
+//            self.bottomConstraint.constant -= keyboardHeight
+//            self.view.layoutIfNeeded()
+            self.bottomConstraint.constant += keyboardHeight
             self.view.layoutIfNeeded()
         }
     }
@@ -103,7 +107,9 @@ extension LoginVC {
         if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
             let keyboardRectangle = keyboardFrame.cgRectValue
             let keyboardHeight = keyboardRectangle.height
-            self.bottomConstraint.constant += keyboardHeight
+//            self.bottomConstraint.constant -= keyboardHeight
+//            self.view.layoutIfNeeded()
+            self.bottomConstraint.constant -= keyboardHeight
             self.view.layoutIfNeeded()
         }
     }
@@ -115,12 +121,6 @@ extension LoginVC: UITextFieldDelegate {
     @objc func checkRegister(_ textfield: UITextField) {
         
         let nickname = textfield.text
-        
-//        if nickname?.count ?? 0 > 10 {
-//            textfield.resignFirstResponder()
-//
-//        }
-        
         countLabel.text = String(nickname?.count ?? 0)
         
         if !isValidNickname(nickname!){
@@ -148,6 +148,12 @@ extension LoginVC: UITextFieldDelegate {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        textField.resignFirstResponder()
+        return true
     }
     
 }

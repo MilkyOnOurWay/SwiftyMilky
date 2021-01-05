@@ -140,9 +140,9 @@
 		D1F22864259F78C90018C472 /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		F21384B425A1E8360016E766 /* SearchTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTVC.swift; sourceTree = "<group>"; };
 		F21384B525A1E8360016E766 /* SearchTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTVC.xib; sourceTree = "<group>"; };
-		F2142DF725A349EE00D07F3F /* SF-Pro-Text-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Text-Regular.otf"; path = "../../../../../SF-Pro-Text-Regular.otf"; sourceTree = "<group>"; };
-		F2142DFA25A349F600D07F3F /* SF-Pro-Text-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Text-Semibold.otf"; path = "../../../../../SF-Pro-Text-Semibold.otf"; sourceTree = "<group>"; };
-		F2142DFD25A349FF00D07F3F /* SF-Pro-Text-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Text-Bold.otf"; path = "../../../../../SF-Pro-Text-Bold.otf"; sourceTree = "<group>"; };
+		F2142DF725A349EE00D07F3F /* SF-Pro-Text-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Regular.otf"; sourceTree = "<group>"; };
+		F2142DFA25A349F600D07F3F /* SF-Pro-Text-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Semibold.otf"; sourceTree = "<group>"; };
+		F2142DFD25A349FF00D07F3F /* SF-Pro-Text-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Bold.otf"; sourceTree = "<group>"; };
 		F2242A1A259BAC8200455604 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		F2242A1F259BAD5400455604 /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
 		F2242A23259BAFFC00455604 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
@@ -629,7 +629,6 @@
 		F2BA62F52598DED200A49020 /* Global */ = {
 			isa = PBXGroup;
 			children = (
-				F2142DF625A349DC00D07F3F /* Fonts */,
 				F2BA63272598E72400A49020 /* Enums */,
 				F2BA63082598E4B200A49020 /* Extensions */,
 				F2BA62F92598E00A00A49020 /* Delegate */,
@@ -665,6 +664,7 @@
 		F2BA62FA2598E01F00A49020 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F2142DF625A349DC00D07F3F /* Fonts */,
 				F2BA62EB2598DE6400A49020 /* LaunchScreen.storyboard */,
 				F2BA62E92598DE6400A49020 /* Assets.xcassets */,
 			);

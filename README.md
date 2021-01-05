@@ -1,7 +1,6 @@
-![header](https://capsule-render.vercel.app/api?type=Soft&color=gradient&height=150&section=header&text=SwiftyMilky&fontSize=70&animation=twinkling)
+<img src="https://user-images.githubusercontent.com/59593223/103671740-ad037e80-4fbe-11eb-80c0-4da6ef066260.png">
 
-</br>
-</br>
+
 
 # 🍎 밀키웨이 아요 멤 - 바를 소개합니다 🍎
 

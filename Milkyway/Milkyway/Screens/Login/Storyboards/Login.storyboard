@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="R8Q-pi-gb2">
-    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -19,65 +20,105 @@
             <objects>
                 <viewController id="xwm-ed-wYY" customClass="LoginVC" customModule="Milkyway" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="d9Y-sF-w26">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="닉네임 입력하는 임시 화면!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m4W-Dg-iRa">
-                                <rect key="frame" x="51" y="162" width="180" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cg1-lm-N6x">
-                                <rect key="frame" x="21" y="544" width="332" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.25490196079999999" green="0.41176470590000003" blue="0.88235294119999996" alpha="1" colorSpace="calibratedRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cg1-lm-N6x">
+                                <rect key="frame" x="20" y="595" width="335" height="52"/>
+                                <color key="backgroundColor" name="Spacegray"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="335" id="kyH-E3-QmM"/>
+                                    <constraint firstAttribute="height" constant="52" id="ytv-jh-WdQ"/>
+                                </constraints>
                                 <state key="normal" title="홈으로 이동">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="40"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="최대 10자, 영어 및 특수문자 불가" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9c9-lM-p8D">
-                                <rect key="frame" x="30" y="342" width="271" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="최대 10자, 영어 및 특수문자 불가" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9c9-lM-p8D">
+                                <rect key="frame" x="20" y="339" width="335" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="335" id="335-n5-Wdg"/>
+                                    <constraint firstAttribute="height" constant="34" id="Hto-vj-czC"/>
+                                </constraints>
+                                <color key="textColor" name="Spacegray"/>
+                                <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                 <connections>
                                     <action selector="textfieldDidTap:" destination="xwm-ed-wYY" eventType="editingChanged" id="fUd-dM-cg8"/>
                                 </connections>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="닉네임 확인 메시지" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k6B-Oq-JIj">
-                                <rect key="frame" x="30" y="384" width="170" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="사용 불가한 닉네임 입니다." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k6B-Oq-JIj">
+                                <rect key="frame" x="20" y="382" width="132" height="14"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="132" id="WXn-qD-dmt"/>
+                                    <constraint firstAttribute="height" constant="14" id="eCC-X8-lkN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ORI-O8-b19">
-                                <rect key="frame" x="30" y="375" width="314" height="1"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eOb-pB-8Wl">
+                                <rect key="frame" x="330" y="381" width="25" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="25" id="44B-4p-Wu5"/>
+                                    <constraint firstAttribute="height" constant="15" id="dnx-dX-mTQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="12"/>
+                                <color key="textColor" name="Spacegray"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iMOnMyMilkyWay" translatesAutoresizingMaskIntoConstraints="NO" id="71D-Zx-01d">
+                                <rect key="frame" x="20" y="71" width="166" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="166" id="MZU-4H-iRJ"/>
+                                    <constraint firstAttribute="height" constant="80" id="SfI-uk-fcO"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="밀키웨이에서 사용할 닉네임을 설정해주세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fQZ-L8-Ir9">
+                                <rect key="frame" x="20" y="158" width="246.5" height="54"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="246.5" id="dgZ-lJ-TF2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="14"/>
+                                <color key="textColor" name="Milky"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="checkOn" translatesAutoresizingMaskIntoConstraints="NO" id="RV5-6p-87I">
-                                <rect key="frame" x="309" y="347" width="20" height="20"/>
+                                <rect key="frame" x="324" y="347" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0/10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eOb-pB-8Wl">
-                                <rect key="frame" x="298" y="387" width="25" height="15"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="abT-38-yWn"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="eOb-pB-8Wl" firstAttribute="top" secondItem="9c9-lM-p8D" secondAttribute="bottom" constant="8" symbolic="YES" id="15m-u2-maq"/>
+                            <constraint firstItem="9c9-lM-p8D" firstAttribute="leading" secondItem="fQZ-L8-Ir9" secondAttribute="leading" id="7Uw-5n-N8O"/>
+                            <constraint firstItem="fQZ-L8-Ir9" firstAttribute="top" secondItem="71D-Zx-01d" secondAttribute="bottom" constant="7" id="7w4-AD-aBQ"/>
+                            <constraint firstItem="abT-38-yWn" firstAttribute="trailing" secondItem="eOb-pB-8Wl" secondAttribute="trailing" constant="20" id="N1b-UA-e4l"/>
+                            <constraint firstItem="k6B-Oq-JIj" firstAttribute="top" secondItem="9c9-lM-p8D" secondAttribute="bottom" constant="9" id="Qv4-gX-ovK"/>
+                            <constraint firstItem="cg1-lm-N6x" firstAttribute="top" secondItem="k6B-Oq-JIj" secondAttribute="bottom" constant="199" id="RD1-pY-kbT"/>
+                            <constraint firstItem="k6B-Oq-JIj" firstAttribute="leading" secondItem="9c9-lM-p8D" secondAttribute="leading" id="SH2-k9-7Nf"/>
+                            <constraint firstItem="fQZ-L8-Ir9" firstAttribute="leading" secondItem="71D-Zx-01d" secondAttribute="leading" id="SvW-Ji-0Qu"/>
+                            <constraint firstItem="9c9-lM-p8D" firstAttribute="top" secondItem="fQZ-L8-Ir9" secondAttribute="bottom" constant="127" id="VF3-wE-kcV"/>
+                            <constraint firstItem="71D-Zx-01d" firstAttribute="leading" secondItem="abT-38-yWn" secondAttribute="leading" constant="20" id="VRy-G9-5ff"/>
+                            <constraint firstItem="abT-38-yWn" firstAttribute="trailing" secondItem="9c9-lM-p8D" secondAttribute="trailing" constant="20" id="WF7-pE-4Ew"/>
+                            <constraint firstItem="cg1-lm-N6x" firstAttribute="leading" secondItem="abT-38-yWn" secondAttribute="leading" constant="20" id="X38-JZ-lJP"/>
+                            <constraint firstItem="abT-38-yWn" firstAttribute="trailing" secondItem="cg1-lm-N6x" secondAttribute="trailing" constant="20" id="apn-7m-bQg"/>
+                            <constraint firstItem="abT-38-yWn" firstAttribute="bottom" secondItem="cg1-lm-N6x" secondAttribute="bottom" constant="20" id="bhv-c7-q6g"/>
+                            <constraint firstItem="eOb-pB-8Wl" firstAttribute="leading" secondItem="k6B-Oq-JIj" secondAttribute="trailing" constant="178" id="f7T-mf-3xv"/>
+                            <constraint firstItem="71D-Zx-01d" firstAttribute="top" secondItem="abT-38-yWn" secondAttribute="top" constant="71" id="kaE-yA-gJ3"/>
+                            <constraint firstItem="abT-38-yWn" firstAttribute="trailing" secondItem="71D-Zx-01d" secondAttribute="trailing" constant="189" id="l0O-44-zMR"/>
+                            <constraint firstItem="abT-38-yWn" firstAttribute="trailing" secondItem="fQZ-L8-Ir9" secondAttribute="trailing" constant="108.5" id="qQs-JP-bBN"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="cnr-Xw-kYD"/>
                     <connections>
+                        <outlet property="bottomConstraint" destination="bhv-c7-q6g" id="1BX-hN-jer"/>
                         <outlet property="checkBoxImageView" destination="RV5-6p-87I" id="Y2m-lU-BOn"/>
                         <outlet property="countLabel" destination="eOb-pB-8Wl" id="e8D-N3-1nD"/>
                         <outlet property="nicknameTextField" destination="9c9-lM-p8D" id="hjt-pE-mSE"/>
@@ -87,7 +128,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TmW-oh-stH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1146.4000000000001" y="13.300492610837439"/>
+            <point key="canvasLocation" x="1146.4000000000001" y="13.043478260869566"/>
         </scene>
         <!--Login Navi Controller-->
         <scene sceneID="Geh-Bu-nny">
@@ -109,6 +150,13 @@
     </scenes>
     <resources>
         <image name="checkOn" width="24" height="24"/>
+        <image name="iMOnMyMilkyWay" width="169.5" height="76.5"/>
+        <namedColor name="Milky">
+            <color red="0.20000000298023224" green="0.125" blue="0.65100002288818359" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Spacegray">
+            <color red="0.60399997234344482" green="0.59200000762939453" blue="0.57300001382827759" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

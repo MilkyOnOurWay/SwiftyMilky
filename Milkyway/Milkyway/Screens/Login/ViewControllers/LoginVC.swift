@@ -15,6 +15,7 @@ class LoginVC: UIViewController{
     @IBOutlet weak var countLabel: UILabel!
     @IBOutlet weak var checkBoxImageView: UIImageView!
     
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     var count = 0
     
     override func viewDidLoad() {
@@ -66,11 +67,45 @@ extension LoginVC {
         return nicknameTest.evaluate(with: nickname)
     }
     
+    func addKeyboardNotification(){
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillShow),
+            name: UIResponder.keyboardWillShowNotification,
+            object: nil
+        )
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillHide),
+            name: UIResponder.keyboardWillHideNotification,
+            object: nil
+        )
+    }
+    
     @objc func startButtonDidTap(){
         
         let vc = UIStoryboard.init(name: "TabBar", bundle: nil).instantiateViewController(identifier: "TabBarController") as? TabBarController
         vc?.modalPresentationStyle = .fullScreen
         self.present(vc!, animated: true, completion: nil)
+    }
+    
+    @objc func keyboardWillShow(_ notification: Notification){
+        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+            let keyboardRectangle = keyboardFrame.cgRectValue
+            let keyboardHeight = keyboardRectangle.height
+            self.bottomConstraint.constant -= keyboardHeight
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    @objc func keyboardWillHide(_ notification: Notification){
+        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+            let keyboardRectangle = keyboardFrame.cgRectValue
+            let keyboardHeight = keyboardRectangle.height
+            self.bottomConstraint.constant += keyboardHeight
+            self.view.layoutIfNeeded()
+        }
     }
 }
 
@@ -95,6 +130,7 @@ extension LoginVC: UITextFieldDelegate {
             return
         }else {
             stateLabel.isHidden = true
+            startButton.backgroundColor = UIColor(named: "Milky")
             startButton.isEnabled = true
             checkBoxImageView.isHidden = false
             return

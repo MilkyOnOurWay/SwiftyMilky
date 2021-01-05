@@ -114,7 +114,7 @@ extension DetailCafeMenuVC: UITableViewDataSource {
             }
             
             cell.cafeMenuNameLabel.text = testCafe.menus[indexPath.row].menuName
-            
+            cell.categoryLabel.text = ""
             // 메뉴 하단에 선택지 표시
             for i in testCafe.menus[indexPath.row].selection {
                 cell.categoryLabel.text! += (cafeMenu[i-1] + "  ")
@@ -170,7 +170,8 @@ extension DetailCafeMenuVC {
                         honeyTip: [2,5],
                         menus: [
                             Menu(menuName: "혜리쓰소이빈라떼", selection: [3], price: "4,000원"),
-                            Menu(menuName: "마다이어트하려면이거마셔라떼", selection: [1,2,3,4], price: "3,800원")
+                            Menu(menuName: "마다이어트하려면이거마셔라떼", selection: [1,2,3,4], price: "3,800원"),
+                            Menu(menuName: "모카모카는행복해", selection: [1,2,4], price: "4,500원")
                         ])
         
     }

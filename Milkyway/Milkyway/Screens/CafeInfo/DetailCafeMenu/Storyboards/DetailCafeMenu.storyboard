@@ -15,6 +15,9 @@
         <array key="SF-Pro-Text-Regular.otf">
             <string>SFProText-Regular</string>
         </array>
+        <array key="SF-Pro-Text-Semibold.otf">
+            <string>SFProText-Semibold</string>
+        </array>
     </customFonts>
     <scenes>
         <!--Detail Cafe MenuVC-->
@@ -29,7 +32,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="60"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="카페 상세정보" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Qf-lB-Ko6">
-                                        <rect key="frame" x="163" y="20" width="88" height="20"/>
+                                        <rect key="frame" x="163.5" y="20.5" width="87.5" height="19.5"/>
                                         <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -70,9 +73,54 @@
                                     <constraint firstAttribute="height" constant="60" id="yyh-Ul-ICz"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yNq-f6-VaC">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yNq-f6-VaC">
                                 <rect key="frame" x="0.0" y="105" width="414" height="791"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="TaN-hD-l1U">
+                                    <rect key="frame" x="0.0" y="100" width="414" height="100"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rectangle8" translatesAutoresizingMaskIntoConstraints="NO" id="B1m-Wj-ZLI">
+                                            <rect key="frame" x="20" y="20" width="374" height="52"/>
+                                        </imageView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="rGo-UH-4ca">
+                                            <rect key="frame" x="20" y="30" width="374" height="32"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="메뉴의 타입은 제보를 기반으로 합니다." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L2g-dS-KGa">
+                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="14.5"/>
+                                                    <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="12"/>
+                                                    <color key="textColor" red="0.60392156862745094" green="0.59215686274509804" blue="0.5725490196078431" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="카페 방문 시 한번 더 확인하시기를 추천드립니다." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uu5-C9-I5l">
+                                                    <rect key="frame" x="0.0" y="17.5" width="374" height="14.5"/>
+                                                    <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="12"/>
+                                                    <color key="textColor" red="0.60392156860000001" green="0.59215686270000001" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstItem="rGo-UH-4ca" firstAttribute="centerY" secondItem="B1m-Wj-ZLI" secondAttribute="centerY" id="6zX-qw-TQN"/>
+                                        <constraint firstAttribute="trailing" secondItem="B1m-Wj-ZLI" secondAttribute="trailing" constant="20" id="ELf-O1-KeP"/>
+                                        <constraint firstItem="rGo-UH-4ca" firstAttribute="leading" secondItem="B1m-Wj-ZLI" secondAttribute="leading" id="h6t-iG-qN6"/>
+                                        <constraint firstItem="rGo-UH-4ca" firstAttribute="trailing" secondItem="B1m-Wj-ZLI" secondAttribute="trailing" id="hlj-JC-0Wh"/>
+                                        <constraint firstItem="B1m-Wj-ZLI" firstAttribute="top" secondItem="TaN-hD-l1U" secondAttribute="top" constant="20" id="n2s-Gx-nHr"/>
+                                        <constraint firstItem="B1m-Wj-ZLI" firstAttribute="leading" secondItem="TaN-hD-l1U" secondAttribute="leading" constant="20" id="yHZ-wj-tjX"/>
+                                    </constraints>
+                                </view>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="CKf-XR-WKj">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="CKf-XR-WKj" id="rHx-uG-I9O">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PNN-sf-7Q1">
                                 <rect key="frame" x="0.0" y="104" width="414" height="1"/>
@@ -109,6 +157,7 @@
     <resources>
         <image name="back" width="44" height="44"/>
         <image name="btnUniverse" width="38" height="25"/>
+        <image name="rectangle8" width="335" height="52"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -65,6 +65,7 @@ extension ModifyVC {
         submitBtn.setTitle("정보 수정 요청", for: .normal)
         submitBtn.setTitleColor(.white, for: .normal)
         submitBtn.backgroundColor = UIColor(named: "darkGrey")
+        submitBtn.titleLabel?.font = UIFont(name:"SFProText-Semibold", size: 15.0)
     }
 }
 

@@ -113,7 +113,7 @@
                                 </constraints>
                                 <color key="textColor" name="darkGrey"/>
                                 <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="16"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="카테고리" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZLd-de-oxN">
                                 <rect key="frame" x="20" y="339" width="55.5" height="19"/>
@@ -121,6 +121,75 @@
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="an5-gQ-2WR" customClass="DLRadioButton">
+                                <rect key="frame" x="0.0" y="374" width="414" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="8uq-tY-0zJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="16"/>
+                                <state key="normal">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="icon" value="categoryOff1"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="iconSelected" value="categoryOn1"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="iconColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="indicatorColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="categoryBtnClicked:" destination="Uke-Jq-c8W" eventType="touchUpInside" id="KyI-Oj-8O3"/>
+                                    <outletCollection property="otherButtons" destination="E0K-aV-c2w" id="fhj-2j-wph"/>
+                                    <outletCollection property="otherButtons" destination="LcN-IH-2X1" id="6xy-xf-tJK"/>
+                                    <outletCollection property="otherButtons" destination="VhK-gn-Iiu" id="E0F-eK-EEf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E0K-aV-c2w" customClass="DLRadioButton">
+                                <rect key="frame" x="0.0" y="434" width="414" height="50"/>
+                                <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="16"/>
+                                <state key="normal">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="icon" value="categoryOff2"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="iconSelected" value="categoryOn2"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="categoryBtnClicked:" destination="Uke-Jq-c8W" eventType="touchUpInside" id="zu3-5W-NO3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LcN-IH-2X1" customClass="DLRadioButton">
+                                <rect key="frame" x="0.0" y="494" width="414" height="50"/>
+                                <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="16"/>
+                                <state key="normal">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="icon" value="categoryOff3"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="iconSelected" value="categoryOn3"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="categoryBtnClicked:" destination="Uke-Jq-c8W" eventType="touchUpInside" id="yIE-JY-Zb4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VhK-gn-Iiu" customClass="DLRadioButton">
+                                <rect key="frame" x="0.0" y="554" width="414" height="50"/>
+                                <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="16"/>
+                                <state key="normal">
+                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="icon" value="categoryOff4"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="iconSelected" value="categoryOn4"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="categoryBtnClicked:" destination="Uke-Jq-c8W" eventType="touchUpInside" id="Znw-bf-ewb"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="cB0-7Q-Bad"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -128,27 +197,44 @@
                             <constraint firstItem="AOg-4h-MCg" firstAttribute="leading" secondItem="cB0-7Q-Bad" secondAttribute="leading" constant="20" id="1KS-dI-Ca3"/>
                             <constraint firstAttribute="trailing" secondItem="vWs-ZC-wg5" secondAttribute="trailing" id="1YA-UO-6Aq"/>
                             <constraint firstItem="ZLd-de-oxN" firstAttribute="top" secondItem="Um4-eG-g2g" secondAttribute="bottom" constant="20" id="1g7-1u-tkq"/>
+                            <constraint firstItem="E0K-aV-c2w" firstAttribute="top" secondItem="an5-gQ-2WR" secondAttribute="bottom" constant="10" id="2oP-DM-e9D"/>
+                            <constraint firstItem="E0K-aV-c2w" firstAttribute="width" secondItem="an5-gQ-2WR" secondAttribute="width" id="3SW-WF-4aR"/>
                             <constraint firstItem="ZLd-de-oxN" firstAttribute="leading" secondItem="Um4-eG-g2g" secondAttribute="leading" id="67K-e3-FlI"/>
                             <constraint firstItem="jZh-J5-y8G" firstAttribute="top" secondItem="AOg-4h-MCg" secondAttribute="bottom" constant="20" id="7Xx-s8-29P"/>
+                            <constraint firstItem="an5-gQ-2WR" firstAttribute="leading" secondItem="cB0-7Q-Bad" secondAttribute="leading" id="9P9-gY-nf2"/>
                             <constraint firstItem="Um4-eG-g2g" firstAttribute="leading" secondItem="jZh-J5-y8G" secondAttribute="leading" id="AEz-ci-PfF"/>
                             <constraint firstItem="AOg-4h-MCg" firstAttribute="top" secondItem="IYE-JG-bN7" secondAttribute="bottom" constant="16" id="B3G-MT-1Jv"/>
                             <constraint firstItem="Um4-eG-g2g" firstAttribute="trailing" secondItem="AOg-4h-MCg" secondAttribute="trailing" id="Cq3-ty-jbT"/>
                             <constraint firstItem="cB0-7Q-Bad" firstAttribute="trailing" secondItem="Wwp-QP-yLS" secondAttribute="trailing" id="F8n-OU-aZ7"/>
                             <constraint firstItem="IYE-JG-bN7" firstAttribute="leading" secondItem="cB0-7Q-Bad" secondAttribute="leading" constant="20" id="GlN-Ha-f2K"/>
+                            <constraint firstItem="LcN-IH-2X1" firstAttribute="leading" secondItem="E0K-aV-c2w" secondAttribute="leading" id="H4M-Ii-DFT"/>
+                            <constraint firstItem="LcN-IH-2X1" firstAttribute="height" secondItem="E0K-aV-c2w" secondAttribute="height" id="Hxo-Gu-Mqw"/>
                             <constraint firstItem="vWs-ZC-wg5" firstAttribute="leading" secondItem="yqE-jB-Rg8" secondAttribute="leading" id="IsT-z1-bbB"/>
+                            <constraint firstItem="VhK-gn-Iiu" firstAttribute="width" secondItem="LcN-IH-2X1" secondAttribute="width" id="M3j-9e-Eeq"/>
                             <constraint firstItem="Um4-eG-g2g" firstAttribute="top" secondItem="jZh-J5-y8G" secondAttribute="bottom" constant="20" id="PDP-3z-jpw"/>
+                            <constraint firstItem="VhK-gn-Iiu" firstAttribute="height" secondItem="LcN-IH-2X1" secondAttribute="height" id="RIW-s1-Icf"/>
                             <constraint firstItem="hA2-My-8gE" firstAttribute="top" secondItem="cB0-7Q-Bad" secondAttribute="top" id="Rw4-g4-pIv"/>
                             <constraint firstItem="Wwp-QP-yLS" firstAttribute="leading" secondItem="cB0-7Q-Bad" secondAttribute="leading" id="UfW-cV-TrL"/>
+                            <constraint firstItem="E0K-aV-c2w" firstAttribute="leading" secondItem="an5-gQ-2WR" secondAttribute="leading" id="Wd2-Lf-3vH"/>
+                            <constraint firstItem="VhK-gn-Iiu" firstAttribute="leading" secondItem="LcN-IH-2X1" secondAttribute="leading" id="Wex-Eb-RUN"/>
                             <constraint firstItem="hA2-My-8gE" firstAttribute="leading" secondItem="cB0-7Q-Bad" secondAttribute="leading" id="aRV-XT-N5t"/>
                             <constraint firstItem="cB0-7Q-Bad" firstAttribute="trailing" secondItem="hA2-My-8gE" secondAttribute="trailing" id="cmO-CQ-8EW"/>
+                            <constraint firstItem="VhK-gn-Iiu" firstAttribute="top" secondItem="LcN-IH-2X1" secondAttribute="bottom" constant="10" id="dsx-eB-FtT"/>
                             <constraint firstItem="vWs-ZC-wg5" firstAttribute="top" secondItem="hA2-My-8gE" secondAttribute="bottom" id="g16-He-VTn"/>
+                            <constraint firstItem="an5-gQ-2WR" firstAttribute="top" secondItem="ZLd-de-oxN" secondAttribute="bottom" constant="16" id="hGO-eQ-3LP"/>
+                            <constraint firstItem="LcN-IH-2X1" firstAttribute="top" secondItem="E0K-aV-c2w" secondAttribute="bottom" constant="10" id="hcB-13-Y1M"/>
                             <constraint firstItem="IYE-JG-bN7" firstAttribute="top" secondItem="vWs-ZC-wg5" secondAttribute="bottom" constant="20" id="i6A-2y-bF8"/>
                             <constraint firstItem="cB0-7Q-Bad" firstAttribute="bottom" secondItem="Wwp-QP-yLS" secondAttribute="bottom" constant="100" id="rCG-0s-lNR"/>
+                            <constraint firstItem="cB0-7Q-Bad" firstAttribute="trailing" secondItem="an5-gQ-2WR" secondAttribute="trailing" id="reo-Al-q8d"/>
                             <constraint firstItem="jZh-J5-y8G" firstAttribute="leading" secondItem="AOg-4h-MCg" secondAttribute="leading" id="tdW-d0-gW4"/>
+                            <constraint firstItem="E0K-aV-c2w" firstAttribute="height" secondItem="an5-gQ-2WR" secondAttribute="height" id="uBP-Ee-euU"/>
                             <constraint firstItem="cB0-7Q-Bad" firstAttribute="trailing" secondItem="AOg-4h-MCg" secondAttribute="trailing" constant="20" id="vEL-Tx-CcT"/>
+                            <constraint firstItem="LcN-IH-2X1" firstAttribute="width" secondItem="E0K-aV-c2w" secondAttribute="width" id="y5s-Fr-CfO"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="categoryFirstBtn" destination="an5-gQ-2WR" id="hba-ag-gZf"/>
+                        <outlet property="editEndBtn" destination="Wwp-QP-yLS" id="Twv-V5-f0d"/>
                         <outlet property="menuTF" destination="AOg-4h-MCg" id="yHa-6C-XYD"/>
                         <outlet property="priceTF" destination="Um4-eG-g2g" id="Q3E-Ff-2FY"/>
                     </connections>
@@ -158,9 +244,31 @@
             <point key="canvasLocation" x="50.724637681159422" y="85.714285714285708"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="E0K-aV-c2w">
+            <size key="intrinsicContentSize" width="30" height="31"/>
+        </designable>
+        <designable name="LcN-IH-2X1">
+            <size key="intrinsicContentSize" width="30" height="31"/>
+        </designable>
+        <designable name="VhK-gn-Iiu">
+            <size key="intrinsicContentSize" width="30" height="31"/>
+        </designable>
+        <designable name="an5-gQ-2WR">
+            <size key="intrinsicContentSize" width="30" height="31"/>
+        </designable>
+    </designables>
     <resources>
         <image name="back" width="44" height="44"/>
         <image name="btnInputOff" width="335" height="52"/>
+        <image name="categoryOff1" width="375" height="50"/>
+        <image name="categoryOff2" width="375" height="50"/>
+        <image name="categoryOff3" width="375" height="50"/>
+        <image name="categoryOff4" width="375" height="50"/>
+        <image name="categoryOn1" width="375" height="50"/>
+        <image name="categoryOn2" width="375" height="50"/>
+        <image name="categoryOn3" width="375" height="50"/>
+        <image name="categoryOn4" width="375" height="50"/>
         <image name="menuTextbox" width="335" height="50"/>
         <namedColor name="darkGrey">
             <color red="0.60399997234344482" green="0.59200000762939453" blue="0.57300001382827759" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

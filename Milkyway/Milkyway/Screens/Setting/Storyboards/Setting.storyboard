@@ -19,7 +19,7 @@
                         <viewLayoutGuide key="safeArea" id="Sfq-Ly-Q1S"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="설정" image="house" catalog="system" selectedImage="house.fill" id="Lck-hB-rLt"/>
+                    <tabBarItem key="tabBarItem" title="설정" image="mdiSettings" selectedImage="mdiSettingsTapped" id="Lck-hB-rLt"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G4u-U3-1ll" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -28,8 +28,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="house" catalog="system" width="128" height="106"/>
-        <image name="house.fill" catalog="system" width="128" height="106"/>
+        <image name="mdiSettings" width="24" height="24"/>
+        <image name="mdiSettingsTapped" width="24" height="24"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

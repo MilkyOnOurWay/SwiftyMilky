@@ -8,7 +8,10 @@
 import UIKit
 
 class CafeMenusCell: UITableViewCell {
-
+    @IBOutlet weak var menuNameLabel: UILabel!
+    @IBOutlet weak var menuSelectionLabel: UILabel!
+    @IBOutlet weak var menuPriceLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -69,11 +69,23 @@
                                 <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="14"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8EC-Sa-1Nm">
+                                <rect key="frame" x="0.0" y="0.0" width="250" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="Uie-mv-pfM"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="menuPlusBtnClicked:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="oWv-ok-GuR"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="zrQ-9N-jwz" firstAttribute="centerY" secondItem="HFl-PO-KDc" secondAttribute="centerY" id="1cx-nM-TYJ"/>
+                            <constraint firstItem="8EC-Sa-1Nm" firstAttribute="top" secondItem="HFl-PO-KDc" secondAttribute="top" id="I4K-hb-59r"/>
                             <constraint firstItem="s8q-fT-LBb" firstAttribute="centerY" secondItem="HFl-PO-KDc" secondAttribute="centerY" id="IMr-R0-SFt"/>
+                            <constraint firstItem="8EC-Sa-1Nm" firstAttribute="leading" secondItem="HFl-PO-KDc" secondAttribute="leading" id="O6K-B0-PTz"/>
+                            <constraint firstAttribute="bottom" secondItem="8EC-Sa-1Nm" secondAttribute="bottom" id="VO9-Xm-aRR"/>
                             <constraint firstAttribute="height" constant="50" id="Xqn-Hi-fOz"/>
                             <constraint firstItem="zrQ-9N-jwz" firstAttribute="leading" secondItem="HFl-PO-KDc" secondAttribute="leading" id="aQq-v8-DF3"/>
                             <constraint firstItem="s8q-fT-LBb" firstAttribute="leading" secondItem="zrQ-9N-jwz" secondAttribute="trailing" constant="8" id="lt8-bc-w1R"/>

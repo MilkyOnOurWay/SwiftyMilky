@@ -19,5 +19,8 @@ class HoneyTipCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    @IBAction func menuPlusBtnClicked(_ sender: Any) {
+        NotificationCenter.default.post(name: Notification.Name("gotomenuAdd"), object: nil)
+    }
     
 }

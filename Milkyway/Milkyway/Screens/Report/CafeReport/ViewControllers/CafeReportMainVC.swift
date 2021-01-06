@@ -32,6 +32,13 @@ class CafeReportMainVC: UIViewController, IndicatorInfoProvider {
     }
     
     
+    @IBAction func resetBtnClicked(_ sender: Any) {
+        cafeInfo = nil
+        cafeMenus = []
+        tableView.reloadData()
+    }
+    
+    
     
     
 }

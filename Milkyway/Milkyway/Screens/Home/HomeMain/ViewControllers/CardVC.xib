@@ -13,78 +13,100 @@
             <connections>
                 <outlet property="handleArea" destination="aec-pZ-mZ0" id="khJ-q5-KyP"/>
                 <outlet property="handleBar" destination="cW8-7z-djY" id="pyj-Vo-yyF"/>
+                <outlet property="hannamBtn" destination="kAH-T0-Rsg" id="MUM-H7-RaZ"/>
+                <outlet property="mainLabel" destination="Fqz-pz-SnZ" id="qwV-SN-P1l"/>
+                <outlet property="mangwonBtn" destination="o4r-mI-mLB" id="snH-wu-WUh"/>
+                <outlet property="rootView" destination="bDO-hf-hcC" id="W4W-M0-gxi"/>
+                <outlet property="shinsaBtn" destination="rAr-yS-uYV" id="R2l-3c-vzE"/>
                 <outlet property="view" destination="bDO-hf-hcC" id="fHK-Xt-Vvy"/>
+                <outlet property="younnamBtn" destination="Nsc-4b-exi" id="YZE-Te-bEH"/>
+                <outlet property="yuksamBtn" destination="lye-or-zb4" id="qWa-ZQ-x2H"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="bDO-hf-hcC">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="382"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="281"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aec-pZ-mZ0">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="85"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="84"/>
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cW8-7z-djY">
-                            <rect key="frame" x="157" y="22" width="61" height="2"/>
-                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </view>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="다른 지역을 찾고 있나요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fqz-pz-SnZ">
-                            <rect key="frame" x="103" y="46" width="169" height="21"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fqz-pz-SnZ">
+                            <rect key="frame" x="103" y="43" width="169" height="21"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cW8-7z-djY">
+                            <rect key="frame" x="175" y="24" width="24" height="2"/>
+                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="2" id="apd-8P-DSn"/>
+                            </constraints>
+                        </view>
                     </subviews>
                     <constraints>
                         <constraint firstItem="Fqz-pz-SnZ" firstAttribute="leading" secondItem="aec-pZ-mZ0" secondAttribute="leading" constant="103" id="OMS-Dv-25z"/>
-                        <constraint firstAttribute="bottom" secondItem="Fqz-pz-SnZ" secondAttribute="bottom" constant="18" id="URo-Z1-N5T"/>
-                        <constraint firstAttribute="trailing" secondItem="cW8-7z-djY" secondAttribute="trailing" constant="157" id="W9P-xh-dCP"/>
+                        <constraint firstItem="cW8-7z-djY" firstAttribute="top" secondItem="aec-pZ-mZ0" secondAttribute="top" constant="24" id="QBU-9I-7Hl"/>
+                        <constraint firstItem="cW8-7z-djY" firstAttribute="leading" secondItem="aec-pZ-mZ0" secondAttribute="leading" constant="175" id="X9z-yb-HUS"/>
+                        <constraint firstAttribute="bottom" secondItem="Fqz-pz-SnZ" secondAttribute="bottom" constant="20" id="YO2-vv-hbe"/>
                         <constraint firstAttribute="trailing" secondItem="Fqz-pz-SnZ" secondAttribute="trailing" constant="103" id="bks-bf-N7T"/>
-                        <constraint firstAttribute="height" constant="85" id="c6s-lv-ZDr"/>
-                        <constraint firstItem="Fqz-pz-SnZ" firstAttribute="top" secondItem="cW8-7z-djY" secondAttribute="bottom" constant="22" id="hKh-n8-Fxh"/>
-                        <constraint firstItem="cW8-7z-djY" firstAttribute="top" secondItem="aec-pZ-mZ0" secondAttribute="top" constant="22" id="txn-8a-BCt"/>
-                        <constraint firstItem="cW8-7z-djY" firstAttribute="leading" secondItem="aec-pZ-mZ0" secondAttribute="leading" constant="157" id="xhA-nV-PiE"/>
+                        <constraint firstAttribute="height" constant="84" id="c6s-lv-ZDr"/>
+                        <constraint firstAttribute="trailing" secondItem="cW8-7z-djY" secondAttribute="trailing" constant="176" id="l9L-UU-st9"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x9D-f4-Ryd">
-                    <rect key="frame" x="0.0" y="85" width="375" height="297"/>
+                    <rect key="frame" x="0.0" y="84" width="375" height="197"/>
                     <subviews>
-                        <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o4r-mI-mLB">
-                            <rect key="frame" x="56" y="61" width="54" height="34"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" title="Button">
+                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o4r-mI-mLB" customClass="DLRadioButton">
+                            <rect key="frame" x="51" y="0.0" width="15" height="22"/>
+                            <state key="normal">
+                                <color key="titleColor" name="Milky"/>
+                            </state>
+                            <connections>
+                                <outletCollection property="otherButtons" destination="Nsc-4b-exi" id="LWT-yU-gvA"/>
+                                <outletCollection property="otherButtons" destination="kAH-T0-Rsg" id="1Yd-HU-2Jf"/>
+                                <outletCollection property="otherButtons" destination="rAr-yS-uYV" id="5Tw-OA-8rn"/>
+                                <outletCollection property="otherButtons" destination="lye-or-zb4" id="4Lc-LK-rVP"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nsc-4b-exi" customClass="DLRadioButton">
+                            <rect key="frame" x="271" y="0.0" width="15" height="22"/>
+                            <state key="normal">
                                 <color key="titleColor" name="Milky"/>
                             </state>
                         </button>
-                        <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mh6-ya-gQZ">
-                            <rect key="frame" x="160" y="61" width="54" height="34"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" title="Button">
+                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kAH-T0-Rsg" customClass="DLRadioButton">
+                            <rect key="frame" x="309" y="0.0" width="15" height="22"/>
+                            <state key="normal">
                                 <color key="titleColor" name="Milky"/>
                             </state>
                         </button>
-                        <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fPG-97-pOk">
-                            <rect key="frame" x="101" y="156" width="54" height="34"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" title="Button">
+                        <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rAr-yS-uYV" customClass="DLRadioButton">
+                            <rect key="frame" x="101" y="34" width="15" height="22"/>
+                            <state key="normal">
                                 <color key="titleColor" name="Milky"/>
                             </state>
                         </button>
-                        <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0U1-Ft-mW2">
-                            <rect key="frame" x="276" y="61" width="54" height="34"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" title="Button">
-                                <color key="titleColor" name="Milky"/>
-                            </state>
-                        </button>
-                        <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J8i-0j-Ktq">
-                            <rect key="frame" x="223" y="156" width="54" height="34"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" title="Button">
+                        <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lye-or-zb4" customClass="DLRadioButton">
+                            <rect key="frame" x="259" y="34" width="15" height="22"/>
+                            <state key="normal">
                                 <color key="titleColor" name="Milky"/>
                             </state>
                         </button>
                     </subviews>
+                    <constraints>
+                        <constraint firstItem="o4r-mI-mLB" firstAttribute="leading" secondItem="x9D-f4-Ryd" secondAttribute="leading" constant="51" id="Ogr-Ga-BP7"/>
+                        <constraint firstItem="o4r-mI-mLB" firstAttribute="top" secondItem="x9D-f4-Ryd" secondAttribute="top" id="WLH-wt-HvO"/>
+                        <constraint firstItem="rAr-yS-uYV" firstAttribute="leading" secondItem="x9D-f4-Ryd" secondAttribute="leading" constant="101" id="XyN-8e-lTd"/>
+                        <constraint firstItem="lye-or-zb4" firstAttribute="top" secondItem="Nsc-4b-exi" secondAttribute="bottom" constant="12" id="ZVb-5K-3Hu"/>
+                        <constraint firstItem="rAr-yS-uYV" firstAttribute="top" secondItem="Nsc-4b-exi" secondAttribute="bottom" constant="12" id="Zd6-Gf-0wI"/>
+                        <constraint firstItem="kAH-T0-Rsg" firstAttribute="leading" secondItem="Nsc-4b-exi" secondAttribute="trailing" constant="23" id="eHO-vs-yZ4"/>
+                        <constraint firstAttribute="trailing" secondItem="lye-or-zb4" secondAttribute="trailing" constant="101" id="eK1-hU-91j"/>
+                        <constraint firstItem="kAH-T0-Rsg" firstAttribute="top" secondItem="x9D-f4-Ryd" secondAttribute="top" id="fWU-1o-hco"/>
+                        <constraint firstAttribute="trailing" secondItem="kAH-T0-Rsg" secondAttribute="trailing" constant="51" id="wmZ-Ld-yMF"/>
+                        <constraint firstItem="Nsc-4b-exi" firstAttribute="top" secondItem="x9D-f4-Ryd" secondAttribute="top" id="xiU-ck-qCL"/>
+                    </constraints>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="UIB-ZL-p9q"/>
@@ -109,9 +131,26 @@
                 <constraint firstItem="aec-pZ-mZ0" firstAttribute="trailing" secondItem="UIB-ZL-p9q" secondAttribute="trailing" id="xl6-zv-0S8"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="129.71014492753625" y="109.82142857142857"/>
+            <point key="canvasLocation" x="129.71014492753625" y="76.004464285714278"/>
         </view>
     </objects>
+    <designables>
+        <designable name="Nsc-4b-exi">
+            <size key="intrinsicContentSize" width="15" height="22"/>
+        </designable>
+        <designable name="kAH-T0-Rsg">
+            <size key="intrinsicContentSize" width="15" height="22"/>
+        </designable>
+        <designable name="lye-or-zb4">
+            <size key="intrinsicContentSize" width="15" height="22"/>
+        </designable>
+        <designable name="o4r-mI-mLB">
+            <size key="intrinsicContentSize" width="15" height="22"/>
+        </designable>
+        <designable name="rAr-yS-uYV">
+            <size key="intrinsicContentSize" width="15" height="22"/>
+        </designable>
+    </designables>
     <resources>
         <namedColor name="Milky">
             <color red="0.20000000298023224" green="0.125" blue="0.65100002288818359" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

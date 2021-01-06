@@ -30,6 +30,8 @@
 		D11AB9CA25A5BC0600C1927E /* MenuPlusVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11AB9C925A5BC0600C1927E /* MenuPlusVC.swift */; };
 		D11AB9CD25A5BC0E00C1927E /* MenuPlus.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D11AB9CC25A5BC0E00C1927E /* MenuPlus.storyboard */; };
 		D11ABA1625A62B9B00C1927E /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11ABA1525A62B9B00C1927E /* UILabel+Extension.swift */; };
+		D11ABA5025A64F3B00C1927E /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11ABA4F25A64F3B00C1927E /* ToastView.swift */; };
+		D11ABA5325A64F7D00C1927E /* ToastView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D11ABA5225A64F7D00C1927E /* ToastView.xib */; };
 		D15443ED25A33999007773BF /* CafeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15443EC25A33999007773BF /* CafeInfo.swift */; };
 		D15443F125A339AC007773BF /* CafeMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15443F025A339AC007773BF /* CafeMenu.swift */; };
 		D15443F625A33ACF007773BF /* CafeNameSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15443F425A33ACF007773BF /* CafeNameSearchCell.swift */; };
@@ -126,6 +128,8 @@
 		D11AB9C925A5BC0600C1927E /* MenuPlusVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPlusVC.swift; sourceTree = "<group>"; };
 		D11AB9CC25A5BC0E00C1927E /* MenuPlus.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MenuPlus.storyboard; sourceTree = "<group>"; };
 		D11ABA1525A62B9B00C1927E /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
+		D11ABA4F25A64F3B00C1927E /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
+		D11ABA5225A64F7D00C1927E /* ToastView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ToastView.xib; sourceTree = "<group>"; };
 		D15443EC25A33999007773BF /* CafeInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeInfo.swift; sourceTree = "<group>"; };
 		D15443F025A339AC007773BF /* CafeMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeMenu.swift; sourceTree = "<group>"; };
 		D15443F425A33ACF007773BF /* CafeNameSearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeNameSearchCell.swift; sourceTree = "<group>"; };
@@ -699,6 +703,7 @@
 		F2BA63082598E4B200A49020 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				D11ABA5225A64F7D00C1927E /* ToastView.xib */,
 				F2BA63092598E4D400A49020 /* UIViewController+Extension.swift */,
 				F2BA630D2598E52600A49020 /* UITextView+Extension.swift */,
 				F2BA63102598E55000A49020 /* UIButton+Extension.swift */,
@@ -709,6 +714,7 @@
 				F2BA632C2598E7DE00A49020 /* UITabbar+Extension.swift */,
 				F2BA632F2598E80000A49020 /* UIColor+Extension.swift */,
 				D11ABA1525A62B9B00C1927E /* UILabel+Extension.swift */,
+				D11ABA4F25A64F3B00C1927E /* ToastView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -803,6 +809,7 @@
 				F2242A20259BAD5400455604 /* TabBar.storyboard in Resources */,
 				F21384B725A1E8360016E766 /* SearchTVC.xib in Resources */,
 				F2142DFB25A349F600D07F3F /* SF-Pro-Text-Semibold.otf in Resources */,
+				D11ABA5325A64F7D00C1927E /* ToastView.xib in Resources */,
 				F2242A4A259BC23A00455604 /* Login.storyboard in Resources */,
 				F2242A6C259CD30400455604 /* FilterResult.storyboard in Resources */,
 				6BD05A6F25A41FFE00B2643F /* UnderExamTVCell.xib in Resources */,
@@ -931,6 +938,7 @@
 				F2BA63172598E58A00A49020 /* Date+Extension.swift in Sources */,
 				F2242A63259C78FD00455604 /* LoginNaviController.swift in Sources */,
 				D1D95DD825A30BA600B95F79 /* CafeHoneyCell.swift in Sources */,
+				D11ABA5025A64F3B00C1927E /* ToastView.swift in Sources */,
 				6B869C1425A1CD220068BFD2 /* DeletePlaceVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

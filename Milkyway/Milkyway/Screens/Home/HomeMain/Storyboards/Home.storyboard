@@ -113,7 +113,7 @@
                             <constraint firstItem="aPd-nV-Ytc" firstAttribute="top" secondItem="kLD-ZB-rEQ" secondAttribute="bottom" constant="10" id="t2e-6e-0Rk"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="홈" image="house" catalog="system" selectedImage="house.fill" id="6Yn-oA-g2a"/>
+                    <tabBarItem key="tabBarItem" title="홈" image="mdiHome" selectedImage="mdiHomeTapped" id="6Yn-oA-g2a"/>
                     <navigationItem key="navigationItem" id="xDj-he-7XZ"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -135,8 +135,8 @@
         <image name="btnCurrentLocation" width="68" height="68"/>
         <image name="btnSearch" width="24" height="24"/>
         <image name="homeLogo" width="132" height="25"/>
-        <image name="house" catalog="system" width="128" height="106"/>
-        <image name="house.fill" catalog="system" width="128" height="106"/>
+        <image name="mdiHome" width="24" height="24"/>
+        <image name="mdiHomeTapped" width="24" height="24"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

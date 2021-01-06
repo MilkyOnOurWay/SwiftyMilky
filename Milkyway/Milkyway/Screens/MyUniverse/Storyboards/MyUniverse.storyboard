@@ -19,7 +19,7 @@
                         <viewLayoutGuide key="safeArea" id="L9B-nA-7Md"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="유니버스" image="house" catalog="system" selectedImage="house.fill" id="uOh-iJ-vku"/>
+                    <tabBarItem key="tabBarItem" title="유니버스" image="mdiUniverse" selectedImage="mdiUniverseTapped" id="uOh-iJ-vku"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mAA-Ql-O9Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -28,8 +28,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="house" catalog="system" width="128" height="106"/>
-        <image name="house.fill" catalog="system" width="128" height="106"/>
+        <image name="mdiUniverse" width="35" height="24"/>
+        <image name="mdiUniverseTapped" width="35" height="24"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

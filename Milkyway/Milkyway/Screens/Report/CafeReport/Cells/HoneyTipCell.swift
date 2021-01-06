@@ -26,6 +26,7 @@ class HoneyTipCell: UITableViewCell {
     }
     
     @IBAction func honeyTipClicked(_ sender: UIButton) {
+        
         if select[sender.tag-1] {
             (self.viewWithTag(sender.tag) as? UILabel)?.textColor = UIColor(named: "darkGrey")
             (self.viewWithTag(sender.tag) as? UILabel)?.layer.borderColor = UIColor(named: "darkGrey")?.cgColor
@@ -34,9 +35,9 @@ class HoneyTipCell: UITableViewCell {
         else {
             (self.viewWithTag(sender.tag) as? UILabel)?.textColor = UIColor(named: "Milky")
             (self.viewWithTag(sender.tag) as? UILabel)?.layer.borderColor = UIColor(named: "Milky")?.cgColor
-            select[sender.tag-1] = false
+            select[sender.tag-1] = true
         }
-        
+    
     }
     
     

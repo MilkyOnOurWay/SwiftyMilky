@@ -17,7 +17,6 @@ class CafeReportMainVC: UIViewController, IndicatorInfoProvider {
     var cafeMenus = [CafeMenu]()
     var cafeInfo: CafeInfo?
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,6 +34,7 @@ class CafeReportMainVC: UIViewController, IndicatorInfoProvider {
     @IBAction func resetBtnClicked(_ sender: Any) {
         cafeInfo = nil
         cafeMenus = []
+        ToastView.showIn(viewController: self, message: "입력했던 정보가 초기화되었습니다.", fromBottom: 10)
         tableView.reloadData()
     }
     
@@ -171,6 +171,7 @@ extension CafeReportMainVC {
         tableView.reloadData()
         
     }
+
 }
 
 

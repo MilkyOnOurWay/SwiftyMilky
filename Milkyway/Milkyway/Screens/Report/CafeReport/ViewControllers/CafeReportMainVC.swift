@@ -23,6 +23,7 @@ class CafeReportMainVC: UIViewController, IndicatorInfoProvider {
         
         delegateFunc()
         cellResister()
+        notiGather()
         
     }
     
@@ -100,8 +101,19 @@ extension CafeReportMainVC: UITableViewDataSource {
             guard let cell: CafeMenusCell = tableView.dequeueReusableCell(withIdentifier: "CafeMenusCell", for: indexPath) as? CafeMenusCell else{
                 return UITableViewCell()
             }
-        
+            
+            cell.menuNameLabel.text = cafeMenus[indexPath.row].menu
+            cell.menuSelectionLabel.text = ""
+            // 메뉴 하단에 선택지 표시
+            for i in cafeMenus[indexPath.row].selection {
+                cell.menuSelectionLabel.text! += (cafeMenu[i-1] + "  ")
+
+            }
+            
+            cell.menuPriceLabel.text = cafeMenus[indexPath.row].price + " 원"
+            cell.selectionStyle = .none // 셀 선택 불가능하게
             return cell
+  
         }
         
         else { // 밀키의 꿀팁
@@ -117,6 +129,10 @@ extension CafeReportMainVC: UITableViewDataSource {
 }
 
 extension CafeReportMainVC {
+    
+    func notiGather() {
+        NotificationCenter.default.addObserver(self, selector: #selector(menuPlus(_:)), name: Notification.Name("menuPlus"), object: nil)
+    }
     
     
     // 프로토콜 상속
@@ -141,6 +157,12 @@ extension CafeReportMainVC {
         self.tableView.register(CafeNameResultCellNib, forCellReuseIdentifier: "CafeNameResultCell")
         self.tableView.register(CafeMenusCellNib, forCellReuseIdentifier: "CafeMenusCell")
         self.tableView.register(HoneyTipCellNib, forCellReuseIdentifier: "HoneyTipCell")
+    }
+    
+    @objc func menuPlus(_ noti: NSNotification) {
+        cafeMenus.append(noti.object as! CafeMenu) // 옵셔널 처리 나중에는 해줘야함...
+        tableView.reloadData()
+        
     }
 }
 

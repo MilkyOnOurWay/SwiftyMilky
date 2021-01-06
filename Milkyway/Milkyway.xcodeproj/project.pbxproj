@@ -25,6 +25,8 @@
 		6BD05A6F25A41FFE00B2643F /* UnderExamTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BD05A6925A41FFE00B2643F /* UnderExamTVCell.xib */; };
 		6BD05A7025A41FFE00B2643F /* UnderExamTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD05A6A25A41FFE00B2643F /* UnderExamTVCell.swift */; };
 		6BF6DA6E25A57DF5001CDB9A /* CardState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF6DA6D25A57DF5001CDB9A /* CardState.swift */; };
+		D11AB9CA25A5BC0600C1927E /* MenuPlusVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11AB9C925A5BC0600C1927E /* MenuPlusVC.swift */; };
+		D11AB9CD25A5BC0E00C1927E /* MenuPlus.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D11AB9CC25A5BC0E00C1927E /* MenuPlus.storyboard */; };
 		D15443ED25A33999007773BF /* CafeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15443EC25A33999007773BF /* CafeInfo.swift */; };
 		D15443F125A339AC007773BF /* CafeMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15443F025A339AC007773BF /* CafeMenu.swift */; };
 		D15443F625A33ACF007773BF /* CafeNameSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15443F425A33ACF007773BF /* CafeNameSearchCell.swift */; };
@@ -113,6 +115,8 @@
 		6BF6DA6D25A57DF5001CDB9A /* CardState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardState.swift; sourceTree = "<group>"; };
 		82A4CFBF130A68D0DC76260E /* Pods-Milkyway.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Milkyway.release.xcconfig"; path = "Target Support Files/Pods-Milkyway/Pods-Milkyway.release.xcconfig"; sourceTree = "<group>"; };
 		B6E7AC1233665DEC2C3D21DC /* Pods-Milkyway.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Milkyway.debug.xcconfig"; path = "Target Support Files/Pods-Milkyway/Pods-Milkyway.debug.xcconfig"; sourceTree = "<group>"; };
+		D11AB9C925A5BC0600C1927E /* MenuPlusVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPlusVC.swift; sourceTree = "<group>"; };
+		D11AB9CC25A5BC0E00C1927E /* MenuPlus.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MenuPlus.storyboard; sourceTree = "<group>"; };
 		D15443EC25A33999007773BF /* CafeInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeInfo.swift; sourceTree = "<group>"; };
 		D15443F025A339AC007773BF /* CafeMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeMenu.swift; sourceTree = "<group>"; };
 		D15443F425A33ACF007773BF /* CafeNameSearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeNameSearchCell.swift; sourceTree = "<group>"; };
@@ -377,6 +381,7 @@
 			isa = PBXGroup;
 			children = (
 				D1F22849259F745F0018C472 /* CafeReportMainVC.swift */,
+				D11AB9C925A5BC0600C1927E /* MenuPlusVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -385,6 +390,7 @@
 			isa = PBXGroup;
 			children = (
 				D1F2284C259F746D0018C472 /* CafeReportMain.storyboard */,
+				D11AB9CC25A5BC0E00C1927E /* MenuPlus.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -774,6 +780,7 @@
 				6B869C0825A0BF700068BFD2 /* Modify.storyboard in Resources */,
 				F2BA62ED2598DE6400A49020 /* LaunchScreen.storyboard in Resources */,
 				D154440A25A33B10007773BF /* HoneyTipCell.xib in Resources */,
+				D11AB9CD25A5BC0E00C1927E /* MenuPlus.storyboard in Resources */,
 				D1D95DD925A30BA600B95F79 /* CafeHoneyCell.xib in Resources */,
 				F2242A20259BAD5400455604 /* TabBar.storyboard in Resources */,
 				F21384B725A1E8360016E766 /* SearchTVC.xib in Resources */,
@@ -895,6 +902,7 @@
 				F2242A47259BC22F00455604 /* LoginVC.swift in Sources */,
 				6B869C5025A2F9960068BFD2 /* CardVC.swift in Sources */,
 				D1996E0425A2290500B8F40B /* DetailCafeMenuVC.swift in Sources */,
+				D11AB9CA25A5BC0600C1927E /* MenuPlusVC.swift in Sources */,
 				F2BA63112598E55000A49020 /* UIButton+Extension.swift in Sources */,
 				F2BA63172598E58A00A49020 /* Date+Extension.swift in Sources */,
 				F2242A63259C78FD00455604 /* LoginNaviController.swift in Sources */,

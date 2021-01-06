@@ -13,7 +13,7 @@ class ReportTabBarViewController: ButtonBarPagerTabStripViewController {
     override func viewDidLoad() {
         
        
-        notificationObserver()
+        notiGather()
         setupDefaultStyle()
         changeCheck()
         
@@ -44,7 +44,8 @@ class ReportTabBarViewController: ButtonBarPagerTabStripViewController {
 // MARK: - Function
 extension ButtonBarPagerTabStripViewController {
     
-    func notificationObserver() {
+    func notiGather() {
+        NotificationCenter.default.addObserver(self, selector: #selector(menuView), name: Notification.Name("gotomenuAdd"), object: nil)
      
     }
     
@@ -74,6 +75,17 @@ extension ButtonBarPagerTabStripViewController {
             
             
         }
+    }
+    
+    
+    /// 메뉴 추가하기 버튼 눌렸을 때 menuPlusVC로 넘어간다.
+    
+    @objc func menuView() {
+        guard let menuVC = UIStoryboard(name: "MenuPlus", bundle: nil).instantiateViewController(withIdentifier:"MenuPlusVC") as? MenuPlusVC else {
+            return
+        }
+        self.navigationController?.pushViewController(menuVC, animated: true) // menuPlus View 띄우기
+        
     }
     
     

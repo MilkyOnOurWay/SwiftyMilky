@@ -26,6 +26,8 @@ class UnderExamTVCell: UITableViewCell {
     
     func setCell(state: String) {
         stateLabel.text = state
+        stateLabel.font = UIFont(name:"SFProText-Bold", size: 16.0)
+        
     }
     
 }

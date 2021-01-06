@@ -25,6 +25,8 @@
 		6BD05A6F25A41FFE00B2643F /* UnderExamTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BD05A6925A41FFE00B2643F /* UnderExamTVCell.xib */; };
 		6BD05A7025A41FFE00B2643F /* UnderExamTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD05A6A25A41FFE00B2643F /* UnderExamTVCell.swift */; };
 		6BF6DA6E25A57DF5001CDB9A /* CardState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF6DA6D25A57DF5001CDB9A /* CardState.swift */; };
+		6BF6DAA225A603A7001CDB9A /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF6DAA125A603A7001CDB9A /* CustomLabel.swift */; };
+		6BF6DAA525A6084E001CDB9A /* paddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF6DAA425A6084E001CDB9A /* paddingLabel.swift */; };
 		D11AB9CA25A5BC0600C1927E /* MenuPlusVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11AB9C925A5BC0600C1927E /* MenuPlusVC.swift */; };
 		D11AB9CD25A5BC0E00C1927E /* MenuPlus.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D11AB9CC25A5BC0E00C1927E /* MenuPlus.storyboard */; };
 		D15443ED25A33999007773BF /* CafeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15443EC25A33999007773BF /* CafeInfo.swift */; };
@@ -113,6 +115,8 @@
 		6BD05A6925A41FFE00B2643F /* UnderExamTVCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UnderExamTVCell.xib; sourceTree = "<group>"; };
 		6BD05A6A25A41FFE00B2643F /* UnderExamTVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnderExamTVCell.swift; sourceTree = "<group>"; };
 		6BF6DA6D25A57DF5001CDB9A /* CardState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardState.swift; sourceTree = "<group>"; };
+		6BF6DAA125A603A7001CDB9A /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
+		6BF6DAA425A6084E001CDB9A /* paddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = paddingLabel.swift; sourceTree = "<group>"; };
 		82A4CFBF130A68D0DC76260E /* Pods-Milkyway.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Milkyway.release.xcconfig"; path = "Target Support Files/Pods-Milkyway/Pods-Milkyway.release.xcconfig"; sourceTree = "<group>"; };
 		B6E7AC1233665DEC2C3D21DC /* Pods-Milkyway.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Milkyway.debug.xcconfig"; path = "Target Support Files/Pods-Milkyway/Pods-Milkyway.debug.xcconfig"; sourceTree = "<group>"; };
 		D11AB9C925A5BC0600C1927E /* MenuPlusVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPlusVC.swift; sourceTree = "<group>"; };
@@ -216,6 +220,8 @@
 				6BD05A6825A41FFE00B2643F /* TopTVCell.swift */,
 				6BD05A6925A41FFE00B2643F /* UnderExamTVCell.xib */,
 				6BD05A6A25A41FFE00B2643F /* UnderExamTVCell.swift */,
+				6BF6DAA125A603A7001CDB9A /* CustomLabel.swift */,
+				6BF6DAA425A6084E001CDB9A /* paddingLabel.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -868,6 +874,7 @@
 				D1F22861259F78C20018C472 /* SearchVC.swift in Sources */,
 				F2242A69259CD2F600455604 /* FilterResultVC.swift in Sources */,
 				F2BA63252598E6E900A49020 /* UITableView+Extension.swift in Sources */,
+				6BF6DAA225A603A7001CDB9A /* CustomLabel.swift in Sources */,
 				D1F2283B259F70DA0018C472 /* ReportTabBarViewController.swift in Sources */,
 				F2BA631A2598E5AA00A49020 /* UIImageView+Extension.swift in Sources */,
 				D1D95DDD25A30BB100B95F79 /* CafeMenuCell.swift in Sources */,
@@ -903,6 +910,7 @@
 				6B869C5025A2F9960068BFD2 /* CardVC.swift in Sources */,
 				D1996E0425A2290500B8F40B /* DetailCafeMenuVC.swift in Sources */,
 				D11AB9CA25A5BC0600C1927E /* MenuPlusVC.swift in Sources */,
+				6BF6DAA525A6084E001CDB9A /* paddingLabel.swift in Sources */,
 				F2BA63112598E55000A49020 /* UIButton+Extension.swift in Sources */,
 				F2BA63172598E58A00A49020 /* Date+Extension.swift in Sources */,
 				F2242A63259C78FD00455604 /* LoginNaviController.swift in Sources */,

@@ -72,6 +72,7 @@ extension MyReportMainVC: UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: TopTVCell.identifier) as? TopTVCell else {
                 return UITableViewCell()
             }
+            cell.setCell(nickName: "열매열매")
             return cell
         } else if indexPath.section == 1 {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: UnderExamTVCell.identifier) as? UnderExamTVCell else {
@@ -94,7 +95,9 @@ extension MyReportMainVC: UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: CompletedTVCell.identifier) as? CompletedTVCell else {
                 return UITableViewCell()
             }
-            cell.setCell()
+            cell.setCardView()
+            cell.setLabel()
+            
             return cell
         }
         

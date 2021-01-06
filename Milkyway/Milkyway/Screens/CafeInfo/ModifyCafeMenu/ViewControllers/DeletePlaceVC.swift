@@ -69,6 +69,7 @@ extension DeletePlaceVC {
         
         barLabel.backgroundColor = UIColor(red: 229, green: 229, blue: 229)
     }
+    
     func setRadioButton() {
         radioBtn1.addTarget(self, action: #selector(sendBtnTag(_:)), for: .touchUpInside)
         radioBtn2.addTarget(self, action: #selector(sendBtnTag(_:)), for: .touchUpInside)

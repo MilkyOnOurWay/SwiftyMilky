@@ -29,10 +29,11 @@ class HomeVC: UIViewController {
     
     var cardVC:CardVC!
     
-    let cardHeight:CGFloat = 400
-    let cardHandleAreaHeight:CGFloat = 85
+    let cardHeight:CGFloat = 363 //카드 높이 280 + 탭바높이 83
+    let cardHandleAreaHeight:CGFloat = 84
     
     var cardVisible = false
+    
     var nextState:CardState {
         return cardVisible ? .collapsed : .expanded
     }
@@ -41,7 +42,9 @@ class HomeVC: UIViewController {
     
     override func viewDidLoad(){
         super.viewDidLoad()
-        setNickNameLabel(nickName: "릴리릴리릴리릴")
+        
+        setNickNameLabel(nickName: "유진") //일단 박아넣기 ~,~
+        
         setMapLocation()
         setMapButton()
         setFilterButton()
@@ -154,20 +157,19 @@ extension HomeVC {
     // MARK: - Bottom Card Setting GitHub -> https://github.com/brianadvent/InteractiveCardViewAnimation
     
     func setBottomCard() {
-        
         cardVC = CardVC(nibName:"CardVC", bundle:nil)
-        self.cardVC.view.layer.cornerRadius = 12
-        // shadow 나중에
-        
+
         self.addChild(cardVC)
         self.view.addSubview(cardVC.view)
         
         let tabbarFrame = self.tabBarController?.tabBar.frame; // 바텀 시트 올릴 때 사용
         
+//        print("탭바 높이 \(tabbarFrame!.size.height)")
+        
         //탭바 높이만큼 더 올리기
         cardVC.view.frame = CGRect(x: 0, y: self.view.frame.height - cardHandleAreaHeight - tabbarFrame!.size.height, width: self.view.bounds.width, height: cardHeight)
         
-        cardVC.view.clipsToBounds = true
+        cardVC.view.clipsToBounds = false //여기 true면 shadow 안먹음
         
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(HomeVC.handleCardTap(recognzier:)))
         let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(HomeVC.handleCardPan(recognizer:)))

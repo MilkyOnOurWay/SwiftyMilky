@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -37,77 +38,172 @@
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="밀키의 꿀팁" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PaR-vD-KEm">
-                        <rect key="frame" x="20" y="32" width="74" height="20"/>
+                        <rect key="frame" x="20" y="32" width="74" height="19"/>
                         <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="16"/>
                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="메뉴" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yQb-dU-kfi">
-                        <rect key="frame" x="20" y="228" width="28" height="19.5"/>
+                        <rect key="frame" x="20" y="239" width="28" height="19"/>
                         <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="16"/>
                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xSZ-Sz-XnO">
-                        <rect key="frame" x="0.0" y="196" width="375" height="8"/>
+                        <rect key="frame" x="0.0" y="207" width="375" height="8"/>
                         <color key="backgroundColor" red="0.96470588235294119" green="0.96078431372549022" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="8" id="aaE-MN-ivz"/>
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cau-IO-gTm">
-                        <rect key="frame" x="20" y="72" width="335" height="100"/>
+                        <rect key="frame" x="20" y="71" width="335" height="112"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Honey" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8uo-gv-eoI">
-                                <rect key="frame" x="16" y="13" width="51" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="   #전메뉴우유가능   " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8uo-gv-eoI">
+                                <rect key="frame" x="0.0" y="0.0" width="133" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="QRf-wd-zy3"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="16"/>
                                 <color key="textColor" systemColor="systemGrayColor"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" name="darkGrey"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" tag="5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Honey" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cbN-9d-ahE">
-                                <rect key="frame" x="16" y="68" width="51" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="   #옵션추가비용500원   " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qs0-fy-pgh">
+                                <rect key="frame" x="141" y="0.0" width="159.5" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="kgp-1t-Qpm"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="16"/>
                                 <color key="textColor" systemColor="systemGrayColor"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" name="darkGrey"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Honey" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bzd-Zk-5GB">
-                                <rect key="frame" x="16" y="38" width="51" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="   #제로웨이스트가능   " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rWF-3y-pft">
+                                <rect key="frame" x="0.0" y="40" width="147" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="R4h-NQ-fJx"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="16"/>
                                 <color key="textColor" systemColor="systemGrayColor"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" name="darkGrey"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Honey" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ae6-gV-dNu">
-                                <rect key="frame" x="133" y="13" width="51" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="   #두유가져가면받아줌   " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2EW-lx-ghx">
+                                <rect key="frame" x="155" y="40" width="161" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="V5m-Vg-JaT"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="16"/>
                                 <color key="textColor" systemColor="systemGrayColor"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" name="darkGrey"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Honey" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GGw-zT-PdF">
-                                <rect key="frame" x="133" y="38" width="51" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" tag="5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="   #지점마다다름   " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fNK-Hp-UNH">
+                                <rect key="frame" x="0.0" y="80" width="119" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="atl-7z-QE6"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="16"/>
                                 <color key="textColor" systemColor="systemGrayColor"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" name="darkGrey"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" tag="6" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Honey" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="etD-cK-fJq">
-                                <rect key="frame" x="133" y="68" width="51" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" tag="6" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="   #메뉴에모든재료표기   " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ia7-rw-hlu">
+                                <rect key="frame" x="127" y="80" width="161" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="bGG-w6-Pp8"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="16"/>
                                 <color key="textColor" systemColor="systemGrayColor"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" name="darkGrey"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="100" id="ike-x5-YfD"/>
+                            <constraint firstItem="fNK-Hp-UNH" firstAttribute="top" secondItem="rWF-3y-pft" secondAttribute="bottom" constant="8" id="2nI-Zp-1ob"/>
+                            <constraint firstItem="fNK-Hp-UNH" firstAttribute="height" secondItem="rWF-3y-pft" secondAttribute="height" id="4fJ-mP-5Pl"/>
+                            <constraint firstItem="rWF-3y-pft" firstAttribute="height" secondItem="8uo-gv-eoI" secondAttribute="height" id="697-Nj-WNS"/>
+                            <constraint firstAttribute="height" constant="112" id="6Ra-wX-OB3"/>
+                            <constraint firstItem="2EW-lx-ghx" firstAttribute="top" secondItem="rWF-3y-pft" secondAttribute="top" id="8Iw-Lc-XSH"/>
+                            <constraint firstItem="Ia7-rw-hlu" firstAttribute="leading" secondItem="fNK-Hp-UNH" secondAttribute="trailing" constant="8" id="AX0-PE-fpY"/>
+                            <constraint firstItem="8uo-gv-eoI" firstAttribute="top" secondItem="cau-IO-gTm" secondAttribute="top" id="FMm-rq-STM"/>
+                            <constraint firstItem="rWF-3y-pft" firstAttribute="leading" secondItem="8uo-gv-eoI" secondAttribute="leading" id="KYK-Vl-USh"/>
+                            <constraint firstItem="8uo-gv-eoI" firstAttribute="leading" secondItem="cau-IO-gTm" secondAttribute="leading" id="RSJ-kF-MKB"/>
+                            <constraint firstItem="Ia7-rw-hlu" firstAttribute="height" secondItem="2EW-lx-ghx" secondAttribute="height" id="Xts-fx-zMp"/>
+                            <constraint firstItem="qs0-fy-pgh" firstAttribute="top" secondItem="8uo-gv-eoI" secondAttribute="top" id="cBg-07-Cex"/>
+                            <constraint firstItem="rWF-3y-pft" firstAttribute="top" secondItem="qs0-fy-pgh" secondAttribute="bottom" constant="8" id="chZ-z6-6Vh"/>
+                            <constraint firstItem="fNK-Hp-UNH" firstAttribute="leading" secondItem="rWF-3y-pft" secondAttribute="leading" id="grP-Eo-aCV"/>
+                            <constraint firstItem="qs0-fy-pgh" firstAttribute="leading" secondItem="8uo-gv-eoI" secondAttribute="trailing" constant="8" id="mMS-Wa-g0G"/>
+                            <constraint firstItem="Ia7-rw-hlu" firstAttribute="top" secondItem="fNK-Hp-UNH" secondAttribute="top" id="sFc-co-VRv"/>
+                            <constraint firstItem="2EW-lx-ghx" firstAttribute="height" secondItem="qs0-fy-pgh" secondAttribute="height" id="w9b-pE-bnN"/>
+                            <constraint firstItem="2EW-lx-ghx" firstAttribute="leading" secondItem="rWF-3y-pft" secondAttribute="trailing" constant="8" id="wd2-tD-n1H"/>
+                            <constraint firstItem="qs0-fy-pgh" firstAttribute="height" secondItem="8uo-gv-eoI" secondAttribute="height" id="xGK-Hi-0vj"/>
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="업데이트 2020.12.03" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CGO-id-9iZ">
-                        <rect key="frame" x="251.5" y="232" width="108.5" height="14.5"/>
+                        <rect key="frame" x="255" y="243" width="105" height="14"/>
                         <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="12"/>
                         <color key="textColor" red="0.60392156862745094" green="0.59215686274509804" blue="0.5725490196078431" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -136,6 +232,9 @@
         </tableViewCell>
     </objects>
     <resources>
+        <namedColor name="darkGrey">
+            <color red="0.60399997234344482" green="0.59200000762939453" blue="0.57300001382827759" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

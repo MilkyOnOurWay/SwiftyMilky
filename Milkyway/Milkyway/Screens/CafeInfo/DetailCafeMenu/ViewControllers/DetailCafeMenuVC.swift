@@ -76,7 +76,7 @@ extension DetailCafeMenuVC: UITableViewDataSource {
             return 350
         }
         else if indexPath.section == 1 {
-            return 250
+            return 260
         }
         else {
             return 70
@@ -111,6 +111,7 @@ extension DetailCafeMenuVC: UITableViewDataSource {
             // 꿀팁 -> 받아온 숫자에 해당하는 라벨 색 변경 (나중에는 이미지 변경으로 바꿀듯?)
             for i in testCafe.honeyTip {
                 (cell.viewWithTag(i) as? UILabel)?.textColor = UIColor(named: "Milky")
+                (cell.viewWithTag(i) as? UILabel)?.layer.borderColor = UIColor(named: "Milky")?.cgColor
             }
             
             cell.selectionStyle = .none // 셀 선택 불가능하게

@@ -44,10 +44,10 @@
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="hhi-Zb-MTq" firstAttribute="centerY" secondItem="3k7-Df-tbC" secondAttribute="centerY" id="0o7-KV-NCy"/>
                     <constraint firstItem="3k7-Df-tbC" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="DcR-LX-j2r"/>
-                    <constraint firstAttribute="trailing" secondItem="hhi-Zb-MTq" secondAttribute="trailing" constant="20" id="GU6-0g-KqK"/>
                     <constraint firstItem="0eX-yz-RXM" firstAttribute="leading" secondItem="3k7-Df-tbC" secondAttribute="leading" id="R49-S7-gwb"/>
+                    <constraint firstAttribute="trailing" secondItem="hhi-Zb-MTq" secondAttribute="trailing" constant="20" id="VlE-pV-Tt5"/>
+                    <constraint firstItem="hhi-Zb-MTq" firstAttribute="centerY" secondItem="3k7-Df-tbC" secondAttribute="centerY" id="Y9m-gs-slX"/>
                     <constraint firstItem="0eX-yz-RXM" firstAttribute="top" secondItem="3k7-Df-tbC" secondAttribute="bottom" constant="4" id="kHD-vd-aJi"/>
                     <constraint firstItem="3k7-Df-tbC" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="y9n-8A-yvJ"/>
                 </constraints>

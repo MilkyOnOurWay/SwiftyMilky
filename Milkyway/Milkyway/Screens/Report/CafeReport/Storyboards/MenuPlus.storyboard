@@ -113,7 +113,7 @@
                                 </constraints>
                                 <color key="textColor" name="darkGrey"/>
                                 <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="16"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="카테고리" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZLd-de-oxN">
                                 <rect key="frame" x="20" y="339" width="55.5" height="19"/>
@@ -142,12 +142,13 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
+                                    <action selector="categoryBtnClicked:" destination="Uke-Jq-c8W" eventType="touchUpInside" id="KyI-Oj-8O3"/>
                                     <outletCollection property="otherButtons" destination="E0K-aV-c2w" id="fhj-2j-wph"/>
                                     <outletCollection property="otherButtons" destination="LcN-IH-2X1" id="6xy-xf-tJK"/>
                                     <outletCollection property="otherButtons" destination="VhK-gn-Iiu" id="E0F-eK-EEf"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E0K-aV-c2w" customClass="DLRadioButton">
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E0K-aV-c2w" customClass="DLRadioButton">
                                 <rect key="frame" x="0.0" y="434" width="414" height="50"/>
                                 <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="16"/>
                                 <state key="normal">
@@ -157,8 +158,11 @@
                                     <userDefinedRuntimeAttribute type="image" keyPath="icon" value="categoryOff2"/>
                                     <userDefinedRuntimeAttribute type="image" keyPath="iconSelected" value="categoryOn2"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="categoryBtnClicked:" destination="Uke-Jq-c8W" eventType="touchUpInside" id="zu3-5W-NO3"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LcN-IH-2X1" customClass="DLRadioButton">
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LcN-IH-2X1" customClass="DLRadioButton">
                                 <rect key="frame" x="0.0" y="494" width="414" height="50"/>
                                 <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="16"/>
                                 <state key="normal">
@@ -168,8 +172,11 @@
                                     <userDefinedRuntimeAttribute type="image" keyPath="icon" value="categoryOff3"/>
                                     <userDefinedRuntimeAttribute type="image" keyPath="iconSelected" value="categoryOn3"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="categoryBtnClicked:" destination="Uke-Jq-c8W" eventType="touchUpInside" id="yIE-JY-Zb4"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VhK-gn-Iiu" customClass="DLRadioButton">
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VhK-gn-Iiu" customClass="DLRadioButton">
                                 <rect key="frame" x="0.0" y="554" width="414" height="50"/>
                                 <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="16"/>
                                 <state key="normal">
@@ -179,6 +186,9 @@
                                     <userDefinedRuntimeAttribute type="image" keyPath="icon" value="categoryOff4"/>
                                     <userDefinedRuntimeAttribute type="image" keyPath="iconSelected" value="categoryOn4"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="categoryBtnClicked:" destination="Uke-Jq-c8W" eventType="touchUpInside" id="Znw-bf-ewb"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="cB0-7Q-Bad"/>
@@ -224,6 +234,7 @@
                     </view>
                     <connections>
                         <outlet property="categoryFirstBtn" destination="an5-gQ-2WR" id="hba-ag-gZf"/>
+                        <outlet property="editEndBtn" destination="Wwp-QP-yLS" id="Twv-V5-f0d"/>
                         <outlet property="menuTF" destination="AOg-4h-MCg" id="yHa-6C-XYD"/>
                         <outlet property="priceTF" destination="Um4-eG-g2g" id="Q3E-Ff-2FY"/>
                     </connections>

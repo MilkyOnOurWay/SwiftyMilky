@@ -12,7 +12,7 @@ class CafeReportMainVC: UIViewController, IndicatorInfoProvider {
     @IBOutlet weak var tableView: UITableView!
     var tabName: String = ""
     
-    let cafeMenu = ["무지방우유","저지방우유","두유","디카페인"]
+    let cafeMenu = ["디카페인","두유","저지방우유","무지방우유"]
     
     var cafeMenus = [CafeMenu]()
     var cafeInfo: CafeInfo?

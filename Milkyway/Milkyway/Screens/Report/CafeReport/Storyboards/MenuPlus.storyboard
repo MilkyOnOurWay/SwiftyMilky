@@ -47,7 +47,7 @@
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wwp-QP-yLS">
-                                <rect key="frame" x="0.0" y="710" width="414" height="52"/>
+                                <rect key="frame" x="0.0" y="780" width="414" height="52"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="52" id="8xq-rO-0fw"/>
                                 </constraints>
@@ -224,7 +224,7 @@
                             <constraint firstItem="an5-gQ-2WR" firstAttribute="top" secondItem="ZLd-de-oxN" secondAttribute="bottom" constant="16" id="hGO-eQ-3LP"/>
                             <constraint firstItem="LcN-IH-2X1" firstAttribute="top" secondItem="E0K-aV-c2w" secondAttribute="bottom" constant="10" id="hcB-13-Y1M"/>
                             <constraint firstItem="IYE-JG-bN7" firstAttribute="top" secondItem="vWs-ZC-wg5" secondAttribute="bottom" constant="20" id="i6A-2y-bF8"/>
-                            <constraint firstItem="cB0-7Q-Bad" firstAttribute="bottom" secondItem="Wwp-QP-yLS" secondAttribute="bottom" constant="100" id="rCG-0s-lNR"/>
+                            <constraint firstItem="cB0-7Q-Bad" firstAttribute="bottom" secondItem="Wwp-QP-yLS" secondAttribute="bottom" constant="30" id="rCG-0s-lNR"/>
                             <constraint firstItem="cB0-7Q-Bad" firstAttribute="trailing" secondItem="an5-gQ-2WR" secondAttribute="trailing" id="reo-Al-q8d"/>
                             <constraint firstItem="jZh-J5-y8G" firstAttribute="leading" secondItem="AOg-4h-MCg" secondAttribute="leading" id="tdW-d0-gW4"/>
                             <constraint firstItem="E0K-aV-c2w" firstAttribute="height" secondItem="an5-gQ-2WR" secondAttribute="height" id="uBP-Ee-euU"/>

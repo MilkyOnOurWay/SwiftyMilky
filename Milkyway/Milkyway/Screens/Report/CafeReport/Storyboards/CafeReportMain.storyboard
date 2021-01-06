@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uSe-lE-hrg">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uSe-lE-hrg">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="pQj-bt-g83">
@@ -41,10 +41,30 @@
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
                                         <constraint firstItem="bOm-IA-psB" firstAttribute="centerY" secondItem="pQj-bt-g83" secondAttribute="centerY" id="KnZ-Jc-lmk"/>
+                                        <constraint firstAttribute="height" secondItem="ef4-zg-ARG" secondAttribute="height" id="NCe-EN-swn"/>
                                         <constraint firstAttribute="trailing" secondItem="ef4-zg-ARG" secondAttribute="trailing" id="UXF-7K-YfC"/>
                                         <constraint firstAttribute="trailing" secondItem="bOm-IA-psB" secondAttribute="trailing" constant="20" id="aER-gq-Sy8"/>
                                         <constraint firstItem="ef4-zg-ARG" firstAttribute="top" secondItem="pQj-bt-g83" secondAttribute="top" id="eAb-rM-JEx"/>
                                         <constraint firstAttribute="bottom" secondItem="ef4-zg-ARG" secondAttribute="bottom" id="o3r-fs-NkV"/>
+                                    </constraints>
+                                </view>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="CmS-Wu-ML3">
+                                    <rect key="frame" x="0.0" y="144" width="414" height="99"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IR9-x2-5af">
+                                            <rect key="frame" x="0.0" y="27" width="414" height="52"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="52" id="4cD-If-KU2"/>
+                                            </constraints>
+                                            <state key="normal" image="btnReportDisabled"/>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="IR9-x2-5af" secondAttribute="trailing" id="9UG-xm-2pa"/>
+                                        <constraint firstItem="IR9-x2-5af" firstAttribute="leading" secondItem="CmS-Wu-ML3" secondAttribute="leading" id="TGz-k6-hWA"/>
+                                        <constraint firstAttribute="bottom" secondItem="IR9-x2-5af" secondAttribute="bottom" constant="20" id="lFz-im-ocj"/>
                                     </constraints>
                                 </view>
                                 <prototypes>
@@ -74,10 +94,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sPp-zy-vYE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="251" y="101"/>
+            <point key="canvasLocation" x="250.72463768115944" y="100.44642857142857"/>
         </scene>
     </scenes>
     <resources>
+        <image name="btnReportDisabled" width="335" height="52"/>
         <image name="reset" width="65" height="27"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

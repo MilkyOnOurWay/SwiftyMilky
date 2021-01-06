@@ -20,6 +20,43 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uSe-lE-hrg">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="pQj-bt-g83">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="reset" translatesAutoresizingMaskIntoConstraints="NO" id="bOm-IA-psB">
+                                            <rect key="frame" x="329" y="8.5" width="65" height="27"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="27" id="bUn-cB-H8b"/>
+                                                <constraint firstAttribute="width" constant="65" id="tcg-QY-o3w"/>
+                                            </constraints>
+                                        </imageView>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ef4-zg-ARG">
+                                            <rect key="frame" x="314" y="0.0" width="100" height="44"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="100" id="gae-DW-2vH"/>
+                                            </constraints>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstItem="bOm-IA-psB" firstAttribute="centerY" secondItem="pQj-bt-g83" secondAttribute="centerY" id="KnZ-Jc-lmk"/>
+                                        <constraint firstAttribute="trailing" secondItem="ef4-zg-ARG" secondAttribute="trailing" id="UXF-7K-YfC"/>
+                                        <constraint firstAttribute="trailing" secondItem="bOm-IA-psB" secondAttribute="trailing" constant="20" id="aER-gq-Sy8"/>
+                                        <constraint firstItem="ef4-zg-ARG" firstAttribute="top" secondItem="pQj-bt-g83" secondAttribute="top" id="eAb-rM-JEx"/>
+                                        <constraint firstAttribute="bottom" secondItem="ef4-zg-ARG" secondAttribute="bottom" id="o3r-fs-NkV"/>
+                                    </constraints>
+                                </view>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Rka-xY-fwK">
+                                        <rect key="frame" x="0.0" y="72" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Rka-xY-fwK" id="YH2-oC-EyR">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Z1H-gR-KBJ"/>
@@ -41,6 +78,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="reset" width="65" height="27"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

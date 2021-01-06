@@ -18,7 +18,7 @@ class ToastView: UIView {
     return nib.instantiate(withOwner: self, options: nil).first as! ToastView
   }
 
-  static func showIn(viewController: UIViewController, message: String) {
+    static func showIn(viewController: UIViewController, message: String, fromBottom: CGFloat) {
 
     var displayVC = viewController
     if let tabController = viewController as? UITabBarController {
@@ -37,7 +37,7 @@ class ToastView: UIView {
 
     if sharedView?.superview == nil {
       let bounds: CGRect = UIScreen.main.bounds
-      let y = displayVC.view.frame.height - sharedView.frame.size.height - 50
+      let y = displayVC.view.frame.height - sharedView.frame.size.height - fromBottom
         sharedView.frame = CGRect(x: bounds.width/4, y: y, width: displayVC.view.frame.size.width - bounds.width/2, height: CGFloat(messageHeight))
       sharedView.alpha = 0.0
 

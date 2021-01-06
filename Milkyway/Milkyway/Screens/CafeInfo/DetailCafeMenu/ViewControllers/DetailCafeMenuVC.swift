@@ -190,6 +190,7 @@ extension DetailCafeMenuVC {
     }
     
     func iLoveYou() {
+        ToastView.showIn(viewController: self, message: "카페가 나의 유니버스로 들어왔어요.", fromBottom: 40)
         testCafe.likeNum += 1
         universeImageView.image = UIImage(named: "btnUniverseAdded")
         likeLabel.text = "\(testCafe.likeNum)"
@@ -200,6 +201,7 @@ extension DetailCafeMenuVC {
     }
     
     func iHateYou() {
+        ToastView.showIn(viewController: self, message: "카페가 나의 유니버스를 탈출했어요.", fromBottom: 40)
         testCafe.likeNum -= 1
         universeImageView.image = UIImage(named: "btnUniverse")
         likeLabel.text = "\(testCafe.likeNum)"

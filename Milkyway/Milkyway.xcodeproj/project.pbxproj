@@ -703,7 +703,6 @@
 		F2BA63082598E4B200A49020 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				D11ABA5225A64F7D00C1927E /* ToastView.xib */,
 				F2BA63092598E4D400A49020 /* UIViewController+Extension.swift */,
 				F2BA630D2598E52600A49020 /* UITextView+Extension.swift */,
 				F2BA63102598E55000A49020 /* UIButton+Extension.swift */,
@@ -714,6 +713,7 @@
 				F2BA632C2598E7DE00A49020 /* UITabbar+Extension.swift */,
 				F2BA632F2598E80000A49020 /* UIColor+Extension.swift */,
 				D11ABA1525A62B9B00C1927E /* UILabel+Extension.swift */,
+				D11ABA5225A64F7D00C1927E /* ToastView.xib */,
 				D11ABA4F25A64F3B00C1927E /* ToastView.swift */,
 			);
 			path = Extensions;

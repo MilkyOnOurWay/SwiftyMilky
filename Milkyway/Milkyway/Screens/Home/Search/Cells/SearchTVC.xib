@@ -23,28 +23,39 @@
                 <rect key="frame" x="0.0" y="0.0" width="375" height="58"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tzF-dZ-Zeu">
-                        <rect key="frame" x="8" y="13" width="41" height="20"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tzF-dZ-Zeu">
+                        <rect key="frame" x="19" y="15" width="336" height="16"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="16" id="4PX-Kc-7hM"/>
+                            <constraint firstAttribute="width" constant="336" id="nzh-zo-bDj"/>
+                        </constraints>
                         <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="16"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B6I-uP-EBN">
-                        <rect key="frame" x="8" y="34" width="31" height="15"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B6I-uP-EBN">
+                        <rect key="frame" x="20" y="31" width="335" height="14"/>
                         <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="12"/>
                         <color key="textColor" name="darkGrey"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="tzF-dZ-Zeu" secondAttribute="trailing" constant="20" symbolic="YES" id="Aup-rm-Eh3"/>
+                    <constraint firstItem="tzF-dZ-Zeu" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="19" id="EsS-5r-Uwe"/>
+                    <constraint firstItem="tzF-dZ-Zeu" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="YWF-rs-ewf"/>
+                    <constraint firstItem="B6I-uP-EBN" firstAttribute="top" secondItem="tzF-dZ-Zeu" secondAttribute="bottom" id="idk-Aq-9RZ"/>
+                    <constraint firstItem="B6I-uP-EBN" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" symbolic="YES" id="ktO-5U-P5n"/>
+                    <constraint firstAttribute="trailing" secondItem="B6I-uP-EBN" secondAttribute="trailing" constant="20" symbolic="YES" id="wAh-dh-pUx"/>
+                    <constraint firstAttribute="bottom" secondItem="B6I-uP-EBN" secondAttribute="bottom" constant="13" id="xOS-6z-2Gu"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="cafeAddressLabel" destination="B6I-uP-EBN" id="xQl-6h-fAz"/>
                 <outlet property="cafeNameLabel" destination="tzF-dZ-Zeu" id="717-Sv-MOS"/>
             </connections>
-            <point key="canvasLocation" x="-19.565217391304348" y="114.84375"/>
+            <point key="canvasLocation" x="-19.565217391304348" y="114.50892857142857"/>
         </tableViewCell>
     </objects>
     <resources>

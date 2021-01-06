@@ -22,6 +22,8 @@ class CardVC: UIViewController {
     @IBOutlet var shinsaBtn: DLRadioButton!
     @IBOutlet var yuksamBtn: DLRadioButton!
     
+    var check: Int = 0 // 라디오 버튼 상태변화
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setView()
@@ -50,7 +52,6 @@ extension CardVC {
     }
     
     func setRadioButton() {
-        
         mangwonBtn.addTarget(self, action: #selector(sendBtnTag(_:)), for: .touchUpInside)
         younnamBtn.addTarget(self, action: #selector(sendBtnTag(_:)), for: .touchUpInside)
         hannamBtn.addTarget(self, action: #selector(sendBtnTag(_:)), for: .touchUpInside)
@@ -70,15 +71,27 @@ extension CardVC {
         yuksamBtn.iconSelected = UIImage(named: "yuksam_p")!
     }
     
+    func resetRadioButton() {
+        mangwonBtn.isSelected = false
+        younnamBtn.isSelected = false
+        hannamBtn.isSelected = false
+        shinsaBtn.isSelected = false
+        yuksamBtn.isSelected = false
+    }
+    
     @objc func sendBtnTag(_ sender:DLRadioButton) {
 
-        print("if 전 \(sender.isSelected)")
-        if sender.isSelected == true {
-            sender.isSelected = false
-            print("if 후 \(sender.isSelected)")
-        } else {
-            sender.isSelected = true
-            print("if 후 \(sender.isSelected)")
-        }
+        print(sender.tag)
+        
+//        if check == 0 {
+//            sender.isSelected = false
+//            check = 1
+//        } else {
+//            sender.isSelected = true
+//            print(sender.tag)
+//            check = 0
+//        }
     }
+    
+    
 }

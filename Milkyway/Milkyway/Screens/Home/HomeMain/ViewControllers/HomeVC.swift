@@ -135,17 +135,16 @@ extension HomeVC {
     }
     
     @objc func filterButtonDidTap(_ sender:UIButton) {
-        print("if 전 \(sender.isSelected)")
         if sender.isSelected == true {
             sender.isSelected = false
-            print("if 후 \(sender.isSelected)")
         } else {
             sender.isSelected = true
-            print("if 후 \(sender.isSelected)")
         }
     }
     
     @objc func locationButtonDidTap(_ sender:UIButton){
+        cardVC.resetRadioButton()
+        
       if sender.isSelected == true {
         sender.isSelected = false
         mapView.positionMode = .direction

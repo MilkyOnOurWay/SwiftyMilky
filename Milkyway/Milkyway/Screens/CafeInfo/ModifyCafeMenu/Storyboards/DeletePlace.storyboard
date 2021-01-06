@@ -200,16 +200,16 @@
     </scenes>
     <designables>
         <designable name="Hid-kn-Rck">
-            <size key="intrinsicContentSize" width="199" height="22"/>
+            <size key="intrinsicContentSize" width="204" height="22"/>
         </designable>
         <designable name="R5F-8U-El0">
-            <size key="intrinsicContentSize" width="154" height="22"/>
+            <size key="intrinsicContentSize" width="159" height="22"/>
         </designable>
         <designable name="YPw-aR-2Qg">
-            <size key="intrinsicContentSize" width="174" height="22"/>
+            <size key="intrinsicContentSize" width="179" height="22"/>
         </designable>
         <designable name="qDa-vS-4bR">
-            <size key="intrinsicContentSize" width="138" height="22"/>
+            <size key="intrinsicContentSize" width="143" height="22"/>
         </designable>
     </designables>
     <resources>

@@ -45,31 +45,42 @@
                                         </constraints>
                                         <state key="normal" image="back"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wxx-Mg-m8t">
-                                        <rect key="frame" x="356" y="11" width="38" height="25"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="25" id="PH7-6O-E3l"/>
-                                            <constraint firstAttribute="width" constant="38" id="SMb-oN-EGU"/>
-                                        </constraints>
-                                        <state key="normal" image="btnUniverse"/>
-                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="325" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TSS-hY-ftF">
-                                        <rect key="frame" x="367.5" y="40" width="15" height="10"/>
+                                        <rect key="frame" x="370.5" y="39" width="15" height="10"/>
                                         <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="8"/>
                                         <color key="textColor" red="0.60392156862745094" green="0.59215686274509804" blue="0.5725490196078431" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btnUniverse" translatesAutoresizingMaskIntoConstraints="NO" id="ral-66-L6i">
+                                        <rect key="frame" x="362" y="14" width="32" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="32" id="Grc-ah-NvB"/>
+                                            <constraint firstAttribute="height" constant="21" id="VJE-LO-NYS"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ExM-YM-okn">
+                                        <rect key="frame" x="334" y="0.0" width="80" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="mKn-ge-oiE"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="addMyUniverseBtnClicked:" destination="cWT-t1-8Sk" eventType="touchUpInside" id="7vQ-eg-0wy"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="Wxx-Mg-m8t" firstAttribute="top" secondItem="JwJ-Z2-kkD" secondAttribute="top" constant="11" id="4b8-lR-htg"/>
                                     <constraint firstItem="4Qf-lB-Ko6" firstAttribute="centerY" secondItem="JwJ-Z2-kkD" secondAttribute="centerY" id="8NN-uD-J62"/>
                                     <constraint firstItem="Qb0-b4-4Mt" firstAttribute="centerY" secondItem="JwJ-Z2-kkD" secondAttribute="centerY" id="9uk-jP-N3N"/>
-                                    <constraint firstItem="TSS-hY-ftF" firstAttribute="centerX" secondItem="Wxx-Mg-m8t" secondAttribute="centerX" id="O32-Yh-S6m"/>
-                                    <constraint firstItem="TSS-hY-ftF" firstAttribute="top" secondItem="Wxx-Mg-m8t" secondAttribute="bottom" constant="4" id="W8o-6r-zrB"/>
+                                    <constraint firstAttribute="trailing" secondItem="ral-66-L6i" secondAttribute="trailing" constant="20" id="Ifw-BB-nVw"/>
+                                    <constraint firstItem="ExM-YM-okn" firstAttribute="top" secondItem="JwJ-Z2-kkD" secondAttribute="top" id="MoR-Cp-doP"/>
+                                    <constraint firstAttribute="bottom" secondItem="ExM-YM-okn" secondAttribute="bottom" id="Rnv-Yz-5wN"/>
+                                    <constraint firstItem="TSS-hY-ftF" firstAttribute="centerX" secondItem="ral-66-L6i" secondAttribute="centerX" id="TeQ-xe-SDU"/>
+                                    <constraint firstItem="TSS-hY-ftF" firstAttribute="top" secondItem="ral-66-L6i" secondAttribute="bottom" constant="4" id="V2H-53-D3H"/>
                                     <constraint firstItem="Qb0-b4-4Mt" firstAttribute="leading" secondItem="JwJ-Z2-kkD" secondAttribute="leading" constant="6" id="XuI-bi-MaM"/>
-                                    <constraint firstAttribute="trailing" secondItem="Wxx-Mg-m8t" secondAttribute="trailing" constant="20" id="h5G-QY-y9T"/>
+                                    <constraint firstAttribute="trailing" secondItem="ExM-YM-okn" secondAttribute="trailing" id="f38-9j-26k"/>
                                     <constraint firstItem="4Qf-lB-Ko6" firstAttribute="centerX" secondItem="JwJ-Z2-kkD" secondAttribute="centerX" id="l3Z-J5-bJL"/>
+                                    <constraint firstItem="ral-66-L6i" firstAttribute="top" secondItem="JwJ-Z2-kkD" secondAttribute="top" constant="14" id="www-qv-XZf"/>
                                     <constraint firstAttribute="height" constant="60" id="yyh-Ul-ICz"/>
                                 </constraints>
                             </view>
@@ -146,7 +157,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addMyUniverseBtn" destination="ExM-YM-okn" id="7ej-fu-9SX"/>
+                        <outlet property="likeLabel" destination="TSS-hY-ftF" id="03C-ha-OAF"/>
                         <outlet property="tableView" destination="yNq-f6-VaC" id="uma-yb-Xaj"/>
+                        <outlet property="universeImageView" destination="ral-66-L6i" id="Ngf-h3-Rag"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UBy-VT-J8n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -156,7 +170,7 @@
     </scenes>
     <resources>
         <image name="back" width="44" height="44"/>
-        <image name="btnUniverse" width="38" height="25"/>
+        <image name="btnUniverse" width="32" height="21"/>
         <image name="rectangle8" width="335" height="52"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

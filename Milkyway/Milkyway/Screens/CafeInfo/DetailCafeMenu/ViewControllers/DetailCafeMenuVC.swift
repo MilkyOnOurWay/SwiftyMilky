@@ -11,10 +11,14 @@ import SafariServices
 class DetailCafeMenuVC: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var addMyUniverseBtn: UIButton!
+    @IBOutlet weak var likeLabel: UILabel!
+    @IBOutlet weak var universeImageView: UIImageView!
     
     
     var testCafe = Cafe()
     let cafeMenu = ["무지방우유","저지방우유","두유","디카페인"]
+    var like: Bool = false
     
     
     override func viewDidLoad() {
@@ -26,6 +30,11 @@ class DetailCafeMenuVC: UIViewController {
         notiGather()
         
     }
+    
+    @IBAction func addMyUniverseBtnClicked(_ sender: Any) {
+        like ? iHateYou() : iLoveYou()
+    }
+    
 }
 
 
@@ -130,6 +139,9 @@ extension DetailCafeMenuVC: UITableViewDataSource {
     }
 }
 
+
+
+
 extension DetailCafeMenuVC {
     
     // 노티 옵저버들
@@ -174,6 +186,26 @@ extension DetailCafeMenuVC {
                             Menu(menuName: "모카모카는행복해", selection: [1,2,4], price: "4,500원")
                         ])
         
+    }
+    
+    func iLoveYou() {
+        testCafe.likeNum += 1
+        universeImageView.image = UIImage(named: "btnUniverseAdded")
+        likeLabel.text = "\(testCafe.likeNum)"
+        likeLabel.textColor = UIColor(named: "Milky")
+        likeLabel.font = UIFont(name: "SF Pro Text Bold", size: 8.0)!
+        tableView.reloadData()
+        like = true
+    }
+    
+    func iHateYou() {
+        testCafe.likeNum -= 1
+        universeImageView.image = UIImage(named: "btnUniverse")
+        likeLabel.text = "\(testCafe.likeNum)"
+        likeLabel.textColor = UIColor(named: "darkGrey")
+        likeLabel.font = UIFont(name: "SF Pro Text Regular", size: 8.0)!
+        tableView.reloadData()
+        like = false
     }
     
     // 셀에서 webPage버튼 누르면 여기서 실행 ... cell에서는 실행이 안되더라 흑흑

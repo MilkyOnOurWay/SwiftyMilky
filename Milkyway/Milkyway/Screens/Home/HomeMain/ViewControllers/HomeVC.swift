@@ -70,6 +70,7 @@ extension HomeVC: CLLocationManagerDelegate {
 
 extension HomeVC {
     
+    // 상단 ~님
     func setNickNameLabel(nickName: String) {
         let boldAtt = [
             NSAttributedString.Key.font: UIFont(name: "SFProText-Bold", size: 16.0)!
@@ -86,8 +87,9 @@ extension HomeVC {
         newString.append(regularText)
         nickNameLabel.attributedText = newString
         nickNameLabel.numberOfLines = 2
-//        nickNameLabel.sizeToFit()
     }
+    
+    // 상단 필터 버튼
     func setFilterButton() {
         filterBtn1.setImage(UIImage(named: "decaffeine_w"), for: .normal)
         filterBtn1.setImage(UIImage(named: "decaffeine_p"), for: .selected)
@@ -128,26 +130,28 @@ extension HomeVC {
     
     func setMapButton() {
         locationBtn.setImage(UIImage(named: "btnCurrentLocation"), for: UIControl.State.normal)
-        locationBtn.setImage(UIImage(named: "plus.button"), for: UIControl.State.selected)
+        locationBtn.setImage(UIImage(named: "compassIc"), for: UIControl.State.selected)
         locationBtn.addTarget(self, action: #selector(locationButtonDidTap), for: UIControl.Event.touchUpInside)
     }
     
-    @objc func filterButtonDidTap(_ sender:UIButton){
-        print(sender.tag)
+    @objc func filterButtonDidTap(_ sender:UIButton) {
+        print("if 전 \(sender.isSelected)")
         if sender.isSelected == true {
             sender.isSelected = false
-          
+            print("if 후 \(sender.isSelected)")
         } else {
             sender.isSelected = true
+            print("if 후 \(sender.isSelected)")
         }
     }
-    @objc func locationButtonDidTap(){
-      if locationBtn.isSelected == true {
-        locationBtn.isSelected = false
+    
+    @objc func locationButtonDidTap(_ sender:UIButton){
+      if sender.isSelected == true {
+        sender.isSelected = false
         mapView.positionMode = .direction
         
       } else {
-        locationBtn.isSelected = true
+        sender.isSelected = true
         mapView.positionMode = .compass
       }
     }
@@ -162,11 +166,12 @@ extension HomeVC {
         self.addChild(cardVC)
         self.view.addSubview(cardVC.view)
         
-        let tabbarFrame = self.tabBarController?.tabBar.frame; // 바텀 시트 올릴 때 사용
+        // 탭바 높이
+        let tabbarFrame = self.tabBarController?.tabBar.frame;
         
 //        print("탭바 높이 \(tabbarFrame!.size.height)")
         
-        //탭바 높이만큼 더 올리기
+        //탭바 높이만큼 더하기
         cardVC.view.frame = CGRect(x: 0, y: self.view.frame.height - cardHandleAreaHeight - tabbarFrame!.size.height, width: self.view.bounds.width, height: cardHeight)
         
         cardVC.view.clipsToBounds = false //여기 true면 shadow 안먹음
@@ -177,40 +182,13 @@ extension HomeVC {
         cardVC.handleArea.addGestureRecognizer(tapGestureRecognizer)
         cardVC.handleArea.addGestureRecognizer(panGestureRecognizer)
     }
-
-    @objc
-    func handleCardTap(recognzier:UITapGestureRecognizer) {
-        switch recognzier.state {
-        case .ended:
-            animateTransitionIfNeeded(state: nextState, duration: 0.9)
-        default:
-            break
-        }
-    }
-    
-    @objc
-    func handleCardPan (recognizer:UIPanGestureRecognizer) {
-        switch recognizer.state {
-        case .began:
-            startInteractiveTransition(state: nextState, duration: 0.9)
-        case .changed:
-            let translation = recognizer.translation(in: self.cardVC.handleArea)
-            var fractionComplete = translation.y / cardHeight
-            fractionComplete = cardVisible ? fractionComplete : -fractionComplete
-            updateInteractiveTransition(fractionCompleted: fractionComplete)
-        case .ended:
-            continueInteractiveTransition()
-        default:
-            break
-        }
-        
-    }
     
     func animateTransitionIfNeeded (state:CardState, duration:TimeInterval) {
         
-        let tabbarFrame = self.tabBarController?.tabBar.frame; // 바텀 시트 내릴 때 사용
+        // 탭바 높이
+        let tabbarFrame = self.tabBarController?.tabBar.frame;
         
-        //탭바 높이만큼 덜 내리기
+        //탭바 높이 추가 설정
         if runningAnimations.isEmpty {
             let frameAnimator = UIViewPropertyAnimator(duration: duration, dampingRatio: 1) {
                 switch state {
@@ -250,6 +228,33 @@ extension HomeVC {
     func continueInteractiveTransition (){
         for animator in runningAnimations {
             animator.continueAnimation(withTimingParameters: nil, durationFactor: 0)
+        }
+    }
+    
+    @objc
+    func handleCardTap(recognzier:UITapGestureRecognizer) {
+        switch recognzier.state {
+        case .ended:
+            animateTransitionIfNeeded(state: nextState, duration: 0.9)
+        default:
+            break
+        }
+    }
+    
+    @objc
+    func handleCardPan (recognizer:UIPanGestureRecognizer) {
+        switch recognizer.state {
+        case .began:
+            startInteractiveTransition(state: nextState, duration: 0.9)
+        case .changed:
+            let translation = recognizer.translation(in: self.cardVC.handleArea)
+            var fractionComplete = translation.y / cardHeight
+            fractionComplete = cardVisible ? fractionComplete : -fractionComplete
+            updateInteractiveTransition(fractionCompleted: fractionComplete)
+        case .ended:
+            continueInteractiveTransition()
+        default:
+            break
         }
     }
 }

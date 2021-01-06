@@ -24,6 +24,7 @@
 		6BD05A6E25A41FFE00B2643F /* TopTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD05A6825A41FFE00B2643F /* TopTVCell.swift */; };
 		6BD05A6F25A41FFE00B2643F /* UnderExamTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BD05A6925A41FFE00B2643F /* UnderExamTVCell.xib */; };
 		6BD05A7025A41FFE00B2643F /* UnderExamTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD05A6A25A41FFE00B2643F /* UnderExamTVCell.swift */; };
+		6BF6DA6E25A57DF5001CDB9A /* CardState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF6DA6D25A57DF5001CDB9A /* CardState.swift */; };
 		D15443ED25A33999007773BF /* CafeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15443EC25A33999007773BF /* CafeInfo.swift */; };
 		D15443F125A339AC007773BF /* CafeMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15443F025A339AC007773BF /* CafeMenu.swift */; };
 		D15443F625A33ACF007773BF /* CafeNameSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15443F425A33ACF007773BF /* CafeNameSearchCell.swift */; };
@@ -109,6 +110,7 @@
 		6BD05A6825A41FFE00B2643F /* TopTVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopTVCell.swift; sourceTree = "<group>"; };
 		6BD05A6925A41FFE00B2643F /* UnderExamTVCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UnderExamTVCell.xib; sourceTree = "<group>"; };
 		6BD05A6A25A41FFE00B2643F /* UnderExamTVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnderExamTVCell.swift; sourceTree = "<group>"; };
+		6BF6DA6D25A57DF5001CDB9A /* CardState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardState.swift; sourceTree = "<group>"; };
 		82A4CFBF130A68D0DC76260E /* Pods-Milkyway.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Milkyway.release.xcconfig"; path = "Target Support Files/Pods-Milkyway/Pods-Milkyway.release.xcconfig"; sourceTree = "<group>"; };
 		B6E7AC1233665DEC2C3D21DC /* Pods-Milkyway.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Milkyway.debug.xcconfig"; path = "Target Support Files/Pods-Milkyway/Pods-Milkyway.debug.xcconfig"; sourceTree = "<group>"; };
 		D15443EC25A33999007773BF /* CafeInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeInfo.swift; sourceTree = "<group>"; };
@@ -699,6 +701,7 @@
 			isa = PBXGroup;
 			children = (
 				F2BA63282598E74E00A49020 /* Font.swift */,
+				6BF6DA6D25A57DF5001CDB9A /* CardState.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -874,6 +877,7 @@
 				F2242A1B259BAC8200455604 /* TabBarController.swift in Sources */,
 				D15443F625A33ACF007773BF /* CafeNameSearchCell.swift in Sources */,
 				6B869C0225A0B95E0068BFD2 /* InfoModifyReqVC.swift in Sources */,
+				6BF6DA6E25A57DF5001CDB9A /* CardState.swift in Sources */,
 				F2BA63142598E56B00A49020 /* UIView+Extension.swift in Sources */,
 				6B869C4425A1E8E00068BFD2 /* DeletePlaceConfirmVC.swift in Sources */,
 				D15443F125A339AC007773BF /* CafeMenu.swift in Sources */,

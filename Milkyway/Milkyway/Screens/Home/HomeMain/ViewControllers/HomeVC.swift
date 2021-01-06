@@ -10,12 +10,11 @@ import NMapsMap
 
 class HomeVC: UIViewController {
     
-    enum CardState {
-        case expanded
-        case collapsed
-    }
+    
     
     @IBOutlet var mapView: NMFMapView!
+    
+    @IBOutlet var nickNameLabel: UILabel!
     
     @IBOutlet var filterBtn1: UIButton!
     @IBOutlet var filterBtn2: UIButton!
@@ -42,6 +41,7 @@ class HomeVC: UIViewController {
     
     override func viewDidLoad(){
         super.viewDidLoad()
+        setNickNameLabel(nickName: "릴리릴리릴리릴")
         setMapLocation()
         setMapButton()
         setFilterButton()
@@ -67,9 +67,25 @@ extension HomeVC: CLLocationManagerDelegate {
 
 extension HomeVC {
     
-    func setFilterButton() {
+    func setNickNameLabel(nickName: String) {
+        let boldAtt = [
+            NSAttributedString.Key.font: UIFont(name: "SFProText-Bold", size: 16.0)!
+        ]
+        let regularAtt = [
+            NSAttributedString.Key.font: UIFont(name: "SFProText-Regular", size: 16.0)!
+        ]
+        let boldText = NSAttributedString(string: "\(nickName)님!\n", attributes: boldAtt)
+        let regularText = NSAttributedString(string: "오늘도 ‘속’ 편한 탐험 시작해 볼까요?", attributes: regularAtt)
         
-        //filterBtn1.layer.cornerRadius = filterBtn1.frame.height / 2
+        
+        let newString = NSMutableAttributedString()
+        newString.append(boldText)
+        newString.append(regularText)
+        nickNameLabel.attributedText = newString
+        nickNameLabel.numberOfLines = 2
+//        nickNameLabel.sizeToFit()
+    }
+    func setFilterButton() {
         filterBtn1.setImage(UIImage(named: "decaffeine_w"), for: .normal)
         filterBtn1.setImage(UIImage(named: "decaffeine_p"), for: .selected)
         

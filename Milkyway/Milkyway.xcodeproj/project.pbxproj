@@ -224,6 +224,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D11AB9BC25A5957B00C1927E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D1D95DCD25A30B7800B95F79 /* Cafe.swift */,
+				D15443EC25A33999007773BF /* CafeInfo.swift */,
+				D15443F025A339AC007773BF /* CafeMenu.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		D15443C925A33712007773BF /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -239,15 +249,6 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
-		D15443EB25A33983007773BF /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				D15443EC25A33999007773BF /* CafeInfo.swift */,
-				D15443F025A339AC007773BF /* CafeMenu.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		D1996DFA25A20ACD00B8F40B /* CafeInfo */ = {
 			isa = PBXGroup;
 			children = (
@@ -260,7 +261,6 @@
 		D1996DFB25A20AD900B8F40B /* DetailCafeMenu */ = {
 			isa = PBXGroup;
 			children = (
-				D1D95DCC25A30B6D00B95F79 /* Models */,
 				D1D95DC525A30B5A00B95F79 /* Cells */,
 				D1996E0125A20BD600B8F40B /* ViewControllers */,
 				D1996E0025A20BD000B8F40B /* Storyboards */,
@@ -328,14 +328,6 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
-		D1D95DCC25A30B6D00B95F79 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				D1D95DCD25A30B7800B95F79 /* Cafe.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		D1F22836259F705A0018C472 /* ReportTabBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -364,7 +356,6 @@
 		D1F22842259F73480018C472 /* CafeReport */ = {
 			isa = PBXGroup;
 			children = (
-				D15443EB25A33983007773BF /* Models */,
 				D15443C925A33712007773BF /* Cells */,
 				D1F22844259F73B60018C472 /* ViewControllers */,
 				D1F22845259F73C20018C472 /* Storyboards */,
@@ -631,6 +622,7 @@
 		F2BA62F52598DED200A49020 /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				D11AB9BC25A5957B00C1927E /* Models */,
 				F2BA63272598E72400A49020 /* Enums */,
 				F2BA63082598E4B200A49020 /* Extensions */,
 				F2BA62F92598E00A00A49020 /* Delegate */,

@@ -54,7 +54,7 @@ extension ButtonBarPagerTabStripViewController {
         settings.style.selectedBarBackgroundColor = UIColor(named: "Milky")!
         settings.style.buttonBarBackgroundColor = .clear
         settings.style.buttonBarItemBackgroundColor = .clear
-        settings.style.buttonBarItemFont = .systemFont(ofSize: 14)
+        settings.style.buttonBarItemFont = UIFont(name: "SF Pro Text Bold", size: 16.0)!
         settings.style.selectedBarHeight = 3.0
         settings.style.buttonBarMinimumLineSpacing = 0
         settings.style.buttonBarItemTitleColor = UIColor(named: "Milky")!

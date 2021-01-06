@@ -66,7 +66,7 @@ extension CafeReportMainVC: UITableViewDataSource {
             return 130
         }
         else if indexPath.section == 1 {
-            return 110
+            return 90
         }
         else {
             return 250

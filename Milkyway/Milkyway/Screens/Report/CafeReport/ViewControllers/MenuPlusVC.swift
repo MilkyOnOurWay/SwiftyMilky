@@ -6,15 +6,17 @@
 //
 
 import UIKit
+import DLRadioButton
 
 class MenuPlusVC: UIViewController {
     @IBOutlet weak var menuTF: UITextField!
     @IBOutlet weak var priceTF: UITextField!
+    @IBOutlet weak var categoryFirstBtn: DLRadioButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        categoryFirstBtn.isMultipleSelectionEnabled = true
         
-        // Do any additional setup after loading the view.
     }
     
     

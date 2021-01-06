@@ -14,7 +14,7 @@ class LoginVC: UIViewController{
     @IBOutlet weak var stateLabel: UILabel!
     @IBOutlet weak var countLabel: UILabel!
     @IBOutlet weak var checkBoxImageView: UIImageView!
-    
+    @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     var count = 0
     
@@ -47,7 +47,6 @@ extension LoginVC {
     func setTextfield(){
         
         nicknameTextField.delegate = self
-        //nicknameTextField.returnKeyType = .done
         nicknameTextField.addTarget(self, action: #selector(checkRegister), for: .editingChanged)
     }
     
@@ -94,10 +93,12 @@ extension LoginVC {
     }
     
     @objc func keyboardWillShow(_ notification: Notification){
+        print(#function)
+        
         if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
             let keyboardRectangle = keyboardFrame.cgRectValue
             let keyboardHeight = keyboardRectangle.height
-            self.bottomConstraint.constant += keyboardHeight
+            self.bottomConstraint.constant = keyboardHeight + 20
             self.view.layoutIfNeeded()
         }
     }
@@ -106,7 +107,7 @@ extension LoginVC {
         if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
             let keyboardRectangle = keyboardFrame.cgRectValue
             let keyboardHeight = keyboardRectangle.height
-            self.bottomConstraint.constant -= keyboardHeight
+            self.bottomConstraint.constant = 20
             self.view.layoutIfNeeded()
         }
     }
@@ -131,14 +132,14 @@ extension LoginVC: UITextFieldDelegate {
             startButton.setBackgroundImage(UIImage(named: "btnStartDisabled"), for: .normal)
             stateLabel.text = "사용 불가한 닉네임입니다."
             stateLabel.textColor = .red
-            nicknameTextField.background = UIImage(named: "inputError")
+            backgroundImageView.image = UIImage(named: "inputError")
             return
         }else {
             stateLabel.isHidden = true
             startButton.setBackgroundImage(UIImage(named: "btnStart"), for: .normal)
             startButton.isEnabled = true
             checkBoxImageView.isHidden = false
-            nicknameTextField.background = UIImage(named: "inputCorrect")
+            backgroundImageView.image = UIImage(named: "inputCorrect")
             return
         }
        
@@ -161,5 +162,7 @@ extension LoginVC: UITextFieldDelegate {
         textField.resignFirstResponder()
         return true
     }
+    
+    
     
 }

@@ -22,30 +22,52 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="GcX-O0-WrO">
-                                <rect key="frame" x="0.0" y="123" width="375" height="544"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="GcX-O0-WrO">
+                                <rect key="frame" x="0.0" y="72" width="375" height="595"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sns-QS-l5Y">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sns-QS-l5Y">
                                 <rect key="frame" x="10" y="20" width="44" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="3bs-IM-KZb"/>
+                                    <constraint firstAttribute="width" constant="44" id="h5n-ia-Ccd"/>
+                                </constraints>
                                 <state key="normal" image="back"/>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="    카페 검색하기" textAlignment="natural" minimumFontSize="17" background="rectangle155" translatesAutoresizingMaskIntoConstraints="NO" id="f16-R4-lNe">
-                                <rect key="frame" x="55" y="24" width="304" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="    카페 검색하기" textAlignment="natural" minimumFontSize="17" background="rectangle155" translatesAutoresizingMaskIntoConstraints="NO" id="f16-R4-lNe">
+                                <rect key="frame" x="55" y="25" width="304" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="304" id="J1L-M4-G5c"/>
+                                    <constraint firstAttribute="height" constant="34" id="U3n-Rk-kfS"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D2a-eC-kcl">
-                                <rect key="frame" x="322" y="29" width="22" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="star" catalog="system"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D2a-eC-kcl">
+                                <rect key="frame" x="321" y="30" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="m9p-Fc-zwy"/>
+                                    <constraint firstAttribute="width" constant="24" id="yG0-4j-9ZF"/>
+                                </constraints>
+                                <state key="normal" image="btnSearch"/>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="pEr-mj-4yg"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="D2a-eC-kcl" firstAttribute="top" secondItem="pEr-mj-4yg" secondAttribute="top" constant="30" id="3yb-Bf-QZs"/>
+                            <constraint firstItem="pEr-mj-4yg" firstAttribute="trailing" secondItem="D2a-eC-kcl" secondAttribute="trailing" constant="30" id="9cf-SS-Jg3"/>
+                            <constraint firstItem="D2a-eC-kcl" firstAttribute="centerY" secondItem="sns-QS-l5Y" secondAttribute="centerY" id="Avj-xJ-G04"/>
+                            <constraint firstItem="f16-R4-lNe" firstAttribute="top" secondItem="pEr-mj-4yg" secondAttribute="top" constant="25" id="Bms-Xx-ZUJ"/>
+                            <constraint firstItem="GcX-O0-WrO" firstAttribute="bottom" secondItem="pEr-mj-4yg" secondAttribute="bottom" id="DOp-zZ-gEV"/>
+                            <constraint firstItem="GcX-O0-WrO" firstAttribute="top" secondItem="sns-QS-l5Y" secondAttribute="bottom" constant="8" symbolic="YES" id="Ij1-a9-scK"/>
+                            <constraint firstItem="sns-QS-l5Y" firstAttribute="leading" secondItem="pEr-mj-4yg" secondAttribute="leading" constant="10" id="TNs-LW-c1L"/>
+                            <constraint firstItem="GcX-O0-WrO" firstAttribute="trailing" secondItem="pEr-mj-4yg" secondAttribute="trailing" id="UmX-YZ-HyI"/>
+                            <constraint firstItem="sns-QS-l5Y" firstAttribute="top" secondItem="pEr-mj-4yg" secondAttribute="top" constant="20" id="Wxf-wO-0NC"/>
+                            <constraint firstItem="GcX-O0-WrO" firstAttribute="leading" secondItem="pEr-mj-4yg" secondAttribute="leading" id="ehs-QP-uhG"/>
+                            <constraint firstItem="f16-R4-lNe" firstAttribute="centerY" secondItem="sns-QS-l5Y" secondAttribute="centerY" id="hHx-x8-15m"/>
+                            <constraint firstItem="f16-R4-lNe" firstAttribute="leading" secondItem="sns-QS-l5Y" secondAttribute="trailing" constant="1" id="wPL-yq-rdc"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="backButton" destination="sns-QS-l5Y" id="lzZ-U7-zcB"/>
@@ -61,8 +83,8 @@
     </scenes>
     <resources>
         <image name="back" width="44" height="44"/>
+        <image name="btnSearch" width="24" height="24"/>
         <image name="rectangle155" width="304" height="36"/>
-        <image name="star" catalog="system" width="128" height="116"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

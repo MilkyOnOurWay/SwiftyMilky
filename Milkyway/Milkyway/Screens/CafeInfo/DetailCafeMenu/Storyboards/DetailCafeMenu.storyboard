@@ -45,7 +45,7 @@
                                         </constraints>
                                         <state key="normal" image="back"/>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="325" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TSS-hY-ftF">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="324" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TSS-hY-ftF">
                                         <rect key="frame" x="370.5" y="39" width="15" height="10"/>
                                         <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="8"/>
                                         <color key="textColor" red="0.60392156862745094" green="0.59215686274509804" blue="0.5725490196078431" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>

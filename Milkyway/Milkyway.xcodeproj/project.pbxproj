@@ -44,6 +44,7 @@
 		D154440525A33B05007773BF /* CafeMenusCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D154440325A33B05007773BF /* CafeMenusCell.xib */; };
 		D154440925A33B10007773BF /* HoneyTipCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D154440725A33B10007773BF /* HoneyTipCell.swift */; };
 		D154440A25A33B10007773BF /* HoneyTipCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D154440825A33B10007773BF /* HoneyTipCell.xib */; };
+		D1983CA725A72BF200C74CED /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1983CA625A72BF200C74CED /* UITextField+Extension.swift */; };
 		D1996E0425A2290500B8F40B /* DetailCafeMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1996E0325A2290500B8F40B /* DetailCafeMenuVC.swift */; };
 		D1996E0725A2290E00B8F40B /* DetailCafeMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1996E0625A2290E00B8F40B /* DetailCafeMenu.storyboard */; };
 		D1D95DCE25A30B7800B95F79 /* Cafe.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D95DCD25A30B7800B95F79 /* Cafe.swift */; };
@@ -144,6 +145,7 @@
 		D154440325A33B05007773BF /* CafeMenusCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CafeMenusCell.xib; sourceTree = "<group>"; };
 		D154440725A33B10007773BF /* HoneyTipCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoneyTipCell.swift; sourceTree = "<group>"; };
 		D154440825A33B10007773BF /* HoneyTipCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HoneyTipCell.xib; sourceTree = "<group>"; };
+		D1983CA625A72BF200C74CED /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		D1996E0325A2290500B8F40B /* DetailCafeMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCafeMenuVC.swift; sourceTree = "<group>"; };
 		D1996E0625A2290E00B8F40B /* DetailCafeMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailCafeMenu.storyboard; sourceTree = "<group>"; };
 		D1D95DCD25A30B7800B95F79 /* Cafe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cafe.swift; sourceTree = "<group>"; };
@@ -721,6 +723,7 @@
 				D11ABA1525A62B9B00C1927E /* UILabel+Extension.swift */,
 				D11ABA5225A64F7D00C1927E /* ToastView.xib */,
 				D11ABA4F25A64F3B00C1927E /* ToastView.swift */,
+				D1983CA625A72BF200C74CED /* UITextField+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -921,6 +924,7 @@
 				F2BA62DE2598DE5F00A49020 /* AppDelegate.swift in Sources */,
 				F2242A24259BAFFC00455604 /* HomeVC.swift in Sources */,
 				F2BA630A2598E4D400A49020 /* UIViewController+Extension.swift in Sources */,
+				D1983CA725A72BF200C74CED /* UITextField+Extension.swift in Sources */,
 				F26BEB6425A63BB900B7AFCF /* AddSearchTVC.swift in Sources */,
 				6B869C0B25A0BF9C0068BFD2 /* ModifyVC.swift in Sources */,
 				6BD05A7025A41FFE00B2643F /* UnderExamTVCell.swift in Sources */,

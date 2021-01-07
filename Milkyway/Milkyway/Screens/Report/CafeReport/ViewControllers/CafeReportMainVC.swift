@@ -16,6 +16,7 @@ class CafeReportMainVC: UIViewController, IndicatorInfoProvider {
     
     var cafeMenus = [CafeMenu]()
     var cafeInfo: CafeInfo?
+    var editIndex: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -85,6 +86,7 @@ extension CafeReportMainVC: UITableViewDataSource {
     // cell 그려주기
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        
         if indexPath.section == 0 { // cafe 명
             if cafeInfo == nil { // 검색 전
                 guard let cell: CafeNameSearchCell = tableView.dequeueReusableCell(withIdentifier: "CafeNameSearchCell" , for: indexPath) as? CafeNameSearchCell else{
@@ -115,20 +117,43 @@ extension CafeReportMainVC: UITableViewDataSource {
             // 메뉴 하단에 선택지 표시
             for i in cafeMenus[indexPath.row].selection {
                 cell.menuSelectionLabel.text! += (cafeMenu[i-1] + "  ")
-
+                
             }
             
             cell.menuPriceLabel.text = cafeMenus[indexPath.row].price + " 원"
             cell.selectionStyle = .none // 셀 선택 불가능하게
+            
+            cell.deleteModifyBtnAction = { [unowned self] in
+                let menu = self.cafeMenus[indexPath.row].menu
+                let actionSheet = UIAlertController(title: "메뉴를 수정 및 삭제합니다", message: "\(menu)", preferredStyle: .actionSheet)
+                
+                actionSheet.addAction(UIAlertAction(title: "수정", style: .default, handler: { result in
+                    editIndex = indexPath.row
+                    NotificationCenter.default.post(name: Notification.Name("gotomenuEdit"), object: cafeMenus[indexPath.row])
+                    
+                }))
+                actionSheet.addAction(UIAlertAction(title: "삭제", style: .destructive, handler: { result in
+                    cafeMenus.remove(at: indexPath.row)
+                    tableView.reloadSections(IndexSet(1...1), with: .fade)
+                    
+                }))
+                actionSheet.addAction(UIAlertAction(title: "취소", style: .cancel, handler: nil))
+                
+                self.present(actionSheet, animated: true, completion: nil)
+
+              
+                }
+            
+            
             return cell
-  
+            
         }
         
         else { // 밀키의 꿀팁
             guard let cell: HoneyTipCell = tableView.dequeueReusableCell(withIdentifier: "HoneyTipCell", for: indexPath) as? HoneyTipCell else{
                 return UITableViewCell()
             }
-         
+            
             return cell
         }
         
@@ -140,6 +165,7 @@ extension CafeReportMainVC {
     
     func notiGather() {
         NotificationCenter.default.addObserver(self, selector: #selector(menuPlus(_:)), name: Notification.Name("menuPlus"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(removeBeforeMenu), name: Notification.Name("remove"), object: nil)
     }
     
     
@@ -149,6 +175,7 @@ extension CafeReportMainVC {
         tableView.dataSource = self
         
     }
+    
     
     // 셀 등록
     func cellResister() {
@@ -169,10 +196,17 @@ extension CafeReportMainVC {
     
     @objc func menuPlus(_ noti: NSNotification) {
         cafeMenus.append(noti.object as! CafeMenu) // 옵셔널 처리 나중에는 해줘야함...
-        tableView.reloadData()
+        tableView.reloadSections(IndexSet(1...1), with: .automatic)
         
     }
-
+    
+    @objc func removeBeforeMenu() {
+        cafeMenus.remove(at: editIndex!)
+        tableView.reloadSections(IndexSet(1...1), with: .fade)
+    }
+    
+    
+    
 }
 
 

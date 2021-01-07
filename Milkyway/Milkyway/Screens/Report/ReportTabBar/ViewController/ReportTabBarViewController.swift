@@ -46,7 +46,7 @@ extension ButtonBarPagerTabStripViewController {
     
     func notiGather() {
         NotificationCenter.default.addObserver(self, selector: #selector(menuView), name: Notification.Name("gotomenuAdd"), object: nil)
-     
+        NotificationCenter.default.addObserver(self, selector: #selector(editMenu(_:)), name: Notification.Name("gotomenuEdit"), object: nil)
     }
     
     
@@ -60,8 +60,8 @@ extension ButtonBarPagerTabStripViewController {
         settings.style.buttonBarMinimumLineSpacing = 0
         settings.style.buttonBarItemTitleColor = UIColor(named: "Milky")!
         settings.style.buttonBarItemsShouldFillAvailableWidth = true
-        settings.style.buttonBarLeftContentInset = 0
-        settings.style.buttonBarRightContentInset = 0
+        settings.style.buttonBarLeftContentInset = -10
+        settings.style.buttonBarRightContentInset = -10
     }
     
     
@@ -88,6 +88,20 @@ extension ButtonBarPagerTabStripViewController {
         
     }
     
+    @objc func editMenu(_ noti: NSNotification) {
+        let cafeMenu = noti.object as! CafeMenu
+        guard let menuVC = UIStoryboard(name: "MenuPlus", bundle: nil).instantiateViewController(withIdentifier:"MenuPlusVC") as? MenuPlusVC else {
+            return
+        }
+        
+        menuVC.editCafeMenu = cafeMenu
+        menuVC.areyouEdit = true
+
+        self.navigationController?.pushViewController(menuVC, animated: true) // menuPlus View 띄우기
+        
+    }
+    
+   
     
     /// 검색버튼 눌리면 searchVC로 연결
     @objc func searchBtnClicked() {

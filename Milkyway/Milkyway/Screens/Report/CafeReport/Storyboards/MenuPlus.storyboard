@@ -35,7 +35,7 @@
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="    메뉴 이름을 입력해 주세요" textAlignment="natural" minimumFontSize="17" background="menuTextbox" translatesAutoresizingMaskIntoConstraints="NO" id="AOg-4h-MCg">
+                            <textField opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="메뉴 이름을 입력해 주세요" textAlignment="natural" minimumFontSize="17" background="menuTextbox" translatesAutoresizingMaskIntoConstraints="NO" id="AOg-4h-MCg" customClass="FormTextField" customModule="Milkyway" customModuleProvider="target">
                                 <rect key="frame" x="20" y="160" width="374" height="50"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" name="darkGrey"/>
@@ -45,6 +45,11 @@
                                 <color key="textColor" name="darkGrey"/>
                                 <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="inset">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wwp-QP-yLS">
                                 <rect key="frame" x="0.0" y="780" width="414" height="52"/>
@@ -107,7 +112,7 @@
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="    가격을 입력해 주세요" textAlignment="natural" minimumFontSize="17" background="menuTextbox" translatesAutoresizingMaskIntoConstraints="NO" id="Um4-eG-g2g">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="가격을 입력해 주세요" minimumFontSize="17" background="menuTextbox" translatesAutoresizingMaskIntoConstraints="NO" id="Um4-eG-g2g" customClass="FormTextField" customModule="Milkyway" customModuleProvider="target">
                                 <rect key="frame" x="20" y="269" width="374" height="50"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" red="0.60392156860000001" green="0.59215686270000001" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
@@ -117,6 +122,11 @@
                                 <color key="textColor" name="darkGrey"/>
                                 <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="inset">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="카테고리" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZLd-de-oxN">
                                 <rect key="frame" x="20" y="339" width="55.5" height="19"/>
@@ -238,8 +248,8 @@
                     <connections>
                         <outlet property="categoryFirstBtn" destination="an5-gQ-2WR" id="hba-ag-gZf"/>
                         <outlet property="editEndBtn" destination="Wwp-QP-yLS" id="Twv-V5-f0d"/>
-                        <outlet property="menuTF" destination="AOg-4h-MCg" id="yHa-6C-XYD"/>
-                        <outlet property="priceTF" destination="Um4-eG-g2g" id="Q3E-Ff-2FY"/>
+                        <outlet property="menuTF" destination="AOg-4h-MCg" id="6hr-oL-oZX"/>
+                        <outlet property="priceTF" destination="Um4-eG-g2g" id="s5l-4E-w4k"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XW8-hZ-b4r" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -248,11 +258,17 @@
         </scene>
     </scenes>
     <designables>
+        <designable name="AOg-4h-MCg">
+            <size key="intrinsicContentSize" width="174" height="28.5"/>
+        </designable>
         <designable name="E0K-aV-c2w">
             <size key="intrinsicContentSize" width="30" height="31"/>
         </designable>
         <designable name="LcN-IH-2X1">
             <size key="intrinsicContentSize" width="30" height="31"/>
+        </designable>
+        <designable name="Um4-eG-g2g">
+            <size key="intrinsicContentSize" width="141.5" height="28.5"/>
         </designable>
         <designable name="VhK-gn-Iiu">
             <size key="intrinsicContentSize" width="30" height="31"/>

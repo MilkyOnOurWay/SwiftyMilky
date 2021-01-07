@@ -42,6 +42,9 @@
                             <constraint firstAttribute="width" constant="36" id="SDo-lR-3Ap"/>
                         </constraints>
                         <state key="normal" image="btnMenuThreeDots"/>
+                        <connections>
+                            <action selector="editModifyBtnClicked:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Msv-of-gcH"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제공하는 옵션" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nKj-ej-1HD">
                         <rect key="frame" x="40" y="49" width="66" height="14"/>
@@ -74,6 +77,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="deleteModifyBtn" destination="Fxg-Bg-w3J" id="BBW-EM-8v8"/>
                 <outlet property="menuNameLabel" destination="pCB-d8-sWE" id="oR2-75-5a9"/>
                 <outlet property="menuPriceLabel" destination="mwM-a2-56e" id="BAk-Xb-sEf"/>
                 <outlet property="menuSelectionLabel" destination="nKj-ej-1HD" id="juS-re-JMW"/>

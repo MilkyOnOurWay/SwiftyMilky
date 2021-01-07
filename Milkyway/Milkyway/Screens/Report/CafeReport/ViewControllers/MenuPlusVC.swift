@@ -9,23 +9,26 @@ import UIKit
 import DLRadioButton
 
 class MenuPlusVC: UIViewController {
-    @IBOutlet weak var menuTF: UITextField!
-    @IBOutlet weak var priceTF: UITextField!
+
+    @IBOutlet weak var menuTF: FormTextField!
+    @IBOutlet weak var priceTF: FormTextField!
+    
     @IBOutlet weak var categoryFirstBtn: DLRadioButton!
     @IBOutlet weak var editEndBtn: UIButton!
     
-    
+    var editCafeMenu = CafeMenu(menu: "", selection: [], price: "")
+    var areyouEdit = false
     var category = [Int]()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         categoryFirstBtn.isMultipleSelectionEnabled = true
+        readyToEdit()
         
     }
-    
-    
 }
-
 
 extension MenuPlusVC  {
     
@@ -45,6 +48,12 @@ extension MenuPlusVC  {
     }
     
     @IBAction func menuPlusOkClicked(_ sender: Any) {
+        
+        // 수정이라면 이전꺼 지워줘야함.
+        if areyouEdit {
+            NotificationCenter.default.post(name: Notification.Name("remove"), object: nil)
+        }
+        
         if categoryFirstBtn.isSelected {
             category.append(1)
         }
@@ -56,10 +65,30 @@ extension MenuPlusVC  {
         print(category)
         print("\(menuTF.text!) 메뉴 추가합니다")
         
+        
         let menu = CafeMenu(menu: menuTF.text ?? "", selection: category, price: priceTF.text ?? "")
         
         NotificationCenter.default.post(name: Notification.Name("menuPlus"), object: menu)
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    
+    
+    
+    func readyToEdit() {
+        menuTF.text = editCafeMenu.menu
+        priceTF.text = editCafeMenu.price
+        editCafeMenu.selection.forEach { i in
+            print(i)
+            if i == 1 {
+                categoryFirstBtn.isSelected = true
+                print(categoryFirstBtn.isSelected)
+            }
+            else {
+                print(categoryFirstBtn.otherButtons[i-2])
+                categoryFirstBtn.otherButtons[i-2].isSelected = true
+            }
+        }
     }
     
     

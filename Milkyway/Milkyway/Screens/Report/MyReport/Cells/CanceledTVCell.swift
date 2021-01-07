@@ -1,22 +1,21 @@
 //
-//  UnderExamTVCell.swift
+//  CanceledTVCell.swift
 //  Milkyway
 //
-//  Created by ✨EUGENE✨ on 2021/01/05.
+//  Created by ✨EUGENE✨ on 2021/01/07.
 //
 
 import UIKit
 
-class UnderExamTVCell: UITableViewCell {
+class CanceledTVCell: UITableViewCell {
 
-    static let identifier = "UnderExamTVCell"
-    
-    @IBOutlet var stateLabel: UILabel!
+    static let identifier = "CanceledTVCell"
+    @IBOutlet var canceledLabel: UILabel!
     @IBOutlet var collectionView: UICollectionView!
     
     let horizonInset: CGFloat = 20
     let rightSpacing: CGFloat = 20
-    let lineSpacing: CGFloat = 6
+    let lineSpacing: CGFloat = 12
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,13 +24,11 @@ class UnderExamTVCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
-    func setCell(state: String) {
-        stateLabel.text = state
-        stateLabel.font = UIFont(name:"SFProText-Bold", size: 16.0)
+    func setCell() {
+        canceledLabel.text = "취소된 제보"
+        canceledLabel.font = UIFont(name:"SFProText-Bold", size: 16.0)
         
         let collectionViewCellNib = UINib(nibName: "RectangleCVCell", bundle: nil)
         collectionView.register(collectionViewCellNib, forCellWithReuseIdentifier: "RectangleCVCell")
@@ -40,7 +37,7 @@ class UnderExamTVCell: UITableViewCell {
         collectionView.delegate = self
     }
 }
-extension UnderExamTVCell: UICollectionViewDataSource {
+extension CanceledTVCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 4
     }
@@ -49,15 +46,15 @@ extension UnderExamTVCell: UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RectangleCVCell.identifier, for: indexPath) as? RectangleCVCell else {
             return UICollectionViewCell()
         }
-        cell.setCell(backName: "InprogressReport")
-        cell.setLabel(storeName: "현빈스빈스카페", date: "2020.11.30")
+        cell.setCell(backName: "canceledReport")
+        cell.setLabel(storeName: "현빈스빈스카페", date: "2020.11.30", color: "lightGrey")
         return cell
     }
     
     
 }
 
-extension UnderExamTVCell: UICollectionViewDelegateFlowLayout {
+extension CanceledTVCell: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let cellHeight = collectionView.frame.height
         let cellWidth = (collectionView.frame.width - horizonInset - rightSpacing) / 2

@@ -14,12 +14,12 @@
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="192" id="KGk-i7-Jjw" customClass="CompletedTVCell" customModule="Milkyway" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="142"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="375" height="142"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fBs-CR-iIQ">
-                        <rect key="frame" x="20" y="0.0" width="335" height="130"/>
+                        <rect key="frame" x="20" y="8" width="335" height="130"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Cafe name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qHd-Se-ed8">
                                 <rect key="frame" x="16" y="41" width="78" height="19.5"/>
@@ -102,7 +102,7 @@
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="fBs-CR-iIQ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="00P-kg-d3t"/>
+                    <constraint firstItem="fBs-CR-iIQ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="00P-kg-d3t"/>
                     <constraint firstAttribute="trailing" secondItem="fBs-CR-iIQ" secondAttribute="trailing" constant="20" id="Jk6-R7-0UU"/>
                     <constraint firstAttribute="bottom" secondItem="fBs-CR-iIQ" secondAttribute="bottom" constant="12" id="L7m-HO-0Kc"/>
                     <constraint firstItem="fBs-CR-iIQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="tpZ-y6-rbi"/>

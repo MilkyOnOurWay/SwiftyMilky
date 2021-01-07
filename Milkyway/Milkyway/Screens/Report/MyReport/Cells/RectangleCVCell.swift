@@ -24,14 +24,14 @@ class RectangleCVCell: UICollectionViewCell {
         backgroundImage.image = UIImage(named: backName)
     }
     
-    func setLabel(storeName: String, date: String) {
+    func setLabel(storeName: String, date: String, color: String) {
         storeNameLabel.text = storeName
         storeNameLabel.font = UIFont(name:"SFProText-Bold", size: 12.0)
-        storeNameLabel.textColor = UIColor(named: "darkGrey")
+        storeNameLabel.textColor = UIColor(named: color)
         
         dateLabel.text = date
         dateLabel.font = UIFont(name:"SFProText-Regular", size: 8.0)
-        dateLabel.textColor = UIColor(named: "darkGrey")
+        dateLabel.textColor = UIColor(named: color)
     }
 
 }

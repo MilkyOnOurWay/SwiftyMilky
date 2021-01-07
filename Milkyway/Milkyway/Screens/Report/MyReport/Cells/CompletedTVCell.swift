@@ -17,6 +17,7 @@ class CompletedTVCell: UITableViewCell {
     @IBOutlet var cafeNameLabel: UILabel!
     @IBOutlet var addressLabel: UILabel!
     
+    var menuTag: [String] = ["디카페인", "두유", "저지방우유", "무지방우유"]
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,6 +26,7 @@ class CompletedTVCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
+    
     
     func setCardView() {
         cardView.borderWidth = 1

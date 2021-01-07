@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4799C2F4CFD3497A225FA29A /* Pods_Milkyway.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F3F5BD99D092D8D80FFA68F /* Pods_Milkyway.framework */; };
+		6B27B99D25A6C5B900E14799 /* RectangleCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B27B99B25A6C5B900E14799 /* RectangleCVCell.swift */; };
+		6B27B99E25A6C5B900E14799 /* RectangleCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B27B99C25A6C5B900E14799 /* RectangleCVCell.xib */; };
 		6B869C0225A0B95E0068BFD2 /* InfoModifyReqVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B869C0125A0B95E0068BFD2 /* InfoModifyReqVC.swift */; };
 		6B869C0525A0B96D0068BFD2 /* InfoModifyReq.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B869C0425A0B96D0068BFD2 /* InfoModifyReq.storyboard */; };
 		6B869C0825A0BF700068BFD2 /* Modify.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B869C0725A0BF700068BFD2 /* Modify.storyboard */; };
@@ -104,6 +106,8 @@
 
 /* Begin PBXFileReference section */
 		2F3F5BD99D092D8D80FFA68F /* Pods_Milkyway.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Milkyway.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B27B99B25A6C5B900E14799 /* RectangleCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleCVCell.swift; sourceTree = "<group>"; };
+		6B27B99C25A6C5B900E14799 /* RectangleCVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RectangleCVCell.xib; sourceTree = "<group>"; };
 		6B869C0125A0B95E0068BFD2 /* InfoModifyReqVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoModifyReqVC.swift; sourceTree = "<group>"; };
 		6B869C0425A0B96D0068BFD2 /* InfoModifyReq.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InfoModifyReq.storyboard; sourceTree = "<group>"; };
 		6B869C0725A0BF700068BFD2 /* Modify.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Modify.storyboard; sourceTree = "<group>"; };
@@ -227,13 +231,15 @@
 			isa = PBXGroup;
 			children = (
 				6BD05A6525A41FFE00B2643F /* CompletedTVCell.xib */,
-				6BD05A6625A41FFE00B2643F /* TopTVCell.xib */,
 				6BD05A6725A41FFE00B2643F /* CompletedTVCell.swift */,
+				6BD05A6625A41FFE00B2643F /* TopTVCell.xib */,
 				6BD05A6825A41FFE00B2643F /* TopTVCell.swift */,
 				6BD05A6925A41FFE00B2643F /* UnderExamTVCell.xib */,
 				6BD05A6A25A41FFE00B2643F /* UnderExamTVCell.swift */,
 				6BF6DAA125A603A7001CDB9A /* CustomLabel.swift */,
 				6BF6DAA425A6084E001CDB9A /* paddingLabel.swift */,
+				6B27B99B25A6C5B900E14799 /* RectangleCVCell.swift */,
+				6B27B99C25A6C5B900E14799 /* RectangleCVCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -835,6 +841,7 @@
 				D1D95DDE25A30BB100B95F79 /* CafeMenuCell.xib in Resources */,
 				6B869C1125A1CD140068BFD2 /* DeletePlace.storyboard in Resources */,
 				D1F22853259F748C0018C472 /* MyReportMain.storyboard in Resources */,
+				6B27B99E25A6C5B900E14799 /* RectangleCVCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -935,6 +942,7 @@
 				D11AB9CA25A5BC0600C1927E /* MenuPlusVC.swift in Sources */,
 				6BF6DAA525A6084E001CDB9A /* paddingLabel.swift in Sources */,
 				F2BA63112598E55000A49020 /* UIButton+Extension.swift in Sources */,
+				6B27B99D25A6C5B900E14799 /* RectangleCVCell.swift in Sources */,
 				F2BA63172598E58A00A49020 /* Date+Extension.swift in Sources */,
 				F2242A63259C78FD00455604 /* LoginNaviController.swift in Sources */,
 				D1D95DD825A30BA600B95F79 /* CafeHoneyCell.swift in Sources */,

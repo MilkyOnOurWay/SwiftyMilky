@@ -17,8 +17,7 @@ class MyReportMainVC: UIViewController, IndicatorInfoProvider {
     override func viewDidLoad() {
         super.viewDidLoad()
         registerXib()
-        myReportTableView.dataSource = self
- 
+        registerDelegate()
     }
     
     override func didReceiveMemoryWarning() {
@@ -34,13 +33,22 @@ extension MyReportMainVC {
         return IndicatorInfo(title: "\(tabName)")
     }
     
+    func registerDelegate() {
+        myReportTableView.dataSource = self
+    }
     func registerXib() {
         let topTVCellNib = UINib(nibName: "TopTVCell", bundle: nil)
-        let underExamTVCellNib = UINib(nibName: "UnderExamTVCell", bundle: nil)
+        let inProgressTVCellNib = UINib(nibName: "InProgressTVCell", bundle: nil)
         let completedTVCellNib = UINib(nibName: "CompletedTVCell", bundle: nil)
+        let canceledTVCellNib = UINib(nibName: "CanceledTVCell", bundle: nil)
         
+        // 맨위 닉네임
         myReportTableView.register(topTVCellNib, forCellReuseIdentifier: "TopTVCell")
-        myReportTableView.register(underExamTVCellNib, forCellReuseIdentifier: "UnderExamTVCell")
+        // 취소된 제보
+        myReportTableView.register(canceledTVCellNib, forCellReuseIdentifier: "CanceledTVCell")
+        // 진행 중인 제보
+        myReportTableView.register(inProgressTVCellNib, forCellReuseIdentifier: "InProgressTVCell")
+        // 완료된 제보
         myReportTableView.register(completedTVCellNib, forCellReuseIdentifier: "CompletedTVCell")
     }
 }
@@ -48,7 +56,7 @@ extension MyReportMainVC {
 extension MyReportMainVC: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 5
+        return 4
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -58,8 +66,6 @@ extension MyReportMainVC: UITableViewDataSource {
             return 1
         } else if section == 2{
             return 1
-        } else if section == 3{
-            return 1
         } else {
             return 4 // 서버에서 받는대로
         }
@@ -68,6 +74,7 @@ extension MyReportMainVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        // 일단 이렇게 박아두기,,
         if indexPath.section == 0 {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: TopTVCell.identifier) as? TopTVCell else {
                 return UITableViewCell()
@@ -75,21 +82,16 @@ extension MyReportMainVC: UITableViewDataSource {
             cell.setCell(nickName: "열매열매")
             return cell
         } else if indexPath.section == 1 {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: UnderExamTVCell.identifier) as? UnderExamTVCell else {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: CanceledTVCell.identifier) as? CanceledTVCell else {
                 return UITableViewCell()
             }
-            cell.setCell(state: "취소된 제보")
+            cell.setCell()
             return cell
         } else if indexPath.section == 2 {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: UnderExamTVCell.identifier) as? UnderExamTVCell else {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: InProgressTVCell.identifier) as? InProgressTVCell else {
                 return UITableViewCell()
             }
-            cell.setCell(state: "진행중인 제보")
-            return cell
-        } else if indexPath.section == 3 {
-            let cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: nil)
-            cell.textLabel!.text = "완료된 제보"
-
+            cell.setCell()
             return cell
         } else {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: CompletedTVCell.identifier) as? CompletedTVCell else {
@@ -102,16 +104,6 @@ extension MyReportMainVC: UITableViewDataSource {
         }
         
     }
-    
-//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//        if section == 3 {
-//            return "완료된 제보"
-//        } else {
-//            return ""
-//        }
-//    }
-    
-    
     
 }
 extension MyReportMainVC: UITableViewDelegate {

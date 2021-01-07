@@ -17,6 +17,7 @@ class CompletedTVCell: UITableViewCell {
     @IBOutlet var cafeNameLabel: UILabel!
     @IBOutlet var addressLabel: UILabel!
     
+    // 나중에 밑에 라벨붙는거,,
     var menuTag: [String] = ["디카페인", "두유", "저지방우유", "무지방우유"]
     
     override func awakeFromNib() {
@@ -26,8 +27,9 @@ class CompletedTVCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
-    
-    
+}
+
+extension CompletedTVCell {
     func setCardView() {
         cardView.borderWidth = 1
         cardView.borderColor = UIColor(displayP3Red: 229/255, green: 229/255, blue: 229/255, alpha: 1.0)
@@ -35,7 +37,7 @@ class CompletedTVCell: UITableViewCell {
         cardView.layer.cornerRadius = 8
         cardView.layer.shadowColor = UIColor.black.cgColor
         cardView.layer.shadowOpacity = 0.15
-        cardView.layer.shadowOffset = CGSize(width: 0.5, height: 0.5)
+        cardView.layer.shadowOffset = CGSize(width: 2, height: 2)
         cardView.layer.shadowRadius = 8
         cardView.layer.masksToBounds = false
     }
@@ -47,4 +49,3 @@ class CompletedTVCell: UITableViewCell {
         addressLabel.textColor = UIColor(displayP3Red: 151/255, green: 151/255, blue: 151/255, alpha: 1.0)
     }
 }
-

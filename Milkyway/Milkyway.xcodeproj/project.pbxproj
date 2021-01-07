@@ -106,6 +106,7 @@
 		F2BA63292598E74E00A49020 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BA63282598E74E00A49020 /* Font.swift */; };
 		F2BA632D2598E7DE00A49020 /* UITabbar+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BA632C2598E7DE00A49020 /* UITabbar+Extension.swift */; };
 		F2BA63302598E80000A49020 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BA632F2598E80000A49020 /* UIColor+Extension.swift */; };
+		F2DCC2A525A7908A00AAE5EF /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DCC2A425A7908A00AAE5EF /* APIConstants.swift */; };
 		F2F6123425A61C47008B65DF /* SearchResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F6123325A61C47008B65DF /* SearchResultVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -208,6 +209,7 @@
 		F2BA63282598E74E00A49020 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		F2BA632C2598E7DE00A49020 /* UITabbar+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITabbar+Extension.swift"; sourceTree = "<group>"; };
 		F2BA632F2598E80000A49020 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		F2DCC2A425A7908A00AAE5EF /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
 		F2F6123325A61C47008B65DF /* SearchResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -675,6 +677,7 @@
 				F2BA62F92598E00A00A49020 /* Delegate */,
 				F2BA62FA2598E01F00A49020 /* Resources */,
 				F2BA62FB2598E03200A49020 /* Supporting Files */,
+				F2DCC2A725A7909000AAE5EF /* Services */,
 			);
 			path = Global;
 			sourceTree = "<group>";
@@ -747,6 +750,14 @@
 				6BF6DA6D25A57DF5001CDB9A /* CardState.swift */,
 			);
 			path = Enums;
+			sourceTree = "<group>";
+		};
+		F2DCC2A725A7909000AAE5EF /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				F2DCC2A425A7908A00AAE5EF /* APIConstants.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -947,6 +958,7 @@
 				F21384B625A1E8360016E766 /* SearchTVC.swift in Sources */,
 				D1D95DD325A30B9700B95F79 /* CafeBasicCell.swift in Sources */,
 				F2BA632D2598E7DE00A49020 /* UITabbar+Extension.swift in Sources */,
+				F2DCC2A525A7908A00AAE5EF /* APIConstants.swift in Sources */,
 				D1D95DCE25A30B7800B95F79 /* Cafe.swift in Sources */,
 				D15443FF25A33AF9007773BF /* CafeNameResultCell.swift in Sources */,
 				F2242A3B259BB2CF00455604 /* SettingVC.swift in Sources */,

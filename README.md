@@ -24,6 +24,22 @@
 ![iOS](https://img.shields.io/badge/iOS-14.3-blue.svg)
 
 
+
+| 라이브러리      | 목적               |
+| :-------------- | :----------------- |
+| Alamofire       | 서버 통신          |
+| Kingfisher      | 이미지 처리        |
+| NMapsMap        | 네이버 지도        |
+| SnapKit         | 코드 레이아웃 작성 |
+| SwiftyJSON      | 서버 통신          |
+| Then            | 컴포넌트 코드 작성 |
+| XLPagerTabStrip | 커스텀 Pager bar   |
+| DLRadioButton   | 라디오 버튼 커스텀 |
+| lottie-ios      | splash view        |
+
+
+
+
 # 💻 기능 소개
 
 |       기능       |          상세 기능          | 담당 | 구현 여부 |

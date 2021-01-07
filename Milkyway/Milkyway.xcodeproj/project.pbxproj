@@ -31,6 +31,7 @@
 		6BF6DA6E25A57DF5001CDB9A /* CardState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF6DA6D25A57DF5001CDB9A /* CardState.swift */; };
 		6BF6DAA225A603A7001CDB9A /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF6DAA125A603A7001CDB9A /* CustomLabel.swift */; };
 		6BF6DAA525A6084E001CDB9A /* paddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF6DAA425A6084E001CDB9A /* paddingLabel.swift */; };
+		D10FD49925A77CB50060CD7D /* 밀키웨이_ios_스플레쉬.json in Resources */ = {isa = PBXBuildFile; fileRef = D10FD49825A77CB50060CD7D /* 밀키웨이_ios_스플레쉬.json */; };
 		D11AB9CA25A5BC0600C1927E /* MenuPlusVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11AB9C925A5BC0600C1927E /* MenuPlusVC.swift */; };
 		D11AB9CD25A5BC0E00C1927E /* MenuPlus.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D11AB9CC25A5BC0E00C1927E /* MenuPlus.storyboard */; };
 		D11ABA1625A62B9B00C1927E /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11ABA1525A62B9B00C1927E /* UILabel+Extension.swift */; };
@@ -83,7 +84,6 @@
 		F2242A69259CD2F600455604 /* FilterResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2242A68259CD2F500455604 /* FilterResultVC.swift */; };
 		F2242A6C259CD30400455604 /* FilterResult.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2242A6B259CD30400455604 /* FilterResult.storyboard */; };
 		F240771725A731EB008B691B /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F240771625A731EB008B691B /* SplashVC.swift */; };
-		F240771A25A7325E008B691B /* 밀키웨이_ios_스플레쉬.json in Resources */ = {isa = PBXBuildFile; fileRef = F240771925A7325E008B691B /* 밀키웨이_ios_스플레쉬.json */; };
 		F26BEB6425A63BB900B7AFCF /* AddSearchTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26BEB6225A63BB800B7AFCF /* AddSearchTVC.swift */; };
 		F26BEB6525A63BB900B7AFCF /* AddSearchTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F26BEB6325A63BB900B7AFCF /* AddSearchTVC.xib */; };
 		F2BA62DE2598DE5F00A49020 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BA62DD2598DE5F00A49020 /* AppDelegate.swift */; };
@@ -136,6 +136,7 @@
 		6BF6DAA425A6084E001CDB9A /* paddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = paddingLabel.swift; sourceTree = "<group>"; };
 		82A4CFBF130A68D0DC76260E /* Pods-Milkyway.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Milkyway.release.xcconfig"; path = "Target Support Files/Pods-Milkyway/Pods-Milkyway.release.xcconfig"; sourceTree = "<group>"; };
 		B6E7AC1233665DEC2C3D21DC /* Pods-Milkyway.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Milkyway.debug.xcconfig"; path = "Target Support Files/Pods-Milkyway/Pods-Milkyway.debug.xcconfig"; sourceTree = "<group>"; };
+		D10FD49825A77CB50060CD7D /* 밀키웨이_ios_스플레쉬.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "밀키웨이_ios_스플레쉬.json"; sourceTree = "<group>"; };
 		D11AB9C925A5BC0600C1927E /* MenuPlusVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPlusVC.swift; sourceTree = "<group>"; };
 		D11AB9CC25A5BC0E00C1927E /* MenuPlus.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MenuPlus.storyboard; sourceTree = "<group>"; };
 		D11ABA1525A62B9B00C1927E /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
@@ -188,7 +189,6 @@
 		F2242A68259CD2F500455604 /* FilterResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterResultVC.swift; sourceTree = "<group>"; };
 		F2242A6B259CD30400455604 /* FilterResult.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FilterResult.storyboard; sourceTree = "<group>"; };
 		F240771625A731EB008B691B /* SplashVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashVC.swift; sourceTree = "<group>"; };
-		F240771925A7325E008B691B /* 밀키웨이_ios_스플레쉬.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "밀키웨이_ios_스플레쉬.json"; path = "../../../../../../Downloads/밀키웨이_ios_스플레쉬.json"; sourceTree = "<group>"; };
 		F26BEB6225A63BB800B7AFCF /* AddSearchTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSearchTVC.swift; sourceTree = "<group>"; };
 		F26BEB6325A63BB900B7AFCF /* AddSearchTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddSearchTVC.xib; sourceTree = "<group>"; };
 		F2BA62DA2598DE5F00A49020 /* Milkyway.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Milkyway.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -570,7 +570,7 @@
 		F2242A4C259BC23F00455604 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				F240771925A7325E008B691B /* 밀키웨이_ios_스플레쉬.json */,
+				D10FD49825A77CB50060CD7D /* 밀키웨이_ios_스플레쉬.json */,
 				F2242A4E259BC26300455604 /* ViewControllers */,
 				F2242A50259BC26B00455604 /* Storyboards */,
 			);
@@ -838,6 +838,7 @@
 				6BD05A6C25A41FFE00B2643F /* TopTVCell.xib in Resources */,
 				6B869C0525A0B96D0068BFD2 /* InfoModifyReq.storyboard in Resources */,
 				D1F2283F259F70EE0018C472 /* ReportTabBar.storyboard in Resources */,
+				D10FD49925A77CB50060CD7D /* 밀키웨이_ios_스플레쉬.json in Resources */,
 				F26BEB6525A63BB900B7AFCF /* AddSearchTVC.xib in Resources */,
 				6BD05A6B25A41FFE00B2643F /* CompletedTVCell.xib in Resources */,
 				D15443F725A33ACF007773BF /* CafeNameSearchCell.xib in Resources */,
@@ -849,7 +850,6 @@
 				D154440025A33AF9007773BF /* CafeNameResultCell.xib in Resources */,
 				F2242A28259BB02100455604 /* Home.storyboard in Resources */,
 				D154440525A33B05007773BF /* CafeMenusCell.xib in Resources */,
-				F240771A25A7325E008B691B /* 밀키웨이_ios_스플레쉬.json in Resources */,
 				D1F2284D259F746D0018C472 /* CafeReportMain.storyboard in Resources */,
 				F2242A3E259BB2DF00455604 /* Setting.storyboard in Resources */,
 				F2142DFE25A349FF00D07F3F /* SF-Pro-Text-Bold.otf in Resources */,

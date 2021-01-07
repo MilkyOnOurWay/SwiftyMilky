@@ -22,7 +22,8 @@ class CardVC: UIViewController {
     @IBOutlet var shinsaBtn: DLRadioButton!
     @IBOutlet var yuksamBtn: DLRadioButton!
     
-    var check: Int = 0 // 라디오 버튼 상태변화
+    // 서버에서 모든 시작이 1이라고 해서 tag 값을 1부터 설정함. 여섯개 넣어줌
+    var beforeState: [Bool] = [false, false, false, false, false, false]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,26 +72,27 @@ extension CardVC {
         yuksamBtn.iconSelected = UIImage(named: "yuksam_p")!
     }
     
-    func resetRadioButton() {
-        mangwonBtn.isSelected = false
-        younnamBtn.isSelected = false
-        hannamBtn.isSelected = false
-        shinsaBtn.isSelected = false
-        yuksamBtn.isSelected = false
-    }
+    // 현위치 버튼 누르면 초기화
+//    func resetRadioButton() {
+//        mangwonBtn.isSelected = false
+//        younnamBtn.isSelected = false
+//        hannamBtn.isSelected = false
+//        shinsaBtn.isSelected = false
+//        yuksamBtn.isSelected = false
+//    }
     
     @objc func sendBtnTag(_ sender:DLRadioButton) {
 
         print(sender.tag)
         
-//        if check == 0 {
-//            sender.isSelected = false
-//            check = 1
-//        } else {
-//            sender.isSelected = true
-//            print(sender.tag)
-//            check = 0
-//        }
+        if beforeState[sender.tag] == true {
+            sender.isSelected = false
+        }
+        beforeState[1] = mangwonBtn.isSelected
+        beforeState[2] = younnamBtn.isSelected
+        beforeState[3] = hannamBtn.isSelected
+        beforeState[4] = shinsaBtn.isSelected
+        beforeState[5] = yuksamBtn.isSelected
     }
     
     

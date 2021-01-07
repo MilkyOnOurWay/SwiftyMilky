@@ -143,7 +143,7 @@ extension HomeVC {
     }
     
     @objc func locationButtonDidTap(_ sender:UIButton){
-        cardVC.resetRadioButton()
+//        cardVC.resetRadioButton()
         
       if sender.isSelected == true {
         sender.isSelected = false

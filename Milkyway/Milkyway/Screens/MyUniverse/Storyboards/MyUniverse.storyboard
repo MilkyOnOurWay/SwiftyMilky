@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qio-B6-Yyi">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qio-B6-Yyi">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,11 +16,26 @@
                     <view key="view" contentMode="scaleToFill" id="jF0-DU-7Y0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="45k-5X-Wyh" customClass="NMFMapView">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="L9B-nA-7Md"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="L9B-nA-7Md" firstAttribute="bottom" secondItem="45k-5X-Wyh" secondAttribute="bottom" id="1is-VV-MQp"/>
+                            <constraint firstItem="45k-5X-Wyh" firstAttribute="top" secondItem="jF0-DU-7Y0" secondAttribute="top" id="Rpr-9R-Pxa"/>
+                            <constraint firstItem="45k-5X-Wyh" firstAttribute="leading" secondItem="L9B-nA-7Md" secondAttribute="leading" id="dvl-QA-iwY"/>
+                            <constraint firstItem="L9B-nA-7Md" firstAttribute="trailing" secondItem="45k-5X-Wyh" secondAttribute="trailing" id="lE0-Vm-94d"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="유니버스" image="mdiUniverse" selectedImage="mdiUniverseTapped" id="uOh-iJ-vku"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="mapView" destination="45k-5X-Wyh" id="FyS-33-hAU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mAA-Ql-O9Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -77,6 +77,9 @@
                                         <constraints>
                                             <constraint firstAttribute="width" constant="60" id="aRT-8b-4Yz"/>
                                         </constraints>
+                                        <connections>
+                                            <action selector="backBtnClicked:" destination="Uke-Jq-c8W" eventType="touchUpInside" id="6jn-91-pBx"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>

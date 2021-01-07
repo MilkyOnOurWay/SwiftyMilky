@@ -30,6 +30,10 @@ class MenuPlusVC: UIViewController {
 extension MenuPlusVC  {
     
     
+    @IBAction func backBtnClicked(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     @IBAction func categoryBtnClicked(_ sender: Any) {
         // 버튼을 눌러도 키보드가 내려간다네...
         self.menuTF.resignFirstResponder()

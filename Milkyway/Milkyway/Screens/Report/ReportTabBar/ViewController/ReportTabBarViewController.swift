@@ -60,8 +60,8 @@ extension ButtonBarPagerTabStripViewController {
         settings.style.buttonBarMinimumLineSpacing = 0
         settings.style.buttonBarItemTitleColor = UIColor(named: "Milky")!
         settings.style.buttonBarItemsShouldFillAvailableWidth = true
-        settings.style.buttonBarLeftContentInset = 0
-        settings.style.buttonBarRightContentInset = 0
+        settings.style.buttonBarLeftContentInset = -10
+        settings.style.buttonBarRightContentInset = -10
     }
     
     

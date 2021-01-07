@@ -34,6 +34,7 @@ class CafeReportMainVC: UIViewController, IndicatorInfoProvider {
     @IBAction func resetBtnClicked(_ sender: Any) {
         cafeInfo = nil
         cafeMenus = []
+        NotificationCenter.default.post(name: Notification.Name("removeHoneyTips"), object: nil)
         ToastView.showIn(viewController: self, message: "입력했던 정보가 초기화되었습니다.", fromBottom: 10)
         tableView.reloadData()
     }

@@ -91,7 +91,10 @@ extension CafeReportMainVC: UITableViewDataSource {
             if cafeInfo == nil { // 검색 전
                 guard let cell: CafeNameSearchCell = tableView.dequeueReusableCell(withIdentifier: "CafeNameSearchCell" , for: indexPath) as? CafeNameSearchCell else{
                     return UITableViewCell()
+                    
                 }
+                cell.searchButton.addTarget(self, action: #selector(searchButtonDidTap), for: .touchUpInside)
+                
                 return cell
                 
             }
@@ -101,7 +104,7 @@ extension CafeReportMainVC: UITableViewDataSource {
                     return UITableViewCell()
                 }
                 
-                
+                cell.searchButton.addTarget(self, action: #selector(searchButtonDidTap), for: .touchUpInside)
                 return cell
             }
             
@@ -205,6 +208,13 @@ extension CafeReportMainVC {
         tableView.reloadSections(IndexSet(1...1), with: .fade)
     }
     
+    @objc func searchButtonDidTap(){
+
+        guard let nvc = UIStoryboard(name: "Search", bundle: nil).instantiateViewController(identifier: "SearchVC") as? SearchVC else {
+            return
+        }
+        self.navigationController?.pushViewController(nvc, animated: true)
+    }
     
     
 }

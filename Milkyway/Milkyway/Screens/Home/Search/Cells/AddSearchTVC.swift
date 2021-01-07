@@ -9,6 +9,10 @@ import UIKit
 
 class AddSearchTVC: UITableViewCell {
 
+    @IBOutlet weak var cafeNameLabel: UILabel!
+    @IBOutlet weak var cafeAddressLabel: UILabel!
+    @IBOutlet weak var cafeStateImageView: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

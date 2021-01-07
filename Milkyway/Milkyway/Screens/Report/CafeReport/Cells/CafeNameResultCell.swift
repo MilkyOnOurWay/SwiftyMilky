@@ -9,6 +9,8 @@ import UIKit
 
 class CafeNameResultCell: UITableViewCell {
 
+    @IBOutlet weak var searchButton: UIButton! //재검색버튼
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -41,13 +41,14 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="osz-DN-JIu">
                         <rect key="frame" x="20" y="19.5" width="409" height="102"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btnSearch" translatesAutoresizingMaskIntoConstraints="NO" id="P4B-2D-DGi">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7b2-Wo-nLc">
                                 <rect key="frame" x="0.0" y="39" width="24" height="24"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="24" id="R48-cb-I61"/>
-                                    <constraint firstAttribute="width" constant="24" id="kWd-Vs-Oqz"/>
+                                    <constraint firstAttribute="height" constant="24" id="8Xz-vf-zWf"/>
+                                    <constraint firstAttribute="width" constant="24" id="vfK-HL-pZi"/>
                                 </constraints>
-                            </imageView>
+                                <state key="normal" image="btnSearch"/>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="카페 검색하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LBx-Qp-TUp">
                                 <rect key="frame" x="32" y="42.5" width="77" height="17"/>
                                 <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="14"/>
@@ -57,9 +58,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="LBx-Qp-TUp" firstAttribute="centerY" secondItem="osz-DN-JIu" secondAttribute="centerY" id="AvC-Mg-Gvk"/>
-                            <constraint firstItem="P4B-2D-DGi" firstAttribute="centerY" secondItem="osz-DN-JIu" secondAttribute="centerY" id="Hsx-rC-zK4"/>
-                            <constraint firstItem="LBx-Qp-TUp" firstAttribute="leading" secondItem="P4B-2D-DGi" secondAttribute="trailing" constant="8" id="Wtr-El-ZPc"/>
-                            <constraint firstItem="P4B-2D-DGi" firstAttribute="leading" secondItem="osz-DN-JIu" secondAttribute="leading" id="wS6-oB-DqQ"/>
+                            <constraint firstItem="7b2-Wo-nLc" firstAttribute="leading" secondItem="osz-DN-JIu" secondAttribute="leading" id="Faj-aU-SeR"/>
+                            <constraint firstItem="7b2-Wo-nLc" firstAttribute="centerY" secondItem="osz-DN-JIu" secondAttribute="centerY" id="YX4-IT-B1W"/>
+                            <constraint firstItem="LBx-Qp-TUp" firstAttribute="leading" secondItem="7b2-Wo-nLc" secondAttribute="trailing" constant="8" id="mBK-c8-blM"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -75,6 +76,9 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="searchButton" destination="7b2-Wo-nLc" id="4cj-bH-4sQ"/>
+            </connections>
             <point key="canvasLocation" x="216.66666666666669" y="171.09375"/>
         </tableViewCell>
     </objects>

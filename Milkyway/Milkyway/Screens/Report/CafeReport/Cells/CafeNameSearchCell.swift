@@ -9,6 +9,8 @@ import UIKit
 
 class CafeNameSearchCell: UITableViewCell {
 
+    @IBOutlet weak var searchButton: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -20,4 +22,6 @@ class CafeNameSearchCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+
+
 }

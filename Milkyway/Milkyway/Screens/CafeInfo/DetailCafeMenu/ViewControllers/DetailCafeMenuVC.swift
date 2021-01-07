@@ -33,6 +33,7 @@ class DetailCafeMenuVC: UIViewController {
     
     @IBAction func addMyUniverseBtnClicked(_ sender: Any) {
         like ? iHateYou() : iLoveYou()
+        tableView.reloadSections(IndexSet(0...0), with: .none)
     }
     
 }
@@ -196,7 +197,6 @@ extension DetailCafeMenuVC {
         likeLabel.text = "\(testCafe.likeNum)"
         likeLabel.textColor = UIColor(named: "Milky")
         likeLabel.font = UIFont(name: "SF Pro Text Bold", size: 8.0)!
-        tableView.reloadData()
         like = true
     }
     
@@ -207,7 +207,6 @@ extension DetailCafeMenuVC {
         likeLabel.text = "\(testCafe.likeNum)"
         likeLabel.textColor = UIColor(named: "darkGrey")
         likeLabel.font = UIFont(name: "SF Pro Text Regular", size: 8.0)!
-        tableView.reloadData()
         like = false
     }
     

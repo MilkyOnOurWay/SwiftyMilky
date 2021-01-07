@@ -10,6 +10,7 @@ import UIKit
 class HoneyTipCell: UITableViewCell {
     
     var select = [Bool](repeating: false, count: 6)
+
     
     override func awakeFromNib() {
         super.awakeFromNib()

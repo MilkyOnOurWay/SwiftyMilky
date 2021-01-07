@@ -82,6 +82,8 @@
 		F2242A63259C78FD00455604 /* LoginNaviController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2242A62259C78FD00455604 /* LoginNaviController.swift */; };
 		F2242A69259CD2F600455604 /* FilterResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2242A68259CD2F500455604 /* FilterResultVC.swift */; };
 		F2242A6C259CD30400455604 /* FilterResult.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2242A6B259CD30400455604 /* FilterResult.storyboard */; };
+		F240771725A731EB008B691B /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F240771625A731EB008B691B /* SplashVC.swift */; };
+		F240771A25A7325E008B691B /* 밀키웨이_ios_스플레쉬.json in Resources */ = {isa = PBXBuildFile; fileRef = F240771925A7325E008B691B /* 밀키웨이_ios_스플레쉬.json */; };
 		F26BEB6425A63BB900B7AFCF /* AddSearchTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26BEB6225A63BB800B7AFCF /* AddSearchTVC.swift */; };
 		F26BEB6525A63BB900B7AFCF /* AddSearchTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F26BEB6325A63BB900B7AFCF /* AddSearchTVC.xib */; };
 		F2BA62DE2598DE5F00A49020 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BA62DD2598DE5F00A49020 /* AppDelegate.swift */; };
@@ -185,6 +187,8 @@
 		F2242A62259C78FD00455604 /* LoginNaviController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNaviController.swift; sourceTree = "<group>"; };
 		F2242A68259CD2F500455604 /* FilterResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterResultVC.swift; sourceTree = "<group>"; };
 		F2242A6B259CD30400455604 /* FilterResult.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FilterResult.storyboard; sourceTree = "<group>"; };
+		F240771625A731EB008B691B /* SplashVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashVC.swift; sourceTree = "<group>"; };
+		F240771925A7325E008B691B /* 밀키웨이_ios_스플레쉬.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "밀키웨이_ios_스플레쉬.json"; path = "../../../../../../Downloads/밀키웨이_ios_스플레쉬.json"; sourceTree = "<group>"; };
 		F26BEB6225A63BB800B7AFCF /* AddSearchTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSearchTVC.swift; sourceTree = "<group>"; };
 		F26BEB6325A63BB900B7AFCF /* AddSearchTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddSearchTVC.xib; sourceTree = "<group>"; };
 		F2BA62DA2598DE5F00A49020 /* Milkyway.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Milkyway.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -566,6 +570,7 @@
 		F2242A4C259BC23F00455604 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				F240771925A7325E008B691B /* 밀키웨이_ios_스플레쉬.json */,
 				F2242A4E259BC26300455604 /* ViewControllers */,
 				F2242A50259BC26B00455604 /* Storyboards */,
 			);
@@ -577,6 +582,7 @@
 			children = (
 				F2242A46259BC22F00455604 /* LoginVC.swift */,
 				F2242A62259C78FD00455604 /* LoginNaviController.swift */,
+				F240771625A731EB008B691B /* SplashVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -843,6 +849,7 @@
 				D154440025A33AF9007773BF /* CafeNameResultCell.xib in Resources */,
 				F2242A28259BB02100455604 /* Home.storyboard in Resources */,
 				D154440525A33B05007773BF /* CafeMenusCell.xib in Resources */,
+				F240771A25A7325E008B691B /* 밀키웨이_ios_스플레쉬.json in Resources */,
 				D1F2284D259F746D0018C472 /* CafeReportMain.storyboard in Resources */,
 				F2242A3E259BB2DF00455604 /* Setting.storyboard in Resources */,
 				F2142DFE25A349FF00D07F3F /* SF-Pro-Text-Bold.otf in Resources */,
@@ -930,6 +937,7 @@
 				D1F22850259F74810018C472 /* MyReportMainVC.swift in Sources */,
 				F2BA62DE2598DE5F00A49020 /* AppDelegate.swift in Sources */,
 				F2242A24259BAFFC00455604 /* HomeVC.swift in Sources */,
+				F240771725A731EB008B691B /* SplashVC.swift in Sources */,
 				F2BA630A2598E4D400A49020 /* UIViewController+Extension.swift in Sources */,
 				D1983CA725A72BF200C74CED /* UITextField+Extension.swift in Sources */,
 				F26BEB6425A63BB900B7AFCF /* AddSearchTVC.swift in Sources */,

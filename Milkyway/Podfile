@@ -8,6 +8,7 @@ target 'Milkyway' do
   pod 'XLPagerTabStrip', '~> 9.0'
   pod 'NMapsMap' 
   pod 'DLRadioButton', '~> 1.4'
+  pod 'lottie-ios' 
 
   # Pods for Milkyway
 

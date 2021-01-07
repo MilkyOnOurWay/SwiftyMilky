@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="R8Q-pi-gb2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="D6Z-F2-rCR">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -148,6 +148,7 @@
                         <outlet property="bottomConstraint" destination="bhv-c7-q6g" id="1BX-hN-jer"/>
                         <outlet property="checkBoxImageView" destination="RV5-6p-87I" id="Y2m-lU-BOn"/>
                         <outlet property="countLabel" destination="eOb-pB-8Wl" id="e8D-N3-1nD"/>
+                        <outlet property="logoImageView" destination="71D-Zx-01d" id="Fb6-RT-hrk"/>
                         <outlet property="nicknameTextField" destination="9c9-lM-p8D" id="hjt-pE-mSE"/>
                         <outlet property="startButton" destination="cg1-lm-N6x" id="VEO-0L-yOJ"/>
                         <outlet property="stateLabel" destination="k6B-Oq-JIj" id="5po-UW-qf9"/>
@@ -155,12 +156,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TmW-oh-stH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1197.5999999999999" y="35.532233883058474"/>
+            <point key="canvasLocation" x="1057" y="13"/>
         </scene>
         <!--Login Navi Controller-->
         <scene sceneID="Geh-Bu-nny">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="R8Q-pi-gb2" customClass="LoginNaviController" customModule="Milkyway" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="LoginNaviController" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="R8Q-pi-gb2" customClass="LoginNaviController" customModule="Milkyway" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="D7K-Bk-iVU">
                         <autoresizingMask key="autoresizingMask"/>
@@ -173,6 +174,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LJx-Bv-rEC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="204" y="13.300492610837439"/>
+        </scene>
+        <!--SplashVC-->
+        <scene sceneID="erZ-XD-O1h">
+            <objects>
+                <viewController id="D6Z-F2-rCR" customClass="SplashVC" customModule="Milkyway" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jDh-SD-IAI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="VqY-s7-K20"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K7D-K7-obs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="204" y="-693"/>
         </scene>
     </scenes>
     <resources>

@@ -16,6 +16,8 @@ class LoginVC: UIViewController{
     @IBOutlet weak var checkBoxImageView: UIImageView!
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var logoImageView: UIImageView!
+    
     var count = 0
     
     override func viewDidLoad() {
@@ -25,10 +27,11 @@ class LoginVC: UIViewController{
         setLabel()
         setTextfield()
         addKeyboardNotification()
+        setAnimation()
         // Do any additional setup after loading the view.
     }
     
-
+    
     @IBAction func textfieldDidTap(_ sender: Any) {
         checkMaxLength(nicknameTextField, maxLength: 10)
     }
@@ -37,7 +40,13 @@ class LoginVC: UIViewController{
 
 extension LoginVC {
     
-   
+    
+    func setAnimation(){
+        logoImageView.alpha = 0
+        UIView.animate(withDuration: 1.0, animations: ({
+            self.logoImageView.alpha  = 1;
+        }))
+    }
     func setLabel(){
         
         countLabel.isHidden = true
@@ -142,7 +151,7 @@ extension LoginVC: UITextFieldDelegate {
             backgroundImageView.image = UIImage(named: "inputCorrect")
             return
         }
-       
+        
         
     }
     

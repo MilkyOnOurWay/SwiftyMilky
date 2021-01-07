@@ -9,13 +9,20 @@
 
 </br>
 
-|                            💛이윤진💛                            |                            이소영                            | 박유진 |
+|                            💛 이윤진💛                            |                            이소영                            | 박유진 |
 | :----------------------------------------------------------: | :----------------------------------------------------------: | ------ |
 | <img src="https://images.velog.io/images/sso0022/post/b6ad88b5-f18a-4d61-8df8-3364c6688feb/KakaoTalk_Photo_2020-12-28-02-51-04.jpeg" height="300" /> | <img src="https://images.velog.io/images/sso0022/post/8276334a-92f7-4747-bcb9-f428956f58f5/IMG_9679%20%E1%84%87%E1%85%A9%E1%86%A8%E1%84%89%E1%85%A1%E1%84%87%E1%85%A9%E1%86%AB%202.JPG" height="300" /> | <img src="https://user-images.githubusercontent.com/68267763/103199866-3c5dc180-492f-11eb-8cfc-5a5c2f1ffcd5.jpeg" height="300" /> |
 
 </br>
 </br>
 </br>
+
+# 📱 개발 환경 및 라이브러리
+
+![Swift](https://img.shields.io/badge/Swift-5.0-orange.svg)
+![Xcode](https://img.shields.io/badge/Xcode-12.3-blue.svg)
+![iOS](https://img.shields.io/badge/iOS-14.3-blue.svg)
+
 
 # 💻 기능 소개
 

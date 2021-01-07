@@ -37,12 +37,9 @@ class CafeReportMainVC: UIViewController, IndicatorInfoProvider {
         cafeMenus = []
         NotificationCenter.default.post(name: Notification.Name("removeHoneyTips"), object: nil)
         ToastView.showIn(viewController: self, message: "입력했던 정보가 초기화되었습니다.", fromBottom: 10)
-        tableView.reloadData()
+        tableView.reloadSections(IndexSet(0...2), with: .automatic)
     }
-    
-    
-    
-    
+
 }
 
 extension CafeReportMainVC: UITableViewDelegate {
@@ -126,6 +123,8 @@ extension CafeReportMainVC: UITableViewDataSource {
             cell.menuPriceLabel.text = cafeMenus[indexPath.row].price + " 원"
             cell.selectionStyle = .none // 셀 선택 불가능하게
             
+            
+            // 수정/삭제 버튼 눌렸을 때
             cell.deleteModifyBtnAction = { [unowned self] in
                 let menu = self.cafeMenus[indexPath.row].menu
                 let actionSheet = UIAlertController(title: "메뉴를 수정 및 삭제합니다", message: "\(menu)", preferredStyle: .actionSheet)
@@ -146,8 +145,7 @@ extension CafeReportMainVC: UITableViewDataSource {
 
               
                 }
-            
-            
+    
             return cell
             
         }
@@ -179,7 +177,6 @@ extension CafeReportMainVC {
         
     }
     
-    
     // 셀 등록
     func cellResister() {
         
@@ -197,12 +194,17 @@ extension CafeReportMainVC {
         self.tableView.register(HoneyTipCellNib, forCellReuseIdentifier: "HoneyTipCell")
     }
     
+    /// 노티관련
+    
+    // 메뉴가 추가되면 실행된다.
+    // noti로 받아온 메뉴를 cafeMenus에 추가해주고, 테이블뷰 메뉴 섹션을 reload 해준다.
     @objc func menuPlus(_ noti: NSNotification) {
         cafeMenus.append(noti.object as! CafeMenu) // 옵셔널 처리 나중에는 해줘야함...
         tableView.reloadSections(IndexSet(1...1), with: .automatic)
         
     }
     
+    // 메뉴 수정 버튼을 누르고 입력 완료를 누르면 이전에 있던 정보는 삭제해줘야한다 !!!
     @objc func removeBeforeMenu() {
         cafeMenus.remove(at: editIndex!)
         tableView.reloadSections(IndexSet(1...1), with: .fade)

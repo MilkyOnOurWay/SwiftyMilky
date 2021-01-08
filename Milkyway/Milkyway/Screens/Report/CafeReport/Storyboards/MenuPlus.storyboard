@@ -44,7 +44,7 @@
                                 </constraints>
                                 <color key="textColor" name="darkGrey"/>
                                 <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="16"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="inset">
                                         <real key="value" value="20"/>
@@ -121,7 +121,7 @@
                                 </constraints>
                                 <color key="textColor" name="darkGrey"/>
                                 <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="16"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="done"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="inset">
                                         <real key="value" value="20"/>
@@ -253,6 +253,13 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XW8-hZ-b4r" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" id="TEv-BD-GFB">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <viewLayoutGuide key="safeArea" id="hFM-tK-g2s"/>
+                    <viewLayoutGuide key="contentLayoutGuide" id="hoc-kn-u9b"/>
+                    <viewLayoutGuide key="frameLayoutGuide" id="yZX-Hl-CvL"/>
+                </scrollView>
             </objects>
             <point key="canvasLocation" x="50.724637681159422" y="85.714285714285708"/>
         </scene>

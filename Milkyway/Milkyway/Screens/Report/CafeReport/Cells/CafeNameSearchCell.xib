@@ -33,16 +33,16 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="카페 메뉴" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ofQ-xo-yMx">
-                        <rect key="frame" x="20" y="121.5" width="60" height="19.5"/>
+                        <rect key="frame" x="20" y="111.5" width="60" height="19.5"/>
                         <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="16"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="osz-DN-JIu">
-                        <rect key="frame" x="20" y="19.5" width="409" height="102"/>
+                        <rect key="frame" x="20" y="19.5" width="409" height="92"/>
                         <subviews>
                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7b2-Wo-nLc">
-                                <rect key="frame" x="0.0" y="39" width="24" height="24"/>
+                                <rect key="frame" x="0.0" y="34" width="24" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="8Xz-vf-zWf"/>
                                     <constraint firstAttribute="width" constant="24" id="vfK-HL-pZi"/>
@@ -50,12 +50,12 @@
                                 <state key="normal" image="btnSearch"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="카페 검색하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LBx-Qp-TUp">
-                                <rect key="frame" x="32" y="42.5" width="77" height="17"/>
+                                <rect key="frame" x="32" y="37.5" width="77" height="17"/>
                                 <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="14"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="adI-c2-XAQ">
-                                <rect key="frame" x="0.0" y="21" width="409" height="60"/>
+                                <rect key="frame" x="0.0" y="16" width="409" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="TBj-DK-sm6"/>
                                 </constraints>
@@ -79,7 +79,7 @@
                     <constraint firstItem="osz-DN-JIu" firstAttribute="leading" secondItem="I1x-pV-V5Z" secondAttribute="leading" id="AVb-cu-6Ty"/>
                     <constraint firstItem="I1x-pV-V5Z" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="D9t-g6-hzS"/>
                     <constraint firstItem="ofQ-xo-yMx" firstAttribute="leading" secondItem="I1x-pV-V5Z" secondAttribute="leading" id="EZN-U4-7Tc"/>
-                    <constraint firstAttribute="bottom" secondItem="ofQ-xo-yMx" secondAttribute="bottom" id="cld-CV-sw1"/>
+                    <constraint firstAttribute="bottom" secondItem="ofQ-xo-yMx" secondAttribute="bottom" constant="10" id="cld-CV-sw1"/>
                     <constraint firstItem="I1x-pV-V5Z" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="jIF-lq-ZrA"/>
                     <constraint firstItem="osz-DN-JIu" firstAttribute="top" secondItem="I1x-pV-V5Z" secondAttribute="bottom" id="xfj-RE-dP7"/>
                 </constraints>

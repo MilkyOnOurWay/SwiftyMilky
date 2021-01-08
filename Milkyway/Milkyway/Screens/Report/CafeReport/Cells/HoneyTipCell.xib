@@ -28,13 +28,13 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="밀키의 꿀팁" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BPb-Ss-7WG">
-                        <rect key="frame" x="20" y="70" width="78" height="21"/>
+                        <rect key="frame" x="20" y="60" width="78" height="21"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HFl-PO-KDc">
-                        <rect key="frame" x="20" y="10" width="421" height="50"/>
+                        <rect key="frame" x="20" y="0.0" width="421" height="50"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icPlus" translatesAutoresizingMaskIntoConstraints="NO" id="zrQ-9N-jwz">
                                 <rect key="frame" x="0.0" y="13" width="24" height="24"/>
@@ -71,7 +71,7 @@
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D00-xh-UAC">
-                        <rect key="frame" x="20" y="111" width="401" height="112"/>
+                        <rect key="frame" x="20" y="101" width="401" height="112"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="   #전메뉴우유가능   " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="726-rJ-ZqZ">
                                 <rect key="frame" x="0.0" y="0.0" width="133" height="32"/>
@@ -285,7 +285,7 @@
                     <constraint firstAttribute="trailing" secondItem="HFl-PO-KDc" secondAttribute="trailing" id="UuA-wC-7Gr"/>
                     <constraint firstItem="BPb-Ss-7WG" firstAttribute="top" secondItem="HFl-PO-KDc" secondAttribute="bottom" constant="10" id="gHn-Nd-VtJ"/>
                     <constraint firstItem="D00-xh-UAC" firstAttribute="top" secondItem="BPb-Ss-7WG" secondAttribute="bottom" constant="20" id="pXP-sw-ZPg"/>
-                    <constraint firstItem="HFl-PO-KDc" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="ugf-Oh-1qZ"/>
+                    <constraint firstItem="HFl-PO-KDc" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="ugf-Oh-1qZ"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

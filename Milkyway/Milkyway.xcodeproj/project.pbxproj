@@ -85,6 +85,8 @@
 		F2242A6C259CD30400455604 /* FilterResult.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2242A6B259CD30400455604 /* FilterResult.storyboard */; };
 		F240771725A731EB008B691B /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F240771625A731EB008B691B /* SplashVC.swift */; };
 		F2485E7B25A8C8E0003E3895 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2485E7A25A8C8E0003E3895 /* Token.swift */; };
+		F2485EA825A8E60A003E3895 /* UniverseCardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2485EA625A8E60A003E3895 /* UniverseCardVC.swift */; };
+		F2485EA925A8E60A003E3895 /* UniverseCardVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2485EA725A8E60A003E3895 /* UniverseCardVC.xib */; };
 		F26BEB6425A63BB900B7AFCF /* AddSearchTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26BEB6225A63BB800B7AFCF /* AddSearchTVC.swift */; };
 		F26BEB6525A63BB900B7AFCF /* AddSearchTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F26BEB6325A63BB900B7AFCF /* AddSearchTVC.xib */; };
 		F2BA62DE2598DE5F00A49020 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BA62DD2598DE5F00A49020 /* AppDelegate.swift */; };
@@ -197,6 +199,8 @@
 		F2242A6B259CD30400455604 /* FilterResult.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FilterResult.storyboard; sourceTree = "<group>"; };
 		F240771625A731EB008B691B /* SplashVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashVC.swift; sourceTree = "<group>"; };
 		F2485E7A25A8C8E0003E3895 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
+		F2485EA625A8E60A003E3895 /* UniverseCardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UniverseCardVC.swift; path = Milkyway/Screens/MyUniverse/ViewControllers/UniverseCardVC.swift; sourceTree = SOURCE_ROOT; };
+		F2485EA725A8E60A003E3895 /* UniverseCardVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = UniverseCardVC.xib; path = Milkyway/Screens/MyUniverse/ViewControllers/UniverseCardVC.xib; sourceTree = SOURCE_ROOT; };
 		F26BEB6225A63BB800B7AFCF /* AddSearchTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSearchTVC.swift; sourceTree = "<group>"; };
 		F26BEB6325A63BB900B7AFCF /* AddSearchTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddSearchTVC.xib; sourceTree = "<group>"; };
 		F2BA62DA2598DE5F00A49020 /* Milkyway.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Milkyway.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -642,6 +646,8 @@
 			isa = PBXGroup;
 			children = (
 				F2242A56259C4AA600455604 /* MyUniverse.storyboard */,
+				F2485EA625A8E60A003E3895 /* UniverseCardVC.swift */,
+				F2485EA725A8E60A003E3895 /* UniverseCardVC.xib */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -880,6 +886,7 @@
 				F2242A28259BB02100455604 /* Home.storyboard in Resources */,
 				D154440525A33B05007773BF /* CafeMenusCell.xib in Resources */,
 				D1F2284D259F746D0018C472 /* CafeReportMain.storyboard in Resources */,
+				F2485EA925A8E60A003E3895 /* UniverseCardVC.xib in Resources */,
 				F2242A3E259BB2DF00455604 /* Setting.storyboard in Resources */,
 				F2142DFE25A349FF00D07F3F /* SF-Pro-Text-Bold.otf in Resources */,
 				D1F22865259F78C90018C472 /* Search.storyboard in Resources */,
@@ -960,6 +967,7 @@
 				D15443F625A33ACF007773BF /* CafeNameSearchCell.swift in Sources */,
 				6B869C0225A0B95E0068BFD2 /* InfoModifyReqVC.swift in Sources */,
 				6BF6DA6E25A57DF5001CDB9A /* CardState.swift in Sources */,
+				F2485EA825A8E60A003E3895 /* UniverseCardVC.swift in Sources */,
 				F2BA63142598E56B00A49020 /* UIView+Extension.swift in Sources */,
 				6B869C4425A1E8E00068BFD2 /* DeletePlaceConfirmVC.swift in Sources */,
 				D15443F125A339AC007773BF /* CafeMenu.swift in Sources */,

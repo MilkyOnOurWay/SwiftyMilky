@@ -100,6 +100,14 @@ extension MenuPlusVC: UITextFieldDelegate {
         checkEditOK()
     
     }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == self.menuTF {
+                    self.priceTF.becomeFirstResponder()
+                }
+        
+        return true
+    }
         
        
     

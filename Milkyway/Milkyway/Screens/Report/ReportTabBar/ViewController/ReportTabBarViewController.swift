@@ -84,11 +84,12 @@ extension ButtonBarPagerTabStripViewController {
     }
     
     @objc func editMenu(_ noti: NSNotification) {
-        let cafeMenu = noti.object as! CafeMenu
+        var cafeMenu = noti.object as! CafeMenu
         guard let menuVC = UIStoryboard(name: "MenuPlus", bundle: nil).instantiateViewController(withIdentifier:"MenuPlusVC") as? MenuPlusVC else {
             return
         }
-        
+        // 수정할 때 , 삭제
+        cafeMenu.price = cafeMenu.price.components(separatedBy: ",").joined()
         menuVC.editCafeMenu = cafeMenu
         menuVC.areyouEdit = true
 

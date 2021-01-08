@@ -11,8 +11,8 @@ import NMapsMap
 class MyUniverseVC: UIViewController{
     @IBOutlet weak var mapView: NMFMapView!
     
-    let unselectImage = NMFOverlayImage(name: "smallNoLike")
-    let selectImage = NMFOverlayImage(name: "bigNoLike")
+    let unselectImage = NMFOverlayImage(name: "pickerUniverse")
+    let selectImage = NMFOverlayImage(name: "pickerUniverseSelected")
     var markers = [NMFMarker]()
     var camera: NMFCameraUpdate!
     var beforeMarker: NMFMarker?

@@ -28,7 +28,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="밀키의 꿀팁" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BPb-Ss-7WG">
-                        <rect key="frame" x="20" y="60" width="78" height="21"/>
+                        <rect key="frame" x="20" y="90" width="78" height="21"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -71,7 +71,7 @@
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D00-xh-UAC">
-                        <rect key="frame" x="20" y="101" width="401" height="112"/>
+                        <rect key="frame" x="20" y="131" width="401" height="112"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="   #전메뉴우유가능   " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="726-rJ-ZqZ">
                                 <rect key="frame" x="0.0" y="0.0" width="133" height="32"/>
@@ -283,7 +283,7 @@
                     <constraint firstItem="D00-xh-UAC" firstAttribute="leading" secondItem="BPb-Ss-7WG" secondAttribute="leading" id="Q3u-Gp-gEf"/>
                     <constraint firstAttribute="trailing" secondItem="D00-xh-UAC" secondAttribute="trailing" constant="20" id="Shu-d8-7U9"/>
                     <constraint firstAttribute="trailing" secondItem="HFl-PO-KDc" secondAttribute="trailing" id="UuA-wC-7Gr"/>
-                    <constraint firstItem="BPb-Ss-7WG" firstAttribute="top" secondItem="HFl-PO-KDc" secondAttribute="bottom" constant="10" id="gHn-Nd-VtJ"/>
+                    <constraint firstItem="BPb-Ss-7WG" firstAttribute="top" secondItem="HFl-PO-KDc" secondAttribute="bottom" constant="40" id="gHn-Nd-VtJ"/>
                     <constraint firstItem="D00-xh-UAC" firstAttribute="top" secondItem="BPb-Ss-7WG" secondAttribute="bottom" constant="20" id="pXP-sw-ZPg"/>
                     <constraint firstItem="HFl-PO-KDc" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="ugf-Oh-1qZ"/>
                 </constraints>

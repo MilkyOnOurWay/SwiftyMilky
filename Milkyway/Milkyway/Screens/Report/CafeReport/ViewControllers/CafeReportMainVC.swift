@@ -76,7 +76,7 @@ extension CafeReportMainVC: UITableViewDataSource {
     // section 행의 높이 -> 나중에는 이렇게 말고 ...
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0 {
-            return 130
+            return 160
         }
         else if indexPath.section == 1 {
             return 90

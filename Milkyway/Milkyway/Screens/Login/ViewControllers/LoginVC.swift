@@ -19,6 +19,8 @@ class LoginVC: UIViewController{
     @IBOutlet weak var logoImageView: UIImageView!
     
     var count = 0
+    var uuid: String?
+    var nickname: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,6 +68,7 @@ extension LoginVC {
     // MARK: - 로그인 완료 버튼 눌렀을 때 액션
     func setButton(){
         
+        // uuid 생성
         startButton.addTarget(self, action: #selector(startButtonDidTap), for: .touchUpInside)
         startButton.isEnabled = false
     }
@@ -96,11 +99,42 @@ extension LoginVC {
     
     @objc func startButtonDidTap(){
         
+        uuid = UUID().uuidString
+        // signUpService(uuid, nickname)
+        
+        // 뷰 전환
         let vc = UIStoryboard.init(name: "TabBar", bundle: nil).instantiateViewController(identifier: "TabBarController") as? TabBarController
         vc?.modalPresentationStyle = .fullScreen
         self.present(vc!, animated: true, completion: nil)
+        
+        // keychainwrapper로 토큰생성하기
     }
     
+    // 서버 연결 코드
+    func signUpService(_ uuid: String, _ nickName: String){
+        UserService.shared.SignUp(uuid, nickName) { responseData in
+            switch responseData {
+            case.success(let res):
+                dump(res)
+                let response: Token = res as! Token
+                /* 뷰 전환
+                let vc = UIStoryboard.init(name: "TabBar", bundle: nil).instantiateViewController(identifier: "TabBarController") as? TabBarController
+                vc?.modalPresentationStyle = .fullScreen
+                self.present(vc!, animated: true, completion: nil)
+                
+                KeychainWrapper.standard.set(response.accessToken, forKey: "Token")
+                // keychainwrapper로 토큰생성하기 */
+            case .requestErr(_):
+                print("내잘못/request error")
+            case .pathErr:
+                print(".pathErr")
+            case .serverErr:
+                print(".serverErr")
+            case .networkFail:
+                print("failure")
+            }
+        }
+    }
     @objc func keyboardWillShow(_ notification: Notification){
         print(#function)
         
@@ -127,7 +161,7 @@ extension LoginVC: UITextFieldDelegate {
     // MARK: - 닉네임 유효성 판단
     @objc func checkRegister(_ textfield: UITextField) {
         
-        let nickname = textfield.text
+        nickname = textfield.text
         let count = String(nickname?.count ?? 0)
         countLabel.text = "\(count)/10"
         
@@ -154,6 +188,7 @@ extension LoginVC: UITextFieldDelegate {
             startButton.isEnabled = true
             checkBoxImageView.isHidden = false
             backgroundImageView.image = UIImage(named: "inputCorrect")
+            
             return
         }
         

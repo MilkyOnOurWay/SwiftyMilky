@@ -16,7 +16,7 @@ struct ResponseResult<T: Codable>: Codable {
 
 struct ResponseSimpleResult<T: Codable>: Codable {
     var status: Int?
-    var success: Bool?
+    //var success: Bool?
     var message: String?
     var data: T?
 }

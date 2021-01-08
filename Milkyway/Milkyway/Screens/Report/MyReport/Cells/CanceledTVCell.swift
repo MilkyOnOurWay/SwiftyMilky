@@ -9,13 +9,15 @@ import UIKit
 
 class CanceledTVCell: UITableViewCell {
 
+    //취소된 제보
+    
     static let identifier = "CanceledTVCell"
     @IBOutlet var canceledLabel: UILabel!
     @IBOutlet var collectionView: UICollectionView!
     
     let horizonInset: CGFloat = 20
     let rightSpacing: CGFloat = 20
-    let lineSpacing: CGFloat = 12
+    let lineSpacing: CGFloat = 5
     
     override func awakeFromNib() {
         super.awakeFromNib()

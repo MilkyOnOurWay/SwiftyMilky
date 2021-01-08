@@ -37,6 +37,8 @@ class MenuPlusVC: UIViewController {
         editEndBtn.isUserInteractionEnabled = false
         
     }
+    
+    
 }
 
 extension MenuPlusVC  {
@@ -46,15 +48,7 @@ extension MenuPlusVC  {
         self.navigationController?.popViewController(animated: true)
     }
     
-    @IBAction func categoryBtnClicked(_ sender: Any) {
-        // 버튼을 눌러도 키보드가 내려간다네...
-        self.menuTF.resignFirstResponder()
-        self.priceTF.resignFirstResponder()
-        countCategory()
-        checkEditOK()
-        
-    }
-    
+
     @IBAction func menuPlusOkClicked(_ sender: Any) {
         
         // 수정이라면 이전꺼 지워줘야함.
@@ -77,11 +71,37 @@ extension MenuPlusVC  {
         self.navigationController?.popViewController(animated: true)
     }
     
+    @IBAction func categoryBtnClicked(_ sender: Any) {
+        // 버튼을 눌러도 키보드가 내려간다네...
+        self.menuTF.resignFirstResponder()
+        self.priceTF.resignFirstResponder()
+        countCategory()
+        checkEditOK()
+        
+    }
 
     
     // 텍스트필드 아닌 곳을 터치하면 키보드가 내려간다네 ...
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.menuTF.resignFirstResponder()
+        self.priceTF.resignFirstResponder()
+    }
+    
+    // priceTF 오른쪽 상단에 done 버튼 넣기
+    @IBAction func nextBtnAdd(_ sender: UITextField) {
+        let doneToolbar: UIToolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width:   UIScreen.main.bounds.width, height: 50))
+        doneToolbar.barStyle = .default
+        let flexSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        let done: UIBarButtonItem = UIBarButtonItem(title: "Done", style: UIBarButtonItem.Style.done, target: self, action: #selector(doneButtonAction))
+          let items = NSMutableArray()
+          items.add(flexSpace)
+          items.add(done)
+          doneToolbar.items = items as? [UIBarButtonItem]
+          doneToolbar.sizeToFit()
+          self.priceTF.inputAccessoryView = doneToolbar
+    }
+    
+    @objc func doneButtonAction() {
         self.priceTF.resignFirstResponder()
     }
     
@@ -91,6 +111,7 @@ extension MenuPlusVC  {
 
 
 extension MenuPlusVC: UITextFieldDelegate {
+    
     func  textFieldDidEndEditing(_ textField: UITextField) {
         print(menuTF.text!.count)
         print(priceTF.text!.count)
@@ -108,8 +129,7 @@ extension MenuPlusVC: UITextFieldDelegate {
         
         return true
     }
-        
-       
+
     
 }
 
@@ -126,10 +146,10 @@ extension MenuPlusVC {
             editEndBtn.setImage(UIImage(named: "btnInputOff"), for: .normal)
             editEndBtn.isUserInteractionEnabled = false
         }
-        
-        
+
     }
     
+    // category 확인용
     func countCategory() {
         category = []
         if categoryFirstBtn.isSelected {
@@ -140,7 +160,6 @@ extension MenuPlusVC {
                 category.append(i.tag)
             }
         }
-        print(category)
     }
     
     

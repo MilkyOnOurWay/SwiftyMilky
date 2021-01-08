@@ -35,6 +35,7 @@ extension MyReportMainVC {
     
     func registerDelegate() {
         myReportTableView.dataSource = self
+        myReportTableView.delegate = self
     }
     func registerXib() {
         let topTVCellNib = UINib(nibName: "TopTVCell", bundle: nil)
@@ -110,5 +111,11 @@ extension MyReportMainVC: UITableViewDataSource {
     
 }
 extension MyReportMainVC: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "DetailCafeMenu", bundle: nil)
+        
+        if let dvc = storyboard.instantiateViewController(identifier: "DetailCafeMenuVC") as? DetailCafeMenuVC {
+        self.navigationController?.pushViewController(dvc, animated: true)
+        }
+    }
 }

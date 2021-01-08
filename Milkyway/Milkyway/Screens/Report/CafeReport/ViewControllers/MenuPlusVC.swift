@@ -35,7 +35,7 @@ class MenuPlusVC: UIViewController {
         
         // 처음에는 입력 완료를 누를 수 없다.
         editEndBtn.isUserInteractionEnabled = false
-   
+        
     }
 }
 

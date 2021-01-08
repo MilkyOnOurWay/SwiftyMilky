@@ -42,7 +42,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Pub-Xl-uTR"/>
                                 </constraints>
-                                <color key="textColor" name="darkGrey"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
                                 <userDefinedRuntimeAttributes>
@@ -119,7 +119,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="8G3-b3-Qpx"/>
                                 </constraints>
-                                <color key="textColor" name="darkGrey"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="done"/>
                                 <userDefinedRuntimeAttributes>
@@ -266,7 +266,7 @@
     </scenes>
     <designables>
         <designable name="AOg-4h-MCg">
-            <size key="intrinsicContentSize" width="210" height="24.5"/>
+            <size key="intrinsicContentSize" width="174" height="28.5"/>
         </designable>
         <designable name="E0K-aV-c2w">
             <size key="intrinsicContentSize" width="30" height="31"/>
@@ -275,7 +275,7 @@
             <size key="intrinsicContentSize" width="30" height="31"/>
         </designable>
         <designable name="Um4-eG-g2g">
-            <size key="intrinsicContentSize" width="177.5" height="24.5"/>
+            <size key="intrinsicContentSize" width="141.5" height="28.5"/>
         </designable>
         <designable name="VhK-gn-Iiu">
             <size key="intrinsicContentSize" width="30" height="31"/>

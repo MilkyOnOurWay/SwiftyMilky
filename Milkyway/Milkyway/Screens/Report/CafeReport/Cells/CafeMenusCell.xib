@@ -30,7 +30,7 @@
                         <rect key="frame" x="20" y="6" width="356" height="101"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="카페메뉴" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pCB-d8-sWE">
-                        <rect key="frame" x="40" y="26" width="55.5" height="19"/>
+                        <rect key="frame" x="40" y="26" width="227" height="19"/>
                         <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="16"/>
                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
@@ -52,7 +52,7 @@
                         <color key="textColor" name="darkGrey"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10,000원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mwM-a2-56e">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="10,000원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mwM-a2-56e">
                         <rect key="frame" x="274" y="47" width="63" height="19"/>
                         <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="16"/>
                         <color key="textColor" name="Milky"/>
@@ -69,6 +69,7 @@
                     <constraint firstItem="NGJ-TA-qYX" firstAttribute="trailing" secondItem="Fxg-Bg-w3J" secondAttribute="trailing" constant="3" id="fHe-Eh-lkx"/>
                     <constraint firstItem="Fxg-Bg-w3J" firstAttribute="centerY" secondItem="NGJ-TA-qYX" secondAttribute="centerY" id="h6G-G1-QgP"/>
                     <constraint firstItem="nKj-ej-1HD" firstAttribute="leading" secondItem="pCB-d8-sWE" secondAttribute="leading" id="l5h-3n-nEz"/>
+                    <constraint firstItem="Fxg-Bg-w3J" firstAttribute="leading" secondItem="pCB-d8-sWE" secondAttribute="trailing" constant="70" id="lav-7w-iIV"/>
                     <constraint firstItem="mwM-a2-56e" firstAttribute="centerY" secondItem="Fxg-Bg-w3J" secondAttribute="centerY" id="odK-Fc-V1f"/>
                     <constraint firstItem="NGJ-TA-qYX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="6" id="qex-rC-UxU"/>
                     <constraint firstItem="Fxg-Bg-w3J" firstAttribute="leading" secondItem="mwM-a2-56e" secondAttribute="trailing" id="v7A-Mv-rEF"/>

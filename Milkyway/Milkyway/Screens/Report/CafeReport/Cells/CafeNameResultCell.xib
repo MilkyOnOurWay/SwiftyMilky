@@ -96,6 +96,8 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="cafeAddressLabel" destination="jqh-FT-Zgw" id="71a-PE-EZN"/>
+                <outlet property="cafeNameLabel" destination="927-P2-qN2" id="FkT-wi-NAg"/>
                 <outlet property="searchButton" destination="cd7-0n-KxS" id="MRk-Ht-c5x"/>
             </connections>
             <point key="canvasLocation" x="178.2608695652174" y="171.76339285714286"/>

@@ -42,9 +42,9 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Pub-Xl-uTR"/>
                                 </constraints>
-                                <color key="textColor" name="darkGrey"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="16"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="inset">
                                         <real key="value" value="20"/>
@@ -119,14 +119,17 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="8G3-b3-Qpx"/>
                                 </constraints>
-                                <color key="textColor" name="darkGrey"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="16"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="done"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="inset">
                                         <real key="value" value="20"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="nextBtnAdd:" destination="Uke-Jq-c8W" eventType="editingDidBegin" id="SY1-BG-n0o"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="카테고리" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZLd-de-oxN">
                                 <rect key="frame" x="20" y="339" width="55.5" height="19"/>
@@ -253,28 +256,35 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XW8-hZ-b4r" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" id="TEv-BD-GFB">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <viewLayoutGuide key="safeArea" id="hFM-tK-g2s"/>
+                    <viewLayoutGuide key="contentLayoutGuide" id="hoc-kn-u9b"/>
+                    <viewLayoutGuide key="frameLayoutGuide" id="yZX-Hl-CvL"/>
+                </scrollView>
             </objects>
             <point key="canvasLocation" x="50.724637681159422" y="85.714285714285708"/>
         </scene>
     </scenes>
     <designables>
         <designable name="AOg-4h-MCg">
-            <size key="intrinsicContentSize" width="210" height="25"/>
+            <size key="intrinsicContentSize" width="174" height="28.5"/>
         </designable>
         <designable name="E0K-aV-c2w">
-            <size key="intrinsicContentSize" width="30" height="32"/>
+            <size key="intrinsicContentSize" width="30" height="31"/>
         </designable>
         <designable name="LcN-IH-2X1">
-            <size key="intrinsicContentSize" width="30" height="32"/>
+            <size key="intrinsicContentSize" width="30" height="31"/>
         </designable>
         <designable name="Um4-eG-g2g">
-            <size key="intrinsicContentSize" width="178" height="25"/>
+            <size key="intrinsicContentSize" width="141.5" height="28.5"/>
         </designable>
         <designable name="VhK-gn-Iiu">
-            <size key="intrinsicContentSize" width="30" height="32"/>
+            <size key="intrinsicContentSize" width="30" height="31"/>
         </designable>
         <designable name="an5-gQ-2WR">
-            <size key="intrinsicContentSize" width="30" height="32"/>
+            <size key="intrinsicContentSize" width="30" height="31"/>
         </designable>
     </designables>
     <resources>

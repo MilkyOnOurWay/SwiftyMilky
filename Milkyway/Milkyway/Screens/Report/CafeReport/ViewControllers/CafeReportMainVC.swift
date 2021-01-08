@@ -10,6 +10,8 @@ import XLPagerTabStrip
 
 class CafeReportMainVC: UIViewController, IndicatorInfoProvider {
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var reportEndBtn: UIButton!
+    
     var tabName: String = ""
     
     let cafeMenu = ["디카페인","두유","저지방우유","무지방우유"]
@@ -18,12 +20,16 @@ class CafeReportMainVC: UIViewController, IndicatorInfoProvider {
     var cafeInfo: CafeInfo?
     var editIndex: Int?
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         delegateFunc()
         cellResister()
         notiGather()
+        
+        // 더미데이터
+        cafeInfo = CafeInfo(cafeName: "소영이네뽀짝카페", cafeAddress: "서울특별시 양천구 목동남로4길")
         
     }
     
@@ -101,6 +107,9 @@ extension CafeReportMainVC: UITableViewDataSource {
                     return UITableViewCell()
                 }
                 
+                cell.cafeNameLabel.text = cafeInfo?.cafeName
+                cell.cafeAddressLabel.text = cafeInfo?.cafeAddress
+                
                 cell.searchButton.addTarget(self, action: #selector(searchButtonDidTap), for: .touchUpInside)
                 return cell
             }
@@ -133,10 +142,12 @@ extension CafeReportMainVC: UITableViewDataSource {
                     editIndex = indexPath.row
                     NotificationCenter.default.post(name: Notification.Name("gotomenuEdit"), object: cafeMenus[indexPath.row])
                     
+                    
                 }))
                 actionSheet.addAction(UIAlertAction(title: "삭제", style: .destructive, handler: { result in
                     cafeMenus.remove(at: indexPath.row)
                     tableView.reloadSections(IndexSet(1...1), with: .fade)
+                    checkReportOK()
                     
                 }))
                 actionSheet.addAction(UIAlertAction(title: "취소", style: .cancel, handler: nil))
@@ -194,6 +205,20 @@ extension CafeReportMainVC {
         self.tableView.register(HoneyTipCellNib, forCellReuseIdentifier: "HoneyTipCell")
     }
     
+    // 제보완료 가능한지 ?
+    func checkReportOK() {
+        
+        if cafeMenus.count > 0 {
+            reportEndBtn.setImage(UIImage(named: "btnReport"), for: .normal)
+            reportEndBtn.isUserInteractionEnabled = true
+        }
+        else {
+            reportEndBtn.setImage(UIImage(named: "btnReportOff"), for: .normal)
+            reportEndBtn.isUserInteractionEnabled = false
+        }
+        
+    }
+    
     /// 노티관련
     
     // 메뉴가 추가되면 실행된다.
@@ -201,6 +226,7 @@ extension CafeReportMainVC {
     @objc func menuPlus(_ noti: NSNotification) {
         cafeMenus.append(noti.object as! CafeMenu) // 옵셔널 처리 나중에는 해줘야함...
         tableView.reloadSections(IndexSet(1...1), with: .automatic)
+        checkReportOK()
         
     }
     

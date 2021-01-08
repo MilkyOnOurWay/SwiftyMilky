@@ -92,6 +92,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="reportEndBtn" destination="IR9-x2-5af" id="zMI-ju-bpF"/>
                         <outlet property="tableView" destination="uSe-lE-hrg" id="tMJ-3Z-sv5"/>
                     </connections>
                 </viewController>

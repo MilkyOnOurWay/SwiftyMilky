@@ -65,8 +65,12 @@ extension MenuPlusVC  {
         print(category)
         print("\(menuTF.text!) 메뉴 추가합니다")
         
-        
-        let menu = CafeMenu(menu: menuTF.text ?? "", selection: category, price: priceTF.text ?? "")
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        let changeToDouble = Double(priceTF.text ?? "0") ?? 0
+        let price = numberFormatter.string(from: NSNumber(value: changeToDouble))!
+
+        let menu = CafeMenu(menu: menuTF.text ?? "", selection: category, price: price )
         
         NotificationCenter.default.post(name: Notification.Name("menuPlus"), object: menu)
         self.navigationController?.popViewController(animated: true)

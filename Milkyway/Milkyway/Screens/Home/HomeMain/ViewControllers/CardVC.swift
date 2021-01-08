@@ -72,14 +72,6 @@ extension CardVC {
         yuksamBtn.iconSelected = UIImage(named: "yuksam_p")!
     }
     
-    // 현위치 버튼 누르면 초기화
-//    func resetRadioButton() {
-//        mangwonBtn.isSelected = false
-//        younnamBtn.isSelected = false
-//        hannamBtn.isSelected = false
-//        shinsaBtn.isSelected = false
-//        yuksamBtn.isSelected = false
-//    }
     
     @objc func sendBtnTag(_ sender:DLRadioButton) {
 

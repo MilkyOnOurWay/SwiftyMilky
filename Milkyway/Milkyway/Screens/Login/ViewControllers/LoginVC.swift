@@ -131,6 +131,10 @@ extension LoginVC: UITextFieldDelegate {
         let count = String(nickname?.count ?? 0)
         countLabel.text = "\(count)/10"
         
+        if nickname?.count ?? 0 > 10 {
+            countLabel.isHidden = true
+        }
+        
         if !isValidNickname(nickname!){
             stateLabel.isHidden = false
             countLabel.isHidden = false
@@ -144,6 +148,7 @@ extension LoginVC: UITextFieldDelegate {
             backgroundImageView.image = UIImage(named: "inputError")
             return
         }else {
+         
             stateLabel.isHidden = true
             startButton.setBackgroundImage(UIImage(named: "btnStart"), for: .normal)
             startButton.isEnabled = true

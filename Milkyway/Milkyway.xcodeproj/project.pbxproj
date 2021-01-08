@@ -106,6 +106,7 @@
 		F2BA63292598E74E00A49020 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BA63282598E74E00A49020 /* Font.swift */; };
 		F2BA632D2598E7DE00A49020 /* UITabbar+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BA632C2598E7DE00A49020 /* UITabbar+Extension.swift */; };
 		F2BA63302598E80000A49020 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BA632F2598E80000A49020 /* UIColor+Extension.swift */; };
+		F2C0641425A8BA7000BDD16D /* ResponseResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C0641325A8BA7000BDD16D /* ResponseResult.swift */; };
 		F2CD9C3625A83EBD001EC280 /* FilterResultCardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CD9C3425A83EBD001EC280 /* FilterResultCardVC.swift */; };
 		F2CD9C3725A83EBD001EC280 /* FilterResultCardVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2CD9C3525A83EBD001EC280 /* FilterResultCardVC.xib */; };
 		F2DCC2A525A7908A00AAE5EF /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DCC2A425A7908A00AAE5EF /* APIConstants.swift */; };
@@ -211,6 +212,7 @@
 		F2BA63282598E74E00A49020 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		F2BA632C2598E7DE00A49020 /* UITabbar+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITabbar+Extension.swift"; sourceTree = "<group>"; };
 		F2BA632F2598E80000A49020 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		F2C0641325A8BA7000BDD16D /* ResponseResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseResult.swift; sourceTree = "<group>"; };
 		F2CD9C3425A83EBD001EC280 /* FilterResultCardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterResultCardVC.swift; sourceTree = "<group>"; };
 		F2CD9C3525A83EBD001EC280 /* FilterResultCardVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterResultCardVC.xib; sourceTree = "<group>"; };
 		F2DCC2A425A7908A00AAE5EF /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
@@ -276,6 +278,7 @@
 				D1D95DCD25A30B7800B95F79 /* Cafe.swift */,
 				D15443EC25A33999007773BF /* CafeInfo.swift */,
 				D15443F025A339AC007773BF /* CafeMenu.swift */,
+				F2C0641325A8BA7000BDD16D /* ResponseResult.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -962,6 +965,7 @@
 				F26BEB6425A63BB900B7AFCF /* AddSearchTVC.swift in Sources */,
 				6B869C0B25A0BF9C0068BFD2 /* ModifyVC.swift in Sources */,
 				6B27B9A425A7228C00E14799 /* CanceledTVCell.swift in Sources */,
+				F2C0641425A8BA7000BDD16D /* ResponseResult.swift in Sources */,
 				F2BA63302598E80000A49020 /* UIColor+Extension.swift in Sources */,
 				F21384B625A1E8360016E766 /* SearchTVC.swift in Sources */,
 				D1D95DD325A30B9700B95F79 /* CafeBasicCell.swift in Sources */,

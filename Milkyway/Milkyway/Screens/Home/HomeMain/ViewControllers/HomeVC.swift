@@ -29,7 +29,7 @@ class HomeVC: UIViewController {
     
     var cardVC:CardVC!
     
-    let cardHeight:CGFloat = 363 //카드 높이 280 + 탭바높이 83
+    var cardHeight:CGFloat = 0 //363 //카드 높이 280 + 탭바높이 83 그냥 박는 버전
     let cardHandleAreaHeight:CGFloat = 84
     
     var cardVisible = false
@@ -168,7 +168,16 @@ extension HomeVC {
         // 탭바 높이
         let tabbarFrame = self.tabBarController?.tabBar.frame;
         
+        // SE에서 너무 많이 올라와서 이렇게 해봤는데 탭바 높이가 짧아서 덜 나오게 됨.
+        
+        if tabbarFrame!.size.height < 83 {
+            cardHeight = self.mapView.frame.height / 2 + tabbarFrame!.size.height + (83 - tabbarFrame!.size.height)
+        } else {
+            cardHeight = self.mapView.frame.height / 2 + tabbarFrame!.size.height
+        }
+//        cardHeight = self.mapView.frame.height / 2 + tabbarFrame!.size.height
 //        print("탭바 높이 \(tabbarFrame!.size.height)")
+//        print("card 높이 \(cardHeight)")
         
         //탭바 높이만큼 더하기
         cardVC.view.frame = CGRect(x: 0, y: self.view.frame.height - cardHandleAreaHeight - tabbarFrame!.size.height, width: self.view.bounds.width, height: cardHeight)
@@ -186,6 +195,12 @@ extension HomeVC {
         
         // 탭바 높이
         let tabbarFrame = self.tabBarController?.tabBar.frame;
+        
+        if tabbarFrame!.size.height < 83 {
+            cardHeight = self.mapView.frame.height / 2 + tabbarFrame!.size.height + (83 - tabbarFrame!.size.height)
+        } else {
+            cardHeight = self.mapView.frame.height / 2 + tabbarFrame!.size.height
+        }
         
         //탭바 높이 추가 설정
         if runningAnimations.isEmpty {

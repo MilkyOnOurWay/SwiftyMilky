@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftKeychainWrapper
 
 class LoginVC: UIViewController{
     
@@ -100,30 +101,32 @@ extension LoginVC {
     @objc func startButtonDidTap(){
         
         uuid = UUID().uuidString
-        // signUpService(uuid, nickname)
+        //signUpService(uuid ?? "", nickname ?? "")
         
-        // 뷰 전환
+        // 뷰 전환 부분 함수 주석 해제하면 삭제하기
         let vc = UIStoryboard.init(name: "TabBar", bundle: nil).instantiateViewController(identifier: "TabBarController") as? TabBarController
         vc?.modalPresentationStyle = .fullScreen
         self.present(vc!, animated: true, completion: nil)
+
         
-        // keychainwrapper로 토큰생성하기
     }
     
-    // 서버 연결 코드
+    // MARK: - 서버 연결 코드
+    // 지금 복잡하니까 다시 막아두겠음
+    /*
     func signUpService(_ uuid: String, _ nickName: String){
         UserService.shared.SignUp(uuid, nickName) { responseData in
             switch responseData {
             case.success(let res):
                 dump(res)
                 let response: Token = res as! Token
-                /* 뷰 전환
+                //뷰 전환
                 let vc = UIStoryboard.init(name: "TabBar", bundle: nil).instantiateViewController(identifier: "TabBarController") as? TabBarController
                 vc?.modalPresentationStyle = .fullScreen
                 self.present(vc!, animated: true, completion: nil)
-                
+                // keychainwrapper로 토큰생성하기
                 KeychainWrapper.standard.set(response.accessToken, forKey: "Token")
-                // keychainwrapper로 토큰생성하기 */
+                
             case .requestErr(_):
                 print("내잘못/request error")
             case .pathErr:
@@ -135,6 +138,7 @@ extension LoginVC {
             }
         }
     }
+    */
     @objc func keyboardWillShow(_ notification: Notification){
         print(#function)
         

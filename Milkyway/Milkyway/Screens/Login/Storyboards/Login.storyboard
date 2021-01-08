@@ -68,7 +68,6 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eOb-pB-8Wl">
                                 <rect key="frame" x="326" y="309" width="25" height="15"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="25" id="44B-4p-Wu5"/>
                                     <constraint firstAttribute="height" constant="15" id="dnx-dX-mTQ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="12"/>

@@ -80,18 +80,21 @@ extension MyReportMainVC: UITableViewDataSource {
                 return UITableViewCell()
             }
             cell.setCell(nickName: "열매열매")
+            cell.selectionStyle = .none
             return cell
         } else if indexPath.section == 1 {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: CanceledTVCell.identifier) as? CanceledTVCell else {
                 return UITableViewCell()
             }
             cell.setCell()
+            cell.selectionStyle = .none
             return cell
         } else if indexPath.section == 2 {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: InProgressTVCell.identifier) as? InProgressTVCell else {
                 return UITableViewCell()
             }
             cell.setCell()
+            cell.selectionStyle = .none
             return cell
         } else {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: CompletedTVCell.identifier) as? CompletedTVCell else {
@@ -99,7 +102,7 @@ extension MyReportMainVC: UITableViewDataSource {
             }
             cell.setCardView()
             cell.setLabel()
-            
+            cell.selectionStyle = .none
             return cell
         }
         

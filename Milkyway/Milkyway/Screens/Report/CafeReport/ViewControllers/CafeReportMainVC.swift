@@ -178,6 +178,7 @@ extension CafeReportMainVC {
     func notiGather() {
         NotificationCenter.default.addObserver(self, selector: #selector(menuPlus(_:)), name: Notification.Name("menuPlus"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(removeBeforeMenu), name: Notification.Name("remove"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(resetEveryInfo), name: Notification.Name("cafeReset"), object: nil)
     }
     
     
@@ -234,6 +235,14 @@ extension CafeReportMainVC {
     @objc func removeBeforeMenu() {
         cafeMenus.remove(at: editIndex!)
         tableView.reloadSections(IndexSet(1...1), with: .fade)
+    }
+    
+    
+    // 제보를 완료하면 내용물을 전부 없애버려야한다 (서버통신 위치를 잘 잡아야할듯)
+    @objc func resetEveryInfo() {
+        cafeInfo = nil
+        cafeMenus = []
+        tableView.reloadData()
     }
     
     @objc func searchButtonDidTap(){

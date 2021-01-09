@@ -24,6 +24,7 @@ class ReportTabBarViewController: ButtonBarPagerTabStripViewController {
     
     
     
+    
     /// 상단 탭바 부분
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
         let cafeReport = UIStoryboard.init(name: "CafeReportMain", bundle: nil).instantiateViewController(withIdentifier: "CafeReportMainVC") as! CafeReportMainVC
@@ -37,6 +38,7 @@ class ReportTabBarViewController: ButtonBarPagerTabStripViewController {
         return [cafeReport, myReport]
     }
     
+
 }
 
 
@@ -47,6 +49,8 @@ extension ButtonBarPagerTabStripViewController {
     func notiGather() {
         NotificationCenter.default.addObserver(self, selector: #selector(menuView), name: Notification.Name("gotomenuAdd"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(editMenu(_:)), name: Notification.Name("gotomenuEdit"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(movethetabBar), name: Notification.Name("tabBarMove"), object: nil)
+        
     }
     
     
@@ -97,7 +101,11 @@ extension ButtonBarPagerTabStripViewController {
         
     }
     
-   
+    @objc func movethetabBar() {
+        self.moveToViewController(at: 1)
+    }
+    
+  
     
     /// 검색버튼 눌리면 searchVC로 연결
     @objc func searchBtnClicked() {

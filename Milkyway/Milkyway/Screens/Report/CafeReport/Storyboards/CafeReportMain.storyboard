@@ -62,7 +62,7 @@
                                             </constraints>
                                             <state key="normal" image="btnReportDisabled"/>
                                             <connections>
-                                                <segue destination="TOQ-14-m6E" kind="presentation" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="7lQ-hW-uhc"/>
+                                                <segue destination="9H0-ND-XuN" kind="presentation" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="gqH-nb-bfB"/>
                                             </connections>
                                         </button>
                                     </subviews>
@@ -103,44 +103,56 @@
             </objects>
             <point key="canvasLocation" x="250.72463768115944" y="100.44642857142857"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="WTq-fp-KlK">
+        <!--Cafe Pop UpVC-->
+        <scene sceneID="I9b-B2-4Rm">
             <objects>
-                <viewController id="TOQ-14-m6E" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="PO6-BV-Z3T">
+                <viewController storyboardIdentifier="cafePopUpVC" id="9H0-ND-XuN" customClass="cafePopUpVC" customModule="Milkyway" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="g8M-uI-7ZE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sM6-hp-5lp">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="owE-tn-nec">
                                 <rect key="frame" x="20" y="270.5" width="374" height="355"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cafePopUp" translatesAutoresizingMaskIntoConstraints="NO" id="bis-eQ-0cM">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cafePopUp" translatesAutoresizingMaskIntoConstraints="NO" id="oki-lY-jpJ">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="355"/>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YUD-e9-SpO">
+                                        <rect key="frame" x="20" y="265" width="334" height="70"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="YUD-e9-SpO" secondAttribute="height" multiplier="167:35" id="sja-pa-PAf"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="okBtnClicked:" destination="9H0-ND-XuN" eventType="touchUpInside" id="OgJ-Ri-ceT"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="bis-eQ-0cM" secondAttribute="bottom" id="AXo-AV-YpZ"/>
-                                    <constraint firstAttribute="width" secondItem="sM6-hp-5lp" secondAttribute="height" multiplier="335:318" id="PFP-OS-nh2"/>
-                                    <constraint firstAttribute="trailing" secondItem="bis-eQ-0cM" secondAttribute="trailing" id="cTX-54-res"/>
-                                    <constraint firstItem="bis-eQ-0cM" firstAttribute="leading" secondItem="sM6-hp-5lp" secondAttribute="leading" id="uqy-YW-lvS"/>
-                                    <constraint firstItem="bis-eQ-0cM" firstAttribute="top" secondItem="sM6-hp-5lp" secondAttribute="top" id="zLz-w9-cLt"/>
+                                    <constraint firstAttribute="width" secondItem="owE-tn-nec" secondAttribute="height" multiplier="335:318" id="3uh-XZ-ge1"/>
+                                    <constraint firstAttribute="bottom" secondItem="oki-lY-jpJ" secondAttribute="bottom" id="R1q-3k-IUZ"/>
+                                    <constraint firstAttribute="bottom" secondItem="YUD-e9-SpO" secondAttribute="bottom" constant="20" id="Rob-RA-WmO"/>
+                                    <constraint firstItem="YUD-e9-SpO" firstAttribute="leading" secondItem="owE-tn-nec" secondAttribute="leading" constant="20" id="c2G-tK-xG0"/>
+                                    <constraint firstAttribute="trailing" secondItem="YUD-e9-SpO" secondAttribute="trailing" constant="20" id="cfp-TE-Jpb"/>
+                                    <constraint firstItem="oki-lY-jpJ" firstAttribute="leading" secondItem="owE-tn-nec" secondAttribute="leading" id="opC-oL-3co"/>
+                                    <constraint firstAttribute="trailing" secondItem="oki-lY-jpJ" secondAttribute="trailing" id="tjW-YN-fI7"/>
+                                    <constraint firstItem="oki-lY-jpJ" firstAttribute="top" secondItem="owE-tn-nec" secondAttribute="top" id="ysZ-5K-eqa"/>
                                 </constraints>
                             </view>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="TCi-wA-MyR"/>
+                        <viewLayoutGuide key="safeArea" id="tsj-Kc-diF"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="sM6-hp-5lp" firstAttribute="leading" secondItem="TCi-wA-MyR" secondAttribute="leading" constant="20" id="Cry-T8-yKA"/>
-                            <constraint firstItem="sM6-hp-5lp" firstAttribute="centerY" secondItem="PO6-BV-Z3T" secondAttribute="centerY" id="WJe-XR-Hkl"/>
-                            <constraint firstItem="TCi-wA-MyR" firstAttribute="trailing" secondItem="sM6-hp-5lp" secondAttribute="trailing" constant="20" id="XOA-6m-pAU"/>
+                            <constraint firstItem="owE-tn-nec" firstAttribute="centerY" secondItem="g8M-uI-7ZE" secondAttribute="centerY" id="cIV-4g-fTC"/>
+                            <constraint firstItem="owE-tn-nec" firstAttribute="leading" secondItem="tsj-Kc-diF" secondAttribute="leading" constant="20" id="hI1-Zz-9zD"/>
+                            <constraint firstItem="tsj-Kc-diF" firstAttribute="trailing" secondItem="owE-tn-nec" secondAttribute="trailing" constant="20" id="xBY-Mg-ifB"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="2q9-IU-5gQ"/>
+                    <navigationItem key="navigationItem" id="WYQ-cm-ABj"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0uA-r8-csB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ftL-FU-Mmp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1149" y="100"/>
+            <point key="canvasLocation" x="954" y="100"/>
         </scene>
     </scenes>
     <resources>

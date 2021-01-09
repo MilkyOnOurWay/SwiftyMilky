@@ -12,18 +12,14 @@ class ReportTabBarViewController: ButtonBarPagerTabStripViewController {
     
     override func viewDidLoad() {
         
-       
         notiGather()
         setupDefaultStyle()
         changeCheck()
         
-        
         super.viewDidLoad()
         
     }
-    
-    
-    
+
     
     /// 상단 탭바 부분
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
@@ -88,12 +84,12 @@ extension ButtonBarPagerTabStripViewController {
     }
     
     @objc func editMenu(_ noti: NSNotification) {
-        var cafeMenu = noti.object as! CafeMenu
+        var cafeMenu = noti.object as! Menu
         guard let menuVC = UIStoryboard(name: "MenuPlus", bundle: nil).instantiateViewController(withIdentifier:"MenuPlusVC") as? MenuPlusVC else {
             return
         }
         // 수정할 때 , 삭제
-        cafeMenu.price = cafeMenu.price.components(separatedBy: ",").joined()
+        cafeMenu.price = (cafeMenu.price.components(separatedBy: ",").joined())
         menuVC.editCafeMenu = cafeMenu
         menuVC.areyouEdit = true
 
@@ -120,6 +116,8 @@ extension ButtonBarPagerTabStripViewController {
     
     
 }
+
+
 
 
 

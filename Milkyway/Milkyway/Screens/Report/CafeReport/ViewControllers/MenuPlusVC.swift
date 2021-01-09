@@ -19,7 +19,7 @@ class MenuPlusVC: UIViewController {
     @IBOutlet weak var categoryFirstBtn: DLRadioButton!
     @IBOutlet weak var editEndBtn: UIButton!
     
-    var editCafeMenu = CafeMenu(menu: "", selection: [], price: "")
+    var editCafeMenu: Menu?
     var areyouEdit = false
     var category = [Int]()
     
@@ -72,7 +72,7 @@ extension MenuPlusVC  {
         let changeToDouble = Double(priceTF.text ?? "0") ?? 0
         let price = numberFormatter.string(from: NSNumber(value: changeToDouble))!
         
-        let menu = CafeMenu(menu: menuTF.text ?? "", selection: category, price: price )
+        let menu = Menu(menuName: menuTF.text ?? "", price: price, category: category )
         
         NotificationCenter.default.post(name: Notification.Name("menuPlus"), object: menu)
         self.navigationController?.popViewController(animated: true)
@@ -86,7 +86,7 @@ extension MenuPlusVC  {
         checkEditOK()
         
         
-        // se 때문에 넣어놓은것 ,,, 
+        // se 때문에 넣어놓은것 ,,,
         if UIScreen.main.bounds.height < 700 {
         menuScrollView.contentOffset = CGPoint(x:0, y:80)
         }
@@ -177,9 +177,9 @@ extension MenuPlusVC {
     
     // 수정하기 전에 필요한 작업
     func readyToEdit() {
-        menuTF.text = editCafeMenu.menu
-        priceTF.text = editCafeMenu.price
-        editCafeMenu.selection.forEach { i in
+        menuTF.text = editCafeMenu?.menuName
+        priceTF.text = editCafeMenu?.price
+        editCafeMenu?.category.forEach { i in
             print(i)
             if i == 1 {
                 categoryFirstBtn.isSelected = true

@@ -16,8 +16,12 @@ class CafeReportMainVC: UIViewController, IndicatorInfoProvider {
     
     let cafeMenu = ["디카페인","두유","저지방우유","무지방우유"]
     
-    var cafeMenus = [CafeMenu]()
-    var cafeInfo: CafeInfo?
+    var dummyData = Cafepost(cafeName: "소영이네뽀짝카페",
+                             cafeAddress: "서울특별시 양천구 목동남로4길",
+                             cafeMapX: 126.8995926,
+                             cafeMapY: 37.55638504,
+                             honeyTip: [1,3],
+                             menu: [])
     var editIndex: Int?
     
     
@@ -28,8 +32,6 @@ class CafeReportMainVC: UIViewController, IndicatorInfoProvider {
         cellResister()
         notiGather()
         
-        // 더미데이터
-        cafeInfo = CafeInfo(cafeName: "소영이네뽀짝카페", cafeAddress: "서울특별시 양천구 목동남로4길")
         
     }
     
@@ -39,8 +41,8 @@ class CafeReportMainVC: UIViewController, IndicatorInfoProvider {
     
     
     @IBAction func resetBtnClicked(_ sender: Any) {
-        cafeInfo = nil
-        cafeMenus = []
+        dummyData.cafeName = nil
+        dummyData.cafeAddress = nil
         NotificationCenter.default.post(name: Notification.Name("removeHoneyTips"), object: nil)
         ToastView.showIn(viewController: self, message: "입력했던 정보가 초기화되었습니다.", fromBottom: 10)
         tableView.reloadSections(IndexSet(0...2), with: .automatic)
@@ -65,7 +67,7 @@ extension CafeReportMainVC: UITableViewDataSource {
             return 1
         }
         else if section == 1 {
-            return cafeMenus.count
+            return dummyData.menu.count
         }
         else {
             return 1
@@ -91,7 +93,7 @@ extension CafeReportMainVC: UITableViewDataSource {
         
         
         if indexPath.section == 0 { // cafe 명
-            if cafeInfo == nil { // 검색 전
+            if dummyData.cafeName == nil && dummyData.cafeAddress == nil { // 검색 전
                 guard let cell: CafeNameSearchCell = tableView.dequeueReusableCell(withIdentifier: "CafeNameSearchCell" , for: indexPath) as? CafeNameSearchCell else{
                     return UITableViewCell()
                     
@@ -107,8 +109,8 @@ extension CafeReportMainVC: UITableViewDataSource {
                     return UITableViewCell()
                 }
                 
-                cell.cafeNameLabel.text = cafeInfo?.cafeName
-                cell.cafeAddressLabel.text = cafeInfo?.cafeAddress
+                cell.cafeNameLabel.text = dummyData.cafeName
+                cell.cafeAddressLabel.text = dummyData.cafeAddress
                 
                 cell.searchButton.addTarget(self, action: #selector(searchButtonDidTap), for: .touchUpInside)
                 return cell
@@ -121,31 +123,31 @@ extension CafeReportMainVC: UITableViewDataSource {
                 return UITableViewCell()
             }
             
-            cell.menuNameLabel.text = cafeMenus[indexPath.row].menu
+            cell.menuNameLabel.text = dummyData.menu[indexPath.row].menuName
             cell.menuSelectionLabel.text = ""
             // 메뉴 하단에 선택지 표시
-            for i in cafeMenus[indexPath.row].selection {
+            for i in dummyData.menu[indexPath.row].category {
                 cell.menuSelectionLabel.text! += (cafeMenu[i-1] + "  ")
                 
             }
             
-            cell.menuPriceLabel.text = cafeMenus[indexPath.row].price + " 원"
+            cell.menuPriceLabel.text = dummyData.menu[indexPath.row].price + " 원"
             cell.selectionStyle = .none // 셀 선택 불가능하게
             
             
             // 수정/삭제 버튼 눌렸을 때
             cell.deleteModifyBtnAction = { [unowned self] in
-                let menu = self.cafeMenus[indexPath.row].menu
+                let menu = self.dummyData.menu[indexPath.row]
                 let actionSheet = UIAlertController(title: "메뉴를 수정 및 삭제합니다", message: "\(menu)", preferredStyle: .actionSheet)
                 
                 actionSheet.addAction(UIAlertAction(title: "수정", style: .default, handler: { result in
                     editIndex = indexPath.row
-                    NotificationCenter.default.post(name: Notification.Name("gotomenuEdit"), object: cafeMenus[indexPath.row])
+                    NotificationCenter.default.post(name: Notification.Name("gotomenuEdit"), object: dummyData.menu[indexPath.row])
                     
                     
                 }))
                 actionSheet.addAction(UIAlertAction(title: "삭제", style: .destructive, handler: { result in
-                    cafeMenus.remove(at: indexPath.row)
+                    dummyData.menu.remove(at: indexPath.row)
                     tableView.reloadSections(IndexSet(1...1), with: .fade)
                     checkReportOK()
                     
@@ -209,7 +211,7 @@ extension CafeReportMainVC {
     // 제보완료 가능한지 ?
     func checkReportOK() {
         
-        if cafeMenus.count > 0 {
+        if dummyData.menu.count > 0 {
             reportEndBtn.setImage(UIImage(named: "btnReport"), for: .normal)
             reportEndBtn.isUserInteractionEnabled = true
         }
@@ -225,7 +227,7 @@ extension CafeReportMainVC {
     // 메뉴가 추가되면 실행된다.
     // noti로 받아온 메뉴를 cafeMenus에 추가해주고, 테이블뷰 메뉴 섹션을 reload 해준다.
     @objc func menuPlus(_ noti: NSNotification) {
-        cafeMenus.append(noti.object as! CafeMenu) // 옵셔널 처리 나중에는 해줘야함...
+        dummyData.menu.append(noti.object as! Menu) // 옵셔널 처리 나중에는 해줘야함...
         tableView.reloadSections(IndexSet(1...1), with: .automatic)
         checkReportOK()
         
@@ -233,15 +235,17 @@ extension CafeReportMainVC {
     
     // 메뉴 수정 버튼을 누르고 입력 완료를 누르면 이전에 있던 정보는 삭제해줘야한다 !!!
     @objc func removeBeforeMenu() {
-        cafeMenus.remove(at: editIndex!)
+        dummyData.menu.remove(at: editIndex!)
         tableView.reloadSections(IndexSet(1...1), with: .fade)
     }
     
     
     // 제보를 완료하면 내용물을 전부 없애버려야한다 (서버통신 위치를 잘 잡아야할듯)
     @objc func resetEveryInfo() {
-        cafeInfo = nil
-        cafeMenus = []
+        dummyData.cafeName = nil
+        dummyData.cafeAddress = nil
+        dummyData.honeyTip = []
+        dummyData.menu = []
         tableView.reloadData()
     }
     

@@ -7,6 +7,7 @@
 
 import UIKit
 import SafariServices
+import Alamofire
 
 class DetailCafeMenuVC: UIViewController {
     
@@ -16,17 +17,47 @@ class DetailCafeMenuVC: UIViewController {
     @IBOutlet weak var universeImageView: UIImageView!
     
     
-    var testCafe = Cafe()
+    // 일단 더미로 넣어놓은 데이터 ,,,
+    var testCafe = CafeDatas(cafeInfo: CafeInfo(id: 0, cafeName: "", cafeAddress: "", businessHours: "", cafePhoneNum: "", cafeLink: "", honeyTip: []), menu: [Menu](), universeCount: 0)
+    
+    
     let cafeMenu = ["무지방우유","저지방우유","두유","디카페인"]
     var like: Bool = false
     
     
+    
+    // MARK: - 데이터 로딩 중 Lottie 화면
+    private var loadingView: UIActivityIndicatorView?
+    
+    private func showLoadingLottie() {
+        loadingView = UIActivityIndicatorView(style: .large)
+        self.view.addSubview(loadingView!)
+        loadingView?.center = self.view.center
+        loadingView?.startAnimating()
+    }
+    
+    private func stopLottieAnimation() {
+        loadingView?.stopAnimating()
+        loadingView?.removeFromSuperview()
+        loadingView = nil
+    }
+    
+    
+    
+    // MARK: - 뷰
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        showLoadingLottie()
+        loadData()
+        self.tableView.reloadData()
+        
+    }
     override func viewDidLoad() {
         
         super.viewDidLoad()
         delegateFunc()
         cellResister()
-        cafeInit()
         notiGather()
         
     }
@@ -36,6 +67,9 @@ class DetailCafeMenuVC: UIViewController {
         tableView.reloadSections(IndexSet(0...0), with: .none)
     }
     
+    @IBAction func backBtnClicked(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
 }
 
 
@@ -66,7 +100,7 @@ extension DetailCafeMenuVC: UITableViewDataSource {
             return 1
         }
         else {
-            return testCafe.menus.count
+            return testCafe.menu.count
         }
     }
     
@@ -93,12 +127,12 @@ extension DetailCafeMenuVC: UITableViewDataSource {
             guard let cell: CafeBasicCell = tableView.dequeueReusableCell(withIdentifier: "CafeBasicCell" , for: indexPath) as? CafeBasicCell else{
                 return UITableViewCell()
             }
-            cell.cafeNameLabel.text = testCafe.cafeName
-            cell.howManyLikeLabel.text = "\(testCafe.likeNum)명의 밀키들이 유니버스에 추가했어요"
-            cell.locationLabel.text = testCafe.address
-            cell.openTimeLabel.text = testCafe.openTime
-            cell.telNumBtn.setTitle(testCafe.telNum, for: .normal)
-            cell.webPageBtn.setTitle(testCafe.webPage, for: .normal)
+            cell.cafeNameLabel.text = testCafe.cafeInfo.cafeName
+            cell.howManyLikeLabel.text = "\(testCafe.universeCount)명의 밀키들이 유니버스에 추가했어요"
+            cell.locationLabel.text = testCafe.cafeInfo.cafeAddress
+            cell.openTimeLabel.text = testCafe.cafeInfo.businessHours
+            cell.telNumBtn.setTitle(testCafe.cafeInfo.cafePhoneNum, for: .normal)
+            cell.webPageBtn.setTitle(testCafe.cafeInfo.cafeLink, for: .normal)
             cell.selectionStyle = .none // 셀 선택 불가능하게
             
             return cell
@@ -110,7 +144,7 @@ extension DetailCafeMenuVC: UITableViewDataSource {
             }
             
             // 꿀팁 -> 받아온 숫자에 해당하는 라벨 색 변경 (나중에는 이미지 변경으로 바꿀듯?)
-            for i in testCafe.honeyTip {
+            for i in testCafe.cafeInfo.honeyTip {
                 (cell.viewWithTag(i) as? UILabel)?.textColor = UIColor(named: "Milky")
                 (cell.viewWithTag(i) as? UILabel)?.layer.borderColor = UIColor(named: "Milky")?.cgColor
             }
@@ -124,15 +158,15 @@ extension DetailCafeMenuVC: UITableViewDataSource {
                 return UITableViewCell()
             }
             
-            cell.cafeMenuNameLabel.text = testCafe.menus[indexPath.row].menuName
+            cell.cafeMenuNameLabel.text = testCafe.menu[indexPath.row].menuName
             cell.categoryLabel.text = ""
             // 메뉴 하단에 선택지 표시
-            for i in testCafe.menus[indexPath.row].selection {
+            for i in testCafe.menu[indexPath.row].category {
                 cell.categoryLabel.text! += (cafeMenu[i-1] + "  ")
                 
             }
             
-            cell.howMuchLabel.text = testCafe.menus[indexPath.row].price
+            cell.howMuchLabel.text = testCafe.menu[indexPath.row].price
             cell.selectionStyle = .none // 셀 선택 불가능하게
             return cell
         }
@@ -140,8 +174,6 @@ extension DetailCafeMenuVC: UITableViewDataSource {
         
     }
 }
-
-
 
 
 extension DetailCafeMenuVC {
@@ -173,28 +205,13 @@ extension DetailCafeMenuVC {
         self.tableView.register(CafeMenuCellNib, forCellReuseIdentifier: "CafeMenuCell")
     }
     
-    // 일단 더미로 넣어놓은 데이터 ,,,
-    func cafeInit() {
-        testCafe = Cafe(cafeName: "혜리의 17학번이\n뭘잘못했는디카페",
-                        likeNum: 324,
-                        address: "서울시 종로구 2-12(1층)",
-                        openTime: "영업시간: 월-금 9:30 - 21:00\n토,일 9:30 - 20:00",
-                        telNum: "090-2931-2304",
-                        webPage: "www.lattehyeri.com",
-                        honeyTip: [2,5],
-                        menus: [
-                            Menu(menuName: "혜리쓰소이빈라떼", selection: [3], price: "4,000원"),
-                            Menu(menuName: "마다이어트하려면이거마셔라떼", selection: [1,2,3,4], price: "3,800원"),
-                            Menu(menuName: "모카모카는행복해", selection: [1,2,4], price: "4,500원")
-                        ])
-        
-    }
+    
     
     func iLoveYou() {
         ToastView.showIn(viewController: self, message: "카페가 나의 유니버스로 들어왔어요.", fromBottom: 40)
-        testCafe.likeNum += 1
+        testCafe.universeCount += 1
         universeImageView.image = UIImage(named: "btnUniverseAdded")
-        likeLabel.text = "\(testCafe.likeNum)"
+        likeLabel.text = "\(testCafe.universeCount)"
         likeLabel.textColor = UIColor(named: "Milky")
         likeLabel.font = UIFont(name: "SF Pro Text Bold", size: 8.0)!
         like = true
@@ -202,9 +219,9 @@ extension DetailCafeMenuVC {
     
     func iHateYou() {
         ToastView.showIn(viewController: self, message: "카페가 나의 유니버스를 탈출했어요.", fromBottom: 40)
-        testCafe.likeNum -= 1
+        testCafe.universeCount -= 1
         universeImageView.image = UIImage(named: "btnUniverse")
-        likeLabel.text = "\(testCafe.likeNum)"
+        likeLabel.text = "\(testCafe.universeCount)"
         likeLabel.textColor = UIColor(named: "darkGrey")
         likeLabel.font = UIFont(name: "SF Pro Text Regular", size: 8.0)!
         like = false
@@ -220,3 +237,49 @@ extension DetailCafeMenuVC {
         
     }
 }
+
+// MARK: Server Connect
+
+
+extension DetailCafeMenuVC {
+    
+    func loadData() {
+        
+        print("loadData()")
+        DetailCafeService.shared.DetailInfoGet(cafeId: 25) { (networkResult) -> (Void) in
+            switch networkResult {
+            case .success(let data):
+                if let loadData = data as? CafeDatas {
+                    
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
+                    print("success")
+                    self.testCafe = loadData
+                    self.tableView.reloadData()
+                    self.stopLottieAnimation()
+                  
+                    
+                }
+            case .requestErr( _):
+                print("requestErr")
+            case .pathErr:
+
+                print("pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+            
+            
+        }
+        
+      
+    }
+}
+
+
+
+
+

@@ -18,6 +18,8 @@ class MyUniverseVC: UIViewController{
     var beforeMarker: NMFMarker?
     var placeMangWon = NMGLatLng(lat: 37.555941, lng: 126.910067)
     
+    // 윤진 추가 변수
+    var cardVC: UniverseCardVC!
     
     // 소영이는 망원 좌표 수집중 ... ㅇ0ㅇ
     var mangWon: [NMGLatLng] = [NMGLatLng(lat: 37.556635, lng: 126.908433),
@@ -203,12 +205,27 @@ extension MyUniverseVC {
                     self.beforeMarker?.iconImage = self.unselectImage
                     marker.iconImage = self.selectImage
                     self.beforeMarker = marker
+                    markerDidTap()
                     return true
                 }
+                
+                
                 marker.mapView = mapView
                 markers.append(marker)
             }
         }
+    }
+    
+    func markerDidTap(){
+        //  윤진 추가 코드 , 마커 눌렀을 때 카드뷰 등장
+        //  다시 누르면 없어짐. hidden
+        cardVC = UniverseCardVC(nibName: "UniverseCardVC", bundle: nil)
+        self.addChild(cardVC)
+        self.view.addSubview(cardVC.view)
+        let tabbarFrame = self.tabBarController?.tabBar.frame
+       
+        cardVC.view.frame = CGRect(x:0, y: self.view.frame.height - tabbarFrame!.size.height - 125, width: self.view.bounds.width, height: 125)
+        
     }
     
 }

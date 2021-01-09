@@ -37,15 +37,20 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Zh5-dc-EK4">
-                                <rect key="frame" x="0.0" y="39" width="414" height="818"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Zh5-dc-EK4">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <sections/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="1B6-tw-ecR"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Zh5-dc-EK4" firstAttribute="leading" secondItem="1B6-tw-ecR" secondAttribute="leading" id="6gI-3Z-HKB"/>
+                            <constraint firstItem="Zh5-dc-EK4" firstAttribute="trailing" secondItem="1B6-tw-ecR" secondAttribute="trailing" id="BhW-Bh-160"/>
+                            <constraint firstItem="1B6-tw-ecR" firstAttribute="bottom" secondItem="Zh5-dc-EK4" secondAttribute="bottom" id="LCy-06-c2t"/>
+                            <constraint firstItem="Zh5-dc-EK4" firstAttribute="top" secondItem="Zff-A6-soK" secondAttribute="top" id="s1r-9g-3Tw"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="mainLabel" destination="vWA-7V-fMz" id="aIB-EQ-RFh"/>

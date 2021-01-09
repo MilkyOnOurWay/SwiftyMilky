@@ -13,12 +13,16 @@ class InProgressTVCell: UITableViewCell {
     
     @IBOutlet var inProgressLabel: UILabel!
     @IBOutlet var completedLabel: UILabel!
+    @IBOutlet var emptyLabel: UILabel!
     @IBOutlet var collectionView: UICollectionView!
+    @IBOutlet var spaceLength: NSLayoutConstraint!
     
     
     let horizonInset: CGFloat = 20
     let rightSpacing: CGFloat = 20
     let lineSpacing: CGFloat = 6
+    
+    var count: Int = 0 // cell 개수 받아오기
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -31,13 +35,30 @@ class InProgressTVCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setCell() {
+    
+}
+extension InProgressTVCell {
+    
+    func setLabel() {
         inProgressLabel.text = "진행중인 제보"
         inProgressLabel.font = UIFont(name:"SFProText-Bold", size: 16.0)
         
         completedLabel.text = "완료된 제보"
         completedLabel.font = UIFont(name:"SFProText-Bold", size: 16.0)
         
+        emptyLabel.text = "지금 진행중인 제보가 없습니다!"
+        emptyLabel.textAlignment = .center
+        emptyLabel.font = UIFont(name:"SFProText-Regular", size: 16.0)
+        emptyLabel.textColor = UIColor(named: "darkGrey")
+    }
+    
+    func setCell(count: Int) {
+        
+        self.count = count
+        
+        if count == 0 {
+            collectionView.isHidden = true
+        }
         let collectionViewCellNib = UINib(nibName: "RectangleCVCell", bundle: nil)
         collectionView.register(collectionViewCellNib, forCellWithReuseIdentifier: "RectangleCVCell")
         
@@ -47,7 +68,7 @@ class InProgressTVCell: UITableViewCell {
 }
 extension InProgressTVCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

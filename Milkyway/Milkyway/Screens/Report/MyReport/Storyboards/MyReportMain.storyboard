@@ -17,31 +17,49 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5Ll-sV-LqS">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgReport" id="Eyg-Nm-Dre">
+                                <rect key="frame" x="109" y="247" width="195" height="195"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kdM-dW-6Up">
+                                <rect key="frame" x="85" y="546" width="244" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <string key="text">나만의 카페를 제보하고 
+더욱 풍성해진 밀키웨이를 탐험해 보세요!</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제보한 장소를 확인하는 공간입니다" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vWA-7V-fMz">
+                                <rect key="frame" x="85" y="482" width="244" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Zh5-dc-EK4">
+                                <rect key="frame" x="0.0" y="39" width="414" height="818"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <sections/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="1B6-tw-ecR"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="1B6-tw-ecR" firstAttribute="bottom" secondItem="5Ll-sV-LqS" secondAttribute="bottom" id="29x-ex-pzx"/>
-                            <constraint firstItem="5Ll-sV-LqS" firstAttribute="top" secondItem="1B6-tw-ecR" secondAttribute="top" id="eCp-f8-3z1"/>
-                            <constraint firstItem="5Ll-sV-LqS" firstAttribute="leading" secondItem="1B6-tw-ecR" secondAttribute="leading" id="fQJ-VR-HWs"/>
-                            <constraint firstItem="1B6-tw-ecR" firstAttribute="trailing" secondItem="5Ll-sV-LqS" secondAttribute="trailing" id="uhk-ZX-3l7"/>
-                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="myReportTableView" destination="5Ll-sV-LqS" id="zJp-hs-hQD"/>
+                        <outlet property="mainLabel" destination="vWA-7V-fMz" id="aIB-EQ-RFh"/>
+                        <outlet property="myReportTableView" destination="Zh5-dc-EK4" id="BFf-Ia-fKu"/>
+                        <outlet property="subLabel" destination="kdM-dW-6Up" id="cmX-qS-YWO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Xh-g9-Woj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-116" y="165"/>
+            <point key="canvasLocation" x="-117.39130434782609" y="164.73214285714286"/>
         </scene>
     </scenes>
     <resources>
+        <image name="imgReport" width="195" height="195"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -12,12 +12,18 @@ class CanceledTVCell: UITableViewCell {
     //취소된 제보
     
     static let identifier = "CanceledTVCell"
+    
+    
+    @IBOutlet var rootView: UIView!
     @IBOutlet var canceledLabel: UILabel!
     @IBOutlet var collectionView: UICollectionView!
+    @IBOutlet var rootHeight: NSLayoutConstraint!
     
     let horizonInset: CGFloat = 20
     let rightSpacing: CGFloat = 20
     let lineSpacing: CGFloat = 5
+    var count : Int = 0 //cell 개수 받아오기
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -28,7 +34,15 @@ class CanceledTVCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func setCell() {
+    
+}
+extension CanceledTVCell {
+    
+    func setCell(count: Int) {
+        
+        self.count = count
+        
+        
         canceledLabel.text = "취소된 제보"
         canceledLabel.font = UIFont(name:"SFProText-Bold", size: 16.0)
         
@@ -41,7 +55,7 @@ class CanceledTVCell: UITableViewCell {
 }
 extension CanceledTVCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

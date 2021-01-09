@@ -9,7 +9,10 @@ import UIKit
 import DLRadioButton
 
 class MenuPlusVC: UIViewController {
-
+    
+    
+    @IBOutlet weak var menuScrollView: UIScrollView!
+    
     @IBOutlet weak var menuTF: FormTextField!
     @IBOutlet weak var priceTF: FormTextField!
     
@@ -22,9 +25,12 @@ class MenuPlusVC: UIViewController {
     
     var menuCount = 0
     var priceCount = 0
-
+    
     
     override func viewDidLoad() {
+        print(self.view.bounds.height)
+        
+        
         super.viewDidLoad()
         
         menuTF.delegate = self
@@ -33,11 +39,12 @@ class MenuPlusVC: UIViewController {
         categoryFirstBtn.isMultipleSelectionEnabled = true
         readyToEdit()
         
+        
+        
         // 처음에는 입력 완료를 누를 수 없다.
         editEndBtn.isUserInteractionEnabled = false
         
     }
-    
     
 }
 
@@ -48,7 +55,7 @@ extension MenuPlusVC  {
         self.navigationController?.popViewController(animated: true)
     }
     
-
+    
     @IBAction func menuPlusOkClicked(_ sender: Any) {
         
         // 수정이라면 이전꺼 지워줘야함.
@@ -56,7 +63,7 @@ extension MenuPlusVC  {
             NotificationCenter.default.post(name: Notification.Name("remove"), object: nil)
         }
         
-      
+        
         print(category)
         print("\(menuTF.text!) 메뉴 추가합니다")
         
@@ -64,7 +71,7 @@ extension MenuPlusVC  {
         numberFormatter.numberStyle = .decimal
         let changeToDouble = Double(priceTF.text ?? "0") ?? 0
         let price = numberFormatter.string(from: NSNumber(value: changeToDouble))!
-
+        
         let menu = CafeMenu(menu: menuTF.text ?? "", selection: category, price: price )
         
         NotificationCenter.default.post(name: Notification.Name("menuPlus"), object: menu)
@@ -78,8 +85,13 @@ extension MenuPlusVC  {
         countCategory()
         checkEditOK()
         
+        
+        // se 때문에 넣어놓은것 ,,, 
+        if UIScreen.main.bounds.height < 700 {
+        menuScrollView.contentOffset = CGPoint(x:0, y:80)
+        }
     }
-
+    
     
     // 텍스트필드 아닌 곳을 터치하면 키보드가 내려간다네 ...
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -93,12 +105,12 @@ extension MenuPlusVC  {
         doneToolbar.barStyle = .default
         let flexSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
         let done: UIBarButtonItem = UIBarButtonItem(title: "Done", style: UIBarButtonItem.Style.done, target: self, action: #selector(doneButtonAction))
-          let items = NSMutableArray()
-          items.add(flexSpace)
-          items.add(done)
-          doneToolbar.items = items as? [UIBarButtonItem]
-          doneToolbar.sizeToFit()
-          self.priceTF.inputAccessoryView = doneToolbar
+        let items = NSMutableArray()
+        items.add(flexSpace)
+        items.add(done)
+        doneToolbar.items = items as? [UIBarButtonItem]
+        doneToolbar.sizeToFit()
+        self.priceTF.inputAccessoryView = doneToolbar
     }
     
     @objc func doneButtonAction() {
@@ -119,17 +131,17 @@ extension MenuPlusVC: UITextFieldDelegate {
         priceCount = priceTF.text!.count
         countCategory()
         checkEditOK()
-    
+        
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == self.menuTF {
-                    self.priceTF.becomeFirstResponder()
-                }
+            self.priceTF.becomeFirstResponder()
+        }
         
         return true
     }
-
+    
     
 }
 
@@ -146,7 +158,7 @@ extension MenuPlusVC {
             editEndBtn.setImage(UIImage(named: "btnInputOff"), for: .normal)
             editEndBtn.isUserInteractionEnabled = false
         }
-
+        
     }
     
     // category 확인용

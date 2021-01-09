@@ -55,7 +55,7 @@
                                     <rect key="frame" x="0.0" y="144" width="414" height="99"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IR9-x2-5af">
+                                        <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IR9-x2-5af">
                                             <rect key="frame" x="0.0" y="27" width="414" height="52"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="52" id="4cD-If-KU2"/>

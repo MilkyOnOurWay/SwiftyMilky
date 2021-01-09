@@ -56,7 +56,7 @@ extension ButtonBarPagerTabStripViewController {
         settings.style.buttonBarBackgroundColor = .clear
         settings.style.buttonBarItemBackgroundColor = .clear
         settings.style.buttonBarItemFont = UIFont(name: "SF Pro Text Bold", size: 16.0)!
-        settings.style.selectedBarHeight = 3.0
+        settings.style.selectedBarHeight = 2.0
     }
     
     
@@ -65,7 +65,7 @@ extension ButtonBarPagerTabStripViewController {
         changeCurrentIndexProgressive = { (oldCell: ButtonBarViewCell?, newCell: ButtonBarViewCell?, progressPercentage: CGFloat, changeCurrentIndex: Bool, animated: Bool) -> Void in
             guard changeCurrentIndex == true else { return }
             
-            oldCell?.label.textColor = .gray
+            oldCell?.label.textColor = UIColor(named: "darkGrey")!
             newCell?.label.textColor = UIColor(named: "Milky")!
             
             

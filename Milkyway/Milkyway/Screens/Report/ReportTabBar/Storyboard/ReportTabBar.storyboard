@@ -17,6 +17,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T7x-KC-udG">
+                                <rect key="frame" x="0.0" y="102" width="414" height="2"/>
+                                <color key="backgroundColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="u2t-OU-6y2"/>
+                                </constraints>
+                            </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ce4-gf-XHY" customClass="ButtonBarView" customModule="XLPagerTabStrip">
                                 <rect key="frame" x="0.0" y="44" width="414" height="60"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -41,11 +48,14 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="ce4-gf-XHY" firstAttribute="top" secondItem="0vE-Vg-AUq" secondAttribute="top" id="Ce1-TT-Lb6"/>
+                            <constraint firstItem="0vE-Vg-AUq" firstAttribute="trailing" secondItem="T7x-KC-udG" secondAttribute="trailing" id="IhO-U9-WT0"/>
                             <constraint firstItem="kAU-Pf-v4C" firstAttribute="leading" secondItem="0vE-Vg-AUq" secondAttribute="leading" id="K3R-az-5Lt"/>
+                            <constraint firstItem="ce4-gf-XHY" firstAttribute="bottom" secondItem="T7x-KC-udG" secondAttribute="bottom" id="KMG-Rk-C1U"/>
                             <constraint firstItem="ce4-gf-XHY" firstAttribute="leading" secondItem="0vE-Vg-AUq" secondAttribute="leading" id="QL6-N6-cQR"/>
                             <constraint firstItem="0vE-Vg-AUq" firstAttribute="trailing" secondItem="ce4-gf-XHY" secondAttribute="trailing" id="Z3w-lQ-bUR"/>
                             <constraint firstItem="kAU-Pf-v4C" firstAttribute="top" secondItem="ce4-gf-XHY" secondAttribute="bottom" id="c7s-Kb-0a1"/>
                             <constraint firstItem="0vE-Vg-AUq" firstAttribute="trailing" secondItem="kAU-Pf-v4C" secondAttribute="trailing" id="dYW-bK-SkJ"/>
+                            <constraint firstItem="T7x-KC-udG" firstAttribute="leading" secondItem="0vE-Vg-AUq" secondAttribute="leading" id="uOm-9N-KdO"/>
                             <constraint firstItem="0vE-Vg-AUq" firstAttribute="bottom" secondItem="kAU-Pf-v4C" secondAttribute="bottom" id="zup-3l-cN0"/>
                         </constraints>
                     </view>

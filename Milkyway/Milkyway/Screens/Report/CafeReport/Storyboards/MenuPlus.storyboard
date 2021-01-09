@@ -269,22 +269,22 @@
     </scenes>
     <designables>
         <designable name="AOg-4h-MCg">
-            <size key="intrinsicContentSize" width="174" height="28.5"/>
+            <size key="intrinsicContentSize" width="174" height="29"/>
         </designable>
         <designable name="E0K-aV-c2w">
-            <size key="intrinsicContentSize" width="30" height="31"/>
+            <size key="intrinsicContentSize" width="30" height="32"/>
         </designable>
         <designable name="LcN-IH-2X1">
-            <size key="intrinsicContentSize" width="30" height="31"/>
+            <size key="intrinsicContentSize" width="30" height="32"/>
         </designable>
         <designable name="Um4-eG-g2g">
-            <size key="intrinsicContentSize" width="141.5" height="28.5"/>
+            <size key="intrinsicContentSize" width="142" height="29"/>
         </designable>
         <designable name="VhK-gn-Iiu">
-            <size key="intrinsicContentSize" width="30" height="31"/>
+            <size key="intrinsicContentSize" width="30" height="32"/>
         </designable>
         <designable name="an5-gQ-2WR">
-            <size key="intrinsicContentSize" width="30" height="31"/>
+            <size key="intrinsicContentSize" width="30" height="32"/>
         </designable>
     </designables>
     <resources>

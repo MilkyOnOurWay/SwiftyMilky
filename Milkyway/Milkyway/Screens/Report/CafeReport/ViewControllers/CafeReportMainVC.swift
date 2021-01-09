@@ -76,7 +76,7 @@ extension CafeReportMainVC: UITableViewDataSource {
     // section 행의 높이 -> 나중에는 이렇게 말고 ...
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0 {
-            return 130
+            return 160
         }
         else if indexPath.section == 1 {
             return 90
@@ -178,6 +178,7 @@ extension CafeReportMainVC {
     func notiGather() {
         NotificationCenter.default.addObserver(self, selector: #selector(menuPlus(_:)), name: Notification.Name("menuPlus"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(removeBeforeMenu), name: Notification.Name("remove"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(resetEveryInfo), name: Notification.Name("cafeReset"), object: nil)
     }
     
     
@@ -234,6 +235,14 @@ extension CafeReportMainVC {
     @objc func removeBeforeMenu() {
         cafeMenus.remove(at: editIndex!)
         tableView.reloadSections(IndexSet(1...1), with: .fade)
+    }
+    
+    
+    // 제보를 완료하면 내용물을 전부 없애버려야한다 (서버통신 위치를 잘 잡아야할듯)
+    @objc func resetEveryInfo() {
+        cafeInfo = nil
+        cafeMenus = []
+        tableView.reloadData()
     }
     
     @objc func searchButtonDidTap(){

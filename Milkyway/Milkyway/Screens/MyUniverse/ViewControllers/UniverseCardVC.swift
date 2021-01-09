@@ -9,6 +9,10 @@ import UIKit
 
 class UniverseCardVC: UIViewController {
 
+    @IBOutlet weak var cafeNameLabel: UILabel!
+    @IBOutlet weak var cafeAddressLabel: UILabel!
+    @IBOutlet weak var cafeTimeLabel: UILabel!
+    @IBOutlet weak var DeleteButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -16,14 +20,21 @@ class UniverseCardVC: UIViewController {
     }
 
 
-    /*
-    // MARK: - Navigation
+   
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+extension UniverseCardVC {
+    
+    func setDeleteButton(){
+        
+        DeleteButton.addTarget(self, action: #selector(deleteButtonDidTap), for: .touchUpInside)
     }
-    */
-
+    
+    @objc func deleteButtonDidTap(){
+        
+        // 서버통신진행
+        
+        
+    }
+    
 }

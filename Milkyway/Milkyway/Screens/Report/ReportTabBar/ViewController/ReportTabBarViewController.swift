@@ -89,7 +89,7 @@ extension ButtonBarPagerTabStripViewController {
             return
         }
         // 수정할 때 , 삭제
-        cafeMenu.price = cafeMenu.price?.components(separatedBy: ",").joined()
+        cafeMenu.price = (cafeMenu.price.components(separatedBy: ",").joined())
         menuVC.editCafeMenu = cafeMenu
         menuVC.areyouEdit = true
 

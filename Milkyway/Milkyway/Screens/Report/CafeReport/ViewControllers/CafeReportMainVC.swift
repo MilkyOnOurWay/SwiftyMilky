@@ -131,7 +131,7 @@ extension CafeReportMainVC: UITableViewDataSource {
                 
             }
             
-            cell.menuPriceLabel.text = dummyData.menu[indexPath.row].price! + " 원"
+            cell.menuPriceLabel.text = dummyData.menu[indexPath.row].price + " 원"
             cell.selectionStyle = .none // 셀 선택 불가능하게
             
             

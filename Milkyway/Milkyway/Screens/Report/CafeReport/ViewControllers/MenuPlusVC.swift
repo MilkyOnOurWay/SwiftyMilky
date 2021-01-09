@@ -19,7 +19,7 @@ class MenuPlusVC: UIViewController {
     @IBOutlet weak var categoryFirstBtn: DLRadioButton!
     @IBOutlet weak var editEndBtn: UIButton!
     
-    var editCafeMenu = Menu(menuName: "", price: "", category: [])
+    var editCafeMenu: Menu?
     var areyouEdit = false
     var category = [Int]()
     
@@ -177,9 +177,9 @@ extension MenuPlusVC {
     
     // 수정하기 전에 필요한 작업
     func readyToEdit() {
-        menuTF.text = editCafeMenu.menuName
-        priceTF.text = editCafeMenu.price
-        editCafeMenu.category.forEach { i in
+        menuTF.text = editCafeMenu?.menuName
+        priceTF.text = editCafeMenu?.price
+        editCafeMenu?.category.forEach { i in
             print(i)
             if i == 1 {
                 categoryFirstBtn.isSelected = true

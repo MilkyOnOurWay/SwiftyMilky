@@ -200,21 +200,21 @@
     </scenes>
     <designables>
         <designable name="Hid-kn-Rck">
-            <size key="intrinsicContentSize" width="204" height="22"/>
+            <size key="intrinsicContentSize" width="199" height="22"/>
         </designable>
         <designable name="R5F-8U-El0">
-            <size key="intrinsicContentSize" width="159" height="22"/>
+            <size key="intrinsicContentSize" width="154" height="22"/>
         </designable>
         <designable name="YPw-aR-2Qg">
-            <size key="intrinsicContentSize" width="179" height="22"/>
+            <size key="intrinsicContentSize" width="174" height="22"/>
         </designable>
         <designable name="qDa-vS-4bR">
-            <size key="intrinsicContentSize" width="143" height="22"/>
+            <size key="intrinsicContentSize" width="138" height="22"/>
         </designable>
     </designables>
     <resources>
         <namedColor name="darkGrey">
-            <color red="0.60392156862745094" green="0.59215686274509804" blue="0.5725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.60399997234344482" green="0.59200000762939453" blue="0.57300001382827759" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

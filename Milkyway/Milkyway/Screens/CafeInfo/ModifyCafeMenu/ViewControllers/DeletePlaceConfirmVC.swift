@@ -31,7 +31,7 @@ class DeletePlaceConfirmVC: UIViewController {
 extension DeletePlaceConfirmVC {
     func setConfirmView() {
         rootView.backgroundColor = UIColor(displayP3Red: 0/255, green: 0/255, blue: 0/255, alpha: 0.7)
-        deleteConfirmView.layer.cornerRadius = 15
+        deleteConfirmView.layer.cornerRadius = 8
     }
     
     func setLabel() {

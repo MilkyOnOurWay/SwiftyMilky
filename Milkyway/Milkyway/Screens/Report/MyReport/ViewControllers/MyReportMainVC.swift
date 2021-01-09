@@ -110,11 +110,12 @@ extension MyReportMainVC: UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: CanceledTVCell.identifier) as? CanceledTVCell else {
                 return UITableViewCell()
             }
-            if cancelArr.count == 0 {
-                cell.isHidden = true
-                cell.rootHeight.constant = 0
-            }
-            cell.setCell(count: cancelArr.count)
+            // 취소된 제보 없애면 hidden하고 높이 0 만들기
+//            if cancelArr.count == 0 {
+//                cell.isHidden = true
+//                cell.rootHeight.constant = 0
+//            }
+            cell.setCell(count: 2) //cancelArr.count)
             cell.selectionStyle = .none
             return cell
         } else if indexPath.section == 2 { // 진행중인 제보
@@ -129,7 +130,8 @@ extension MyReportMainVC: UITableViewDataSource {
         } else { // 완료된 제보
             if completedArr.count == 0 {
                 let cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: nil)
-                cell.textLabel!.text = "현재 완료된 제보가 없습니다!"
+                cell.textLabel!.text = "\n\n현재 완료된 제보가 없습니다!"
+                cell.textLabel!.numberOfLines = 3
                 cell.textLabel!.textAlignment = .center
                 cell.textLabel!.textColor = UIColor(named: "darkGrey")
                 cell.textLabel!.font = UIFont(name: "SFProText-Regular", size: 16.0)

@@ -59,7 +59,7 @@ extension DeletePlaceVC {
     func setConfirmView() {
         rootView.backgroundColor = UIColor(displayP3Red: 0/255, green: 0/255, blue: 0/255, alpha: 0.7)
         
-        deleteReasonView.layer.cornerRadius = 15
+        deleteReasonView.layer.cornerRadius = 8
     }
     
     func setLabel() {

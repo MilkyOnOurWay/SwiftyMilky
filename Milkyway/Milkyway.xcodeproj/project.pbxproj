@@ -24,6 +24,7 @@
 		6B869C4425A1E8E00068BFD2 /* DeletePlaceConfirmVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B869C4325A1E8E00068BFD2 /* DeletePlaceConfirmVC.swift */; };
 		6B869C5025A2F9960068BFD2 /* CardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B869C4E25A2F9960068BFD2 /* CardVC.swift */; };
 		6B869C5125A2F9960068BFD2 /* CardVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B869C4F25A2F9960068BFD2 /* CardVC.xib */; };
+		6B96A13625A9C809004E529D /* CancelReasonVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B96A13525A9C809004E529D /* CancelReasonVC.swift */; };
 		6BD05A6B25A41FFE00B2643F /* CompletedTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BD05A6525A41FFE00B2643F /* CompletedTVCell.xib */; };
 		6BD05A6C25A41FFE00B2643F /* TopTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BD05A6625A41FFE00B2643F /* TopTVCell.xib */; };
 		6BD05A6D25A41FFE00B2643F /* CompletedTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD05A6725A41FFE00B2643F /* CompletedTVCell.swift */; };
@@ -135,6 +136,7 @@
 		6B869C4325A1E8E00068BFD2 /* DeletePlaceConfirmVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeletePlaceConfirmVC.swift; sourceTree = "<group>"; };
 		6B869C4E25A2F9960068BFD2 /* CardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardVC.swift; sourceTree = "<group>"; };
 		6B869C4F25A2F9960068BFD2 /* CardVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardVC.xib; sourceTree = "<group>"; };
+		6B96A13525A9C809004E529D /* CancelReasonVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelReasonVC.swift; sourceTree = "<group>"; };
 		6BD05A6525A41FFE00B2643F /* CompletedTVCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CompletedTVCell.xib; sourceTree = "<group>"; };
 		6BD05A6625A41FFE00B2643F /* TopTVCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopTVCell.xib; sourceTree = "<group>"; };
 		6BD05A6725A41FFE00B2643F /* CompletedTVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompletedTVCell.swift; sourceTree = "<group>"; };
@@ -455,6 +457,7 @@
 			isa = PBXGroup;
 			children = (
 				D1F2284F259F74810018C472 /* MyReportMainVC.swift */,
+				6B96A13525A9C809004E529D /* CancelReasonVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -986,6 +989,7 @@
 				D1D95DD325A30B9700B95F79 /* CafeBasicCell.swift in Sources */,
 				F2BA632D2598E7DE00A49020 /* UITabbar+Extension.swift in Sources */,
 				F2DCC2A525A7908A00AAE5EF /* APIConstants.swift in Sources */,
+				6B96A13625A9C809004E529D /* CancelReasonVC.swift in Sources */,
 				D1D95DCE25A30B7800B95F79 /* Cafe.swift in Sources */,
 				D15443FF25A33AF9007773BF /* CafeNameResultCell.swift in Sources */,
 				F2242A3B259BB2CF00455604 /* SettingVC.swift in Sources */,

@@ -87,7 +87,7 @@ extension MyReportMainVC: UITableViewDataSource {
         } else if section == 2{
             return 1
         } else {
-            return 4 // 서버에서 받는대로
+            return 1 // 서버에서 받는대로
         }
 
     }
@@ -99,47 +99,52 @@ extension MyReportMainVC: UITableViewDataSource {
         
         
         // 일단 이렇게 박아두기,,
-        if indexPath.section == 0 {
+        if indexPath.section == 0 { //닉네임
             guard let cell = tableView.dequeueReusableCell(withIdentifier: TopTVCell.identifier) as? TopTVCell else {
                 return UITableViewCell()
             }
             cell.setCell(nickName: "열매열매")
             cell.selectionStyle = .none
             return cell
-        } else if indexPath.section == 1 {
+        } else if indexPath.section == 1 { //취소된 제보
             guard let cell = tableView.dequeueReusableCell(withIdentifier: CanceledTVCell.identifier) as? CanceledTVCell else {
                 return UITableViewCell()
             }
             if cancelArr.count == 0 {
                 cell.isHidden = true
                 cell.rootHeight.constant = 0
-//                tableView[indexPath.section].isHidden
             }
             cell.setCell(count: cancelArr.count)
             cell.selectionStyle = .none
             return cell
-        } else if indexPath.section == 2 {
+        } else if indexPath.section == 2 { // 진행중인 제보
             guard let cell = tableView.dequeueReusableCell(withIdentifier: InProgressTVCell.identifier) as? InProgressTVCell else {
                 return UITableViewCell()
             }
-//            if cancelArr.count == 0 {
-//                cell.spaceLength.constant = 0
-//            }
             
             cell.setLabel()
             cell.setCell(count: 0)
             cell.selectionStyle = .none
             return cell
-        } else {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: CompletedTVCell.identifier) as? CompletedTVCell else {
-                return UITableViewCell()
+        } else { // 완료된 제보
+            if completedArr.count == 0 {
+                let cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: nil)
+                cell.textLabel!.text = "현재 완료된 제보가 없습니다!"
+                cell.textLabel!.textAlignment = .center
+                cell.textLabel!.textColor = UIColor(named: "darkGrey")
+                cell.textLabel!.font = UIFont(name: "SFProText-Regular", size: 16.0)
+                
+                return cell
+            } else {
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: CompletedTVCell.identifier) as? CompletedTVCell else {
+                    return UITableViewCell()
+                }
+                cell.setCardView()
+                cell.setLabel()
+                cell.selectionStyle = .none
+                return cell
             }
-            cell.setCardView()
-            cell.setLabel()
-            cell.selectionStyle = .none
-            return cell
         }
-        
     }
     
 }

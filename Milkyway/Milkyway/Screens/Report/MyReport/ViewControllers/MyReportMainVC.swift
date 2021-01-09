@@ -11,11 +11,19 @@ import XLPagerTabStrip
 class MyReportMainVC: UIViewController, IndicatorInfoProvider {
     
     @IBOutlet var myReportTableView: UITableView!
+    @IBOutlet var mainLabel: UILabel!
+    @IBOutlet var subLabel: UILabel!
+    
     var tabName: String = ""
     
+    // 테이블 셀 hidden 테스트용
+    var cancelArr: [String] = []
+    var inProgressArr: [String] = []
+    var completedArr: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setLabel()
         registerXib()
         registerDelegate()
     }
@@ -31,6 +39,17 @@ extension MyReportMainVC {
     /// 상단 탭바 관련
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
         return IndicatorInfo(title: "\(tabName)")
+    }
+    
+    func setLabel() {
+        mainLabel.text = "제보한 장소를 확인하는 공간입니다"
+        mainLabel.textAlignment = .center
+        mainLabel.font = UIFont(name: "SFProText-Semibold", size: 20.0)
+        
+        subLabel.text = "나만의 카페를 제보하고\n더욱 풍성해진 밀키웨이를 탐험해 보세요!"
+        subLabel.textAlignment = .center
+        subLabel.font = UIFont(name: "SFProText-Regular", size: 12.0)
+        subLabel.numberOfLines = 2
     }
     
     func registerDelegate() {
@@ -75,6 +94,10 @@ extension MyReportMainVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        // 다 비어있으면 테이블 숨기고 안내 화면 보여주기
+//        tableView.isHidden = true
+        
+        
         // 일단 이렇게 박아두기,,
         if indexPath.section == 0 {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: TopTVCell.identifier) as? TopTVCell else {
@@ -87,14 +110,24 @@ extension MyReportMainVC: UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: CanceledTVCell.identifier) as? CanceledTVCell else {
                 return UITableViewCell()
             }
-            cell.setCell()
+            if cancelArr.count == 0 {
+                cell.isHidden = true
+                cell.rootHeight.constant = 0
+//                tableView[indexPath.section].isHidden
+            }
+            cell.setCell(count: cancelArr.count)
             cell.selectionStyle = .none
             return cell
         } else if indexPath.section == 2 {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: InProgressTVCell.identifier) as? InProgressTVCell else {
                 return UITableViewCell()
             }
-            cell.setCell()
+//            if cancelArr.count == 0 {
+//                cell.spaceLength.constant = 0
+//            }
+            
+            cell.setLabel()
+            cell.setCell(count: 0)
             cell.selectionStyle = .none
             return cell
         } else {

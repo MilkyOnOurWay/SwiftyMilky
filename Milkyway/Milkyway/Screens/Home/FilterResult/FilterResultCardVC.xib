@@ -10,11 +10,11 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="SF-Pro-Text-Bold.otf">
+            <string>SFProText-Bold</string>
+        </array>
         <array key="SF-Pro-Text-Regular.otf">
             <string>SFProText-Regular</string>
-        </array>
-        <array key="SF-Pro-Text-Semibold.otf">
-            <string>SFProText-Semibold</string>
         </array>
     </customFonts>
     <objects>
@@ -33,35 +33,45 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="125"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="카페이름길어봤자얼마나길까카페" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Nx-Tb-miQ">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="카페이름길어봤자얼마나길까카페" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Nx-Tb-miQ">
                     <rect key="frame" x="20" y="20" width="243" height="22"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="18"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="22" id="i0Z-5R-Kva"/>
+                        <constraint firstAttribute="width" constant="243" id="kZ0-Kg-nyH"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="16"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="서울시노원구공릉1동서울여자대학교" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xuf-UQ-SiD">
-                    <rect key="frame" x="20" y="47" width="243" height="14"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="서울시노원구공릉1동서울여자대학교" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xuf-UQ-SiD">
+                    <rect key="frame" x="20" y="49" width="243" height="15"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="15" id="eLf-T6-Ejr"/>
+                        <constraint firstAttribute="width" constant="243" id="fDZ-O7-l6P"/>
+                    </constraints>
                     <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="12"/>
                     <color key="textColor" name="darkGrey"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="영업시간주말: 월-금 9:30-21:00 토,일 9:30-20:00" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iPw-g5-4gL">
-                    <rect key="frame" x="20" y="75" width="167" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="평일 09:00 - 20:00\r\n토요일 11:00 - 18:00\r\n일요일 11:00 - 17:00" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iPw-g5-4gL">
+                    <rect key="frame" x="20" y="70" width="167" height="42"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="167" id="dRr-ba-Upb"/>
+                    </constraints>
                     <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="12"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lNq-tp-zA4">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lNq-tp-zA4">
                     <rect key="frame" x="322" y="20" width="32" height="22"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="22" id="3b7-bb-eYf"/>
+                        <constraint firstAttribute="width" constant="32" id="8iL-Yh-Ugy"/>
+                    </constraints>
                     <state key="normal" image="btnUniverse"/>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jw1-IB-Vlu">
-                    <rect key="frame" x="320" y="47" width="37" height="14"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jw1-IB-Vlu">
+                    <rect key="frame" x="328" y="47" width="20.333333333333314" height="14"/>
                     <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="12"/>
                     <color key="textColor" name="darkGrey"/>
                     <nil key="highlightedColor"/>
@@ -69,6 +79,19 @@
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="Jw1-IB-Vlu" firstAttribute="top" secondItem="lNq-tp-zA4" secondAttribute="bottom" constant="5" id="8Yz-jV-sfk"/>
+                <constraint firstItem="xuf-UQ-SiD" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="BIJ-wW-VcP"/>
+                <constraint firstItem="3Nx-Tb-miQ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" symbolic="YES" id="FEp-GF-6bz"/>
+                <constraint firstItem="lNq-tp-zA4" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" symbolic="YES" id="JWL-9o-iBk"/>
+                <constraint firstItem="lNq-tp-zA4" firstAttribute="leading" secondItem="3Nx-Tb-miQ" secondAttribute="trailing" constant="59" id="K3T-Dl-gty"/>
+                <constraint firstItem="Jw1-IB-Vlu" firstAttribute="centerX" secondItem="lNq-tp-zA4" secondAttribute="centerX" id="Qgn-DU-zMc"/>
+                <constraint firstItem="iPw-g5-4gL" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Ug4-1F-sHf"/>
+                <constraint firstItem="xuf-UQ-SiD" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="5" id="Y0h-NJ-gxx"/>
+                <constraint firstItem="3Nx-Tb-miQ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="jLk-6d-Twk"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Jw1-IB-Vlu" secondAttribute="bottom" constant="64" id="qt9-ma-fqp"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="iPw-g5-4gL" secondAttribute="bottom" constant="13" id="wmb-Kf-xxI"/>
+            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="-751.20000000000005" y="421.55172413793105"/>
         </view>

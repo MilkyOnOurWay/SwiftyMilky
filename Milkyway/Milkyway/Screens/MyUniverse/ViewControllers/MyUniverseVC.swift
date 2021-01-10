@@ -20,7 +20,7 @@ class MyUniverseVC: UIViewController{
     
     let overlayIconImage = NMFOverlayImage(name: "circle")
     let subIconImage = NMFOverlayImage(name: "radius")
-    let polygonIconImage = NMFOverlayImage(name: "polygon")
+    let polygonIconImage = NMFOverlayImage(name: "frame539")
     
     var markers = [NMFMarker]()
     var camera: NMFCameraUpdate!

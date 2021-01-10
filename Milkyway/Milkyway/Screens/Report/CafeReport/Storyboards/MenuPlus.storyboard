@@ -78,7 +78,7 @@
                                 <rect key="frame" x="0.0" y="104" width="414" height="792"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dec-Hq-tcX">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="680.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="686.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="메뉴이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="30l-cZ-TWn">
                                                 <rect key="frame" x="20" y="20" width="55.5" height="19"/>
@@ -102,12 +102,14 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rmP-hA-nGa">
-                                                <rect key="frame" x="0.0" y="608.5" width="414" height="52"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btnInputOff" translatesAutoresizingMaskIntoConstraints="NO" id="SWA-UQ-Y4k">
+                                                <rect key="frame" x="20" y="608.5" width="374" height="58"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="52" id="1Xk-iG-7dm"/>
+                                                    <constraint firstAttribute="width" secondItem="SWA-UQ-Y4k" secondAttribute="height" multiplier="335:52" id="JZa-Zy-2gl"/>
                                                 </constraints>
-                                                <state key="normal" image="btnInputOff"/>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rmP-hA-nGa">
+                                                <rect key="frame" x="20" y="608.5" width="374" height="58"/>
                                                 <connections>
                                                     <action selector="menuPlusOkClicked:" destination="TbM-gw-Rbc" eventType="touchUpInside" id="cE4-zI-fgC"/>
                                                 </connections>
@@ -217,24 +219,26 @@
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="Xqe-Pj-CdQ" firstAttribute="width" secondItem="n4u-p2-sql" secondAttribute="width" id="1ql-1Z-0PI"/>
-                                            <constraint firstItem="rmP-hA-nGa" firstAttribute="leading" secondItem="dec-Hq-tcX" secondAttribute="leading" id="2jA-qj-nya"/>
-                                            <constraint firstItem="rmP-hA-nGa" firstAttribute="top" secondItem="ZgF-S9-gzF" secondAttribute="bottom" constant="20" id="2r9-sf-ntz"/>
                                             <constraint firstItem="Xqe-Pj-CdQ" firstAttribute="top" secondItem="n4u-p2-sql" secondAttribute="bottom" constant="10" id="55U-m7-kff"/>
                                             <constraint firstItem="nlD-QJ-ygx" firstAttribute="top" secondItem="Xqe-Pj-CdQ" secondAttribute="bottom" constant="10" id="62R-9L-8Qr"/>
+                                            <constraint firstItem="rmP-hA-nGa" firstAttribute="trailing" secondItem="SWA-UQ-Y4k" secondAttribute="trailing" id="6Hc-iX-aVl"/>
                                             <constraint firstItem="ZgF-S9-gzF" firstAttribute="top" secondItem="nlD-QJ-ygx" secondAttribute="bottom" id="6NC-ol-dAc"/>
+                                            <constraint firstAttribute="bottom" secondItem="SWA-UQ-Y4k" secondAttribute="bottom" constant="20" id="8gV-Kx-HGS"/>
                                             <constraint firstItem="x6N-Kb-VaD" firstAttribute="leading" secondItem="dec-Hq-tcX" secondAttribute="leading" id="9Y3-o7-wsh"/>
                                             <constraint firstItem="n4u-p2-sql" firstAttribute="width" secondItem="x6N-Kb-VaD" secondAttribute="width" id="9Zo-bx-MUC"/>
                                             <constraint firstItem="30l-cZ-TWn" firstAttribute="top" secondItem="dec-Hq-tcX" secondAttribute="top" constant="20" id="By3-jX-RzT"/>
+                                            <constraint firstItem="rmP-hA-nGa" firstAttribute="bottom" secondItem="SWA-UQ-Y4k" secondAttribute="bottom" id="CGb-M3-SHJ"/>
                                             <constraint firstItem="nlD-QJ-ygx" firstAttribute="width" secondItem="Xqe-Pj-CdQ" secondAttribute="width" id="COI-7V-OJp"/>
                                             <constraint firstItem="30l-cZ-TWn" firstAttribute="leading" secondItem="dec-Hq-tcX" secondAttribute="leading" constant="20" id="DeG-eG-RB5"/>
                                             <constraint firstItem="Xqe-Pj-CdQ" firstAttribute="leading" secondItem="n4u-p2-sql" secondAttribute="leading" id="EUB-7D-I2s"/>
                                             <constraint firstItem="n4u-p2-sql" firstAttribute="leading" secondItem="x6N-Kb-VaD" secondAttribute="leading" id="Eg1-Ky-P9n"/>
                                             <constraint firstItem="Jfg-GJ-WzV" firstAttribute="top" secondItem="0Ng-0W-cFP" secondAttribute="bottom" constant="20" id="FvP-G2-6aC"/>
                                             <constraint firstItem="0Ng-0W-cFP" firstAttribute="top" secondItem="2GY-D7-zZ6" secondAttribute="bottom" constant="20" id="K6M-hP-dt1"/>
-                                            <constraint firstAttribute="trailing" secondItem="rmP-hA-nGa" secondAttribute="trailing" id="KDQ-xd-2OC"/>
+                                            <constraint firstAttribute="trailing" secondItem="SWA-UQ-Y4k" secondAttribute="trailing" constant="20" id="P9B-iF-ds4"/>
+                                            <constraint firstItem="SWA-UQ-Y4k" firstAttribute="leading" secondItem="dec-Hq-tcX" secondAttribute="leading" constant="20" id="R10-bC-Jvw"/>
                                             <constraint firstItem="v4s-yN-sJE" firstAttribute="leading" secondItem="30l-cZ-TWn" secondAttribute="leading" id="ScN-fO-LXP"/>
                                             <constraint firstItem="2GY-D7-zZ6" firstAttribute="leading" secondItem="v4s-yN-sJE" secondAttribute="leading" id="ZGL-Q8-BNt"/>
-                                            <constraint firstAttribute="bottom" secondItem="rmP-hA-nGa" secondAttribute="bottom" constant="20" id="aI5-ox-vrf"/>
+                                            <constraint firstItem="rmP-hA-nGa" firstAttribute="top" secondItem="SWA-UQ-Y4k" secondAttribute="top" id="ZZm-3I-yjt"/>
                                             <constraint firstItem="x6N-Kb-VaD" firstAttribute="top" secondItem="Jfg-GJ-WzV" secondAttribute="bottom" constant="16" id="bjJ-0Y-TWg"/>
                                             <constraint firstItem="Xqe-Pj-CdQ" firstAttribute="height" secondItem="n4u-p2-sql" secondAttribute="height" id="bmg-LQ-KUK"/>
                                             <constraint firstItem="v4s-yN-sJE" firstAttribute="top" secondItem="30l-cZ-TWn" secondAttribute="bottom" constant="16" id="bqg-f5-CK1"/>
@@ -250,6 +254,8 @@
                                             <constraint firstItem="0Ng-0W-cFP" firstAttribute="leading" secondItem="2GY-D7-zZ6" secondAttribute="leading" id="rXK-CK-LZ5"/>
                                             <constraint firstItem="ZgF-S9-gzF" firstAttribute="leading" secondItem="dec-Hq-tcX" secondAttribute="leading" id="uaq-Tw-eyY"/>
                                             <constraint firstItem="2GY-D7-zZ6" firstAttribute="top" secondItem="v4s-yN-sJE" secondAttribute="bottom" constant="20" id="xaG-9M-ruJ"/>
+                                            <constraint firstItem="rmP-hA-nGa" firstAttribute="leading" secondItem="SWA-UQ-Y4k" secondAttribute="leading" id="yYM-Km-KT2"/>
+                                            <constraint firstItem="SWA-UQ-Y4k" firstAttribute="top" secondItem="ZgF-S9-gzF" secondAttribute="bottom" constant="20" id="ytu-a5-qaa"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -283,6 +289,7 @@
                     <connections>
                         <outlet property="categoryFirstBtn" destination="x6N-Kb-VaD" id="HQF-EZ-Jxz"/>
                         <outlet property="editEndBtn" destination="rmP-hA-nGa" id="Bjg-aX-sdz"/>
+                        <outlet property="editImageView" destination="SWA-UQ-Y4k" id="JUX-5f-obh"/>
                         <outlet property="menuScrollView" destination="P88-Lv-OyH" id="dmq-QY-V0y"/>
                         <outlet property="menuTF" destination="v4s-yN-sJE" id="mkM-Ba-PU2"/>
                         <outlet property="priceTF" destination="0Ng-0W-cFP" id="38Z-Ph-vIZ"/>
@@ -295,22 +302,22 @@
     </scenes>
     <designables>
         <designable name="0Ng-0W-cFP">
-            <size key="intrinsicContentSize" width="141.5" height="28.5"/>
+            <size key="intrinsicContentSize" width="142" height="29"/>
         </designable>
         <designable name="Xqe-Pj-CdQ">
-            <size key="intrinsicContentSize" width="30" height="31"/>
+            <size key="intrinsicContentSize" width="30" height="32"/>
         </designable>
         <designable name="n4u-p2-sql">
-            <size key="intrinsicContentSize" width="30" height="31"/>
+            <size key="intrinsicContentSize" width="30" height="32"/>
         </designable>
         <designable name="nlD-QJ-ygx">
-            <size key="intrinsicContentSize" width="30" height="31"/>
+            <size key="intrinsicContentSize" width="30" height="32"/>
         </designable>
         <designable name="v4s-yN-sJE">
-            <size key="intrinsicContentSize" width="174" height="28.5"/>
+            <size key="intrinsicContentSize" width="174" height="29"/>
         </designable>
         <designable name="x6N-Kb-VaD">
-            <size key="intrinsicContentSize" width="30" height="31"/>
+            <size key="intrinsicContentSize" width="30" height="32"/>
         </designable>
     </designables>
     <resources>

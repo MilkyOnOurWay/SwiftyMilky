@@ -18,6 +18,7 @@ class MenuPlusVC: UIViewController {
     
     @IBOutlet weak var categoryFirstBtn: DLRadioButton!
     @IBOutlet weak var editEndBtn: UIButton!
+    @IBOutlet weak var editImageView: UIImageView!
     
     var editCafeMenu: Menu?
     var areyouEdit = false
@@ -153,11 +154,11 @@ extension MenuPlusVC {
     func checkEditOK() {
         
         if menuCount > 0 && priceCount > 0 && category.count > 0 {
-            editEndBtn.setImage(UIImage(named: "btnInput"), for: .normal)
+            editImageView.image = UIImage(named: "btnInput")
             editEndBtn.isUserInteractionEnabled = true
         }
         else {
-            editEndBtn.setImage(UIImage(named: "btnInputOff"), for: .normal)
+            editImageView.image = UIImage(named: "btnInputOff")
             editEndBtn.isUserInteractionEnabled = false
         }
         

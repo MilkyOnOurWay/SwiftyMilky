@@ -287,7 +287,7 @@ extension HomeVC: NMFMapViewCameraDelegate {
     func mapView(_ mapView: NMFMapView, cameraWillChangeByReason reason: Int, animated: Bool){
         if reason == NMFMapChangedByGesture {
 //            print("지도 움직이는 중 zoom level: \(mapView.zoomLevel)")
-            mapView.locationOverlay.icon = currentLImage
+//            mapView.locationOverlay.icon = currentLImage
         }
       
     }

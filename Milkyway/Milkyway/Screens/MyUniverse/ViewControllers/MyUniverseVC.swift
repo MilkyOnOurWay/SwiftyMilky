@@ -180,6 +180,16 @@ class MyUniverseVC: UIViewController{
         setBottomCard()
         super.viewDidLoad()
         
+        cardVC = UniverseCardVC(nibName: "UniverseCardVC", bundle: nil)
+        self.addChild(cardVC)
+        self.view.addSubview(cardVC.view)
+        print("addsubView")
+        let tabbarFrame = self.tabBarController?.tabBar.frame
+        
+        cardVC.view.frame = CGRect(x:0, y: self.view.frame.height - tabbarFrame!.size.height - 125, width: self.view.bounds.width, height: 125)
+        
+        cardVC.view.isHidden = true
+        
     }
     
     // statusBar 색상변경
@@ -263,7 +273,7 @@ extension MyUniverseVC {
                     self.beforeMarker?.iconImage = self.unselectImage
                     marker.iconImage = self.selectImage
                     self.beforeMarker = marker
-                    markerDidTap()
+                    cardVC.view.isHidden = false
                     return true
                 }
                 
@@ -274,17 +284,6 @@ extension MyUniverseVC {
         }
     }
     
-    func markerDidTap(){
-        //  윤진 추가 코드 , 마커 눌렀을 때 카드뷰 등장
-        //  다시 누르면 없어짐. hidden
-        cardVC = UniverseCardVC(nibName: "UniverseCardVC", bundle: nil)
-        self.addChild(cardVC)
-        self.view.addSubview(cardVC.view)
-        let tabbarFrame = self.tabBarController?.tabBar.frame
-        
-        cardVC.view.frame = CGRect(x:0, y: self.view.frame.height - tabbarFrame!.size.height - 125, width: self.view.bounds.width, height: 125)
-        
-    }
     
 }
 
@@ -292,6 +291,7 @@ extension MyUniverseVC {
 extension MyUniverseVC: NMFMapViewTouchDelegate {
     func mapView(_ mapView: NMFMapView, didTapMap latlng: NMGLatLng, point: CGPoint) {
         print("\(latlng)")
+        cardVC.view.isHidden = true
         
     }
     
@@ -309,13 +309,11 @@ extension MyUniverseVC: NMFMapViewCameraDelegate {
         if reason == NMFMapChangedByGesture {
             print("지도 움직이는 중")
             
-            mapView.positionMode = .normal
+            
             mapView.locationOverlay.icon = overlayIconImage
             mapView.locationOverlay.subIcon = nil
-            if cardVC != nil {
-                cardVC.view.isHidden = true
-                self.beforeMarker?.iconImage = self.unselectImage
-            }
+            
+            cardVC.view.isHidden = true
         }
         
     }
@@ -356,9 +354,9 @@ extension MyUniverseVC {
         // SE에서 너무 많이 올라와서 이렇게 해봤는데 탭바 높이가 짧아서 덜 나오게 됨.
         
         if tabbarFrame!.size.height < 83 {
-            cardHeight = self.mapView.frame.height / 2 + tabbarFrame!.size.height + (83 - tabbarFrame!.size.height)
+            cardHeight = self.mapView.frame.height / 1.5 + tabbarFrame!.size.height + (83 - tabbarFrame!.size.height)
         } else {
-            cardHeight = self.mapView.frame.height / 2 + tabbarFrame!.size.height
+            cardHeight = self.mapView.frame.height / 1.5 + tabbarFrame!.size.height
         }
 //        cardHeight = self.mapView.frame.height / 2 + tabbarFrame!.size.height
 //        print("탭바 높이 \(tabbarFrame!.size.height)")

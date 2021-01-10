@@ -27,8 +27,8 @@ class HomeVC: UIViewController {
     // 이미지들 넣기
     let markerImage = NMFOverlayImage(name: "picker") //마커
     let currentLImage = NMFOverlayImage(name: "group511") // 현위치 동그라미 이미지
-    let directionImage = NMFOverlayImage(name: "polygon") //direction group140 polygon4
-    let compassImage = NMFOverlayImage(name: "group510") //compass group158 group510
+    let directionImage = NMFOverlayImage(name: "myuniPolygon")
+    let compassImage = NMFOverlayImage(name: "group510")
     
     let selectedImage = NMFOverlayImage(name: "pickerSelected")
     let unselectedImage = NMFOverlayImage(name: "picker")

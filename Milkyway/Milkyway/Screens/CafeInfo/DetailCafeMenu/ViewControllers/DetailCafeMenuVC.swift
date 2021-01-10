@@ -25,34 +25,8 @@ class DetailCafeMenuVC: UIViewController {
     var like: Bool = false
     
     
-    
-    // MARK: - 데이터 로딩 중 Lottie 화면
-    private var loadingView: UIActivityIndicatorView?
-    
-    private func showLoadingLottie() {
-        loadingView = UIActivityIndicatorView(style: .large)
-        self.view.addSubview(loadingView!)
-        loadingView?.center = self.view.center
-        loadingView?.startAnimating()
-    }
-    
-    private func stopLottieAnimation() {
-        loadingView?.stopAnimating()
-        loadingView?.removeFromSuperview()
-        loadingView = nil
-    }
-    
-    
-    
     // MARK: - 뷰
-    
-    
-    override func viewWillAppear(_ animated: Bool) {
-        showLoadingLottie()
-        loadData()
-        self.tableView.reloadData()
-        
-    }
+
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -166,7 +140,13 @@ extension DetailCafeMenuVC: UITableViewDataSource {
                 
             }
             
-            cell.howMuchLabel.text = testCafe.menu[indexPath.row].price
+            // , 원 없이 들어온 거 처리하기
+            let numberFormatter = NumberFormatter()
+            numberFormatter.numberStyle = .decimal
+            let changeToDouble = Double(testCafe.menu[indexPath.row].price ) ?? 0
+            let price = numberFormatter.string(from: NSNumber(value: changeToDouble))!
+            
+            cell.howMuchLabel.text = price + "원"
             cell.selectionStyle = .none // 셀 선택 불가능하게
             return cell
         }
@@ -238,46 +218,8 @@ extension DetailCafeMenuVC {
     }
 }
 
-// MARK: Server Connect
 
 
-extension DetailCafeMenuVC {
-    
-    func loadData() {
-        
-        print("loadData()")
-        DetailCafeService.shared.DetailInfoGet(cafeId: 25) { (networkResult) -> (Void) in
-            switch networkResult {
-            case .success(let data):
-                if let loadData = data as? CafeDatas {
-                    
-                    DispatchQueue.main.async {
-                        self.tableView.reloadData()
-                    }
-                    print("success")
-                    self.testCafe = loadData
-                    self.tableView.reloadData()
-                    self.stopLottieAnimation()
-                  
-                    
-                }
-            case .requestErr( _):
-                print("requestErr")
-            case .pathErr:
-
-                print("pathErr")
-            case .serverErr:
-                print("serverErr")
-            case .networkFail:
-                print("networkFail")
-            }
-            
-            
-        }
-        
-      
-    }
-}
 
 
 

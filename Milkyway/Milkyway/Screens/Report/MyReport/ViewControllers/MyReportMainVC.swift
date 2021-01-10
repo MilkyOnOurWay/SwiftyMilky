@@ -150,12 +150,50 @@ extension MyReportMainVC: UITableViewDataSource {
     }
     
 }
+
+
 extension MyReportMainVC: UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let storyboard = UIStoryboard(name: "DetailCafeMenu", bundle: nil)
         
-        if let dvc = storyboard.instantiateViewController(identifier: "DetailCafeMenuVC") as? DetailCafeMenuVC {
-        self.navigationController?.pushViewController(dvc, animated: true)
+        // 눌렀을 때 서버통신 !
+        // 통신중일때 더이상 나의제보 누를 수 없게 // 이중 클릭 방지
+        self.myReportTableView.isUserInteractionEnabled = false
+        
+        // 로딩뷰 시작
+        NotificationCenter.default.post(name: Notification.Name("startlottie"), object: nil)
+        
+        DetailCafeService.shared.DetailInfoGet(cafeId: 25) { [self] (networkResult) -> (Void) in
+            switch networkResult {
+            case .success(let data):
+                if let loadData = data as? CafeDatas {
+                    
+                    print("success")
+                    
+                    let storyboard = UIStoryboard(name: "DetailCafeMenu", bundle: nil)
+                    if let dvc = storyboard.instantiateViewController(identifier: "DetailCafeMenuVC") as? DetailCafeMenuVC {
+                        dvc.testCafe = loadData
+                        self.navigationController?.pushViewController(dvc, animated: true)
+                        // 로딩뷰 끝
+                        NotificationCenter.default.post(name: Notification.Name("stoplottie"), object: nil)
+                        
+                        //다시 클릭 활성화
+                        self.myReportTableView.isUserInteractionEnabled = true
+                    }
+                }
+            case .requestErr( _):
+                print("requestErr")
+            case .pathErr:
+                
+                print("pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+            
+            
         }
+     
     }
 }

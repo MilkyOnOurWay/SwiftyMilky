@@ -184,10 +184,16 @@ class MyUniverseVC: UIViewController{
         setFirstCardView()
         super.viewDidLoad()
         
+        
+        // 로딩관련 노티
+        NotificationCenter.default.addObserver(self, selector: #selector(showLoadingLottie), name: Notification.Name("startlottieuni"),object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(stopLottieAnimation), name: Notification.Name("stoplottieuni"),object: nil)
+        
+        
         glowUniverseLabel.text = "\(userNickName) 님의 \n유니버스가 빛나고 있어요.\n오늘은 어떤 밀키웨이를 탐험해 볼까요?"
         changeFontSize()
         
-        
+       
         
     }
     
@@ -195,6 +201,25 @@ class MyUniverseVC: UIViewController{
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
         
+    }
+    
+    // MARK: - 데이터 로딩 중 Lottie 화면
+    private var loadingView: UIActivityIndicatorView?
+    
+    @objc private func showLoadingLottie() {
+        print("start")
+        loadingView = UIActivityIndicatorView(style: .large)
+        loadingView?.color = UIColor(named: "Milky")
+        self.view.addSubview(loadingView!)
+        loadingView?.center = self.view.center
+        loadingView?.startAnimating()
+    }
+    
+    @objc private func stopLottieAnimation() {
+        print("end")
+        loadingView?.stopAnimating()
+        loadingView?.removeFromSuperview()
+        loadingView = nil
     }
     
     

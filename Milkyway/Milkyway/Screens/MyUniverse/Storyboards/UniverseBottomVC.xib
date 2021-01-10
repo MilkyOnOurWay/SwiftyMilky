@@ -55,7 +55,7 @@
                         <constraint firstAttribute="bottom" secondItem="JcH-aO-ag4" secondAttribute="bottom" constant="20" id="ua4-Pq-nLj"/>
                     </constraints>
                 </view>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Qoi-XW-uFw">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Qoi-XW-uFw">
                     <rect key="frame" x="0.0" y="84" width="375" height="347"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>

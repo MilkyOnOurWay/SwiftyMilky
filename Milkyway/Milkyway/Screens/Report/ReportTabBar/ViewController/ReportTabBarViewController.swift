@@ -43,8 +43,10 @@ class ReportTabBarViewController: ButtonBarPagerTabStripViewController {
     // MARK: - 데이터 로딩 중 Lottie 화면
     private var loadingView: UIActivityIndicatorView?
     
+    
     @objc private func showLoadingLottie() {
         loadingView = UIActivityIndicatorView(style: .large)
+        loadingView?.color = UIColor(named: "Milky")
         self.view.addSubview(loadingView!)
         loadingView?.center = self.view.center
         loadingView?.startAnimating()

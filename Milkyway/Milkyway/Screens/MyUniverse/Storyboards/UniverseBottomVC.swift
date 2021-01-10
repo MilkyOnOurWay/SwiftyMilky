@@ -9,6 +9,7 @@ import UIKit
 
 class UniverseBottomVC: UIViewController {
     
+
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var handleArea: UIView!
     @IBOutlet var rootView: UIView!
@@ -18,13 +19,15 @@ class UniverseBottomVC: UIViewController {
         super.viewDidLoad()
         setView()
         setHandler()
-
         tableView.delegate = self
         tableView.dataSource = self
         let BottomCellNib = UINib(nibName: "BottomTVC", bundle: nil)
         self.tableView.register(BottomCellNib, forCellReuseIdentifier: "BottomTVC")
     }
-
+    
+  
+    
+    
 }
 
 
@@ -41,14 +44,53 @@ extension UniverseBottomVC {
     }
     func setHandler() {
         handleBar.layer.cornerRadius = handleBar.frame.height / 2
-    
-       
+        
+        
     }
 }
 
 extension UniverseBottomVC: UITableViewDelegate {
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // 눌렀을 때 서버통신 !
+        // 통신중일때 더이상 나의제보 누를 수 없게 // 이중 클릭 방지
+        self.tableView.isUserInteractionEnabled = false
+        
+        print(indexPath.row)
+        NotificationCenter.default.post(name: Notification.Name("startlottieuni"), object: nil)
+        DetailCafeService.shared.DetailInfoGet(cafeId: 25) { [self] (networkResult) -> (Void) in
+            switch networkResult {
+            case .success(let data):
+                if let loadData = data as? CafeDatas {
+                    
+                    print("success")
+                    let storyboard = UIStoryboard(name: "DetailCafeMenu", bundle: nil)
+                    if let dvc = storyboard.instantiateViewController(identifier: "DetailCafeMenuVC") as? DetailCafeMenuVC {
+                        dvc.testCafe = loadData
+                        self.navigationController?.pushViewController(dvc, animated: true)
+                        NotificationCenter.default.post(name: Notification.Name("stoplottieuni"), object: nil)
+                        //다시 클릭 활성화
+                        self.tableView.isUserInteractionEnabled = true
+                    }
+                }
+            case .requestErr( _):
+                print("requestErr")
+            case .pathErr:
+                
+                print("pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+            
+            
+        }
+        
+    }
 }
+
+
 
 extension UniverseBottomVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -64,7 +106,7 @@ extension UniverseBottomVC: UITableViewDataSource {
             return UITableViewCell()
             
         }
-        
+        cell.selectionStyle = .none
         return cell
     }
     

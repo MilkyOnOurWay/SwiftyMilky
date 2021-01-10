@@ -133,9 +133,6 @@
                                                         <real key="value" value="20"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="nextBtnAdd:" destination="TbM-gw-Rbc" eventType="editingDidEnd" id="cqE-hN-FRs"/>
-                                                </connections>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="카테고리" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jfg-GJ-WzV">
                                                 <rect key="frame" x="20" y="234" width="55.5" height="19"/>

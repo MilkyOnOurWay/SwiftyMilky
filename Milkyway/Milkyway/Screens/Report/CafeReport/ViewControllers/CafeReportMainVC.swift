@@ -11,6 +11,7 @@ import XLPagerTabStrip
 class CafeReportMainVC: UIViewController, IndicatorInfoProvider {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var reportEndBtn: UIButton!
+    @IBOutlet weak var reportImageView: UIImageView!
     
     var tabName: String = ""
     
@@ -212,11 +213,11 @@ extension CafeReportMainVC {
     func checkReportOK() {
         
         if dummyData.menu.count > 0 {
-            reportEndBtn.setImage(UIImage(named: "btnReport"), for: .normal)
+            reportImageView.image = UIImage(named: "btnReport")
             reportEndBtn.isUserInteractionEnabled = true
         }
         else {
-            reportEndBtn.setImage(UIImage(named: "btnReportOff"), for: .normal)
+            reportImageView.image = UIImage(named: "btnReportOff")
             reportEndBtn.isUserInteractionEnabled = false
         }
         

@@ -62,7 +62,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cd7-0n-KxS">
-                                <rect key="frame" x="266" y="0.0" width="90" height="46"/>
+                                <rect key="frame" x="262" y="0.0" width="90" height="46"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46" id="41B-Ej-gEX"/>
                                     <constraint firstAttribute="width" constant="90" id="SMW-33-gSu"/>
@@ -76,7 +76,7 @@
                             <constraint firstItem="jqh-FT-Zgw" firstAttribute="leading" secondItem="927-P2-qN2" secondAttribute="leading" id="7ff-Sl-rba"/>
                             <constraint firstItem="M82-Jj-Vep" firstAttribute="centerY" secondItem="dSS-xU-J5r" secondAttribute="centerY" id="ERv-e3-qTM"/>
                             <constraint firstItem="M82-Jj-Vep" firstAttribute="leading" secondItem="dSS-xU-J5r" secondAttribute="leading" id="Ppc-Aj-O7i"/>
-                            <constraint firstAttribute="trailing" secondItem="cd7-0n-KxS" secondAttribute="trailing" id="cL5-BZ-KEY"/>
+                            <constraint firstAttribute="trailing" secondItem="cd7-0n-KxS" secondAttribute="trailing" constant="4" id="cL5-BZ-KEY"/>
                             <constraint firstItem="jqh-FT-Zgw" firstAttribute="top" secondItem="927-P2-qN2" secondAttribute="bottom" constant="4" id="fcX-ZY-ku1"/>
                             <constraint firstItem="927-P2-qN2" firstAttribute="top" secondItem="dSS-xU-J5r" secondAttribute="top" id="goy-rz-313"/>
                             <constraint firstItem="cd7-0n-KxS" firstAttribute="centerY" secondItem="dSS-xU-J5r" secondAttribute="centerY" id="v8h-Ja-vDb"/>

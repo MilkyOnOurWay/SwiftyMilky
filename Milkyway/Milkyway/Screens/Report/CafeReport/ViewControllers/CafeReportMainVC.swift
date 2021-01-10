@@ -274,7 +274,7 @@ extension CafeReportMainVC {
     
     @objc func searchButtonDidTap(){
         
-        guard let nvc = UIStoryboard(name: "Search", bundle: nil).instantiateViewController(identifier: "SearchVC") as? SearchVC else {
+        guard let nvc = UIStoryboard(name: "AddSearch", bundle: nil).instantiateViewController(identifier: "AddSearchVC") as? AddSearchVC else {
             return
         }
         self.navigationController?.pushViewController(nvc, animated: true)

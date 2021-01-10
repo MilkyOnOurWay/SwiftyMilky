@@ -48,6 +48,8 @@
 		D154440A25A33B10007773BF /* HoneyTipCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D154440825A33B10007773BF /* HoneyTipCell.xib */; };
 		D175DA5B25AAE5C600665678 /* UniverseBottomVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D175DA5925AAE5C600665678 /* UniverseBottomVC.swift */; };
 		D175DA5C25AAE5C600665678 /* UniverseBottomVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D175DA5A25AAE5C600665678 /* UniverseBottomVC.xib */; };
+		D175DA8025AB51C700665678 /* BottomTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D175DA7E25AB51C600665678 /* BottomTVC.swift */; };
+		D175DA8125AB51C700665678 /* BottomTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D175DA7F25AB51C600665678 /* BottomTVC.xib */; };
 		D1983CA725A72BF200C74CED /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1983CA625A72BF200C74CED /* UITextField+Extension.swift */; };
 		D1996E0425A2290500B8F40B /* DetailCafeMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1996E0325A2290500B8F40B /* DetailCafeMenuVC.swift */; };
 		D1996E0725A2290E00B8F40B /* DetailCafeMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1996E0625A2290E00B8F40B /* DetailCafeMenu.storyboard */; };
@@ -167,6 +169,8 @@
 		D154440825A33B10007773BF /* HoneyTipCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HoneyTipCell.xib; sourceTree = "<group>"; };
 		D175DA5925AAE5C600665678 /* UniverseBottomVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniverseBottomVC.swift; sourceTree = "<group>"; };
 		D175DA5A25AAE5C600665678 /* UniverseBottomVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UniverseBottomVC.xib; sourceTree = "<group>"; };
+		D175DA7E25AB51C600665678 /* BottomTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomTVC.swift; sourceTree = "<group>"; };
+		D175DA7F25AB51C600665678 /* BottomTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottomTVC.xib; sourceTree = "<group>"; };
 		D1983CA625A72BF200C74CED /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		D1996E0325A2290500B8F40B /* DetailCafeMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCafeMenuVC.swift; sourceTree = "<group>"; };
 		D1996E0625A2290E00B8F40B /* DetailCafeMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailCafeMenu.storyboard; sourceTree = "<group>"; };
@@ -662,6 +666,8 @@
 				F2485EA725A8E60A003E3895 /* UniverseCardVC.xib */,
 				D175DA5925AAE5C600665678 /* UniverseBottomVC.swift */,
 				D175DA5A25AAE5C600665678 /* UniverseBottomVC.xib */,
+				D175DA7E25AB51C600665678 /* BottomTVC.swift */,
+				D175DA7F25AB51C600665678 /* BottomTVC.xib */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -884,6 +890,7 @@
 				F2142DFB25A349F600D07F3F /* SF-Pro-Text-Semibold.otf in Resources */,
 				D11ABA5325A64F7D00C1927E /* ToastView.xib in Resources */,
 				F2242A4A259BC23A00455604 /* Login.storyboard in Resources */,
+				D175DA8125AB51C700665678 /* BottomTVC.xib in Resources */,
 				F2242A6C259CD30400455604 /* FilterResult.storyboard in Resources */,
 				6BD05A6C25A41FFE00B2643F /* TopTVCell.xib in Resources */,
 				6B869C0525A0B96D0068BFD2 /* InfoModifyReq.storyboard in Resources */,
@@ -1010,6 +1017,7 @@
 				F2BA632D2598E7DE00A49020 /* UITabbar+Extension.swift in Sources */,
 				F2DCC2A525A7908A00AAE5EF /* APIConstants.swift in Sources */,
 				6B96A13625A9C809004E529D /* CancelReasonVC.swift in Sources */,
+				D175DA8025AB51C700665678 /* BottomTVC.swift in Sources */,
 				D15443FF25A33AF9007773BF /* CafeNameResultCell.swift in Sources */,
 				F2242A3B259BB2CF00455604 /* SettingVC.swift in Sources */,
 				F2BA62E02598DE5F00A49020 /* SceneDelegate.swift in Sources */,

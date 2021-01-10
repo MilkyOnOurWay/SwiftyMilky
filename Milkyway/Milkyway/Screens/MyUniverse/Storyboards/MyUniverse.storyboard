@@ -20,7 +20,35 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="45k-5X-Wyh" customClass="NMFMapView">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoWhite" translatesAutoresizingMaskIntoConstraints="NO" id="XcT-p5-mKe">
+                                        <rect key="frame" x="20" y="59" width="132" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="VZB-nV-5gH"/>
+                                            <constraint firstAttribute="width" constant="132" id="wH3-KG-yHb"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vh5-SH-CYW">
+                                        <rect key="frame" x="20" y="104" width="104" height="24"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="어쩌구저쩌구">
+                                                <attributes>
+                                                    <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <font key="NSFont" size="20" name="AppleSDGothicNeo-Regular"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="3" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="vh5-SH-CYW" firstAttribute="top" secondItem="XcT-p5-mKe" secondAttribute="bottom" constant="20" id="7RX-CB-EJ0"/>
+                                    <constraint firstItem="vh5-SH-CYW" firstAttribute="leading" secondItem="XcT-p5-mKe" secondAttribute="leading" id="Q4k-9s-pem"/>
+                                    <constraint firstItem="XcT-p5-mKe" firstAttribute="leading" secondItem="45k-5X-Wyh" secondAttribute="leading" constant="20" id="mwO-E2-wef"/>
+                                    <constraint firstItem="XcT-p5-mKe" firstAttribute="top" secondItem="45k-5X-Wyh" secondAttribute="top" constant="59" id="rgM-N6-19K"/>
+                                </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iqj-ZF-uoU">
                                 <rect key="frame" x="330" y="616.5" width="68" height="68"/>
@@ -47,6 +75,7 @@
                     <tabBarItem key="tabBarItem" title="유니버스" image="mdiUniverse" selectedImage="mdiUniverseTapped" id="uOh-iJ-vku"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="glowUniverseLabel" destination="vh5-SH-CYW" id="trR-Bg-Zfd"/>
                         <outlet property="locationBtn" destination="iqj-ZF-uoU" id="Jo9-uZ-ZxI"/>
                         <outlet property="mapView" destination="45k-5X-Wyh" id="FyS-33-hAU"/>
                     </connections>
@@ -58,6 +87,7 @@
     </scenes>
     <resources>
         <image name="btnCurrentLocation" width="68" height="68"/>
+        <image name="logoWhite" width="132" height="25"/>
         <image name="mdiUniverse" width="35" height="24"/>
         <image name="mdiUniverseTapped" width="35" height="24"/>
         <systemColor name="systemBackgroundColor">

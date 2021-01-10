@@ -9,6 +9,7 @@ import UIKit
 
 class UniverseBottomVC: UIViewController {
     
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var handleArea: UIView!
     @IBOutlet var rootView: UIView!
     @IBOutlet weak var handleBar: UIView!
@@ -18,6 +19,10 @@ class UniverseBottomVC: UIViewController {
         setView()
         setHandler()
 
+        tableView.delegate = self
+        tableView.dataSource = self
+        let BottomCellNib = UINib(nibName: "BottomTVC", bundle: nil)
+        self.tableView.register(BottomCellNib, forCellReuseIdentifier: "BottomTVC")
     }
 
 }
@@ -39,4 +44,29 @@ extension UniverseBottomVC {
     
        
     }
+}
+
+extension UniverseBottomVC: UITableViewDelegate {
+    
+}
+
+extension UniverseBottomVC: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        10
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 87
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell: BottomTVC = tableView.dequeueReusableCell(withIdentifier: "BottomTVC" , for: indexPath) as? BottomTVC else{
+            return UITableViewCell()
+            
+        }
+        
+        return cell
+    }
+    
+    
 }

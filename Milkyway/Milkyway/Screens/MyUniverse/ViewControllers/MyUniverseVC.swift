@@ -11,6 +11,9 @@ import NMapsMap
 class MyUniverseVC: UIViewController{
     @IBOutlet weak var mapView: NMFMapView!
     @IBOutlet weak var locationBtn: UIButton!
+    @IBOutlet weak var glowUniverseLabel: UILabel!
+    
+    let userNickName = "소영소영"
     
     let unselectImage = NMFOverlayImage(name: "pickerUniverse")
     let selectImage = NMFOverlayImage(name: "pickerUniverseSelected")
@@ -178,17 +181,13 @@ class MyUniverseVC: UIViewController{
         setMap()
         setMapButton()
         setBottomCard()
+        setFirstCardView()
         super.viewDidLoad()
         
-        cardVC = UniverseCardVC(nibName: "UniverseCardVC", bundle: nil)
-        self.addChild(cardVC)
-        self.view.addSubview(cardVC.view)
-        print("addsubView")
-        let tabbarFrame = self.tabBarController?.tabBar.frame
+        glowUniverseLabel.text = "\(userNickName) 님의 \n유니버스가 빛나고 있어요.\n오늘은 어떤 밀키웨이를 탐험해 볼까요?"
+        changeFontSize()
         
-        cardVC.view.frame = CGRect(x:0, y: self.view.frame.height - tabbarFrame!.size.height - 125, width: self.view.bounds.width, height: 125)
         
-        cardVC.view.isHidden = true
         
     }
     
@@ -216,6 +215,28 @@ extension MyUniverseVC {
         
     }
     
+    func setFirstCardView() {
+        cardVC = UniverseCardVC(nibName: "UniverseCardVC", bundle: nil)
+        self.addChild(cardVC)
+        self.view.addSubview(cardVC.view)
+        print("addsubView")
+        let tabbarFrame = self.tabBarController?.tabBar.frame
+        
+        cardVC.view.frame = CGRect(x:0, y: self.view.frame.height - tabbarFrame!.size.height - 125, width: self.view.bounds.width, height: 125)
+        
+        cardVC.view.isHidden = true
+    }
+    
+    func changeFontSize() {
+        // 폰트굵기 부분 변경하기 https://nsios.tistory.com/35
+        
+        let fontSize = UIFont(name:"SFProText-Bold", size: 20.0)
+        let attributedStr = NSMutableAttributedString(string: glowUniverseLabel.text!)
+        attributedStr.addAttribute(.font, value: fontSize, range: (glowUniverseLabel.text! as NSString).range(of: "\(userNickName)"))
+        glowUniverseLabel.attributedText = attributedStr
+
+    }
+    
     
     
     // 현재위치 버튼
@@ -229,7 +250,7 @@ extension MyUniverseVC {
     @objc func locationButtonDidTap(_ sender:UIButton){
         
         if sender.isSelected {
-            mapView.zoomLevel = 15
+            mapView.zoomLevel = 16
             sender.isSelected = false
             mapView.positionMode = .direction
             mapView.locationOverlay.icon = overlayIconImage
@@ -292,11 +313,16 @@ extension MyUniverseVC: NMFMapViewTouchDelegate {
     func mapView(_ mapView: NMFMapView, didTapMap latlng: NMGLatLng, point: CGPoint) {
         print("\(latlng)")
         cardVC.view.isHidden = true
+        self.beforeMarker?.iconImage = self.unselectImage
         
     }
     
     func mapView(_ mapView: NMFMapView, didTap symbol: NMFSymbol) -> Bool {
         print(symbol)
+        
+        cardVC.view.isHidden = true
+        self.beforeMarker?.iconImage = self.unselectImage
+        
         return true
     }
     
@@ -314,6 +340,7 @@ extension MyUniverseVC: NMFMapViewCameraDelegate {
             mapView.locationOverlay.subIcon = nil
             
             cardVC.view.isHidden = true
+            self.beforeMarker?.iconImage = self.unselectImage
         }
         
     }
@@ -324,14 +351,7 @@ extension MyUniverseVC: NMFMapViewCameraDelegate {
     //    }
     //
     //    func mapView(_ mapView: NMFMapView, cameraDidChangeByReason reason: Int, animated: Bool) {
-    ////        if trackOrNot == 2 {
-    ////            print("change!!!")
-    ////            mapView.positionMode = .normal
-    ////            mapView.locationOverlay.hidden = false
-    ////            mapView.locationOverlay.icon = nowImage
-    ////            trackOrNot = 3
-    ////        }
-    //    }
+    // }
     //
     //    func mapViewCameraIdle(_ mapView: NMFMapView){
     //        //mapView.locationOverlay.icon = nowImage
@@ -354,7 +374,7 @@ extension MyUniverseVC {
         // SE에서 너무 많이 올라와서 이렇게 해봤는데 탭바 높이가 짧아서 덜 나오게 됨.
         
         if tabbarFrame!.size.height < 83 {
-            cardHeight = self.mapView.frame.height / 1.5 + tabbarFrame!.size.height + (83 - tabbarFrame!.size.height)
+            cardHeight = self.mapView.frame.height / 1.47 + tabbarFrame!.size.height + (83 - tabbarFrame!.size.height)
         } else {
             cardHeight = self.mapView.frame.height / 1.5 + tabbarFrame!.size.height
         }
@@ -380,9 +400,9 @@ extension MyUniverseVC {
         let tabbarFrame = self.tabBarController?.tabBar.frame;
         
         if tabbarFrame!.size.height < 83 {
-            cardHeight = self.mapView.frame.height / 2 + tabbarFrame!.size.height + (83 - tabbarFrame!.size.height)
+            cardHeight = self.mapView.frame.height / 1.47 + tabbarFrame!.size.height + (83 - tabbarFrame!.size.height)
         } else {
-            cardHeight = self.mapView.frame.height / 2 + tabbarFrame!.size.height
+            cardHeight = self.mapView.frame.height / 1.5 + tabbarFrame!.size.height
         }
         
         //탭바 높이 추가 설정

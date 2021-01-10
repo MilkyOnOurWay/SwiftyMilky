@@ -7,6 +7,7 @@
 
 import UIKit
 import NMapsMap
+import DLRadioButton
 
 class HomeVC: UIViewController {
     
@@ -47,6 +48,17 @@ class HomeVC: UIViewController {
     var runningAnimations = [UIViewPropertyAnimator]()
     var animationProgressWhenInterrupted:CGFloat = 0
     
+    // 서버에서 모든 시작이 1이라고 해서 tag 값을 1부터 설정함. 여섯개 넣어줌
+    var beforeState: [Bool] = [false, false, false, false, false, false]
+    
+    let searchLocation = [[0, 0],
+                          [37.557852, 126.907507], //망원
+                          [37.562680, 126.921358], //연남
+                          [37.536427, 127.005132], //한남
+                          [37.523733, 127.021235], //신사
+                          [37.500667, 127.038390]] //역삼
+    
+    
     // 지도 관련
     var locationManager = CLLocationManager()
     var markers = [NMFMarker]()
@@ -81,9 +93,12 @@ class HomeVC: UIViewController {
         delegateGather()
         setNickNameLabel(nickName: "유진") //일단 박아넣기 ~,~
         setLocation()
+        setMap()
+        setMarker()
         setMapButton()
         setFilterButton()
         setBottomCard()
+        setRadioBtn()
     }
     
     // MARK: - 검색화면으로 이동
@@ -271,7 +286,15 @@ extension HomeVC {
         cardVC.handleArea.addGestureRecognizer(tapGestureRecognizer)
         cardVC.handleArea.addGestureRecognizer(panGestureRecognizer)
     }
-    
+    func setRadioBtn() {
+        cardVC.mangwonBtn.addTarget(self, action: #selector(sendBtnTag(_:)), for: .touchUpInside)
+        cardVC.younnamBtn.addTarget(self, action: #selector(sendBtnTag(_:)), for: .touchUpInside)
+        cardVC.hannamBtn.addTarget(self, action: #selector(sendBtnTag(_:)), for: .touchUpInside)
+        cardVC.shinsaBtn.addTarget(self, action: #selector(sendBtnTag(_:)), for: .touchUpInside)
+        cardVC.yuksamBtn.addTarget(self, action: #selector(sendBtnTag(_:)), for: .touchUpInside)
+        
+        
+    }
     func animateTransitionIfNeeded (state:CardState, duration:TimeInterval) {
         
         // 탭바 높이
@@ -324,6 +347,25 @@ extension HomeVC {
         for animator in runningAnimations {
             animator.continueAnimation(withTimingParameters: nil, durationFactor: 0)
         }
+    }
+    
+    @objc func sendBtnTag(_ sender:DLRadioButton) {
+
+        print(sender.tag)
+        
+        cameraUpdate = NMFCameraUpdate(scrollTo: NMGLatLng(lat: searchLocation[sender.tag][0], lng: searchLocation[sender.tag][1]))
+        cameraUpdate.animation = .easeIn
+        cameraUpdate.animationDuration = 0.5
+        mapView.moveCamera(cameraUpdate)
+        
+        if beforeState[sender.tag] == true {
+            sender.isSelected = false
+        }
+        beforeState[1] = cardVC.mangwonBtn.isSelected
+        beforeState[2] = cardVC.younnamBtn.isSelected
+        beforeState[3] = cardVC.hannamBtn.isSelected
+        beforeState[4] = cardVC.shinsaBtn.isSelected
+        beforeState[5] = cardVC.yuksamBtn.isSelected
     }
     
     @objc

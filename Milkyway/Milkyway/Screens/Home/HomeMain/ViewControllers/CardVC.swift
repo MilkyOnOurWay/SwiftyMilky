@@ -23,8 +23,11 @@ class CardVC: UIViewController {
     @IBOutlet var yuksamBtn: DLRadioButton!
     
     // 서버에서 모든 시작이 1이라고 해서 tag 값을 1부터 설정함. 여섯개 넣어줌
-    var beforeState: [Bool] = [false, false, false, false, false, false]
-//    let searchLocation = [0]
+//    var beforeState: [Bool] = [false, false, false, false, false, false]
+    
+    // 망원 연남 한남 신사 역삼
+//    let searchLocation = [[0, 0], [37.555941, 126.910067], [37.555941, 126.910067], [37.555941, 126.910067], [37.555941, 126.910067], [37.555941, 126.910067]]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setView()
@@ -53,11 +56,6 @@ extension CardVC {
     }
     
     func setRadioButton() {
-        mangwonBtn.addTarget(self, action: #selector(sendBtnTag(_:)), for: .touchUpInside)
-        younnamBtn.addTarget(self, action: #selector(sendBtnTag(_:)), for: .touchUpInside)
-        hannamBtn.addTarget(self, action: #selector(sendBtnTag(_:)), for: .touchUpInside)
-        shinsaBtn.addTarget(self, action: #selector(sendBtnTag(_:)), for: .touchUpInside)
-        yuksamBtn.addTarget(self, action: #selector(sendBtnTag(_:)), for: .touchUpInside)
         
         mangwonBtn.icon = UIImage(named: "mangwon_w")!
         younnamBtn.icon = UIImage(named: "younnam_w")!
@@ -79,19 +77,4 @@ extension CardVC {
         shinsaBtn.isSelected = false
         yuksamBtn.isSelected = false
     }
-    @objc func sendBtnTag(_ sender:DLRadioButton) {
-
-        print(sender.tag)
-        
-        if beforeState[sender.tag] == true {
-            sender.isSelected = false
-        }
-        beforeState[1] = mangwonBtn.isSelected
-        beforeState[2] = younnamBtn.isSelected
-        beforeState[3] = hannamBtn.isSelected
-        beforeState[4] = shinsaBtn.isSelected
-        beforeState[5] = yuksamBtn.isSelected
-    }
-    
-    
 }

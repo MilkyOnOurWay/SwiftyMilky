@@ -6,11 +6,14 @@
 //
 
 import UIKit
+import NMapsMap
 
 class ResultMapVC: UIViewController {
     
+    @IBOutlet weak var mapView: NMFMapView!
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var deleteButton: UIButton!
+    @IBOutlet weak var locationButton: UIButton!
     
     var cardVC: FilterResultCardVC! // 필터링 결과 카드 뷰와 UI 동일하므로 그대로 재사용하기
     // 뷰 등장할 때 다시 등장

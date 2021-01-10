@@ -272,3 +272,34 @@ extension HomeVC {
         }
     }
 }
+extension HomeVC: NMFMapViewTouchDelegate {
+    func mapView(_ mapView: NMFMapView, didTapMap latlng: NMGLatLng, point: CGPoint) {
+        print("\(latlng)")
+    }
+    
+    func mapView(_ mapView: NMFMapView, didTap symbol: NMFSymbol) -> Bool {
+        print(symbol)
+        return true
+    }
+}
+
+extension HomeVC: NMFMapViewCameraDelegate {
+    func mapView(_ mapView: NMFMapView, cameraWillChangeByReason reason: Int, animated: Bool){
+        if reason == NMFMapChangedByGesture {
+//            print("지도 움직이는 중 zoom level: \(mapView.zoomLevel)")
+//            mapView.locationOverlay.icon = currentLImage
+        }
+      
+    }
+    
+    func mapView(_ mapView: NMFMapView, cameraIsChangingByReason reason: Int) {
+        
+    }
+    
+    func mapView(_ mapView: NMFMapView, cameraDidChangeByReason reason: Int, animated: Bool) {
+
+    }
+    
+    func mapViewCameraIdle(_ mapView: NMFMapView){
+    }
+}

@@ -24,7 +24,7 @@ class CardVC: UIViewController {
     
     // 서버에서 모든 시작이 1이라고 해서 tag 값을 1부터 설정함. 여섯개 넣어줌
     var beforeState: [Bool] = [false, false, false, false, false, false]
-    
+//    let searchLocation = [0]
     override func viewDidLoad() {
         super.viewDidLoad()
         setView()
@@ -72,7 +72,13 @@ extension CardVC {
         yuksamBtn.iconSelected = UIImage(named: "yuksam_p")!
     }
     
-    
+    func resetRadioButton() {
+        mangwonBtn.isSelected = false
+        younnamBtn.isSelected = false
+        hannamBtn.isSelected = false
+        shinsaBtn.isSelected = false
+        yuksamBtn.isSelected = false
+    }
     @objc func sendBtnTag(_ sender:DLRadioButton) {
 
         print(sender.tag)

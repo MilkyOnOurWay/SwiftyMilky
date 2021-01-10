@@ -159,19 +159,19 @@
     </objects>
     <designables>
         <designable name="Nsc-4b-exi">
-            <size key="intrinsicContentSize" width="30" height="34"/>
+            <size key="intrinsicContentSize" width="15" height="22"/>
         </designable>
         <designable name="kAH-T0-Rsg">
-            <size key="intrinsicContentSize" width="30" height="34"/>
+            <size key="intrinsicContentSize" width="15" height="22"/>
         </designable>
         <designable name="lye-or-zb4">
-            <size key="intrinsicContentSize" width="30" height="34"/>
+            <size key="intrinsicContentSize" width="15" height="22"/>
         </designable>
         <designable name="o4r-mI-mLB">
-            <size key="intrinsicContentSize" width="30" height="34"/>
+            <size key="intrinsicContentSize" width="15" height="22"/>
         </designable>
         <designable name="rAr-yS-uYV">
-            <size key="intrinsicContentSize" width="30" height="34"/>
+            <size key="intrinsicContentSize" width="15" height="22"/>
         </designable>
     </designables>
     <resources>

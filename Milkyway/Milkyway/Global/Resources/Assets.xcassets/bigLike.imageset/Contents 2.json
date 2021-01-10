@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "scale" : "1x",
+      "filename" : "group274.png",
+      "idiom" : "universal"
+    },
+    {
+      "scale" : "2x",
+      "filename" : "group274@2x.png",
+      "idiom" : "universal"
+    },
+    {
+      "filename" : "group274@3x.png",
+      "scale" : "3x",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "version" : 1,
+    "author" : "xcode"
+  }
+}

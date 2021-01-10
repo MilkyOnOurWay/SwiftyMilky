@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Pro-Text-Bold.otf">
+            <string>SFProText-Bold</string>
+        </array>
+        <array key="SF-Pro-Text-Regular.otf">
+            <string>SFProText-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CafeCardVC" customModule="Milkyway" customModuleProvider="target">
+            <connections>
+                <outlet property="addButton" destination="V7C-6P-AQf" id="exn-e6-Nwp"/>
+                <outlet property="cafeAddressLabel" destination="Ldz-Jb-Ekc" id="dGh-yY-Oli"/>
+                <outlet property="cafeNameLabel" destination="L8p-LF-JfM" id="GgH-78-ZWe"/>
+                <outlet property="cafeTimeLabel" destination="7kf-cy-MFp" id="PGZ-ed-gbC"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="XxX-nw-Oiw">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="125"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="카페이름길어봤자얼마나길까카페" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L8p-LF-JfM">
+                    <rect key="frame" x="20" y="15" width="243" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="22" id="dtQ-Pn-QYb"/>
+                        <constraint firstAttribute="width" constant="243" id="nXO-Tx-1eb"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="16"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="서울시노원구공릉1동서울여자대학교" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ldz-Jb-Ekc">
+                    <rect key="frame" x="20" y="91" width="243" height="15"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="243" id="EDB-xE-45d"/>
+                        <constraint firstAttribute="height" constant="15" id="aaT-vo-L7S"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="12"/>
+                    <color key="textColor" name="darkGrey"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="평일 09:00 - 20:00\r\n토요일 11:00 - 18:00\r\n일요일 11:00 - 17:00" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7kf-cy-MFp">
+                    <rect key="frame" x="20" y="69" width="167" height="43"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="167" id="NNX-TB-dnF"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="12"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V7C-6P-AQf">
+                    <rect key="frame" x="325" y="12.5" width="30" height="27"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="30" id="V7E-r2-hgb"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="12"/>
+                    <state key="normal" title="삭제">
+                        <color key="titleColor" name="darkGrey"/>
+                    </state>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="4Iv-1K-PNj"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="L8p-LF-JfM" firstAttribute="leading" secondItem="4Iv-1K-PNj" secondAttribute="leading" constant="20" id="2Ym-xG-UP2"/>
+                <constraint firstItem="Ldz-Jb-Ekc" firstAttribute="leading" secondItem="L8p-LF-JfM" secondAttribute="leading" id="4hq-7o-UFG"/>
+                <constraint firstItem="4Iv-1K-PNj" firstAttribute="trailing" secondItem="V7C-6P-AQf" secondAttribute="trailing" constant="20" id="DW6-oJ-Tlf"/>
+                <constraint firstItem="V7C-6P-AQf" firstAttribute="centerY" secondItem="L8p-LF-JfM" secondAttribute="centerY" id="G82-Dp-Eba"/>
+                <constraint firstItem="Ldz-Jb-Ekc" firstAttribute="top" secondItem="L8p-LF-JfM" secondAttribute="bottom" constant="5" id="OQB-pP-cty"/>
+                <constraint firstItem="4Iv-1K-PNj" firstAttribute="bottom" secondItem="7kf-cy-MFp" secondAttribute="bottom" constant="13" id="aMU-Cf-7H7"/>
+                <constraint firstItem="7kf-cy-MFp" firstAttribute="leading" secondItem="Ldz-Jb-Ekc" secondAttribute="leading" id="pGo-ZN-6zZ"/>
+                <constraint firstItem="L8p-LF-JfM" firstAttribute="top" secondItem="4Iv-1K-PNj" secondAttribute="top" constant="20" id="tvW-WV-t3D"/>
+                <constraint firstItem="4Iv-1K-PNj" firstAttribute="trailing" secondItem="Ldz-Jb-Ekc" secondAttribute="trailing" constant="112" id="ydd-BS-Dbi"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-734" y="62"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="darkGrey">
+            <color red="0.60399997234344482" green="0.59200000762939453" blue="0.57300001382827759" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

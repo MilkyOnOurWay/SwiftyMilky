@@ -35,12 +35,7 @@ extension SearchResultVC {
         noResultImageView.isHidden = true
         
     }
-    func setReportSearchTableView(){
-        
-        let nibName = UINib(nibName: "AddSearchTVC", bundle: nil)
-        searchTableView.register(nibName, forCellReuseIdentifier: "AddSearchTVC")
-        noResultImageView.isHidden = true
-    }
+   
     func setTextField(){
         searchTextField.delegate = self
         

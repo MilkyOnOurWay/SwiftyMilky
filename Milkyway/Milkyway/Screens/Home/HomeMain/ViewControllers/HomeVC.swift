@@ -36,6 +36,7 @@ class HomeVC: UIViewController {
     
     // 바텀시트 관련
     var cardVC:CardVC!
+    var cafeCardVC: CafeCardVC!
     
     var cardHeight:CGFloat = 0 //363 //카드 높이 280 + 탭바높이 83 그냥 박는 버전
     let cardHandleAreaHeight:CGFloat = 84
@@ -98,6 +99,7 @@ class HomeVC: UIViewController {
         setMapButton()
         setFilterButton()
         setBottomCard()
+        setFirstCardView()
         setRadioBtn()
     }
     
@@ -165,6 +167,19 @@ extension HomeVC {
         mapView.addCameraDelegate(delegate: self)
         mapView.touchDelegate = self
     }
+    
+    func setFirstCardView() {
+        cafeCardVC = CafeCardVC(nibName: "CafeCardVC", bundle: nil)
+        self.addChild(cafeCardVC)
+        self.view.addSubview(cafeCardVC.view)
+        print("addsubView")
+        let tabbarFrame = self.tabBarController?.tabBar.frame
+        
+        cafeCardVC.view.frame = CGRect(x:0, y: self.view.frame.height - tabbarFrame!.size.height - 125, width: self.view.bounds.width, height: 125)
+        
+        cafeCardVC.view.isHidden = true
+    }
+    
     func setLocation(){
         locationManager = CLLocationManager()
         locationManager.requestWhenInUseAuthorization() //권한요청
@@ -203,11 +218,10 @@ extension HomeVC {
                     self.beforeMarker?.iconImage = self.unselectedImage
                     marker.iconImage = self.selectedImage
                     self.beforeMarker = marker
-                    markerDidTap()
+                    cafeCardVC.view.isHidden = false
+                    cardVC.view.isHidden = true
                     return true
                 }
-                
-                
                 marker.mapView = mapView
                 markers.append(marker)
             }
@@ -228,8 +242,6 @@ extension HomeVC {
     }
     
     @objc func locationButtonDidTap(_ sender:UIButton){
-        cardVC.resetRadioButton()
-        
         mapView.zoomLevel = 14
         
         if sender.isSelected == true {
@@ -247,9 +259,6 @@ extension HomeVC {
             mapView.locationOverlay.icon = currentLImage
             mapView.locationOverlay.subIcon = compassImage
         }
-    }
-    @objc func markerDidTap(){
-        
     }
     
     
@@ -314,6 +323,7 @@ extension HomeVC {
                     self.cardVC.view.frame.origin.y = self.view.frame.height - self.cardHeight
                 case .collapsed:
                     self.cardVC.view.frame.origin.y = self.view.frame.height - self.cardHandleAreaHeight - tabbarFrame!.size.height
+                    self.cardVC.resetRadioButton()
                 }
             }
             
@@ -398,10 +408,16 @@ extension HomeVC {
 extension HomeVC: NMFMapViewTouchDelegate {
     func mapView(_ mapView: NMFMapView, didTapMap latlng: NMGLatLng, point: CGPoint) {
         print("\(latlng)")
+        cafeCardVC.view.isHidden = true
+        cardVC.view.isHidden = false
+        self.beforeMarker?.iconImage = self.unselectedImage
     }
     
     func mapView(_ mapView: NMFMapView, didTap symbol: NMFSymbol) -> Bool {
         print(symbol)
+        cafeCardVC.view.isHidden = true
+        cardVC.view.isHidden = false
+        self.beforeMarker?.iconImage = self.unselectedImage
         return true
     }
 }
@@ -411,6 +427,10 @@ extension HomeVC: NMFMapViewCameraDelegate {
         if reason == NMFMapChangedByGesture {
             print("지도 움직이는 중 zoom level: \(mapView.zoomLevel)")
             mapView.locationOverlay.icon = currentLImage
+            
+//            cafeCardVC.view.isHidden = true
+            self.beforeMarker?.iconImage = self.unselectedImage
+            
         }
       
     }

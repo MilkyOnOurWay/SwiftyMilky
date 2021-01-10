@@ -9,14 +9,16 @@ import UIKit
 
 class CafeCardVC: UIViewController {
 
+    @IBOutlet var rootView: UIView!
     @IBOutlet weak var cafeNameLabel: UILabel!
     @IBOutlet weak var cafeAddressLabel: UILabel!
     @IBOutlet weak var cafeTimeLabel: UILabel!
     @IBOutlet weak var addButton: UIButton!
+    @IBOutlet var addCountLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setView()
     }
 
 
@@ -24,9 +26,10 @@ class CafeCardVC: UIViewController {
 }
 
 extension CafeCardVC {
-    
+    func setView() {
+        rootView.layer.cornerRadius = 12
+    }
     func setAddButton(){
-        
         addButton.addTarget(self, action: #selector(addButtonDidTap), for: .touchUpInside)
     }
     

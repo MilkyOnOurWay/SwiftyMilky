@@ -88,6 +88,7 @@
 		F2242A69259CD2F600455604 /* FilterResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2242A68259CD2F500455604 /* FilterResultVC.swift */; };
 		F2242A6C259CD30400455604 /* FilterResult.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2242A6B259CD30400455604 /* FilterResult.storyboard */; };
 		F240771725A731EB008B691B /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F240771625A731EB008B691B /* SplashVC.swift */; };
+		F2478EE725AB00BB00091F1E /* ResultMapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2478EE625AB00BB00091F1E /* ResultMapVC.swift */; };
 		F2485E7B25A8C8E0003E3895 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2485E7A25A8C8E0003E3895 /* Token.swift */; };
 		F2485EA825A8E60A003E3895 /* UniverseCardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2485EA625A8E60A003E3895 /* UniverseCardVC.swift */; };
 		F2485EA925A8E60A003E3895 /* UniverseCardVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2485EA725A8E60A003E3895 /* UniverseCardVC.xib */; };
@@ -206,6 +207,7 @@
 		F2242A68259CD2F500455604 /* FilterResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterResultVC.swift; sourceTree = "<group>"; };
 		F2242A6B259CD30400455604 /* FilterResult.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FilterResult.storyboard; sourceTree = "<group>"; };
 		F240771625A731EB008B691B /* SplashVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashVC.swift; sourceTree = "<group>"; };
+		F2478EE625AB00BB00091F1E /* ResultMapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultMapVC.swift; sourceTree = "<group>"; };
 		F2485E7A25A8C8E0003E3895 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		F2485EA625A8E60A003E3895 /* UniverseCardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UniverseCardVC.swift; path = Milkyway/Screens/MyUniverse/ViewControllers/UniverseCardVC.swift; sourceTree = SOURCE_ROOT; };
 		F2485EA725A8E60A003E3895 /* UniverseCardVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = UniverseCardVC.xib; path = Milkyway/Screens/MyUniverse/ViewControllers/UniverseCardVC.xib; sourceTree = SOURCE_ROOT; };
@@ -492,6 +494,7 @@
 			children = (
 				D1F22860259F78C20018C472 /* SearchVC.swift */,
 				F2F6123325A61C47008B65DF /* SearchResultVC.swift */,
+				F2478EE625AB00BB00091F1E /* ResultMapVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -971,6 +974,7 @@
 				F2242A69259CD2F600455604 /* FilterResultVC.swift in Sources */,
 				D11ABA1625A62B9B00C1927E /* UILabel+Extension.swift in Sources */,
 				D1CA104825A9A70E004E42DC /* cafePopUpVC.swift in Sources */,
+				F2478EE725AB00BB00091F1E /* ResultMapVC.swift in Sources */,
 				F2BA63252598E6E900A49020 /* UITableView+Extension.swift in Sources */,
 				6BF6DAA225A603A7001CDB9A /* CustomLabel.swift in Sources */,
 				D1F2283B259F70DA0018C472 /* ReportTabBarViewController.swift in Sources */,

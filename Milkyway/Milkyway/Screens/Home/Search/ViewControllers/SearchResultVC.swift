@@ -35,7 +35,12 @@ extension SearchResultVC {
         noResultImageView.isHidden = true
         
     }
-    
+    func setReportSearchTableView(){
+        
+        let nibName = UINib(nibName: "AddSearchTVC", bundle: nil)
+        searchTableView.register(nibName, forCellReuseIdentifier: "AddSearchTVC")
+        noResultImageView.isHidden = true
+    }
     func setTextField(){
         searchTextField.delegate = self
         
@@ -78,6 +83,12 @@ extension SearchResultVC: UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        guard let resultMapVC = self.storyboard?.instantiateViewController(identifier: "ResultMapVC") as? ResultMapVC else { return }
+        resultMapVC.hidesBottomBarWhenPushed = false
+        self.navigationController?.pushViewController(resultMapVC, animated: true)
+    }
     
     
 }

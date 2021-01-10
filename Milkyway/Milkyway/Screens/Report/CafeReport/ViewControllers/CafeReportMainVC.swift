@@ -256,6 +256,7 @@ extension CafeReportMainVC {
             return
         }
         self.navigationController?.pushViewController(nvc, animated: true)
+        
     }
     
     

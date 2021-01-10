@@ -16,6 +16,11 @@ class ReportTabBarViewController: ButtonBarPagerTabStripViewController {
         setupDefaultStyle()
         changeCheck()
         
+        // 로딩관련 노티
+        NotificationCenter.default.addObserver(self, selector: #selector(showLoadingLottie), name: Notification.Name("startlottie"),object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(stopLottieAnimation), name: Notification.Name("stoplottie"),object: nil)
+        
+        
         super.viewDidLoad()
         
     }
@@ -33,6 +38,24 @@ class ReportTabBarViewController: ButtonBarPagerTabStripViewController {
         
         return [cafeReport, myReport]
     }
+    
+    
+    // MARK: - 데이터 로딩 중 Lottie 화면
+    private var loadingView: UIActivityIndicatorView?
+    
+    @objc private func showLoadingLottie() {
+        loadingView = UIActivityIndicatorView(style: .large)
+        self.view.addSubview(loadingView!)
+        loadingView?.center = self.view.center
+        loadingView?.startAnimating()
+    }
+    
+    @objc private func stopLottieAnimation() {
+        loadingView?.stopAnimating()
+        loadingView?.removeFromSuperview()
+        loadingView = nil
+    }
+    
     
 
 }

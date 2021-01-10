@@ -8,20 +8,62 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Pro-Text-Bold.otf">
+            <string>SFProText-Bold</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UniverseBottomVC" customModule="Milkyway" customModuleProvider="target">
             <connections>
+                <outlet property="handleArea" destination="BGb-th-M0Z" id="YMZ-1x-3L1"/>
+                <outlet property="handleBar" destination="qre-cJ-rRI" id="p8T-WL-ad1"/>
+                <outlet property="rootView" destination="i5M-Pr-FkT" id="axB-39-p7z"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="444" height="431"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="431"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BGb-th-M0Z">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="84"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="마이 유니버스" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JcH-aO-ag4">
+                            <rect key="frame" x="103" y="44" width="169" height="20"/>
+                            <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="16"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qre-cJ-rRI">
+                            <rect key="frame" x="175.5" y="24" width="24" height="2"/>
+                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="24" id="LFH-0j-VnT"/>
+                                <constraint firstAttribute="height" constant="2" id="jw5-ch-1b4"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="qre-cJ-rRI" firstAttribute="centerX" secondItem="BGb-th-M0Z" secondAttribute="centerX" id="F9V-Gk-Deg"/>
+                        <constraint firstItem="qre-cJ-rRI" firstAttribute="top" secondItem="BGb-th-M0Z" secondAttribute="top" constant="24" id="aZD-DD-yJr"/>
+                        <constraint firstAttribute="height" constant="84" id="h0W-Bs-ttg"/>
+                        <constraint firstAttribute="trailing" secondItem="JcH-aO-ag4" secondAttribute="trailing" constant="103" id="hWl-wS-HaI"/>
+                        <constraint firstItem="JcH-aO-ag4" firstAttribute="leading" secondItem="BGb-th-M0Z" secondAttribute="leading" constant="103" id="iUe-Si-eVX"/>
+                        <constraint firstAttribute="bottom" secondItem="JcH-aO-ag4" secondAttribute="bottom" constant="20" id="ua4-Pq-nLj"/>
+                    </constraints>
+                </view>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="BGb-th-M0Z" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="PMa-6L-oX4"/>
+                <constraint firstItem="BGb-th-M0Z" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="S8k-tr-a4S"/>
+                <constraint firstAttribute="trailing" secondItem="BGb-th-M0Z" secondAttribute="trailing" id="o1b-Yv-HRT"/>
+            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="-1155.072463768116" y="5.6919642857142856"/>
+            <point key="canvasLocation" x="-1184.7826086956522" y="5.6919642857142856"/>
         </view>
     </objects>
     <resources>

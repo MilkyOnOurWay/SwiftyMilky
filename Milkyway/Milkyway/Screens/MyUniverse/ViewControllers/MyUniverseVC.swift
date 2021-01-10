@@ -24,6 +24,24 @@ class MyUniverseVC: UIViewController{
     var beforeMarker: NMFMarker?
     var placeMangWon = NMGLatLng(lat: 37.555941, lng: 126.910067)
     
+    
+    // 하단바
+    
+    var UniverseBottomVC: UniverseBottomVC!
+    
+    var cardHeight:CGFloat = 0 //363 //카드 높이 280 + 탭바높이 83 그냥 박는 버전
+    let cardHandleAreaHeight:CGFloat = 84
+    
+    var cardVisible = false
+    
+    var nextState:CardState {
+        return cardVisible ? .collapsed : .expanded
+    }
+    var runningAnimations = [UIViewPropertyAnimator]()
+    var animationProgressWhenInterrupted:CGFloat = 0
+    
+    
+    
     // 윤진 추가 변수
     var cardVC: UniverseCardVC!
     
@@ -159,6 +177,7 @@ class MyUniverseVC: UIViewController{
         setMarker()
         setMap()
         setMapButton()
+        setBottomCard()
         super.viewDidLoad()
         
     }
@@ -233,8 +252,7 @@ extension MyUniverseVC {
         
     }
     
-    
-    
+
     func setMarker() {
         if markers.isEmpty {
             for index in 0..<mangWon.count {
@@ -321,3 +339,123 @@ extension MyUniverseVC: NMFMapViewCameraDelegate {
     //        //mapView.locationOverlay.icon = nowImage
     //    }
 }
+
+extension MyUniverseVC {
+    
+    // MARK: - Bottom Card Setting GitHub -> https://github.com/brianadvent/InteractiveCardViewAnimation
+    
+    func setBottomCard() {
+        UniverseBottomVC = Milkyway.UniverseBottomVC(nibName:"UniverseBottomVC", bundle:nil)
+
+        self.addChild(UniverseBottomVC)
+        self.view.addSubview(UniverseBottomVC.view)
+        
+        // 탭바 높이
+        let tabbarFrame = self.tabBarController?.tabBar.frame;
+        
+        // SE에서 너무 많이 올라와서 이렇게 해봤는데 탭바 높이가 짧아서 덜 나오게 됨.
+        
+        if tabbarFrame!.size.height < 83 {
+            cardHeight = self.mapView.frame.height / 2 + tabbarFrame!.size.height + (83 - tabbarFrame!.size.height)
+        } else {
+            cardHeight = self.mapView.frame.height / 2 + tabbarFrame!.size.height
+        }
+//        cardHeight = self.mapView.frame.height / 2 + tabbarFrame!.size.height
+//        print("탭바 높이 \(tabbarFrame!.size.height)")
+//        print("card 높이 \(cardHeight)")
+        
+        //탭바 높이만큼 더하기
+        UniverseBottomVC.view.frame = CGRect(x: 0, y: self.view.frame.height - cardHandleAreaHeight - tabbarFrame!.size.height, width: self.view.bounds.width, height: cardHeight)
+        
+        UniverseBottomVC.view.clipsToBounds = false //여기 true면 shadow 안먹음
+        
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(MyUniverseVC.handleCardTap(recognzier:)))
+        let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(MyUniverseVC.handleCardPan(recognizer:)))
+        
+        UniverseBottomVC.handleArea.addGestureRecognizer(tapGestureRecognizer)
+        UniverseBottomVC.handleArea.addGestureRecognizer(panGestureRecognizer)
+    }
+    
+    func animateTransitionIfNeeded (state:CardState, duration:TimeInterval) {
+        
+        // 탭바 높이
+        let tabbarFrame = self.tabBarController?.tabBar.frame;
+        
+        if tabbarFrame!.size.height < 83 {
+            cardHeight = self.mapView.frame.height / 2 + tabbarFrame!.size.height + (83 - tabbarFrame!.size.height)
+        } else {
+            cardHeight = self.mapView.frame.height / 2 + tabbarFrame!.size.height
+        }
+        
+        //탭바 높이 추가 설정
+        if runningAnimations.isEmpty {
+            let frameAnimator = UIViewPropertyAnimator(duration: duration, dampingRatio: 1) {
+                switch state {
+                case .expanded:
+                    self.UniverseBottomVC.view.frame.origin.y = self.view.frame.height - self.cardHeight
+                case .collapsed:
+                    self.UniverseBottomVC.view.frame.origin.y = self.view.frame.height - self.cardHandleAreaHeight - tabbarFrame!.size.height
+                }
+            }
+            
+            frameAnimator.addCompletion { _ in
+                self.cardVisible = !self.cardVisible
+                self.runningAnimations.removeAll()
+            }
+            
+            frameAnimator.startAnimation()
+            runningAnimations.append(frameAnimator)
+        }
+    }
+    
+    func startInteractiveTransition(state:CardState, duration:TimeInterval) {
+        if runningAnimations.isEmpty {
+            animateTransitionIfNeeded(state: state, duration: duration)
+        }
+        for animator in runningAnimations {
+            animator.pauseAnimation()
+            animationProgressWhenInterrupted = animator.fractionComplete
+        }
+    }
+    
+    func updateInteractiveTransition(fractionCompleted:CGFloat) {
+        for animator in runningAnimations {
+            animator.fractionComplete = fractionCompleted + animationProgressWhenInterrupted
+        }
+    }
+    
+    func continueInteractiveTransition (){
+        for animator in runningAnimations {
+            animator.continueAnimation(withTimingParameters: nil, durationFactor: 0)
+        }
+    }
+    
+    @objc
+    func handleCardTap(recognzier:UITapGestureRecognizer) {
+        switch recognzier.state {
+        case .ended:
+            animateTransitionIfNeeded(state: nextState, duration: 0.9)
+        default:
+            break
+        }
+    }
+    
+    @objc
+    func handleCardPan (recognizer:UIPanGestureRecognizer) {
+        switch recognizer.state {
+        case .began:
+            startInteractiveTransition(state: nextState, duration: 0.9)
+        case .changed:
+            let translation = recognizer.translation(in: self.UniverseBottomVC.handleArea)
+            var fractionComplete = translation.y / cardHeight
+            fractionComplete = cardVisible ? fractionComplete : -fractionComplete
+            updateInteractiveTransition(fractionCompleted: fractionComplete)
+        case .ended:
+            continueInteractiveTransition()
+        default:
+            break
+        }
+    }
+}
+
+

@@ -62,7 +62,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hhr-HI-1bV">
-                    <rect key="frame" x="333" y="18" width="30" height="26"/>
+                    <rect key="frame" x="325" y="18" width="30" height="26"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="30" id="2m6-fy-Oo5"/>
                     </constraints>
@@ -75,14 +75,15 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="hhr-HI-1bV" firstAttribute="leading" secondItem="Cg0-m5-ArJ" secondAttribute="trailing" constant="70" id="5Eb-ky-bBs"/>
                 <constraint firstItem="hhr-HI-1bV" firstAttribute="centerY" secondItem="Cg0-m5-ArJ" secondAttribute="centerY" id="FfN-L1-WXq"/>
                 <constraint firstItem="Cg0-m5-ArJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="G81-c0-tAb"/>
                 <constraint firstItem="FNZ-mW-QpY" firstAttribute="top" secondItem="Cg0-m5-ArJ" secondAttribute="bottom" constant="5" id="GV2-KS-nxo"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="UIt-6G-Ocb" secondAttribute="bottom" constant="13" id="HDV-JD-gv7"/>
-                <constraint firstItem="UIt-6G-Ocb" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="OaE-tK-r3R"/>
+                <constraint firstItem="UIt-6G-Ocb" firstAttribute="leading" secondItem="FNZ-mW-QpY" secondAttribute="leading" id="Ihr-KX-naq"/>
                 <constraint firstItem="Cg0-m5-ArJ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="UwM-6j-5OF"/>
+                <constraint firstItem="FNZ-mW-QpY" firstAttribute="leading" secondItem="Cg0-m5-ArJ" secondAttribute="leading" id="WeQ-BE-tWy"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="FNZ-mW-QpY" secondAttribute="trailing" constant="112" id="YTs-6I-m3j"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="hhr-HI-1bV" secondAttribute="trailing" constant="20" id="oQP-dI-CYm"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="139" y="77"/>

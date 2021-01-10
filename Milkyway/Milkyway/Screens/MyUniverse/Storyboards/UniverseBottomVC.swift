@@ -8,22 +8,35 @@
 import UIKit
 
 class UniverseBottomVC: UIViewController {
-
+    
+    @IBOutlet weak var handleArea: UIView!
+    @IBOutlet var rootView: UIView!
+    @IBOutlet weak var handleBar: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setView()
+        setHandler()
 
-        // Do any additional setup after loading the view.
     }
 
+}
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+extension UniverseBottomVC {
+    
+    func setView() {
+        rootView.layer.cornerRadius = 12
+        
+        rootView.layer.shadowColor = UIColor.black.cgColor
+        rootView.layer.shadowOpacity = 0.1
+        rootView.layer.shadowOffset = CGSize(width: 0.0, height: -4.0)
+        rootView.layer.shadowRadius = 12
+        rootView.layer.masksToBounds = false
     }
-    */
-
+    func setHandler() {
+        handleBar.layer.cornerRadius = handleBar.frame.height / 2
+    
+       
+    }
 }

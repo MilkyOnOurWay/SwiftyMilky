@@ -275,14 +275,14 @@ extension MyUniverseVC {
     @objc func locationButtonDidTap(_ sender:UIButton){
         
         if sender.isSelected {
-            mapView.zoomLevel = 16
+            //mapView.zoomLevel = 16
             sender.isSelected = false
             mapView.positionMode = .direction
             mapView.locationOverlay.icon = overlayIconImage
             mapView.locationOverlay.subIcon = polygonIconImage
             
         } else {
-            mapView.zoomLevel = 16
+            //mapView.zoomLevel = 16
             sender.isSelected = true
             mapView.positionMode = .compass
             mapView.locationOverlay.icon = overlayIconImage

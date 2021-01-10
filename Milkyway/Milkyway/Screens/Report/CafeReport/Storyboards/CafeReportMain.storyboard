@@ -63,6 +63,7 @@
                                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
                                             </state>
                                             <connections>
+                                                <action selector="reportCompleteClicked:" destination="YDr-zv-LRW" eventType="touchUpInside" id="1k4-NR-ERb"/>
                                                 <segue destination="9H0-ND-XuN" kind="presentation" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="gqH-nb-bfB"/>
                                             </connections>
                                         </button>

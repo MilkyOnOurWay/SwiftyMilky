@@ -39,7 +39,7 @@ class MenuPlusVC: UIViewController {
         
         categoryFirstBtn.isMultipleSelectionEnabled = true
         readyToEdit()
-        
+        nextBtnAdd(priceTF)
         
         
         // 처음에는 입력 완료를 누를 수 없다.
@@ -70,7 +70,6 @@ extension MenuPlusVC  {
         
         let numberFormatter = NumberFormatter()
         numberFormatter.numberStyle = .decimal
-        numberFormatter.locale = .current
         let changeToDouble = Double(priceTF.text ?? "0") ?? 0
         let price = numberFormatter.string(from: NSNumber(value: changeToDouble))!
         
@@ -138,7 +137,6 @@ extension MenuPlusVC: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == self.menuTF {
-            nextBtnAdd(priceTF)
             self.priceTF.becomeFirstResponder()
         }
         

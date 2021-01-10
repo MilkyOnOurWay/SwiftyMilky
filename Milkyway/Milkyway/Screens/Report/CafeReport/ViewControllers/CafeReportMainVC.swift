@@ -17,11 +17,11 @@ class CafeReportMainVC: UIViewController, IndicatorInfoProvider {
     
     let cafeMenu = ["디카페인","두유","저지방우유","무지방우유"]
     
-    var dummyData = Cafepost(cafeName: "소영이네뽀짝카페",
-                             cafeAddress: "서울특별시 양천구 목동남로4길",
+    var dummyData = Cafepost(cafeName: "윤진이네새벽6시반",
+                             cafeAddress: "서울특별시 서초구",
                              cafeMapX: 126.8995926,
                              cafeMapY: 37.55638504,
-                             honeyTip: [1,3],
+                             honeyTip: [],
                              menu: [])
     var editIndex: Int?
     
@@ -42,13 +42,34 @@ class CafeReportMainVC: UIViewController, IndicatorInfoProvider {
     
     
     @IBAction func resetBtnClicked(_ sender: Any) {
-        dummyData.cafeName = nil
-        dummyData.cafeAddress = nil
+        resetEveryInfo()
         NotificationCenter.default.post(name: Notification.Name("removeHoneyTips"), object: nil)
         ToastView.showIn(viewController: self, message: "입력했던 정보가 초기화되었습니다.", fromBottom: 10)
-        tableView.reloadSections(IndexSet(0...2), with: .automatic)
+        
     }
-
+    
+    
+    @IBAction func reportCompleteClicked(_ sender: Any) {
+        
+        ReportCafeService.shared.ReportCafe(cafepost: dummyData) { responseData in
+            switch responseData {
+            case .success(let res):
+                print("success")
+                print(res)
+            case .requestErr(_):
+                print("request error")
+            case .pathErr:
+                print(".pathErr")
+            case .serverErr:
+                print(".serverErr")
+            case .networkFail:
+                print("failure")
+            }
+            
+            
+        }
+        
+    }
 }
 
 extension CafeReportMainVC: UITableViewDelegate {
@@ -138,7 +159,7 @@ extension CafeReportMainVC: UITableViewDataSource {
             
             // 수정/삭제 버튼 눌렸을 때
             cell.deleteModifyBtnAction = { [unowned self] in
-                let menu = self.dummyData.menu[indexPath.row]
+                let menu = self.dummyData.menu[indexPath.row].menuName
                 let actionSheet = UIAlertController(title: "메뉴를 수정 및 삭제합니다", message: "\(menu)", preferredStyle: .actionSheet)
                 
                 actionSheet.addAction(UIAlertAction(title: "수정", style: .default, handler: { result in
@@ -156,10 +177,10 @@ extension CafeReportMainVC: UITableViewDataSource {
                 actionSheet.addAction(UIAlertAction(title: "취소", style: .cancel, handler: nil))
                 
                 self.present(actionSheet, animated: true, completion: nil)
-
-              
-                }
-    
+                
+                
+            }
+            
             return cell
             
         }
@@ -247,11 +268,12 @@ extension CafeReportMainVC {
         dummyData.cafeAddress = nil
         dummyData.honeyTip = []
         dummyData.menu = []
+        checkReportOK()
         tableView.reloadData()
     }
     
     @objc func searchButtonDidTap(){
-
+        
         guard let nvc = UIStoryboard(name: "Search", bundle: nil).instantiateViewController(identifier: "SearchVC") as? SearchVC else {
             return
         }

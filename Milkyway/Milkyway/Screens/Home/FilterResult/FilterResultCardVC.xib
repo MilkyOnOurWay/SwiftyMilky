@@ -54,7 +54,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="평일 09:00 - 20:00\r\n토요일 11:00 - 18:00\r\n일요일 11:00 - 17:00" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iPw-g5-4gL">
-                    <rect key="frame" x="20" y="70" width="167" height="42"/>
+                    <rect key="frame" x="20" y="69" width="167" height="43"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="167" id="dRr-ba-Upb"/>
                     </constraints>
@@ -87,9 +87,10 @@
                 <constraint firstItem="lNq-tp-zA4" firstAttribute="leading" secondItem="3Nx-Tb-miQ" secondAttribute="trailing" constant="59" id="K3T-Dl-gty"/>
                 <constraint firstItem="Jw1-IB-Vlu" firstAttribute="centerX" secondItem="lNq-tp-zA4" secondAttribute="centerX" id="Qgn-DU-zMc"/>
                 <constraint firstItem="iPw-g5-4gL" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Ug4-1F-sHf"/>
-                <constraint firstItem="xuf-UQ-SiD" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="5" id="Y0h-NJ-gxx"/>
+                <constraint firstItem="iPw-g5-4gL" firstAttribute="top" secondItem="xuf-UQ-SiD" secondAttribute="bottom" constant="5" id="eXA-OH-5SY"/>
                 <constraint firstItem="3Nx-Tb-miQ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="jLk-6d-Twk"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Jw1-IB-Vlu" secondAttribute="bottom" constant="64" id="qt9-ma-fqp"/>
+                <constraint firstItem="xuf-UQ-SiD" firstAttribute="top" secondItem="3Nx-Tb-miQ" secondAttribute="bottom" constant="7" id="uDB-jq-O6E"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="iPw-g5-4gL" secondAttribute="bottom" constant="13" id="wmb-Kf-xxI"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

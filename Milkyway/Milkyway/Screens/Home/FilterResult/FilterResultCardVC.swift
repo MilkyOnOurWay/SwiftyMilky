@@ -21,7 +21,7 @@ class FilterResultCardVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setView()
-        
+        setUniverseButton()
     }
 
 }

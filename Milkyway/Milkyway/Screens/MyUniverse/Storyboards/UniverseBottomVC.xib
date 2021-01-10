@@ -19,6 +19,7 @@
                 <outlet property="handleArea" destination="BGb-th-M0Z" id="YMZ-1x-3L1"/>
                 <outlet property="handleBar" destination="qre-cJ-rRI" id="p8T-WL-ad1"/>
                 <outlet property="rootView" destination="i5M-Pr-FkT" id="axB-39-p7z"/>
+                <outlet property="tableView" destination="Qoi-XW-uFw" id="LKt-Pp-hSt"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -54,12 +55,20 @@
                         <constraint firstAttribute="bottom" secondItem="JcH-aO-ag4" secondAttribute="bottom" constant="20" id="ua4-Pq-nLj"/>
                     </constraints>
                 </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Qoi-XW-uFw">
+                    <rect key="frame" x="0.0" y="84" width="375" height="347"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Qoi-XW-uFw" secondAttribute="bottom" id="6mj-ka-8q9"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Qoi-XW-uFw" secondAttribute="trailing" id="Jfc-8l-QPG"/>
                 <constraint firstItem="BGb-th-M0Z" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="PMa-6L-oX4"/>
                 <constraint firstItem="BGb-th-M0Z" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="S8k-tr-a4S"/>
+                <constraint firstItem="Qoi-XW-uFw" firstAttribute="top" secondItem="BGb-th-M0Z" secondAttribute="bottom" id="axP-Gh-wbF"/>
+                <constraint firstItem="Qoi-XW-uFw" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="mpB-XC-rUm"/>
                 <constraint firstAttribute="trailing" secondItem="BGb-th-M0Z" secondAttribute="trailing" id="o1b-Yv-HRT"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

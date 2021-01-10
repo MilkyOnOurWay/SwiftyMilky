@@ -33,6 +33,7 @@ class DetailCafeMenuVC: UIViewController {
         delegateFunc()
         cellResister()
         notiGather()
+        likeLabel.text = "\(testCafe.universeCount)"
         
     }
     
@@ -143,6 +144,7 @@ extension DetailCafeMenuVC: UITableViewDataSource {
             // , 원 없이 들어온 거 처리하기
             let numberFormatter = NumberFormatter()
             numberFormatter.numberStyle = .decimal
+            numberFormatter.locale = .current
             let changeToDouble = Double(testCafe.menu[indexPath.row].price ) ?? 0
             let price = numberFormatter.string(from: NSNumber(value: changeToDouble))!
             

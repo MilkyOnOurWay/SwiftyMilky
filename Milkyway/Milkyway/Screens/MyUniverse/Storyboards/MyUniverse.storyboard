@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -21,12 +22,24 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iqj-ZF-uoU">
+                                <rect key="frame" x="326" y="645" width="68" height="68"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="68" id="2ca-JJ-suf"/>
+                                    <constraint firstAttribute="width" constant="68" id="lUz-zU-NSU"/>
+                                </constraints>
+                                <state key="normal">
+                                    <imageReference key="image" image="btnCurrentLocation" symbolScale="large"/>
+                                </state>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="L9B-nA-7Md"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="L9B-nA-7Md" firstAttribute="bottom" secondItem="45k-5X-Wyh" secondAttribute="bottom" id="1is-VV-MQp"/>
+                            <constraint firstItem="L9B-nA-7Md" firstAttribute="trailing" secondItem="iqj-ZF-uoU" secondAttribute="trailing" constant="20" id="NOH-4L-AH7"/>
                             <constraint firstItem="45k-5X-Wyh" firstAttribute="top" secondItem="jF0-DU-7Y0" secondAttribute="top" id="Rpr-9R-Pxa"/>
+                            <constraint firstItem="L9B-nA-7Md" firstAttribute="bottom" secondItem="iqj-ZF-uoU" secondAttribute="bottom" constant="100" id="cny-mE-eGo"/>
                             <constraint firstItem="45k-5X-Wyh" firstAttribute="leading" secondItem="L9B-nA-7Md" secondAttribute="leading" id="dvl-QA-iwY"/>
                             <constraint firstItem="L9B-nA-7Md" firstAttribute="trailing" secondItem="45k-5X-Wyh" secondAttribute="trailing" id="lE0-Vm-94d"/>
                         </constraints>
@@ -34,6 +47,7 @@
                     <tabBarItem key="tabBarItem" title="유니버스" image="mdiUniverse" selectedImage="mdiUniverseTapped" id="uOh-iJ-vku"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="locationBtn" destination="iqj-ZF-uoU" id="Jo9-uZ-ZxI"/>
                         <outlet property="mapView" destination="45k-5X-Wyh" id="FyS-33-hAU"/>
                     </connections>
                 </viewController>
@@ -43,6 +57,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="btnCurrentLocation" width="68" height="68"/>
         <image name="mdiUniverse" width="35" height="24"/>
         <image name="mdiUniverseTapped" width="35" height="24"/>
         <systemColor name="systemBackgroundColor">

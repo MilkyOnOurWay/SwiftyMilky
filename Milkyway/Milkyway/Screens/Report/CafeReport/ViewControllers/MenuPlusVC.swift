@@ -18,6 +18,7 @@ class MenuPlusVC: UIViewController {
     
     @IBOutlet weak var categoryFirstBtn: DLRadioButton!
     @IBOutlet weak var editEndBtn: UIButton!
+    @IBOutlet weak var editImageView: UIImageView!
     
     var editCafeMenu: Menu?
     var areyouEdit = false
@@ -69,6 +70,7 @@ extension MenuPlusVC  {
         
         let numberFormatter = NumberFormatter()
         numberFormatter.numberStyle = .decimal
+        numberFormatter.locale = .current
         let changeToDouble = Double(priceTF.text ?? "0") ?? 0
         let price = numberFormatter.string(from: NSNumber(value: changeToDouble))!
         
@@ -100,7 +102,7 @@ extension MenuPlusVC  {
     }
     
     // priceTF 오른쪽 상단에 done 버튼 넣기
-    @IBAction func nextBtnAdd(_ sender: UITextField) {
+    func nextBtnAdd(_ sender: UITextField) {
         let doneToolbar: UIToolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width:   UIScreen.main.bounds.width, height: 50))
         doneToolbar.barStyle = .default
         let flexSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
@@ -136,6 +138,7 @@ extension MenuPlusVC: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == self.menuTF {
+            nextBtnAdd(priceTF)
             self.priceTF.becomeFirstResponder()
         }
         
@@ -151,11 +154,11 @@ extension MenuPlusVC {
     func checkEditOK() {
         
         if menuCount > 0 && priceCount > 0 && category.count > 0 {
-            editEndBtn.setImage(UIImage(named: "btnInput"), for: .normal)
+            editImageView.image = UIImage(named: "btnInput")
             editEndBtn.isUserInteractionEnabled = true
         }
         else {
-            editEndBtn.setImage(UIImage(named: "btnInputOff"), for: .normal)
+            editImageView.image = UIImage(named: "btnInputOff")
             editEndBtn.isUserInteractionEnabled = false
         }
         

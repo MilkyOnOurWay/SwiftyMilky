@@ -46,6 +46,8 @@
 		D154440525A33B05007773BF /* CafeMenusCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D154440325A33B05007773BF /* CafeMenusCell.xib */; };
 		D154440925A33B10007773BF /* HoneyTipCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D154440725A33B10007773BF /* HoneyTipCell.swift */; };
 		D154440A25A33B10007773BF /* HoneyTipCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D154440825A33B10007773BF /* HoneyTipCell.xib */; };
+		D175DA5B25AAE5C600665678 /* UniverseBottomVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D175DA5925AAE5C600665678 /* UniverseBottomVC.swift */; };
+		D175DA5C25AAE5C600665678 /* UniverseBottomVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D175DA5A25AAE5C600665678 /* UniverseBottomVC.xib */; };
 		D1983CA725A72BF200C74CED /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1983CA625A72BF200C74CED /* UITextField+Extension.swift */; };
 		D1996E0425A2290500B8F40B /* DetailCafeMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1996E0325A2290500B8F40B /* DetailCafeMenuVC.swift */; };
 		D1996E0725A2290E00B8F40B /* DetailCafeMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1996E0625A2290E00B8F40B /* DetailCafeMenu.storyboard */; };
@@ -162,6 +164,8 @@
 		D154440325A33B05007773BF /* CafeMenusCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CafeMenusCell.xib; sourceTree = "<group>"; };
 		D154440725A33B10007773BF /* HoneyTipCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoneyTipCell.swift; sourceTree = "<group>"; };
 		D154440825A33B10007773BF /* HoneyTipCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HoneyTipCell.xib; sourceTree = "<group>"; };
+		D175DA5925AAE5C600665678 /* UniverseBottomVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniverseBottomVC.swift; sourceTree = "<group>"; };
+		D175DA5A25AAE5C600665678 /* UniverseBottomVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UniverseBottomVC.xib; sourceTree = "<group>"; };
 		D1983CA625A72BF200C74CED /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		D1996E0325A2290500B8F40B /* DetailCafeMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCafeMenuVC.swift; sourceTree = "<group>"; };
 		D1996E0625A2290E00B8F40B /* DetailCafeMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailCafeMenu.storyboard; sourceTree = "<group>"; };
@@ -653,6 +657,8 @@
 				F2242A56259C4AA600455604 /* MyUniverse.storyboard */,
 				F2485EA625A8E60A003E3895 /* UniverseCardVC.swift */,
 				F2485EA725A8E60A003E3895 /* UniverseCardVC.xib */,
+				D175DA5925AAE5C600665678 /* UniverseBottomVC.swift */,
+				D175DA5A25AAE5C600665678 /* UniverseBottomVC.xib */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -883,6 +889,7 @@
 				F26BEB6525A63BB900B7AFCF /* AddSearchTVC.xib in Resources */,
 				6BD05A6B25A41FFE00B2643F /* CompletedTVCell.xib in Resources */,
 				D15443F725A33ACF007773BF /* CafeNameSearchCell.xib in Resources */,
+				D175DA5C25AAE5C600665678 /* UniverseBottomVC.xib in Resources */,
 				D1996E0725A2290E00B8F40B /* DetailCafeMenu.storyboard in Resources */,
 				D1D95DD425A30B9700B95F79 /* CafeBasicCell.xib in Resources */,
 				F2242A57259C4AA600455604 /* MyUniverse.storyboard in Resources */,
@@ -1015,6 +1022,7 @@
 				6B27B99D25A6C5B900E14799 /* RectangleCVCell.swift in Sources */,
 				F2C0642525A8BDBF00BDD16D /* NetworkResult.swift in Sources */,
 				F2BA63172598E58A00A49020 /* Date+Extension.swift in Sources */,
+				D175DA5B25AAE5C600665678 /* UniverseBottomVC.swift in Sources */,
 				F2242A63259C78FD00455604 /* LoginNaviController.swift in Sources */,
 				D1D95DD825A30BA600B95F79 /* CafeHoneyCell.swift in Sources */,
 				D11ABA5025A64F3B00C1927E /* ToastView.swift in Sources */,
@@ -1160,7 +1168,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = F725AJ242J;
+				DEVELOPMENT_TEAM = 269D672VZ4;
 				INFOPLIST_FILE = "Milkyway/Global/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1181,7 +1189,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = F725AJ242J;
+				DEVELOPMENT_TEAM = 269D672VZ4;
 				INFOPLIST_FILE = "Milkyway/Global/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (

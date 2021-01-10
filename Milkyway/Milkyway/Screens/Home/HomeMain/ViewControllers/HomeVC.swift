@@ -23,10 +23,17 @@ class HomeVC: UIViewController {
     
     @IBOutlet var locationBtn: UIButton!
     
+    // 이미지들 넣기
+    let markerImage = NMFOverlayImage(name: "picker") //마커
+    let currentLImage = NMFOverlayImage(name: "group511") // 현위치 동그라미 이미지
+    let directionImage = NMFOverlayImage(name: "polygon") //direction group140 polygon4
+    let compassImage = NMFOverlayImage(name: "group510") //compass group158 group510
     
-    let marker = NMFMarker()
-    var locationManager = CLLocationManager()
+    let selectedImage = NMFOverlayImage(name: "pickerSelected")
+    let unselectedImage = NMFOverlayImage(name: "picker")
+    let uniSelectedImage = NMFOverlayImage(name: "pickerUniSelected")
     
+    // 바텀시트 관련
     var cardVC:CardVC!
     
     var cardHeight:CGFloat = 0 //363 //카드 높이 280 + 탭바높이 83 그냥 박는 버전
@@ -40,12 +47,40 @@ class HomeVC: UIViewController {
     var runningAnimations = [UIViewPropertyAnimator]()
     var animationProgressWhenInterrupted:CGFloat = 0
     
+    // 지도 관련
+    var locationManager = CLLocationManager()
+    var markers = [NMFMarker]()
+    var beforeMarker: NMFMarker?
+    
+    var cameraUpdate: NMFCameraUpdate!
+    
+    var placeMangWon = NMGLatLng(lat: 37.555941, lng: 126.910067)
+    
+    // 망원 좌표
+    var mangWon: [NMGLatLng] = [NMGLatLng(lat: 37.556635, lng: 126.908433),
+                                NMGLatLng(lat: 37.556987, lng: 126.907755),
+                                NMGLatLng(lat: 37.556748, lng: 126.910195),
+                                NMGLatLng(lat: 37.555522, lng: 126.904833),
+                                NMGLatLng(lat: 37.557539, lng: 126.904790),
+                                NMGLatLng(lat: 37.556534, lng: 126.907744),
+                                NMGLatLng(lat: 37.560183, lng: 126.909584),
+                                NMGLatLng(lat: 37.560889, lng: 126.906703),
+                                NMGLatLng(lat: 37.561905, lng: 126.903533),
+                                NMGLatLng(lat: 37.560668, lng: 126.901677),
+                                NMGLatLng(lat: 37.559249, lng: 126.902487),
+                                NMGLatLng(lat: 37.554322, lng: 126.906648),
+                                NMGLatLng(lat: 37.555351, lng: 126.902356),
+                                NMGLatLng(lat: 37.558472, lng: 126.907506),
+                                NMGLatLng(lat: 37.557741, lng: 126.910403),
+                                NMGLatLng(lat: 37.560786, lng: 126.906412),
+                                NMGLatLng(lat: 37.558884, lng: 126.905102)
+    ]
+    
     override func viewDidLoad(){
         super.viewDidLoad()
-        
+        delegateGather()
         setNickNameLabel(nickName: "유진") //일단 박아넣기 ~,~
-        
-        setMapLocation()
+        setLocation()
         setMapButton()
         setFilterButton()
         setBottomCard()
@@ -110,12 +145,14 @@ extension HomeVC {
         filterBtn4.addTarget(self, action: #selector(filterButtonDidTap), for: UIControl.Event.touchUpInside)
     }
     
-    func setMapLocation() {
-        marker.mapView = mapView
-        
-        locationManager = CLLocationManager()
+    func delegateGather() {
         locationManager.delegate = self
-        locationManager.requestWhenInUseAuthorization() //권한 요청
+        mapView.addCameraDelegate(delegate: self)
+        mapView.touchDelegate = self
+    }
+    func setLocation(){
+        locationManager = CLLocationManager()
+        locationManager.requestWhenInUseAuthorization() //권한요청
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.startUpdatingLocation()
         
@@ -123,11 +160,44 @@ extension HomeVC {
         move(at: coor)
     }
     
-    func move(at coordinate: CLLocationCoordinate2D?) {
-        
-        mapView.positionMode = .direction
+    func setMap() {
+        mapView.minZoomLevel = 5
+        mapView.maxZoomLevel = 18
     }
     
+    func move(at coordinate: CLLocationCoordinate2D?) {
+        let locationOverlay = mapView.locationOverlay
+        
+        mapView.positionMode = .direction
+        mapView.locationOverlay.icon = currentLImage
+        mapView.locationOverlay.subIcon = directionImage
+        
+        print("zoom level: \(mapView.zoomLevel)")
+        
+        locationOverlay.circleRadius = 0 // 기본 원그림자 없애기
+        locationOverlay.iconWidth = CGFloat(NMF_LOCATION_OVERLAY_SIZE_AUTO)
+        locationOverlay.iconHeight = CGFloat(NMF_LOCATION_OVERLAY_SIZE_AUTO)
+    }
+    func setMarker() {
+        if markers.isEmpty {
+            for index in 0..<mangWon.count {
+                
+                let marker = NMFMarker(position: mangWon[index], iconImage: unselectedImage)
+                marker.isHideCollidedMarkers = true
+                marker.touchHandler = { [self] (overlay: NMFOverlay) -> Bool in
+                    self.beforeMarker?.iconImage = self.unselectedImage
+                    marker.iconImage = self.selectedImage
+                    self.beforeMarker = marker
+                    markerDidTap()
+                    return true
+                }
+                
+                
+                marker.mapView = mapView
+                markers.append(marker)
+            }
+        }
+    }
     func setMapButton() {
         locationBtn.setImage(UIImage(named: "btnCurrentLocation"), for: UIControl.State.normal)
         locationBtn.setImage(UIImage(named: "compassIc"), for: UIControl.State.selected)
@@ -143,18 +213,29 @@ extension HomeVC {
     }
     
     @objc func locationButtonDidTap(_ sender:UIButton){
-//        cardVC.resetRadioButton()
+        cardVC.resetRadioButton()
         
-      if sender.isSelected == true {
-        sender.isSelected = false
-        mapView.positionMode = .direction
+        mapView.zoomLevel = 14
         
-      } else {
-        sender.isSelected = true
-        mapView.positionMode = .compass
-      }
+        if sender.isSelected == true {
+            sender.isSelected = false
+            print("direction btn | zoom level \(mapView.zoomLevel)")
+            
+            mapView.positionMode = .direction
+            mapView.locationOverlay.icon = currentLImage
+            mapView.locationOverlay.subIcon = directionImage
+        } else {
+            sender.isSelected = true
+            print("compass btn | zoom level \(mapView.zoomLevel)")
+            
+            mapView.positionMode = .compass
+            mapView.locationOverlay.icon = currentLImage
+            mapView.locationOverlay.subIcon = compassImage
+        }
     }
-    
+    @objc func markerDidTap(){
+        
+    }
     
     
     // MARK: - Bottom Card Setting GitHub -> https://github.com/brianadvent/InteractiveCardViewAnimation
@@ -286,8 +367,8 @@ extension HomeVC: NMFMapViewTouchDelegate {
 extension HomeVC: NMFMapViewCameraDelegate {
     func mapView(_ mapView: NMFMapView, cameraWillChangeByReason reason: Int, animated: Bool){
         if reason == NMFMapChangedByGesture {
-//            print("지도 움직이는 중 zoom level: \(mapView.zoomLevel)")
-//            mapView.locationOverlay.icon = currentLImage
+            print("지도 움직이는 중 zoom level: \(mapView.zoomLevel)")
+            mapView.locationOverlay.icon = currentLImage
         }
       
     }

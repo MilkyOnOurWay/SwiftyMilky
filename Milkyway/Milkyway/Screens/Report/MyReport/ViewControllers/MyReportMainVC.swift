@@ -135,7 +135,7 @@ extension MyReportMainVC: UITableViewDataSource {
                 cell.textLabel!.textAlignment = .center
                 cell.textLabel!.textColor = UIColor(named: "darkGrey")
                 cell.textLabel!.font = UIFont(name: "SFProText-Regular", size: 16.0)
-                
+                cell.selectionStyle = .none
                 return cell
             } else {
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: CompletedTVCell.identifier) as? CompletedTVCell else {

@@ -33,6 +33,7 @@ class DetailCafeMenuVC: UIViewController {
         delegateFunc()
         cellResister()
         notiGather()
+        likeLabel.text = "\(testCafe.universeCount)"
         
     }
     

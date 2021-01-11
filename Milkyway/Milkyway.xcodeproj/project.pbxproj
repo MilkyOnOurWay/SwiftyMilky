@@ -86,6 +86,9 @@
 		F2142DFB25A349F600D07F3F /* SF-Pro-Text-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F2142DFA25A349F600D07F3F /* SF-Pro-Text-Semibold.otf */; };
 		F2142DFE25A349FF00D07F3F /* SF-Pro-Text-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F2142DFD25A349FF00D07F3F /* SF-Pro-Text-Bold.otf */; };
 		F215A20625ACBD9B00FB7D86 /* NicknameChangeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F215A20525ACBD9B00FB7D86 /* NicknameChangeVC.swift */; };
+		F215A21525ACD77000FB7D86 /* SearchCafeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F215A21425ACD77000FB7D86 /* SearchCafeService.swift */; };
+		F215A21825ACDA6E00FB7D86 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F215A21725ACDA6E00FB7D86 /* String+Extensions.swift */; };
+		F215A22525ACDC0400FB7D86 /* GetCafeInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F215A22425ACDC0400FB7D86 /* GetCafeInfoModel.swift */; };
 		F2242A1B259BAC8200455604 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2242A1A259BAC8200455604 /* TabBarController.swift */; };
 		F2242A20259BAD5400455604 /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2242A1F259BAD5400455604 /* TabBar.storyboard */; };
 		F2242A24259BAFFC00455604 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2242A23259BAFFC00455604 /* HomeVC.swift */; };
@@ -220,6 +223,9 @@
 		F2142DFA25A349F600D07F3F /* SF-Pro-Text-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Semibold.otf"; sourceTree = "<group>"; };
 		F2142DFD25A349FF00D07F3F /* SF-Pro-Text-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Bold.otf"; sourceTree = "<group>"; };
 		F215A20525ACBD9B00FB7D86 /* NicknameChangeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameChangeVC.swift; sourceTree = "<group>"; };
+		F215A21425ACD77000FB7D86 /* SearchCafeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCafeService.swift; sourceTree = "<group>"; };
+		F215A21725ACDA6E00FB7D86 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		F215A22425ACDC0400FB7D86 /* GetCafeInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCafeInfoModel.swift; sourceTree = "<group>"; };
 		F2242A1A259BAC8200455604 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		F2242A1F259BAD5400455604 /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
 		F2242A23259BAFFC00455604 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
@@ -331,6 +337,7 @@
 				D1CA107625AA06E6004E42DC /* PostCafeModel.swift */,
 				D1CA107925AA06F1004E42DC /* GetDetailCafeModel.swift */,
 				6B4086D225AC33AD00D6894E /* GetMilkyHomeModel.swift */,
+				F215A22425ACDC0400FB7D86 /* GetCafeInfoModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -826,6 +833,7 @@
 				D11ABA5225A64F7D00C1927E /* ToastView.xib */,
 				D11ABA4F25A64F3B00C1927E /* ToastView.swift */,
 				D1983CA625A72BF200C74CED /* UITextField+Extension.swift */,
+				F215A21725ACDA6E00FB7D86 /* String+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -847,7 +855,11 @@
 				D1CA107C25AA09DB004E42DC /* DetailCafeService.swift */,
 				D175DA8C25AB863900665678 /* ReportCafeService.swift */,
 				6B4086CF25AC2B4E00D6894E /* HomeService.swift */,
+
 				D175DABB25ACCD5400665678 /* UniverseService.swift */,
+
+				F215A21425ACD77000FB7D86 /* SearchCafeService.swift */,
+
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1025,6 +1037,7 @@
 				6B4086D325AC33AD00D6894E /* GetMilkyHomeModel.swift in Sources */,
 				D154440425A33B05007773BF /* CafeMenusCell.swift in Sources */,
 				F2CD9C3625A83EBD001EC280 /* FilterResultCardVC.swift in Sources */,
+				F215A22525ACDC0400FB7D86 /* GetCafeInfoModel.swift in Sources */,
 				D154440925A33B10007773BF /* HoneyTipCell.swift in Sources */,
 				6BD05A6D25A41FFE00B2643F /* CompletedTVCell.swift in Sources */,
 				6BD05A6E25A41FFE00B2643F /* TopTVCell.swift in Sources */,
@@ -1041,6 +1054,7 @@
 				F2BA631A2598E5AA00A49020 /* UIImageView+Extension.swift in Sources */,
 				D1D95DDD25A30BB100B95F79 /* CafeMenuCell.swift in Sources */,
 				F2BA62E82598DE5F00A49020 /* Milkyway.xcdatamodeld in Sources */,
+				F215A21825ACDA6E00FB7D86 /* String+Extensions.swift in Sources */,
 				6B4086D025AC2B4E00D6894E /* HomeService.swift in Sources */,
 				F2242A54259C4A9B00455604 /* MyUniverseVC.swift in Sources */,
 				F2242A1B259BAC8200455604 /* TabBarController.swift in Sources */,
@@ -1060,6 +1074,7 @@
 				6B92F8E225AB82A50050EEEC /* CafeCardVC.swift in Sources */,
 				F2138D5425AC4B2A00736CAA /* SettingTVCell.swift in Sources */,
 				F240771725A731EB008B691B /* SplashVC.swift in Sources */,
+				F215A21525ACD77000FB7D86 /* SearchCafeService.swift in Sources */,
 				F2BA630A2598E4D400A49020 /* UIViewController+Extension.swift in Sources */,
 				D1983CA725A72BF200C74CED /* UITextField+Extension.swift in Sources */,
 				F26BEB6425A63BB900B7AFCF /* AddSearchTVC.swift in Sources */,
@@ -1240,7 +1255,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QPUG3J4E4B;
+				DEVELOPMENT_TEAM = 269D672VZ4;
 				INFOPLIST_FILE = "Milkyway/Global/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1261,7 +1276,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QPUG3J4E4B;
+				DEVELOPMENT_TEAM = 269D672VZ4;
 				INFOPLIST_FILE = "Milkyway/Global/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (

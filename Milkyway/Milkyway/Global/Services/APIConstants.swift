@@ -56,4 +56,7 @@ struct APIConstants {
     
     // DELETE 제보한 카페 확인 후 삭제 report/:cafeId
     static let deleteReport = BaseURL + "report/"
+    
+    // GET 제보하기에서 카카오 API 장소 조회하기
+    static let searchForReport = BaseURL + "search/report/cafe?query="
 }

@@ -56,6 +56,21 @@ extension AddSearchVC {
         self.navigationController?.pushViewController(nvc, animated: true)
         
     }
+//    func searchCafe(_ cafe: String){
+//
+//        SearchCafeService.shared.searchReportCafe(cafe) {
+//
+//            responseData in
+//            switch responseData {
+//
+//            case.success(let res):
+//                dump(res)
+//                let cafeList = res as! [CafeResult]
+//
+//            }
+//        }
+//
+//    }
     
 }
 

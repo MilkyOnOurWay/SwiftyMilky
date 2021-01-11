@@ -112,8 +112,30 @@ class HomeVC: UIViewController {
         }
         
         self.navigationController?.pushViewController(nvc, animated: true)
-        
     }
+//    func getData() {
+//        HomeService.shared.GetMilkyHome() { (result) in
+//            switch(result) {
+//            case .success(let data):
+//                if let profileDataModel = data as? profileDataModel {
+//                    let url = URL(string: profileDataModel.profileImage)
+//                    let data = try? Data(contentsOf: url!)
+//                    self.profileImageView.image = UIImage(data: data!)
+//                    self.nameLabel.text = profileDataModel.userName
+//                    self.emailLabel.text = profileDataModel.userEmail
+//                }
+//            case .requestErr(_):
+//                print("error")
+//            case .pathErr:
+//                print("pathErr")
+//            case .serverErr:
+//                print("serverErr")
+//            case .networkFail:
+//                print("networkFail")
+//            }
+//        }
+//
+//    }
 }
 
 extension HomeVC: CLLocationManagerDelegate {

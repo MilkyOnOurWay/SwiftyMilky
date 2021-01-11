@@ -76,6 +76,7 @@
 		D1F22865259F78C90018C472 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1F22864259F78C90018C472 /* Search.storyboard */; };
 		F21384B625A1E8360016E766 /* SearchTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21384B425A1E8360016E766 /* SearchTVC.swift */; };
 		F21384B725A1E8360016E766 /* SearchTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F21384B525A1E8360016E766 /* SearchTVC.xib */; };
+		F2138D5425AC4B2A00736CAA /* SettingTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2138D5325AC4B2A00736CAA /* SettingTVCell.swift */; };
 		F2142DF825A349EE00D07F3F /* SF-Pro-Text-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = F2142DF725A349EE00D07F3F /* SF-Pro-Text-Regular.otf */; };
 		F2142DFB25A349F600D07F3F /* SF-Pro-Text-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F2142DFA25A349F600D07F3F /* SF-Pro-Text-Semibold.otf */; };
 		F2142DFE25A349FF00D07F3F /* SF-Pro-Text-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F2142DFD25A349FF00D07F3F /* SF-Pro-Text-Bold.otf */; };
@@ -203,6 +204,7 @@
 		D1F22864259F78C90018C472 /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		F21384B425A1E8360016E766 /* SearchTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTVC.swift; sourceTree = "<group>"; };
 		F21384B525A1E8360016E766 /* SearchTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTVC.xib; sourceTree = "<group>"; };
+		F2138D5325AC4B2A00736CAA /* SettingTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTVCell.swift; sourceTree = "<group>"; };
 		F2142DF725A349EE00D07F3F /* SF-Pro-Text-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Regular.otf"; sourceTree = "<group>"; };
 		F2142DFA25A349F600D07F3F /* SF-Pro-Text-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Semibold.otf"; sourceTree = "<group>"; };
 		F2142DFD25A349FF00D07F3F /* SF-Pro-Text-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Bold.otf"; sourceTree = "<group>"; };
@@ -601,6 +603,7 @@
 			children = (
 				F2242A41259BB2EC00455604 /* ViewControllers */,
 				F2242A42259BB2F500455604 /* Storyboards */,
+				F2688C8A25AC2EFD0032C054 /* Cells */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -698,6 +701,14 @@
 				F2CD9C3525A83EBD001EC280 /* FilterResultCardVC.xib */,
 			);
 			path = FilterResult;
+			sourceTree = "<group>";
+		};
+		F2688C8A25AC2EFD0032C054 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				F2138D5325AC4B2A00736CAA /* SettingTVCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		F2BA62D12598DE5F00A49020 = {
@@ -1025,6 +1036,7 @@
 				F2C0642225A8BCD100BDD16D /* UserService.swift in Sources */,
 				F2242A24259BAFFC00455604 /* HomeVC.swift in Sources */,
 				6B92F8E225AB82A50050EEEC /* CafeCardVC.swift in Sources */,
+				F2138D5425AC4B2A00736CAA /* SettingTVCell.swift in Sources */,
 				F240771725A731EB008B691B /* SplashVC.swift in Sources */,
 				F2BA630A2598E4D400A49020 /* UIViewController+Extension.swift in Sources */,
 				D1983CA725A72BF200C74CED /* UITextField+Extension.swift in Sources */,

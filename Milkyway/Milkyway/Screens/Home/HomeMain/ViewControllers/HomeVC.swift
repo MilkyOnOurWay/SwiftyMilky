@@ -323,8 +323,6 @@ extension HomeVC {
         cardVC.hannamBtn.addTarget(self, action: #selector(sendBtnTag(_:)), for: .touchUpInside)
         cardVC.shinsaBtn.addTarget(self, action: #selector(sendBtnTag(_:)), for: .touchUpInside)
         cardVC.yuksamBtn.addTarget(self, action: #selector(sendBtnTag(_:)), for: .touchUpInside)
-        
-        
     }
     func animateTransitionIfNeeded (state:CardState, duration:TimeInterval) {
         

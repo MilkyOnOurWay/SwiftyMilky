@@ -14,6 +14,7 @@ class CafeBasicCell: UITableViewCell {
     @IBOutlet weak var openTimeLabel: UILabel!
     @IBOutlet weak var telNumBtn: UIButton!
     @IBOutlet weak var webPageBtn: UIButton!
+    @IBOutlet var modifyBtn: UIButton!
     
     
     
@@ -27,6 +28,7 @@ class CafeBasicCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
     
     
     // 전화번호 버튼 눌렸을 때

@@ -102,6 +102,7 @@ extension DetailCafeMenuVC: UITableViewDataSource {
             guard let cell: CafeBasicCell = tableView.dequeueReusableCell(withIdentifier: "CafeBasicCell" , for: indexPath) as? CafeBasicCell else{
                 return UITableViewCell()
             }
+            cell.modifyBtn.addTarget(self, action: #selector(modifyBtnClicked), for: .touchUpInside)
             cell.cafeNameLabel.text = testCafe.cafeInfo.cafeName
             cell.howManyLikeLabel.text = "\(testCafe.universeCount)명의 밀키들이 유니버스에 추가했어요"
             cell.locationLabel.text = testCafe.cafeInfo.cafeAddress
@@ -163,6 +164,7 @@ extension DetailCafeMenuVC {
     // 노티 옵저버들
     func notiGather() {
         NotificationCenter.default.addObserver(self, selector: #selector(webPageOpen), name: Notification.Name("webPage"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(confirmBtnClicked), name: Notification.Name("modifyConfirm"), object: nil)
     }
     
     // 프로토콜 상속
@@ -217,6 +219,18 @@ extension DetailCafeMenuVC {
         let safariViewController = SFSafariViewController(url: url)
         present(safariViewController, animated: true, completion: nil)
         
+    }
+    
+    @objc func modifyBtnClicked() {
+        print("modifyBtnClicked()")
+        let storyboard = UIStoryboard(name: "InfoModifyReq", bundle: nil)
+        if let dvc = storyboard.instantiateViewController(identifier: "InfoModifyReqVC") as? InfoModifyReqVC {
+            self.navigationController?.pushViewController(dvc, animated: true)
+        }
+    }
+    
+    @objc func confirmBtnClicked() {
+        self.navigationController?.popToRootViewController(animated: true)
     }
 }
 

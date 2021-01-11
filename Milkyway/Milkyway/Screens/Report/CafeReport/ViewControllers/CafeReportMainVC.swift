@@ -41,35 +41,7 @@ class CafeReportMainVC: UIViewController, IndicatorInfoProvider {
     }
 
 
-    @IBAction func resetBtnClicked(_ sender: Any) {
-        resetEveryInfo()
-        NotificationCenter.default.post(name: Notification.Name("removeHoneyTips"), object: nil)
-        ToastView.showIn(viewController: self, message: "입력했던 정보가 초기화되었습니다.", fromBottom: 10)
-
-    }
-
-
-    @IBAction func reportCompleteClicked(_ sender: Any) {
-
-        ReportCafeService.shared.ReportCafe(cafepost: dummyData) { responseData in
-            switch responseData {
-            case .success(let res):
-                print("success")
-                print(res)
-            case .requestErr(_):
-                print("request error")
-            case .pathErr:
-                print(".pathErr")
-            case .serverErr:
-                print(".serverErr")
-            case .networkFail:
-                print("failure")
-            }
-
-
-        }
-
-    }
+    
 }
 
 extension CafeReportMainVC: UITableViewDelegate {
@@ -282,6 +254,34 @@ extension CafeReportMainVC {
     }
 
 
+    @IBAction func resetBtnClicked(_ sender: Any) {
+        resetEveryInfo()
+        NotificationCenter.default.post(name: Notification.Name("removeHoneyTips"), object: nil)
+        ToastView.showIn(viewController: self, message: "입력했던 정보가 초기화되었습니다.", fromBottom: 10)
+    }
+
+
+    @IBAction func reportCompleteClicked(_ sender: Any) {
+
+        ReportCafeService.shared.ReportCafe(cafepost: dummyData) { responseData in
+            switch responseData {
+            case .success(let res):
+                print("success")
+                print(res)
+            case .requestErr(_):
+                print("request error")
+            case .pathErr:
+                print(".pathErr")
+            case .serverErr:
+                print(".serverErr")
+            case .networkFail:
+                print("failure")
+            }
+
+
+        }
+
+    }
 }
 
 

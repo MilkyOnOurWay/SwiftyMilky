@@ -692,13 +692,13 @@
 			isa = PBXGroup;
 			children = (
 				F2242A56259C4AA600455604 /* MyUniverse.storyboard */,
+				D175DA9B25AC4DCC00665678 /* UniversePopUp.storyboard */,
 				F2485EA625A8E60A003E3895 /* UniverseCardVC.swift */,
 				F2485EA725A8E60A003E3895 /* UniverseCardVC.xib */,
 				D175DA5925AAE5C600665678 /* UniverseBottomVC.swift */,
 				D175DA5A25AAE5C600665678 /* UniverseBottomVC.xib */,
 				D175DA7E25AB51C600665678 /* BottomTVC.swift */,
 				D175DA7F25AB51C600665678 /* BottomTVC.xib */,
-				D175DA9B25AC4DCC00665678 /* UniversePopUp.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";

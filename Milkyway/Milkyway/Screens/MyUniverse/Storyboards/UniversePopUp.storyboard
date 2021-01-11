@@ -34,22 +34,39 @@
                                             <action selector="removeBtnClicked:" destination="pKc-35-Q1x" eventType="touchUpInside" id="hi8-8Z-QbB"/>
                                         </connections>
                                     </button>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="popupDelete" translatesAutoresizingMaskIntoConstraints="NO" id="djl-O7-77z">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="215.5"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ImF-wi-Gp2">
+                                        <rect key="frame" x="20" y="131" width="334" height="64.5"/>
+                                        <connections>
+                                            <action selector="deletedOKBtnClicked:" destination="pKc-35-Q1x" eventType="touchUpInside" id="yAN-ni-kFR"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="ImF-wi-Gp2" firstAttribute="leading" secondItem="aHb-so-Llx" secondAttribute="leading" constant="20" id="67H-nk-wFm"/>
                                     <constraint firstAttribute="bottom" secondItem="jmF-4g-nIJ" secondAttribute="bottom" constant="20" id="BpN-ua-RQM"/>
                                     <constraint firstAttribute="trailing" secondItem="boO-zV-VVy" secondAttribute="trailing" id="BpP-u4-wuH"/>
+                                    <constraint firstItem="djl-O7-77z" firstAttribute="bottom" secondItem="boO-zV-VVy" secondAttribute="bottom" id="Mu5-jM-dzT"/>
                                     <constraint firstItem="boO-zV-VVy" firstAttribute="top" secondItem="aHb-so-Llx" secondAttribute="top" id="NlI-oh-ca1"/>
+                                    <constraint firstAttribute="trailing" secondItem="ImF-wi-Gp2" secondAttribute="trailing" constant="20" id="Rd3-J9-Jj4"/>
                                     <constraint firstItem="ou1-Yf-phT" firstAttribute="height" secondItem="boO-zV-VVy" secondAttribute="height" multiplier="0.3" id="RqI-dK-yDo"/>
+                                    <constraint firstItem="ImF-wi-Gp2" firstAttribute="height" secondItem="djl-O7-77z" secondAttribute="height" multiplier="0.3" id="XYe-Jq-3h7"/>
+                                    <constraint firstItem="djl-O7-77z" firstAttribute="top" secondItem="boO-zV-VVy" secondAttribute="top" id="a3x-gC-86I"/>
                                     <constraint firstItem="boO-zV-VVy" firstAttribute="leading" secondItem="aHb-so-Llx" secondAttribute="leading" id="cdK-rg-z5W"/>
                                     <constraint firstItem="jmF-4g-nIJ" firstAttribute="leading" secondItem="aHb-so-Llx" secondAttribute="leading" constant="20" id="gKX-Lg-DOG"/>
                                     <constraint firstAttribute="bottom" secondItem="boO-zV-VVy" secondAttribute="bottom" id="gP5-lu-5yw"/>
                                     <constraint firstAttribute="width" secondItem="aHb-so-Llx" secondAttribute="height" multiplier="335:193" id="i3u-we-pN2"/>
                                     <constraint firstAttribute="trailing" secondItem="ou1-Yf-phT" secondAttribute="trailing" constant="20" id="ijb-V4-Mka"/>
+                                    <constraint firstItem="djl-O7-77z" firstAttribute="leading" secondItem="boO-zV-VVy" secondAttribute="leading" id="lnc-nh-pcM"/>
+                                    <constraint firstAttribute="bottom" secondItem="ImF-wi-Gp2" secondAttribute="bottom" constant="20" id="mHt-KD-EXA"/>
                                     <constraint firstItem="jmF-4g-nIJ" firstAttribute="height" secondItem="boO-zV-VVy" secondAttribute="height" multiplier="0.3" id="pXj-1h-cjR"/>
                                     <constraint firstItem="ou1-Yf-phT" firstAttribute="width" secondItem="boO-zV-VVy" secondAttribute="width" multiplier="0.43" id="pb0-Jc-rdT"/>
                                     <constraint firstItem="jmF-4g-nIJ" firstAttribute="width" secondItem="boO-zV-VVy" secondAttribute="width" multiplier="0.43" id="qct-L3-Epf"/>
                                     <constraint firstAttribute="bottom" secondItem="ou1-Yf-phT" secondAttribute="bottom" constant="20" id="rHB-j5-ZZg"/>
+                                    <constraint firstItem="djl-O7-77z" firstAttribute="trailing" secondItem="boO-zV-VVy" secondAttribute="trailing" id="xOW-yL-41F"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -63,6 +80,8 @@
                     </view>
                     <connections>
                         <outlet property="askRemoveView" destination="aHb-so-Llx" id="uHq-le-OBd"/>
+                        <outlet property="deletedBtn" destination="ImF-wi-Gp2" id="2YZ-d5-pud"/>
+                        <outlet property="deletedOKView" destination="djl-O7-77z" id="3gc-z4-GKs"/>
                         <outlet property="noBtn" destination="jmF-4g-nIJ" id="gGe-3S-64P"/>
                         <outlet property="removeBtn" destination="ou1-Yf-phT" id="TL6-WW-nJV"/>
                     </connections>
@@ -73,6 +92,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="popupDelete" width="335" height="193"/>
         <image name="popupDeleteRquest" width="335" height="193"/>
     </resources>
 </document>

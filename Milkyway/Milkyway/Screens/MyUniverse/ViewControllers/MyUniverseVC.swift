@@ -15,8 +15,7 @@ class MyUniverseVC: UIViewController{
     @IBOutlet weak var viewForAnimate: UIView!
     @IBOutlet weak var logoImgaeView: UIImageView!
     
-    let userNickName = "소영소영"
-
+    var myUniverse = HomeData(aroundCafe: [AroundCafe](), nickName: "")
     var markers = [NMFMarker]()
     var camera: NMFCameraUpdate!
     // 직전에 눌린 마커가 저장됩니다.
@@ -54,36 +53,10 @@ class MyUniverseVC: UIViewController{
     var animationProgressWhenInterrupted:CGFloat = 0
 
     
-    
-    
-    var placeMangWon = NMGLatLng(lat: 37.555941, lng: 126.910067)
-    
-    // 소영이는 망원 좌표 수집중 ... ㅇ0ㅇ
-    var mangWon: [NMGLatLng] = [NMGLatLng(lat: 37.556635, lng: 126.908433),
-                                NMGLatLng(lat: 37.556987, lng: 126.907755),
-                                NMGLatLng(lat: 37.556748, lng: 126.910195),
-                                NMGLatLng(lat: 37.555522, lng: 126.904833),
-                                NMGLatLng(lat: 37.557539, lng: 126.904790),
-                                NMGLatLng(lat: 37.556534, lng: 126.907744),
-                                NMGLatLng(lat: 37.560183, lng: 126.909584),
-                                NMGLatLng(lat: 37.560889, lng: 126.906703),
-                                NMGLatLng(lat: 37.561905, lng: 126.903533),
-                                NMGLatLng(lat: 37.560668, lng: 126.901677),
-                                NMGLatLng(lat: 37.559249, lng: 126.902487),
-                                NMGLatLng(lat: 37.554322, lng: 126.906648),
-                                NMGLatLng(lat: 37.555351, lng: 126.902356),
-                                NMGLatLng(lat: 37.558472, lng: 126.907506),
-                                NMGLatLng(lat: 37.557741, lng: 126.910403),
-                                NMGLatLng(lat: 37.560786, lng: 126.906412),
-                                NMGLatLng(lat: 37.558884, lng: 126.905102)
-                                
-    ]
-    
-    
-    
     override func viewWillAppear(_ animated: Bool) {
         print("myUniverse - viewWillAppear()")
-        
+        setCamera()
+        serverlinked()
         gettingdark()
 
     }
@@ -92,13 +65,9 @@ class MyUniverseVC: UIViewController{
         print("myUniverse - viewDidLoad()")
         
         super.viewDidLoad()
-        
-        // 로딩관련 노티
-        NotificationCenter.default.addObserver(self, selector: #selector(showLoadingLottie), name: Notification.Name("startlottieuni"),object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(stopLottieAnimation), name: Notification.Name("stoplottieuni"),object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(presentpopup), name: Notification.Name("removePopUp"),object: nil)
-
+        notiGather()
         delegateGather()
+        setMap()
         setMapButton()
         setBottomCard()
         setFirstCardView()
@@ -150,6 +119,13 @@ class MyUniverseVC: UIViewController{
 extension MyUniverseVC {
     
     // MARK: - 관련 노티
+    func notiGather() {
+        NotificationCenter.default.addObserver(self, selector: #selector(showLoadingLottie), name: Notification.Name("startlottieuni"),object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(stopLottieAnimation), name: Notification.Name("stoplottieuni"),object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(presentpopup), name: Notification.Name("removePopUp"),object: nil)
+    }
+    
+    // MARK: - 관련 델리게이트
     func delegateGather() {
         print("myUniverse - delegateGather()")
         mapView.addCameraDelegate(delegate: self)
@@ -172,32 +148,16 @@ extension MyUniverseVC {
         self.viewForAnimate.alpha = 0.0
         self.glowUniverseLabel.alpha = 0.0
         self.logoImgaeView.alpha = 0.0
-        self.setCamera()
-        self.setMarker()
-        self.setMap()
-        self.welcomeLabelSetting()
         
         // 전체뷰 애니메이션
         UIView.animate(withDuration: 2.0 , delay: 0.0, options: .curveEaseInOut, animations: {
             self.viewForAnimate.alpha = 0.7
         }, completion: { finished in
             self.mapView.lightness = -0.7
-            Thread.sleep(forTimeInterval: 0.3)
+            Thread.sleep(forTimeInterval: 0.4)
             self.viewForAnimate.isHidden = true
-            
         })
-        
-        // 닉네임 라벨 애니메이션
-        UILabel.animate(withDuration: 2.5 , delay: 0.5, options: .curveEaseInOut, animations: {
-            self.glowUniverseLabel.alpha = 1.0
-            
-        }, completion: { finished in
-            UILabel.animate(withDuration: 2.0 , delay: 5.0, options: .curveEaseInOut, animations: {
-                self.glowUniverseLabel.alpha = 0.0
                 
-            })
-        })
-        
         // 밀키웨이 로고 애니메이션
         UIImageView.animate(withDuration: 2.5, delay: 0.5, options: .curveEaseInOut, animations: {
             self.logoImgaeView.alpha = 1.0
@@ -225,15 +185,26 @@ extension MyUniverseVC {
     func welcomeLabelSetting() {
 
         glowUniverseLabel.text =  markers.count > 0 ?
-            "\(userNickName) 님의 \n유니버스가 빛나고 있어요.\n오늘은 어떤 밀키웨이를 탐험해 볼까요?" : "\(userNickName) 님의\n유니버스에 오신걸 환영합니다.\n\n홈에서 좋아하는 카페를 담아\n유니버스를 채워주세요!"
+            "\(myUniverse.nickName) 님의 \n유니버스가 빛나고 있어요.\n오늘은 어떤 밀키웨이를 탐험해 볼까요?" : "\(myUniverse.nickName) 님의\n유니버스에 오신걸 환영합니다.\n\n홈에서 좋아하는 카페를 담아\n유니버스를 채워주세요!"
 
         
         // 폰트굵기 부분 변경하기 https://nsios.tistory.com/35
         
         let fontSize = UIFont(name:"SFProText-Bold", size: 20.0)
         let attributedStr = NSMutableAttributedString(string: glowUniverseLabel.text!)
-        attributedStr.addAttribute(.font, value: fontSize!, range: (glowUniverseLabel.text! as NSString).range(of: "\(userNickName)"))
+        attributedStr.addAttribute(.font, value: fontSize!, range: (glowUniverseLabel.text! as NSString).range(of: "\(myUniverse.nickName)"))
         glowUniverseLabel.attributedText = attributedStr
+        
+        // 닉네임 라벨 애니메이션
+        UILabel.animate(withDuration: 2.5 , delay: 0, options: .curveEaseInOut, animations: {
+            self.glowUniverseLabel.alpha = 1.0
+            
+        }, completion: { finished in
+            UILabel.animate(withDuration: 2.0 , delay: 6.0, options: .curveEaseInOut, animations: {
+                self.glowUniverseLabel.alpha = 0.0
+                
+            })
+        })
         
     }
     
@@ -274,7 +245,6 @@ extension MyUniverseVC {
         let cameraUpdate = NMFCameraUpdate(position: cameraPosition)
         cameraUpdate.animation = .easeIn
         cameraUpdate.animationDuration = 0.5
-        
         mapView.moveCamera(cameraUpdate)
         
         
@@ -283,15 +253,18 @@ extension MyUniverseVC {
     // MARK: - 마커 찍는 부분 (서버통신 할 때마다 다시 찍어줘야할듯...)
     func setMarker() {
         print("myUniverse - setMarker()")
-        if markers.isEmpty {
-            for index in 0..<mangWon.count {
-                
-                let marker = NMFMarker(position: mangWon[index], iconImage: unselectImage)
+        markers = []
+        for index in 0..<myUniverse.aroundCafe.count {
+
+            let marker = NMFMarker(position: NMGLatLng(lat: myUniverse.aroundCafe[index].latitude, lng: myUniverse.aroundCafe[index].longitude), iconImage: unselectImage)
                 marker.isHideCollidedMarkers = true
                 marker.touchHandler = { [self] (overlay: NMFOverlay) -> Bool in
                     self.beforeMarker?.iconImage = self.unselectImage
                     marker.iconImage = self.selectImage
                     self.beforeMarker = marker
+                    cardVC.cafeNameLabel.text = myUniverse.aroundCafe[index].cafeName
+                    cardVC.cafeTimeLabel.text = myUniverse.aroundCafe[index].businessHours
+                    cardVC.cafeAddressLabel.text = myUniverse.aroundCafe[index].cafeAddress
                     cardVC.view.isHidden = false
                     return true
                 }
@@ -300,6 +273,34 @@ extension MyUniverseVC {
                 marker.mapView = mapView
                 markers.append(marker)
             }
+        
+    }
+    
+    
+    // MARK: - 서버서버서버
+    func serverlinked() {
+        UniverseService.shared.GetUniverse() { [self] (networkResult) -> (Void) in
+            switch networkResult {
+            case .success(let data):
+                if let loadData = data as? HomeData {
+                    print("success")
+                    myUniverse = loadData
+                    setMarker()
+                    welcomeLabelSetting()
+                    UniverseBottomVC.bottomCafeInfo = loadData
+                    UniverseBottomVC.tableView.reloadData()
+                    }
+            case .requestErr( _):
+                print("requestErr")
+            case .pathErr:
+                print("pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+            
+            
         }
     }
 }
@@ -328,9 +329,6 @@ extension MyUniverseVC: NMFMapViewTouchDelegate {
 extension MyUniverseVC: NMFMapViewCameraDelegate {
     func mapView(_ mapView: NMFMapView, cameraWillChangeByReason reason: Int, animated: Bool){
         if reason == NMFMapChangedByGesture {
-            print("지도 움직이는 중")
-            
-            
             mapView.locationOverlay.icon = overlayIconImage
             mapView.locationOverlay.subIcon = nil
             
@@ -361,7 +359,6 @@ extension MyUniverseVC {
     
     func setBottomCard() {
         UniverseBottomVC = Milkyway.UniverseBottomVC(nibName:"UniverseBottomVC", bundle:nil)
-        
         self.addChild(UniverseBottomVC)
         self.view.addSubview(UniverseBottomVC.view)
         
@@ -578,3 +575,25 @@ extension MyUniverseVC {
 //                                NMGLatLng(lat: 37.4701555, lng: 127.0360897),
 //                                NMGLatLng(lat: 37.4701996, lng: 126.9891860)
 //
+//var placeMangWon = NMGLatLng(lat: 37.555941, lng: 126.910067)
+
+//    // 소영이는 망원 좌표 수집중 ... ㅇ0ㅇ
+//    var mangWon: [NMGLatLng] = [NMGLatLng(lat: 37.556635, lng: 126.908433),
+//                                NMGLatLng(lat: 37.556987, lng: 126.907755),
+//                                NMGLatLng(lat: 37.556748, lng: 126.910195),
+//                                NMGLatLng(lat: 37.555522, lng: 126.904833),
+//                                NMGLatLng(lat: 37.557539, lng: 126.904790),
+//                                NMGLatLng(lat: 37.556534, lng: 126.907744),
+//                                NMGLatLng(lat: 37.560183, lng: 126.909584),
+//                                NMGLatLng(lat: 37.560889, lng: 126.906703),
+//                                NMGLatLng(lat: 37.561905, lng: 126.903533),
+//                                NMGLatLng(lat: 37.560668, lng: 126.901677),
+//                                NMGLatLng(lat: 37.559249, lng: 126.902487),
+//                                NMGLatLng(lat: 37.554322, lng: 126.906648),
+//                                NMGLatLng(lat: 37.555351, lng: 126.902356),
+//                                NMGLatLng(lat: 37.558472, lng: 126.907506),
+//                                NMGLatLng(lat: 37.557741, lng: 126.910403),
+//                                NMGLatLng(lat: 37.560786, lng: 126.906412),
+//                                NMGLatLng(lat: 37.558884, lng: 126.905102)
+//
+//    ]

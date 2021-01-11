@@ -19,7 +19,7 @@ struct CafeDatas: Codable {
 struct CafeInfo: Codable {
     let id: Int
     let cafeName, cafeAddress, businessHours, cafePhoneNum: String
-    let cafeLink: String
+    let cafeLink: String?
     let honeyTip: [Int]
     
 }

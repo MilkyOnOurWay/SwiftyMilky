@@ -34,7 +34,7 @@ class DetailCafeMenuVC: UIViewController {
         cellResister()
         notiGather()
         likeLabel.text = "\(testCafe.universeCount)"
-        
+        universeImageView.image = like ? UIImage(named: "btnUniverseAdded") : UIImage(named: "btnUniverse")
     }
     
     @IBAction func addMyUniverseBtnClicked(_ sender: Any) {
@@ -215,7 +215,7 @@ extension DetailCafeMenuVC {
     // cell은 present를 할 수 없어서 그런듯
     @objc func webPageOpen() {
         
-        guard let url = URL(string: "https://blog.naver.com/sso_0022") else { return }
+        guard let url = URL(string: testCafe.cafeInfo.cafeLink ?? "") else { return }
         let safariViewController = SFSafariViewController(url: url)
         present(safariViewController, animated: true, completion: nil)
         

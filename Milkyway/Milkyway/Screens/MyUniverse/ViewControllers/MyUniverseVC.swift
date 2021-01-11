@@ -189,8 +189,12 @@ class MyUniverseVC: UIViewController{
         NotificationCenter.default.addObserver(self, selector: #selector(showLoadingLottie), name: Notification.Name("startlottieuni"),object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(stopLottieAnimation), name: Notification.Name("stoplottieuni"),object: nil)
         
-        
-        glowUniverseLabel.text = "\(userNickName) 님의 \n유니버스가 빛나고 있어요.\n오늘은 어떤 밀키웨이를 탐험해 볼까요?"
+//        if markers.count > 0 {
+//            glowUniverseLabel.text = "\(userNickName) 님의 \n유니버스가 빛나고 있어요.\n오늘은 어떤 밀키웨이를 탐험해 볼까요?"
+//        }
+//        else {
+      glowUniverseLabel.text = "\(userNickName) 님의\n유니버스에 오신걸 환영합니다.\n\n홈에서 좋아하는 카페를 담아\n유니버스를 채워주세요!"
+//        }
         changeFontSize()
         
        

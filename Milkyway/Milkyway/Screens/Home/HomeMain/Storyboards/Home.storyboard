@@ -60,7 +60,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cRC-z2-HDE">
-                                <rect key="frame" x="291" y="549.33333333333337" width="68" height="68"/>
+                                <rect key="frame" x="291" y="539.33333333333337" width="68" height="68"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="68" id="5bD-0W-eqE"/>
                                     <constraint firstAttribute="height" constant="68" id="rG4-Mf-7sd"/>
@@ -111,7 +111,7 @@
                             <constraint firstItem="wYL-vF-cHr" firstAttribute="top" secondItem="kLD-ZB-rEQ" secondAttribute="bottom" id="ELd-tB-j64"/>
                             <constraint firstItem="kLD-ZB-rEQ" firstAttribute="leading" secondItem="eIS-ba-FWs" secondAttribute="leading" id="Efr-qi-KuD"/>
                             <constraint firstItem="aPd-nV-Ytc" firstAttribute="trailing" secondItem="W70-6D-1s7" secondAttribute="trailing" constant="-8" id="EgY-x7-hp5"/>
-                            <constraint firstItem="cRC-z2-HDE" firstAttribute="centerY" secondItem="eIS-ba-FWs" secondAttribute="bottom" multiplier="4/5" id="FMn-k4-ES9"/>
+                            <constraint firstItem="cRC-z2-HDE" firstAttribute="centerY" secondItem="eIS-ba-FWs" secondAttribute="bottom" multiplier="4/5" constant="-10" id="FMn-k4-ES9"/>
                             <constraint firstItem="4yy-Yg-Mze" firstAttribute="centerY" secondItem="JGc-rw-574" secondAttribute="centerY" id="IC7-S9-5xz"/>
                             <constraint firstItem="JGc-rw-574" firstAttribute="trailing" secondItem="W70-6D-1s7" secondAttribute="trailing" multiplier="1/4" constant="1" id="MHt-nb-eBT"/>
                             <constraint firstItem="JGc-rw-574" firstAttribute="top" secondItem="kLD-ZB-rEQ" secondAttribute="bottom" constant="10" id="P26-LX-8FC"/>

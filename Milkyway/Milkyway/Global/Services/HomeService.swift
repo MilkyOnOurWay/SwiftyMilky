@@ -1,24 +1,23 @@
 //
-//  ReportCafeService.swift
+//  HomeService.swift
 //  Milkyway
 //
-//  Created by soyounglee on 2021/01/11.
+//  Created by ✨EUGENE✨ on 2021/01/11.
 //
 
 import Foundation
 import Alamofire
 
-struct ReportCafeService {
+struct HomeService {
     
     private init() {}
     
-    static let shared = ReportCafeService()
+    static let shared = HomeService()
     
-    func ReportCafe(cafepost: Cafepost,
-                    completion: @escaping (NetworkResult<Any>) -> Void) {
+    func GetMilkyHome(completion: @escaping (NetworkResult<Any>) -> Void) {
         
-        let URL = APIConstants.reportCafe + "\(cafepost)"
-        
+        let URL = APIConstants.homeResult
+        print(URL)
         let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWR4Ijo1LCJpYXQiOjE2MDk3Nzg0NjksImV4cCI6MTYxMjM3MDQ2OSwiaXNzIjoibWlsa3lXYXkifQ.c2JAdyd0pGQzbmT0E_yl51eAGkcO71YfokwJebqqDME"
         
         let headers: HTTPHeaders = [
@@ -26,32 +25,12 @@ struct ReportCafeService {
             "token": token
         ]
         
-        var list: [[String: Any]] = []
-        for me in cafepost.menu {
-            var a: [String:Any] = [:]
-            a["menuName"] = me.menuName
-            a["price"] = me.price
-            a["category"] = me.category
-            list.append(a)
-        }
-        
-        
-        let params = ["cafeName": cafepost.cafeName! as String,
-                      "cafeAddress": cafepost.cafeAddress! as String,
-                      "cafeMapX": cafepost.cafeMapX,
-                      "cafeMapY": cafepost.cafeMapY,
-                      "honeyTip": cafepost.honeyTip,
-            
-                      "menu": list
-        ] as [String : Any]
-        
-        dump(params)
         
         let dataRequest = AF.request(URL,
-                                     method: .post,
-                                     parameters: params,
+                                     method: .get,
                                      encoding: JSONEncoding.default,
-                                     headers: headers)
+                                     headers: headers
+                                     )
         
         dataRequest.responseData{ (response) in
             
@@ -60,14 +39,15 @@ struct ReportCafeService {
             case .success(_):
                 if let value = response.value {
                     if let status = response.response?.statusCode {
-                        print(status)
+                        print("helpme")
                         switch status {
                         case 200:
                             do {
                                 let decoder = JSONDecoder()
-                                let result = try decoder.decode(ResponseTempResult.self,
+                                let result = try decoder.decode(ResponseSimpleResult<AroundCafe>.self,
                                                                 from: value)
-                                completion(.success(result))
+                                completion(.success(result.data ?? Token.self))
+
                             } catch {
                                 completion(.pathErr)
                             }
@@ -88,3 +68,4 @@ struct ReportCafeService {
         }
     }
 }
+

@@ -9,6 +9,8 @@ import UIKit
 
 class BottomTVC: UITableViewCell {
     @IBOutlet weak var deleteBtn: UIButton!
+    @IBOutlet weak var cafeNameLabel: UILabel!
+    @IBOutlet weak var cafeAddressLabel: UILabel!
     
     var deleteBtnAction : (() -> ())?
     

@@ -154,7 +154,7 @@ extension MyUniverseVC {
             self.viewForAnimate.alpha = 0.7
         }, completion: { finished in
             self.mapView.lightness = -0.7
-            Thread.sleep(forTimeInterval: 0.3)
+            Thread.sleep(forTimeInterval: 0.4)
             self.viewForAnimate.isHidden = true
         })
                 
@@ -288,6 +288,7 @@ extension MyUniverseVC {
                     setMarker()
                     welcomeLabelSetting()
                     UniverseBottomVC.bottomCafeInfo = loadData
+                    UniverseBottomVC.tableView.reloadData()
                     }
             case .requestErr( _):
                 print("requestErr")

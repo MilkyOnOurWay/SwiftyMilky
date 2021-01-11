@@ -18,9 +18,7 @@ class UniverseBottomVC: UIViewController {
     @IBOutlet weak var emptyView: UIView!
     
     var bottomCafeInfo = HomeData(aroundCafe: [AroundCafe](), nickName: "")
-    
-    
-    var count = 5
+    var editIndex: Int?
     
     override func viewDidLoad() {
         emptyView.isHidden = true
@@ -36,7 +34,7 @@ class UniverseBottomVC: UIViewController {
         
         let BottomCellNib = UINib(nibName: "BottomTVC", bundle: nil)
         self.tableView.register(BottomCellNib, forCellReuseIdentifier: "BottomTVC")
-        emptyLabel.text = "아직 유니버스에 담긴 카페가 없어요.\n마음에 드는 카페를 담으면\n소영님의 빛나는 유니버스를 만날 수 있어요!"
+        emptyLabel.text = "아직 유니버스에 담긴 카페가 없어요.\n마음에 드는 카페를 담으면\n\(bottomCafeInfo.nickName)님의 빛나는 유니버스를 만날 수 있어요!"
         
     }
     
@@ -61,7 +59,7 @@ extension UniverseBottomVC {
     }
     
     @objc func removeBeforeCafe() {
-        count -= 1
+        // 통신 ~
         tableView.reloadData()
     }
 }
@@ -75,7 +73,7 @@ extension UniverseBottomVC: UITableViewDelegate {
         
         print(indexPath.row)
         NotificationCenter.default.post(name: Notification.Name("startlottieuni"), object: nil)
-        DetailCafeService.shared.DetailInfoGet(cafeId: 17) { [self] (networkResult) -> (Void) in
+        DetailCafeService.shared.DetailInfoGet(cafeId: bottomCafeInfo.aroundCafe[indexPath.row].id) { [self] (networkResult) -> (Void) in
             switch networkResult {
             case .success(let data):
                 if let loadData = data as? CafeDatas {
@@ -84,6 +82,7 @@ extension UniverseBottomVC: UITableViewDelegate {
                     let storyboard = UIStoryboard(name: "DetailCafeMenu", bundle: nil)
                     if let dvc = storyboard.instantiateViewController(identifier: "DetailCafeMenuVC") as? DetailCafeMenuVC {
                         dvc.testCafe = loadData
+                        dvc.like = true
                         self.navigationController?.pushViewController(dvc, animated: true)
                         NotificationCenter.default.post(name: Notification.Name("stoplottieuni"), object: nil)
                         //다시 클릭 활성화
@@ -110,13 +109,13 @@ extension UniverseBottomVC: UITableViewDelegate {
 
 extension UniverseBottomVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if count == 0 {
+        if bottomCafeInfo.aroundCafe.count == 0{
             emptyView.isHidden = false
             return 0
         }
         else {
             emptyView.isHidden = true
-            return count
+            return bottomCafeInfo.aroundCafe.count
         }
         
     }
@@ -131,11 +130,11 @@ extension UniverseBottomVC: UITableViewDataSource {
             
         }
         
+        cell.cafeNameLabel.text = bottomCafeInfo.aroundCafe[indexPath.row].cafeName
+        cell.cafeAddressLabel.text = bottomCafeInfo.aroundCafe[indexPath.row].cafeAddress
         cell.deleteBtnAction = { [unowned self] in
-            
             editIndex = indexPath.row
             NotificationCenter.default.post(name: Notification.Name("removePopUp"), object: nil)
-            
             
         }
         

@@ -24,6 +24,7 @@
                 <outlet property="cafeAddressLabel" destination="FNZ-mW-QpY" id="kik-Lw-09W"/>
                 <outlet property="cafeNameLabel" destination="Cg0-m5-ArJ" id="ga1-wc-Rhv"/>
                 <outlet property="cafeTimeLabel" destination="UIt-6G-Ocb" id="opz-0z-xNT"/>
+                <outlet property="rootView" destination="i5M-Pr-FkT" id="kTm-yB-bGa"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

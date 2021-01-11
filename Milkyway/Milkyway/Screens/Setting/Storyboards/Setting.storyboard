@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,6 +12,9 @@
     <customFonts key="customFonts">
         <array key="SF-Pro-Text-Bold.otf">
             <string>SFProText-Bold</string>
+        </array>
+        <array key="SF-Pro-Text-Regular.otf">
+            <string>SFProText-Regular</string>
         </array>
     </customFonts>
     <scenes>
@@ -81,10 +85,149 @@
             </objects>
             <point key="canvasLocation" x="-223.19999999999999" y="-70.614692653673174"/>
         </scene>
+        <!--Nickname ChangeVC-->
+        <scene sceneID="3in-Ph-kd2">
+            <objects>
+                <viewController storyboardIdentifier="NicknameChangeVC" id="4jo-MG-8Z3" customClass="NicknameChangeVC" customModule="Milkyway" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kcz-7F-a15">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iMOnMyMilkyWay" translatesAutoresizingMaskIntoConstraints="NO" id="gzD-cd-VOI">
+                                <rect key="frame" x="20" y="57" width="166" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="9Lo-FL-sYN"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="밀키웨이에서 사용할 닉네임을 설정해주세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="no0-xa-kj8">
+                                <rect key="frame" x="20" y="163" width="247" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="247" id="ahx-R3-4fm"/>
+                                    <constraint firstAttribute="height" constant="17" id="p8Y-Rd-FI7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="14"/>
+                                <color key="textColor" name="Milky"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*영어, 특수문자, 이모티콘은 사용 불가합니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Kd-OQ-vzD">
+                                <rect key="frame" x="20" y="184" width="222" height="13"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="13" id="qNL-xW-k3D"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="12"/>
+                                <color key="textColor" name="darkGrey"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="input" translatesAutoresizingMaskIntoConstraints="NO" id="Odh-j7-rAE">
+                                <rect key="frame" x="20" y="261" width="335" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="b2s-Jg-fhY"/>
+                                    <constraint firstAttribute="width" constant="335" id="l8T-LX-h0G"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="최대 10자, 영어 및 특수문자 불가" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KFn-Im-tiZ">
+                                <rect key="frame" x="32" y="264" width="243" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="243" id="4Ux-vS-o8f"/>
+                                    <constraint firstAttribute="height" constant="37" id="frb-jl-ViM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="textfieldDidTap:" destination="4jo-MG-8Z3" eventType="editingDidEnd" id="9XS-fJ-HDB"/>
+                                </connections>
+                            </textField>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkOn" translatesAutoresizingMaskIntoConstraints="NO" id="hcF-T5-Qxr">
+                                <rect key="frame" x="310" y="269" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="6Xq-jx-u77"/>
+                                    <constraint firstAttribute="width" constant="24" id="bo0-AD-CWY"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="사용 불가한 닉네임 입니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QCE-04-4HK">
+                                <rect key="frame" x="20" y="309" width="132" height="14"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="132" id="5aL-Sw-OBc"/>
+                                    <constraint firstAttribute="height" constant="14" id="lN3-Fc-uWg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yNa-Ks-TbM" customClass="NickNameChangeVC">
+                                <rect key="frame" x="20" y="595" width="335" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="335" id="3K4-Lb-lYo"/>
+                                    <constraint firstAttribute="height" constant="52" id="i2M-Zx-7Wj"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="btnStartDisabled"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Z8-9t-kTP">
+                                <rect key="frame" x="326" y="309" width="25" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="15" id="yTJ-yM-mrb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="12"/>
+                                <color key="textColor" name="darkGrey"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="gHG-9D-H3f"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Odh-j7-rAE" firstAttribute="trailing" secondItem="hcF-T5-Qxr" secondAttribute="trailing" constant="21" id="1i2-zL-4t0"/>
+                            <constraint firstItem="Odh-j7-rAE" firstAttribute="leading" secondItem="yNa-Ks-TbM" secondAttribute="leading" id="6BG-ab-ruS"/>
+                            <constraint firstItem="gHG-9D-H3f" firstAttribute="trailing" secondItem="yNa-Ks-TbM" secondAttribute="trailing" constant="20" id="B1d-Me-bqg"/>
+                            <constraint firstItem="QCE-04-4HK" firstAttribute="leading" secondItem="gHG-9D-H3f" secondAttribute="leading" constant="20" id="ErM-v9-4zp"/>
+                            <constraint firstItem="8Kd-OQ-vzD" firstAttribute="leading" secondItem="yNa-Ks-TbM" secondAttribute="leading" id="PWm-RH-5jd"/>
+                            <constraint firstItem="8Z8-9t-kTP" firstAttribute="top" secondItem="QCE-04-4HK" secondAttribute="top" id="PfX-H4-fVb"/>
+                            <constraint firstItem="hcF-T5-Qxr" firstAttribute="leading" secondItem="KFn-Im-tiZ" secondAttribute="trailing" constant="35" id="Wse-U8-pyi"/>
+                            <constraint firstItem="gzD-cd-VOI" firstAttribute="leading" secondItem="yNa-Ks-TbM" secondAttribute="leading" id="XSV-O4-QTH"/>
+                            <constraint firstItem="no0-xa-kj8" firstAttribute="top" secondItem="gzD-cd-VOI" secondAttribute="bottom" constant="26" id="XhZ-WA-VW6"/>
+                            <constraint firstItem="hcF-T5-Qxr" firstAttribute="top" secondItem="gHG-9D-H3f" secondAttribute="top" constant="269" id="ZuO-zt-hwU"/>
+                            <constraint firstItem="no0-xa-kj8" firstAttribute="leading" secondItem="yNa-Ks-TbM" secondAttribute="leading" id="aBB-Tw-NAN"/>
+                            <constraint firstItem="KFn-Im-tiZ" firstAttribute="top" secondItem="8Kd-OQ-vzD" secondAttribute="bottom" constant="67" id="ags-qz-zR4"/>
+                            <constraint firstItem="yNa-Ks-TbM" firstAttribute="leading" secondItem="gHG-9D-H3f" secondAttribute="leading" constant="20" id="jry-RZ-Ixv"/>
+                            <constraint firstItem="gHG-9D-H3f" firstAttribute="trailing" secondItem="8Kd-OQ-vzD" secondAttribute="trailing" constant="133" id="ko9-qM-Fel"/>
+                            <constraint firstItem="gHG-9D-H3f" firstAttribute="trailing" secondItem="gzD-cd-VOI" secondAttribute="trailing" constant="189" id="lYd-4R-amo"/>
+                            <constraint firstItem="Odh-j7-rAE" firstAttribute="bottom" secondItem="KFn-Im-tiZ" secondAttribute="bottom" id="lps-W1-zbd"/>
+                            <constraint firstItem="QCE-04-4HK" firstAttribute="top" secondItem="Odh-j7-rAE" secondAttribute="bottom" constant="8" symbolic="YES" id="p8C-vd-Xhq"/>
+                            <constraint firstItem="gzD-cd-VOI" firstAttribute="top" secondItem="gHG-9D-H3f" secondAttribute="top" constant="57" id="pSC-lD-vl2"/>
+                            <constraint firstItem="gHG-9D-H3f" firstAttribute="bottom" secondItem="yNa-Ks-TbM" secondAttribute="bottom" constant="20" id="pWd-MO-rDs"/>
+                            <constraint firstItem="8Kd-OQ-vzD" firstAttribute="top" secondItem="no0-xa-kj8" secondAttribute="bottom" constant="4" id="vBW-uP-1HP"/>
+                            <constraint firstItem="8Z8-9t-kTP" firstAttribute="leading" secondItem="QCE-04-4HK" secondAttribute="trailing" constant="174" id="wsI-5E-2Bl"/>
+                            <constraint firstItem="KFn-Im-tiZ" firstAttribute="leading" secondItem="gHG-9D-H3f" secondAttribute="leading" constant="32" id="xf3-3m-D9C"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backgroundImageView" destination="Odh-j7-rAE" id="6VV-0p-hxh"/>
+                        <outlet property="bottomConstraint" destination="pWd-MO-rDs" id="xcG-5R-PSy"/>
+                        <outlet property="changeButton" destination="yNa-Ks-TbM" id="dMz-o0-6CW"/>
+                        <outlet property="checkBoxImageView" destination="hcF-T5-Qxr" id="Rlf-Vu-XIQ"/>
+                        <outlet property="countLabel" destination="8Z8-9t-kTP" id="0cB-jf-xxk"/>
+                        <outlet property="logoImageView" destination="gzD-cd-VOI" id="ZE6-Hu-TmQ"/>
+                        <outlet property="nicknameTextField" destination="KFn-Im-tiZ" id="TDb-uH-7sY"/>
+                        <outlet property="stateLabel" destination="QCE-04-4HK" id="rCP-FI-QdQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7ze-DU-z4K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="615" y="-71"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="btnStartDisabled" width="335" height="52"/>
+        <image name="checkOn" width="24" height="24"/>
+        <image name="iMOnMyMilkyWay" width="169.5" height="76.5"/>
+        <image name="input" width="335" height="40"/>
         <image name="mdiSettings" width="24" height="24"/>
         <image name="mdiSettingsTapped" width="24" height="24"/>
+        <namedColor name="Milky">
+            <color red="0.20000000298023224" green="0.125" blue="0.65100002288818359" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="darkGrey">
+            <color red="0.60399997234344482" green="0.59200000762939453" blue="0.57300001382827759" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -54,7 +54,7 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ksh-TF-mp7"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.7030179794520548" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ksh-TF-mp7" firstAttribute="trailing" secondItem="aHb-so-Llx" secondAttribute="trailing" constant="20" id="41F-Ml-f0e"/>
                             <constraint firstItem="ksh-TF-mp7" firstAttribute="bottom" secondItem="aHb-so-Llx" secondAttribute="bottom" constant="300" id="HDu-7B-Au1"/>

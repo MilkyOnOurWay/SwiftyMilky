@@ -22,9 +22,7 @@ class UniverseCardVC: UIViewController {
         setView()
         // Do any additional setup after loading the view.
     }
-    
-    
-    
+
 }
 
 extension UniverseCardVC {

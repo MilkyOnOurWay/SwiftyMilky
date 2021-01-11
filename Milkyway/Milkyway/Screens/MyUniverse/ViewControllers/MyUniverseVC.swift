@@ -86,12 +86,12 @@ class MyUniverseVC: UIViewController{
         NotificationCenter.default.addObserver(self, selector: #selector(showLoadingLottie), name: Notification.Name("startlottieuni"),object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(stopLottieAnimation), name: Notification.Name("stoplottieuni"),object: nil)
         
-//        if markers.count > 0 {
-//            glowUniverseLabel.text = "\(userNickName) 님의 \n유니버스가 빛나고 있어요.\n오늘은 어떤 밀키웨이를 탐험해 볼까요?"
-//        }
-//        else {
-      glowUniverseLabel.text = "\(userNickName) 님의\n유니버스에 오신걸 환영합니다.\n\n홈에서 좋아하는 카페를 담아\n유니버스를 채워주세요!"
-//        }
+        //        if markers.count > 0 {
+        //            glowUniverseLabel.text = "\(userNickName) 님의 \n유니버스가 빛나고 있어요.\n오늘은 어떤 밀키웨이를 탐험해 볼까요?"
+        //        }
+        //        else {
+        glowUniverseLabel.text = "\(userNickName) 님의\n유니버스에 오신걸 환영합니다.\n\n홈에서 좋아하는 카페를 담아\n유니버스를 채워주세요!"
+        //        }
         changeFontSize()
         
         NotificationCenter.default.addObserver(self, selector: #selector(presentpopup), name: Notification.Name("removePopUp"),object: nil)
@@ -106,14 +106,14 @@ class MyUniverseVC: UIViewController{
     }
     
     @objc func presentpopup() {
-        let storyboard = UIStoryboard(name: "UniversePopUp", bundle: nil)  // Replace “Main” with your storyboard name
-
+        let storyboard = UIStoryboard(name: "UniversePopUp", bundle: nil)  
+        
         if let popVC = storyboard.instantiateViewController(withIdentifier: "UniversePopUpVC") as? UniversePopUpVC {
             popVC.modalPresentationStyle = .overFullScreen
             popVC.modalTransitionStyle = .crossDissolve
-                    self.present(popVC, animated: true, completion: {
-                    })
-                }
+            self.present(popVC, animated: true, completion: {
+            })
+        }
     }
     
     // MARK: - 데이터 로딩 중 Lottie 화면
@@ -134,7 +134,7 @@ class MyUniverseVC: UIViewController{
         loadingView?.removeFromSuperview()
         loadingView = nil
     }
-
+    
     
 }
 
@@ -171,7 +171,7 @@ extension MyUniverseVC {
         let attributedStr = NSMutableAttributedString(string: glowUniverseLabel.text!)
         attributedStr.addAttribute(.font, value: fontSize!, range: (glowUniverseLabel.text! as NSString).range(of: "\(userNickName)"))
         glowUniverseLabel.attributedText = attributedStr
-
+        
     }
     
     
@@ -220,7 +220,7 @@ extension MyUniverseVC {
         
     }
     
-
+    
     func setMarker() {
         if markers.isEmpty {
             for index in 0..<mangWon.count {
@@ -301,7 +301,7 @@ extension MyUniverseVC {
     
     func setBottomCard() {
         UniverseBottomVC = Milkyway.UniverseBottomVC(nibName:"UniverseBottomVC", bundle:nil)
-
+        
         self.addChild(UniverseBottomVC)
         self.view.addSubview(UniverseBottomVC.view)
         
@@ -315,9 +315,9 @@ extension MyUniverseVC {
         } else {
             cardHeight = self.mapView.frame.height / 1.5 + tabbarFrame!.size.height
         }
-//        cardHeight = self.mapView.frame.height / 2 + tabbarFrame!.size.height
-//        print("탭바 높이 \(tabbarFrame!.size.height)")
-//        print("card 높이 \(cardHeight)")
+        //        cardHeight = self.mapView.frame.height / 2 + tabbarFrame!.size.height
+        //        print("탭바 높이 \(tabbarFrame!.size.height)")
+        //        print("card 높이 \(cardHeight)")
         
         //탭바 높이만큼 더하기
         UniverseBottomVC.view.frame = CGRect(x: 0, y: self.view.frame.height - cardHandleAreaHeight - tabbarFrame!.size.height, width: self.view.bounds.width, height: cardHeight)

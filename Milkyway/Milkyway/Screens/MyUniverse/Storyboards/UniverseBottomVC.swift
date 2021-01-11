@@ -17,7 +17,7 @@ class UniverseBottomVC: UIViewController {
     @IBOutlet weak var emptyLabel: UILabel!
     @IBOutlet weak var emptyView: UIView!
     
-    var editIndex: Int?
+    var bottomCafeInfo = HomeData(aroundCafe: [AroundCafe](), nickName: "")
     
     
     var count = 5

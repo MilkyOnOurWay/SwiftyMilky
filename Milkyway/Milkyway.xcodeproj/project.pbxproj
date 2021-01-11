@@ -57,6 +57,7 @@
 		D175DA8D25AB863900665678 /* ReportCafeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D175DA8C25AB863900665678 /* ReportCafeService.swift */; };
 		D175DA9925AC412200665678 /* UniversePopUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D175DA9825AC412200665678 /* UniversePopUpVC.swift */; };
 		D175DA9C25AC4DCC00665678 /* UniversePopUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D175DA9B25AC4DCC00665678 /* UniversePopUp.storyboard */; };
+		D175DABC25ACCD5400665678 /* UniverseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D175DABB25ACCD5400665678 /* UniverseService.swift */; };
 		D1983CA725A72BF200C74CED /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1983CA625A72BF200C74CED /* UITextField+Extension.swift */; };
 		D1996E0425A2290500B8F40B /* DetailCafeMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1996E0325A2290500B8F40B /* DetailCafeMenuVC.swift */; };
 		D1996E0725A2290E00B8F40B /* DetailCafeMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1996E0625A2290E00B8F40B /* DetailCafeMenu.storyboard */; };
@@ -189,6 +190,7 @@
 		D175DA8C25AB863900665678 /* ReportCafeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportCafeService.swift; sourceTree = "<group>"; };
 		D175DA9825AC412200665678 /* UniversePopUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversePopUpVC.swift; sourceTree = "<group>"; };
 		D175DA9B25AC4DCC00665678 /* UniversePopUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UniversePopUp.storyboard; sourceTree = "<group>"; };
+		D175DABB25ACCD5400665678 /* UniverseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniverseService.swift; sourceTree = "<group>"; };
 		D1983CA625A72BF200C74CED /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		D1996E0325A2290500B8F40B /* DetailCafeMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCafeMenuVC.swift; sourceTree = "<group>"; };
 		D1996E0625A2290E00B8F40B /* DetailCafeMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailCafeMenu.storyboard; sourceTree = "<group>"; };
@@ -842,6 +844,7 @@
 				D1CA107C25AA09DB004E42DC /* DetailCafeService.swift */,
 				D175DA8C25AB863900665678 /* ReportCafeService.swift */,
 				6B4086CF25AC2B4E00D6894E /* HomeService.swift */,
+				D175DABB25ACCD5400665678 /* UniverseService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1063,6 +1066,7 @@
 				F2485E7B25A8C8E0003E3895 /* Token.swift in Sources */,
 				F21384B625A1E8360016E766 /* SearchTVC.swift in Sources */,
 				D1D95DD325A30B9700B95F79 /* CafeBasicCell.swift in Sources */,
+				D175DABC25ACCD5400665678 /* UniverseService.swift in Sources */,
 				D175DA8D25AB863900665678 /* ReportCafeService.swift in Sources */,
 				D1CA107725AA06E6004E42DC /* PostCafeModel.swift in Sources */,
 				F2BA632D2598E7DE00A49020 /* UITabbar+Extension.swift in Sources */,

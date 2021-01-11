@@ -11,12 +11,18 @@ import Foundation
 struct HomeData: Codable {
     let aroundCafe: [AroundCafe]
     let nickName: String
+    
+    enum CodingKeys: String, CodingKey {
+        case aroundCafe = "aroundUniverse"
+        case nickName = "nickName"
+    }
 }
 
 // MARK: - AroundCafe
 struct AroundCafe: Codable {
     let id: Int
     let cafeName, cafeAddress, businessHours: String
-    let cafeMapX, cafeMapY: Double
+    let longitude, latitude: Double
     let isReal: Bool
+    
 }

@@ -22,9 +22,7 @@ class UniversePopUpVC: UIViewController {
         super.viewDidLoad()
         deletedOKView.isHidden = true
         deletedBtn.isEnabled = false
-        
-        
-      
+
     }
     
     @IBAction func noBtnClicked(_ sender: Any) {

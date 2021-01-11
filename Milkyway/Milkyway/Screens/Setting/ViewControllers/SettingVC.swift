@@ -46,6 +46,9 @@ extension SettingVC: UITableViewDelegate {
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let nvc = self.storyboard?.instantiateViewController(identifier: "NicknameChangeVC") as? NicknameChangeVC else { return }
+        nvc.modalPresentationStyle = .fullScreen
+        self.present(nvc, animated: true, completion: nil)
         //        guard let nvc = self.storyboard?.instantiateViewController(identifier:
         //                "SearchEntryMoimVC") as? SearchEntryMoimVC else { return }
     }

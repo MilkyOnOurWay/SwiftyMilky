@@ -36,23 +36,6 @@ class CanceledTVCell: UITableViewCell {
     
     
 }
-extension CanceledTVCell {
-    
-    func setCell(count: Int) {
-        
-        self.count = count
-        
-        
-        canceledLabel.text = "취소된 제보"
-        canceledLabel.font = UIFont(name:"SFProText-Bold", size: 16.0)
-        
-        let collectionViewCellNib = UINib(nibName: "RectangleCVCell", bundle: nil)
-        collectionView.register(collectionViewCellNib, forCellWithReuseIdentifier: "RectangleCVCell")
-        
-        collectionView.dataSource = self
-        collectionView.delegate = self
-    }
-}
 extension CanceledTVCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return count
@@ -83,4 +66,32 @@ extension CanceledTVCell: UICollectionViewDelegateFlowLayout {
         return 0 }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 0, left: horizonInset, bottom: 0, right: horizonInset) }
+}
+
+extension CanceledTVCell: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        NotificationCenter.default.post(name: Notification.Name("cancelReason"), object: nil)
+    }
+}
+
+extension CanceledTVCell {
+    
+    func setCell(count: Int) {
+        
+        self.count = count
+        
+        
+        canceledLabel.text = "취소된 제보"
+        canceledLabel.font = UIFont(name:"SFProText-Bold", size: 16.0)
+        
+        let collectionViewCellNib = UINib(nibName: "RectangleCVCell", bundle: nil)
+        collectionView.register(collectionViewCellNib, forCellWithReuseIdentifier: "RectangleCVCell")
+        
+        collectionView.dataSource = self
+        collectionView.delegate = self
+    }
+    
+//    @objc func cancelCellTap () {
+//
+//    }
 }

@@ -24,6 +24,7 @@ class MyReportMainVC: UIViewController, IndicatorInfoProvider {
     override func viewDidLoad() {
         super.viewDidLoad()
         setLabel()
+        notiGather()
         registerXib()
         registerDelegate()
     }
@@ -51,7 +52,9 @@ extension MyReportMainVC {
         subLabel.font = UIFont(name: "SFProText-Regular", size: 12.0)
         subLabel.numberOfLines = 2
     }
-    
+    func notiGather() {
+        NotificationCenter.default.addObserver(self, selector: #selector(cancelReasonTap), name: Notification.Name("cancelReason"), object: nil)
+    }
     func registerDelegate() {
         myReportTableView.dataSource = self
         myReportTableView.delegate = self
@@ -70,6 +73,15 @@ extension MyReportMainVC {
         myReportTableView.register(inProgressTVCellNib, forCellReuseIdentifier: "InProgressTVCell")
         // 완료된 제보
         myReportTableView.register(completedTVCellNib, forCellReuseIdentifier: "CompletedTVCell")
+    }
+    @objc func cancelReasonTap() {
+        print("MyReport - cancelReason")
+        
+        guard let cancelVC = UIStoryboard(name: "MyReportMain", bundle: nil).instantiateViewController(withIdentifier:"CancelReasonVC") as? CancelReasonVC else {
+            return
+        }
+        cancelVC.modalPresentationStyle = .overCurrentContext
+        present(cancelVC, animated: false, completion: nil)
     }
 }
 
@@ -115,6 +127,7 @@ extension MyReportMainVC: UITableViewDataSource {
 //                cell.isHidden = true
 //                cell.rootHeight.constant = 0
 //            }
+            
             cell.setCell(count: 2) //cancelArr.count)
             cell.selectionStyle = .none
             return cell

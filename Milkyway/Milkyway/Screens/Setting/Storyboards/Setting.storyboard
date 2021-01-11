@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7MA-Pd-ts5">
-    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -8,23 +8,78 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Pro-Text-Bold.otf">
+            <string>SFProText-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--설정-->
         <scene sceneID="hwv-yk-bpB">
             <objects>
                 <viewController storyboardIdentifier="SettingVC" id="7MA-Pd-ts5" customClass="SettingVC" customModule="Milkyway" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="joD-ER-SO4">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Hsg-O4-aIS">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="ODE-G2-ouw">
+                                    <rect key="frame" x="0.0" y="123" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                </view>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SettingTVCell" rowHeight="67" id="eKD-dc-Yx7" customClass="SettingTVCell" customModule="Milkyway" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="67"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eKD-dc-Yx7" id="7AO-ul-Q4v">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="67"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3DP-l9-Fr0">
+                                                    <rect key="frame" x="18" y="25.5" width="229" height="16"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="229" id="2Zn-Nc-W04"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="3DP-l9-Fr0" firstAttribute="centerY" secondItem="7AO-ul-Q4v" secondAttribute="centerY" id="1r0-fp-vcw"/>
+                                                <constraint firstItem="3DP-l9-Fr0" firstAttribute="top" secondItem="7AO-ul-Q4v" secondAttribute="topMargin" constant="14.5" id="5w9-qP-dj4"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="3DP-l9-Fr0" secondAttribute="bottom" constant="14.5" id="SPs-nR-VS6"/>
+                                                <constraint firstItem="3DP-l9-Fr0" firstAttribute="leading" secondItem="7AO-ul-Q4v" secondAttribute="leadingMargin" constant="2" id="q0G-Ht-1WG"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="settingLabel" destination="3DP-l9-Fr0" id="DHC-r4-muO"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Sfq-Ly-Q1S"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Sfq-Ly-Q1S" firstAttribute="bottom" secondItem="Hsg-O4-aIS" secondAttribute="bottom" id="AWM-OM-Cpm"/>
+                            <constraint firstItem="Hsg-O4-aIS" firstAttribute="trailing" secondItem="Sfq-Ly-Q1S" secondAttribute="trailing" id="EeU-bR-Zv0"/>
+                            <constraint firstItem="Hsg-O4-aIS" firstAttribute="leading" secondItem="joD-ER-SO4" secondAttribute="leading" id="a2F-3R-PbO"/>
+                            <constraint firstItem="Hsg-O4-aIS" firstAttribute="top" secondItem="Sfq-Ly-Q1S" secondAttribute="top" id="sKU-QS-Qa4"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="설정" image="mdiSettings" selectedImage="mdiSettingsTapped" id="Lck-hB-rLt"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="SettingTableView" destination="Hsg-O4-aIS" id="Uns-wB-j4K"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G4u-U3-1ll" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-214" y="-48"/>
+            <point key="canvasLocation" x="-223.19999999999999" y="-70.614692653673174"/>
         </scene>
     </scenes>
     <resources>

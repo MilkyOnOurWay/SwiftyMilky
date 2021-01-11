@@ -13,6 +13,12 @@ class AddSearchTVC: UITableViewCell {
     @IBOutlet weak var cafeAddressLabel: UILabel!
     @IBOutlet weak var cafeStateImageView: UIImageView!
     
+    var searchedCafe: CafeResult?
+    var isReported: Bool?
+    // 위도 경도 넘길 필요가 있나...?
+    var latitude: String?
+    var longitude: String?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -22,6 +28,15 @@ class AddSearchTVC: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func setCell(){
+        
+        cafeNameLabel.text = searchedCafe?.cafeName
+        cafeAddressLabel.text = searchedCafe?.cafeAddress
+        if isReported == true {
+            cafeStateImageView.isHidden = false
+        }
     }
     
 }

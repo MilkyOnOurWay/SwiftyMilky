@@ -16,24 +16,32 @@ class MyUniverseVC: UIViewController{
     @IBOutlet weak var logoImgaeView: UIImageView!
     
     let userNickName = "소영소영"
-    
-    let unselectImage = NMFOverlayImage(name: "pickerUniverse")
-    let selectImage = NMFOverlayImage(name: "pickerUniverseSelected")
-    
-    let overlayIconImage = NMFOverlayImage(name: "circle")
-    let subIconImage = NMFOverlayImage(name: "radius")
-    let polygonIconImage = NMFOverlayImage(name: "frame539")
-    
+
     var markers = [NMFMarker]()
     var camera: NMFCameraUpdate!
+    // 직전에 눌린 마커가 저장됩니다.
     var beforeMarker: NMFMarker?
-    var placeMangWon = NMGLatLng(lat: 37.555941, lng: 126.910067)
     
     
-    // 하단바
+    // 선택된 피커 이미지
+    let unselectImage = NMFOverlayImage(name: "pickerUniverse")
+    // 선택되지않은 피커 이미지
+    let selectImage = NMFOverlayImage(name: "pickerUniverseSelected")
+    // 현위치 이미지 - 기본 동그라미 이미지
+    let overlayIconImage = NMFOverlayImage(name: "circle")
+    // 현위치 이미지 - 콤파스 이미지
+    let subIconImage = NMFOverlayImage(name: "radius")
+    // 현위치 이미지 - direction 이미지 (세모)
+    let polygonIconImage = NMFOverlayImage(name: "frame539")
     
+    // 하단에서 올라오는 VC
     var UniverseBottomVC: UniverseBottomVC!
     
+    
+    // 카드 VC
+    var cardVC: UniverseCardVC!
+    
+   
     var cardHeight:CGFloat = 0 //363 //카드 높이 280 + 탭바높이 83 그냥 박는 버전
     let cardHandleAreaHeight:CGFloat = 84
     
@@ -44,11 +52,11 @@ class MyUniverseVC: UIViewController{
     }
     var runningAnimations = [UIViewPropertyAnimator]()
     var animationProgressWhenInterrupted:CGFloat = 0
+
     
     
     
-    // 윤진 추가 변수
-    var cardVC: UniverseCardVC!
+    var placeMangWon = NMGLatLng(lat: 37.555941, lng: 126.910067)
     
     // 소영이는 망원 좌표 수집중 ... ㅇ0ㅇ
     var mangWon: [NMGLatLng] = [NMGLatLng(lat: 37.556635, lng: 126.908433),
@@ -71,10 +79,13 @@ class MyUniverseVC: UIViewController{
                                 
     ]
     
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         print("myUniverse - viewWillAppear()")
-        gettingdark()
         
+        gettingdark()
+
     }
     
     override func viewDidLoad(){
@@ -86,18 +97,7 @@ class MyUniverseVC: UIViewController{
         NotificationCenter.default.addObserver(self, selector: #selector(showLoadingLottie), name: Notification.Name("startlottieuni"),object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(stopLottieAnimation), name: Notification.Name("stoplottieuni"),object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(presentpopup), name: Notification.Name("removePopUp"),object: nil)
-        
-        if markers.count > 0 {
-            glowUniverseLabel.text = "\(userNickName) 님의 \n유니버스가 빛나고 있어요.\n오늘은 어떤 밀키웨이를 탐험해 볼까요?"
-        }
-        else {
-            glowUniverseLabel.text = "\(userNickName) 님의\n유니버스에 오신걸 환영합니다.\n\n홈에서 좋아하는 카페를 담아\n유니버스를 채워주세요!"
-        }
-        changeFontSize()
-        
-        
-        
-        
+
         delegateGather()
         setMapButton()
         setBottomCard()
@@ -105,14 +105,14 @@ class MyUniverseVC: UIViewController{
         
     }
     
-    
-    
+
     // statusBar 색상변경
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
         
     }
     
+    // MARK: - 삭제하시겠습니까? popup
     @objc func presentpopup() {
         print("myUniverse - presentpopup()")
         let storyboard = UIStoryboard(name: "UniversePopUp", bundle: nil)  
@@ -124,6 +124,7 @@ class MyUniverseVC: UIViewController{
             })
         }
     }
+    
     
     // MARK: - 데이터 로딩 중 Lottie 화면
     private var loadingView: UIActivityIndicatorView?
@@ -143,18 +144,19 @@ class MyUniverseVC: UIViewController{
         loadingView?.removeFromSuperview()
         loadingView = nil
     }
-    
-    
 }
+
 
 extension MyUniverseVC {
     
+    // MARK: - 관련 노티
     func delegateGather() {
         print("myUniverse - delegateGather()")
         mapView.addCameraDelegate(delegate: self)
         mapView.touchDelegate = self
     }
     
+    // MARK: - 지도관련 세팅
     func setMap() {
         print("myUniverse - setMap()")
         mapView.minZoomLevel = 5
@@ -162,6 +164,7 @@ extension MyUniverseVC {
         
     }
     
+    // MARK: - 유니버스 탭 애니메이션
     func gettingdark() {
         print("myUniverse - gettingdark()")
         self.viewForAnimate.isHidden = false
@@ -169,30 +172,34 @@ extension MyUniverseVC {
         self.viewForAnimate.alpha = 0.0
         self.glowUniverseLabel.alpha = 0.0
         self.logoImgaeView.alpha = 0.0
+        self.setCamera()
+        self.setMarker()
+        self.setMap()
+        self.welcomeLabelSetting()
         
-        UIView.animate(withDuration: 1.5 , delay: 0.0, options: .curveEaseInOut, animations: {
+        // 전체뷰 애니메이션
+        UIView.animate(withDuration: 2.0 , delay: 0.0, options: .curveEaseInOut, animations: {
             self.viewForAnimate.alpha = 0.7
         }, completion: { finished in
             self.mapView.lightness = -0.7
-            Thread.sleep(forTimeInterval: 0.4)
+            Thread.sleep(forTimeInterval: 0.3)
             self.viewForAnimate.isHidden = true
-            self.setCamera()
-            self.setMarker()
-            self.setMap()
             
         })
         
-        UILabel.animate(withDuration: 2.0 , delay: 1.0, options: .curveEaseInOut, animations: {
+        // 닉네임 라벨 애니메이션
+        UILabel.animate(withDuration: 2.5 , delay: 0.5, options: .curveEaseInOut, animations: {
             self.glowUniverseLabel.alpha = 1.0
             
         }, completion: { finished in
-            UILabel.animate(withDuration: 2.0 , delay: 7.0, options: .curveEaseInOut, animations: {
+            UILabel.animate(withDuration: 2.0 , delay: 5.0, options: .curveEaseInOut, animations: {
                 self.glowUniverseLabel.alpha = 0.0
                 
             })
         })
         
-        UIImageView.animate(withDuration: 2.0, delay: 1.0, options: .curveEaseInOut, animations: {
+        // 밀키웨이 로고 애니메이션
+        UIImageView.animate(withDuration: 2.5, delay: 0.5, options: .curveEaseInOut, animations: {
             self.logoImgaeView.alpha = 1.0
             
         })
@@ -200,22 +207,27 @@ extension MyUniverseVC {
     }
     
     
+    // MARK: - 카드 뷰 첫 세팅
     func setFirstCardView() {
-        
+  
         cardVC = UniverseCardVC(nibName: "UniverseCardVC", bundle: nil)
         self.addChild(cardVC)
         self.view.addSubview(cardVC.view)
         print("addsubView")
         let tabbarFrame = self.tabBarController?.tabBar.frame
-        
         cardVC.view.frame = CGRect(x:0, y: self.view.frame.height - tabbarFrame!.size.height - 125, width: self.view.bounds.width, height: 125)
         
         cardVC.view.isHidden = true
     }
     
     
-    
-    func changeFontSize() {
+    // MARK: - 유니버스 상단 라벨 세팅
+    func welcomeLabelSetting() {
+
+        glowUniverseLabel.text =  markers.count > 0 ?
+            "\(userNickName) 님의 \n유니버스가 빛나고 있어요.\n오늘은 어떤 밀키웨이를 탐험해 볼까요?" : "\(userNickName) 님의\n유니버스에 오신걸 환영합니다.\n\n홈에서 좋아하는 카페를 담아\n유니버스를 채워주세요!"
+
+        
         // 폰트굵기 부분 변경하기 https://nsios.tistory.com/35
         
         let fontSize = UIFont(name:"SFProText-Bold", size: 20.0)
@@ -227,7 +239,7 @@ extension MyUniverseVC {
     
     
     
-    // 현재위치 버튼
+    // MARK: - 현재위치버튼 눌렸을 때
     func setMapButton() {
         locationBtn.setImage(UIImage(named: "btnCurrentLocation"), for: UIControl.State.normal)
         locationBtn.setImage(UIImage(named: "compassIc"), for: UIControl.State.selected)
@@ -255,7 +267,7 @@ extension MyUniverseVC {
     }
     
     
-    
+    // MARK: - 카메라 무빙 (지금 찍혀있는 좌표는 서울 전체 보이게 되어있음)
     func setCamera() {
         print("myUniverse - setCamera()")
         let cameraPosition = NMFCameraPosition(NMGLatLng(lat: 37.525346, lng: 126.982174), zoom: 10.8)
@@ -265,13 +277,10 @@ extension MyUniverseVC {
         
         mapView.moveCamera(cameraUpdate)
         
-        //        camera = NMFCameraUpdate(scrollTo: placeMangWon)
-        //        camera.animation = .linear
-        //        mapView.moveCamera(camera)
         
     }
     
-    
+    // MARK: - 마커 찍는 부분 (서버통신 할 때마다 다시 찍어줘야할듯...)
     func setMarker() {
         print("myUniverse - setMarker()")
         if markers.isEmpty {
@@ -293,11 +302,9 @@ extension MyUniverseVC {
             }
         }
     }
-    
-    
 }
 
-
+// MARK: - 지도 touch Delegate
 extension MyUniverseVC: NMFMapViewTouchDelegate {
     func mapView(_ mapView: NMFMapView, didTapMap latlng: NMGLatLng, point: CGPoint) {
         print("\(latlng)")
@@ -314,11 +321,10 @@ extension MyUniverseVC: NMFMapViewTouchDelegate {
         
         return true
     }
-    
 }
 
 
-
+// MARK: - 지도 camera Delegate
 extension MyUniverseVC: NMFMapViewCameraDelegate {
     func mapView(_ mapView: NMFMapView, cameraWillChangeByReason reason: Int, animated: Bool){
         if reason == NMFMapChangedByGesture {
@@ -347,6 +353,8 @@ extension MyUniverseVC: NMFMapViewCameraDelegate {
     //    }
 }
 
+
+// MARK: - 바텀 sheet
 extension MyUniverseVC {
     
     // MARK: - Bottom Card Setting GitHub -> https://github.com/brianadvent/InteractiveCardViewAnimation

@@ -17,7 +17,10 @@ class UniverseBottomVC: UIViewController {
     @IBOutlet weak var emptyLabel: UILabel!
     @IBOutlet weak var emptyView: UIView!
     
-    let count = 5
+    var editIndex: Int?
+    
+    
+    var count = 5
     
     override func viewDidLoad() {
         emptyView.isHidden = true
@@ -27,6 +30,10 @@ class UniverseBottomVC: UIViewController {
         setHandler()
         tableView.delegate = self
         tableView.dataSource = self
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(removeBeforeCafe), name: Notification.Name("removeCafe"), object: nil)
+        
+        
         let BottomCellNib = UINib(nibName: "BottomTVC", bundle: nil)
         self.tableView.register(BottomCellNib, forCellReuseIdentifier: "BottomTVC")
         emptyLabel.text = "아직 유니버스에 담긴 카페가 없어요.\n마음에 드는 카페를 담으면\n소영님의 빛나는 유니버스를 만날 수 있어요!"
@@ -52,6 +59,11 @@ extension UniverseBottomVC {
         
         
     }
+    
+    @objc func removeBeforeCafe() {
+        count -= 1
+        tableView.reloadData()
+    }
 }
 
 extension UniverseBottomVC: UITableViewDelegate {
@@ -63,7 +75,7 @@ extension UniverseBottomVC: UITableViewDelegate {
         
         print(indexPath.row)
         NotificationCenter.default.post(name: Notification.Name("startlottieuni"), object: nil)
-        DetailCafeService.shared.DetailInfoGet(cafeId: 25) { [self] (networkResult) -> (Void) in
+        DetailCafeService.shared.DetailInfoGet(cafeId: 17) { [self] (networkResult) -> (Void) in
             switch networkResult {
             case .success(let data):
                 if let loadData = data as? CafeDatas {
@@ -81,7 +93,6 @@ extension UniverseBottomVC: UITableViewDelegate {
             case .requestErr( _):
                 print("requestErr")
             case .pathErr:
-                
                 print("pathErr")
             case .serverErr:
                 print("serverErr")
@@ -122,6 +133,7 @@ extension UniverseBottomVC: UITableViewDataSource {
         
         cell.deleteBtnAction = { [unowned self] in
             
+            editIndex = indexPath.row
             NotificationCenter.default.post(name: Notification.Name("removePopUp"), object: nil)
             
             

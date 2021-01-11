@@ -37,13 +37,14 @@ extension UniverseCardVC {
         rootView.layer.masksToBounds = false
         
     }
+    
+    // MARK: - 유니버스에서 삭제 버튼 눌렸을 때
     func setDeleteButton(){
-        
         DeleteButton.addTarget(self, action: #selector(deleteButtonDidTap), for: .touchUpInside)
     }
     
     @objc func deleteButtonDidTap(){
-        
+        // MyUniverVC에 옵저버 있음. -> popup창 띄우기
         NotificationCenter.default.post(name: Notification.Name("removePopUp"), object: nil)
         // 서버통신진행
         

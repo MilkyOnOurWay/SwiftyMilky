@@ -163,7 +163,7 @@ extension MyReportMainVC: UITableViewDelegate {
         // 로딩뷰 시작
         NotificationCenter.default.post(name: Notification.Name("startlottie"), object: nil)
         
-        DetailCafeService.shared.DetailInfoGet(cafeId: 25) { [self] (networkResult) -> (Void) in
+        DetailCafeService.shared.DetailInfoGet(cafeId: 17) { [self] (networkResult) -> (Void) in
             switch networkResult {
             case .success(let data):
                 if let loadData = data as? CafeDatas {

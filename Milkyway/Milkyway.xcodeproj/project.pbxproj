@@ -692,13 +692,13 @@
 			isa = PBXGroup;
 			children = (
 				F2242A56259C4AA600455604 /* MyUniverse.storyboard */,
+				D175DA9B25AC4DCC00665678 /* UniversePopUp.storyboard */,
 				F2485EA625A8E60A003E3895 /* UniverseCardVC.swift */,
 				F2485EA725A8E60A003E3895 /* UniverseCardVC.xib */,
 				D175DA5925AAE5C600665678 /* UniverseBottomVC.swift */,
 				D175DA5A25AAE5C600665678 /* UniverseBottomVC.xib */,
 				D175DA7E25AB51C600665678 /* BottomTVC.swift */,
 				D175DA7F25AB51C600665678 /* BottomTVC.xib */,
-				D175DA9B25AC4DCC00665678 /* UniversePopUp.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -1232,7 +1232,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 269D672VZ4;
+				DEVELOPMENT_TEAM = G6CPR8NL67;
 				INFOPLIST_FILE = "Milkyway/Global/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1253,7 +1253,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 269D672VZ4;
+				DEVELOPMENT_TEAM = G6CPR8NL67;
 				INFOPLIST_FILE = "Milkyway/Global/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (

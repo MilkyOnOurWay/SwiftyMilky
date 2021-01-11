@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cDX-mq-uER">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5mp-r8-9mj">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -23,16 +23,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgInfoRequest" translatesAutoresizingMaskIntoConstraints="NO" id="mMT-qb-SxV">
-                                <rect key="frame" x="88" y="170" width="199" height="201"/>
+                                <rect key="frame" x="88" y="126" width="199" height="201"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="불편을 드려 웅앵,," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ev4-fU-ejs">
-                                <rect key="frame" x="41" y="447" width="293" height="20"/>
+                                <rect key="frame" x="41" y="403" width="293" height="20"/>
                                 <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Boc-HP-u5m">
-                                <rect key="frame" x="19" y="638" width="337" height="52"/>
+                                <rect key="frame" x="19" y="594" width="337" height="52"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="52" id="OGJ-Wz-QuA"/>
                                 </constraints>
@@ -42,7 +42,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Do-lV-cAU">
-                                <rect key="frame" x="19" y="578" width="337" height="52"/>
+                                <rect key="frame" x="19" y="534" width="337" height="52"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="52" id="qAc-IU-p9m"/>
                                 </constraints>
@@ -52,7 +52,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vL3-ms-nZt">
-                                <rect key="frame" x="35" y="411" width="304" height="20"/>
+                                <rect key="frame" x="35" y="367" width="304" height="20"/>
                                 <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -89,24 +89,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z8W-93-a6G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="967.20000000000005" y="83.497536945812811"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="ZfY-6j-b3z">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cDX-mq-uER" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Yhl-Tw-9oy">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="5mp-r8-9mj" kind="relationship" relationship="rootViewController" id="Zgp-ZX-ziC"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="knz-Ux-BKO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="24.800000000000001" y="83.497536945812811"/>
         </scene>
     </scenes>
     <resources>

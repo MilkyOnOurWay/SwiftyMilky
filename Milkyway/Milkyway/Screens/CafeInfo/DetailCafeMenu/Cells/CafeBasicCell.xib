@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -202,6 +202,7 @@
                 <outlet property="cafeNameLabel" destination="Xlg-p0-OYB" id="ZXs-d8-SxJ"/>
                 <outlet property="howManyLikeLabel" destination="c6L-Hz-xSo" id="Inu-V1-dk2"/>
                 <outlet property="locationLabel" destination="mg7-zj-uOC" id="ZSC-DX-jO2"/>
+                <outlet property="modifyBtn" destination="itE-hT-8qq" id="YzN-0R-aaq"/>
                 <outlet property="openTimeLabel" destination="5ub-e7-cnD" id="bhg-AN-htg"/>
                 <outlet property="telNumBtn" destination="amF-ob-187" id="Clc-NJ-que"/>
                 <outlet property="webPageBtn" destination="fm9-G1-ig0" id="VZ5-2j-hB4"/>
@@ -211,7 +212,7 @@
     </objects>
     <resources>
         <image name="btnRequest" width="24" height="24"/>
-        <image name="btnUniverseAdded" width="38" height="25"/>
+        <image name="btnUniverseAdded" width="32" height="21"/>
         <image name="icLocation" width="24" height="24"/>
         <image name="icPhone" width="24" height="24"/>
         <image name="icTime" width="24" height="24"/>

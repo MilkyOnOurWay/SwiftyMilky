@@ -25,11 +25,8 @@ class ModifyConfirmVC: UIViewController {
     }
     
     @IBAction func confirmBtnClicked(_ sender: Any) {
-        print("Home - confirmBtnClicked")
-        let presentingVC = self.presentingViewController
-        self.dismiss(animated: false) {
-            presentingVC?.navigationController?.popToRootViewController(animated: false)
-        }
+        NotificationCenter.default.post(name: Notification.Name("modifyConfirm"), object: nil)
+        self.dismiss(animated: false, completion: nil)
     }
 }
 

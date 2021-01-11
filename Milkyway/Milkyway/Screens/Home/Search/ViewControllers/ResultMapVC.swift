@@ -15,12 +15,33 @@ class ResultMapVC: UIViewController {
     @IBOutlet weak var deleteButton: UIButton!
     @IBOutlet weak var locationButton: UIButton!
     
-    var cardVC: FilterResultCardVC! // 필터링 결과 카드 뷰와 UI 동일하므로 그대로 재사용하기
-    // 뷰 등장할 때 다시 등장
+    let markerImage = NMFOverlayImage(name:"picker")
+    let compassImage = NMFOverlayImage(name: "group510")
+    let currentImage = NMFOverlayImage(name: "group511")
+    let selectedPickerImage = NMFOverlayImage(name: "pickerSelected")
+    let pickerImage = NMFOverlayImage(name: "picker")
+    let UniSelectedImage = NMFOverlayImage(name: "pickerUniSelected")
+    let directionImage = NMFOverlayImage(name: "myuniPolygon")
+    var camera: NMFCameraUpdate?
+    var marker: NMFMarker? // [NMFMarker]()
+    var beforeMarker: NMFMarker?
+    // 위치 더미로 잡아놓기
+    var locationManager = CLLocationManager()
+    var location = NMGLatLng(lat: 37.555351, lng: 126.902356)
+    // 필터링 결과 카드 뷰와 UI 동일하므로 그대로 재사용하기
+    var cardVC: FilterResultCardVC!
+   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tabBarController?.tabBar.isHidden = false
+        
+        setMarker()
+        setMap()
+        setCamera()
+        setLocation()
         setBackButton()
+        setMapButton()
         setDeleteButton()
         setCardView()
     }
@@ -29,14 +50,79 @@ class ResultMapVC: UIViewController {
         super.viewDidAppear(animated)
         self.tabBarController?.tabBar.isHidden = false
     }
-//    override func viewWillDisappear(_ animated: Bool) {
-//        super.viewWillDisappear(animated)
-//        self.tabBarController?.tabBar.isHidden = true
-//    }
+
 }
 
 extension ResultMapVC {
     
+    func setDelegate(){
+        locationManager.delegate = self
+        mapView.addCameraDelegate(delegate: self)
+        mapView.touchDelegate = self
+    }
+    func setCamera(){
+        
+        let cameraPosition = NMFCameraPosition(NMGLatLng(lat: 37.555351, lng: 126.902356), zoom: 10.8)
+        let cameraUpdate = NMFCameraUpdate(position: cameraPosition)
+        
+    }
+    func setMapButton(){
+        
+        locationButton.setImage(UIImage(named: "btnCurrentLocation"), for: UIControl.State.normal)
+        locationButton.setImage(UIImage(named: "compassIc"), for: UIControl.State.selected)
+        locationButton.addTarget(self, action: #selector(locationButtonDidTap), for: UIControl.Event.touchUpInside)
+        
+    }
+    func setMarker(){
+        
+        let marker = NMFMarker(position: location, iconImage: pickerImage)
+        // 서버 연결할 때 주석 해제
+        //marker.isHideCollidedMarkers = true
+        marker.touchHandler = { [self] (overlay: NMFOverlay) -> Bool in
+            self.beforeMarker?.iconImage = self.pickerImage
+            marker.iconImage = self.selectedPickerImage
+            self.beforeMarker = marker
+            cardVC.view.isHidden = false
+            return true
+        }
+        marker.mapView = mapView
+        
+    }
+    
+    func setMap(){
+        
+        mapView.minZoomLevel = 5
+        mapView.maxZoomLevel = 18
+        
+    }
+    
+    
+    func setLocation(){
+        locationManager = CLLocationManager()
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.startUpdatingLocation()
+        
+        let coor = locationManager.location?.coordinate
+        move(at: coor)
+        
+    }
+    
+    func move(at coordinate: CLLocationCoordinate2D?){
+        
+        let locationOverlay = mapView.locationOverlay
+        
+        mapView.positionMode = .direction
+        mapView.locationOverlay.icon = currentImage
+        mapView.locationOverlay.subIcon = directionImage
+        
+        print("zoom level: \(mapView.zoomLevel)")
+        
+        locationOverlay.circleRadius = 0 // 기본 원그림자 없애기
+        locationOverlay.iconWidth = CGFloat(NMF_LOCATION_OVERLAY_SIZE_AUTO)
+        locationOverlay.iconHeight = CGFloat(NMF_LOCATION_OVERLAY_SIZE_AUTO)
+        
+    }
     func setBackButton(){
         backButton.addTarget(self, action: #selector(backButtonClicked), for: .touchUpInside)
     }
@@ -56,6 +142,7 @@ extension ResultMapVC {
         let tabbarFrame = self.tabBarController?.tabBar.frame
         
         cardVC.view.frame = CGRect(x: 0, y: self.view.frame.height-tabbarFrame!.size.height-125, width: self.view.bounds.width, height: 125)
+        cardVC.view.isHidden = true
         
     }
     @objc func backButtonClicked(){
@@ -66,4 +153,55 @@ extension ResultMapVC {
         
         navigationController?.popToRootViewController(animated: true)
     }
+    
+    @objc func locationButtonDidTap(_ sender: UIButton){
+        
+        if sender.isSelected {
+            
+            sender.isSelected = false
+            mapView.positionMode = .direction
+            mapView.locationOverlay.icon = currentImage
+            mapView.locationOverlay.subIcon = directionImage
+            
+        } else {
+            
+            sender.isSelected = true
+            mapView.positionMode = .compass
+            mapView.locationOverlay.icon = currentImage
+            mapView.locationOverlay.subIcon = compassImage
+        }
+    }
+    
+    
+    
+}
+
+extension ResultMapVC: NMFMapViewTouchDelegate {
+    
+    func mapView(_ mapView: NMFMapView, didTapMap latlng: NMGLatLng, point: CGPoint) {
+        print("\(latlng)")
+        cardVC.view.isHidden = true
+        self.beforeMarker?.iconImage = self.pickerImage
+        
+    }
+    
+    func mapView(_ mapView: NMFMapView, didTap symbol: NMFSymbol) -> Bool {
+        print(symbol)
+        
+        cardVC.view.isHidden = true
+        self.beforeMarker?.iconImage = self.pickerImage
+        
+        return true
+    }
+    
+}
+
+extension ResultMapVC: NMFMapViewCameraDelegate {
+    
+}
+
+extension ResultMapVC: CLLocationManagerDelegate {
+    
+    
+    
 }

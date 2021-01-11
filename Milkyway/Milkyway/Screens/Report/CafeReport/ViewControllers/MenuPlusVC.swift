@@ -116,6 +116,10 @@ extension MenuPlusVC  {
     
     @objc func doneButtonAction() {
         self.priceTF.resignFirstResponder()
+        // se 때문에 넣어놓은것 ,,,
+        if UIScreen.main.bounds.height < 700 {
+        menuScrollView.contentOffset = CGPoint(x:0, y:80)
+        }
     }
     
     

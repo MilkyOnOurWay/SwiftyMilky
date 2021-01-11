@@ -302,22 +302,22 @@
     </scenes>
     <designables>
         <designable name="0Ng-0W-cFP">
-            <size key="intrinsicContentSize" width="142" height="29"/>
+            <size key="intrinsicContentSize" width="141.5" height="28.5"/>
         </designable>
         <designable name="Xqe-Pj-CdQ">
-            <size key="intrinsicContentSize" width="30" height="32"/>
+            <size key="intrinsicContentSize" width="30" height="31"/>
         </designable>
         <designable name="n4u-p2-sql">
-            <size key="intrinsicContentSize" width="30" height="32"/>
+            <size key="intrinsicContentSize" width="30" height="31"/>
         </designable>
         <designable name="nlD-QJ-ygx">
-            <size key="intrinsicContentSize" width="30" height="32"/>
+            <size key="intrinsicContentSize" width="30" height="31"/>
         </designable>
         <designable name="v4s-yN-sJE">
-            <size key="intrinsicContentSize" width="174" height="29"/>
+            <size key="intrinsicContentSize" width="174" height="28.5"/>
         </designable>
         <designable name="x6N-Kb-VaD">
-            <size key="intrinsicContentSize" width="30" height="32"/>
+            <size key="intrinsicContentSize" width="30" height="31"/>
         </designable>
     </designables>
     <resources>

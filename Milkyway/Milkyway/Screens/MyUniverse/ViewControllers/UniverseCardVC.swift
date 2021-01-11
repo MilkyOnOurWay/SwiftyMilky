@@ -46,6 +46,7 @@ extension UniverseCardVC {
     
     @objc func deleteButtonDidTap(){
         
+        NotificationCenter.default.post(name: Notification.Name("removePopUp"), object: nil)
         // 서버통신진행
         
         

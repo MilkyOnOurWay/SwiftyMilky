@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pKc-35-Q1x">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Universe Pop UpVC-->
+        <scene sceneID="m5Q-mE-Qis">
+            <objects>
+                <viewController storyboardIdentifier="UniversePopUpVC" modalTransitionStyle="crossDissolve" id="pKc-35-Q1x" customClass="UniversePopUpVC" customModule="Milkyway" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ski-cP-Zff">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aHb-so-Llx">
+                                <rect key="frame" x="20" y="346.5" width="374" height="215.5"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="popupDeleteRquest" translatesAutoresizingMaskIntoConstraints="NO" id="boO-zV-VVy">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="215.5"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jmF-4g-nIJ">
+                                        <rect key="frame" x="20" y="131" width="161" height="64.5"/>
+                                        <connections>
+                                            <action selector="noBtnClicked:" destination="pKc-35-Q1x" eventType="touchUpInside" id="fEU-Hb-FMQ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ou1-Yf-phT">
+                                        <rect key="frame" x="193" y="131" width="161" height="64.5"/>
+                                        <connections>
+                                            <action selector="removeBtnClicked:" destination="pKc-35-Q1x" eventType="touchUpInside" id="hi8-8Z-QbB"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="jmF-4g-nIJ" secondAttribute="bottom" constant="20" id="BpN-ua-RQM"/>
+                                    <constraint firstAttribute="trailing" secondItem="boO-zV-VVy" secondAttribute="trailing" id="BpP-u4-wuH"/>
+                                    <constraint firstItem="boO-zV-VVy" firstAttribute="top" secondItem="aHb-so-Llx" secondAttribute="top" id="NlI-oh-ca1"/>
+                                    <constraint firstItem="ou1-Yf-phT" firstAttribute="height" secondItem="boO-zV-VVy" secondAttribute="height" multiplier="0.3" id="RqI-dK-yDo"/>
+                                    <constraint firstItem="boO-zV-VVy" firstAttribute="leading" secondItem="aHb-so-Llx" secondAttribute="leading" id="cdK-rg-z5W"/>
+                                    <constraint firstItem="jmF-4g-nIJ" firstAttribute="leading" secondItem="aHb-so-Llx" secondAttribute="leading" constant="20" id="gKX-Lg-DOG"/>
+                                    <constraint firstAttribute="bottom" secondItem="boO-zV-VVy" secondAttribute="bottom" id="gP5-lu-5yw"/>
+                                    <constraint firstAttribute="width" secondItem="aHb-so-Llx" secondAttribute="height" multiplier="335:193" id="i3u-we-pN2"/>
+                                    <constraint firstAttribute="trailing" secondItem="ou1-Yf-phT" secondAttribute="trailing" constant="20" id="ijb-V4-Mka"/>
+                                    <constraint firstItem="jmF-4g-nIJ" firstAttribute="height" secondItem="boO-zV-VVy" secondAttribute="height" multiplier="0.3" id="pXj-1h-cjR"/>
+                                    <constraint firstItem="ou1-Yf-phT" firstAttribute="width" secondItem="boO-zV-VVy" secondAttribute="width" multiplier="0.43" id="pb0-Jc-rdT"/>
+                                    <constraint firstItem="jmF-4g-nIJ" firstAttribute="width" secondItem="boO-zV-VVy" secondAttribute="width" multiplier="0.43" id="qct-L3-Epf"/>
+                                    <constraint firstAttribute="bottom" secondItem="ou1-Yf-phT" secondAttribute="bottom" constant="20" id="rHB-j5-ZZg"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ksh-TF-mp7"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ksh-TF-mp7" firstAttribute="trailing" secondItem="aHb-so-Llx" secondAttribute="trailing" constant="20" id="41F-Ml-f0e"/>
+                            <constraint firstItem="ksh-TF-mp7" firstAttribute="bottom" secondItem="aHb-so-Llx" secondAttribute="bottom" constant="300" id="HDu-7B-Au1"/>
+                            <constraint firstItem="aHb-so-Llx" firstAttribute="leading" secondItem="ksh-TF-mp7" secondAttribute="leading" constant="20" id="Ud5-nH-Tbx"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="askRemoveView" destination="aHb-so-Llx" id="uHq-le-OBd"/>
+                        <outlet property="noBtn" destination="jmF-4g-nIJ" id="gGe-3S-64P"/>
+                        <outlet property="removeBtn" destination="ou1-Yf-phT" id="TL6-WW-nJV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5oL-PJ-APZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="893" y="104"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="popupDeleteRquest" width="335" height="193"/>
+    </resources>
+</document>

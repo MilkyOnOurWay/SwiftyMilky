@@ -55,6 +55,8 @@
 		D175DA8025AB51C700665678 /* BottomTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D175DA7E25AB51C600665678 /* BottomTVC.swift */; };
 		D175DA8125AB51C700665678 /* BottomTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D175DA7F25AB51C600665678 /* BottomTVC.xib */; };
 		D175DA8D25AB863900665678 /* ReportCafeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D175DA8C25AB863900665678 /* ReportCafeService.swift */; };
+		D175DA9925AC412200665678 /* UniversePopUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D175DA9825AC412200665678 /* UniversePopUpVC.swift */; };
+		D175DA9C25AC4DCC00665678 /* UniversePopUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D175DA9B25AC4DCC00665678 /* UniversePopUp.storyboard */; };
 		D1983CA725A72BF200C74CED /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1983CA625A72BF200C74CED /* UITextField+Extension.swift */; };
 		D1996E0425A2290500B8F40B /* DetailCafeMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1996E0325A2290500B8F40B /* DetailCafeMenuVC.swift */; };
 		D1996E0725A2290E00B8F40B /* DetailCafeMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1996E0625A2290E00B8F40B /* DetailCafeMenu.storyboard */; };
@@ -185,6 +187,8 @@
 		D175DA7E25AB51C600665678 /* BottomTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomTVC.swift; sourceTree = "<group>"; };
 		D175DA7F25AB51C600665678 /* BottomTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottomTVC.xib; sourceTree = "<group>"; };
 		D175DA8C25AB863900665678 /* ReportCafeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportCafeService.swift; sourceTree = "<group>"; };
+		D175DA9825AC412200665678 /* UniversePopUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversePopUpVC.swift; sourceTree = "<group>"; };
+		D175DA9B25AC4DCC00665678 /* UniversePopUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UniversePopUp.storyboard; sourceTree = "<group>"; };
 		D1983CA625A72BF200C74CED /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		D1996E0325A2290500B8F40B /* DetailCafeMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCafeMenuVC.swift; sourceTree = "<group>"; };
 		D1996E0625A2290E00B8F40B /* DetailCafeMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailCafeMenu.storyboard; sourceTree = "<group>"; };
@@ -679,6 +683,7 @@
 			isa = PBXGroup;
 			children = (
 				F2242A53259C4A9B00455604 /* MyUniverseVC.swift */,
+				D175DA9825AC412200665678 /* UniversePopUpVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -693,6 +698,7 @@
 				D175DA5A25AAE5C600665678 /* UniverseBottomVC.xib */,
 				D175DA7E25AB51C600665678 /* BottomTVC.swift */,
 				D175DA7F25AB51C600665678 /* BottomTVC.xib */,
+				D175DA9B25AC4DCC00665678 /* UniversePopUp.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -917,6 +923,7 @@
 				6B27B9A525A7228C00E14799 /* CanceledTVCell.xib in Resources */,
 				6B869C0825A0BF700068BFD2 /* Modify.storyboard in Resources */,
 				6B27B9AB25A7240800E14799 /* InProgressTVCell.xib in Resources */,
+				D175DA9C25AC4DCC00665678 /* UniversePopUp.storyboard in Resources */,
 				F2BA62ED2598DE6400A49020 /* LaunchScreen.storyboard in Resources */,
 				D154440A25A33B10007773BF /* HoneyTipCell.xib in Resources */,
 				D11AB9CD25A5BC0E00C1927E /* MenuPlus.storyboard in Resources */,
@@ -1063,6 +1070,7 @@
 				6B96A13625A9C809004E529D /* CancelReasonVC.swift in Sources */,
 				D175DA8025AB51C700665678 /* BottomTVC.swift in Sources */,
 				D15443FF25A33AF9007773BF /* CafeNameResultCell.swift in Sources */,
+				D175DA9925AC412200665678 /* UniversePopUpVC.swift in Sources */,
 				F2242A3B259BB2CF00455604 /* SettingVC.swift in Sources */,
 				F2BA62E02598DE5F00A49020 /* SceneDelegate.swift in Sources */,
 				F2BA63292598E74E00A49020 /* Font.swift in Sources */,

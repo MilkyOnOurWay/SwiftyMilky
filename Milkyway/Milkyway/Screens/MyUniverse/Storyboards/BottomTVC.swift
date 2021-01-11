@@ -8,10 +8,13 @@
 import UIKit
 
 class BottomTVC: UITableViewCell {
-
+    @IBOutlet weak var deleteBtn: UIButton!
+    
+    var deleteBtnAction : (() -> ())?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        self.deleteBtn.addTarget(self, action: #selector(deleteBtnClicked(_:)), for: .touchUpInside)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -19,5 +22,10 @@ class BottomTVC: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
+
+    @IBAction func deleteBtnClicked(_ sender: Any) {
+        print("delete")
+        deleteBtnAction?()
+    }
 }
+

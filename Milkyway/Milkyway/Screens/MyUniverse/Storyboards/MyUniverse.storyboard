@@ -51,7 +51,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iqj-ZF-uoU">
-                                <rect key="frame" x="330" y="576" width="68" height="68"/>
+                                <rect key="frame" x="330" y="575.66666666666663" width="68" height="68"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="68" id="2ca-JJ-suf"/>
                                     <constraint firstAttribute="width" constant="68" id="lUz-zU-NSU"/>

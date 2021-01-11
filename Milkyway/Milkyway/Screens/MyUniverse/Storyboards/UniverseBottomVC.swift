@@ -9,13 +9,19 @@ import UIKit
 
 class UniverseBottomVC: UIViewController {
     
-
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var handleArea: UIView!
     @IBOutlet var rootView: UIView!
     @IBOutlet weak var handleBar: UIView!
+    @IBOutlet weak var emptyLabel: UILabel!
+    @IBOutlet weak var emptyView: UIView!
+    
+    let count = 5
     
     override func viewDidLoad() {
+        emptyView.isHidden = true
+        
         super.viewDidLoad()
         setView()
         setHandler()
@@ -23,10 +29,9 @@ class UniverseBottomVC: UIViewController {
         tableView.dataSource = self
         let BottomCellNib = UINib(nibName: "BottomTVC", bundle: nil)
         self.tableView.register(BottomCellNib, forCellReuseIdentifier: "BottomTVC")
+        emptyLabel.text = "아직 유니버스에 담긴 카페가 없어요.\n마음에 드는 카페를 담으면\n소영님의 빛나는 유니버스를 만날 수 있어요!"
+        
     }
-    
-  
-    
     
 }
 
@@ -94,7 +99,15 @@ extension UniverseBottomVC: UITableViewDelegate {
 
 extension UniverseBottomVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        10
+        if count == 0 {
+            emptyView.isHidden = false
+            return 0
+        }
+        else {
+            emptyView.isHidden = true
+            return count
+        }
+        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -106,6 +119,14 @@ extension UniverseBottomVC: UITableViewDataSource {
             return UITableViewCell()
             
         }
+        
+        cell.deleteBtnAction = { [unowned self] in
+            
+            NotificationCenter.default.post(name: Notification.Name("removePopUp"), object: nil)
+            
+            
+        }
+        
         cell.selectionStyle = .none
         return cell
     }

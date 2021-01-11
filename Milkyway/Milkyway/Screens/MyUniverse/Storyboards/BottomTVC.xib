@@ -47,6 +47,9 @@
                             <constraint firstAttribute="width" constant="60" id="IAa-OK-ikd"/>
                             <constraint firstAttribute="height" constant="50" id="WAD-Km-fMD"/>
                         </constraints>
+                        <connections>
+                            <action selector="deleteBtnClicked:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="IhZ-9h-KpB"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="삭제" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pOl-jf-bmM">
                         <rect key="frame" x="301" y="25" width="21" height="14"/>
@@ -71,6 +74,9 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="deleteBtn" destination="Xkr-aB-kyb" id="XG7-ha-7Ua"/>
+            </connections>
             <point key="canvasLocation" x="162.31884057971016" y="136.94196428571428"/>
         </tableViewCell>
     </objects>

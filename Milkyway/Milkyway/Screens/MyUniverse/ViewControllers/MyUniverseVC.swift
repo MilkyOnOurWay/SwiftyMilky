@@ -12,6 +12,8 @@ class MyUniverseVC: UIViewController{
     @IBOutlet weak var mapView: NMFMapView!
     @IBOutlet weak var locationBtn: UIButton!
     @IBOutlet weak var glowUniverseLabel: UILabel!
+    @IBOutlet weak var viewForAnimate: UIView!
+    @IBOutlet weak var logoImgaeView: UIImageView!
     
     let userNickName = "소영소영"
     
@@ -69,35 +71,41 @@ class MyUniverseVC: UIViewController{
                                 
     ]
     
-    
+    override func viewWillAppear(_ animated: Bool) {
+        print("myUniverse - viewWillAppear()")
+        gettingdark()
+        
+    }
     
     override func viewDidLoad(){
-        delegateGather()
-        setCamera()
-        setMarker()
-        setMap()
-        setMapButton()
-        setBottomCard()
-        setFirstCardView()
-        super.viewDidLoad()
+        print("myUniverse - viewDidLoad()")
         
+        super.viewDidLoad()
         
         // 로딩관련 노티
         NotificationCenter.default.addObserver(self, selector: #selector(showLoadingLottie), name: Notification.Name("startlottieuni"),object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(stopLottieAnimation), name: Notification.Name("stoplottieuni"),object: nil)
-        
-        //        if markers.count > 0 {
-        //            glowUniverseLabel.text = "\(userNickName) 님의 \n유니버스가 빛나고 있어요.\n오늘은 어떤 밀키웨이를 탐험해 볼까요?"
-        //        }
-        //        else {
-        glowUniverseLabel.text = "\(userNickName) 님의\n유니버스에 오신걸 환영합니다.\n\n홈에서 좋아하는 카페를 담아\n유니버스를 채워주세요!"
-        //        }
-        changeFontSize()
-        
         NotificationCenter.default.addObserver(self, selector: #selector(presentpopup), name: Notification.Name("removePopUp"),object: nil)
         
+        if markers.count > 0 {
+            glowUniverseLabel.text = "\(userNickName) 님의 \n유니버스가 빛나고 있어요.\n오늘은 어떤 밀키웨이를 탐험해 볼까요?"
+        }
+        else {
+            glowUniverseLabel.text = "\(userNickName) 님의\n유니버스에 오신걸 환영합니다.\n\n홈에서 좋아하는 카페를 담아\n유니버스를 채워주세요!"
+        }
+        changeFontSize()
+        
+        
+        
+        
+        delegateGather()
+        setMapButton()
+        setBottomCard()
+        setFirstCardView()
         
     }
+    
+    
     
     // statusBar 색상변경
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -106,6 +114,7 @@ class MyUniverseVC: UIViewController{
     }
     
     @objc func presentpopup() {
+        print("myUniverse - presentpopup()")
         let storyboard = UIStoryboard(name: "UniversePopUp", bundle: nil)  
         
         if let popVC = storyboard.instantiateViewController(withIdentifier: "UniversePopUpVC") as? UniversePopUpVC {
@@ -141,18 +150,58 @@ class MyUniverseVC: UIViewController{
 extension MyUniverseVC {
     
     func delegateGather() {
+        print("myUniverse - delegateGather()")
         mapView.addCameraDelegate(delegate: self)
         mapView.touchDelegate = self
     }
     
     func setMap() {
-        mapView.lightness = -0.7
+        print("myUniverse - setMap()")
         mapView.minZoomLevel = 5
         mapView.maxZoomLevel = 18
         
     }
     
+    func gettingdark() {
+        print("myUniverse - gettingdark()")
+        self.viewForAnimate.isHidden = false
+        self.mapView.lightness = 0
+        self.viewForAnimate.alpha = 0.0
+        self.glowUniverseLabel.alpha = 0.0
+        self.logoImgaeView.alpha = 0.0
+        
+        UIView.animate(withDuration: 1.5 , delay: 0.0, options: .curveEaseInOut, animations: {
+            self.viewForAnimate.alpha = 0.7
+        }, completion: { finished in
+            self.mapView.lightness = -0.7
+            Thread.sleep(forTimeInterval: 0.4)
+            self.viewForAnimate.isHidden = true
+            self.setCamera()
+            self.setMarker()
+            self.setMap()
+            
+        })
+        
+        UILabel.animate(withDuration: 2.0 , delay: 1.0, options: .curveEaseInOut, animations: {
+            self.glowUniverseLabel.alpha = 1.0
+            
+        }, completion: { finished in
+            UILabel.animate(withDuration: 2.0 , delay: 7.0, options: .curveEaseInOut, animations: {
+                self.glowUniverseLabel.alpha = 0.0
+                
+            })
+        })
+        
+        UIImageView.animate(withDuration: 2.0, delay: 1.0, options: .curveEaseInOut, animations: {
+            self.logoImgaeView.alpha = 1.0
+            
+        })
+        
+    }
+    
+    
     func setFirstCardView() {
+        
         cardVC = UniverseCardVC(nibName: "UniverseCardVC", bundle: nil)
         self.addChild(cardVC)
         self.view.addSubview(cardVC.view)
@@ -163,6 +212,8 @@ extension MyUniverseVC {
         
         cardVC.view.isHidden = true
     }
+    
+    
     
     func changeFontSize() {
         // 폰트굵기 부분 변경하기 https://nsios.tistory.com/35
@@ -206,7 +257,7 @@ extension MyUniverseVC {
     
     
     func setCamera() {
-        
+        print("myUniverse - setCamera()")
         let cameraPosition = NMFCameraPosition(NMGLatLng(lat: 37.525346, lng: 126.982174), zoom: 10.8)
         let cameraUpdate = NMFCameraUpdate(position: cameraPosition)
         cameraUpdate.animation = .easeIn
@@ -222,6 +273,7 @@ extension MyUniverseVC {
     
     
     func setMarker() {
+        print("myUniverse - setMarker()")
         if markers.isEmpty {
             for index in 0..<mangWon.count {
                 

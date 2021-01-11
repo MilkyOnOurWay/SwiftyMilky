@@ -20,38 +20,14 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="45k-5X-Wyh" customClass="NMFMapView">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoWhite" translatesAutoresizingMaskIntoConstraints="NO" id="XcT-p5-mKe">
-                                        <rect key="frame" x="20" y="59" width="132" height="25"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="25" id="VZB-nV-5gH"/>
-                                            <constraint firstAttribute="width" constant="132" id="wH3-KG-yHb"/>
-                                        </constraints>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vh5-SH-CYW">
-                                        <rect key="frame" x="20" y="104" width="104" height="24"/>
-                                        <attributedString key="attributedText">
-                                            <fragment content="어쩌구저쩌구">
-                                                <attributes>
-                                                    <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <font key="NSFont" size="20" name="AppleSDGothicNeo-Regular"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="3" tighteningFactorForTruncation="0.0"/>
-                                                </attributes>
-                                            </fragment>
-                                        </attributedString>
-                                        <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </label>
-                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstItem="vh5-SH-CYW" firstAttribute="top" secondItem="XcT-p5-mKe" secondAttribute="bottom" constant="20" id="7RX-CB-EJ0"/>
-                                    <constraint firstItem="vh5-SH-CYW" firstAttribute="leading" secondItem="XcT-p5-mKe" secondAttribute="leading" id="Q4k-9s-pem"/>
-                                    <constraint firstItem="XcT-p5-mKe" firstAttribute="leading" secondItem="45k-5X-Wyh" secondAttribute="leading" constant="20" id="mwO-E2-wef"/>
-                                    <constraint firstItem="XcT-p5-mKe" firstAttribute="top" secondItem="45k-5X-Wyh" secondAttribute="top" constant="59" id="rgM-N6-19K"/>
-                                </constraints>
+                            </view>
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bl5-6I-GGS">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iqj-ZF-uoU">
-                                <rect key="frame" x="330" y="575.66666666666663" width="68" height="68"/>
+                                <rect key="frame" x="330" y="576" width="68" height="68"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="68" id="2ca-JJ-suf"/>
                                     <constraint firstAttribute="width" constant="68" id="lUz-zU-NSU"/>
@@ -60,16 +36,44 @@
                                     <imageReference key="image" image="btnCurrentLocation" symbolScale="large"/>
                                 </state>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vh5-SH-CYW">
+                                <rect key="frame" x="20" y="104" width="104" height="24"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="어쩌구저쩌구">
+                                        <attributes>
+                                            <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <font key="NSFont" size="20" name="AppleSDGothicNeo-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="3" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoWhite" translatesAutoresizingMaskIntoConstraints="NO" id="XcT-p5-mKe">
+                                <rect key="frame" x="20" y="59" width="132" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="VZB-nV-5gH"/>
+                                    <constraint firstAttribute="width" constant="132" id="wH3-KG-yHb"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="L9B-nA-7Md"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="L9B-nA-7Md" firstAttribute="bottom" secondItem="45k-5X-Wyh" secondAttribute="bottom" id="1is-VV-MQp"/>
                             <constraint firstItem="L9B-nA-7Md" firstAttribute="trailing" secondItem="iqj-ZF-uoU" secondAttribute="trailing" constant="16" id="NOH-4L-AH7"/>
+                            <constraint firstItem="bl5-6I-GGS" firstAttribute="leading" secondItem="L9B-nA-7Md" secondAttribute="leading" id="Puv-hf-ado"/>
                             <constraint firstItem="45k-5X-Wyh" firstAttribute="top" secondItem="jF0-DU-7Y0" secondAttribute="top" id="Rpr-9R-Pxa"/>
+                            <constraint firstItem="bl5-6I-GGS" firstAttribute="top" secondItem="jF0-DU-7Y0" secondAttribute="top" id="U06-34-CaW"/>
                             <constraint firstItem="iqj-ZF-uoU" firstAttribute="centerY" secondItem="L9B-nA-7Md" secondAttribute="bottom" multiplier="0.75" id="cny-mE-eGo"/>
                             <constraint firstItem="45k-5X-Wyh" firstAttribute="leading" secondItem="L9B-nA-7Md" secondAttribute="leading" id="dvl-QA-iwY"/>
+                            <constraint firstItem="L9B-nA-7Md" firstAttribute="bottom" secondItem="bl5-6I-GGS" secondAttribute="bottom" id="jks-fK-Zye"/>
                             <constraint firstItem="L9B-nA-7Md" firstAttribute="trailing" secondItem="45k-5X-Wyh" secondAttribute="trailing" id="lE0-Vm-94d"/>
+                            <constraint firstItem="XcT-p5-mKe" firstAttribute="top" secondItem="L9B-nA-7Md" secondAttribute="top" constant="15" id="noa-My-P5O"/>
+                            <constraint firstItem="vh5-SH-CYW" firstAttribute="leading" secondItem="XcT-p5-mKe" secondAttribute="leading" id="oGW-38-SIr"/>
+                            <constraint firstItem="XcT-p5-mKe" firstAttribute="leading" secondItem="L9B-nA-7Md" secondAttribute="leading" constant="20" id="s1H-vj-1DI"/>
+                            <constraint firstItem="vh5-SH-CYW" firstAttribute="top" secondItem="XcT-p5-mKe" secondAttribute="bottom" constant="20" id="tBA-7b-fnS"/>
+                            <constraint firstItem="L9B-nA-7Md" firstAttribute="trailing" secondItem="bl5-6I-GGS" secondAttribute="trailing" id="w0K-W4-We7"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="유니버스" image="mdiUniverse" selectedImage="mdiUniverseTapped" id="uOh-iJ-vku"/>
@@ -77,7 +81,9 @@
                     <connections>
                         <outlet property="glowUniverseLabel" destination="vh5-SH-CYW" id="trR-Bg-Zfd"/>
                         <outlet property="locationBtn" destination="iqj-ZF-uoU" id="Jo9-uZ-ZxI"/>
+                        <outlet property="logoImgaeView" destination="XcT-p5-mKe" id="rO3-T9-5Ot"/>
                         <outlet property="mapView" destination="45k-5X-Wyh" id="FyS-33-hAU"/>
+                        <outlet property="viewForAnimate" destination="bl5-6I-GGS" id="dml-ti-38C"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mAA-Ql-O9Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -14,6 +14,8 @@
 		6B27B9A525A7228C00E14799 /* CanceledTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B27B9A325A7228C00E14799 /* CanceledTVCell.xib */; };
 		6B27B9AA25A7240800E14799 /* InProgressTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B27B9A825A7240800E14799 /* InProgressTVCell.swift */; };
 		6B27B9AB25A7240800E14799 /* InProgressTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B27B9A925A7240800E14799 /* InProgressTVCell.xib */; };
+		6B4060CD25AE1693009C8B0A /* GetMyReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4060CC25AE1693009C8B0A /* GetMyReport.swift */; };
+		6B4060D025AE16B6009C8B0A /* MyReportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4060CF25AE16B6009C8B0A /* MyReportService.swift */; };
 		6B4086D025AC2B4E00D6894E /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4086CF25AC2B4E00D6894E /* HomeService.swift */; };
 		6B4086D325AC33AD00D6894E /* GetMilkyHomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4086D225AC33AD00D6894E /* GetMilkyHomeModel.swift */; };
 		6B657FE325AD5B85002648A1 /* ModifyCafeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B657FE225AD5B85002648A1 /* ModifyCafeService.swift */; };
@@ -152,6 +154,8 @@
 		6B27B9A325A7228C00E14799 /* CanceledTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CanceledTVCell.xib; sourceTree = "<group>"; };
 		6B27B9A825A7240800E14799 /* InProgressTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InProgressTVCell.swift; sourceTree = "<group>"; };
 		6B27B9A925A7240800E14799 /* InProgressTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InProgressTVCell.xib; sourceTree = "<group>"; };
+		6B4060CC25AE1693009C8B0A /* GetMyReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMyReport.swift; sourceTree = "<group>"; };
+		6B4060CF25AE16B6009C8B0A /* MyReportService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReportService.swift; sourceTree = "<group>"; };
 		6B4086CF25AC2B4E00D6894E /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
 		6B4086D225AC33AD00D6894E /* GetMilkyHomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMilkyHomeModel.swift; sourceTree = "<group>"; };
 		6B657FE225AD5B85002648A1 /* ModifyCafeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyCafeService.swift; sourceTree = "<group>"; };
@@ -342,6 +346,7 @@
 				F2485E7A25A8C8E0003E3895 /* Token.swift */,
 				D1CA107625AA06E6004E42DC /* PostCafeModel.swift */,
 				D1CA107925AA06F1004E42DC /* GetDetailCafeModel.swift */,
+				6B4060CC25AE1693009C8B0A /* GetMyReport.swift */,
 				6B4086D225AC33AD00D6894E /* GetMilkyHomeModel.swift */,
 				F215A22425ACDC0400FB7D86 /* GetCafeInfoModel.swift */,
 				6B657FE525AD5C15002648A1 /* PostModifyModel.swift */,
@@ -866,6 +871,7 @@
 				D175DABB25ACCD5400665678 /* UniverseService.swift */,
 				F215A21425ACD77000FB7D86 /* SearchCafeService.swift */,
 				6B657FE225AD5B85002648A1 /* ModifyCafeService.swift */,
+				6B4060CF25AE16B6009C8B0A /* MyReportService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1076,6 +1082,7 @@
 				6B869C4425A1E8E00068BFD2 /* DeletePlaceConfirmVC.swift in Sources */,
 				6B869C0E25A0CBF70068BFD2 /* ModifyConfirmVC.swift in Sources */,
 				D1CA107D25AA09DB004E42DC /* DetailCafeService.swift in Sources */,
+				6B4060D025AE16B6009C8B0A /* MyReportService.swift in Sources */,
 				D1F22850259F74810018C472 /* MyReportMainVC.swift in Sources */,
 				F2BA62DE2598DE5F00A49020 /* AppDelegate.swift in Sources */,
 				F2C0642225A8BCD100BDD16D /* UserService.swift in Sources */,
@@ -1107,6 +1114,7 @@
 				F2BA62E02598DE5F00A49020 /* SceneDelegate.swift in Sources */,
 				F2BA63292598E74E00A49020 /* Font.swift in Sources */,
 				D1F2284A259F745F0018C472 /* CafeReportMainVC.swift in Sources */,
+				6B4060CD25AE1693009C8B0A /* GetMyReport.swift in Sources */,
 				F2F6123425A61C47008B65DF /* SearchResultVC.swift in Sources */,
 				F2BA630E2598E52600A49020 /* UITextView+Extension.swift in Sources */,
 				F2242A47259BC22F00455604 /* LoginVC.swift in Sources */,

@@ -42,6 +42,10 @@ class InfoModifyReqVC: UIViewController {
         
     }
     
+    @IBAction func backBtnClicked(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
 }
 extension InfoModifyReqVC {
     
@@ -53,7 +57,7 @@ extension InfoModifyReqVC {
         subLabel.textAlignment = .center
         subLabel.numberOfLines = 3
         subLabel.text = "불편을 드려 죄송합니다.\n정보 수정을 요청해 주시면 불편하셨던 만큼\n꼼꼼히 확인하여 다시 반영하도록 하겠습니다."
-        subLabel.font = UIFont(name:"SFProText-Thin", size: 12.0)
+        subLabel.font = UIFont(name:"SFProText-Regular", size: 12.0)
     }
     
     func setButton() {

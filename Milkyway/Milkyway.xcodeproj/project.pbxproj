@@ -16,6 +16,8 @@
 		6B27B9AB25A7240800E14799 /* InProgressTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B27B9A925A7240800E14799 /* InProgressTVCell.xib */; };
 		6B4086D025AC2B4E00D6894E /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4086CF25AC2B4E00D6894E /* HomeService.swift */; };
 		6B4086D325AC33AD00D6894E /* GetMilkyHomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4086D225AC33AD00D6894E /* GetMilkyHomeModel.swift */; };
+		6B657FE325AD5B85002648A1 /* ModifyCafeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B657FE225AD5B85002648A1 /* ModifyCafeService.swift */; };
+		6B657FE625AD5C15002648A1 /* PostModifyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B657FE525AD5C15002648A1 /* PostModifyModel.swift */; };
 		6B869C0225A0B95E0068BFD2 /* InfoModifyReqVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B869C0125A0B95E0068BFD2 /* InfoModifyReqVC.swift */; };
 		6B869C0525A0B96D0068BFD2 /* InfoModifyReq.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B869C0425A0B96D0068BFD2 /* InfoModifyReq.storyboard */; };
 		6B869C0825A0BF700068BFD2 /* Modify.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B869C0725A0BF700068BFD2 /* Modify.storyboard */; };
@@ -151,6 +153,8 @@
 		6B27B9A925A7240800E14799 /* InProgressTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InProgressTVCell.xib; sourceTree = "<group>"; };
 		6B4086CF25AC2B4E00D6894E /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
 		6B4086D225AC33AD00D6894E /* GetMilkyHomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMilkyHomeModel.swift; sourceTree = "<group>"; };
+		6B657FE225AD5B85002648A1 /* ModifyCafeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyCafeService.swift; sourceTree = "<group>"; };
+		6B657FE525AD5C15002648A1 /* PostModifyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModifyModel.swift; sourceTree = "<group>"; };
 		6B869C0125A0B95E0068BFD2 /* InfoModifyReqVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoModifyReqVC.swift; sourceTree = "<group>"; };
 		6B869C0425A0B96D0068BFD2 /* InfoModifyReq.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InfoModifyReq.storyboard; sourceTree = "<group>"; };
 		6B869C0725A0BF700068BFD2 /* Modify.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Modify.storyboard; sourceTree = "<group>"; };
@@ -338,6 +342,7 @@
 				D1CA107925AA06F1004E42DC /* GetDetailCafeModel.swift */,
 				6B4086D225AC33AD00D6894E /* GetMilkyHomeModel.swift */,
 				F215A22425ACDC0400FB7D86 /* GetCafeInfoModel.swift */,
+				6B657FE525AD5C15002648A1 /* PostModifyModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -857,6 +862,7 @@
 				6B4086CF25AC2B4E00D6894E /* HomeService.swift */,
 				D175DABB25ACCD5400665678 /* UniverseService.swift */,
 				F215A21425ACD77000FB7D86 /* SearchCafeService.swift */,
+				6B657FE225AD5B85002648A1 /* ModifyCafeService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1035,6 +1041,7 @@
 				D154440425A33B05007773BF /* CafeMenusCell.swift in Sources */,
 				F2CD9C3625A83EBD001EC280 /* FilterResultCardVC.swift in Sources */,
 				F215A22525ACDC0400FB7D86 /* GetCafeInfoModel.swift in Sources */,
+				6B657FE325AD5B85002648A1 /* ModifyCafeService.swift in Sources */,
 				D154440925A33B10007773BF /* HoneyTipCell.swift in Sources */,
 				6BD05A6D25A41FFE00B2643F /* CompletedTVCell.swift in Sources */,
 				6BD05A6E25A41FFE00B2643F /* TopTVCell.swift in Sources */,
@@ -1048,6 +1055,7 @@
 				6BF6DAA225A603A7001CDB9A /* CustomLabel.swift in Sources */,
 				F2688C3025AB74C50032C054 /* AddSearchResultVC.swift in Sources */,
 				D1F2283B259F70DA0018C472 /* ReportTabBarViewController.swift in Sources */,
+				6B657FE625AD5C15002648A1 /* PostModifyModel.swift in Sources */,
 				F2BA631A2598E5AA00A49020 /* UIImageView+Extension.swift in Sources */,
 				D1D95DDD25A30BB100B95F79 /* CafeMenuCell.swift in Sources */,
 				F2BA62E82598DE5F00A49020 /* Milkyway.xcdatamodeld in Sources */,

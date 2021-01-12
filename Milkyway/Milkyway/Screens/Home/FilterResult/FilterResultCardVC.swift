@@ -16,8 +16,10 @@ class FilterResultCardVC: UIViewController {
     @IBOutlet weak var universeCountLabel: UILabel!
     
     var universeCount = 0 // 서버 위키 추후에 다시 참고할 것. 일단 박아놓은 값
-    var buttonIsSelected = 1
-    
+    var buttonIsSelected: Bool = true
+    //var addStateUniverse = UniverseOn(from: )
+    var plusUniverse: AddUniverse?
+    var infoUniverse: UniverseOn?
     override func viewDidLoad() {
         super.viewDidLoad()
         setView()
@@ -35,8 +37,9 @@ extension FilterResultCardVC {
     
     func setUniverseButton(){
         
+        print(#function)
         universeButton.addTarget(self, action: #selector(universeButtonDidTap), for: .touchUpInside)
-        
+        universeButton.setImage(UIImage(named: "btnUniverse"), for: .normal)
       
         
         
@@ -45,20 +48,49 @@ extension FilterResultCardVC {
     
     @objc func universeButtonDidTap(){
         
-        // 서버통신진행
+        buttonIsSelected ? addUniverse() : deleteUniverse()
+        print(#function)
+        print(buttonIsSelected)
+    }
+    
+    func addUniverse(){
         
-        // 버튼 이미지 변경
-        universeButton.setBackgroundImage(UIImage(named: "btnUniverseAdded"), for: .normal)
+        // 유니버스 추가하는 서버 통신 연결
         
-        // 유니버스 추가 개수 변화
-        if buttonIsSelected == 1 && universeButton.isSelected == true {
-            universeCount += 1
-            buttonIsSelected = 0
-        } else if buttonIsSelected == 0 && universeButton.isSelected == true {
-            universeCount -= 1
-            buttonIsSelected = 1
+        addMyUniverse(15592715)
+        universeButton.setImage(UIImage(named: "btnUniverseAdded"), for: .normal)
+        buttonIsSelected = false
+        
+    }
+    @objc func addMyUniverse(_ cafeId: Int){
+        UniverseService.shared.addUniverse(cafeId) {
+            (responseData) in
+            
+            switch responseData {
+            case.success(let res):
+                dump(res)
+                self.plusUniverse = res as? AddUniverse
+                self.infoUniverse = self.plusUniverse?.universeOn[0]
+                self.universeCountLabel.text = String(self.plusUniverse?.universeCount ?? 0)
+                print("success")
+                
+            case.requestErr(_):
+                print("requestErr")
+                
+            case .pathErr:
+                print("pathErr")
+                
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print(".failureErr")
+            }
         }
+    }
+    func deleteUniverse(){
         
-        
+        universeButton.setImage(UIImage(named: "btnUniverse"), for: .normal)
+        buttonIsSelected = true
+    
     }
 }

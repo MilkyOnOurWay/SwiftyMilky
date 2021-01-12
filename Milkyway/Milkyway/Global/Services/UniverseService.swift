@@ -102,7 +102,7 @@ struct UniverseService {
                             do{
                                 let decoder = JSONDecoder()
                                 let result = try decoder.decode(ResponseResult<AddUniverse>.self,from: value)
-                                completion(.success(result.data ?? [AddUniverse].self))
+                                completion(.success(result.data ?? AddUniverse.self))
                             } catch {
                                 completion(.pathErr)
                             }

@@ -44,8 +44,7 @@ struct UserService {
                         case 200:
                             do {
                                 let decoder = JSONDecoder()
-                                let result = try decoder.decode(ResponseSimpleResult<Token>.self,
-                                                                from: value)
+                                let result = try decoder.decode(ResponseSimpleResult<Token>.self,from: value)
                                 completion(.success(result.data ?? Token.self))
                             } catch {
                                 completion(.pathErr)

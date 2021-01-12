@@ -50,30 +50,43 @@
                         <color key="textColor" red="0.60392156862745094" green="0.59215686274509804" blue="0.5725490196078431" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5EA-Se-dJB">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5EA-Se-dJB">
                         <rect key="frame" x="20" y="65" width="335" height="41"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Rt-Bf-bar">
-                                <rect key="frame" x="54" y="13.5" width="227" height="14"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Rt-Bf-bar">
+                                <rect key="frame" x="55" y="12" width="225.5" height="17"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="btnUniverseAdded" translatesAutoresizingMaskIntoConstraints="NO" id="hrU-J7-pqB">
-                                        <rect key="frame" x="0.0" y="-1.5" width="25" height="17"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btnUniverseAdded" translatesAutoresizingMaskIntoConstraints="NO" id="hrU-J7-pqB">
+                                        <rect key="frame" x="0.0" y="0.0" width="25" height="17"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="17" id="aOw-ud-Jee"/>
+                                            <constraint firstAttribute="width" constant="25" id="oeL-2J-dh4"/>
+                                        </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="324명의 밀키들이 유니버스에 추가했어요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c6L-Hz-xSo">
-                                        <rect key="frame" x="28" y="0.0" width="199" height="14"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="324명의 밀키들이 유니버스에 추가했어요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c6L-Hz-xSo">
+                                        <rect key="frame" x="29" y="1.5" width="196.5" height="14"/>
                                         <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="12"/>
                                         <color key="textColor" name="Milky"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="c6L-Hz-xSo" secondAttribute="trailing" id="A0e-mA-N7v"/>
+                                    <constraint firstItem="hrU-J7-pqB" firstAttribute="leading" secondItem="0Rt-Bf-bar" secondAttribute="leading" id="I5f-VF-31c"/>
+                                    <constraint firstItem="c6L-Hz-xSo" firstAttribute="leading" secondItem="hrU-J7-pqB" secondAttribute="trailing" constant="4" id="Qge-q0-XTb"/>
+                                    <constraint firstItem="c6L-Hz-xSo" firstAttribute="centerY" secondItem="hrU-J7-pqB" secondAttribute="centerY" id="nyA-mK-47F"/>
+                                    <constraint firstAttribute="bottom" secondItem="hrU-J7-pqB" secondAttribute="bottom" id="vsK-en-6zL"/>
+                                    <constraint firstItem="hrU-J7-pqB" firstAttribute="top" secondItem="0Rt-Bf-bar" secondAttribute="top" id="vuF-jG-PJ0"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.96470588235294119" green="0.96078431372549022" blue="0.94901960784313721" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="41" id="KAR-Xd-PL6"/>
+                            <constraint firstItem="0Rt-Bf-bar" firstAttribute="centerY" secondItem="5EA-Se-dJB" secondAttribute="centerY" id="Qh5-Ua-wFD"/>
+                            <constraint firstItem="0Rt-Bf-bar" firstAttribute="centerX" secondItem="5EA-Se-dJB" secondAttribute="centerX" id="oAJ-uj-fb4"/>
+                        </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                 <integer key="value" value="8"/>
@@ -148,14 +161,17 @@
                     </imageView>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="5EA-Se-dJB" firstAttribute="top" secondItem="Xlg-p0-OYB" secondAttribute="bottom" constant="16" id="0c1-em-TUn"/>
                     <constraint firstItem="7fd-1g-16Q" firstAttribute="top" secondItem="Xlg-p0-OYB" secondAttribute="top" id="2Q7-q3-YZO"/>
                     <constraint firstItem="itE-hT-8qq" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="8Nx-xB-1XY"/>
                     <constraint firstAttribute="trailing" secondItem="itE-hT-8qq" secondAttribute="trailing" id="DZb-6h-uom"/>
+                    <constraint firstItem="5EA-Se-dJB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="H2T-C6-vmx"/>
                     <constraint firstItem="ucZ-Pv-DGk" firstAttribute="centerY" secondItem="7fd-1g-16Q" secondAttribute="centerY" id="NyV-S8-DeC"/>
                     <constraint firstItem="Xlg-p0-OYB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="QRN-DP-tzH"/>
                     <constraint firstAttribute="trailing" secondItem="7fd-1g-16Q" secondAttribute="trailing" constant="20" id="mlv-mZ-VXU"/>
                     <constraint firstItem="7fd-1g-16Q" firstAttribute="leading" secondItem="ucZ-Pv-DGk" secondAttribute="trailing" constant="4" id="sbM-Gu-ntU"/>
                     <constraint firstItem="Xlg-p0-OYB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="unB-gR-FWd"/>
+                    <constraint firstAttribute="trailing" secondItem="5EA-Se-dJB" secondAttribute="trailing" constant="20" id="xxE-dw-xSL"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

@@ -15,6 +15,9 @@ class UniverseCardVC: UIViewController {
     @IBOutlet weak var cafeTimeLabel: UILabel!
     @IBOutlet weak var DeleteButton: UIButton!
     @IBOutlet var rootView: UIView!
+    @IBOutlet weak var wideBtn: UIButton!
+    
+    var cafeID: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +26,49 @@ class UniverseCardVC: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    @IBAction func wideBtnClicked(_ sender: Any) {
+        
+        // 눌렀을 때 서버통신 !
+        // 통신중일때 더이상 누를 수 없게 // 이중 클릭 방지
+        self.wideBtn.isUserInteractionEnabled = false
+        
+        // 로딩뷰 시작
+        NotificationCenter.default.post(name: Notification.Name("startlottieunilight"), object: nil)
+        
+        DetailCafeService.shared.DetailInfoGet(cafeId: cafeID!) { [self] (networkResult) -> (Void) in
+            switch networkResult {
+            case .success(let data):
+                if let loadData = data as? CafeDatas {
+                    
+                    print("success")
+                    
+                    let storyboard = UIStoryboard(name: "DetailCafeMenu", bundle: nil)
+                    if let dvc = storyboard.instantiateViewController(identifier: "DetailCafeMenuVC") as? DetailCafeMenuVC {
+                        dvc.testCafe = loadData
+                        dvc.like = true
+                        self.navigationController?.pushViewController(dvc, animated: true)
+                        // 로딩뷰 끝
+                        NotificationCenter.default.post(name: Notification.Name("stoplottieuni"), object: nil)
+                        
+                        //다시 클릭 활성화
+                        self.wideBtn.isUserInteractionEnabled = true
+                    }
+                }
+            case .requestErr( _):
+                print("requestErr")
+            case .pathErr:
+                
+                print("pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+            
+            
+        }
+        
+    }
 }
 
 extension UniverseCardVC {

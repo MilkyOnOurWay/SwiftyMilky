@@ -108,6 +108,16 @@ class MyUniverseVC: UIViewController{
         loadingView?.startAnimating()
     }
     
+    @objc private func showLoadingLottieLight() {
+        print("start")
+        loadingView = UIActivityIndicatorView(style: .large)
+        loadingView?.color = UIColor(named: "lightGrey")
+        self.view.addSubview(loadingView!)
+        loadingView?.center = self.view.center
+        loadingView?.startAnimating()
+    }
+ 
+    
     @objc private func stopLottieAnimation() {
         print("end")
         loadingView?.stopAnimating()
@@ -122,6 +132,7 @@ extension MyUniverseVC {
     // MARK: - 관련 노티
     func notiGather() {
         NotificationCenter.default.addObserver(self, selector: #selector(showLoadingLottie), name: Notification.Name("startlottieuni"),object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(showLoadingLottieLight), name: Notification.Name("startlottieunilight"),object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(stopLottieAnimation), name: Notification.Name("stoplottieuni"),object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(presentpopup), name: Notification.Name("removePopUp"),object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(removeBeforeCafe), name: Notification.Name("removeCafe"), object: nil)
@@ -187,7 +198,7 @@ extension MyUniverseVC {
     // MARK: - 유니버스 상단 라벨 세팅
     func welcomeLabelSetting() {
 
-        glowUniverseLabel.text =  markers.count < 0 ?
+        glowUniverseLabel.text =  markers.count > 0 ?
             "\(myUniverse.nickName) 님의 \n유니버스가 빛나고 있어요.\n오늘은 어떤 밀키웨이를 탐험해 볼까요?" : "\(myUniverse.nickName) 님의\n유니버스에 오신걸 환영합니다.\n\n홈에서 좋아하는 카페를 담아\n유니버스를 채워주세요!"
 
         
@@ -273,6 +284,8 @@ extension MyUniverseVC {
                     cardVC.cafeNameLabel.text = myUniverse.aroundUniverse[index].cafeName
                     cardVC.cafeTimeLabel.text = myUniverse.aroundUniverse[index].businessHours
                     cardVC.cafeAddressLabel.text = myUniverse.aroundUniverse[index].cafeAddress
+                    cardVC.cafeID = myUniverse.aroundUniverse[index].id
+                    
                     cardVC.view.isHidden = false
                     return true
                 }

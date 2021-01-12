@@ -24,6 +24,8 @@ class HomeVC: UIViewController {
     
     @IBOutlet var locationBtn: UIButton!
     
+    var homeData = HomeData(aroundCafe: [AroundCafe](), nickName: "")
+    
     // 이미지들 넣기
     let markerImage = NMFOverlayImage(name: "picker") //마커
     let currentLImage = NMFOverlayImage(name: "group511") // 현위치 동그라미 이미지
@@ -35,7 +37,7 @@ class HomeVC: UIViewController {
     let uniSelectedImage = NMFOverlayImage(name: "pickerUniSelected")
     
     // 바텀시트 관련
-    var cardVC:CardVC!
+    var bottomCardVC:CardVC!
     var cafeCardVC: CafeCardVC!
     
     var cardHeight:CGFloat = 0 //363 //카드 높이 280 + 탭바높이 83 그냥 박는 버전
@@ -70,32 +72,32 @@ class HomeVC: UIViewController {
     var placeMangWon = NMGLatLng(lat: 37.555941, lng: 126.910067)
     
     // 망원 좌표
-    var mangWon: [NMGLatLng] = [NMGLatLng(lat: 37.556635, lng: 126.908433),
-                                NMGLatLng(lat: 37.556987, lng: 126.907755),
-                                NMGLatLng(lat: 37.556748, lng: 126.910195),
-                                NMGLatLng(lat: 37.555522, lng: 126.904833),
-                                NMGLatLng(lat: 37.557539, lng: 126.904790),
-                                NMGLatLng(lat: 37.556534, lng: 126.907744),
-                                NMGLatLng(lat: 37.560183, lng: 126.909584),
-                                NMGLatLng(lat: 37.560889, lng: 126.906703),
-                                NMGLatLng(lat: 37.561905, lng: 126.903533),
-                                NMGLatLng(lat: 37.560668, lng: 126.901677),
-                                NMGLatLng(lat: 37.559249, lng: 126.902487),
-                                NMGLatLng(lat: 37.554322, lng: 126.906648),
-                                NMGLatLng(lat: 37.555351, lng: 126.902356),
-                                NMGLatLng(lat: 37.558472, lng: 126.907506),
-                                NMGLatLng(lat: 37.557741, lng: 126.910403),
-                                NMGLatLng(lat: 37.560786, lng: 126.906412),
-                                NMGLatLng(lat: 37.558884, lng: 126.905102)
-    ]
+//    var mangWon: [NMGLatLng] = [NMGLatLng(lat: 37.556635, lng: 126.908433),
+//                                NMGLatLng(lat: 37.556987, lng: 126.907755),
+//                                NMGLatLng(lat: 37.556748, lng: 126.910195),
+//                                NMGLatLng(lat: 37.555522, lng: 126.904833),
+//                                NMGLatLng(lat: 37.557539, lng: 126.904790),
+//                                NMGLatLng(lat: 37.556534, lng: 126.907744),
+//                                NMGLatLng(lat: 37.560183, lng: 126.909584),
+//                                NMGLatLng(lat: 37.560889, lng: 126.906703),
+//                                NMGLatLng(lat: 37.561905, lng: 126.903533),
+//                                NMGLatLng(lat: 37.560668, lng: 126.901677),
+//                                NMGLatLng(lat: 37.559249, lng: 126.902487),
+//                                NMGLatLng(lat: 37.554322, lng: 126.906648),
+//                                NMGLatLng(lat: 37.555351, lng: 126.902356),
+//                                NMGLatLng(lat: 37.558472, lng: 126.907506),
+//                                NMGLatLng(lat: 37.557741, lng: 126.910403),
+//                                NMGLatLng(lat: 37.560786, lng: 126.906412),
+//                                NMGLatLng(lat: 37.558884, lng: 126.905102)
+//    ]
     
     override func viewDidLoad(){
         super.viewDidLoad()
         delegateGather()
-        setNickNameLabel(nickName: "유진") //일단 박아넣기 ~,~
         setLocation()
         setMap()
-        setMarker()
+        setService()
+//        setMarker()
         setMapButton()
         setFilterButton()
         setBottomCard()
@@ -113,29 +115,7 @@ class HomeVC: UIViewController {
         
         self.navigationController?.pushViewController(nvc, animated: true)
     }
-//    func getData() {
-//        HomeService.shared.GetMilkyHome() { (result) in
-//            switch(result) {
-//            case .success(let data):
-//                if let profileDataModel = data as? profileDataModel {
-//                    let url = URL(string: profileDataModel.profileImage)
-//                    let data = try? Data(contentsOf: url!)
-//                    self.profileImageView.image = UIImage(data: data!)
-//                    self.nameLabel.text = profileDataModel.userName
-//                    self.emailLabel.text = profileDataModel.userEmail
-//                }
-//            case .requestErr(_):
-//                print("error")
-//            case .pathErr:
-//                print("pathErr")
-//            case .serverErr:
-//                print("serverErr")
-//            case .networkFail:
-//                print("networkFail")
-//            }
-//        }
-//
-//    }
+
 }
 
 extension HomeVC: CLLocationManagerDelegate {
@@ -145,14 +125,14 @@ extension HomeVC: CLLocationManagerDelegate {
 extension HomeVC {
     
     // 상단 ~님
-    func setNickNameLabel(nickName: String) {
+    func setNickNameLabel() {
         let boldAtt = [
             NSAttributedString.Key.font: UIFont(name: "SFProText-Bold", size: 16.0)!
         ]
         let regularAtt = [
             NSAttributedString.Key.font: UIFont(name: "SFProText-Regular", size: 16.0)!
         ]
-        let boldText = NSAttributedString(string: "\(nickName)님!\n", attributes: boldAtt)
+        let boldText = NSAttributedString(string: "\(homeData.nickName)님!\n", attributes: boldAtt)
         let regularText = NSAttributedString(string: "오늘도 ‘속’ 편한 탐험 시작해 볼까요?", attributes: regularAtt)
         
         
@@ -231,22 +211,49 @@ extension HomeVC {
         locationOverlay.iconHeight = CGFloat(NMF_LOCATION_OVERLAY_SIZE_AUTO)
     }
     func setMarker() {
-        if markers.isEmpty {
-            for index in 0..<mangWon.count {
-                
-                let marker = NMFMarker(position: mangWon[index], iconImage: unselectedImage)
+        print("home - setMarker()")
+        markers = []
+        for index in 0..<homeData.aroundCafe.count {
+
+            let marker = NMFMarker(position: NMGLatLng(lat: homeData.aroundCafe[index].latitude, lng: homeData.aroundCafe[index].longitude), iconImage: unselectedImage)
                 marker.isHideCollidedMarkers = true
                 marker.touchHandler = { [self] (overlay: NMFOverlay) -> Bool in
                     self.beforeMarker?.iconImage = self.unselectedImage
                     marker.iconImage = self.selectedImage
                     self.beforeMarker = marker
+                    cafeCardVC.cafeNameLabel.text = homeData.aroundCafe[index].cafeName
+                    cafeCardVC.cafeTimeLabel.text = homeData.aroundCafe[index].businessHours
+                    cafeCardVC.cafeAddressLabel.text = homeData.aroundCafe[index].cafeAddress
                     cafeCardVC.view.isHidden = false
-                    cardVC.view.isHidden = true
+                    bottomCardVC.view.isHidden = true
                     return true
                 }
                 marker.mapView = mapView
                 markers.append(marker)
             }
+    }
+    func setService() {
+        print("setService")
+        HomeService.shared.GetMilkyHome() { [self] (networkResult) -> (Void) in
+            switch networkResult {
+            case .success(let data):
+                if let loadData = data as? HomeData {
+                    print("success")
+                    homeData = loadData
+                    setMarker()
+                    setNickNameLabel()
+                    }
+            case .requestErr( _):
+                print("requestErr")
+            case .pathErr:
+                print("pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+            
+            
         }
     }
     func setMapButton() {
@@ -265,6 +272,8 @@ extension HomeVC {
     
     @objc func locationButtonDidTap(_ sender:UIButton){
         mapView.zoomLevel = 14
+        cafeCardVC.view.isHidden = true
+        bottomCardVC.view.isHidden = false
         
         if sender.isSelected == true {
             sender.isSelected = false
@@ -287,10 +296,10 @@ extension HomeVC {
     // MARK: - Bottom Card Setting GitHub -> https://github.com/brianadvent/InteractiveCardViewAnimation
     
     func setBottomCard() {
-        cardVC = CardVC(nibName:"CardVC", bundle:nil)
+        bottomCardVC = CardVC(nibName:"CardVC", bundle:nil)
 
-        self.addChild(cardVC)
-        self.view.addSubview(cardVC.view)
+        self.addChild(bottomCardVC)
+        self.view.addSubview(bottomCardVC.view)
         
         // 탭바 높이
         let tabbarFrame = self.tabBarController?.tabBar.frame;
@@ -307,22 +316,22 @@ extension HomeVC {
 //        print("card 높이 \(cardHeight)")
         
         //탭바 높이만큼 더하기
-        cardVC.view.frame = CGRect(x: 0, y: self.view.frame.height - cardHandleAreaHeight - tabbarFrame!.size.height, width: self.view.bounds.width, height: cardHeight)
+        bottomCardVC.view.frame = CGRect(x: 0, y: self.view.frame.height - cardHandleAreaHeight - tabbarFrame!.size.height, width: self.view.bounds.width, height: cardHeight)
         
-        cardVC.view.clipsToBounds = false //여기 true면 shadow 안먹음
+        bottomCardVC.view.clipsToBounds = false //여기 true면 shadow 안먹음
         
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(HomeVC.handleCardTap(recognzier:)))
         let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(HomeVC.handleCardPan(recognizer:)))
         
-        cardVC.handleArea.addGestureRecognizer(tapGestureRecognizer)
-        cardVC.handleArea.addGestureRecognizer(panGestureRecognizer)
+        bottomCardVC.handleArea.addGestureRecognizer(tapGestureRecognizer)
+        bottomCardVC.handleArea.addGestureRecognizer(panGestureRecognizer)
     }
     func setRadioBtn() {
-        cardVC.mangwonBtn.addTarget(self, action: #selector(sendBtnTag(_:)), for: .touchUpInside)
-        cardVC.younnamBtn.addTarget(self, action: #selector(sendBtnTag(_:)), for: .touchUpInside)
-        cardVC.hannamBtn.addTarget(self, action: #selector(sendBtnTag(_:)), for: .touchUpInside)
-        cardVC.shinsaBtn.addTarget(self, action: #selector(sendBtnTag(_:)), for: .touchUpInside)
-        cardVC.yuksamBtn.addTarget(self, action: #selector(sendBtnTag(_:)), for: .touchUpInside)
+        bottomCardVC.mangwonBtn.addTarget(self, action: #selector(sendBtnTag(_:)), for: .touchUpInside)
+        bottomCardVC.younnamBtn.addTarget(self, action: #selector(sendBtnTag(_:)), for: .touchUpInside)
+        bottomCardVC.hannamBtn.addTarget(self, action: #selector(sendBtnTag(_:)), for: .touchUpInside)
+        bottomCardVC.shinsaBtn.addTarget(self, action: #selector(sendBtnTag(_:)), for: .touchUpInside)
+        bottomCardVC.yuksamBtn.addTarget(self, action: #selector(sendBtnTag(_:)), for: .touchUpInside)
     }
     func animateTransitionIfNeeded (state:CardState, duration:TimeInterval) {
         
@@ -340,10 +349,10 @@ extension HomeVC {
             let frameAnimator = UIViewPropertyAnimator(duration: duration, dampingRatio: 1) {
                 switch state {
                 case .expanded:
-                    self.cardVC.view.frame.origin.y = self.view.frame.height - self.cardHeight
+                    self.bottomCardVC.view.frame.origin.y = self.view.frame.height - self.cardHeight
                 case .collapsed:
-                    self.cardVC.view.frame.origin.y = self.view.frame.height - self.cardHandleAreaHeight - tabbarFrame!.size.height
-                    self.cardVC.resetRadioButton()
+                    self.bottomCardVC.view.frame.origin.y = self.view.frame.height - self.cardHandleAreaHeight - tabbarFrame!.size.height
+                    self.bottomCardVC.resetRadioButton()
                 }
             }
             
@@ -391,11 +400,11 @@ extension HomeVC {
         if beforeState[sender.tag] == true {
             sender.isSelected = false
         }
-        beforeState[1] = cardVC.mangwonBtn.isSelected
-        beforeState[2] = cardVC.younnamBtn.isSelected
-        beforeState[3] = cardVC.hannamBtn.isSelected
-        beforeState[4] = cardVC.shinsaBtn.isSelected
-        beforeState[5] = cardVC.yuksamBtn.isSelected
+        beforeState[1] = bottomCardVC.mangwonBtn.isSelected
+        beforeState[2] = bottomCardVC.younnamBtn.isSelected
+        beforeState[3] = bottomCardVC.hannamBtn.isSelected
+        beforeState[4] = bottomCardVC.shinsaBtn.isSelected
+        beforeState[5] = bottomCardVC.yuksamBtn.isSelected
     }
     
     @objc
@@ -414,7 +423,7 @@ extension HomeVC {
         case .began:
             startInteractiveTransition(state: nextState, duration: 0.9)
         case .changed:
-            let translation = recognizer.translation(in: self.cardVC.handleArea)
+            let translation = recognizer.translation(in: self.bottomCardVC.handleArea)
             var fractionComplete = translation.y / cardHeight
             fractionComplete = cardVisible ? fractionComplete : -fractionComplete
             updateInteractiveTransition(fractionCompleted: fractionComplete)
@@ -429,14 +438,14 @@ extension HomeVC: NMFMapViewTouchDelegate {
     func mapView(_ mapView: NMFMapView, didTapMap latlng: NMGLatLng, point: CGPoint) {
         print("\(latlng)")
         cafeCardVC.view.isHidden = true
-        cardVC.view.isHidden = false
+        bottomCardVC.view.isHidden = false
         self.beforeMarker?.iconImage = self.unselectedImage
     }
     
     func mapView(_ mapView: NMFMapView, didTap symbol: NMFSymbol) -> Bool {
         print(symbol)
         cafeCardVC.view.isHidden = true
-        cardVC.view.isHidden = false
+        bottomCardVC.view.isHidden = false
         self.beforeMarker?.iconImage = self.unselectedImage
         return true
     }
@@ -445,7 +454,7 @@ extension HomeVC: NMFMapViewTouchDelegate {
 extension HomeVC: NMFMapViewCameraDelegate {
     func mapView(_ mapView: NMFMapView, cameraWillChangeByReason reason: Int, animated: Bool){
         if reason == NMFMapChangedByGesture {
-            print("지도 움직이는 중 zoom level: \(mapView.zoomLevel)")
+//            print("지도 움직이는 중 zoom level: \(mapView.zoomLevel)")
             mapView.locationOverlay.icon = currentLImage
             
 //            cafeCardVC.view.isHidden = true
@@ -455,14 +464,14 @@ extension HomeVC: NMFMapViewCameraDelegate {
       
     }
     
-    func mapView(_ mapView: NMFMapView, cameraIsChangingByReason reason: Int) {
-        
-    }
-    
-    func mapView(_ mapView: NMFMapView, cameraDidChangeByReason reason: Int, animated: Bool) {
-
-    }
-    
-    func mapViewCameraIdle(_ mapView: NMFMapView){
-    }
+//    func mapView(_ mapView: NMFMapView, cameraIsChangingByReason reason: Int) {
+//
+//    }
+//
+//    func mapView(_ mapView: NMFMapView, cameraDidChangeByReason reason: Int, animated: Bool) {
+//
+//    }
+//
+//    func mapViewCameraIdle(_ mapView: NMFMapView){
+//    }
 }

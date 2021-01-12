@@ -7,6 +7,8 @@
 
 import UIKit
 import NMapsMap
+import Lottie
+
 
 class MyUniverseVC: UIViewController{
     @IBOutlet weak var mapView: NMFMapView!
@@ -97,32 +99,26 @@ class MyUniverseVC: UIViewController{
     
     
     // MARK: - 데이터 로딩 중 Lottie 화면
-    private var loadingView: UIActivityIndicatorView?
+    
+    let loadingView = AnimationView(name: "loadingLottie")
     
     @objc private func showLoadingLottie() {
         print("start")
-        loadingView = UIActivityIndicatorView(style: .large)
-        loadingView?.color = UIColor(named: "Milky")
-        self.view.addSubview(loadingView!)
-        loadingView?.center = self.view.center
-        loadingView?.startAnimating()
-    }
-    
-    @objc private func showLoadingLottieLight() {
-        print("start")
-        loadingView = UIActivityIndicatorView(style: .large)
-        loadingView?.color = UIColor(named: "lightGrey")
-        self.view.addSubview(loadingView!)
-        loadingView?.center = self.view.center
-        loadingView?.startAnimating()
+        
+        loadingView.frame = CGRect(x: 0, y: 0, width: 300, height: 300)
+        loadingView.center = self.view.center
+        loadingView.contentMode = .scaleAspectFill
+        loadingView.loopMode = .loop
+        self.view.addSubview(loadingView)
+        
+        loadingView.play()
     }
  
     
     @objc private func stopLottieAnimation() {
         print("end")
-        loadingView?.stopAnimating()
-        loadingView?.removeFromSuperview()
-        loadingView = nil
+        loadingView.pause()
+        loadingView.removeFromSuperview()
     }
 }
 
@@ -132,7 +128,6 @@ extension MyUniverseVC {
     // MARK: - 관련 노티
     func notiGather() {
         NotificationCenter.default.addObserver(self, selector: #selector(showLoadingLottie), name: Notification.Name("startlottieuni"),object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(showLoadingLottieLight), name: Notification.Name("startlottieunilight"),object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(stopLottieAnimation), name: Notification.Name("stoplottieuni"),object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(presentpopup), name: Notification.Name("removePopUp"),object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(removeBeforeCafe), name: Notification.Name("removeCafe"), object: nil)

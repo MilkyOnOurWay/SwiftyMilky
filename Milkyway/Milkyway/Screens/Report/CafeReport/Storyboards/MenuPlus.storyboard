@@ -302,7 +302,7 @@
     </scenes>
     <designables>
         <designable name="0Ng-0W-cFP">
-            <size key="intrinsicContentSize" width="177.5" height="24.5"/>
+            <size key="intrinsicContentSize" width="141.5" height="28.5"/>
         </designable>
         <designable name="Xqe-Pj-CdQ">
             <size key="intrinsicContentSize" width="30" height="31"/>
@@ -314,7 +314,7 @@
             <size key="intrinsicContentSize" width="30" height="31"/>
         </designable>
         <designable name="v4s-yN-sJE">
-            <size key="intrinsicContentSize" width="210" height="24.5"/>
+            <size key="intrinsicContentSize" width="174" height="28.5"/>
         </designable>
         <designable name="x6N-Kb-VaD">
             <size key="intrinsicContentSize" width="30" height="31"/>

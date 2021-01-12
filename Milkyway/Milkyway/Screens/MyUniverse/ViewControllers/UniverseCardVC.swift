@@ -33,7 +33,7 @@ class UniverseCardVC: UIViewController {
         self.wideBtn.isUserInteractionEnabled = false
         
         // 로딩뷰 시작
-        NotificationCenter.default.post(name: Notification.Name("startlottieunilight"), object: nil)
+        NotificationCenter.default.post(name: Notification.Name("startlottieuni"), object: nil)
         
         DetailCafeService.shared.DetailInfoGet(cafeId: cafeID!) { [self] (networkResult) -> (Void) in
             switch networkResult {

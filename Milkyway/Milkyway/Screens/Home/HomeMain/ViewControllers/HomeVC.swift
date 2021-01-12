@@ -278,6 +278,10 @@ extension HomeVC {
                     print("success")
                     homeData = loadData
                     setMarker()
+                    // 유저닉네임 전역변수로 설정
+                    let ad = UIApplication.shared.delegate as? AppDelegate
+                    print("nickName:\(homeData.nickName)")
+                    ad?.userNickNameInHere = homeData.nickName
                     setNickNameLabel()
                     }
             case .requestErr( _):
@@ -290,6 +294,9 @@ extension HomeVC {
                 print("networkFail")
             }
         }
+        
+        
+        
     }
     func setMapButton() {
         locationBtn.setImage(UIImage(named: "btnCurrentLocation"), for: UIControl.State.normal)
@@ -326,6 +333,7 @@ extension HomeVC {
                 print("networkFail")
             }
         }
+        
     }
     
     @objc func locationButtonDidTap(_ sender:UIButton){

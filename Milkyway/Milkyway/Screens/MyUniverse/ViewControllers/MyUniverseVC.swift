@@ -184,7 +184,7 @@ extension MyUniverseVC {
     // MARK: - 유니버스 상단 라벨 세팅
     func welcomeLabelSetting() {
 
-        glowUniverseLabel.text =  markers.count > 0 ?
+        glowUniverseLabel.text =  markers.count < 0 ?
             "\(myUniverse.nickName) 님의 \n유니버스가 빛나고 있어요.\n오늘은 어떤 밀키웨이를 탐험해 볼까요?" : "\(myUniverse.nickName) 님의\n유니버스에 오신걸 환영합니다.\n\n홈에서 좋아하는 카페를 담아\n유니버스를 채워주세요!"
 
         
@@ -368,7 +368,7 @@ extension MyUniverseVC {
         // SE에서 너무 많이 올라와서 이렇게 해봤는데 탭바 높이가 짧아서 덜 나오게 됨.
         
         if tabbarFrame!.size.height < 83 {
-            cardHeight = self.mapView.frame.height / 1.47 + tabbarFrame!.size.height + (83 - tabbarFrame!.size.height)
+            cardHeight = self.mapView.frame.height / 1.7 + tabbarFrame!.size.height + (83 - tabbarFrame!.size.height)
         } else {
             cardHeight = self.mapView.frame.height / 1.5 + tabbarFrame!.size.height
         }
@@ -394,9 +394,9 @@ extension MyUniverseVC {
         let tabbarFrame = self.tabBarController?.tabBar.frame;
         
         if tabbarFrame!.size.height < 83 {
-            cardHeight = self.mapView.frame.height / 1.47 + tabbarFrame!.size.height + (83 - tabbarFrame!.size.height)
+            cardHeight = self.mapView.frame.height / 1.7 + tabbarFrame!.size.height + (83 - tabbarFrame!.size.height)
         } else {
-            cardHeight = self.mapView.frame.height / 1.5 + tabbarFrame!.size.height
+            cardHeight = self.mapView.frame.height / 1.52 + tabbarFrame!.size.height
         }
         
         //탭바 높이 추가 설정

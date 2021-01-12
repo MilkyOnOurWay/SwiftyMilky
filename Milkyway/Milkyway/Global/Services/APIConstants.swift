@@ -59,4 +59,7 @@ struct APIConstants {
     
     // GET 제보하기에서 카카오 API 장소 조회하기 search/report/cafe +?query=+ ""
     static let searchForReport = BaseURL + "search/report/cafe"
+    
+    // GET 홈 뷰 카페 검색 search/(검색어Stirng)
+    static let searchHome = BaseURL + "search/"
 }

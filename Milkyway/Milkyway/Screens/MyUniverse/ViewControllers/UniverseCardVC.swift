@@ -28,7 +28,6 @@ class UniverseCardVC: UIViewController {
 extension UniverseCardVC {
     
     func setView(){
-        
         rootView.layer.cornerRadius = 12
         rootView.layer.shadowColor = UIColor.black.cgColor
         rootView.layer.shadowOpacity = 0.1

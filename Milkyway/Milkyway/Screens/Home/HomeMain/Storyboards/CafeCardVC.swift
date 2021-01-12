@@ -27,7 +27,6 @@ class CafeCardVC: UIViewController {
 
 extension CafeCardVC {
     func setView(){
-        
         rootView.layer.cornerRadius = 12
         rootView.layer.shadowColor = UIColor.black.cgColor
         rootView.layer.shadowOpacity = 0.1

@@ -28,7 +28,7 @@ class ModifyVC: UIViewController {
     @IBAction func submitBtnClicked(_ sender: Any) {
         print("Modify - submitBtnClicked")
         
-        ModifyCafeService.shared.EditCafe(editPost: EditPost(cafeId: 17, reason: modifyTextView.text)) { responseData in
+        ModifyCafeService.shared.EditCafe(cafeId: 17, editPost: EditPost(reason: modifyTextView.text)) { responseData in
             switch responseData {
             case .success(let res):
                 print("success")

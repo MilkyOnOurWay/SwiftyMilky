@@ -37,12 +37,14 @@ extension CafeCardVC {
     }
     func setAddButton(){
         addButton.addTarget(self, action: #selector(addButtonDidTap), for: .touchUpInside)
+        addButton.setImage(UIImage(named: "btnUniverse"), for: UIControl.State.normal)
+        addButton.setImage(UIImage(named: "btnUniverseAdded"), for: UIControl.State.selected)
+        addButton.isSelected = false
     }
     
     @objc func addButtonDidTap(){
         
         // 서버통신진행
-        
         
     }
     

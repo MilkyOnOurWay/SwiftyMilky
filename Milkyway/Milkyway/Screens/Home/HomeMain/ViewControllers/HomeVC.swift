@@ -25,6 +25,8 @@ class HomeVC: UIViewController {
     @IBOutlet var locationBtn: UIButton!
     
     var homeData = HomeData(result: [AroundCafe](), nickName: "")
+    var filterData = CategoryData(categoryCafe: [CategoryCafe](), nickName: "")
+    var tag = [Int]()
     
     // 이미지들 넣기
     let markerImage = NMFOverlayImage(name: "picker") //마커
@@ -157,13 +159,17 @@ extension HomeVC {
         filterBtn4.setImage(UIImage(named: "fatFreeMilk_w"), for: .normal)
         filterBtn4.setImage(UIImage(named: "fatFreeMilk_p"), for: .selected)
         
-        
         filterBtn1.addTarget(self, action: #selector(filterButtonDidTap), for: UIControl.Event.touchUpInside)
         filterBtn2.addTarget(self, action: #selector(filterButtonDidTap), for: UIControl.Event.touchUpInside)
         filterBtn3.addTarget(self, action: #selector(filterButtonDidTap), for: UIControl.Event.touchUpInside)
         filterBtn4.addTarget(self, action: #selector(filterButtonDidTap), for: UIControl.Event.touchUpInside)
     }
-    
+//    func addFilterTarget() {
+//        filterBtn1.addTarget(self, action: #selector(filterButtonDidTap), for: UIControl.Event.touchUpInside)
+//        filterBtn2.addTarget(self, action: #selector(filterButtonDidTap), for: UIControl.Event.touchUpInside)
+//        filterBtn3.addTarget(self, action: #selector(filterButtonDidTap), for: UIControl.Event.touchUpInside)
+//        filterBtn4.addTarget(self, action: #selector(filterButtonDidTap), for: UIControl.Event.touchUpInside)
+//    }
     func delegateGather() {
         locationManager.delegate = self
         mapView.addCameraDelegate(delegate: self)
@@ -223,6 +229,38 @@ extension HomeVC {
                     cafeCardVC.cafeNameLabel.text = homeData.result[index].cafeName
                     cafeCardVC.cafeTimeLabel.text = homeData.result[index].businessHours
                     cafeCardVC.cafeAddressLabel.text = homeData.result[index].cafeAddress
+                    cafeCardVC.addCountLabel.text = String(homeData.result[index].universeCount)
+                    if homeData.result[index].isUniversed == true {
+                        cafeCardVC.addCountLabel.textColor = UIColor(named: "Milky")
+                        cafeCardVC.addButton.isSelected = true
+                    }
+                    cafeCardVC.view.isHidden = false
+                    bottomCardVC.view.isHidden = true
+                    return true
+                }
+                marker.mapView = mapView
+                markers.append(marker)
+            }
+    }
+    func setFilterMarker() {
+        print("home - setFilterMarker()")
+        markers = []
+        for index in 0..<filterData.categoryCafe.count {
+            //result
+            let marker = NMFMarker(position: NMGLatLng(lat: filterData.categoryCafe[index].latitude, lng: filterData .categoryCafe [index].longitude), iconImage: unselectedImage)
+                marker.isHideCollidedMarkers = true
+                marker.touchHandler = { [self] (overlay: NMFOverlay) -> Bool in
+                    self.beforeMarker?.iconImage = self.unselectedImage
+                    marker.iconImage = self.selectedImage
+                    self.beforeMarker = marker
+                    cafeCardVC.cafeNameLabel.text = filterData.categoryCafe[index].cafeName
+                    cafeCardVC.cafeTimeLabel.text = filterData.categoryCafe[index].businessHours
+                    cafeCardVC.cafeAddressLabel.text = filterData.categoryCafe[index].cafeAddress
+//                    cafeCardVC.addCountLabel.text = String(filterData.categoryCafe[index].universeCount)
+//                    if filterData.categoryCafe[index].isUniversed == true {
+//                        cafeCardVC.addCountLabel.textColor = UIColor(named: "Milky")
+//                        cafeCardVC.addButton.isSelected = true
+//                    }
                     cafeCardVC.view.isHidden = false
                     bottomCardVC.view.isHidden = true
                     return true
@@ -251,8 +289,6 @@ extension HomeVC {
             case .networkFail:
                 print("networkFail")
             }
-            
-            
         }
     }
     func setMapButton() {
@@ -260,12 +296,35 @@ extension HomeVC {
         locationBtn.setImage(UIImage(named: "compassIc"), for: UIControl.State.selected)
         locationBtn.addTarget(self, action: #selector(locationButtonDidTap), for: UIControl.Event.touchUpInside)
     }
-    
+
     @objc func filterButtonDidTap(_ sender:UIButton) {
+
         if sender.isSelected == true {
             sender.isSelected = false
+            self.tag.popLast()
         } else {
             sender.isSelected = true
+            self.tag.append(sender.tag)
+        }
+        
+        print(tag)
+        HomeService.shared.GetCategoryCafe(categoryId: tag) { [self] (networkResult) -> (Void) in
+            switch networkResult {
+            case .success(let data):
+                if let loadData = data as? CategoryData {
+                    print("success")
+                    filterData = loadData
+                    setFilterMarker()
+                    }
+            case .requestErr( _):
+                print("requestErr")
+            case .pathErr:
+                print("pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
         }
     }
     

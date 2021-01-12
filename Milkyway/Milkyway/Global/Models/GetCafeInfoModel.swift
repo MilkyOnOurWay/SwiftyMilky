@@ -9,6 +9,6 @@ import Foundation
 
 struct CafeResult: Codable {
     
-    let cafeName, cafeAddress, cafeMapX, cafeMapY: String
+    let cafeName, cafeAddress, longitude, latitude: String
     let isReported: Bool
 }

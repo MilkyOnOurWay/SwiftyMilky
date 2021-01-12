@@ -17,7 +17,7 @@ class UniverseBottomVC: UIViewController {
     @IBOutlet weak var emptyLabel: UILabel!
     @IBOutlet weak var emptyView: UIView!
     
-    var bottomCafeInfo = HomeData(aroundCafe: [AroundCafe](), nickName: "")
+    var bottomCafeInfo = UniverseData(aroundUniverse: [UniverseCafe](), nickName: "")
     var editIndex: Int?
     
     override func viewDidLoad() {
@@ -73,7 +73,7 @@ extension UniverseBottomVC: UITableViewDelegate {
         
         print(indexPath.row)
         NotificationCenter.default.post(name: Notification.Name("startlottieuni"), object: nil)
-        DetailCafeService.shared.DetailInfoGet(cafeId: bottomCafeInfo.aroundCafe[indexPath.row].id) { [self] (networkResult) -> (Void) in
+        DetailCafeService.shared.DetailInfoGet(cafeId: bottomCafeInfo.aroundUniverse[indexPath.row].id) { [self] (networkResult) -> (Void) in
             switch networkResult {
             case .success(let data):
                 if let loadData = data as? CafeDatas {
@@ -109,13 +109,13 @@ extension UniverseBottomVC: UITableViewDelegate {
 
 extension UniverseBottomVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if bottomCafeInfo.aroundCafe.count == 0{
+        if bottomCafeInfo.aroundUniverse.count == 0{
             emptyView.isHidden = false
             return 0
         }
         else {
             emptyView.isHidden = true
-            return bottomCafeInfo.aroundCafe.count
+            return bottomCafeInfo.aroundUniverse.count
         }
         
     }
@@ -130,8 +130,8 @@ extension UniverseBottomVC: UITableViewDataSource {
             
         }
         
-        cell.cafeNameLabel.text = bottomCafeInfo.aroundCafe[indexPath.row].cafeName
-        cell.cafeAddressLabel.text = bottomCafeInfo.aroundCafe[indexPath.row].cafeAddress
+        cell.cafeNameLabel.text = bottomCafeInfo.aroundUniverse[indexPath.row].cafeName
+        cell.cafeAddressLabel.text = bottomCafeInfo.aroundUniverse[indexPath.row].cafeAddress
         cell.deleteBtnAction = { [unowned self] in
             editIndex = indexPath.row
             NotificationCenter.default.post(name: Notification.Name("removePopUp"), object: nil)

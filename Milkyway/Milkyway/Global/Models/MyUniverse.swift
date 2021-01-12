@@ -7,6 +7,24 @@
 
 import Foundation
 
+// MARK: - 유니버스 전체
+struct UniverseData: Codable {
+    let aroundUniverse: [UniverseCafe]
+    let nickName: String
+    
+
+}
+
+// MARK: - UniverseCafe
+struct UniverseCafe: Codable {
+    let id: Int
+    let cafeName, cafeAddress, businessHours: String
+    let longitude, latitude: Double
+    
+}
+
+
+
 // MARK: - 유니버스 추가 모델
 struct AddUniverse: Codable {
     

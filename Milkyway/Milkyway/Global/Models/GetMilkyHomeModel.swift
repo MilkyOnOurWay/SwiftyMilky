@@ -23,6 +23,5 @@ struct AroundCafe: Codable {
     let id: Int
     let cafeName, cafeAddress, businessHours: String
     let longitude, latitude: Double
-    let isReal: Bool
     
 }

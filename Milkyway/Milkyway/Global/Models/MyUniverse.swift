@@ -48,7 +48,7 @@ struct UniverseOn: Codable {
 // MARK: - 유니버스 삭제 모델
 struct DeleteUniverse: Codable {
     
-    let universeOff: [UniverseOff]
+    let universeOff: UniverseOff
     let universeCount: Int
 }
 struct UniverseOff: Codable {

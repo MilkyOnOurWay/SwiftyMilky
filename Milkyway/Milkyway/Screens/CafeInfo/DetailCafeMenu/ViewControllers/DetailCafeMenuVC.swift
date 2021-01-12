@@ -38,6 +38,7 @@ class DetailCafeMenuVC: UIViewController {
     }
     
     @IBAction func addMyUniverseBtnClicked(_ sender: Any) {
+        addMyUniverseBtn.isEnabled = false
         like ? iHateYou() : iLoveYou()
         tableView.reloadSections(IndexSet(0...0), with: .none)
     }
@@ -192,23 +193,74 @@ extension DetailCafeMenuVC {
     
     
     func iLoveYou() {
+        
         ToastView.showIn(viewController: self, message: "카페가 나의 유니버스로 들어왔어요.", fromBottom: 40)
-        testCafe.universeCount += 1
         universeImageView.image = UIImage(named: "btnUniverseAdded")
+        testCafe.universeCount += 1
         likeLabel.text = "\(testCafe.universeCount)"
         likeLabel.textColor = UIColor(named: "Milky")
         likeLabel.font = UIFont(name: "SF Pro Text Bold", size: 8.0)!
         like = true
+        
+        UniverseService.shared.addUniverse(testCafe.cafeInfo.id) { [self] (networkResult) -> (Void) in
+            
+            switch networkResult {
+            case.success(let res):
+              
+                let addUniverse = res as? AddUniverse
+                dump(addUniverse)
+                addMyUniverseBtn.isEnabled = true
+                
+                print("success")
+                
+            case.requestErr(_):
+                print("requestErr")
+                
+            case .pathErr:
+                print("pathErr")
+                
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print(".failureErr")
+            }
+        }
+        
+        
     }
     
     func iHateYou() {
+        
         ToastView.showIn(viewController: self, message: "카페가 나의 유니버스를 탈출했어요.", fromBottom: 40)
-        testCafe.universeCount -= 1
         universeImageView.image = UIImage(named: "btnUniverse")
+        testCafe.universeCount -= 1
         likeLabel.text = "\(testCafe.universeCount)"
         likeLabel.textColor = UIColor(named: "darkGrey")
         likeLabel.font = UIFont(name: "SF Pro Text Regular", size: 8.0)!
         like = false
+        
+        UniverseService.shared.deleteUniverse(testCafe.cafeInfo.id) { [self] (networkResult) -> (Void) in
+            switch networkResult {
+            case .success(let data):
+                if let loadData = data as? DeleteUniverse {
+                    print("success")
+                    print(loadData)
+
+                    addMyUniverseBtn.isEnabled = true
+                    }
+            case .requestErr( _):
+                print("requestErr")
+            case .pathErr:
+                print("pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+            
+        }
+        
+        
     }
     
     // 셀에서 webPage버튼 누르면 여기서 실행 ... cell에서는 실행이 안되더라 흑흑

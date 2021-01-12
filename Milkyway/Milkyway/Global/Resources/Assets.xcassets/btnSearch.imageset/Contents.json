@@ -1,8 +1,8 @@
 {
   "images" : [
     {
-      "scale" : "1x",
       "filename" : "btnSearch.png",
+      "scale" : "1x",
       "idiom" : "universal"
     },
     {
@@ -12,8 +12,8 @@
     },
     {
       "filename" : "btnSearch@3x.png",
-      "idiom" : "universal",
-      "scale" : "3x"
+      "scale" : "3x",
+      "idiom" : "universal"
     }
   ],
   "info" : {

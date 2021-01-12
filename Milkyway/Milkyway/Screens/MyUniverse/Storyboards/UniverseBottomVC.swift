@@ -29,7 +29,6 @@ class UniverseBottomVC: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
-        NotificationCenter.default.addObserver(self, selector: #selector(removeBeforeCafe), name: Notification.Name("removeCafe"), object: nil)
         
         
         let BottomCellNib = UINib(nibName: "BottomTVC", bundle: nil)
@@ -56,12 +55,7 @@ extension UniverseBottomVC {
         
         
     }
-    
-    
-    @objc func removeBeforeCafe() {
-        // 통신 ~
-        tableView.reloadData()
-    }
+
 }
 
 extension UniverseBottomVC: UITableViewDelegate {
@@ -134,8 +128,10 @@ extension UniverseBottomVC: UITableViewDataSource {
         cell.cafeAddressLabel.text = bottomCafeInfo.aroundUniverse[indexPath.row].cafeAddress
         cell.deleteBtnAction = { [unowned self] in
             editIndex = indexPath.row
+            let deleteCafeID = bottomCafeInfo.aroundUniverse[editIndex!].id
+            print(deleteCafeID)
             NotificationCenter.default.post(name: Notification.Name("removePopUp"), object: nil)
-            
+            NotificationCenter.default.post(name: Notification.Name("removeCafeID"), object: deleteCafeID)
         }
         
         cell.selectionStyle = .none

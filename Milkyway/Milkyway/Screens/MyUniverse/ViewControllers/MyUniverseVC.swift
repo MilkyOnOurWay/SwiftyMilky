@@ -58,6 +58,7 @@ class MyUniverseVC: UIViewController{
         setCamera()
         serverlinked()
         gettingdark()
+        
 
     }
     
@@ -123,6 +124,8 @@ extension MyUniverseVC {
         NotificationCenter.default.addObserver(self, selector: #selector(showLoadingLottie), name: Notification.Name("startlottieuni"),object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(stopLottieAnimation), name: Notification.Name("stoplottieuni"),object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(presentpopup), name: Notification.Name("removePopUp"),object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(removeBeforeCafe), name: Notification.Name("removeCafe"), object: nil)
+        
     }
     
     // MARK: - 관련 델리게이트
@@ -235,6 +238,11 @@ extension MyUniverseVC {
             mapView.locationOverlay.subIcon = subIconImage
         }
         
+    }
+    
+    // MARK: - 삭제하고 다시 통신해야함 ...
+    @objc func removeBeforeCafe() {
+        serverlinked()
     }
     
     

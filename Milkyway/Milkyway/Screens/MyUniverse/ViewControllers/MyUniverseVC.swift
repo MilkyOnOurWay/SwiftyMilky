@@ -368,13 +368,13 @@ extension MyUniverseVC {
         // SE에서 너무 많이 올라와서 이렇게 해봤는데 탭바 높이가 짧아서 덜 나오게 됨.
         
         if tabbarFrame!.size.height < 83 {
-            cardHeight = self.mapView.frame.height / 1.7 + tabbarFrame!.size.height + (83 - tabbarFrame!.size.height)
+            cardHeight = self.mapView.frame.height / 2.5 + tabbarFrame!.size.height + (83 - tabbarFrame!.size.height)
         } else {
-            cardHeight = self.mapView.frame.height / 1.5 + tabbarFrame!.size.height
+            cardHeight = self.mapView.frame.height / 1.8 + tabbarFrame!.size.height
         }
         //        cardHeight = self.mapView.frame.height / 2 + tabbarFrame!.size.height
         //        print("탭바 높이 \(tabbarFrame!.size.height)")
-        //        print("card 높이 \(cardHeight)")
+               print("card 높이 \(cardHeight)")
         
         //탭바 높이만큼 더하기
         UniverseBottomVC.view.frame = CGRect(x: 0, y: self.view.frame.height - cardHandleAreaHeight - tabbarFrame!.size.height, width: self.view.bounds.width, height: cardHeight)

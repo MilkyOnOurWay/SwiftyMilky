@@ -26,6 +26,7 @@ class UniverseBottomVC: UIViewController {
         super.viewDidLoad()
         setView()
         setHandler()
+        //settableView()
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -45,7 +46,6 @@ extension UniverseBottomVC {
     
     func setView() {
         rootView.layer.cornerRadius = 12
-        
         rootView.layer.shadowColor = UIColor.black.cgColor
         rootView.layer.shadowOpacity = 0.1
         rootView.layer.shadowOffset = CGSize(width: 0.0, height: -4.0)
@@ -57,6 +57,20 @@ extension UniverseBottomVC {
         
         
     }
+    
+//    func settableView() {
+//        let tabbarheight = self.tabBarController?.tabBar.frame.height
+//
+//        tableView.translatesAutoresizingMaskIntoConstraints = false
+//        tableView.topAnchor.constraint(equalTo: self.handleArea.bottomAnchor).isActive = true
+//        tableView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor,
+//                                                constant: 0).isActive = true
+//        tableView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor,
+//                                                 constant: 0).isActive = true
+//        tableView.bottomAnchor.constraint(equalTo: self.rootView.bottomAnchor, constant: 0).isActive = true
+//
+//
+//    }
     
     @objc func removeBeforeCafe() {
         // 통신 ~

@@ -101,9 +101,11 @@ struct UniverseService {
                         case 200:
                             do{
                                 let decoder = JSONDecoder()
-                                let result = try decoder.decode(ResponseResult<AddUniverse>.self,from: value)
-                                completion(.success(result.data ?? AddUniverse.self))
+                                let result = try decoder.decode(ResponseSimpleResult<AddUniverse>.self,from: value)
+                                print("단순결과\(result)")
+                                completion(.success(result.data ?? Token.self))
                             } catch {
+                                print(error.localizedDescription)
                                 completion(.pathErr)
                             }
                         case 400:

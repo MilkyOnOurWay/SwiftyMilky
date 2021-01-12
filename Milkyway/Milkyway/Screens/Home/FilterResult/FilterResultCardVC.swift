@@ -18,7 +18,7 @@ class FilterResultCardVC: UIViewController {
     var universeCount = 0 // 서버 위키 추후에 다시 참고할 것. 일단 박아놓은 값
     var buttonIsSelected: Bool = true
     //var addStateUniverse = UniverseOn(from: )
-    var plusUniverse: AddUniverse?
+    var plusUniverse: [AddUniverse] = []
     var infoUniverse: UniverseOn?
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,7 +57,10 @@ extension FilterResultCardVC {
         
         // 유니버스 추가하는 서버 통신 연결
         
-        addMyUniverse(15592715)
+        addMyUniverse(60050010)
+        
+        //self.infoUniverse = plusUniverse?.universeOn[0]
+       // universeCountLabel.text = "\(self.infoUniverse?.cafeID)"
         universeButton.setImage(UIImage(named: "btnUniverseAdded"), for: .normal)
         buttonIsSelected = false
         
@@ -68,10 +71,12 @@ extension FilterResultCardVC {
             
             switch responseData {
             case.success(let res):
-                dump(res)
-                self.plusUniverse = res as? AddUniverse
-                self.infoUniverse = self.plusUniverse?.universeOn[0]
-                self.universeCountLabel.text = String(self.plusUniverse?.universeCount ?? 0)
+              
+                let addUniverse = res as? AddUniverse
+             
+                dump(addUniverse)
+                self.universeCountLabel.text = String(addUniverse?.universeCount ?? 0)
+               
                 print("success")
                 
             case.requestErr(_):

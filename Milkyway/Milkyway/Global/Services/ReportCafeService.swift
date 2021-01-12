@@ -17,7 +17,7 @@ struct ReportCafeService {
     func ReportCafe(cafepost: Cafepost,
                     completion: @escaping (NetworkResult<Any>) -> Void) {
         
-        let URL = APIConstants.reportCafe + "\(cafepost)"
+        let URL = APIConstants.reportCafe
         
         let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWR4Ijo1LCJpYXQiOjE2MDk3Nzg0NjksImV4cCI6MTYxMjM3MDQ2OSwiaXNzIjoibWlsa3lXYXkifQ.c2JAdyd0pGQzbmT0E_yl51eAGkcO71YfokwJebqqDME"
         
@@ -38,10 +38,9 @@ struct ReportCafeService {
         
         let params = ["cafeName": cafepost.cafeName! as String,
                       "cafeAddress": cafepost.cafeAddress! as String,
-                      "cafeMapX": cafepost.cafeMapX,
-                      "cafeMapY": cafepost.cafeMapY,
+                      "longitude": cafepost.longitude,
+                      "latitude": cafepost.latitude,
                       "honeyTip": cafepost.honeyTip,
-            
                       "menu": list
         ] as [String : Any]
         

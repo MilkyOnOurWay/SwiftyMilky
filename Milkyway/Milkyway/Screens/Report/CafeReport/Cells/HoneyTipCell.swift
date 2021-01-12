@@ -53,6 +53,8 @@ class HoneyTipCell: UITableViewCell {
             select[sender.tag-1] = true
         }
         
+        NotificationCenter.default.post(name: Notification.Name("honeyTips"), object: select)
+        
     }
     
     

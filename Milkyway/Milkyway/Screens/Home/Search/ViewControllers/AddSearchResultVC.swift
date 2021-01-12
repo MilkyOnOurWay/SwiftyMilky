@@ -135,6 +135,7 @@ extension AddSearchResultVC: UITableViewDataSource {
         cafeName = searchedCafe?[indexPath.row].cafeName
         cafeAddress = searchedCafe?[indexPath.row].cafeAddress
         
+        
         // 카페제보뷰로 다시 돌아가기
         NotificationCenter.default.post(name: Notification.Name("addressPlus"), object: [cafeName,cafeAddress])
         

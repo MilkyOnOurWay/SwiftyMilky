@@ -17,20 +17,21 @@ class CafeReportMainVC: UIViewController, IndicatorInfoProvider {
 
     let cafeMenu = ["디카페인","두유","저지방우유","무지방우유"]
 
-    var dummyData = Cafepost(cafeName: "",
-                             cafeAddress: "",
-                             cafeMapX: 126.8995926,
-                             cafeMapY: 37.55638504,
+    var dummyData = Cafepost(cafeName: nil,
+                             cafeAddress: nil,
+                             longitude: 126.8995926,
+                             latitude: 37.55638504,
                              honeyTip: [],
                              menu: [])
    
     var editIndex: Int?
+    var nickName: String?
 
     // MARK: - 검색한 결과값(카페이름, 주소)를 여기다가 넣어줄거에요
     var resultCafeName: String?
     var resultCafeAddress: String?
-    var latitude: String?
-    var longitude: String?
+    var latitude: String = ""
+    var longitude: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +39,7 @@ class CafeReportMainVC: UIViewController, IndicatorInfoProvider {
         delegateFunc()
         cellResister()
         notiGather()
-        getCafe()
+        
         
         print("카페\(resultCafeName)")
         print("카페주소\(resultCafeAddress)")
@@ -180,19 +181,22 @@ extension CafeReportMainVC: UITableViewDataSource {
 
 extension CafeReportMainVC {
 
-    func getCafe(){
-        
-        dummyData.cafeName = resultCafeName
-        dummyData.cafeAddress = resultCafeAddress
-        
-        
-    }
+//    func getCafe(){
+//
+//        dummyData.cafeName = resultCafeName
+//        dummyData.cafeAddress = resultCafeAddress
+//        dummyData.longitude = (longitude as NSString).doubleValue
+//        dummyData.latitude = (latitude as NSString).doubleValue
+//
+//    }
+    
+    
     func notiGather() {
         NotificationCenter.default.addObserver(self, selector: #selector(addressPlus(_:)), name: Notification.Name("addressPlus"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(menuPlus(_:)), name: Notification.Name("menuPlus"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(removeBeforeMenu), name: Notification.Name("remove"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(resetEveryInfo), name: Notification.Name("cafeReset"), object: nil)
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(honeyTipAdd(_:)), name: Notification.Name("honeyTips"), object: nil)
     }
 
 
@@ -235,13 +239,32 @@ extension CafeReportMainVC {
     }
 
     /// 노티관련
+    
+    //검색뷰에서 주소를 받아온다
     @objc func addressPlus(_ noti: NSNotification) {
         let getCafeData: [String] = noti.object as! [String]
         dummyData.cafeName = getCafeData[0]
         dummyData.cafeAddress = getCafeData[1]
         tableView.reloadSections(IndexSet(0...0), with: .automatic)
         checkReportOK()
+        
+        
+        //닉네임가져오기
+        let ad = UIApplication.shared.delegate as? AppDelegate
+        nickName = (ad?.userNickNameInHere)! // 받은 입력을 다음 뷰로 넘겨준다
 
+    }
+    
+    @objc func honeyTipAdd(_ noti: NSNotification) {
+        let honeyData = noti.object as! [Int]
+        var tempData = [Int]()
+        for i in 0..<honeyData.count {
+            if honeyData[i] == 1 {
+                tempData.append(i+1)
+            }
+        }
+        
+        dummyData.honeyTip = tempData
     }
     
     
@@ -280,6 +303,7 @@ extension CafeReportMainVC {
         self.navigationController?.pushViewController(nvc, animated: true)
 
     }
+    
 
 
     @IBAction func resetBtnClicked(_ sender: Any) {
@@ -291,11 +315,21 @@ extension CafeReportMainVC {
 
     @IBAction func reportCompleteClicked(_ sender: Any) {
 
-        ReportCafeService.shared.ReportCafe(cafepost: dummyData) { responseData in
+        ReportCafeService.shared.ReportCafe(cafepost: dummyData) { [self] responseData in
             switch responseData {
             case .success(let res):
                 print("success")
                 print(res)
+                let storyboard = UIStoryboard(name: "CafeReportMain", bundle: nil)
+                
+                if let popVC = storyboard.instantiateViewController(withIdentifier: "cafePopUpVC") as? cafePopUpVC {
+                    popVC.modalPresentationStyle = .overFullScreen
+                    popVC.modalTransitionStyle = .crossDissolve
+                    popVC.nickName = "\(nickName!)님 덕분에\n밀키웨이가 한층 밝아졌어요!"
+                    self.present(popVC, animated: true, completion: {
+                    })
+                }
+                
             case .requestErr(_):
                 print("request error")
             case .pathErr:
@@ -304,6 +338,7 @@ extension CafeReportMainVC {
                 print(".serverErr")
             case .networkFail:
                 print("failure")
+                print("에러(error.localizedDescription)")
             }
 
 

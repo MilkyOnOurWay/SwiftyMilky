@@ -8,10 +8,13 @@
 import UIKit
 
 class cafePopUpVC: UIViewController {
-
+    @IBOutlet weak var nickNameLabel: UILabel!
+    
+    var nickName = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        nickNameLabel.text = nickName
        
     }
     

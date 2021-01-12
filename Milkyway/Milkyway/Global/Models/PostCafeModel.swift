@@ -10,7 +10,7 @@ import Foundation
 // MARK: - Cafepost
 struct Cafepost: Codable {
     var cafeName, cafeAddress: String?
-    let cafeMapX, cafeMapY: Double
+    var longitude, latitude: Double
     var honeyTip: [Int]
     var menu: [Menu]
 }

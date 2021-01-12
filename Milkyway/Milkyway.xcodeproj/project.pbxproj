@@ -62,6 +62,7 @@
 		D175DA9925AC412200665678 /* UniversePopUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D175DA9825AC412200665678 /* UniversePopUpVC.swift */; };
 		D175DA9C25AC4DCC00665678 /* UniversePopUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D175DA9B25AC4DCC00665678 /* UniversePopUp.storyboard */; };
 		D175DABC25ACCD5400665678 /* UniverseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D175DABB25ACCD5400665678 /* UniverseService.swift */; };
+		D190C63625AE342500FAD17A /* loadingLottie.json in Resources */ = {isa = PBXBuildFile; fileRef = D190C63525AE342500FAD17A /* loadingLottie.json */; };
 		D1983CA725A72BF200C74CED /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1983CA625A72BF200C74CED /* UITextField+Extension.swift */; };
 		D1996E0425A2290500B8F40B /* DetailCafeMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1996E0325A2290500B8F40B /* DetailCafeMenuVC.swift */; };
 		D1996E0725A2290E00B8F40B /* DetailCafeMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1996E0625A2290E00B8F40B /* DetailCafeMenu.storyboard */; };
@@ -204,6 +205,7 @@
 		D175DA9825AC412200665678 /* UniversePopUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversePopUpVC.swift; sourceTree = "<group>"; };
 		D175DA9B25AC4DCC00665678 /* UniversePopUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UniversePopUp.storyboard; sourceTree = "<group>"; };
 		D175DABB25ACCD5400665678 /* UniverseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniverseService.swift; sourceTree = "<group>"; };
+		D190C63525AE342500FAD17A /* loadingLottie.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loadingLottie.json; sourceTree = "<group>"; };
 		D1983CA625A72BF200C74CED /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		D1996E0325A2290500B8F40B /* DetailCafeMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCafeMenuVC.swift; sourceTree = "<group>"; };
 		D1996E0625A2290E00B8F40B /* DetailCafeMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailCafeMenu.storyboard; sourceTree = "<group>"; };
@@ -815,6 +817,7 @@
 		F2BA62FA2598E01F00A49020 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D190C63525AE342500FAD17A /* loadingLottie.json */,
 				F2142DF625A349DC00D07F3F /* Fonts */,
 				F2BA62EB2598DE6400A49020 /* LaunchScreen.storyboard */,
 				F2BA62E92598DE6400A49020 /* Assets.xcassets */,
@@ -972,6 +975,7 @@
 				F26BEB6525A63BB900B7AFCF /* AddSearchTVC.xib in Resources */,
 				6BD05A6B25A41FFE00B2643F /* CompletedTVCell.xib in Resources */,
 				D15443F725A33ACF007773BF /* CafeNameSearchCell.xib in Resources */,
+				D190C63625AE342500FAD17A /* loadingLottie.json in Resources */,
 				D175DA5C25AAE5C600665678 /* UniverseBottomVC.xib in Resources */,
 				D1996E0725A2290E00B8F40B /* DetailCafeMenu.storyboard in Resources */,
 				D1D95DD425A30B9700B95F79 /* CafeBasicCell.xib in Resources */,

@@ -7,6 +7,8 @@
 
 import UIKit
 import XLPagerTabStrip
+import Lottie
+
 
 class ReportTabBarViewController: ButtonBarPagerTabStripViewController {
     
@@ -42,21 +44,23 @@ class ReportTabBarViewController: ButtonBarPagerTabStripViewController {
     
     
     // MARK: - 데이터 로딩 중 Lottie 화면
-    private var loadingView: UIActivityIndicatorView?
+    let loadingView = AnimationView(name: "loadingLottie")
     
     
     @objc private func showLoadingLottie() {
-        loadingView = UIActivityIndicatorView(style: .large)
-        loadingView?.color = UIColor(named: "Milky")
-        self.view.addSubview(loadingView!)
-        loadingView?.center = self.view.center
-        loadingView?.startAnimating()
+        loadingView.frame = CGRect(x: 0, y: 0, width: 300, height: 300)
+        loadingView.center = self.view.center
+        loadingView.contentMode = .scaleAspectFill
+        loadingView.loopMode = .loop
+        self.view.addSubview(loadingView)
+        
+        loadingView.play()
     }
     
     @objc private func stopLottieAnimation() {
-        loadingView?.stopAnimating()
-        loadingView?.removeFromSuperview()
-        loadingView = nil
+        print("end")
+        loadingView.pause()
+        loadingView.removeFromSuperview()
     }
     
     

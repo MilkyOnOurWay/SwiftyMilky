@@ -188,9 +188,11 @@ extension CafeReportMainVC {
         
     }
     func notiGather() {
+        NotificationCenter.default.addObserver(self, selector: #selector(addressPlus(_:)), name: Notification.Name("addressPlus"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(menuPlus(_:)), name: Notification.Name("menuPlus"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(removeBeforeMenu), name: Notification.Name("remove"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(resetEveryInfo), name: Notification.Name("cafeReset"), object: nil)
+        
     }
 
 
@@ -233,6 +235,16 @@ extension CafeReportMainVC {
     }
 
     /// 노티관련
+    @objc func addressPlus(_ noti: NSNotification) {
+        let getCafeData: [String] = noti.object as! [String]
+        dummyData.cafeName = getCafeData[0]
+        dummyData.cafeAddress = getCafeData[1]
+        tableView.reloadSections(IndexSet(0...0), with: .automatic)
+        checkReportOK()
+
+    }
+    
+    
 
     // 메뉴가 추가되면 실행된다.
     // noti로 받아온 메뉴를 cafeMenus에 추가해주고, 테이블뷰 메뉴 섹션을 reload 해준다.

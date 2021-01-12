@@ -26,7 +26,6 @@ class UniverseBottomVC: UIViewController {
         super.viewDidLoad()
         setView()
         setHandler()
-        //settableView()
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -58,19 +57,6 @@ extension UniverseBottomVC {
         
     }
     
-//    func settableView() {
-//        let tabbarheight = self.tabBarController?.tabBar.frame.height
-//
-//        tableView.translatesAutoresizingMaskIntoConstraints = false
-//        tableView.topAnchor.constraint(equalTo: self.handleArea.bottomAnchor).isActive = true
-//        tableView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor,
-//                                                constant: 0).isActive = true
-//        tableView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor,
-//                                                 constant: 0).isActive = true
-//        tableView.bottomAnchor.constraint(equalTo: self.rootView.bottomAnchor, constant: 0).isActive = true
-//
-//
-//    }
     
     @objc func removeBeforeCafe() {
         // 통신 ~

@@ -17,6 +17,11 @@ class SearchTVC: UITableViewCell {
     @IBOutlet weak var cafeNameLabel: UILabel!
     @IBOutlet weak var cafeAddressLabel: UILabel!
     
+    var searchedCafe: CafeHomeResult?
+    var cafeName: String?
+    var cafeAddress: String?
+    var longitude: Double?
+    var latitude: Double?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,6 +32,18 @@ class SearchTVC: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func setCell(){
+        
+        cafeName = searchedCafe?.cafeName
+        cafeAddress = searchedCafe?.cafeAddress
+        cafeNameLabel.text = searchedCafe?.cafeName
+        cafeAddressLabel.text = searchedCafe?.cafeAddress
+        longitude = searchedCafe?.longitude
+        latitude = searchedCafe?.latitude
+        
+    
     }
     
 }

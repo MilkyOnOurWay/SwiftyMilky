@@ -15,11 +15,18 @@ class SearchResultVC: UIViewController {
     @IBOutlet weak var searchTableView: UITableView!
     @IBOutlet weak var noResultImageView: UIImageView!
     
+    var buttonIsSelected: Bool = true
+    var cafeResult: String?
+    private var searchedCafe: [CafeHomeResult]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setSearchTableView()
         setTextField()
         setBackButton()
+        setDeleteButton()
+        
+        //searchCafe(cafeResult ?? "")
     }
 }
 
@@ -34,28 +41,78 @@ extension SearchResultVC {
         searchTableView.register(nibName, forCellReuseIdentifier: "SearchTVC")
         noResultImageView.isHidden = true
         
+        
+        
     }
-   
+    
     func setTextField(){
         searchTextField.delegate = self
         
     }
     func setBackButton(){
-        backButton.addTarget(self, action: #selector(backBtnClicked), for: .touchUpInside)
+        backButton.addTarget(self, action: #selector(backButtonClicked), for: .touchUpInside)
         
     }
-    func setDeleteButton(){
-        
+    func setDeleteButton(){ // 처음에는 검색, 다시한번 누르면 텍스트 지우기
+        deleteButton.setImage(UIImage(named: "icSearch"), for: .normal)
+        deleteButton.addTarget(self,action: #selector(deleteButtonClicked), for: .touchUpInside)
        
     }
     
-    @objc func backBtnClicked(){
+    @objc func backButtonClicked(){
         
         navigationController?.popViewController(animated: true)
     }
     // MARK: - 입력한 값 삭제버튼
-    @objc func deleteBtnClicked(){
+    @objc func deleteButtonClicked(){
+        cafeResult = searchTextField.text
+        buttonIsSelected ? search(cafeResult ?? "") : delete()
+        print(buttonIsSelected)
+    }
+    
+    func search(_ cafe: String){
         
+        searchCafe(cafe)
+        deleteButton.setImage(UIImage(named: "btnClear"), for: .normal)
+        buttonIsSelected = false
+        
+    }
+    
+    func delete(){
+        
+        deleteButton.setImage(UIImage(named: "icSearch"), for: .normal)
+        buttonIsSelected = true
+        searchTextField.text = ""
+        
+        
+    }
+    
+    @objc func searchCafe(_ cafe: String){
+        SearchCafeService.shared.homeSearchCafe(cafe) {
+            
+            responseData in
+            switch responseData {
+            
+            case .success(let res):
+                dump(res)
+                self.searchedCafe = res as? [CafeHomeResult]
+              
+                DispatchQueue.main.async {
+                    self.searchTableView.reloadData()
+                }
+                self.searchTableView.reloadData()
+                
+            case .requestErr(_):
+                print("requestErr")
+            case .pathErr:
+                print("pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+            
+        }
     }
 }
 
@@ -66,15 +123,22 @@ extension SearchResultVC: UITableViewDelegate {
 extension SearchResultVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return searchedCafe?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = searchTableView.dequeueReusableCell(withIdentifier: "SearchTVC",for: indexPath) as! SearchTVC
-        cell.cafeNameLabel.text = "카페이름"
-        cell.cafeAddressLabel.text = "카페주소"
+        cell.searchedCafe = searchedCafe?[indexPath.row]
         cell.cafeNameLabel.sizeToFit()
         cell.cafeAddressLabel.sizeToFit()
+        cell.setCell()
+        
+        // 아무값도 못 받으면 이미지 띄우기
+        if (cell.searchedCafe == nil) {
+            
+            noResultImageView.isHidden = false
+            print("이게 맞나?")
+        }
         return cell
     }
     

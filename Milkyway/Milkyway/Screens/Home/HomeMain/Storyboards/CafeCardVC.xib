@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -34,6 +34,10 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="125"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZG6-DF-q7S">
+                    <rect key="frame" x="0.0" y="90" width="375" height="35"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="카페이름길어봤자얼마나길까카페" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L8p-LF-JfM">
                     <rect key="frame" x="20" y="20" width="243" height="22"/>
                     <constraints>
@@ -55,7 +59,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="평일 09:00 - 20:00\r\n토요일 11:00 - 18:00\r\n일요일 11:00 - 17:00" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7kf-cy-MFp">
-                    <rect key="frame" x="20" y="70" width="167" height="42"/>
+                    <rect key="frame" x="20" y="69" width="167" height="43"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="167" id="NNX-TB-dnF"/>
                     </constraints>
@@ -84,19 +88,23 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="L8p-LF-JfM" firstAttribute="leading" secondItem="4Iv-1K-PNj" secondAttribute="leading" constant="20" id="2Ym-xG-UP2"/>
+                <constraint firstItem="ZG6-DF-q7S" firstAttribute="bottom" secondItem="4Iv-1K-PNj" secondAttribute="bottom" id="3h8-p2-yyf"/>
                 <constraint firstItem="Ldz-Jb-Ekc" firstAttribute="leading" secondItem="L8p-LF-JfM" secondAttribute="leading" id="4hq-7o-UFG"/>
                 <constraint firstItem="1eL-T3-cbx" firstAttribute="top" secondItem="V7C-6P-AQf" secondAttribute="bottom" constant="3" id="99b-rV-VDO"/>
                 <constraint firstItem="4Iv-1K-PNj" firstAttribute="trailing" secondItem="V7C-6P-AQf" secondAttribute="trailing" constant="20" id="DW6-oJ-Tlf"/>
                 <constraint firstItem="V7C-6P-AQf" firstAttribute="centerY" secondItem="L8p-LF-JfM" secondAttribute="centerY" id="G82-Dp-Eba"/>
+                <constraint firstItem="ZG6-DF-q7S" firstAttribute="trailing" secondItem="4Iv-1K-PNj" secondAttribute="trailing" id="ONX-GQ-KZS"/>
                 <constraint firstItem="Ldz-Jb-Ekc" firstAttribute="top" secondItem="L8p-LF-JfM" secondAttribute="bottom" constant="5" id="OQB-pP-cty"/>
                 <constraint firstItem="4Iv-1K-PNj" firstAttribute="trailing" secondItem="1eL-T3-cbx" secondAttribute="trailing" constant="28" id="OgX-81-kHS"/>
                 <constraint firstItem="4Iv-1K-PNj" firstAttribute="bottom" secondItem="7kf-cy-MFp" secondAttribute="bottom" constant="13" id="aMU-Cf-7H7"/>
+                <constraint firstItem="ZG6-DF-q7S" firstAttribute="leading" secondItem="4Iv-1K-PNj" secondAttribute="leading" id="bS0-dZ-xwq"/>
+                <constraint firstItem="ZG6-DF-q7S" firstAttribute="top" secondItem="4Iv-1K-PNj" secondAttribute="top" constant="46" id="dJI-3f-CPW"/>
                 <constraint firstItem="7kf-cy-MFp" firstAttribute="leading" secondItem="Ldz-Jb-Ekc" secondAttribute="leading" id="pGo-ZN-6zZ"/>
                 <constraint firstItem="L8p-LF-JfM" firstAttribute="top" secondItem="XxX-nw-Oiw" secondAttribute="top" constant="20" id="rjH-yf-fyO"/>
                 <constraint firstItem="4Iv-1K-PNj" firstAttribute="trailing" secondItem="Ldz-Jb-Ekc" secondAttribute="trailing" constant="112" id="ydd-BS-Dbi"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="-734" y="62"/>
+            <point key="canvasLocation" x="-735.20000000000005" y="60.960591133004925"/>
         </view>
     </objects>
     <resources>

@@ -24,7 +24,7 @@ class HomeVC: UIViewController {
     
     @IBOutlet var locationBtn: UIButton!
     
-    var homeData = HomeData(aroundCafe: [AroundCafe](), nickName: "")
+    var homeData = HomeData(result: [AroundCafe](), nickName: "")
     
     // 이미지들 넣기
     let markerImage = NMFOverlayImage(name: "picker") //마커
@@ -176,7 +176,6 @@ extension HomeVC {
         self.view.addSubview(cafeCardVC.view)
         print("addsubView")
         let tabbarFrame = self.tabBarController?.tabBar.frame
-        
         cafeCardVC.view.frame = CGRect(x:0, y: self.view.frame.height - tabbarFrame!.size.height - 125, width: self.view.bounds.width, height: 125)
         
         cafeCardVC.view.isHidden = true
@@ -213,17 +212,17 @@ extension HomeVC {
     func setMarker() {
         print("home - setMarker()")
         markers = []
-        for index in 0..<homeData.aroundCafe.count {
+        for index in 0..<homeData.result.count {
 
-            let marker = NMFMarker(position: NMGLatLng(lat: homeData.aroundCafe[index].latitude, lng: homeData.aroundCafe[index].longitude), iconImage: unselectedImage)
+            let marker = NMFMarker(position: NMGLatLng(lat: homeData.result[index].latitude, lng: homeData.result[index].longitude), iconImage: unselectedImage)
                 marker.isHideCollidedMarkers = true
                 marker.touchHandler = { [self] (overlay: NMFOverlay) -> Bool in
                     self.beforeMarker?.iconImage = self.unselectedImage
                     marker.iconImage = self.selectedImage
                     self.beforeMarker = marker
-                    cafeCardVC.cafeNameLabel.text = homeData.aroundCafe[index].cafeName
-                    cafeCardVC.cafeTimeLabel.text = homeData.aroundCafe[index].businessHours
-                    cafeCardVC.cafeAddressLabel.text = homeData.aroundCafe[index].cafeAddress
+                    cafeCardVC.cafeNameLabel.text = homeData.result[index].cafeName
+                    cafeCardVC.cafeTimeLabel.text = homeData.result[index].businessHours
+                    cafeCardVC.cafeAddressLabel.text = homeData.result[index].cafeAddress
                     cafeCardVC.view.isHidden = false
                     bottomCardVC.view.isHidden = true
                     return true

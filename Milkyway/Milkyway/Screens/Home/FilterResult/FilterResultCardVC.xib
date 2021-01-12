@@ -68,7 +68,6 @@
                         <constraint firstAttribute="height" constant="22" id="3b7-bb-eYf"/>
                         <constraint firstAttribute="width" constant="32" id="8iL-Yh-Ugy"/>
                     </constraints>
-                    <state key="normal" image="btnUniverse"/>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jw1-IB-Vlu">
                     <rect key="frame" x="328" y="47" width="20.333333333333314" height="14"/>
@@ -98,7 +97,6 @@
         </view>
     </objects>
     <resources>
-        <image name="btnUniverse" width="32" height="21"/>
         <namedColor name="darkGrey">
             <color red="0.60399997234344482" green="0.59200000762939453" blue="0.57300001382827759" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

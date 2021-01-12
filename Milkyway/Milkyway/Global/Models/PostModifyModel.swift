@@ -9,11 +9,9 @@ import Foundation
 
 // MARK: - EditPost
 struct EditPost: Codable {
-    var cafeId: Int
     var reason: String
 }
 
 struct DeletePost: Codable {
-    var cafeId: Int
     var reason: Int
 }

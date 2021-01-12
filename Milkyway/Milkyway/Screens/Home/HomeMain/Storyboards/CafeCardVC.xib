@@ -59,7 +59,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="평일 09:00 - 20:00\r\n토요일 11:00 - 18:00\r\n일요일 11:00 - 17:00" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7kf-cy-MFp">
-                    <rect key="frame" x="20" y="69" width="167" height="43"/>
+                    <rect key="frame" x="20" y="70" width="167" height="42"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="167" id="NNX-TB-dnF"/>
                     </constraints>
@@ -77,10 +77,10 @@
                         <color key="titleColor" name="darkGrey"/>
                     </state>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1eL-T3-cbx">
-                    <rect key="frame" x="316" y="46.666666666666664" width="31" height="14.333333333333336"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                    <nil key="textColor"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="328" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1eL-T3-cbx">
+                    <rect key="frame" x="326" y="43.666666666666664" width="20.333333333333314" height="14"/>
+                    <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="12"/>
+                    <color key="textColor" red="0.59215686274509804" green="0.59215686274509804" blue="0.59215686274509804" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
@@ -90,15 +90,15 @@
                 <constraint firstItem="L8p-LF-JfM" firstAttribute="leading" secondItem="4Iv-1K-PNj" secondAttribute="leading" constant="20" id="2Ym-xG-UP2"/>
                 <constraint firstItem="ZG6-DF-q7S" firstAttribute="bottom" secondItem="4Iv-1K-PNj" secondAttribute="bottom" id="3h8-p2-yyf"/>
                 <constraint firstItem="Ldz-Jb-Ekc" firstAttribute="leading" secondItem="L8p-LF-JfM" secondAttribute="leading" id="4hq-7o-UFG"/>
-                <constraint firstItem="1eL-T3-cbx" firstAttribute="top" secondItem="V7C-6P-AQf" secondAttribute="bottom" constant="3" id="99b-rV-VDO"/>
+                <constraint firstItem="1eL-T3-cbx" firstAttribute="top" secondItem="V7C-6P-AQf" secondAttribute="bottom" id="99b-rV-VDO"/>
                 <constraint firstItem="4Iv-1K-PNj" firstAttribute="trailing" secondItem="V7C-6P-AQf" secondAttribute="trailing" constant="20" id="DW6-oJ-Tlf"/>
                 <constraint firstItem="V7C-6P-AQf" firstAttribute="centerY" secondItem="L8p-LF-JfM" secondAttribute="centerY" id="G82-Dp-Eba"/>
                 <constraint firstItem="ZG6-DF-q7S" firstAttribute="trailing" secondItem="4Iv-1K-PNj" secondAttribute="trailing" id="ONX-GQ-KZS"/>
                 <constraint firstItem="Ldz-Jb-Ekc" firstAttribute="top" secondItem="L8p-LF-JfM" secondAttribute="bottom" constant="5" id="OQB-pP-cty"/>
-                <constraint firstItem="4Iv-1K-PNj" firstAttribute="trailing" secondItem="1eL-T3-cbx" secondAttribute="trailing" constant="28" id="OgX-81-kHS"/>
                 <constraint firstItem="4Iv-1K-PNj" firstAttribute="bottom" secondItem="7kf-cy-MFp" secondAttribute="bottom" constant="13" id="aMU-Cf-7H7"/>
                 <constraint firstItem="ZG6-DF-q7S" firstAttribute="leading" secondItem="4Iv-1K-PNj" secondAttribute="leading" id="bS0-dZ-xwq"/>
                 <constraint firstItem="ZG6-DF-q7S" firstAttribute="top" secondItem="4Iv-1K-PNj" secondAttribute="top" constant="46" id="dJI-3f-CPW"/>
+                <constraint firstItem="1eL-T3-cbx" firstAttribute="centerX" secondItem="V7C-6P-AQf" secondAttribute="centerX" id="dKW-hn-skb"/>
                 <constraint firstItem="7kf-cy-MFp" firstAttribute="leading" secondItem="Ldz-Jb-Ekc" secondAttribute="leading" id="pGo-ZN-6zZ"/>
                 <constraint firstItem="L8p-LF-JfM" firstAttribute="top" secondItem="XxX-nw-Oiw" secondAttribute="top" constant="20" id="rjH-yf-fyO"/>
                 <constraint firstItem="4Iv-1K-PNj" firstAttribute="trailing" secondItem="Ldz-Jb-Ekc" secondAttribute="trailing" constant="112" id="ydd-BS-Dbi"/>

@@ -30,7 +30,7 @@ struct UniverseService {
                                      method: .get,
                                      encoding: JSONEncoding.default,
                                      headers: headers
-                                     )
+        )
         
         dataRequest.responseData{ (response) in
             
@@ -47,7 +47,7 @@ struct UniverseService {
                                 let result = try decoder.decode(ResponseSimpleResult<HomeData>.self,
                                                                 from: value)
                                 completion(.success(result.data ?? Token.self))
-
+                                
                             } catch {
                                 completion(.pathErr)
                             }
@@ -121,5 +121,62 @@ struct UniverseService {
             }
         }
     }
+    
+    // MARK: - 유니버스 삭제
+    
+    func deleteUniverse(_ cafeId: Int, completion: @escaping(NetworkResult<Any>) -> Void) {
+        
+        let URL = APIConstants.deleteUniverse
+        let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWR4Ijo1LCJpYXQiOjE2MDk3Nzg0NjksImV4cCI6MTYxMjM3MDQ2OSwiaXNzIjoibWlsa3lXYXkifQ.c2JAdyd0pGQzbmT0E_yl51eAGkcO71YfokwJebqqDME"
+        
+        let headers: HTTPHeaders = [
+            "Content-Type": "application/json",
+            "token": token
+        ]
+        
+        // 서버 위키에 request body 없다고 나오는데 잘못 올린듯
+        let body: Parameters = [
+            "cafeId": cafeId
+        ]
+        
+        let dataRequest = AF.request(URL,
+                                     method: .delete,
+                                     parameters: body,
+                                     encoding: JSONEncoding.default,
+                                     headers: headers)
+        dataRequest.responseData {(response) in
+            
+            switch response.result {
+            
+            case .success(_):
+                if let value = response.value {
+                    if let status = response.response?.statusCode {
+                        print(status)
+                        switch status {
+                        case 200:
+                            do {
+                              let decoder = JSONDecoder()
+                                let result = try decoder.decode(ResponseResult<DeleteUniverse>.self,from: value)
+                                completion(.success(result.data ?? [DeleteUniverse].self))
+                            } catch {
+                                completion(.pathErr)
+                            }
+                        case 400:
+                            completion(.pathErr)
+                        case 500:
+                            completion(.serverErr)
+                        default:
+                            break
+                        }
+                    }
+                }
+            case .failure(let err):
+                print("유니버스 삭제 에러 \(err.localizedDescription)")
+                completion(.networkFail)
+            }
+        }
+    }
+    
+    
 }
 

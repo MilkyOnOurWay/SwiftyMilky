@@ -91,6 +91,7 @@
 		F215A21525ACD77000FB7D86 /* SearchCafeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F215A21425ACD77000FB7D86 /* SearchCafeService.swift */; };
 		F215A21825ACDA6E00FB7D86 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F215A21725ACDA6E00FB7D86 /* String+Extensions.swift */; };
 		F215A22525ACDC0400FB7D86 /* GetCafeInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F215A22425ACDC0400FB7D86 /* GetCafeInfoModel.swift */; };
+		F215A24925AD92DA00FB7D86 /* MyUniverse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F215A24825AD92DA00FB7D86 /* MyUniverse.swift */; };
 		F2242A1B259BAC8200455604 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2242A1A259BAC8200455604 /* TabBarController.swift */; };
 		F2242A20259BAD5400455604 /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2242A1F259BAD5400455604 /* TabBar.storyboard */; };
 		F2242A24259BAFFC00455604 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2242A23259BAFFC00455604 /* HomeVC.swift */; };
@@ -230,6 +231,7 @@
 		F215A21425ACD77000FB7D86 /* SearchCafeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCafeService.swift; sourceTree = "<group>"; };
 		F215A21725ACDA6E00FB7D86 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		F215A22425ACDC0400FB7D86 /* GetCafeInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCafeInfoModel.swift; sourceTree = "<group>"; };
+		F215A24825AD92DA00FB7D86 /* MyUniverse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyUniverse.swift; sourceTree = "<group>"; };
 		F2242A1A259BAC8200455604 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		F2242A1F259BAD5400455604 /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
 		F2242A23259BAFFC00455604 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
@@ -343,6 +345,7 @@
 				6B4086D225AC33AD00D6894E /* GetMilkyHomeModel.swift */,
 				F215A22425ACDC0400FB7D86 /* GetCafeInfoModel.swift */,
 				6B657FE525AD5C15002648A1 /* PostModifyModel.swift */,
+				F215A24825AD92DA00FB7D86 /* MyUniverse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1045,6 +1048,7 @@
 				D154440925A33B10007773BF /* HoneyTipCell.swift in Sources */,
 				6BD05A6D25A41FFE00B2643F /* CompletedTVCell.swift in Sources */,
 				6BD05A6E25A41FFE00B2643F /* TopTVCell.swift in Sources */,
+				F215A24925AD92DA00FB7D86 /* MyUniverse.swift in Sources */,
 				D1F22861259F78C20018C472 /* SearchVC.swift in Sources */,
 				D1CA107A25AA06F1004E42DC /* GetDetailCafeModel.swift in Sources */,
 				F2242A69259CD2F600455604 /* FilterResultVC.swift in Sources */,

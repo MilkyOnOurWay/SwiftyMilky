@@ -66,4 +66,6 @@ struct UserService {
             
         }
     }
+    
+    // MARK: - 닉네임 변경 API 연결
 }

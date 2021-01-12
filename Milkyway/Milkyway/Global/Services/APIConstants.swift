@@ -30,10 +30,10 @@ struct APIConstants {
     static let categoryHome = BaseURL + "home/categoryHome/"
     
     // POST 마이유니버스 추가 universe/:universeId
-    static let addUniverse = BaseURL + "universe/"
+    static let addUniverse = BaseURL + "universe/universeOn"
     
     // DELETE 마이유니버스 삭제 universe/:universeId
-    static let deleteUniverse = BaseURL + "universe/"
+    static let deleteUniverse = BaseURL + "universe/universeOff"
     
     // GET 주변 마이유니버스 불러오기
     static let showUniverse = BaseURL + "universe/universeHome"
@@ -57,6 +57,6 @@ struct APIConstants {
     // DELETE 제보한 카페 확인 후 삭제 report/:cafeId
     static let deleteReport = BaseURL + "report/"
     
-    // GET 제보하기에서 카카오 API 장소 조회하기 search/report/cafe?query=
+    // GET 제보하기에서 카카오 API 장소 조회하기 search/report/cafe +?query=+ ""
     static let searchForReport = BaseURL + "search/report/cafe"
 }

@@ -137,7 +137,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iaE-i8-7DJ">
-                                <rect key="frame" x="20" y="252" width="335" height="222"/>
+                                <rect key="frame" x="20" y="295" width="335" height="222"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mpq-g7-yP7">
                                         <rect key="frame" x="91" y="40" width="153" height="21"/>
@@ -180,9 +180,9 @@
                         <viewLayoutGuide key="safeArea" id="Qmm-X2-Zkq"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="iaE-i8-7DJ" firstAttribute="centerY" secondItem="Nuk-g6-JfB" secondAttribute="centerY" id="YCp-qV-4AG"/>
                             <constraint firstAttribute="trailing" secondItem="iaE-i8-7DJ" secondAttribute="trailing" constant="20" id="Z0S-UB-sde"/>
                             <constraint firstItem="iaE-i8-7DJ" firstAttribute="leading" secondItem="Qmm-X2-Zkq" secondAttribute="leading" constant="20" id="fXq-od-JS9"/>
-                            <constraint firstItem="Qmm-X2-Zkq" firstAttribute="bottom" secondItem="iaE-i8-7DJ" secondAttribute="bottom" constant="304" id="oL8-jZ-OW8"/>
                         </constraints>
                     </view>
                     <connections>

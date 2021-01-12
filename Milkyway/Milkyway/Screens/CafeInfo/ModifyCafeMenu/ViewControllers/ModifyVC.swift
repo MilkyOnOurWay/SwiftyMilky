@@ -16,6 +16,8 @@ class ModifyVC: UIViewController {
     @IBOutlet var modifyTextView: UITextView!
     @IBOutlet var submitBtn: UIButton!
     
+//    var dummyData = EditPost(id: 1, reason: String)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setLabel()
@@ -26,11 +28,31 @@ class ModifyVC: UIViewController {
     @IBAction func submitBtnClicked(_ sender: Any) {
         print("Modify - submitBtnClicked")
         
+        ModifyCafeService.shared.EditCafe(editPost: EditPost(cafeId: 17, reason: modifyTextView.text)) { responseData in
+            switch responseData {
+            case .success(let res):
+                print("success")
+                print(res)
+            case .requestErr(_):
+                print("request error")
+            case .pathErr:
+                print(".pathErr")
+            case .serverErr:
+                print(".serverErr")
+            case .networkFail:
+                print("failure")
+            }
+        }
+        
         guard let confirmVC = UIStoryboard(name: "Modify", bundle: nil).instantiateViewController(withIdentifier:"ModifyConfirmVC") as? ModifyConfirmVC else {
             return
         }
         confirmVC.modalPresentationStyle = .overCurrentContext
         present(confirmVC, animated: false, completion: nil)
+    }
+    
+    @IBAction func backBtnClicked(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
     }
 }
 

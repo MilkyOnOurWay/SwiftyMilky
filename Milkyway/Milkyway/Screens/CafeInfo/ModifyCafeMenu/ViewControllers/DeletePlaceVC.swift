@@ -24,6 +24,7 @@ class DeletePlaceVC: UIViewController {
     
     @IBOutlet var submitBtn: UIButton!
     
+    var tag: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +43,22 @@ class DeletePlaceVC: UIViewController {
     
     @IBAction func submitBtnClicked(_ sender: Any) {
         print("submitBtnClicked")
+        
+        ModifyCafeService.shared.DeleteCafe(deletePost: DeletePost(cafeId: 17, reason: tag)) { responseData in
+            switch responseData {
+            case .success(let res):
+                print("success")
+                print(res)
+            case .requestErr(_):
+                print("request error")
+            case .pathErr:
+                print(".pathErr")
+            case .serverErr:
+                print(".serverErr")
+            case .networkFail:
+                print("failure")
+            }
+        }
         
         guard let pvc = self.presentingViewController else { return }
         guard let confirmVC = UIStoryboard(name: "DeletePlace", bundle: nil).instantiateViewController(withIdentifier:"DeletePlaceConfirmVC") as? DeletePlaceConfirmVC else {
@@ -71,6 +88,7 @@ extension DeletePlaceVC {
     }
     
     func setRadioButton() {
+        
         radioBtn1.addTarget(self, action: #selector(sendBtnTag(_:)), for: .touchUpInside)
         radioBtn2.addTarget(self, action: #selector(sendBtnTag(_:)), for: .touchUpInside)
         radioBtn3.addTarget(self, action: #selector(sendBtnTag(_:)), for: .touchUpInside)
@@ -108,7 +126,7 @@ extension DeletePlaceVC {
     }
     
     @objc func sendBtnTag(_ sender:DLRadioButton) {
-        print(sender.tag)
+        tag = sender.tag
         if sender.tag != 0 {
             submitBtn.isEnabled = true
             submitBtn.backgroundColor = UIColor(named: "Milky")

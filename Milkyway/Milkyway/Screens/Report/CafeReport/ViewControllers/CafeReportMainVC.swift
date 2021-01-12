@@ -17,22 +17,31 @@ class CafeReportMainVC: UIViewController, IndicatorInfoProvider {
 
     let cafeMenu = ["디카페인","두유","저지방우유","무지방우유"]
 
-    var dummyData = Cafepost(cafeName: "윤진이네새벽6시반",
-                             cafeAddress: "서울특별시 서초구",
+    var dummyData = Cafepost(cafeName: "",
+                             cafeAddress: "",
                              cafeMapX: 126.8995926,
                              cafeMapY: 37.55638504,
                              honeyTip: [],
                              menu: [])
+   
     var editIndex: Int?
 
-
+    // MARK: - 검색한 결과값(카페이름, 주소)를 여기다가 넣어줄거에요
+    var resultCafeName: String?
+    var resultCafeAddress: String?
+    var latitude: String?
+    var longitude: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         delegateFunc()
         cellResister()
         notiGather()
-
+        getCafe()
+        
+        print("카페\(resultCafeName)")
+        print("카페주소\(resultCafeAddress)")
 
     }
 
@@ -171,6 +180,13 @@ extension CafeReportMainVC: UITableViewDataSource {
 
 extension CafeReportMainVC {
 
+    func getCafe(){
+        
+        dummyData.cafeName = resultCafeName
+        dummyData.cafeAddress = resultCafeAddress
+        
+        
+    }
     func notiGather() {
         NotificationCenter.default.addObserver(self, selector: #selector(menuPlus(_:)), name: Notification.Name("menuPlus"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(removeBeforeMenu), name: Notification.Name("remove"), object: nil)

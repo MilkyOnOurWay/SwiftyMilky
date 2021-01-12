@@ -17,6 +17,10 @@ class AddSearchResultVC: UIViewController {
     var cafeResult: String?
     private var searchedCafe: [CafeResult]?
     
+    // 전달하는 변수
+    var cafeName: String?
+    var cafeAddress: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setSearchTableView()
@@ -117,15 +121,22 @@ extension AddSearchResultVC: UITableViewDataSource {
         cell.cafeAddressLabel.sizeToFit()
         cell.cafeStateImageView.isHidden = true
         cell.setCell()
+        cafeName = cell.searchedCafe?.cafeName
+        cafeAddress = cell.searchedCafe?.cafeAddress
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // 셀 눌렀을 때 처음으로 이동
         
-        guard let nvc = UIStoryboard(name: "CafeReportMain", bundle: nil).instantiateViewController(identifier: "CafeReportMainVC") as? CafeReportMainVC else { return }
-       // self.navigationController?.pushViewController(nvc, animated: true)
-        self.navigationController?.popToViewController(nvc, animated: true)
+        guard let nvc = UIStoryboard(name: "ReportTabBar", bundle: nil).instantiateViewController(identifier: "ReportTabBarViewController") as? ReportTabBarViewController else { return }
+        self.navigationController?.pushViewController(nvc, animated: true)
+        
+        guard let vc = UIStoryboard(name: "CafeReportMain",bundle: nil).instantiateViewController(identifier: "CafeReportMainVC") as? CafeReportMainVC else {return}
+   
+        vc.resultCafeName = cafeName
+        vc.resultCafeAddress = cafeAddress
+       
     }
     
     

@@ -17,22 +17,26 @@ struct SearchCafeService {
     // MARK: - 제보하기-검색
     func searchReportCafe(_ cafe: String,
                           completion: @escaping(NetworkResult<Any>) -> Void) {
-        //guard let cafe = cafe.stringByAddingPercentEncodingForFormData() else { return }
-        let URL = APIConstants.searchForReport
+        guard let cafe = cafe.stringByAddingPercentEncodingForFormData() else { return }
+        let URL = APIConstants.searchForReport + "?query=" + cafe
         //let token = KeychainWrapper.standard.string(forKey: "Token")
         let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWR4Ijo1LCJpYXQiOjE2MDk3Nzg0NjksImV4cCI6MTYxMjM3MDQ2OSwiaXNzIjoibWlsa3lXYXkifQ.c2JAdyd0pGQzbmT0E_yl51eAGkcO71YfokwJebqqDME"
+        
         let headers: HTTPHeaders = [
             "Content-Type": "application/json",
-            "token": token ?? ""
+            "token": token
         ]
+        
         let dataRequest = AF.request(URL,
                                      method: .get,
                                      parameters: nil,
-                                     encoding: JSONEncoding.default,
+                                     encoding: URLEncoding.queryString,
                                      headers: headers)
-        
+      
         dataRequest.responseData{ (response) in
             
+            print("url\(URL)")
+            print("Response: \(response)")
             switch response.result {
             
             case .success(_):
@@ -45,7 +49,8 @@ struct SearchCafeService {
                             do {
                                 let decoder = JSONDecoder()
                                 let result = try decoder.decode(ResponseResult<CafeResult>.self, from: value)
-                                completion(.success(result.data ?? CafeResult.self))
+                                dump(result)
+                                completion(.success(result.data ?? cafe.self))
                             } catch {
                                 completion(.pathErr)
                             }
@@ -59,7 +64,8 @@ struct SearchCafeService {
                     }
                 }
                 break
-            case .failure(_):
+            case .failure(let err):
+                print("에러\(err.localizedDescription)")
                 completion(.networkFail)
             
             }

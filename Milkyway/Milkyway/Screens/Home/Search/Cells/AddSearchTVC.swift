@@ -34,7 +34,7 @@ class AddSearchTVC: UITableViewCell {
         
         cafeNameLabel.text = searchedCafe?.cafeName
         cafeAddressLabel.text = searchedCafe?.cafeAddress
-        if isReported == true {
+        if searchedCafe?.isReported == true {
             cafeStateImageView.isHidden = false
         }
     }

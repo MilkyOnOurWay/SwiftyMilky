@@ -10,6 +10,7 @@ import XLPagerTabStrip
 
 class ReportTabBarViewController: ButtonBarPagerTabStripViewController {
     
+ 
     override func viewDidLoad() {
         
         notiGather()
@@ -67,6 +68,7 @@ class ReportTabBarViewController: ButtonBarPagerTabStripViewController {
 // MARK: - Function
 extension ButtonBarPagerTabStripViewController {
     
+   
     func notiGather() {
         NotificationCenter.default.addObserver(self, selector: #selector(menuView), name: Notification.Name("gotomenuAdd"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(editMenu(_:)), name: Notification.Name("gotomenuEdit"), object: nil)

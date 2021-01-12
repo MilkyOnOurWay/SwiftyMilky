@@ -129,14 +129,16 @@ extension AddSearchResultVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // 셀 눌렀을 때 처음으로 이동
         
-        guard let nvc = UIStoryboard(name: "ReportTabBar", bundle: nil).instantiateViewController(identifier: "ReportTabBarViewController") as? ReportTabBarViewController else { return }
-        self.navigationController?.pushViewController(nvc, animated: true)
+//        guard let nvc = UIStoryboard(name: "ReportTabBar", bundle: nil).instantiateViewController(identifier: "ReportTabBarViewController") as? ReportTabBarViewController else { return }
+//        self.navigationController?.pushViewController(nvc, animated: true)
         
-        guard let vc = UIStoryboard(name: "CafeReportMain",bundle: nil).instantiateViewController(identifier: "CafeReportMainVC") as? CafeReportMainVC else {return}
-   
-        vc.resultCafeName = cafeName
-        vc.resultCafeAddress = cafeAddress
-       
+        cafeName = searchedCafe?[indexPath.row].cafeName
+        cafeAddress = searchedCafe?[indexPath.row].cafeAddress
+        
+        // 카페제보뷰로 다시 돌아가기
+        NotificationCenter.default.post(name: Notification.Name("addressPlus"), object: [cafeName,cafeAddress])
+        
+        navigationController?.popToRootViewController(animated: true)
     }
     
     

@@ -139,6 +139,8 @@ struct UniverseService {
             "cafeId": cafeId
         ]
         
+        print(cafeId)
+        print(URL)
         let dataRequest = AF.request(URL,
                                      method: .delete,
                                      parameters: body,
@@ -156,8 +158,8 @@ struct UniverseService {
                         case 200:
                             do {
                               let decoder = JSONDecoder()
-                                let result = try decoder.decode(ResponseResult<DeleteUniverse>.self,from: value)
-                                completion(.success(result.data ?? [DeleteUniverse].self))
+                                let result = try decoder.decode(ResponseSimpleResult<DeleteUniverse>.self,from: value)
+                                completion(.success(result.data ?? Token.self))
                             } catch {
                                 completion(.pathErr)
                             }

@@ -44,7 +44,7 @@ class DeletePlaceVC: UIViewController {
     @IBAction func submitBtnClicked(_ sender: Any) {
         print("submitBtnClicked")
         
-        ModifyCafeService.shared.DeleteCafe(cafeId: 17, deletePost: DeletePost(reason: tag)) { responseData in
+        ModifyCafeService.shared.DeleteCafe(cafeId: 888401816, deletePost: DeletePost(reason: tag)) { responseData in
             switch responseData {
             case .success(let res):
                 print("success")

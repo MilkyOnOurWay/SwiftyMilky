@@ -26,8 +26,15 @@ class CafeCardVC: UIViewController {
 }
 
 extension CafeCardVC {
-    func setView() {
+    func setView(){
+        
         rootView.layer.cornerRadius = 12
+        rootView.layer.shadowColor = UIColor.black.cgColor
+        rootView.layer.shadowOpacity = 0.1
+        rootView.layer.shadowOffset = CGSize(width: 0.0, height: -4.0)
+        rootView.layer.shadowRadius = 12
+        rootView.layer.masksToBounds = false
+        
     }
     func setAddButton(){
         addButton.addTarget(self, action: #selector(addButtonDidTap), for: .touchUpInside)

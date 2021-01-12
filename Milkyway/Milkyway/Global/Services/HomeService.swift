@@ -39,12 +39,12 @@ struct HomeService {
             case .success(_):
                 if let value = response.value {
                     if let status = response.response?.statusCode {
-                        print("helpme")
+                        print("home server")
                         switch status {
                         case 200:
                             do {
                                 let decoder = JSONDecoder()
-                                let result = try decoder.decode(ResponseSimpleResult<AroundCafe>.self,
+                                let result = try decoder.decode(ResponseSimpleResult<HomeData>.self,
                                                                 from: value)
                                 completion(.success(result.data ?? Token.self))
 

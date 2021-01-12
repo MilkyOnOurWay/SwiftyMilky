@@ -15,7 +15,7 @@ class MyUniverseVC: UIViewController{
     @IBOutlet weak var viewForAnimate: UIView!
     @IBOutlet weak var logoImgaeView: UIImageView!
     
-    var myUniverse = HomeData(aroundCafe: [AroundCafe](), nickName: "")
+    var myUniverse = UniverseData(aroundUniverse: [UniverseCafe](), nickName: "")
     var markers = [NMFMarker]()
     var camera: NMFCameraUpdate!
     // 직전에 눌린 마커가 저장됩니다.
@@ -254,17 +254,17 @@ extension MyUniverseVC {
     func setMarker() {
         print("myUniverse - setMarker()")
         markers = []
-        for index in 0..<myUniverse.aroundCafe.count {
+        for index in 0..<myUniverse.aroundUniverse.count {
 
-            let marker = NMFMarker(position: NMGLatLng(lat: myUniverse.aroundCafe[index].latitude, lng: myUniverse.aroundCafe[index].longitude), iconImage: unselectImage)
+            let marker = NMFMarker(position: NMGLatLng(lat: myUniverse.aroundUniverse[index].latitude, lng: myUniverse.aroundUniverse[index].longitude), iconImage: unselectImage)
                 marker.isHideCollidedMarkers = true
                 marker.touchHandler = { [self] (overlay: NMFOverlay) -> Bool in
                     self.beforeMarker?.iconImage = self.unselectImage
                     marker.iconImage = self.selectImage
                     self.beforeMarker = marker
-                    cardVC.cafeNameLabel.text = myUniverse.aroundCafe[index].cafeName
-                    cardVC.cafeTimeLabel.text = myUniverse.aroundCafe[index].businessHours
-                    cardVC.cafeAddressLabel.text = myUniverse.aroundCafe[index].cafeAddress
+                    cardVC.cafeNameLabel.text = myUniverse.aroundUniverse[index].cafeName
+                    cardVC.cafeTimeLabel.text = myUniverse.aroundUniverse[index].businessHours
+                    cardVC.cafeAddressLabel.text = myUniverse.aroundUniverse[index].cafeAddress
                     cardVC.view.isHidden = false
                     return true
                 }
@@ -282,7 +282,7 @@ extension MyUniverseVC {
         UniverseService.shared.GetUniverse() { [self] (networkResult) -> (Void) in
             switch networkResult {
             case .success(let data):
-                if let loadData = data as? HomeData {
+                if let loadData = data as? UniverseData {
                     print("success")
                     myUniverse = loadData
                     setMarker()

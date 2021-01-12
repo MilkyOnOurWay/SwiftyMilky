@@ -44,7 +44,7 @@ struct UniverseService {
                         case 200:
                             do {
                                 let decoder = JSONDecoder()
-                                let result = try decoder.decode(ResponseSimpleResult<HomeData>.self,
+                                let result = try decoder.decode(ResponseSimpleResult<UniverseData>.self,
                                                                 from: value)
                                 completion(.success(result.data ?? Token.self))
                                 

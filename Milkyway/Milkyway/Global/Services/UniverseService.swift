@@ -160,7 +160,7 @@ struct UniverseService {
                         case 200:
                             do {
                               let decoder = JSONDecoder()
-                                let result = try decoder.decode(ResponseSimpleResult<DeleteUniverse>.self,from: value)
+                                let result = try decoder.decode(ResponseSimpleResult<ThrowUniverse>.self,from: value)
                                 completion(.success(result.data ?? Token.self))
                             } catch {
                                 completion(.pathErr)

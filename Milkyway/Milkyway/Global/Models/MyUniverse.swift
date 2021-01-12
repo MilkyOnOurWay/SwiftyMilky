@@ -51,6 +51,7 @@ struct DeleteUniverse: Codable {
     let universeOff: [UniverseOff]
     let universeCount: Int
 }
+
 struct UniverseOff: Codable {
     let universeID, userID, cafeID: Int
 
@@ -61,3 +62,10 @@ struct UniverseOff: Codable {
     }
 }
 
+// MARK: - 윤진버전 유니버스 삭제 모델
+struct ThrowUniverse: Codable {
+    
+    let universeOff: UniverseOff
+    let universeCount: Int
+    
+}

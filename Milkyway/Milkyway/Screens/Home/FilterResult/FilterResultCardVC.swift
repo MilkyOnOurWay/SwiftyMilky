@@ -17,9 +17,7 @@ class FilterResultCardVC: UIViewController {
     
     var universeCount = 0 // 서버 위키 추후에 다시 참고할 것. 일단 박아놓은 값
     var buttonIsSelected: Bool = true
-    //var addStateUniverse = UniverseOn(from: )
-    var plusUniverse: [AddUniverse] = []
-    var infoUniverse: UniverseOn?
+    var cafeId: Int? // 나중에 받아온 아이디값 넣어주면 된다
     override func viewDidLoad() {
         super.viewDidLoad()
         setView()
@@ -54,17 +52,17 @@ extension FilterResultCardVC {
     }
     
     func addUniverse(){
-        
         // 유니버스 추가하는 서버 통신 연결
-        
+        // 임시 카페아이디
         addMyUniverse(60050010)
         
-        //self.infoUniverse = plusUniverse?.universeOn[0]
-       // universeCountLabel.text = "\(self.infoUniverse?.cafeID)"
+     
         universeButton.setImage(UIImage(named: "btnUniverseAdded"), for: .normal)
         buttonIsSelected = false
         
     }
+
+    
     @objc func addMyUniverse(_ cafeId: Int){
         UniverseService.shared.addUniverse(cafeId) {
             (responseData) in
@@ -88,14 +86,42 @@ extension FilterResultCardVC {
             case .serverErr:
                 print("serverErr")
             case .networkFail:
-                print(".failureErr")
+                print(".networkFail")
             }
         }
+        
+
     }
+    
     func deleteUniverse(){
         
+        deleteMyUniverse(60050010)
         universeButton.setImage(UIImage(named: "btnUniverse"), for: .normal)
         buttonIsSelected = true
     
     }
+    
+    @objc func deleteMyUniverse(_ cafeId: Int){
+        UniverseService.shared.deleteUniverse(cafeId) {
+            (responseData) in
+            
+            switch responseData {
+            case.success(let res):
+                let deleteUniverse = res as? ThrowUniverse
+                self.universeCountLabel.text = String(deleteUniverse?.universeCount ?? 0)
+            dump(deleteUniverse)
+                
+            case .requestErr(_):
+                print("requestErr")
+            case .pathErr:
+                print("pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print(".networkFail")
+            }
+        }
+        
+    }
+ 
 }

@@ -7,6 +7,7 @@
 
 import UIKit
 import XLPagerTabStrip
+import Lottie
 
 class MyReportMainVC: UIViewController, IndicatorInfoProvider {
     
@@ -54,6 +55,29 @@ class MyReportMainVC: UIViewController, IndicatorInfoProvider {
         subLabel.topAnchor.constraint(equalTo: mainLabel.bottomAnchor, constant: 16.0).isActive = true
         subLabel.centerXAnchor.constraint(equalTo: margins.centerXAnchor).isActive = true
     }
+    
+    // MARK: - 데이터 로딩 중 Lottie 화면
+    
+    let loadingView = AnimationView(name: "loadingLottie")
+    
+    @objc private func showLoadingLottie() {
+        print("start")
+        
+        loadingView.frame = CGRect(x: 0, y: 0, width: 300, height: 300)
+        loadingView.center = self.view.center
+        loadingView.contentMode = .scaleAspectFill
+        loadingView.loopMode = .loop
+        self.view.addSubview(loadingView)
+        
+        loadingView.play()
+    }
+    
+    
+    @objc private func stopLottieAnimation() {
+        print("end")
+        loadingView.stop()
+        loadingView.removeFromSuperview()
+    }
 }
 
 // MARK: - Function
@@ -97,6 +121,7 @@ extension MyReportMainVC {
         myReportTableView.register(completedTVCellNib, forCellReuseIdentifier: "CompletedTVCell")
     }
     func setService() {
+        showLoadingLottie()
         print("my report setService")
         MyReportService.shared.GetMyReport() { [self] (networkResult) -> (Void) in
             switch networkResult {
@@ -119,6 +144,7 @@ extension MyReportMainVC {
             case .networkFail:
                 print("networkFail")
             }
+            stopLottieAnimation()
         }
         
     }

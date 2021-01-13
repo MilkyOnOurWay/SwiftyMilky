@@ -28,7 +28,6 @@ class RectangleCVCell: UICollectionViewCell {
         storeNameLabel.text = storeName
         storeNameLabel.textColor = UIColor(named: color)
         
-        dateLabel.text = date
         dateLabel.textColor = UIColor(named: color)
     }
 

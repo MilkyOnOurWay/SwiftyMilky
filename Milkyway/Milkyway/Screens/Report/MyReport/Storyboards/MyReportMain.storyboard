@@ -53,6 +53,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="imageView" destination="Eyg-Nm-Dre" id="2er-7T-YUX"/>
                         <outlet property="mainLabel" destination="vWA-7V-fMz" id="aIB-EQ-RFh"/>
                         <outlet property="myReportTableView" destination="Zh5-dc-EK4" id="BFf-Ia-fKu"/>
                         <outlet property="subLabel" destination="kdM-dW-6Up" id="cmX-qS-YWO"/>

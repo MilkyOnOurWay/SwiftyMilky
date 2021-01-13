@@ -10,7 +10,7 @@ import NMapsMap
 import DLRadioButton
 import Lottie
 
-class HomeVC: UIViewController {
+class HomeVC: UIViewController, UIGestureRecognizerDelegate {
     
     
     
@@ -90,7 +90,8 @@ class HomeVC: UIViewController {
         setFirstCardView()
         setRadioBtn()
         
-        
+        self.navigationController?.interactivePopGestureRecognizer?.delegate = self
+
         // 로티관련 노티
         NotificationCenter.default.addObserver(self, selector: #selector(showLoadingLottie), name: Notification.Name("startlottiehome"),object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(stopLottieAnimation), name: Notification.Name("stoplottiehome"),object: nil)

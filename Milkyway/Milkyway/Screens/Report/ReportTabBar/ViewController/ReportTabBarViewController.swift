@@ -10,7 +10,7 @@ import XLPagerTabStrip
 import Lottie
 
 
-class ReportTabBarViewController: ButtonBarPagerTabStripViewController {
+class ReportTabBarViewController: ButtonBarPagerTabStripViewController, UIGestureRecognizerDelegate {
     
  
     override func viewDidLoad() {
@@ -25,6 +25,8 @@ class ReportTabBarViewController: ButtonBarPagerTabStripViewController {
         
         
         super.viewDidLoad()
+        
+        self.navigationController?.interactivePopGestureRecognizer?.delegate = self
         
     }
 

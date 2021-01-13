@@ -15,6 +15,8 @@ class SearchResultVC: UIViewController {
     @IBOutlet weak var searchTableView: UITableView!
     @IBOutlet weak var noResultImageView: UIImageView!
     
+    var latitude: Double?
+    var longitude: Double?
     var buttonIsSelected: Bool = true
     var cafeResult: String?
     private var searchedCafe: [CafeHomeResult]?
@@ -39,6 +41,12 @@ extension SearchResultVC {
         noResultImageView.isHidden = true
         let nibName = UINib(nibName: "SearchTVC", bundle: nil)
         searchTableView.register(nibName, forCellReuseIdentifier: "SearchTVC")
+        
+        guard let nvc = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier:"HomeVC") as? HomeVC else {
+            return
+        }
+        
+        print("마커모음\(nvc.markers)")
         //noResultImageView.isHidden = false
         
         
@@ -134,6 +142,8 @@ extension SearchResultVC: UITableViewDataSource {
         cell.cafeAddressLabel.sizeToFit()
         cell.setCell()
         
+        latitude = cell.latitude
+        longitude = cell.longitude
         // MARK: - 값 없으면 데이터 없음 이미지 띄우기
         // 아무값도 못 받으면 이미지 띄우기
         // 이거 수정해야해
@@ -150,7 +160,16 @@ extension SearchResultVC: UITableViewDataSource {
         
         guard let resultMapVC = self.storyboard?.instantiateViewController(identifier: "ResultMapVC") as? ResultMapVC else { return }
         resultMapVC.hidesBottomBarWhenPushed = false
+        resultMapVC.latitude = searchedCafe?[indexPath.row].latitude
+        resultMapVC.longitude = searchedCafe?[indexPath.row].longitude
+        resultMapVC.cafeName = searchedCafe?[indexPath.row].cafeName
+        resultMapVC.cafeAddress = searchedCafe?[indexPath.row].cafeAddress
+        resultMapVC.businessHours = searchedCafe?[indexPath.row].businessHours
+        // 영업시간 받아오기
+        
         self.navigationController?.pushViewController(resultMapVC, animated: true)
+        
+        
     }
     
     

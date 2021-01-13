@@ -246,6 +246,7 @@
                         <outlet property="deleteButton" destination="fpC-Yp-tPB" id="Chq-xk-f1E"/>
                         <outlet property="locationButton" destination="JNc-6M-kWA" id="wJ8-eL-47f"/>
                         <outlet property="mapView" destination="LFv-R4-LeF" id="iOs-AW-qZN"/>
+                        <outlet property="naviCafeNameLabel" destination="uRh-ib-pmW" id="NM2-Tv-rvN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uOH-7U-uxZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

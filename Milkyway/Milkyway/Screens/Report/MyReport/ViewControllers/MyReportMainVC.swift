@@ -227,9 +227,10 @@ extension MyReportMainVC: UITableViewDataSource {
 
 
 extension MyReportMainVC: UITableViewDelegate {
-    
+    /// 상세페이지와 연결되는 부분
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        print("indexPath.row : \(indexPath.row)")
         if indexPath.section == 3 {
             
             // 눌렀을 때 서버통신 !
@@ -239,7 +240,7 @@ extension MyReportMainVC: UITableViewDelegate {
             // 로딩뷰 시작
             NotificationCenter.default.post(name: Notification.Name("startlottie"), object: nil)
             
-            DetailCafeService.shared.DetailInfoGet(cafeId: 17) { [self] (networkResult) -> (Void) in
+            DetailCafeService.shared.DetailInfoGet(cafeId: myReportData.done[indexPath.row].id ) { [self] (networkResult) -> (Void) in
                 switch networkResult {
                 case .success(let data):
                     if let loadData = data as? CafeDatas {
@@ -248,6 +249,7 @@ extension MyReportMainVC: UITableViewDelegate {
                         let storyboard = UIStoryboard(name: "DetailCafeMenu", bundle: nil)
                         if let dvc = storyboard.instantiateViewController(identifier: "DetailCafeMenuVC") as? DetailCafeMenuVC {
                             dvc.testCafe = loadData
+                            dvc.like = loadData.cafeInfo.isUniversed == 1 ? true : false
                             self.navigationController?.pushViewController(dvc, animated: true)
                             // 로딩뷰 끝
                             NotificationCenter.default.post(name: Notification.Name("stoplottie"), object: nil)

@@ -22,8 +22,7 @@ class InProgressTVCell: UITableViewCell {
     let rightSpacing: CGFloat = 20
     let lineSpacing: CGFloat = 6
     
-    var count: Int = 0 // cell 개수 받아오기
-    
+    var ingData = [MyReport]()
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -52,35 +51,34 @@ extension InProgressTVCell {
         emptyLabel.textColor = UIColor(named: "darkGrey")
     }
     
-    func setCell(count: Int) {
+    func setCell(ingData: [MyReport]) {
         
-        self.count = count
-        
-        if count == 0 {
-            collectionView.isHidden = true
-        }
+        self.ingData = ingData
         let collectionViewCellNib = UINib(nibName: "RectangleCVCell", bundle: nil)
         collectionView.register(collectionViewCellNib, forCellWithReuseIdentifier: "RectangleCVCell")
         
         collectionView.dataSource = self
         collectionView.delegate = self
+        
+        collectionView.reloadData()
+//        if ingData.count == 0 {
+//            collectionView.isHidden = true
+//        }
     }
 }
 extension InProgressTVCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return count
+        return ingData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RectangleCVCell.identifier, for: indexPath) as? RectangleCVCell else {
             return UICollectionViewCell()
         }
-        cell.setCell(backName: "inprogressReport")
-        cell.setLabel(storeName: "현빈스빈스카페", date: "2020.11.30", color: "darkGrey")
+        cell.setCell(backName: "InprogressReport")
+        cell.setLabel(storeName: ingData[indexPath.row].cafeName, date: ingData[indexPath.row].createdAt, color: "darkGrey")
         return cell
     }
-    
-    
 }
 
 extension InProgressTVCell: UICollectionViewDelegateFlowLayout {

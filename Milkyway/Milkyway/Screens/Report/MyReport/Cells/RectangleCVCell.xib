@@ -17,7 +17,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="184" height="64"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="c" translatesAutoresizingMaskIntoConstraints="NO" id="XKH-CZ-ZMW">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XKH-CZ-ZMW">
                         <rect key="frame" x="0.0" y="0.0" width="184" height="64"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gnf-VG-V5M">
@@ -56,7 +56,4 @@
             <point key="canvasLocation" x="107.24637681159422" y="72.991071428571431"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <image name="c" width="128" height="128"/>
-    </resources>
 </document>

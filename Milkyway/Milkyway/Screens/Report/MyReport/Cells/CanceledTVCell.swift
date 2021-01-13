@@ -23,9 +23,10 @@ class CanceledTVCell: UITableViewCell {
     let rightSpacing: CGFloat = 20
     let lineSpacing: CGFloat = 5
     
-    var count : Int = 0 //cell 개수 받아오기
     var cafeName: String = ""
     var created_at: String = ""
+    
+    var cancelData = [MyReport]()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -40,7 +41,7 @@ class CanceledTVCell: UITableViewCell {
 }
 extension CanceledTVCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return count
+        return cancelData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -48,13 +49,32 @@ extension CanceledTVCell: UICollectionViewDataSource {
             return UICollectionViewCell()
         }
         cell.setCell(backName: "canceledReport")
-        cell.setLabel(storeName: cafeName, date: created_at, color: "lightGrey")
+        cell.setLabel(storeName: cancelData[indexPath.row].cafeName,
+                      date: cancelData[indexPath.row].createdAt,
+                      color: "lightGrey")
         return cell
     }
     
     
 }
-
+extension CanceledTVCell {
+    
+    func setCell(cancelData: [MyReport]) {
+        
+        self.cancelData = cancelData
+        
+        canceledLabel.text = "취소된 제보"
+        canceledLabel.font = UIFont(name:"SFProText-Bold", size: 16.0)
+        
+        let collectionViewCellNib = UINib(nibName: "RectangleCVCell", bundle: nil)
+        collectionView.register(collectionViewCellNib, forCellWithReuseIdentifier: "RectangleCVCell")
+        
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        
+        collectionView.reloadData()
+    }
+}
 extension CanceledTVCell: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let cellHeight = collectionView.frame.height
@@ -76,25 +96,4 @@ extension CanceledTVCell: UICollectionViewDelegate {
     }
 }
 
-extension CanceledTVCell {
-    
-    func setCell(count: Int, cafeName: String, created_at: String) {
-        
-        self.count = count
-        self.cafeName = cafeName
-        self.created_at = created_at
-        
-        canceledLabel.text = "취소된 제보"
-        canceledLabel.font = UIFont(name:"SFProText-Bold", size: 16.0)
-        
-        let collectionViewCellNib = UINib(nibName: "RectangleCVCell", bundle: nil)
-        collectionView.register(collectionViewCellNib, forCellWithReuseIdentifier: "RectangleCVCell")
-        
-        collectionView.dataSource = self
-        collectionView.delegate = self
-    }
-    
-//    @objc func cancelCellTap () {
-//
-//    }
-}
+

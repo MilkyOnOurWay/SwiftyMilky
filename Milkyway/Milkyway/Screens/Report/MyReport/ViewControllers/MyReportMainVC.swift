@@ -7,6 +7,7 @@
 
 import UIKit
 import XLPagerTabStrip
+import Lottie
 
 class MyReportMainVC: UIViewController, IndicatorInfoProvider {
     
@@ -54,6 +55,29 @@ class MyReportMainVC: UIViewController, IndicatorInfoProvider {
         subLabel.topAnchor.constraint(equalTo: mainLabel.bottomAnchor, constant: 16.0).isActive = true
         subLabel.centerXAnchor.constraint(equalTo: margins.centerXAnchor).isActive = true
     }
+    
+    // MARK: - 데이터 로딩 중 Lottie 화면
+    
+    let loadingView = AnimationView(name: "loadingLottie")
+    
+    @objc private func showLoadingLottie() {
+        print("start")
+        
+        loadingView.frame = CGRect(x: 0, y: 0, width: 300, height: 300)
+        loadingView.center = self.view.center
+        loadingView.contentMode = .scaleAspectFill
+        loadingView.loopMode = .loop
+        self.view.addSubview(loadingView)
+        
+        loadingView.play()
+    }
+    
+    
+    @objc private func stopLottieAnimation() {
+        print("end")
+        loadingView.stop()
+        loadingView.removeFromSuperview()
+    }
 }
 
 // MARK: - Function
@@ -97,6 +121,7 @@ extension MyReportMainVC {
         myReportTableView.register(completedTVCellNib, forCellReuseIdentifier: "CompletedTVCell")
     }
     func setService() {
+        showLoadingLottie()
         print("my report setService")
         MyReportService.shared.GetMyReport() { [self] (networkResult) -> (Void) in
             switch networkResult {
@@ -119,6 +144,7 @@ extension MyReportMainVC {
             case .networkFail:
                 print("networkFail")
             }
+            stopLottieAnimation()
         }
         
     }
@@ -227,9 +253,10 @@ extension MyReportMainVC: UITableViewDataSource {
 
 
 extension MyReportMainVC: UITableViewDelegate {
-    
+    /// 상세페이지와 연결되는 부분
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        print("indexPath.row : \(indexPath.row)")
         if indexPath.section == 3 {
             
             // 눌렀을 때 서버통신 !
@@ -239,7 +266,7 @@ extension MyReportMainVC: UITableViewDelegate {
             // 로딩뷰 시작
             NotificationCenter.default.post(name: Notification.Name("startlottie"), object: nil)
             
-            DetailCafeService.shared.DetailInfoGet(cafeId: 17) { [self] (networkResult) -> (Void) in
+            DetailCafeService.shared.DetailInfoGet(cafeId: myReportData.done[indexPath.row].id ) { [self] (networkResult) -> (Void) in
                 switch networkResult {
                 case .success(let data):
                     if let loadData = data as? CafeDatas {
@@ -248,6 +275,7 @@ extension MyReportMainVC: UITableViewDelegate {
                         let storyboard = UIStoryboard(name: "DetailCafeMenu", bundle: nil)
                         if let dvc = storyboard.instantiateViewController(identifier: "DetailCafeMenuVC") as? DetailCafeMenuVC {
                             dvc.testCafe = loadData
+                            dvc.like = loadData.cafeInfo.isUniversed == 1 ? true : false
                             self.navigationController?.pushViewController(dvc, animated: true)
                             // 로딩뷰 끝
                             NotificationCenter.default.post(name: Notification.Name("stoplottie"), object: nil)

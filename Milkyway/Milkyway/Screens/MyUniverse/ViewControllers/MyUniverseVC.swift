@@ -10,7 +10,7 @@ import NMapsMap
 import Lottie
 
 
-class MyUniverseVC: UIViewController{
+class MyUniverseVC: UIViewController, UIGestureRecognizerDelegate{
     @IBOutlet weak var mapView: NMFMapView!
     @IBOutlet weak var locationBtn: UIButton!
     @IBOutlet weak var glowUniverseLabel: UILabel!
@@ -75,6 +75,8 @@ class MyUniverseVC: UIViewController{
         setMapButton()
         setBottomCard()
         setFirstCardView()
+        
+        self.navigationController?.interactivePopGestureRecognizer?.delegate = self
         
     }
     

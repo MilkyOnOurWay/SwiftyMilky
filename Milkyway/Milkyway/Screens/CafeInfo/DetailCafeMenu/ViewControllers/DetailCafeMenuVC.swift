@@ -18,7 +18,7 @@ class DetailCafeMenuVC: UIViewController {
     
     
     // 일단 더미로 넣어놓은 데이터 ,,,
-    var testCafe = CafeDatas(cafeInfo: CafeInfo(id: 0, cafeName: "", cafeAddress: "", businessHours: "", cafePhoneNum: "", cafeLink: "", honeyTip: []), menu: [Menu](), universeCount: 0)
+    var testCafe = CafeDatas(cafeInfo: CafeInfo(id: 0, cafeName: "", cafeAddress: "", businessHours: "", cafePhoneNum: "", cafeLink: "", honeyTip: [], universeCount: 0, isUniversed: 0), menu: [])
     
     
     let cafeMenu = ["무지방우유","저지방우유","두유","디카페인"]
@@ -33,7 +33,8 @@ class DetailCafeMenuVC: UIViewController {
         delegateFunc()
         cellResister()
         notiGather()
-        likeLabel.text = "\(testCafe.universeCount)"
+        print(testCafe)
+        likeLabel.text = "\(testCafe.cafeInfo.universeCount)"
         universeImageView.image = like ? UIImage(named: "btnUniverseAdded") : UIImage(named: "btnUniverse")
     }
     
@@ -105,7 +106,7 @@ extension DetailCafeMenuVC: UITableViewDataSource {
             }
             cell.modifyBtn.addTarget(self, action: #selector(modifyBtnClicked), for: .touchUpInside)
             cell.cafeNameLabel.text = testCafe.cafeInfo.cafeName
-            cell.howManyLikeLabel.text = "\(testCafe.universeCount)명의 밀키들이 유니버스에 추가했어요"
+            cell.howManyLikeLabel.text = "\(testCafe.cafeInfo.universeCount)명의 밀키들이 유니버스에 추가했어요"
             cell.locationLabel.text = testCafe.cafeInfo.cafeAddress
             cell.openTimeLabel.text = testCafe.cafeInfo.businessHours
             cell.telNumBtn.setTitle(testCafe.cafeInfo.cafePhoneNum, for: .normal)
@@ -202,8 +203,8 @@ extension DetailCafeMenuVC {
         
         ToastView.showIn(viewController: self, message: "카페가 나의 유니버스로 들어왔어요.", fromBottom: 40)
         universeImageView.image = UIImage(named: "btnUniverseAdded")
-        testCafe.universeCount += 1
-        likeLabel.text = "\(testCafe.universeCount)"
+        testCafe.cafeInfo.universeCount += 1
+        likeLabel.text = "\(testCafe.cafeInfo.universeCount)"
         likeLabel.textColor = UIColor(named: "Milky")
         likeLabel.font = UIFont(name: "SF Pro Text Bold", size: 8.0)!
         like = true
@@ -238,8 +239,8 @@ extension DetailCafeMenuVC {
         
         ToastView.showIn(viewController: self, message: "카페가 나의 유니버스를 탈출했어요.", fromBottom: 40)
         universeImageView.image = UIImage(named: "btnUniverse")
-        testCafe.universeCount -= 1
-        likeLabel.text = "\(testCafe.universeCount)"
+        testCafe.cafeInfo.universeCount -= 1
+        likeLabel.text = "\(testCafe.cafeInfo.universeCount)"
         likeLabel.textColor = UIColor(named: "darkGrey")
         likeLabel.font = UIFont(name: "SF Pro Text Regular", size: 8.0)!
         like = false

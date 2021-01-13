@@ -9,9 +9,8 @@ import Foundation
 
 // MARK: - CafeDatas
 struct CafeDatas: Codable {
-    let cafeInfo: CafeInfo
+    var cafeInfo: CafeInfo
     let menu: [Menu]
-    var universeCount: Int
 
 }
 
@@ -21,6 +20,8 @@ struct CafeInfo: Codable {
     let cafeName, cafeAddress, businessHours, cafePhoneNum: String?
     let cafeLink: String?
     let honeyTip: [Int]
+    var universeCount: Int
+    var isUniversed: Int
     
 }
 

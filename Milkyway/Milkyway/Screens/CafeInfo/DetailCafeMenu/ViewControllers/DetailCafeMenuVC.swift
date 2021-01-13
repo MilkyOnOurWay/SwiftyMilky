@@ -110,6 +110,12 @@ extension DetailCafeMenuVC: UITableViewDataSource {
             cell.openTimeLabel.text = testCafe.cafeInfo.businessHours
             cell.telNumBtn.setTitle(testCafe.cafeInfo.cafePhoneNum, for: .normal)
             cell.webPageBtn.setTitle(testCafe.cafeInfo.cafeLink, for: .normal)
+            if testCafe.cafeInfo.cafeLink == nil || testCafe.cafeInfo.cafeLink == "" {
+                cell.webPageBtn.setTitle(" 제공되는 카페 링크가 없습니다.", for: .normal)
+            }
+            if testCafe.cafeInfo.cafePhoneNum == nil || testCafe.cafeInfo.cafePhoneNum == "" {
+                cell.telNumBtn.setTitle(" 제공되는 카페 번호가 없습니다.", for: .normal)
+            }
             cell.selectionStyle = .none // 셀 선택 불가능하게
             
             return cell

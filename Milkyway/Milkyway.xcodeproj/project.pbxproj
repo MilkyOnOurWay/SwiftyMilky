@@ -46,6 +46,7 @@
 		D11ABA1625A62B9B00C1927E /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11ABA1525A62B9B00C1927E /* UILabel+Extension.swift */; };
 		D11ABA5025A64F3B00C1927E /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11ABA4F25A64F3B00C1927E /* ToastView.swift */; };
 		D11ABA5325A64F7D00C1927E /* ToastView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D11ABA5225A64F7D00C1927E /* ToastView.xib */; };
+		D141B9F725AECB4E00546427 /* loadingLottie.json in Resources */ = {isa = PBXBuildFile; fileRef = D141B9F625AECB4E00546427 /* loadingLottie.json */; };
 		D15443F625A33ACF007773BF /* CafeNameSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15443F425A33ACF007773BF /* CafeNameSearchCell.swift */; };
 		D15443F725A33ACF007773BF /* CafeNameSearchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D15443F525A33ACF007773BF /* CafeNameSearchCell.xib */; };
 		D15443FF25A33AF9007773BF /* CafeNameResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15443FD25A33AF8007773BF /* CafeNameResultCell.swift */; };
@@ -62,7 +63,6 @@
 		D175DA9925AC412200665678 /* UniversePopUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D175DA9825AC412200665678 /* UniversePopUpVC.swift */; };
 		D175DA9C25AC4DCC00665678 /* UniversePopUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D175DA9B25AC4DCC00665678 /* UniversePopUp.storyboard */; };
 		D175DABC25ACCD5400665678 /* UniverseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D175DABB25ACCD5400665678 /* UniverseService.swift */; };
-		D190C63625AE342500FAD17A /* loadingLottie.json in Resources */ = {isa = PBXBuildFile; fileRef = D190C63525AE342500FAD17A /* loadingLottie.json */; };
 		D1983CA725A72BF200C74CED /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1983CA625A72BF200C74CED /* UITextField+Extension.swift */; };
 		D1996E0425A2290500B8F40B /* DetailCafeMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1996E0325A2290500B8F40B /* DetailCafeMenuVC.swift */; };
 		D1996E0725A2290E00B8F40B /* DetailCafeMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1996E0625A2290E00B8F40B /* DetailCafeMenu.storyboard */; };
@@ -189,6 +189,7 @@
 		D11ABA1525A62B9B00C1927E /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		D11ABA4F25A64F3B00C1927E /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
 		D11ABA5225A64F7D00C1927E /* ToastView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ToastView.xib; sourceTree = "<group>"; };
+		D141B9F625AECB4E00546427 /* loadingLottie.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loadingLottie.json; sourceTree = "<group>"; };
 		D15443F425A33ACF007773BF /* CafeNameSearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeNameSearchCell.swift; sourceTree = "<group>"; };
 		D15443F525A33ACF007773BF /* CafeNameSearchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CafeNameSearchCell.xib; sourceTree = "<group>"; };
 		D15443FD25A33AF8007773BF /* CafeNameResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeNameResultCell.swift; sourceTree = "<group>"; };
@@ -205,7 +206,6 @@
 		D175DA9825AC412200665678 /* UniversePopUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversePopUpVC.swift; sourceTree = "<group>"; };
 		D175DA9B25AC4DCC00665678 /* UniversePopUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UniversePopUp.storyboard; sourceTree = "<group>"; };
 		D175DABB25ACCD5400665678 /* UniverseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniverseService.swift; sourceTree = "<group>"; };
-		D190C63525AE342500FAD17A /* loadingLottie.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loadingLottie.json; sourceTree = "<group>"; };
 		D1983CA625A72BF200C74CED /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		D1996E0325A2290500B8F40B /* DetailCafeMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCafeMenuVC.swift; sourceTree = "<group>"; };
 		D1996E0625A2290E00B8F40B /* DetailCafeMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailCafeMenu.storyboard; sourceTree = "<group>"; };
@@ -817,7 +817,7 @@
 		F2BA62FA2598E01F00A49020 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				D190C63525AE342500FAD17A /* loadingLottie.json */,
+				D141B9F625AECB4E00546427 /* loadingLottie.json */,
 				F2142DF625A349DC00D07F3F /* Fonts */,
 				F2BA62EB2598DE6400A49020 /* LaunchScreen.storyboard */,
 				F2BA62E92598DE6400A49020 /* Assets.xcassets */,
@@ -975,7 +975,7 @@
 				F26BEB6525A63BB900B7AFCF /* AddSearchTVC.xib in Resources */,
 				6BD05A6B25A41FFE00B2643F /* CompletedTVCell.xib in Resources */,
 				D15443F725A33ACF007773BF /* CafeNameSearchCell.xib in Resources */,
-				D190C63625AE342500FAD17A /* loadingLottie.json in Resources */,
+				D141B9F725AECB4E00546427 /* loadingLottie.json in Resources */,
 				D175DA5C25AAE5C600665678 /* UniverseBottomVC.xib in Resources */,
 				D1996E0725A2290E00B8F40B /* DetailCafeMenu.storyboard in Resources */,
 				D1D95DD425A30B9700B95F79 /* CafeBasicCell.xib in Resources */,
@@ -1276,7 +1276,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QPUG3J4E4B;
+				DEVELOPMENT_TEAM = G6CPR8NL67;
 				INFOPLIST_FILE = "Milkyway/Global/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1297,7 +1297,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QPUG3J4E4B;
+				DEVELOPMENT_TEAM = G6CPR8NL67;
 				INFOPLIST_FILE = "Milkyway/Global/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (

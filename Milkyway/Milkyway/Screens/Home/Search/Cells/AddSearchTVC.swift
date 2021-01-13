@@ -15,7 +15,9 @@ class AddSearchTVC: UITableViewCell {
     
     var searchedCafe: CafeResult?
     var isReported: Bool?
-    // 위도 경도 넘길 필요가 있나...?
+   
+    var cafeName: String?
+    var cafeAddress: String?
     var latitude: String?
     var longitude: String?
     
@@ -31,6 +33,11 @@ class AddSearchTVC: UITableViewCell {
     }
     
     func setCell(){
+        
+        cafeName = searchedCafe?.cafeName
+        cafeAddress = searchedCafe?.cafeAddress
+        latitude = searchedCafe?.latitude
+        longitude = searchedCafe?.longitude
         
         cafeNameLabel.text = searchedCafe?.cafeName
         cafeAddressLabel.text = searchedCafe?.cafeAddress

@@ -7,6 +7,8 @@
 
 import UIKit
 
+
+// MARK: - 제보하기 검색 뷰 . 사라질 예정임
 class AddSearchVC: UIViewController {
 
     @IBOutlet weak var backButton: UIButton!
@@ -41,6 +43,7 @@ extension AddSearchVC {
         
     }
     
+    
     @objc func backButtonClicked(){
         
         navigationController?.popViewController(animated: true)
@@ -51,26 +54,13 @@ extension AddSearchVC {
         guard let nvc = UIStoryboard(name: "AddSearch", bundle: nil).instantiateViewController(identifier: "AddSearchResultVC") as? AddSearchResultVC else {
             return
         }
-        let text = searchTextField.text ?? ""
-        nvc.cafeResult = text
+        
+        //let text = searchTextField.text ?? ""
+        //nvc.cafeResult = text
         self.navigationController?.pushViewController(nvc, animated: true)
         
     }
-//    func searchCafe(_ cafe: String){
-//
-//        SearchCafeService.shared.searchReportCafe(cafe) {
-//
-//            responseData in
-//            switch responseData {
-//
-//            case.success(let res):
-//                dump(res)
-//                let cafeList = res as! [CafeResult]
-//
-//            }
-//        }
-//
-//    }
+
     
 }
 

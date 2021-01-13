@@ -36,10 +36,10 @@ extension SearchResultVC {
     func setSearchTableView(){
         searchTableView.delegate = self
         searchTableView.dataSource = self
-        
+        noResultImageView.isHidden = true
         let nibName = UINib(nibName: "SearchTVC", bundle: nil)
         searchTableView.register(nibName, forCellReuseIdentifier: "SearchTVC")
-        noResultImageView.isHidden = true
+        //noResultImageView.isHidden = false
         
         
         
@@ -95,8 +95,9 @@ extension SearchResultVC {
             
             case .success(let res):
                 dump(res)
+                
                 self.searchedCafe = res as? [CafeHomeResult]
-              
+                
                 DispatchQueue.main.async {
                     self.searchTableView.reloadData()
                 }
@@ -133,12 +134,15 @@ extension SearchResultVC: UITableViewDataSource {
         cell.cafeAddressLabel.sizeToFit()
         cell.setCell()
         
+        // MARK: - 값 없으면 데이터 없음 이미지 띄우기
         // 아무값도 못 받으면 이미지 띄우기
-        if (cell.searchedCafe == nil) {
-            
+        // 이거 수정해야해
+        if (searchedCafe?[indexPath.row] == nil) {
+            self.searchTableView.reloadData()
             noResultImageView.isHidden = false
             print("이게 맞나?")
         }
+        
         return cell
     }
     
@@ -154,6 +158,14 @@ extension SearchResultVC: UITableViewDataSource {
 
 extension SearchResultVC: UITextFieldDelegate {
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        searchTextField.resignFirstResponder()
+        return true
+    }
     
 }
 

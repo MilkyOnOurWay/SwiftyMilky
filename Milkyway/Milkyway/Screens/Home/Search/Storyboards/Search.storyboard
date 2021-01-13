@@ -135,7 +135,7 @@
                                 <rect key="frame" x="0.0" y="72" width="375" height="595"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="group509" translatesAutoresizingMaskIntoConstraints="NO" id="MYZ-M4-o8P">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="group509" translatesAutoresizingMaskIntoConstraints="NO" id="MYZ-M4-o8P">
                                 <rect key="frame" x="0.0" y="72" width="375" height="674"/>
                             </imageView>
                         </subviews>

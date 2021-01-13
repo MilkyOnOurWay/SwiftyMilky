@@ -98,7 +98,7 @@ class HomeVC: UIViewController {
     @IBAction func searchBtnClicked(_ sender: Any) {
         
         print("Home - searchBtnClicked")
-        guard let nvc = UIStoryboard(name: "Search", bundle: nil).instantiateViewController(withIdentifier:"SearchVC") as? SearchVC else {
+        guard let nvc = UIStoryboard(name: "Search", bundle: nil).instantiateViewController(withIdentifier:"SearchResultVC") as? SearchResultVC else {
             return
         }
         

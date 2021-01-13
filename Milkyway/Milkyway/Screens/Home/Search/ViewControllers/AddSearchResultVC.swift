@@ -14,6 +14,7 @@ class AddSearchResultVC: UIViewController {
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var searchTableView: UITableView!
     
+    var buttonIsSelected: Bool = true
     var cafeResult: String?
     private var searchedCafe: [CafeResult]?
     
@@ -27,7 +28,7 @@ class AddSearchResultVC: UIViewController {
         setTextField()
         setBackButton()
         setDeleteButton()
-        searchCafe(cafeResult ?? "")
+        //searchCafe(cafeResult ?? "")
         // Do any additional setup after loading the view.
     }
     
@@ -49,7 +50,7 @@ extension AddSearchResultVC {
     
     func setTextField(){
         
-        searchTextField.text = cafeResult ?? ""
+        //searchTextField.text = cafeResult ?? ""
         searchTextField.delegate = self
     }
     
@@ -60,6 +61,7 @@ extension AddSearchResultVC {
     // 텍스트필드 삭제하기 버튼 누르면 텍스트 삭제해버리기
     func setDeleteButton(){
         
+        deleteButton.setImage(UIImage(named: "icSearch"), for: .normal)
         deleteButton.addTarget(self, action: #selector(deleteButtonClicked), for: .touchUpInside)
     }
     
@@ -68,13 +70,30 @@ extension AddSearchResultVC {
         navigationController?.popViewController(animated: true)
     }
     
-    // 텍스트필드 삭제하기 버튼 누르면 텍스트 삭제해버리기
+    // 처음에는 검색, 이후 아이콘 변경 후 텍스트필드 삭제하기 버튼 누르면 텍스트 삭제해버리기
     @objc func deleteButtonClicked(){
         
+        cafeResult = searchTextField.text
+        buttonIsSelected ? search(cafeResult ?? "") : delete()
+        print(buttonIsSelected)
     
     }
     
-    func searchCafe(_ cafe: String){
+    func search(_ cafe: String){
+        
+        searchCafe(cafe)
+        deleteButton.setImage(UIImage(named: "btnClear"), for: .normal)
+        buttonIsSelected = false
+    }
+    
+    func delete(){
+        
+        deleteButton.setImage(UIImage(named: "icSearch"), for: .normal)
+        buttonIsSelected = true
+        searchTextField.text = ""
+    }
+    
+    @objc func searchCafe(_ cafe: String){
         SearchCafeService.shared.searchReportCafe(cafe){
             responseData in
             switch responseData {
@@ -100,6 +119,7 @@ extension AddSearchResultVC {
     }
 }
 
+// MARK: - TableView Delegate
 extension AddSearchResultVC: UITableViewDelegate {
     
     
@@ -114,12 +134,11 @@ extension AddSearchResultVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = searchTableView.dequeueReusableCell(withIdentifier: "AddSearchTVC",for: indexPath) as! AddSearchTVC
-//        cell.cafeNameLabel.text = "카페이름"
-//        cell.cafeAddressLabel.text = "카페주소"
+
         cell.searchedCafe = searchedCafe?[indexPath.row]
         cell.cafeNameLabel.sizeToFit()
         cell.cafeAddressLabel.sizeToFit()
-        cell.cafeStateImageView.isHidden = true
+        cell.cafeStateImageView.isHidden = true // 이미 등록된 카페 처리
         cell.setCell()
         cafeName = cell.searchedCafe?.cafeName
         cafeAddress = cell.searchedCafe?.cafeAddress
@@ -127,15 +146,9 @@ extension AddSearchResultVC: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // 셀 눌렀을 때 처음으로 이동
-        
-//        guard let nvc = UIStoryboard(name: "ReportTabBar", bundle: nil).instantiateViewController(identifier: "ReportTabBarViewController") as? ReportTabBarViewController else { return }
-//        self.navigationController?.pushViewController(nvc, animated: true)
-        
+      
         cafeName = searchedCafe?[indexPath.row].cafeName
         cafeAddress = searchedCafe?[indexPath.row].cafeAddress
-        
-        
         // 카페제보뷰로 다시 돌아가기
         NotificationCenter.default.post(name: Notification.Name("addressPlus"), object: [cafeName,cafeAddress])
         

@@ -40,7 +40,7 @@ class HomeVC: UIViewController {
     
     // 바텀시트 관련
     var bottomCardVC:CardVC!
-    var cafeCardVC: CafeCardVC!
+    var cafeCardVC: FilterResultCardVC!
     
     var cardHeight:CGFloat = 0 //363 //카드 높이 280 + 탭바높이 83 그냥 박는 버전
     let cardHandleAreaHeight:CGFloat = 84
@@ -147,7 +147,7 @@ extension HomeVC {
     }
     
     func setFirstCardView() {
-        cafeCardVC = CafeCardVC(nibName: "CafeCardVC", bundle: nil)
+        cafeCardVC = FilterResultCardVC(nibName: "FilterResultCardVC", bundle: nil)
         self.addChild(cafeCardVC)
         self.view.addSubview(cafeCardVC.view)
         print("addsubView")
@@ -203,7 +203,7 @@ extension HomeVC {
                 cafeCardVC.cafeNameLabel.text = homeData.result[index].cafeName
                 cafeCardVC.cafeTimeLabel.text = homeData.result[index].businessHours
                 cafeCardVC.cafeAddressLabel.text = homeData.result[index].cafeAddress
-                cafeCardVC.addCountLabel.text = String(homeData.result[index].universeCount)
+                cafeCardVC.universeCount = homeData.result[index].universeCount
                 
                 if homeData.result[index].isUniversed == true {
                     self.beforeUni?.iconImage = self.uniUnSelectedImage
@@ -240,10 +240,10 @@ extension HomeVC {
                     cafeCardVC.cafeNameLabel.text = filterData.result[index].cafeName
                     cafeCardVC.cafeTimeLabel.text = filterData.result[index].businessHours
                     cafeCardVC.cafeAddressLabel.text = filterData.result[index].cafeAddress
-                    cafeCardVC.addCountLabel.text = String(filterData.result[index].universeCount)
+                    cafeCardVC.universeCount = filterData.result[index].universeCount
+                    
                     if filterData.result[index].isUniversed == true {
-//                        cafeCardVC.addCountLabel.textColor = UIColor(named: "Milky")
-//                        cafeCardVC.addButton.isSelected = true
+                        cafeCardVC.buttonIsSelected = true
                         self.beforeUni?.iconImage = self.uniUnSelectedImage
                         marker.iconImage = self.uniSelectedImage
                         self.beforeUni = marker

@@ -215,9 +215,8 @@ extension DetailCafeMenuVC {
               
                 let addUniverse = res as? AddUniverse
                 dump(addUniverse)
-                addMyUniverseBtn.isEnabled = true
-                
                 print("success")
+                addMyUniverseBtn.isEnabled = true
                 
             case.requestErr(_):
                 print("requestErr")
@@ -248,12 +247,11 @@ extension DetailCafeMenuVC {
         UniverseService.shared.deleteUniverse(testCafe.cafeInfo.id) { [self] (networkResult) -> (Void) in
             switch networkResult {
             case .success(let data):
-                if let loadData = data as? DeleteUniverse {
+                if let loadData = data as? ThrowUniverse {
                     print("success")
                     print(loadData)
-
-                    addMyUniverseBtn.isEnabled = true
                     }
+                addMyUniverseBtn.isEnabled = true
             case .requestErr( _):
                 print("requestErr")
             case .pathErr:

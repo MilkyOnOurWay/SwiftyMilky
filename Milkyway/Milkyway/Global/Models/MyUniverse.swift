@@ -46,10 +46,11 @@ struct UniverseOn: Codable {
 }
 
 // MARK: - 유니버스 삭제 모델
-struct DeleteUniverse: Codable {
+struct ThrowUniverse: Codable {
     
     let universeOff: UniverseOff
     let universeCount: Int
+    
 }
 
 struct UniverseOff: Codable {
@@ -62,10 +63,3 @@ struct UniverseOff: Codable {
     }
 }
 
-// MARK: - 윤진버전 유니버스 삭제 모델
-struct ThrowUniverse: Codable {
-    
-    let universeOff: UniverseOff
-    let universeCount: Int
-    
-}

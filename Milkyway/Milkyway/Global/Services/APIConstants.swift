@@ -33,7 +33,7 @@ struct APIConstants {
     static let addUniverse = BaseURL + "universe/universeOn"
     
     // DELETE 마이유니버스 삭제 universe/:universeId
-    static let deleteUniverse = BaseURL + "universe/universeOff"
+    static let deleteUniverse = BaseURL + "universe/"
     
     // GET 주변 마이유니버스 불러오기
     static let showUniverse = BaseURL + "universe/universeHome"

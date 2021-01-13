@@ -17,16 +17,15 @@ class HomeVC: UIViewController {
     
     @IBOutlet var nickNameLabel: UILabel!
     
-    @IBOutlet var filterBtn1: UIButton!
-    @IBOutlet var filterBtn2: UIButton!
-    @IBOutlet var filterBtn3: UIButton!
-    @IBOutlet var filterBtn4: UIButton!
+    @IBOutlet var filterBtn1: DLRadioButton!
+    @IBOutlet var filterBtn2: DLRadioButton!
+    @IBOutlet var filterBtn3: DLRadioButton!
+    @IBOutlet var filterBtn4: DLRadioButton!
     
     @IBOutlet var locationBtn: UIButton!
     
     var homeData = HomeData(result: [AroundCafe](), nickName: "")
-    var filterData = CategoryData(categoryCafe: [CategoryCafe](), nickName: "")
-    var tag = [Int]()
+    var filterData = CategoryData(result: [CategoryCafe](), nickName: "")
     
     // 이미지들 넣기
     let markerImage = NMFOverlayImage(name: "picker") //마커
@@ -37,6 +36,7 @@ class HomeVC: UIViewController {
     let selectedImage = NMFOverlayImage(name: "pickerSelected")
     let unselectedImage = NMFOverlayImage(name: "picker")
     let uniSelectedImage = NMFOverlayImage(name: "pickerUniSelected")
+    let uniUnSelectedImage = NMFOverlayImage(name: "pickerUni")
     
     // 바텀시트 관련
     var bottomCardVC:CardVC!
@@ -54,7 +54,8 @@ class HomeVC: UIViewController {
     var animationProgressWhenInterrupted:CGFloat = 0
     
     // 서버에서 모든 시작이 1이라고 해서 tag 값을 1부터 설정함. 여섯개 넣어줌
-    var beforeState: [Bool] = [false, false, false, false, false, false]
+    var locationState: [Bool] = [false, false, false, false, false, false]
+    var filterState: [Bool] = [false, false, false, false, false]
     
     let searchLocation = [[0, 0],
                           [37.557852, 126.907507], //망원
@@ -67,31 +68,14 @@ class HomeVC: UIViewController {
     // 지도 관련
     var locationManager = CLLocationManager()
     var markers = [NMFMarker]()
+    var filterMarkers = [NMFMarker]()
+    
     var beforeMarker: NMFMarker?
     
     var cameraUpdate: NMFCameraUpdate!
     
     var placeMangWon = NMGLatLng(lat: 37.555941, lng: 126.910067)
     
-    // 망원 좌표
-//    var mangWon: [NMGLatLng] = [NMGLatLng(lat: 37.556635, lng: 126.908433),
-//                                NMGLatLng(lat: 37.556987, lng: 126.907755),
-//                                NMGLatLng(lat: 37.556748, lng: 126.910195),
-//                                NMGLatLng(lat: 37.555522, lng: 126.904833),
-//                                NMGLatLng(lat: 37.557539, lng: 126.904790),
-//                                NMGLatLng(lat: 37.556534, lng: 126.907744),
-//                                NMGLatLng(lat: 37.560183, lng: 126.909584),
-//                                NMGLatLng(lat: 37.560889, lng: 126.906703),
-//                                NMGLatLng(lat: 37.561905, lng: 126.903533),
-//                                NMGLatLng(lat: 37.560668, lng: 126.901677),
-//                                NMGLatLng(lat: 37.559249, lng: 126.902487),
-//                                NMGLatLng(lat: 37.554322, lng: 126.906648),
-//                                NMGLatLng(lat: 37.555351, lng: 126.902356),
-//                                NMGLatLng(lat: 37.558472, lng: 126.907506),
-//                                NMGLatLng(lat: 37.557741, lng: 126.910403),
-//                                NMGLatLng(lat: 37.560786, lng: 126.906412),
-//                                NMGLatLng(lat: 37.558884, lng: 126.905102)
-//    ]
     
     override func viewDidLoad(){
         super.viewDidLoad()
@@ -99,7 +83,6 @@ class HomeVC: UIViewController {
         setLocation()
         setMap()
         setService()
-//        setMarker()
         setMapButton()
         setFilterButton()
         setBottomCard()
@@ -107,6 +90,10 @@ class HomeVC: UIViewController {
         setRadioBtn()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+//        setService()
+//        setFilterButton()
+    }
     // MARK: - 검색화면으로 이동
     @IBAction func searchBtnClicked(_ sender: Any) {
         
@@ -147,29 +134,11 @@ extension HomeVC {
     
     // 상단 필터 버튼
     func setFilterButton() {
-        filterBtn1.setImage(UIImage(named: "decaffeine_w"), for: .normal)
-        filterBtn1.setImage(UIImage(named: "decaffeine_p"), for: .selected)
-        
-        filterBtn2.setImage(UIImage(named: "soybeanMilk_w"), for: .normal)
-        filterBtn2.setImage(UIImage(named: "soybeanMilk_p"), for: .selected)
-        
-        filterBtn3.setImage(UIImage(named: "lowfatMilk_w"), for: .normal)
-        filterBtn3.setImage(UIImage(named: "lowfatMilk_p"), for: .selected)
-        
-        filterBtn4.setImage(UIImage(named: "fatFreeMilk_w"), for: .normal)
-        filterBtn4.setImage(UIImage(named: "fatFreeMilk_p"), for: .selected)
-        
         filterBtn1.addTarget(self, action: #selector(filterButtonDidTap), for: UIControl.Event.touchUpInside)
         filterBtn2.addTarget(self, action: #selector(filterButtonDidTap), for: UIControl.Event.touchUpInside)
         filterBtn3.addTarget(self, action: #selector(filterButtonDidTap), for: UIControl.Event.touchUpInside)
         filterBtn4.addTarget(self, action: #selector(filterButtonDidTap), for: UIControl.Event.touchUpInside)
     }
-//    func addFilterTarget() {
-//        filterBtn1.addTarget(self, action: #selector(filterButtonDidTap), for: UIControl.Event.touchUpInside)
-//        filterBtn2.addTarget(self, action: #selector(filterButtonDidTap), for: UIControl.Event.touchUpInside)
-//        filterBtn3.addTarget(self, action: #selector(filterButtonDidTap), for: UIControl.Event.touchUpInside)
-//        filterBtn4.addTarget(self, action: #selector(filterButtonDidTap), for: UIControl.Event.touchUpInside)
-//    }
     func delegateGather() {
         locationManager.delegate = self
         mapView.addCameraDelegate(delegate: self)
@@ -217,23 +186,29 @@ extension HomeVC {
     }
     func setMarker() {
         print("home - setMarker()")
+        markerReset(marker: markers)
         markers = []
         for index in 0..<homeData.result.count {
 
             let marker = NMFMarker(position: NMGLatLng(lat: homeData.result[index].latitude, lng: homeData.result[index].longitude), iconImage: unselectedImage)
-                marker.isHideCollidedMarkers = true
+//                marker.isHideCollidedMarkers = true
                 marker.touchHandler = { [self] (overlay: NMFOverlay) -> Bool in
-                    self.beforeMarker?.iconImage = self.unselectedImage
-                    marker.iconImage = self.selectedImage
-                    self.beforeMarker = marker
                     cafeCardVC.cafeNameLabel.text = homeData.result[index].cafeName
                     cafeCardVC.cafeTimeLabel.text = homeData.result[index].businessHours
                     cafeCardVC.cafeAddressLabel.text = homeData.result[index].cafeAddress
                     cafeCardVC.addCountLabel.text = String(homeData.result[index].universeCount)
+                    
                     if homeData.result[index].isUniversed == true {
-                        cafeCardVC.addCountLabel.textColor = UIColor(named: "Milky")
-                        cafeCardVC.addButton.isSelected = true
+//                        cafeCardVC.addCountLabel.textColor = UIColor(named: "Milky")
+//                        cafeCardVC.addButton.isSelected = true
+                        self.beforeMarker?.iconImage = self.uniUnSelectedImage
+                        marker.iconImage = self.uniSelectedImage
+                    } else {
+                        self.beforeMarker?.iconImage = self.unselectedImage
+                        marker.iconImage = self.selectedImage
                     }
+                    
+                    self.beforeMarker = marker
                     cafeCardVC.view.isHidden = false
                     bottomCardVC.view.isHidden = true
                     return true
@@ -241,33 +216,41 @@ extension HomeVC {
                 marker.mapView = mapView
                 markers.append(marker)
             }
+        markerReset(marker: filterMarkers)
     }
     func setFilterMarker() {
         print("home - setFilterMarker()")
-        markers = []
-        for index in 0..<filterData.categoryCafe.count {
+        markerReset(marker: filterMarkers)
+        filterMarkers = []
+        for index in 0..<filterData.result.count {
             //result
-            let marker = NMFMarker(position: NMGLatLng(lat: filterData.categoryCafe[index].latitude, lng: filterData .categoryCafe [index].longitude), iconImage: unselectedImage)
-                marker.isHideCollidedMarkers = true
+            let marker = NMFMarker(position: NMGLatLng(lat: filterData.result[index].latitude, lng: filterData.result [index].longitude), iconImage: unselectedImage)
+//                marker.isHideCollidedMarkers = true
                 marker.touchHandler = { [self] (overlay: NMFOverlay) -> Bool in
-                    self.beforeMarker?.iconImage = self.unselectedImage
-                    marker.iconImage = self.selectedImage
-                    self.beforeMarker = marker
-                    cafeCardVC.cafeNameLabel.text = filterData.categoryCafe[index].cafeName
-                    cafeCardVC.cafeTimeLabel.text = filterData.categoryCafe[index].businessHours
-                    cafeCardVC.cafeAddressLabel.text = filterData.categoryCafe[index].cafeAddress
-//                    cafeCardVC.addCountLabel.text = String(filterData.categoryCafe[index].universeCount)
-//                    if filterData.categoryCafe[index].isUniversed == true {
+                    
+                    cafeCardVC.cafeNameLabel.text = filterData.result[index].cafeName
+                    cafeCardVC.cafeTimeLabel.text = filterData.result[index].businessHours
+                    cafeCardVC.cafeAddressLabel.text = filterData.result[index].cafeAddress
+                    cafeCardVC.addCountLabel.text = String(filterData.result[index].universeCount)
+                    if filterData.result[index].isUniversed == true {
 //                        cafeCardVC.addCountLabel.textColor = UIColor(named: "Milky")
 //                        cafeCardVC.addButton.isSelected = true
-//                    }
+                        self.beforeMarker?.iconImage = self.uniUnSelectedImage
+                        marker.iconImage = self.uniSelectedImage
+                    } else {
+                        self.beforeMarker?.iconImage = self.unselectedImage
+                        marker.iconImage = self.selectedImage
+                    }
+                    
+                    self.beforeMarker = marker
                     cafeCardVC.view.isHidden = false
                     bottomCardVC.view.isHidden = true
                     return true
                 }
                 marker.mapView = mapView
-                markers.append(marker)
+                filterMarkers.append(marker)
             }
+        markerReset(marker: markers)
     }
     func setService() {
         print("setService")
@@ -304,35 +287,45 @@ extension HomeVC {
         locationBtn.addTarget(self, action: #selector(locationButtonDidTap), for: UIControl.Event.touchUpInside)
     }
 
-    @objc func filterButtonDidTap(_ sender:UIButton) {
-
-        if sender.isSelected == true {
+    func markerReset(marker: [NMFMarker]){
+        for i in 0..<marker.count {
+            marker[i].mapView = nil
+        }
+    }
+    @objc func filterButtonDidTap(_ sender:DLRadioButton) {
+        if filterState[sender.tag] == true {
             sender.isSelected = false
-            self.tag.popLast()
+//            markerReset(marker: markers)
+            setMarker()
+//            markerReset(marker: filterMarkers)
         } else {
-            sender.isSelected = true
-            self.tag.append(sender.tag)
+//            markerReset(marker: filterMarkers)
+            HomeService.shared.GetCategoryCafe(categoryId: sender.tag) { [self] (networkResult) -> (Void) in
+                switch networkResult {
+                case .success(let data):
+                    if let loadData = data as? CategoryData {
+                        print("success")
+                        filterData = loadData
+                        setFilterMarker()
+                        }
+                case .requestErr( _):
+                    print("requestErr")
+                case .pathErr:
+                    print("pathErr")
+                case .serverErr:
+                    print("serverErr")
+                case .networkFail:
+                    print("networkFail")
+                }
+            }
+            print(sender.icon, filterData.result.count)
+//            markerReset(marker: markers)
         }
         
-        print(tag)
-        HomeService.shared.GetCategoryCafe(categoryId: tag) { [self] (networkResult) -> (Void) in
-            switch networkResult {
-            case .success(let data):
-                if let loadData = data as? CategoryData {
-                    print("success")
-                    filterData = loadData
-                    setFilterMarker()
-                    }
-            case .requestErr( _):
-                print("requestErr")
-            case .pathErr:
-                print("pathErr")
-            case .serverErr:
-                print("serverErr")
-            case .networkFail:
-                print("networkFail")
-            }
-        }
+        filterState[1] = filterBtn1.isSelected
+        filterState[2] = filterBtn2.isSelected
+        filterState[3] = filterBtn3.isSelected
+        filterState[4] = filterBtn4.isSelected
         
     }
     
@@ -463,14 +456,14 @@ extension HomeVC {
         cameraUpdate.animationDuration = 0.5
         mapView.moveCamera(cameraUpdate)
         
-        if beforeState[sender.tag] == true {
+        if locationState[sender.tag] == true {
             sender.isSelected = false
         }
-        beforeState[1] = bottomCardVC.mangwonBtn.isSelected
-        beforeState[2] = bottomCardVC.younnamBtn.isSelected
-        beforeState[3] = bottomCardVC.hannamBtn.isSelected
-        beforeState[4] = bottomCardVC.shinsaBtn.isSelected
-        beforeState[5] = bottomCardVC.yuksamBtn.isSelected
+        locationState[1] = bottomCardVC.mangwonBtn.isSelected
+        locationState[2] = bottomCardVC.younnamBtn.isSelected
+        locationState[3] = bottomCardVC.hannamBtn.isSelected
+        locationState[4] = bottomCardVC.shinsaBtn.isSelected
+        locationState[5] = bottomCardVC.yuksamBtn.isSelected
     }
     
     @objc

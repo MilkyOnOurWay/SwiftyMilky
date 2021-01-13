@@ -23,7 +23,7 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0h9-Yl-sic">
                                         <rect key="frame" x="331" y="13" width="24" height="24"/>
-                                        <state key="normal" image="btnSearch"/>
+                                        <state key="normal" image="icSearch"/>
                                         <connections>
                                             <action selector="searchBtnClicked:" destination="IRU-0Z-IcW" eventType="touchUpInside" id="rfM-1T-mci"/>
                                         </connections>
@@ -32,16 +32,8 @@
                                         <rect key="frame" x="20" y="12" width="132" height="25"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="leI-Tw-X4Z">
-                                        <rect key="frame" x="20" y="57.000000000000007" width="42" height="20.333333333333336"/>
-                                        <attributedString key="attributedText">
-                                            <fragment content="Label">
-                                                <attributes>
-                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                    <font key="NSFont" metaFont="system" size="17"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                </attributes>
-                                            </fragment>
-                                        </attributedString>
+                                        <rect key="frame" x="20" y="57" width="0.0" height="0.0"/>
+                                        <attributedString key="attributedText"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -69,7 +61,7 @@
                                     <imageReference key="image" image="btnCurrentLocation" symbolScale="large"/>
                                 </state>
                             </button>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JGc-rw-574">
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JGc-rw-574" customClass="DLRadioButton">
                                 <rect key="frame" x="10.666666666666664" y="174" width="84" height="42"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="84" id="pQw-Cf-5Py"/>
@@ -78,27 +70,48 @@
                                 <state key="normal">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="icon" value="decaffeine_w"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="iconSelected" value="decaffeine_p"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outletCollection property="otherButtons" destination="4yy-Yg-Mze" id="Lyf-br-paZ"/>
+                                    <outletCollection property="otherButtons" destination="cDu-JI-uni" id="uUN-ku-MeM"/>
+                                    <outletCollection property="otherButtons" destination="aPd-nV-Ytc" id="wxk-FV-yMj"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4yy-Yg-Mze">
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4yy-Yg-Mze" customClass="DLRadioButton">
                                 <rect key="frame" x="98.666666666666686" y="174" width="84" height="42"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="L4S-qD-JpS"/>
                                     <constraint firstAttribute="width" constant="84" id="fze-gV-rcd"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="icon" value="soybeanMilk_w"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="iconSelected" value="soybeanMilk_p"/>
+                                </userDefinedRuntimeAttributes>
                             </button>
-                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cDu-JI-uni">
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cDu-JI-uni" customClass="DLRadioButton">
                                 <rect key="frame" x="186.33333333333334" y="174" width="89.000000000000028" height="42"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="89" id="7rk-20-sFM"/>
                                     <constraint firstAttribute="height" constant="42" id="yAt-Al-AOW"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="icon" value="lowfatMilk_w"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="iconSelected" value="lowfatMilk_p"/>
+                                </userDefinedRuntimeAttributes>
                             </button>
-                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aPd-nV-Ytc">
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aPd-nV-Ytc" customClass="DLRadioButton">
                                 <rect key="frame" x="278" y="174" width="89" height="42"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="89" id="lLJ-YW-9NY"/>
                                     <constraint firstAttribute="height" constant="42" id="qB3-Sb-OS8"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="icon" value="fatFreeMilk_w"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="iconSelected" value="fatFreeMilk_p"/>
+                                </userDefinedRuntimeAttributes>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="eIS-ba-FWs"/>
@@ -144,12 +157,34 @@
             <point key="canvasLocation" x="1912.8" y="87.931034482758619"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="4yy-Yg-Mze">
+            <size key="intrinsicContentSize" width="30" height="34"/>
+        </designable>
+        <designable name="JGc-rw-574">
+            <size key="intrinsicContentSize" width="30" height="34"/>
+        </designable>
+        <designable name="aPd-nV-Ytc">
+            <size key="intrinsicContentSize" width="30" height="34"/>
+        </designable>
+        <designable name="cDu-JI-uni">
+            <size key="intrinsicContentSize" width="30" height="34"/>
+        </designable>
+    </designables>
     <resources>
         <image name="btnCurrentLocation" width="68" height="68"/>
-        <image name="btnSearch" width="24" height="24"/>
+        <image name="decaffeine_p" width="84" height="42"/>
+        <image name="decaffeine_w" width="84" height="42"/>
+        <image name="fatFreeMilk_p" width="89" height="42"/>
+        <image name="fatFreeMilk_w" width="89" height="42"/>
         <image name="homeLogo" width="132" height="25"/>
+        <image name="icSearch" width="24" height="24"/>
+        <image name="lowfatMilk_p" width="89" height="42"/>
+        <image name="lowfatMilk_w" width="89" height="42"/>
         <image name="mdiHome" width="24" height="24"/>
         <image name="mdiHomeTapped" width="24" height="24"/>
+        <image name="soybeanMilk_p" width="84" height="42"/>
+        <image name="soybeanMilk_w" width="84" height="42"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -68,10 +68,10 @@ struct HomeService {
         }
     }
     
-    func GetCategoryCafe(categoryId: [Int],
+    func GetCategoryCafe(categoryId: Int,
                          completion: @escaping (NetworkResult<Any>) -> Void) {
         
-        let URL = APIConstants.categoryHome
+        let URL = APIConstants.categoryHome + "\(categoryId)"
         print(URL)
         let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWR4Ijo1LCJpYXQiOjE2MDk3Nzg0NjksImV4cCI6MTYxMjM3MDQ2OSwiaXNzIjoibWlsa3lXYXkifQ.c2JAdyd0pGQzbmT0E_yl51eAGkcO71YfokwJebqqDME"
         
@@ -79,15 +79,9 @@ struct HomeService {
             "Content-Type": "application/json",
             "token": token
         ]
-        
-//        "categoryId": [3, 4]
-        let params = ["categoryId": categoryId]
-        
-        dump(params)
-        
+              
         let dataRequest = AF.request(URL,
                                      method: .get,
-                                     parameters: params,
                                      encoding: JSONEncoding.default,
                                      headers: headers
                                      )

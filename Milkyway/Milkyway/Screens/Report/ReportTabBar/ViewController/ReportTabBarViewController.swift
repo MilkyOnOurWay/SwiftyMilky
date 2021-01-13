@@ -62,8 +62,6 @@ class ReportTabBarViewController: ButtonBarPagerTabStripViewController {
         loadingView.stop()
         loadingView.removeFromSuperview()
     }
-    
-    
 
 }
 

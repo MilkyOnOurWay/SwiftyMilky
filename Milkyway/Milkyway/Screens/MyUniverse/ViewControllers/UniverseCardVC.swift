@@ -47,8 +47,7 @@ class UniverseCardVC: UIViewController {
                         dvc.testCafe = loadData
                         dvc.like = true
                         self.navigationController?.pushViewController(dvc, animated: true)
-                        
-                        
+    
                         
                     }
                 }

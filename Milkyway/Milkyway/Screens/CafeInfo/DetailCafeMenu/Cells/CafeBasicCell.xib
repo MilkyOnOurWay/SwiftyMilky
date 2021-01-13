@@ -25,7 +25,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xlg-p0-OYB">
-                        <rect key="frame" x="20" y="20" width="62.5" height="29"/>
+                        <rect key="frame" x="20" y="20" width="215" height="29"/>
                         <attributedString key="attributedText">
                             <fragment content="카페명">
                                 <attributes>
@@ -93,9 +93,8 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
-                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RCe-mZ-eSJ">
-                        <rect key="frame" x="22" y="126" width="353" height="259"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RCe-mZ-eSJ">
+                        <rect key="frame" x="20" y="126" width="355" height="259"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fm9-G1-ig0">
                                 <rect key="frame" x="36" y="144" width="291" height="30"/>
@@ -164,11 +163,16 @@
                     <constraint firstItem="5EA-Se-dJB" firstAttribute="top" secondItem="Xlg-p0-OYB" secondAttribute="bottom" constant="16" id="0c1-em-TUn"/>
                     <constraint firstItem="7fd-1g-16Q" firstAttribute="top" secondItem="Xlg-p0-OYB" secondAttribute="top" id="2Q7-q3-YZO"/>
                     <constraint firstItem="itE-hT-8qq" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="8Nx-xB-1XY"/>
+                    <constraint firstItem="itE-hT-8qq" firstAttribute="leading" secondItem="Xlg-p0-OYB" secondAttribute="trailing" constant="20" id="8XK-5t-7Nc"/>
                     <constraint firstAttribute="trailing" secondItem="itE-hT-8qq" secondAttribute="trailing" id="DZb-6h-uom"/>
+                    <constraint firstItem="RCe-mZ-eSJ" firstAttribute="top" secondItem="5EA-Se-dJB" secondAttribute="bottom" constant="20" id="H10-Fd-VXv"/>
                     <constraint firstItem="5EA-Se-dJB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="H2T-C6-vmx"/>
+                    <constraint firstAttribute="bottom" secondItem="RCe-mZ-eSJ" secondAttribute="bottom" id="LUV-c1-CRC"/>
                     <constraint firstItem="ucZ-Pv-DGk" firstAttribute="centerY" secondItem="7fd-1g-16Q" secondAttribute="centerY" id="NyV-S8-DeC"/>
                     <constraint firstItem="Xlg-p0-OYB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="QRN-DP-tzH"/>
+                    <constraint firstAttribute="trailing" secondItem="RCe-mZ-eSJ" secondAttribute="trailing" id="ZgJ-rC-ad0"/>
                     <constraint firstAttribute="trailing" secondItem="7fd-1g-16Q" secondAttribute="trailing" constant="20" id="mlv-mZ-VXU"/>
+                    <constraint firstItem="RCe-mZ-eSJ" firstAttribute="leading" secondItem="5EA-Se-dJB" secondAttribute="leading" id="pFX-LG-pQI"/>
                     <constraint firstItem="7fd-1g-16Q" firstAttribute="leading" secondItem="ucZ-Pv-DGk" secondAttribute="trailing" constant="4" id="sbM-Gu-ntU"/>
                     <constraint firstItem="Xlg-p0-OYB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="unB-gR-FWd"/>
                     <constraint firstAttribute="trailing" secondItem="5EA-Se-dJB" secondAttribute="trailing" constant="20" id="xxE-dw-xSL"/>

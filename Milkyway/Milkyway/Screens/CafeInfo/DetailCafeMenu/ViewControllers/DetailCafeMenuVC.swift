@@ -36,6 +36,12 @@ class DetailCafeMenuVC: UIViewController {
         print(testCafe)
         likeLabel.text = "\(testCafe.cafeInfo.universeCount)"
         universeImageView.image = like ? UIImage(named: "btnUniverseAdded") : UIImage(named: "btnUniverse")
+        
+        if like {
+            likeLabel.textColor = UIColor(named: "Milky")
+            likeLabel.font = UIFont(name: "SF Pro Text Bold", size: 8.0)!
+        }
+        
     }
     
     @IBAction func addMyUniverseBtnClicked(_ sender: Any) {

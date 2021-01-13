@@ -17,7 +17,7 @@ class UniverseCardVC: UIViewController {
     @IBOutlet var rootView: UIView!
     @IBOutlet weak var wideBtn: UIButton!
     
-    var cafeID: Int?
+    var cafeID = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +35,7 @@ class UniverseCardVC: UIViewController {
         // 로딩뷰 시작
         NotificationCenter.default.post(name: Notification.Name("startlottieuni"), object: nil)
         
-        DetailCafeService.shared.DetailInfoGet(cafeId: cafeID!) { [self] (networkResult) -> (Void) in
+        DetailCafeService.shared.DetailInfoGet(cafeId: cafeID) { [self] (networkResult) -> (Void) in
             switch networkResult {
             case .success(let data):
                 if let loadData = data as? CafeDatas {

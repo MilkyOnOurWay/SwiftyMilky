@@ -128,7 +128,7 @@ struct UniverseService {
     
     func deleteUniverse(_ cafeId: Int, completion: @escaping(NetworkResult<Any>) -> Void) {
         
-        let URL = APIConstants.deleteUniverse
+        let URL = APIConstants.deleteUniverse + "\(cafeId)"
         let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWR4Ijo1LCJpYXQiOjE2MDk3Nzg0NjksImV4cCI6MTYxMjM3MDQ2OSwiaXNzIjoibWlsa3lXYXkifQ.c2JAdyd0pGQzbmT0E_yl51eAGkcO71YfokwJebqqDME"
         
         let headers: HTTPHeaders = [
@@ -136,16 +136,11 @@ struct UniverseService {
             "token": token
         ]
         
-        // 서버 위키에 request body 없다고 나오는데 잘못 올린듯
-        let body: Parameters = [
-            "cafeId": cafeId
-        ]
         
         print(cafeId)
         print(URL)
         let dataRequest = AF.request(URL,
                                      method: .delete,
-                                     parameters: body,
                                      encoding: JSONEncoding.default,
                                      headers: headers)
         dataRequest.responseData {(response) in

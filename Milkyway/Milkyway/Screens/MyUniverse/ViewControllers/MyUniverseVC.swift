@@ -45,7 +45,7 @@ class MyUniverseVC: UIViewController{
    
     var cardHeight:CGFloat = 0 //363 //카드 높이 280 + 탭바높이 83 그냥 박는 버전
     let cardHandleAreaHeight:CGFloat = 84
-    
+    var selectedCardCafeID = 0
     var cardVisible = false
     
     var nextState:CardState {
@@ -90,11 +90,16 @@ class MyUniverseVC: UIViewController{
         let storyboard = UIStoryboard(name: "UniversePopUp", bundle: nil)  
         
         if let popVC = storyboard.instantiateViewController(withIdentifier: "UniversePopUpVC") as? UniversePopUpVC {
+            print( "cafeID : \(selectedCardCafeID)")
+            popVC.cafeID = selectedCardCafeID
             popVC.modalPresentationStyle = .overFullScreen
             popVC.modalTransitionStyle = .crossDissolve
+            
             self.present(popVC, animated: true, completion: {
             })
         }
+        
+        
     }
     
     
@@ -246,9 +251,12 @@ extension MyUniverseVC {
         
     }
     
-    // MARK: - 삭제하고 다시 통신해야함 ...
+    // MARK: - 삭제 누르고 팝업창 확인까지 눌리면 실행되는 함수
     @objc func removeBeforeCafe() {
+        setCamera()
         serverlinked()
+        self.beforeMarker?.iconImage = self.unselectImage
+        cardVC.view.isHidden = true
     }
     
     
@@ -279,8 +287,7 @@ extension MyUniverseVC {
                     cardVC.cafeNameLabel.text = myUniverse.aroundUniverse[index].cafeName
                     cardVC.cafeTimeLabel.text = myUniverse.aroundUniverse[index].businessHours
                     cardVC.cafeAddressLabel.text = myUniverse.aroundUniverse[index].cafeAddress
-                    cardVC.cafeID = myUniverse.aroundUniverse[index].id
-                    
+                    selectedCardCafeID = myUniverse.aroundUniverse[index].id
                     cardVC.view.isHidden = false
                     return true
                 }

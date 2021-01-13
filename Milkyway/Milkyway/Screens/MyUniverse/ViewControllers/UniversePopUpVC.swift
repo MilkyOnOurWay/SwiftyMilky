@@ -16,7 +16,7 @@ class UniversePopUpVC: UIViewController {
     @IBOutlet weak var deletedOKView: UIImageView!
     @IBOutlet weak var deletedBtn: UIButton!
     
-    var cafeID: Int?
+    var cafeID = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,10 +38,12 @@ class UniversePopUpVC: UIViewController {
         noBtn.isEnabled = false
         removeBtn.isEnabled = false
         
-        UniverseService.shared.deleteUniverse(cafeID ?? 0) { [self] (networkResult) -> (Void) in
+        print(cafeID)
+        
+        UniverseService.shared.deleteUniverse(cafeID) { [self] (networkResult) -> (Void) in
             switch networkResult {
             case .success(let data):
-                if let loadData = data as? DeleteUniverse {
+                if let loadData = data as? ThrowUniverse {
                     print("success")
                     print(loadData)
                     NotificationCenter.default.post(name: Notification.Name("removeCafe"), object: nil)

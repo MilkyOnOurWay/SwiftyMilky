@@ -89,6 +89,12 @@ class HomeVC: UIViewController {
         setBottomCard()
         setFirstCardView()
         setRadioBtn()
+        
+        
+        // 로티관련 노티
+        NotificationCenter.default.addObserver(self, selector: #selector(showLoadingLottie), name: Notification.Name("startlottiehome"),object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(stopLottieAnimation), name: Notification.Name("stoplottiehome"),object: nil)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -110,7 +116,7 @@ class HomeVC: UIViewController {
     
     let loadingView = AnimationView(name: "loadingLottie")
     
-    private func showLoadingLottie() {
+    @ objc private func showLoadingLottie() {
         print("start")
         
         loadingView.frame = CGRect(x: 0, y: 0, width: 300, height: 300)
@@ -123,7 +129,7 @@ class HomeVC: UIViewController {
     }
  
     
-    private func stopLottieAnimation() {
+    @objc private func stopLottieAnimation() {
         print("end")
         loadingView.stop()
         loadingView.removeFromSuperview()
@@ -229,6 +235,14 @@ extension HomeVC {
                 cafeCardVC.cafeTimeLabel.text = homeData.result[index].businessHours
                 cafeCardVC.cafeAddressLabel.text = homeData.result[index].cafeAddress
                 cafeCardVC.universeCount = homeData.result[index].universeCount
+                cafeCardVC.universeCountLabel.text = "\(homeData.result[index].universeCount)"
+                if homeData.result[index].isUniversed {
+                    cafeCardVC.universeButton.setImage(UIImage(named: "btnUniverseAdded"), for: .normal)
+                }
+                else {cafeCardVC.universeButton.setImage(UIImage(named: "btnUniverse"), for: .normal) }
+                
+                cafeCardVC.cafeId = homeData.result[index].id
+                cafeCardVC.buttonIsSelected = homeData.result[index].isUniversed
                 
                 // 이전 마커체크
                 beforeMarker?.iconImage = beforeIS ? self.uniUnSelectedImage : unselectedImage
@@ -277,6 +291,15 @@ extension HomeVC {
                     cafeCardVC.cafeTimeLabel.text = filterData.result[index].businessHours
                     cafeCardVC.cafeAddressLabel.text = filterData.result[index].cafeAddress
                     cafeCardVC.universeCount = filterData.result[index].universeCount
+                    cafeCardVC.universeCountLabel.text = "\(filterData.result[index].universeCount)"
+                    
+                    if filterData.result[index].isUniversed {
+                        cafeCardVC.universeButton.setImage(UIImage(named: "btnUniverseAdded"), for: .normal)
+                    }
+                    else {cafeCardVC.universeButton.setImage(UIImage(named: "btnUniverse"), for: .normal) }
+                    
+                    cafeCardVC.cafeId = filterData.result[index].id
+                    cafeCardVC.buttonIsSelected = filterData.result[index].isUniversed
                     
                     // 이전 마커체크
                     beforeMarker?.iconImage = beforeIS ? self.uniUnSelectedImage : unselectedImage

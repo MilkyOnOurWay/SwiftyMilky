@@ -32,7 +32,6 @@ class CardVC: UIViewController {
         super.viewDidLoad()
         setView()
         setHandler()
-        setRadioButton()
     }
 }
 
@@ -53,21 +52,6 @@ extension CardVC {
         mainLabel.textAlignment = .center
         mainLabel.text = "다른 지역을 찾고있나요?"
         mainLabel.font = UIFont(name:"SFProText-Regular", size: 16.0)
-    }
-    
-    func setRadioButton() {
-        
-        mangwonBtn.icon = UIImage(named: "mangwon_w")!
-        younnamBtn.icon = UIImage(named: "younnam_w")!
-        hannamBtn.icon = UIImage(named: "hannam_w")!
-        shinsaBtn.icon = UIImage(named: "shinsa_w")!
-        yuksamBtn.icon = UIImage(named: "yuksam_w")!
-
-        mangwonBtn.iconSelected = UIImage(named: "mangwon_p")!
-        younnamBtn.iconSelected = UIImage(named: "younnam_p")!
-        hannamBtn.iconSelected = UIImage(named: "hannam_p")!
-        shinsaBtn.iconSelected = UIImage(named: "shinsa_p")!
-        yuksamBtn.iconSelected = UIImage(named: "yuksam_p")!
     }
     
     func resetRadioButton() {

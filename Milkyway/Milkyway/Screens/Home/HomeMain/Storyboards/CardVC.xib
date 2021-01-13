@@ -67,6 +67,10 @@
                             <state key="normal">
                                 <color key="titleColor" name="Milky"/>
                             </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="image" keyPath="icon" value="mangwon_w"/>
+                                <userDefinedRuntimeAttribute type="image" keyPath="iconSelected" value="mangwon_p"/>
+                            </userDefinedRuntimeAttributes>
                             <connections>
                                 <outletCollection property="otherButtons" destination="Nsc-4b-exi" id="LWT-yU-gvA"/>
                                 <outletCollection property="otherButtons" destination="kAH-T0-Rsg" id="1Yd-HU-2Jf"/>
@@ -83,6 +87,10 @@
                             <state key="normal">
                                 <color key="titleColor" name="Milky"/>
                             </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="image" keyPath="icon" value="younnam_w"/>
+                                <userDefinedRuntimeAttribute type="image" keyPath="iconSelected" value="younnam_p"/>
+                            </userDefinedRuntimeAttributes>
                         </button>
                         <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kAH-T0-Rsg" customClass="DLRadioButton">
                             <rect key="frame" x="243.5" y="0.0" width="76" height="76"/>
@@ -93,6 +101,10 @@
                             <state key="normal">
                                 <color key="titleColor" name="Milky"/>
                             </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="image" keyPath="icon" value="hannam_w"/>
+                                <userDefinedRuntimeAttribute type="image" keyPath="iconSelected" value="hannam_p"/>
+                            </userDefinedRuntimeAttributes>
                         </button>
                         <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lye-or-zb4" customClass="DLRadioButton">
                             <rect key="frame" x="196.5" y="88" width="76" height="76"/>
@@ -103,6 +115,10 @@
                             <state key="normal">
                                 <color key="titleColor" name="Milky"/>
                             </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="image" keyPath="icon" value="yuksam_w"/>
+                                <userDefinedRuntimeAttribute type="image" keyPath="iconSelected" value="yuksam_p"/>
+                            </userDefinedRuntimeAttributes>
                         </button>
                         <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rAr-yS-uYV" customClass="DLRadioButton">
                             <rect key="frame" x="102.5" y="88" width="76" height="76"/>
@@ -113,6 +129,10 @@
                             <state key="normal">
                                 <color key="titleColor" name="Milky"/>
                             </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="image" keyPath="icon" value="shinsa_w"/>
+                                <userDefinedRuntimeAttribute type="image" keyPath="iconSelected" value="shinsa_p"/>
+                            </userDefinedRuntimeAttributes>
                         </button>
                     </subviews>
                     <constraints>
@@ -175,6 +195,16 @@
         </designable>
     </designables>
     <resources>
+        <image name="hannam_p" width="76" height="76"/>
+        <image name="hannam_w" width="76" height="76"/>
+        <image name="mangwon_p" width="76" height="76"/>
+        <image name="mangwon_w" width="76" height="76"/>
+        <image name="shinsa_p" width="76" height="76"/>
+        <image name="shinsa_w" width="76" height="76"/>
+        <image name="younnam_p" width="76" height="76"/>
+        <image name="younnam_w" width="76" height="76"/>
+        <image name="yuksam_p" width="76" height="76"/>
+        <image name="yuksam_w" width="76" height="76"/>
         <namedColor name="Milky">
             <color red="0.20000000298023224" green="0.125" blue="0.65100002288818359" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

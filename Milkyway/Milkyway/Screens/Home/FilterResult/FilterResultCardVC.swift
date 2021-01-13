@@ -9,6 +9,7 @@ import UIKit
 
 class FilterResultCardVC: UIViewController {
 
+    @IBOutlet var rootView: UIView!
     @IBOutlet weak var cafeNameLabel: UILabel!
     @IBOutlet weak var cafeAddressLabel: UILabel!
     @IBOutlet weak var cafeTimeLabel: UILabel!
@@ -22,6 +23,7 @@ class FilterResultCardVC: UIViewController {
         super.viewDidLoad()
         setView()
         setUniverseButton()
+        rootView.layer.cornerRadius = 12
     }
 
 }

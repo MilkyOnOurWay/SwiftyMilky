@@ -125,7 +125,7 @@ class HomeVC: UIViewController {
     
     private func stopLottieAnimation() {
         print("end")
-        loadingView.pause()
+        loadingView.stop()
         loadingView.removeFromSuperview()
     }
     
@@ -353,6 +353,7 @@ extension HomeVC {
 //            markerReset(marker: markers)
             setMarker()
 //            markerReset(marker: filterMarkers)
+            stopLottieAnimation()
         } else {
 //            markerReset(marker: filterMarkers)
             HomeService.shared.GetCategoryCafe(categoryId: sender.tag) { [self] (networkResult) -> (Void) in

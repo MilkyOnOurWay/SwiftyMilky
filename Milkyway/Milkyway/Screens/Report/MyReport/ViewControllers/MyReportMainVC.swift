@@ -17,8 +17,9 @@ class MyReportMainVC: UIViewController, IndicatorInfoProvider {
     var tabName: String = ""
     var nickName: String = ""
     
-    // 테이블 셀 hidden 테스트용
-    var myReportData = MyReportData(cancel: [MyReport](), ing: [MyReport](), done: [MyReport]())
+    var myReportData = MyReportData(cancel: [MyReport](),
+                                    ing: [MyReport](),
+                                    done: [MyReport]())
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,11 +28,11 @@ class MyReportMainVC: UIViewController, IndicatorInfoProvider {
         registerXib()
         registerDelegate()
     }
-    override func viewWillAppear(_ animated: Bool) {
-        setService()
-    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        setService()
     }
 }
 
@@ -86,7 +87,8 @@ extension MyReportMainVC {
                     // 유저닉네임 전역변수로 설정
 //                    let ad = UIApplication.shared.delegate as? AppDelegate
 //                    ad?.userNickNameInHere =
-                    print(myReportData.cancel)
+//                    print("table 들어옴")
+                    self.myReportTableView.reloadData()
                     }
             case .requestErr( _):
                 print("requestErr")
@@ -97,8 +99,7 @@ extension MyReportMainVC {
             case .networkFail:
                 print("networkFail")
             }
-        }
-    }
+        }    }
     @objc func cancelReasonTap() {
         print("MyReport - cancelReason")
         
@@ -111,12 +112,12 @@ extension MyReportMainVC {
 }
 
 extension MyReportMainVC: UITableViewDataSource {
-    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 4
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         if section == 0 {
             return 1
         } else if section == 1 {
@@ -124,7 +125,7 @@ extension MyReportMainVC: UITableViewDataSource {
         } else if section == 2{
             return 1
         } else {
-            return 1 // 서버에서 받는대로
+            return myReportData.done.count
         }
 
     }
@@ -147,21 +148,25 @@ extension MyReportMainVC: UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: CanceledTVCell.identifier) as? CanceledTVCell else {
                 return UITableViewCell()
             }
+            cell.setCell(cancelData: myReportData.cancel)
+            
+            print("여긴 취소된 제본데요,,\(myReportData.cancel.count)")
             // 취소된 제보 없애면 hidden하고 높이 0 만들기
-            if myReportData.cancel.count == 0 {
-                cell.isHidden = true
-                cell.rootHeight.constant = 0
-            }
-//            cell.setCell(count: myReportData.cancel.count)
+//            if myReportData.cancel.count == 0 {
+//                cell.isHidden = true
+//                cell.rootHeight.constant = 0
+//            } else {
+//
+//            }
             cell.selectionStyle = .none
             return cell
         } else if indexPath.section == 2 { // 진행중인 제보
             guard let cell = tableView.dequeueReusableCell(withIdentifier: InProgressTVCell.identifier) as? InProgressTVCell else {
                 return UITableViewCell()
             }
-            
             cell.setLabel()
-            cell.setCell(count: 0)
+            print("여긴 진행중인 제본데요,,\(myReportData.ing.count)")
+            cell.setCell(ingData: myReportData.ing)
             cell.selectionStyle = .none
             return cell
         } else { // 완료된 제보
@@ -193,44 +198,47 @@ extension MyReportMainVC: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        // 눌렀을 때 서버통신 !
-        // 통신중일때 더이상 나의제보 누를 수 없게 // 이중 클릭 방지
-        self.myReportTableView.isUserInteractionEnabled = false
-        
-        // 로딩뷰 시작
-        NotificationCenter.default.post(name: Notification.Name("startlottie"), object: nil)
-        
-        DetailCafeService.shared.DetailInfoGet(cafeId: 17) { [self] (networkResult) -> (Void) in
-            switch networkResult {
-            case .success(let data):
-                if let loadData = data as? CafeDatas {
-                    
-                    print("success")
-                    
-                    let storyboard = UIStoryboard(name: "DetailCafeMenu", bundle: nil)
-                    if let dvc = storyboard.instantiateViewController(identifier: "DetailCafeMenuVC") as? DetailCafeMenuVC {
-                        dvc.testCafe = loadData
-                        self.navigationController?.pushViewController(dvc, animated: true)
-                        // 로딩뷰 끝
-                        NotificationCenter.default.post(name: Notification.Name("stoplottie"), object: nil)
+        if indexPath.section == 3 {
+            
+            // 눌렀을 때 서버통신 !
+            // 통신중일때 더이상 나의제보 누를 수 없게 // 이중 클릭 방지
+            self.myReportTableView.isUserInteractionEnabled = false
+            
+            // 로딩뷰 시작
+            NotificationCenter.default.post(name: Notification.Name("startlottie"), object: nil)
+            
+            DetailCafeService.shared.DetailInfoGet(cafeId: 17) { [self] (networkResult) -> (Void) in
+                switch networkResult {
+                case .success(let data):
+                    if let loadData = data as? CafeDatas {
                         
-                        //다시 클릭 활성화
-                        self.myReportTableView.isUserInteractionEnabled = true
+                        print("success")
+                        let storyboard = UIStoryboard(name: "DetailCafeMenu", bundle: nil)
+                        if let dvc = storyboard.instantiateViewController(identifier: "DetailCafeMenuVC") as? DetailCafeMenuVC {
+                            dvc.testCafe = loadData
+                            self.navigationController?.pushViewController(dvc, animated: true)
+                            // 로딩뷰 끝
+                            NotificationCenter.default.post(name: Notification.Name("stoplottie"), object: nil)
+                            
+                            //다시 클릭 활성화
+                            self.myReportTableView.isUserInteractionEnabled = true
+                        }
                     }
+                case .requestErr( _):
+                    print("requestErr")
+                case .pathErr:
+                    
+                    print("pathErr")
+                case .serverErr:
+                    print("serverErr")
+                case .networkFail:
+                    print("networkFail")
                 }
-            case .requestErr( _):
-                print("requestErr")
-            case .pathErr:
                 
-                print("pathErr")
-            case .serverErr:
-                print("serverErr")
-            case .networkFail:
-                print("networkFail")
+                
             }
-            
-            
         }
+        
      
     }
 }

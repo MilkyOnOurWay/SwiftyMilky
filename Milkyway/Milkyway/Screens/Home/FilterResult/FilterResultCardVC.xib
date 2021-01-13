@@ -23,6 +23,7 @@
                 <outlet property="cafeAddressLabel" destination="xuf-UQ-SiD" id="ESd-PX-UBp"/>
                 <outlet property="cafeNameLabel" destination="3Nx-Tb-miQ" id="mnh-dR-wc3"/>
                 <outlet property="cafeTimeLabel" destination="iPw-g5-4gL" id="ygR-CG-VY9"/>
+                <outlet property="rootView" destination="i5M-Pr-FkT" id="vcq-48-234"/>
                 <outlet property="universeButton" destination="lNq-tp-zA4" id="vJo-FG-gXF"/>
                 <outlet property="universeCountLabel" destination="Jw1-IB-Vlu" id="0n7-GJ-qLn"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -33,6 +34,10 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="125"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2XK-um-ACZ">
+                    <rect key="frame" x="0.0" y="44" width="375" height="81"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="카페이름길어봤자얼마나길까카페" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Nx-Tb-miQ">
                     <rect key="frame" x="20" y="20" width="243" height="22"/>
                     <constraints>
@@ -69,8 +74,8 @@
                         <constraint firstAttribute="width" constant="32" id="8iL-Yh-Ugy"/>
                     </constraints>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jw1-IB-Vlu">
-                    <rect key="frame" x="328" y="47" width="20.333333333333314" height="14"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jw1-IB-Vlu">
+                    <rect key="frame" x="334.66666666666669" y="47" width="7" height="14"/>
                     <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="12"/>
                     <color key="textColor" name="darkGrey"/>
                     <nil key="highlightedColor"/>
@@ -80,14 +85,18 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="Jw1-IB-Vlu" firstAttribute="top" secondItem="lNq-tp-zA4" secondAttribute="bottom" constant="5" id="8Yz-jV-sfk"/>
+                <constraint firstItem="2XK-um-ACZ" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="B12-hA-0Oi"/>
                 <constraint firstItem="xuf-UQ-SiD" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="BIJ-wW-VcP"/>
                 <constraint firstItem="3Nx-Tb-miQ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" symbolic="YES" id="FEp-GF-6bz"/>
                 <constraint firstItem="lNq-tp-zA4" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" symbolic="YES" id="JWL-9o-iBk"/>
                 <constraint firstItem="lNq-tp-zA4" firstAttribute="leading" secondItem="3Nx-Tb-miQ" secondAttribute="trailing" constant="59" id="K3T-Dl-gty"/>
                 <constraint firstItem="Jw1-IB-Vlu" firstAttribute="centerX" secondItem="lNq-tp-zA4" secondAttribute="centerX" id="Qgn-DU-zMc"/>
                 <constraint firstItem="iPw-g5-4gL" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Ug4-1F-sHf"/>
+                <constraint firstItem="2XK-um-ACZ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="cya-aB-K1G"/>
                 <constraint firstItem="iPw-g5-4gL" firstAttribute="top" secondItem="xuf-UQ-SiD" secondAttribute="bottom" constant="5" id="eXA-OH-5SY"/>
+                <constraint firstItem="2XK-um-ACZ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="iy2-6Q-XMf"/>
                 <constraint firstItem="3Nx-Tb-miQ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="jLk-6d-Twk"/>
+                <constraint firstAttribute="bottom" secondItem="2XK-um-ACZ" secondAttribute="bottom" id="jVZ-qd-fyd"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Jw1-IB-Vlu" secondAttribute="bottom" constant="64" id="qt9-ma-fqp"/>
                 <constraint firstItem="xuf-UQ-SiD" firstAttribute="top" secondItem="3Nx-Tb-miQ" secondAttribute="bottom" constant="7" id="uDB-jq-O6E"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="iPw-g5-4gL" secondAttribute="bottom" constant="13" id="wmb-Kf-xxI"/>

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Lottie
 
 class AddSearchResultVC: UIViewController {
 
@@ -34,6 +35,31 @@ class AddSearchResultVC: UIViewController {
       
     }
     
+    
+    // MARK: - 데이터 로딩 중 Lottie 화면
+    
+    let loadingView = AnimationView(name: "loadingLottie")
+    
+    private func showLoadingLottie() {
+        print("start")
+        
+        loadingView.frame = CGRect(x: 0, y: 0, width: 300, height: 300)
+        loadingView.center = self.view.center
+        loadingView.contentMode = .scaleAspectFill
+        loadingView.loopMode = .loop
+        self.view.addSubview(loadingView)
+        
+        loadingView.play()
+    }
+    
+    private func stopLottieAnimation() {
+        print("end")
+        loadingView.stop()
+        loadingView.removeFromSuperview()
+    }
+
+
+    
 
    
 
@@ -45,6 +71,7 @@ extension AddSearchResultVC {
         
         searchTableView.delegate = self
         searchTableView.dataSource = self
+        searchTableView.separatorInset.left = 0
         let nibName = UINib(nibName: "AddSearchTVC", bundle: nil)
         searchTableView.register(nibName, forCellReuseIdentifier: "AddSearchTVC")
        
@@ -96,6 +123,7 @@ extension AddSearchResultVC {
     }
     
     @objc func searchCafe(_ cafe: String){
+        showLoadingLottie()
         SearchCafeService.shared.searchReportCafe(cafe){
             responseData in
             switch responseData {
@@ -117,7 +145,9 @@ extension AddSearchResultVC {
             case .networkFail:
                 print("networkFail")
             }
+            self.stopLottieAnimation()
         }
+        
     }
 }
 

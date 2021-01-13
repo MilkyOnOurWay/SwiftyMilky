@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import Lottie
 class SearchResultVC: UIViewController {
     
     @IBOutlet weak var backButton: UIButton!
@@ -30,6 +30,28 @@ class SearchResultVC: UIViewController {
         
         //searchCafe(cafeResult ?? "")
     }
+    
+    // MARK: - 데이터 로딩 중 Lottie 화면
+    
+    let loadingView = AnimationView(name: "loadingLottie")
+    
+    private func showLoadingLottie() {
+        print("start")
+        
+        loadingView.frame = CGRect(x: 0, y: 0, width: 300, height: 300)
+        loadingView.center = self.view.center
+        loadingView.contentMode = .scaleAspectFill
+        loadingView.loopMode = .loop
+        self.view.addSubview(loadingView)
+        
+        loadingView.play()
+    }
+    
+    private func stopLottieAnimation() {
+        print("end")
+        loadingView.stop()
+        loadingView.removeFromSuperview()
+    }
 }
 
 
@@ -39,6 +61,7 @@ extension SearchResultVC {
         searchTableView.delegate = self
         searchTableView.dataSource = self
         noResultImageView.isHidden = true
+        searchTableView.separatorInset.left = 0
         let nibName = UINib(nibName: "SearchTVC", bundle: nil)
         searchTableView.register(nibName, forCellReuseIdentifier: "SearchTVC")
         
@@ -96,7 +119,8 @@ extension SearchResultVC {
     }
     
     @objc func searchCafe(_ cafe: String){
-        SearchCafeService.shared.homeSearchCafe(cafe) {
+        showLoadingLottie()
+        SearchCafeService.shared.homeSearchCafe(cafe) { [self]
             
             responseData in
             switch responseData {
@@ -120,8 +144,9 @@ extension SearchResultVC {
             case .networkFail:
                 print("networkFail")
             }
-            
+            stopLottieAnimation()
         }
+        
     }
 }
 

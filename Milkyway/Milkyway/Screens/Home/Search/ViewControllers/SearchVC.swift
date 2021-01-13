@@ -49,11 +49,7 @@ extension SearchVC {
     
     
     @objc func searchBtnClicked(){
-//        //searchTableView.isHidden = false
-//        guard let nvc = UIStoryboard(name: "Search", bundle: nil).instantiateViewController(identifier: "SearchResultVC") as? SearchResultVC else {
-//            return
-//        }
-//        self.navigationController?.pushViewController(nvc, animated: true)
+
     }
 }
 

@@ -17,6 +17,6 @@ struct CafeResult: Codable {
 // MARK: - 홈 화면 검색에서 사용
 struct CafeHomeResult: Codable {
     
-    let cafeName, cafeAddress: String
+    let cafeName, cafeAddress, businessHours: String
     let longitude,latitude: Double
 }

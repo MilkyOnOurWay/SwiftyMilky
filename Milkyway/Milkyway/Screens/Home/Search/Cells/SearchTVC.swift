@@ -22,7 +22,8 @@ class SearchTVC: UITableViewCell {
     var cafeAddress: String?
     var longitude: Double?
     var latitude: Double?
-
+    var businessHours: String?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -42,6 +43,7 @@ class SearchTVC: UITableViewCell {
         cafeAddressLabel.text = searchedCafe?.cafeAddress
         longitude = searchedCafe?.longitude
         latitude = searchedCafe?.latitude
+        businessHours = searchedCafe?.businessHours
         
     
     }

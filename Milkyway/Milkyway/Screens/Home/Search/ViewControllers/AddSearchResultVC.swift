@@ -28,8 +28,7 @@ class AddSearchResultVC: UIViewController {
         setTextField()
         setBackButton()
         setDeleteButton()
-        //searchCafe(cafeResult ?? "")
-        // Do any additional setup after loading the view.
+      
     }
     
 

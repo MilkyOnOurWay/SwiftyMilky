@@ -127,7 +127,7 @@ class HomeVC: UIViewController {
         
         loadingView.play()
     }
- 
+    
     
     @objc private func stopLottieAnimation() {
         print("end")
@@ -136,7 +136,7 @@ class HomeVC: UIViewController {
     }
     
     
-
+    
 }
 
 extension HomeVC: CLLocationManagerDelegate {
@@ -238,15 +238,22 @@ extension HomeVC {
                 cafeCardVC.universeCountLabel.text = "\(homeData.result[index].universeCount)"
                 if homeData.result[index].isUniversed {
                     cafeCardVC.universeButton.setImage(UIImage(named: "btnUniverseAdded"), for: .normal)
+                    cafeCardVC.universeCountLabel.textColor = UIColor(named: "Milky")
+                    cafeCardVC.universeCountLabel.font = UIFont(name: "SF Pro Text Bold", size: 12.0)!
                 }
-                else {cafeCardVC.universeButton.setImage(UIImage(named: "btnUniverse"), for: .normal) }
+                else {
+                    cafeCardVC.universeButton.setImage(UIImage(named: "btnUniverse"), for: .normal)
+                    cafeCardVC.universeCountLabel.textColor = UIColor(named: "darkGrey")
+                    cafeCardVC.universeCountLabel.font = UIFont(name: "SF Pro Text Regular", size: 12.0)!
+                    
+                }
                 
                 cafeCardVC.cafeId = homeData.result[index].id
                 cafeCardVC.buttonIsSelected = homeData.result[index].isUniversed
                 
                 // 이전 마커체크
                 beforeMarker?.iconImage = beforeIS ? self.uniUnSelectedImage : unselectedImage
-               
+                
                 
                 // 현재마커 변경
                 if homeData.result[index].isUniversed == true {
@@ -284,47 +291,52 @@ extension HomeVC {
             } else {
                 marker = NMFMarker(position: NMGLatLng(lat: filterData.result[index].latitude, lng: filterData.result [index].longitude), iconImage: unselectedImage)
             }
-//                marker.isHideCollidedMarkers = true
-                marker.touchHandler = { [self] (overlay: NMFOverlay) -> Bool in
-                    
-                    cafeCardVC.cafeNameLabel.text = filterData.result[index].cafeName
-                    cafeCardVC.cafeTimeLabel.text = filterData.result[index].businessHours
-                    cafeCardVC.cafeAddressLabel.text = filterData.result[index].cafeAddress
-                    cafeCardVC.universeCount = filterData.result[index].universeCount
-                    cafeCardVC.universeCountLabel.text = "\(filterData.result[index].universeCount)"
-                    
-                    if filterData.result[index].isUniversed {
-                        cafeCardVC.universeButton.setImage(UIImage(named: "btnUniverseAdded"), for: .normal)
-                    }
-                    else {cafeCardVC.universeButton.setImage(UIImage(named: "btnUniverse"), for: .normal) }
-                    
-                    cafeCardVC.cafeId = filterData.result[index].id
-                    cafeCardVC.buttonIsSelected = filterData.result[index].isUniversed
-                    
-                    // 이전 마커체크
-                    beforeMarker?.iconImage = beforeIS ? self.uniUnSelectedImage : unselectedImage
-                   
-                    
-                    // 현재마커 변경
-                    if homeData.result[index].isUniversed == true {
-                        marker.iconImage = self.uniSelectedImage
-                        beforeIS = true
-                        beforeMarker = marker
-                    }
-                    else {
-                        marker.iconImage = self.selectedImage
-                        beforeIS = false
-                        beforeMarker = marker
-                    }
-                    
-                    
-                    cafeCardVC.view.isHidden = false
-                    bottomCardVC.view.isHidden = true
-                    return true
+            //                marker.isHideCollidedMarkers = true
+            marker.touchHandler = { [self] (overlay: NMFOverlay) -> Bool in
+                
+                cafeCardVC.cafeNameLabel.text = filterData.result[index].cafeName
+                cafeCardVC.cafeTimeLabel.text = filterData.result[index].businessHours
+                cafeCardVC.cafeAddressLabel.text = filterData.result[index].cafeAddress
+                cafeCardVC.universeCount = filterData.result[index].universeCount
+                cafeCardVC.universeCountLabel.text = "\(filterData.result[index].universeCount)"
+                
+                if filterData.result[index].isUniversed {
+                    cafeCardVC.universeButton.setImage(UIImage(named: "btnUniverseAdded"), for: .normal)
+                    cafeCardVC.universeCountLabel.textColor = UIColor(named: "Milky")
+                    cafeCardVC.universeCountLabel.font = UIFont(name: "SF Pro Text Bold", size: 12.0)!
                 }
-                marker.mapView = mapView
-                filterMarkers.append(marker)
+                else {
+                    cafeCardVC.universeButton.setImage(UIImage(named: "btnUniverse"), for: .normal)
+                    cafeCardVC.universeCountLabel.textColor = UIColor(named: "darkGrey")
+                    cafeCardVC.universeCountLabel.font = UIFont(name: "SF Pro Text Regular", size: 12.0)!
+                }
+                cafeCardVC.cafeId = filterData.result[index].id
+                cafeCardVC.buttonIsSelected = filterData.result[index].isUniversed
+                
+                // 이전 마커체크
+                beforeMarker?.iconImage = beforeIS ? self.uniUnSelectedImage : unselectedImage
+                
+                
+                // 현재마커 변경
+                if homeData.result[index].isUniversed == true {
+                    marker.iconImage = self.uniSelectedImage
+                    beforeIS = true
+                    beforeMarker = marker
+                }
+                else {
+                    marker.iconImage = self.selectedImage
+                    beforeIS = false
+                    beforeMarker = marker
+                }
+                
+                
+                cafeCardVC.view.isHidden = false
+                bottomCardVC.view.isHidden = true
+                return true
             }
+            marker.mapView = mapView
+            filterMarkers.append(marker)
+        }
         markerReset(marker: markers)
     }
     
@@ -344,7 +356,7 @@ extension HomeVC {
                     print("nickName:\(homeData.nickName)")
                     ad?.userNickNameInHere = homeData.nickName
                     setNickNameLabel()
-                    }
+                }
             case .requestErr( _):
                 print("requestErr")
             case .pathErr:
@@ -362,7 +374,7 @@ extension HomeVC {
         locationBtn.setImage(UIImage(named: "compassIc"), for: UIControl.State.selected)
         locationBtn.addTarget(self, action: #selector(locationButtonDidTap), for: UIControl.Event.touchUpInside)
     }
-
+    
     func markerReset(marker: [NMFMarker]){
         for i in 0..<marker.count {
             marker[i].mapView = nil
@@ -373,12 +385,12 @@ extension HomeVC {
         
         if filterState[sender.tag] == true {
             sender.isSelected = false
-//            markerReset(marker: markers)
+            //            markerReset(marker: markers)
             setMarker()
-//            markerReset(marker: filterMarkers)
+            //            markerReset(marker: filterMarkers)
             stopLottieAnimation()
         } else {
-//            markerReset(marker: filterMarkers)
+            //            markerReset(marker: filterMarkers)
             HomeService.shared.GetCategoryCafe(categoryId: sender.tag) { [self] (networkResult) -> (Void) in
                 switch networkResult {
                 case .success(let data):
@@ -386,7 +398,7 @@ extension HomeVC {
                         print("success")
                         filterData = loadData
                         setFilterMarker()
-                        }
+                    }
                 case .requestErr( _):
                     print("requestErr")
                 case .pathErr:
@@ -401,7 +413,7 @@ extension HomeVC {
                 stopLottieAnimation()
             }
             print(sender.icon, filterData.result.count)
-//            markerReset(marker: markers)
+            //            markerReset(marker: markers)
         }
         
         filterState[1] = filterBtn1.isSelected
@@ -440,7 +452,7 @@ extension HomeVC {
     
     func setBottomCard() {
         bottomCardVC = CardVC(nibName:"CardVC", bundle:nil)
-
+        
         self.addChild(bottomCardVC)
         self.view.addSubview(bottomCardVC.view)
         
@@ -454,9 +466,9 @@ extension HomeVC {
         } else {
             cardHeight = self.mapView.frame.height / 2 + tabbarFrame!.size.height
         }
-//        cardHeight = self.mapView.frame.height / 2 + tabbarFrame!.size.height
-//        print("탭바 높이 \(tabbarFrame!.size.height)")
-//        print("card 높이 \(cardHeight)")
+        //        cardHeight = self.mapView.frame.height / 2 + tabbarFrame!.size.height
+        //        print("탭바 높이 \(tabbarFrame!.size.height)")
+        //        print("card 높이 \(cardHeight)")
         
         //탭바 높이만큼 더하기
         bottomCardVC.view.frame = CGRect(x: 0, y: self.view.frame.height - cardHandleAreaHeight - tabbarFrame!.size.height, width: self.view.bounds.width, height: cardHeight)
@@ -532,7 +544,7 @@ extension HomeVC {
     }
     
     @objc func sendBtnTag(_ sender:DLRadioButton) {
-
+        
         print(sender.tag)
         
         cameraUpdate = NMFCameraUpdate(scrollTo: NMGLatLng(lat: searchLocation[sender.tag][0], lng: searchLocation[sender.tag][1]))
@@ -597,10 +609,10 @@ extension HomeVC: NMFMapViewTouchDelegate {
 extension HomeVC: NMFMapViewCameraDelegate {
     func mapView(_ mapView: NMFMapView, cameraWillChangeByReason reason: Int, animated: Bool){
         if reason == NMFMapChangedByGesture {
-//            print("지도 움직이는 중 zoom level: \(mapView.zoomLevel)")
+            //            print("지도 움직이는 중 zoom level: \(mapView.zoomLevel)")
             mapView.locationOverlay.icon = currentLImage
             
-//            cafeCardVC.view.isHidden = true
+            //            cafeCardVC.view.isHidden = true
             beforeMarker?.iconImage = beforeIS ? self.uniUnSelectedImage : unselectedImage
             
         }

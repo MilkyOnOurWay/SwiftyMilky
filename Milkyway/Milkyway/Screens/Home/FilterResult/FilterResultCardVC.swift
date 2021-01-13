@@ -70,9 +70,7 @@ class FilterResultCardVC: UIViewController {
         
         
     }
-    
-    
-    
+
     
 }
 
@@ -98,12 +96,13 @@ extension FilterResultCardVC {
     }
     
     func addUniverse(){
+        print("home - addUniverse \(cafeId!)")
         ToastView.showIn(viewController: self, message: "카페가 나의 유니버스로 들어왔어요.", fromBottom: 40)
         universeButton.setImage(UIImage(named: "btnUniverseAdded"), for: .normal)
         universeCount += 1
         universeCountLabel.text = "\(universeCount)"
         universeCountLabel.textColor = UIColor(named: "Milky")
-        universeCountLabel.font = UIFont(name: "SF Pro Text Bold", size: 8.0)!
+        universeCountLabel.font = UIFont(name: "SF Pro Text Bold", size: 12.0)!
         buttonIsSelected = true
         
         UniverseService.shared.addUniverse(cafeId!) { [self] (networkResult) -> (Void) in
@@ -134,13 +133,13 @@ extension FilterResultCardVC {
     
     
     func deleteUniverse(){
-        
+        print("home - deleteUniverse \(cafeId!)")
         ToastView.showIn(viewController: self, message: "카페가 나의 유니버스를 탈출했어요.", fromBottom: 40)
         universeButton.setImage(UIImage(named: "btnUniverse"), for: .normal)
         universeCount -= 1
         universeCountLabel.text = "\(universeCount)"
         universeCountLabel.textColor = UIColor(named: "darkGrey")
-        universeCountLabel.font = UIFont(name: "SF Pro Text Regular", size: 8.0)!
+        universeCountLabel.font = UIFont(name: "SF Pro Text Regular", size: 12.0)!
         buttonIsSelected = false
         
         UniverseService.shared.deleteUniverse(cafeId!) { [self] (networkResult) -> (Void) in

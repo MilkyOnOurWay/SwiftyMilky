@@ -78,7 +78,6 @@ extension UniverseBottomVC: UITableViewDelegate {
                         dvc.testCafe = loadData
                         dvc.like = true
                         self.navigationController?.pushViewController(dvc, animated: true)
-                        NotificationCenter.default.post(name: Notification.Name("stoplottieuni"), object: nil)
                         //다시 클릭 활성화
                         self.tableView.isUserInteractionEnabled = true
                     }
@@ -92,7 +91,7 @@ extension UniverseBottomVC: UITableViewDelegate {
             case .networkFail:
                 print("networkFail")
             }
-            
+            NotificationCenter.default.post(name: Notification.Name("stoplottieuni"), object: nil)
             
         }
         

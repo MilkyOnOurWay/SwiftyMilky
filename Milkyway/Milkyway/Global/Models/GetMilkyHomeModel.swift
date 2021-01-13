@@ -16,7 +16,7 @@ struct HomeData: Codable {
 // MARK: - AroundCafe
 struct AroundCafe: Codable {
     let id, universeCount: Int
-    let cafeName, cafeAddress, businessHours: String
+    let cafeName, cafeAddress, businessHours: String?
     let longitude, latitude: Double
     let isUniversed: Bool
     
@@ -31,7 +31,7 @@ struct CategoryData: Codable {
 // MARK: - CategoryCafe
 struct CategoryCafe: Codable {
     let id, universeCount: Int
-    let cafeName, cafeAddress, businessHours: String
+    let cafeName, cafeAddress, businessHours: String?
     let longitude, latitude: Double
     let isUniversed: Bool
 }

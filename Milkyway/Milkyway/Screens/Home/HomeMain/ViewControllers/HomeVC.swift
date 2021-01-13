@@ -8,6 +8,7 @@
 import UIKit
 import NMapsMap
 import DLRadioButton
+import Lottie
 
 class HomeVC: UIViewController {
     
@@ -70,8 +71,8 @@ class HomeVC: UIViewController {
     var markers = [NMFMarker]()
     var filterMarkers = [NMFMarker]()
     
-    var beforePlain: NMFMarker?
-    var beforeUni: NMFMarker?
+    var beforeMarker: NMFMarker?
+    var beforeIS = true
     
     var cameraUpdate: NMFCameraUpdate!
     
@@ -105,6 +106,32 @@ class HomeVC: UIViewController {
         
         self.navigationController?.pushViewController(nvc, animated: true)
     }
+    
+    
+    // MARK: - 데이터 로딩 중 Lottie 화면
+    
+    let loadingView = AnimationView(name: "loadingLottie")
+    
+    private func showLoadingLottie() {
+        print("start")
+        
+        loadingView.frame = CGRect(x: 0, y: 0, width: 300, height: 300)
+        loadingView.center = self.view.center
+        loadingView.contentMode = .scaleAspectFill
+        loadingView.loopMode = .loop
+        self.view.addSubview(loadingView)
+        
+        loadingView.play()
+    }
+ 
+    
+    private func stopLottieAnimation() {
+        print("end")
+        loadingView.pause()
+        loadingView.removeFromSuperview()
+    }
+    
+    
 
 }
 
@@ -205,15 +232,24 @@ extension HomeVC {
                 cafeCardVC.cafeAddressLabel.text = homeData.result[index].cafeAddress
                 cafeCardVC.universeCount = homeData.result[index].universeCount
                 
+                // 이전 마커체크
+                beforeMarker?.iconImage = beforeIS ? self.uniUnSelectedImage : unselectedImage
+               
+                
+                // 현재마커 변경
                 if homeData.result[index].isUniversed == true {
-                    self.beforeUni?.iconImage = self.uniUnSelectedImage
                     marker.iconImage = self.uniSelectedImage
-                    self.beforeUni = marker
-                } else {
-                    self.beforePlain?.iconImage = self.unselectedImage
-                    marker.iconImage = self.selectedImage
-                    self.beforePlain = marker
+                    beforeIS = true
+                    beforeMarker = marker
                 }
+                else {
+                    marker.iconImage = self.selectedImage
+                    beforeIS = false
+                    beforeMarker = marker
+                }
+                
+                
+                
                 cafeCardVC.view.isHidden = false
                 bottomCardVC.view.isHidden = true
                 return true
@@ -223,6 +259,8 @@ extension HomeVC {
         }
         markerReset(marker: filterMarkers)
     }
+    
+    
     func setFilterMarker() {
         print("home - setFilterMarker()")
         markerReset(marker: filterMarkers)
@@ -242,16 +280,22 @@ extension HomeVC {
                     cafeCardVC.cafeAddressLabel.text = filterData.result[index].cafeAddress
                     cafeCardVC.universeCount = filterData.result[index].universeCount
                     
-                    if filterData.result[index].isUniversed == true {
-                        cafeCardVC.buttonIsSelected = true
-                        self.beforeUni?.iconImage = self.uniUnSelectedImage
+                    // 이전 마커체크
+                    beforeMarker?.iconImage = beforeIS ? self.uniUnSelectedImage : unselectedImage
+                   
+                    
+                    // 현재마커 변경
+                    if homeData.result[index].isUniversed == true {
                         marker.iconImage = self.uniSelectedImage
-                        self.beforeUni = marker
-                    } else {
-                        self.beforePlain?.iconImage = self.unselectedImage
-                        marker.iconImage = self.selectedImage
-                        self.beforePlain = marker
+                        beforeIS = true
+                        beforeMarker = marker
                     }
+                    else {
+                        marker.iconImage = self.selectedImage
+                        beforeIS = false
+                        beforeMarker = marker
+                    }
+                    
                     
                     cafeCardVC.view.isHidden = false
                     bottomCardVC.view.isHidden = true
@@ -262,7 +306,10 @@ extension HomeVC {
             }
         markerReset(marker: markers)
     }
+    
+    
     func setService() {
+        showLoadingLottie()
         print("setService")
         HomeService.shared.GetMilkyHome() { [self] (networkResult) -> (Void) in
             switch networkResult {
@@ -286,6 +333,7 @@ extension HomeVC {
             case .networkFail:
                 print("networkFail")
             }
+            stopLottieAnimation()
         }
         
         
@@ -303,6 +351,8 @@ extension HomeVC {
         }
     }
     @objc func filterButtonDidTap(_ sender:DLRadioButton) {
+        showLoadingLottie()
+        
         if filterState[sender.tag] == true {
             sender.isSelected = false
 //            markerReset(marker: markers)
@@ -329,6 +379,7 @@ extension HomeVC {
                 case .networkFail:
                     print("networkFail")
                 }
+                stopLottieAnimation()
             }
             print(sender.icon, filterData.result.count)
 //            markerReset(marker: markers)
@@ -362,6 +413,8 @@ extension HomeVC {
             mapView.locationOverlay.subIcon = compassImage
         }
     }
+    
+    
     
     
     // MARK: - Bottom Card Setting GitHub -> https://github.com/brianadvent/InteractiveCardViewAnimation
@@ -510,16 +563,14 @@ extension HomeVC: NMFMapViewTouchDelegate {
         print("\(latlng)")
         cafeCardVC.view.isHidden = true
         bottomCardVC.view.isHidden = false
-        self.beforePlain?.iconImage = self.unselectedImage
-        self.beforeUni?.iconImage = self.uniUnSelectedImage
+        beforeMarker?.iconImage = beforeIS ? self.uniUnSelectedImage : unselectedImage
     }
     
     func mapView(_ mapView: NMFMapView, didTap symbol: NMFSymbol) -> Bool {
         print(symbol)
         cafeCardVC.view.isHidden = true
         bottomCardVC.view.isHidden = false
-        self.beforePlain?.iconImage = self.unselectedImage
-        self.beforeUni?.iconImage = self.uniUnSelectedImage
+        beforeMarker?.iconImage = beforeIS ? self.uniUnSelectedImage : unselectedImage
         return true
     }
 }
@@ -531,8 +582,7 @@ extension HomeVC: NMFMapViewCameraDelegate {
             mapView.locationOverlay.icon = currentLImage
             
 //            cafeCardVC.view.isHidden = true
-            self.beforePlain?.iconImage = self.unselectedImage
-            self.beforeUni?.iconImage = self.uniUnSelectedImage
+            beforeMarker?.iconImage = beforeIS ? self.uniUnSelectedImage : unselectedImage
             
         }
     }

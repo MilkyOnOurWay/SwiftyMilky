@@ -10,12 +10,16 @@ import XLPagerTabStrip
 
 class MyReportMainVC: UIViewController, IndicatorInfoProvider {
     
+    
     @IBOutlet var myReportTableView: UITableView!
+    @IBOutlet var imageView: UIImageView!
     @IBOutlet var mainLabel: UILabel!
     @IBOutlet var subLabel: UILabel!
     
+    
     var tabName: String = ""
     var nickName: String = ""
+    
     
     var myReportData = MyReportData(cancel: [MyReport](),
                                     ing: [MyReport](),
@@ -24,6 +28,7 @@ class MyReportMainVC: UIViewController, IndicatorInfoProvider {
     override func viewDidLoad() {
         super.viewDidLoad()
         setLabel()
+        setAuto()
         notiGather()
         registerXib()
         registerDelegate()
@@ -33,6 +38,21 @@ class MyReportMainVC: UIViewController, IndicatorInfoProvider {
     }
     override func viewWillAppear(_ animated: Bool) {
         setService()
+    }
+    func setAuto() {
+        let margins = view.layoutMarginsGuide
+        
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.topAnchor.constraint(equalTo: margins.topAnchor, constant: 143.0).isActive = true
+        imageView.centerXAnchor.constraint(equalTo: margins.centerXAnchor).isActive = true
+        
+        mainLabel.translatesAutoresizingMaskIntoConstraints = false
+        mainLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 40.0).isActive = true
+        mainLabel.centerXAnchor.constraint(equalTo: margins.centerXAnchor).isActive = true
+        
+        subLabel.translatesAutoresizingMaskIntoConstraints = false
+        subLabel.topAnchor.constraint(equalTo: mainLabel.bottomAnchor, constant: 16.0).isActive = true
+        subLabel.centerXAnchor.constraint(equalTo: margins.centerXAnchor).isActive = true
     }
 }
 
@@ -133,10 +153,10 @@ extension MyReportMainVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         // 다 비어있으면 테이블 숨기고 안내 화면 보여주기
-//        tableView.isHidden = true
+//        if myReportData.cancel.isEmpty && myReportData.ing.isEmpty && myReportData.done.isEmpty {
+//            tableView.isHidden = true
+//        }
         
-        
-        // 일단 이렇게 박아두기,,
         if indexPath.section == 0 { //닉네임
             guard let cell = tableView.dequeueReusableCell(withIdentifier: TopTVCell.identifier) as? TopTVCell else {
                 return UITableViewCell()

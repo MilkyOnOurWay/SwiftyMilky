@@ -110,7 +110,7 @@ extension NicknameChangeVC {
     
     @objc func changeButtonDidTap(){
         
-        // 여기서 서버코드 연결할 것
+        // 여기서 서버코드 연결할 것 
 //        let vc = UIStoryboard.init(name: "TabBar", bundle: nil).instantiateViewController(identifier: "TabBarController") as? TabBarController
 //        vc?.modalPresentationStyle = .fullScreen
 //        self.present(vc!, animated: true, completion: nil)

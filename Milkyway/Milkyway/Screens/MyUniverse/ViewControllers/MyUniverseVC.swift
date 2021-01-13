@@ -123,7 +123,7 @@ class MyUniverseVC: UIViewController{
     
     @objc private func stopLottieAnimation() {
         print("end")
-        loadingView.pause()
+        loadingView.stop()
         loadingView.removeFromSuperview()
     }
 }

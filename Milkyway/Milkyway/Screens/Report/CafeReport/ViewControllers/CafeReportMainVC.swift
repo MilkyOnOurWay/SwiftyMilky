@@ -7,6 +7,7 @@
 
 import UIKit
 import XLPagerTabStrip
+import Lottie
 
 class CafeReportMainVC: UIViewController, IndicatorInfoProvider {
     @IBOutlet weak var tableView: UITableView!
@@ -19,8 +20,8 @@ class CafeReportMainVC: UIViewController, IndicatorInfoProvider {
 
     var dummyData = Cafepost(cafeName: nil,
                              cafeAddress: nil,
-                             longitude: 126.8995926,
-                             latitude: 37.55638504,
+                             longitude: 0,
+                             latitude: 0,
                              honeyTip: [],
                              menu: [])
    
@@ -39,15 +40,33 @@ class CafeReportMainVC: UIViewController, IndicatorInfoProvider {
         delegateFunc()
         cellResister()
         notiGather()
-        
-        
-        print("카페\(resultCafeName)")
-        print("카페주소\(resultCafeAddress)")
 
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    // MARK: - 데이터 로딩 중 Lottie 화면
+    
+    let loadingView = AnimationView(name: "loadingLottie")
+    
+    private func showLoadingLottie() {
+        print("start")
+        
+        loadingView.frame = CGRect(x: 0, y: 0, width: 300, height: 300)
+        loadingView.center = self.view.center
+        loadingView.contentMode = .scaleAspectFill
+        loadingView.loopMode = .loop
+        self.view.addSubview(loadingView)
+        
+        loadingView.play()
+    }
+    
+    private func stopLottieAnimation() {
+        print("end")
+        loadingView.stop()
+        loadingView.removeFromSuperview()
     }
 
 
@@ -180,16 +199,6 @@ extension CafeReportMainVC: UITableViewDataSource {
 }
 
 extension CafeReportMainVC {
-
-//    func getCafe(){
-//
-//        dummyData.cafeName = resultCafeName
-//        dummyData.cafeAddress = resultCafeAddress
-//        dummyData.longitude = (longitude as NSString).doubleValue
-//        dummyData.latitude = (latitude as NSString).doubleValue
-//
-//    }
-    
     
     func notiGather() {
         NotificationCenter.default.addObserver(self, selector: #selector(addressPlus(_:)), name: Notification.Name("addressPlus"), object: nil)
@@ -245,6 +254,9 @@ extension CafeReportMainVC {
         let getCafeData: [String] = noti.object as! [String]
         dummyData.cafeName = getCafeData[0]
         dummyData.cafeAddress = getCafeData[1]
+        dummyData.longitude = Double(getCafeData[2])!
+        dummyData.latitude = Double(getCafeData[3])!
+        
         tableView.reloadSections(IndexSet(0...0), with: .automatic)
         checkReportOK()
         
@@ -314,7 +326,8 @@ extension CafeReportMainVC {
 
 
     @IBAction func reportCompleteClicked(_ sender: Any) {
-
+        showLoadingLottie()
+        
         ReportCafeService.shared.ReportCafe(cafepost: dummyData) { [self] responseData in
             switch responseData {
             case .success(let res):
@@ -340,7 +353,7 @@ extension CafeReportMainVC {
                 print("failure")
                 print("에러(error.localizedDescription)")
             }
-
+            stopLottieAnimation()
 
         }
 

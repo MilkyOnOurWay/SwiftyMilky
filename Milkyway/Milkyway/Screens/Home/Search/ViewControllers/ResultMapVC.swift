@@ -33,18 +33,17 @@ class ResultMapVC: UIViewController {
     var cameraUpdate: NMFCameraUpdate!
     var marker: NMFMarker? // [NMFMarker]()
     var beforeMarker: NMFMarker?
-    // 위치 더미로 잡아놓기
     var locationManager = CLLocationManager()
-    //var location = NMGLatLng(lat: 37.555351, lng: 126.902356)
-    // 필터링 결과 카드 뷰와 UI 동일하므로 그대로 재사용하기
     var cardVC: FilterResultCardVC!
     
+    var homeData = HomeData(result: [AroundCafe](), nickName: "")
     var moveState = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tabBarController?.tabBar.isHidden = false
         
+        setAllCafes()
         setDelegate()
         setMarker()
         setMap()
@@ -64,6 +63,7 @@ class ResultMapVC: UIViewController {
     
 }
 
+// MARK: - 익스텐션 모음
 extension ResultMapVC {
     
     
@@ -91,14 +91,35 @@ extension ResultMapVC {
     }
     func setMarker(){
         
-        let marker = NMFMarker(position: NMGLatLng(lat: latitude ?? 0.0, lng: longitude ?? 0.0), iconImage: selectedPickerImage)
+        //let marker = NMFMarker(position: NMGLatLng(lat: latitude ?? 0.0, lng: longitude ?? 0.0), iconImage: selectedPickerImage)
+        // UniSelectedImage, 유니버스인 경우
+        for index in 0..<homeData.result.count {
+            let marker: NMFMarker
+            if homeData.result[index].cafeName == cafeName && homeData.result[index].cafeAddress == cafeAddress {
+                print("aaa")
+                if homeData.result[index].isUniversed == true {
+                    marker = NMFMarker(position: NMGLatLng(lat: latitude ?? 0.0, lng: longitude ?? 0.0), iconImage: UniSelectedImage)
+                    cardVC.universeButton.setImage(UIImage(named: "btnUniverseAdded"), for: .normal)
+                    cardVC.universeCountLabel.textColor = UIColor(named: "Milky")
+                   
+                    marker.mapView = mapView
+                } else {
+                    marker = NMFMarker(position: NMGLatLng(lat: latitude ?? 0.0, lng: longitude ?? 0.0),iconImage: selectedPickerImage)
+                    cardVC.universeButton.setImage(UIImage(named: "btnUniverse"), for: .normal)
+                    cardVC.universeCountLabel.textColor = UIColor(named: "darkGrey")
+                   
+                    marker.mapView = mapView
+                }
+                print(homeData.result[index].universeCount)
+                cardVC.universeCountLabel.font = UIFont(name: "SF Pro Text Bold", size: 12.0)!
+                cardVC.universeCount = homeData.result[index].universeCount
+                cardVC.universeCountLabel.text = "\(homeData.result[index].universeCount)"
+                cardVC.cafeId = homeData.result[index].id
+            }
+        }
+       
         
-        //marker.isHideCollidedMarkers = true
-        print("카페이름\(cafeName)")
-        print("카페이름\(cafeAddress)")
-        print("카페이름\(businessHours)")
-
-        marker.mapView = mapView
+        
         
     }
     
@@ -192,6 +213,45 @@ extension ResultMapVC {
             mapView.locationOverlay.icon = currentImage
             mapView.locationOverlay.subIcon = compassImage
         }
+        
+        
+    }
+    
+    func checkUniverse(){
+        
+        
+        
+        
+        
+    }
+    
+    // MARK: - 홈 조회 API 연결 / 유니버스 여부 체크
+    @objc func setAllCafes(){
+        
+        print("setService")
+        HomeService.shared.GetMilkyHome() { [self] (networkResult) -> (Void) in
+         
+            switch networkResult {
+            case .success(let data):
+                if let loadData = data as? HomeData {
+                    print("success")
+                    homeData = loadData
+                    setMarker()
+                    let ad = UIApplication.shared.delegate as? AppDelegate
+                    print("nickName:\(homeData.nickName)")
+                    ad?.userNickNameInHere = homeData.nickName
+                   
+                }
+            case .requestErr( _):
+                print("requestErr")
+            case .pathErr:
+                print("pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        }
     }
     
     
@@ -201,6 +261,7 @@ extension ResultMapVC {
     
 }
 
+// MARK: - 네이버 지도 관련 Delegate
 extension ResultMapVC: NMFMapViewTouchDelegate {
     
     //

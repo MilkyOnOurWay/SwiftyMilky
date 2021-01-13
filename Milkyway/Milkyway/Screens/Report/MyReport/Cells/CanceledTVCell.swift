@@ -74,6 +74,9 @@ extension CanceledTVCell {
         
         collectionView.reloadData()
     }
+    @objc func sendRejectIDTap(_ sender: UICollectionView) {
+//        cancelData[indexPath.row].rejectReasonID!
+    }
 }
 extension CanceledTVCell: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -93,6 +96,8 @@ extension CanceledTVCell: UICollectionViewDelegateFlowLayout {
 extension CanceledTVCell: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         NotificationCenter.default.post(name: Notification.Name("cancelReason"), object: nil)
+
+        NotificationCenter.default.addObserver(self, selector: #selector(sendRejectIDTap), name: Notification.Name("sendRejectID"), object: nil)
     }
 }
 

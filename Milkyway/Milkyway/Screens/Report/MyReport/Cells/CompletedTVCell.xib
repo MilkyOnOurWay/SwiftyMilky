@@ -126,7 +126,11 @@
                 <outlet property="categoryLabel3" destination="Fm2-QV-w0L" id="cDN-2s-EV4"/>
                 <outlet property="categoryLabel4" destination="s7k-Ii-cif" id="BhE-pd-jdp"/>
                 <outlet property="dateLabel" destination="n5H-Bd-zkc" id="CHD-2V-ytN"/>
+                <outlet property="decafWidth" destination="MIB-F6-Pgl" id="Zfh-HS-fHv"/>
+                <outlet property="freeWidth" destination="wfB-9K-Wel" id="ZxK-mi-Xwz"/>
+                <outlet property="lowWidth" destination="Dxk-Ts-bn9" id="UOX-RS-GRe"/>
                 <outlet property="rootView" destination="H2p-sc-9uM" id="KvP-S9-W4O"/>
+                <outlet property="soyWidth" destination="6sA-Ex-o6U" id="Wsc-Sn-V05"/>
             </connections>
             <point key="canvasLocation" x="-254.34782608695653" y="103.79464285714285"/>
         </tableViewCell>

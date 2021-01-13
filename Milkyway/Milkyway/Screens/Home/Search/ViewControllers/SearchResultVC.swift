@@ -133,7 +133,9 @@ extension SearchResultVC: UITableViewDataSource {
         cell.cafeAddressLabel.sizeToFit()
         cell.setCell()
         
+        // MARK: - 값 없으면 데이터 없음 이미지 띄우기
         // 아무값도 못 받으면 이미지 띄우기
+        // 이거 수정해야해
         if (cell.searchedCafe == nil) {
             
             noResultImageView.isHidden = false

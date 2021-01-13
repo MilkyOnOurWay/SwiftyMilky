@@ -68,13 +68,15 @@ extension AddSearchResultVC {
         navigationController?.popViewController(animated: true)
     }
     
-    // 텍스트필드 삭제하기 버튼 누르면 텍스트 삭제해버리기
+    // 처음에는 검색, 이후 아이콘 변경 후 텍스트필드 삭제하기 버튼 누르면 텍스트 삭제해버리기
     @objc func deleteButtonClicked(){
         
     
     }
     
-    func searchCafe(_ cafe: String){
+    
+    
+    @objc func searchCafe(_ cafe: String){
         SearchCafeService.shared.searchReportCafe(cafe){
             responseData in
             switch responseData {
@@ -100,6 +102,7 @@ extension AddSearchResultVC {
     }
 }
 
+// MARK: - TableView Delegate
 extension AddSearchResultVC: UITableViewDelegate {
     
     
@@ -114,8 +117,7 @@ extension AddSearchResultVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = searchTableView.dequeueReusableCell(withIdentifier: "AddSearchTVC",for: indexPath) as! AddSearchTVC
-//        cell.cafeNameLabel.text = "카페이름"
-//        cell.cafeAddressLabel.text = "카페주소"
+
         cell.searchedCafe = searchedCafe?[indexPath.row]
         cell.cafeNameLabel.sizeToFit()
         cell.cafeAddressLabel.sizeToFit()
@@ -127,15 +129,9 @@ extension AddSearchResultVC: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // 셀 눌렀을 때 처음으로 이동
-        
-//        guard let nvc = UIStoryboard(name: "ReportTabBar", bundle: nil).instantiateViewController(identifier: "ReportTabBarViewController") as? ReportTabBarViewController else { return }
-//        self.navigationController?.pushViewController(nvc, animated: true)
-        
+      
         cafeName = searchedCafe?[indexPath.row].cafeName
         cafeAddress = searchedCafe?[indexPath.row].cafeAddress
-        
-        
         // 카페제보뷰로 다시 돌아가기
         NotificationCenter.default.post(name: Notification.Name("addressPlus"), object: [cafeName,cafeAddress])
         

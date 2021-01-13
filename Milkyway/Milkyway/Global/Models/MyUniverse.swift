@@ -18,7 +18,7 @@ struct UniverseData: Codable {
 // MARK: - UniverseCafe
 struct UniverseCafe: Codable {
     let id: Int
-    let cafeName, cafeAddress, businessHours: String
+    let cafeName, cafeAddress, businessHours: String?
     let longitude, latitude: Double
     
 }

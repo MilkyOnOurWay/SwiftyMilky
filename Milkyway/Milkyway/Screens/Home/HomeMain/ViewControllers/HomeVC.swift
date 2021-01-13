@@ -83,7 +83,6 @@ class HomeVC: UIViewController {
         delegateGather()
         setLocation()
         setMap()
-        setService()
         setMapButton()
         setFilterButton()
         setBottomCard()
@@ -92,8 +91,7 @@ class HomeVC: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-//        setService()
-//        setFilterButton()
+        setService()
     }
     // MARK: - 검색화면으로 이동
     @IBAction func searchBtnClicked(_ sender: Any) {
@@ -287,9 +285,6 @@ extension HomeVC {
                 print("networkFail")
             }
         }
-        
-        
-        
     }
     func setMapButton() {
         locationBtn.setImage(UIImage(named: "btnCurrentLocation"), for: UIControl.State.normal)

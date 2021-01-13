@@ -22,8 +22,10 @@ class CanceledTVCell: UITableViewCell {
     let horizonInset: CGFloat = 20
     let rightSpacing: CGFloat = 20
     let lineSpacing: CGFloat = 5
-    var count : Int = 0 //cell 개수 받아오기
     
+    var count : Int = 0 //cell 개수 받아오기
+    var cafeName: String = ""
+    var created_at: String = ""
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -46,7 +48,7 @@ extension CanceledTVCell: UICollectionViewDataSource {
             return UICollectionViewCell()
         }
         cell.setCell(backName: "canceledReport")
-        cell.setLabel(storeName: "현빈스빈스카페", date: "2020.11.30", color: "lightGrey")
+        cell.setLabel(storeName: cafeName, date: created_at, color: "lightGrey")
         return cell
     }
     
@@ -76,10 +78,11 @@ extension CanceledTVCell: UICollectionViewDelegate {
 
 extension CanceledTVCell {
     
-    func setCell(count: Int) {
+    func setCell(count: Int, cafeName: String, created_at: String) {
         
         self.count = count
-        
+        self.cafeName = cafeName
+        self.created_at = created_at
         
         canceledLabel.text = "취소된 제보"
         canceledLabel.font = UIFont(name:"SFProText-Bold", size: 16.0)

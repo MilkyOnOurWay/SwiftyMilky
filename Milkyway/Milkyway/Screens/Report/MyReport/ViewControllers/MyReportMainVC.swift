@@ -19,7 +19,7 @@ class MyReportMainVC: UIViewController, IndicatorInfoProvider {
     
     var tabName: String = ""
     var nickName: String = ""
-    
+    var rejectReason = 0
     
     var myReportData = MyReportData(cancel: [MyReport](),
                                     ing: [MyReport](),
@@ -119,13 +119,15 @@ extension MyReportMainVC {
             case .networkFail:
                 print("networkFail")
             }
-        }    }
-    @objc func cancelReasonTap() {
-        print("MyReport - cancelReason")
+        }
         
+    }
+    @objc func cancelReasonTap(_ sender: UITableView) {
+        print("MyReport - cancelReason")
         guard let cancelVC = UIStoryboard(name: "MyReportMain", bundle: nil).instantiateViewController(withIdentifier:"CancelReasonVC") as? CancelReasonVC else {
             return
         }
+        cancelVC.rejectReasonId = rejectReason
         cancelVC.modalPresentationStyle = .overCurrentContext
         present(cancelVC, animated: false, completion: nil)
     }
@@ -169,6 +171,8 @@ extension MyReportMainVC: UITableViewDataSource {
                 return UITableViewCell()
             }
             cell.setCell(cancelData: myReportData.cancel)
+            print(myReportData.cancel)
+//            rejectReason = myReportData.cancel[indexPath.row].rejectReasonID!
             
             print("여긴 취소된 제본데요,,\(myReportData.cancel.count)")
             // 취소된 제보 없애면 hidden하고 높이 0 만들기
@@ -203,16 +207,16 @@ extension MyReportMainVC: UITableViewDataSource {
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: CompletedTVCell.identifier) as? CompletedTVCell else {
                     return UITableViewCell()
                 }
-                cell.setCell()
+                cell.setCell(category: myReportData.done[indexPath.row].category!)
                 cell.dateLabel.text = myReportData.done[indexPath.row].createdAt
                 cell.cafeNameLabel.text = myReportData.done[indexPath.row].cafeName
                 cell.addressLabel.text = myReportData.done[indexPath.row].cafeAddress
                 
-                let category = myReportData.done[indexPath.row].category!
+//                let category = myReportData.done[indexPath.row].category!
                 print(myReportData.done[indexPath.row].category!.count)
-                for i in 0...myReportData.done[indexPath.row].category!.count-1 {
-                    cell.viewWithTag(category[i])?.isHidden = false
-                }
+//                for i in 0...myReportData.done[indexPath.row].category!.count-1 {
+//                    cell.viewWithTag(category[i])?.isHidden = false
+//                }
                 cell.selectionStyle = .none
                 return cell
             }

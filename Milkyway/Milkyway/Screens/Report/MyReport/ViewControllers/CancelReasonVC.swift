@@ -17,6 +17,7 @@ class CancelReasonVC: UIViewController {
     @IBOutlet var subLabel: UILabel!
     @IBOutlet var confirmBtn: UIButton!
     
+    var rejectReasonId: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +40,9 @@ extension CancelReasonVC {
     }
     
     func setLabel() {
+//        if rejectReasonId == 1 {
+//
+//        }
         mainLabel.textAlignment = .center
         mainLabel.text = "제보가 취소 되었습니다"
         mainLabel.font = UIFont(name:"SFProText-Bold", size: 20.0)

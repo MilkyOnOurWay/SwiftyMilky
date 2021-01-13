@@ -14,6 +14,7 @@ class AddSearchResultVC: UIViewController {
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var searchTableView: UITableView!
     
+    var buttonIsSelected: Bool = true
     var cafeResult: String?
     private var searchedCafe: [CafeResult]?
     
@@ -27,7 +28,7 @@ class AddSearchResultVC: UIViewController {
         setTextField()
         setBackButton()
         setDeleteButton()
-        searchCafe(cafeResult ?? "")
+        //searchCafe(cafeResult ?? "")
         // Do any additional setup after loading the view.
     }
     
@@ -49,7 +50,7 @@ extension AddSearchResultVC {
     
     func setTextField(){
         
-        searchTextField.text = cafeResult ?? ""
+        //searchTextField.text = cafeResult ?? ""
         searchTextField.delegate = self
     }
     
@@ -60,6 +61,7 @@ extension AddSearchResultVC {
     // 텍스트필드 삭제하기 버튼 누르면 텍스트 삭제해버리기
     func setDeleteButton(){
         
+        deleteButton.setImage(UIImage(named: "icSearch"), for: .normal)
         deleteButton.addTarget(self, action: #selector(deleteButtonClicked), for: .touchUpInside)
     }
     
@@ -71,10 +73,25 @@ extension AddSearchResultVC {
     // 처음에는 검색, 이후 아이콘 변경 후 텍스트필드 삭제하기 버튼 누르면 텍스트 삭제해버리기
     @objc func deleteButtonClicked(){
         
+        cafeResult = searchTextField.text
+        buttonIsSelected ? search(cafeResult ?? "") : delete()
+        print(buttonIsSelected)
     
     }
     
+    func search(_ cafe: String){
+        
+        searchCafe(cafe)
+        deleteButton.setImage(UIImage(named: "btnClear"), for: .normal)
+        buttonIsSelected = false
+    }
     
+    func delete(){
+        
+        deleteButton.setImage(UIImage(named: "icSearch"), for: .normal)
+        buttonIsSelected = true
+        searchTextField.text = ""
+    }
     
     @objc func searchCafe(_ cafe: String){
         SearchCafeService.shared.searchReportCafe(cafe){
@@ -121,7 +138,7 @@ extension AddSearchResultVC: UITableViewDataSource {
         cell.searchedCafe = searchedCafe?[indexPath.row]
         cell.cafeNameLabel.sizeToFit()
         cell.cafeAddressLabel.sizeToFit()
-        cell.cafeStateImageView.isHidden = true
+        cell.cafeStateImageView.isHidden = true // 이미 등록된 카페 처리
         cell.setCell()
         cafeName = cell.searchedCafe?.cafeName
         cafeAddress = cell.searchedCafe?.cafeAddress

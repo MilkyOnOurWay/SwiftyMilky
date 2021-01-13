@@ -70,7 +70,8 @@ class HomeVC: UIViewController {
     var markers = [NMFMarker]()
     var filterMarkers = [NMFMarker]()
     
-    var beforeMarker: NMFMarker?
+    var beforePlain: NMFMarker?
+    var beforeUni: NMFMarker?
     
     var cameraUpdate: NMFCameraUpdate!
     
@@ -189,33 +190,37 @@ extension HomeVC {
         markerReset(marker: markers)
         markers = []
         for index in 0..<homeData.result.count {
-
-            let marker = NMFMarker(position: NMGLatLng(lat: homeData.result[index].latitude, lng: homeData.result[index].longitude), iconImage: unselectedImage)
-//                marker.isHideCollidedMarkers = true
-                marker.touchHandler = { [self] (overlay: NMFOverlay) -> Bool in
-                    cafeCardVC.cafeNameLabel.text = homeData.result[index].cafeName
-                    cafeCardVC.cafeTimeLabel.text = homeData.result[index].businessHours
-                    cafeCardVC.cafeAddressLabel.text = homeData.result[index].cafeAddress
-                    cafeCardVC.addCountLabel.text = String(homeData.result[index].universeCount)
-                    
-                    if homeData.result[index].isUniversed == true {
-//                        cafeCardVC.addCountLabel.textColor = UIColor(named: "Milky")
-//                        cafeCardVC.addButton.isSelected = true
-                        self.beforeMarker?.iconImage = self.uniUnSelectedImage
-                        marker.iconImage = self.uniSelectedImage
-                    } else {
-                        self.beforeMarker?.iconImage = self.unselectedImage
-                        marker.iconImage = self.selectedImage
-                    }
-                    
-                    self.beforeMarker = marker
-                    cafeCardVC.view.isHidden = false
-                    bottomCardVC.view.isHidden = true
-                    return true
-                }
-                marker.mapView = mapView
-                markers.append(marker)
+            let marker: NMFMarker
+            
+            if homeData.result[index].isUniversed == true {
+                marker = NMFMarker(position: NMGLatLng(lat: homeData.result[index].latitude, lng: homeData.result[index].longitude), iconImage: uniUnSelectedImage)
+            } else {
+                marker = NMFMarker(position: NMGLatLng(lat: homeData.result[index].latitude, lng: homeData.result[index].longitude), iconImage: unselectedImage)
             }
+            
+            //                marker.isHideCollidedMarkers = true
+            marker.touchHandler = { [self] (overlay: NMFOverlay) -> Bool in
+                cafeCardVC.cafeNameLabel.text = homeData.result[index].cafeName
+                cafeCardVC.cafeTimeLabel.text = homeData.result[index].businessHours
+                cafeCardVC.cafeAddressLabel.text = homeData.result[index].cafeAddress
+                cafeCardVC.addCountLabel.text = String(homeData.result[index].universeCount)
+                
+                if homeData.result[index].isUniversed == true {
+                    self.beforeUni?.iconImage = self.uniUnSelectedImage
+                    marker.iconImage = self.uniSelectedImage
+                    self.beforeUni = marker
+                } else {
+                    self.beforePlain?.iconImage = self.unselectedImage
+                    marker.iconImage = self.selectedImage
+                    self.beforePlain = marker
+                }
+                cafeCardVC.view.isHidden = false
+                bottomCardVC.view.isHidden = true
+                return true
+            }
+            marker.mapView = mapView
+            markers.append(marker)
+        }
         markerReset(marker: filterMarkers)
     }
     func setFilterMarker() {
@@ -223,8 +228,12 @@ extension HomeVC {
         markerReset(marker: filterMarkers)
         filterMarkers = []
         for index in 0..<filterData.result.count {
-            //result
-            let marker = NMFMarker(position: NMGLatLng(lat: filterData.result[index].latitude, lng: filterData.result [index].longitude), iconImage: unselectedImage)
+            let marker: NMFMarker
+            if filterData.result[index].isUniversed == true {
+                marker = NMFMarker(position: NMGLatLng(lat: filterData.result[index].latitude, lng: filterData.result [index].longitude), iconImage: uniUnSelectedImage)
+            } else {
+                marker = NMFMarker(position: NMGLatLng(lat: filterData.result[index].latitude, lng: filterData.result [index].longitude), iconImage: unselectedImage)
+            }
 //                marker.isHideCollidedMarkers = true
                 marker.touchHandler = { [self] (overlay: NMFOverlay) -> Bool in
                     
@@ -235,14 +244,15 @@ extension HomeVC {
                     if filterData.result[index].isUniversed == true {
 //                        cafeCardVC.addCountLabel.textColor = UIColor(named: "Milky")
 //                        cafeCardVC.addButton.isSelected = true
-                        self.beforeMarker?.iconImage = self.uniUnSelectedImage
+                        self.beforeUni?.iconImage = self.uniUnSelectedImage
                         marker.iconImage = self.uniSelectedImage
+                        self.beforeUni = marker
                     } else {
-                        self.beforeMarker?.iconImage = self.unselectedImage
+                        self.beforePlain?.iconImage = self.unselectedImage
                         marker.iconImage = self.selectedImage
+                        self.beforePlain = marker
                     }
                     
-                    self.beforeMarker = marker
                     cafeCardVC.view.isHidden = false
                     bottomCardVC.view.isHidden = true
                     return true
@@ -312,6 +322,8 @@ extension HomeVC {
                     print("requestErr")
                 case .pathErr:
                     print("pathErr")
+                    markerReset(marker: filterMarkers)
+                    markerReset(marker: markers)
                 case .serverErr:
                     print("serverErr")
                 case .networkFail:
@@ -498,14 +510,16 @@ extension HomeVC: NMFMapViewTouchDelegate {
         print("\(latlng)")
         cafeCardVC.view.isHidden = true
         bottomCardVC.view.isHidden = false
-        self.beforeMarker?.iconImage = self.unselectedImage
+        self.beforePlain?.iconImage = self.unselectedImage
+        self.beforeUni?.iconImage = self.uniUnSelectedImage
     }
     
     func mapView(_ mapView: NMFMapView, didTap symbol: NMFSymbol) -> Bool {
         print(symbol)
         cafeCardVC.view.isHidden = true
         bottomCardVC.view.isHidden = false
-        self.beforeMarker?.iconImage = self.unselectedImage
+        self.beforePlain?.iconImage = self.unselectedImage
+        self.beforeUni?.iconImage = self.uniUnSelectedImage
         return true
     }
 }
@@ -517,20 +531,9 @@ extension HomeVC: NMFMapViewCameraDelegate {
             mapView.locationOverlay.icon = currentLImage
             
 //            cafeCardVC.view.isHidden = true
-            self.beforeMarker?.iconImage = self.unselectedImage
+            self.beforePlain?.iconImage = self.unselectedImage
+            self.beforeUni?.iconImage = self.uniUnSelectedImage
             
         }
-      
     }
-    
-//    func mapView(_ mapView: NMFMapView, cameraIsChangingByReason reason: Int) {
-//
-//    }
-//
-//    func mapView(_ mapView: NMFMapView, cameraDidChangeByReason reason: Int, animated: Bool) {
-//
-//    }
-//
-//    func mapViewCameraIdle(_ mapView: NMFMapView){
-//    }
 }

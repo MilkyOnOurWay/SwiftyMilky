@@ -30,8 +30,6 @@
 		6B869C4425A1E8E00068BFD2 /* DeletePlaceConfirmVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B869C4325A1E8E00068BFD2 /* DeletePlaceConfirmVC.swift */; };
 		6B869C5025A2F9960068BFD2 /* CardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B869C4E25A2F9960068BFD2 /* CardVC.swift */; };
 		6B869C5125A2F9960068BFD2 /* CardVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B869C4F25A2F9960068BFD2 /* CardVC.xib */; };
-		6B92F8E225AB82A50050EEEC /* CafeCardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B92F8E025AB82A50050EEEC /* CafeCardVC.swift */; };
-		6B92F8E325AB82A50050EEEC /* CafeCardVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B92F8E125AB82A50050EEEC /* CafeCardVC.xib */; };
 		6B96A13625A9C809004E529D /* CancelReasonVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B96A13525A9C809004E529D /* CancelReasonVC.swift */; };
 		6BD05A6B25A41FFE00B2643F /* CompletedTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BD05A6525A41FFE00B2643F /* CompletedTVCell.xib */; };
 		6BD05A6C25A41FFE00B2643F /* TopTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BD05A6625A41FFE00B2643F /* TopTVCell.xib */; };
@@ -171,8 +169,6 @@
 		6B869C4325A1E8E00068BFD2 /* DeletePlaceConfirmVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeletePlaceConfirmVC.swift; sourceTree = "<group>"; };
 		6B869C4E25A2F9960068BFD2 /* CardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardVC.swift; sourceTree = "<group>"; };
 		6B869C4F25A2F9960068BFD2 /* CardVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardVC.xib; sourceTree = "<group>"; };
-		6B92F8E025AB82A50050EEEC /* CafeCardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeCardVC.swift; sourceTree = "<group>"; };
-		6B92F8E125AB82A50050EEEC /* CafeCardVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CafeCardVC.xib; sourceTree = "<group>"; };
 		6B96A13525A9C809004E529D /* CancelReasonVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelReasonVC.swift; sourceTree = "<group>"; };
 		6BD05A6525A41FFE00B2643F /* CompletedTVCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CompletedTVCell.xib; sourceTree = "<group>"; };
 		6BD05A6625A41FFE00B2643F /* TopTVCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopTVCell.xib; sourceTree = "<group>"; };
@@ -617,8 +613,6 @@
 				6B869C4E25A2F9960068BFD2 /* CardVC.swift */,
 				6B869C4F25A2F9960068BFD2 /* CardVC.xib */,
 				F2242A27259BB02100455604 /* Home.storyboard */,
-				6B92F8E025AB82A50050EEEC /* CafeCardVC.swift */,
-				6B92F8E125AB82A50050EEEC /* CafeCardVC.xib */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -984,7 +978,6 @@
 				F2BA62EA2598DE6400A49020 /* Assets.xcassets in Resources */,
 				D154440025A33AF9007773BF /* CafeNameResultCell.xib in Resources */,
 				F2242A28259BB02100455604 /* Home.storyboard in Resources */,
-				6B92F8E325AB82A50050EEEC /* CafeCardVC.xib in Resources */,
 				D154440525A33B05007773BF /* CafeMenusCell.xib in Resources */,
 				D1F2284D259F746D0018C472 /* CafeReportMain.storyboard in Resources */,
 				F2485EA925A8E60A003E3895 /* UniverseCardVC.xib in Resources */,
@@ -1091,7 +1084,6 @@
 				F2BA62DE2598DE5F00A49020 /* AppDelegate.swift in Sources */,
 				F2C0642225A8BCD100BDD16D /* UserService.swift in Sources */,
 				F2242A24259BAFFC00455604 /* HomeVC.swift in Sources */,
-				6B92F8E225AB82A50050EEEC /* CafeCardVC.swift in Sources */,
 				F2138D5425AC4B2A00736CAA /* SettingTVCell.swift in Sources */,
 				F240771725A731EB008B691B /* SplashVC.swift in Sources */,
 				F215A21525ACD77000FB7D86 /* SearchCafeService.swift in Sources */,
@@ -1276,7 +1268,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = G6CPR8NL67;
+				DEVELOPMENT_TEAM = QPUG3J4E4B;
 				INFOPLIST_FILE = "Milkyway/Global/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1297,7 +1289,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = G6CPR8NL67;
+				DEVELOPMENT_TEAM = QPUG3J4E4B;
 				INFOPLIST_FILE = "Milkyway/Global/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (

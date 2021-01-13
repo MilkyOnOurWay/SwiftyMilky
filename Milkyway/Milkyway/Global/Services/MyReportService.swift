@@ -9,14 +9,14 @@ import Foundation
 import Alamofire
 
 struct MyReportService {
-//
-//    private init() {}
-//
+
+    private init() {}
+
 //    static let shared = HomeService()
+
+//    func GetMyReport(completion: @escaping (NetworkResult<Any>) -> Void) {
 //
-//    func GetMilkyHome(completion: @escaping (NetworkResult<Any>) -> Void) {
-//
-//        let URL = APIConstants.homeResult
+//        let URL = APIConstants.showMyReport
 //        print(URL)
 //        let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWR4Ijo1LCJpYXQiOjE2MDk3Nzg0NjksImV4cCI6MTYxMjM3MDQ2OSwiaXNzIjoibWlsa3lXYXkifQ.c2JAdyd0pGQzbmT0E_yl51eAGkcO71YfokwJebqqDME"
 //
@@ -67,5 +67,5 @@ struct MyReportService {
 //
 //        }
 //    }
-    
+//    
 }

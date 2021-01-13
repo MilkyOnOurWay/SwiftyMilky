@@ -15,12 +15,11 @@ class MyReportMainVC: UIViewController, IndicatorInfoProvider {
     @IBOutlet var subLabel: UILabel!
     
     var tabName: String = ""
+    var nickName: String = ""
     
     // 테이블 셀 hidden 테스트용
-    var cancelArr: [String] = []
-    var inProgressArr: [String] = []
-    var completedArr: [String] = []
-    
+    var myReportData = MyReportData(cancel: [MyReport](), ing: [MyReport](), done: [MyReport]())
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setLabel()
@@ -28,7 +27,9 @@ class MyReportMainVC: UIViewController, IndicatorInfoProvider {
         registerXib()
         registerDelegate()
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        setService()
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -73,6 +74,30 @@ extension MyReportMainVC {
         myReportTableView.register(inProgressTVCellNib, forCellReuseIdentifier: "InProgressTVCell")
         // 완료된 제보
         myReportTableView.register(completedTVCellNib, forCellReuseIdentifier: "CompletedTVCell")
+    }
+    func setService() {
+        print("my report setService")
+        MyReportService.shared.GetMyReport() { [self] (networkResult) -> (Void) in
+            switch networkResult {
+            case .success(let data):
+                if let loadData = data as? MyReportData {
+                    print("success")
+                    myReportData = loadData
+                    // 유저닉네임 전역변수로 설정
+//                    let ad = UIApplication.shared.delegate as? AppDelegate
+//                    ad?.userNickNameInHere =
+                    print(myReportData.cancel)
+                    }
+            case .requestErr( _):
+                print("requestErr")
+            case .pathErr:
+                print("pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        }
     }
     @objc func cancelReasonTap() {
         print("MyReport - cancelReason")
@@ -123,12 +148,11 @@ extension MyReportMainVC: UITableViewDataSource {
                 return UITableViewCell()
             }
             // 취소된 제보 없애면 hidden하고 높이 0 만들기
-//            if cancelArr.count == 0 {
-//                cell.isHidden = true
-//                cell.rootHeight.constant = 0
-//            }
-            
-            cell.setCell(count: 2) //cancelArr.count)
+            if myReportData.cancel.count == 0 {
+                cell.isHidden = true
+                cell.rootHeight.constant = 0
+            }
+//            cell.setCell(count: myReportData.cancel.count)
             cell.selectionStyle = .none
             return cell
         } else if indexPath.section == 2 { // 진행중인 제보
@@ -141,7 +165,7 @@ extension MyReportMainVC: UITableViewDataSource {
             cell.selectionStyle = .none
             return cell
         } else { // 완료된 제보
-            if completedArr.count == 0 {
+            if  indexPath.row == 0 { //completedArr.count
                 let cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: nil)
                 cell.textLabel!.text = "\n\n현재 완료된 제보가 없습니다!"
                 cell.textLabel!.numberOfLines = 3

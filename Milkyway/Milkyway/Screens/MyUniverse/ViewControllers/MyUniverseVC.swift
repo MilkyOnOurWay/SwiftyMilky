@@ -57,9 +57,8 @@ class MyUniverseVC: UIViewController{
     
     override func viewWillAppear(_ animated: Bool) {
         print("myUniverse - viewWillAppear()")
-        setCamera()
         serverlinked()
-        gettingdark()
+        
         
 
     }
@@ -71,6 +70,8 @@ class MyUniverseVC: UIViewController{
         notiGather()
         delegateGather()
         setMap()
+        gettingdark()
+        setCamera()
         setMapButton()
         setBottomCard()
         setFirstCardView()
@@ -288,6 +289,7 @@ extension MyUniverseVC {
                     cardVC.cafeTimeLabel.text = myUniverse.aroundUniverse[index].businessHours
                     cardVC.cafeAddressLabel.text = myUniverse.aroundUniverse[index].cafeAddress
                     selectedCardCafeID = myUniverse.aroundUniverse[index].id
+                    cardVC.cafeID = selectedCardCafeID
                     cardVC.view.isHidden = false
                     return true
                 }

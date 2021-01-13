@@ -47,11 +47,9 @@ class UniverseCardVC: UIViewController {
                         dvc.testCafe = loadData
                         dvc.like = true
                         self.navigationController?.pushViewController(dvc, animated: true)
-                        // 로딩뷰 끝
-                        NotificationCenter.default.post(name: Notification.Name("stoplottieuni"), object: nil)
                         
-                        //다시 클릭 활성화
-                        self.wideBtn.isUserInteractionEnabled = true
+                        
+                        
                     }
                 }
             case .requestErr( _):
@@ -64,8 +62,10 @@ class UniverseCardVC: UIViewController {
             case .networkFail:
                 print("networkFail")
             }
-            
-            
+            // 로딩뷰 끝
+            NotificationCenter.default.post(name: Notification.Name("stoplottieuni"), object: nil)
+            //다시 클릭 활성화
+            self.wideBtn.isUserInteractionEnabled = true
         }
         
     }

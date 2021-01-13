@@ -21,6 +21,9 @@ class AddSearchResultVC: UIViewController {
     // 전달하는 변수
     var cafeName: String?
     var cafeAddress: String?
+    var longitude: String?
+    var latitude: String?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -140,8 +143,6 @@ extension AddSearchResultVC: UITableViewDataSource {
         cell.cafeAddressLabel.sizeToFit()
         cell.cafeStateImageView.isHidden = true // 이미 등록된 카페 처리
         cell.setCell()
-        cafeName = cell.searchedCafe?.cafeName
-        cafeAddress = cell.searchedCafe?.cafeAddress
         return cell
     }
     
@@ -149,8 +150,11 @@ extension AddSearchResultVC: UITableViewDataSource {
       
         cafeName = searchedCafe?[indexPath.row].cafeName
         cafeAddress = searchedCafe?[indexPath.row].cafeAddress
+        longitude = searchedCafe?[indexPath.row].longitude
+        latitude = searchedCafe?[indexPath.row].latitude
+        
         // 카페제보뷰로 다시 돌아가기
-        NotificationCenter.default.post(name: Notification.Name("addressPlus"), object: [cafeName,cafeAddress])
+        NotificationCenter.default.post(name: Notification.Name("addressPlus"), object: [cafeName,cafeAddress,longitude,latitude])
         
         navigationController?.popToRootViewController(animated: true)
     }

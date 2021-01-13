@@ -170,7 +170,7 @@ extension MyReportMainVC: UITableViewDataSource {
             cell.selectionStyle = .none
             return cell
         } else { // 완료된 제보
-            if  indexPath.row == 0 { //completedArr.count
+            if myReportData.done.count == 0 {
                 let cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: nil)
                 cell.textLabel!.text = "\n\n현재 완료된 제보가 없습니다!"
                 cell.textLabel!.numberOfLines = 3
@@ -183,8 +183,16 @@ extension MyReportMainVC: UITableViewDataSource {
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: CompletedTVCell.identifier) as? CompletedTVCell else {
                     return UITableViewCell()
                 }
-                cell.setCardView()
-                cell.setLabel()
+                cell.setCell()
+                cell.dateLabel.text = myReportData.done[indexPath.row].createdAt
+                cell.cafeNameLabel.text = myReportData.done[indexPath.row].cafeName
+                cell.addressLabel.text = myReportData.done[indexPath.row].cafeAddress
+                
+                let category = myReportData.done[indexPath.row].category!
+                print(myReportData.done[indexPath.row].category!.count)
+                for i in 0...myReportData.done[indexPath.row].category!.count-1 {
+                    cell.viewWithTag(category[i])?.isHidden = false
+                }
                 cell.selectionStyle = .none
                 return cell
             }

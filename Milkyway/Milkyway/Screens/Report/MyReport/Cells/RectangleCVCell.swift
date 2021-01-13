@@ -26,11 +26,9 @@ class RectangleCVCell: UICollectionViewCell {
     
     func setLabel(storeName: String, date: String, color: String) {
         storeNameLabel.text = storeName
-        storeNameLabel.font = UIFont(name:"SFProText-Bold", size: 12.0)
         storeNameLabel.textColor = UIColor(named: color)
         
         dateLabel.text = date
-        dateLabel.font = UIFont(name:"SFProText-Regular", size: 8.0)
         dateLabel.textColor = UIColor(named: color)
     }
 

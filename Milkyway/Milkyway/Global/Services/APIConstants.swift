@@ -27,7 +27,7 @@ struct APIConstants {
     static let homeResult = BaseURL + "home/milkyHome"
     
     // GET 카테고리별 홈 home/categoryHome/:categoryId
-    static let categoryHome = BaseURL + "home/categoryHome/"
+    static let categoryHome = BaseURL + "home/"
     
     // POST 마이유니버스 추가 universe/:universeId
     static let addUniverse = BaseURL + "universe/universeOn"

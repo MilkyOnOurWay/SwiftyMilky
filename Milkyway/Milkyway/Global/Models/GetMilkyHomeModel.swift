@@ -24,14 +24,15 @@ struct AroundCafe: Codable {
 
 // MARK: - CategoryData
 struct CategoryData: Codable {
-    let categoryCafe: [CategoryCafe]
+    let result: [CategoryCafe]
     let nickName: String
 }
 
 // MARK: - CategoryCafe
 struct CategoryCafe: Codable {
-    let id: Int
+    let id, universeCount: Int
     let cafeName, cafeAddress, businessHours: String
     let longitude, latitude: Double
-    let isReal: Bool
+    let isUniversed: Bool
 }
+

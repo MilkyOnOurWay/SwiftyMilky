@@ -29,59 +29,55 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fBs-CR-iIQ">
                         <rect key="frame" x="20" y="8" width="335" height="130"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Cafe name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qHd-Se-ed8">
-                                <rect key="frame" x="16" y="41" width="85.5" height="19.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cafe name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qHd-Se-ed8">
+                                <rect key="frame" x="16" y="43" width="85.5" height="19.5"/>
                                 <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="THc-Zg-xkq">
-                                <rect key="frame" x="16" y="64.5" width="45.5" height="14.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="THc-Zg-xkq">
+                                <rect key="frame" x="16" y="66.5" width="45.5" height="14.5"/>
                                 <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="12"/>
                                 <color key="textColor" red="0.59215686274509804" green="0.59215686274509804" blue="0.59215686274509804" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n5H-Bd-zkc">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n5H-Bd-zkc">
                                 <rect key="frame" x="16" y="16" width="25.5" height="15"/>
                                 <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="디카페인" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ekz-Ck-Uof" customClass="CustomLabel" customModule="Milkyway" customModuleProvider="target">
-                                <rect key="frame" x="16" y="87" width="68" height="27"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dyi-a9-bGE" customClass="CustomLabel" customModule="Milkyway" customModuleProvider="target">
+                                <rect key="frame" x="16" y="88" width="70" height="26"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="68" id="MIB-F6-Pgl"/>
-                                    <constraint firstAttribute="height" constant="27" id="daY-zT-eUR"/>
+                                    <constraint firstAttribute="height" constant="26" id="zov-Mv-wVK"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="두유" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y0E-UQ-M0n" customClass="CustomLabel" customModule="Milkyway" customModuleProvider="target">
-                                <rect key="frame" x="92" y="87" width="49" height="27"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QWt-ib-VMB" customClass="CustomLabel" customModule="Milkyway" customModuleProvider="target">
+                                <rect key="frame" x="94" y="88" width="70" height="26"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="49" id="6sA-Ex-o6U"/>
-                                    <constraint firstAttribute="height" constant="27" id="qFG-oJ-yxP"/>
+                                    <constraint firstAttribute="height" constant="26" id="v4D-h0-Mat"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="저지방우유" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fm2-QV-w0L" customClass="CustomLabel" customModule="Milkyway" customModuleProvider="target">
-                                <rect key="frame" x="149" y="87" width="79" height="27"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bkh-1U-OF0" customClass="CustomLabel" customModule="Milkyway" customModuleProvider="target">
+                                <rect key="frame" x="172" y="88" width="70" height="26"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="79" id="Dxk-Ts-bn9"/>
-                                    <constraint firstAttribute="height" constant="27" id="iJw-ye-AHG"/>
+                                    <constraint firstAttribute="height" constant="26" id="pAK-fa-YbN"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="무지방우유" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s7k-Ii-cif" customClass="CustomLabel" customModule="Milkyway" customModuleProvider="target">
-                                <rect key="frame" x="236" y="87" width="79" height="27"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mff-0E-1A1" customClass="CustomLabel" customModule="Milkyway" customModuleProvider="target">
+                                <rect key="frame" x="250" y="88" width="70" height="26"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="27" id="X1W-BT-tpc"/>
-                                    <constraint firstAttribute="width" constant="79" id="wfB-9K-Wel"/>
+                                    <constraint firstAttribute="height" constant="26" id="5YW-8k-8ai"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -90,22 +86,17 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="s7k-Ii-cif" firstAttribute="leading" secondItem="Fm2-QV-w0L" secondAttribute="trailing" constant="8" id="20W-6I-vu8"/>
-                            <constraint firstItem="Y0E-UQ-M0n" firstAttribute="leading" secondItem="ekz-Ck-Uof" secondAttribute="trailing" constant="8" id="2sN-rk-vKU"/>
                             <constraint firstAttribute="height" constant="130" id="5mS-Pi-Awa"/>
-                            <constraint firstItem="ekz-Ck-Uof" firstAttribute="top" secondItem="THc-Zg-xkq" secondAttribute="bottom" constant="8" id="8og-oy-H8e"/>
-                            <constraint firstAttribute="bottom" secondItem="Y0E-UQ-M0n" secondAttribute="bottom" constant="16" id="JlZ-VN-pXu"/>
-                            <constraint firstAttribute="bottom" secondItem="ekz-Ck-Uof" secondAttribute="bottom" constant="16" id="K9z-nE-xvC"/>
+                            <constraint firstAttribute="bottom" secondItem="QWt-ib-VMB" secondAttribute="bottom" constant="16" id="DOf-bA-6wb"/>
+                            <constraint firstAttribute="bottom" secondItem="Mff-0E-1A1" secondAttribute="bottom" constant="16" id="I5h-Rn-BKP"/>
+                            <constraint firstAttribute="bottom" secondItem="dyi-a9-bGE" secondAttribute="bottom" constant="16" id="N5n-GN-Ro2"/>
                             <constraint firstItem="n5H-Bd-zkc" firstAttribute="leading" secondItem="fBs-CR-iIQ" secondAttribute="leading" constant="16" id="P4G-cw-Wce"/>
                             <constraint firstItem="qHd-Se-ed8" firstAttribute="leading" secondItem="fBs-CR-iIQ" secondAttribute="leading" constant="16" id="Ul7-SK-Q41"/>
                             <constraint firstItem="n5H-Bd-zkc" firstAttribute="top" secondItem="fBs-CR-iIQ" secondAttribute="top" constant="16" id="V3C-d4-ZZr"/>
-                            <constraint firstAttribute="bottom" secondItem="Fm2-QV-w0L" secondAttribute="bottom" constant="16" id="VjX-Om-A2P"/>
-                            <constraint firstItem="Fm2-QV-w0L" firstAttribute="leading" secondItem="Y0E-UQ-M0n" secondAttribute="trailing" constant="8" id="Vrf-dg-AF2"/>
                             <constraint firstItem="qHd-Se-ed8" firstAttribute="top" secondItem="n5H-Bd-zkc" secondAttribute="bottom" constant="12" id="g05-0S-D5y"/>
                             <constraint firstItem="THc-Zg-xkq" firstAttribute="top" secondItem="qHd-Se-ed8" secondAttribute="bottom" constant="4" id="gbg-07-pBH"/>
-                            <constraint firstItem="ekz-Ck-Uof" firstAttribute="leading" secondItem="fBs-CR-iIQ" secondAttribute="leading" constant="16" id="k7M-LR-ts6"/>
+                            <constraint firstAttribute="bottom" secondItem="Bkh-1U-OF0" secondAttribute="bottom" constant="16" id="gl0-5U-WBc"/>
                             <constraint firstItem="THc-Zg-xkq" firstAttribute="leading" secondItem="fBs-CR-iIQ" secondAttribute="leading" constant="16" id="xoV-WF-93H"/>
-                            <constraint firstAttribute="bottom" secondItem="s7k-Ii-cif" secondAttribute="bottom" constant="16" id="yY5-gr-LF9"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -121,32 +112,25 @@
                 <outlet property="addressLabel" destination="THc-Zg-xkq" id="YpA-z3-piS"/>
                 <outlet property="cafeNameLabel" destination="qHd-Se-ed8" id="Tb7-wQ-lez"/>
                 <outlet property="cardView" destination="fBs-CR-iIQ" id="sXt-4h-RhX"/>
-                <outlet property="categoryLabel1" destination="ekz-Ck-Uof" id="ijW-r5-DN4"/>
-                <outlet property="categoryLabel2" destination="Y0E-UQ-M0n" id="fxq-YN-BcO"/>
-                <outlet property="categoryLabel3" destination="Fm2-QV-w0L" id="cDN-2s-EV4"/>
-                <outlet property="categoryLabel4" destination="s7k-Ii-cif" id="BhE-pd-jdp"/>
+                <outlet property="categoryLabel" destination="dyi-a9-bGE" id="XDs-8N-Bog"/>
                 <outlet property="dateLabel" destination="n5H-Bd-zkc" id="CHD-2V-ytN"/>
-                <outlet property="decafWidth" destination="MIB-F6-Pgl" id="Zfh-HS-fHv"/>
-                <outlet property="freeWidth" destination="wfB-9K-Wel" id="ZxK-mi-Xwz"/>
-                <outlet property="lowWidth" destination="Dxk-Ts-bn9" id="UOX-RS-GRe"/>
                 <outlet property="rootView" destination="H2p-sc-9uM" id="KvP-S9-W4O"/>
-                <outlet property="soyWidth" destination="6sA-Ex-o6U" id="Wsc-Sn-V05"/>
             </connections>
             <point key="canvasLocation" x="-254.34782608695653" y="103.79464285714285"/>
         </tableViewCell>
     </objects>
     <designables>
-        <designable name="Fm2-QV-w0L">
-            <size key="intrinsicContentSize" width="74" height="20.5"/>
+        <designable name="Bkh-1U-OF0">
+            <size key="intrinsicContentSize" width="41.5" height="20.5"/>
         </designable>
-        <designable name="Y0E-UQ-M0n">
-            <size key="intrinsicContentSize" width="29.5" height="20.5"/>
+        <designable name="Mff-0E-1A1">
+            <size key="intrinsicContentSize" width="41.5" height="20.5"/>
         </designable>
-        <designable name="ekz-Ck-Uof">
-            <size key="intrinsicContentSize" width="59" height="20.5"/>
+        <designable name="QWt-ib-VMB">
+            <size key="intrinsicContentSize" width="41.5" height="20.5"/>
         </designable>
-        <designable name="s7k-Ii-cif">
-            <size key="intrinsicContentSize" width="74" height="20.5"/>
+        <designable name="dyi-a9-bGE">
+            <size key="intrinsicContentSize" width="41.5" height="20.5"/>
         </designable>
     </designables>
     <resources>

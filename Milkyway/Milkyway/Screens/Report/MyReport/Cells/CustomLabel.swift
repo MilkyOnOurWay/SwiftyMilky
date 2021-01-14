@@ -9,6 +9,11 @@ import UIKit
 
 class CustomLabel: UILabel {
 
+    @IBInspectable var topInset: CGFloat = 6.0
+    @IBInspectable var bottomInset: CGFloat = 6.0
+    @IBInspectable var leftInset: CGFloat = 12.0
+    @IBInspectable var rightInset: CGFloat = 12.0
+    
     required init(coder aDecoder: NSCoder){
         super.init(coder: aDecoder)!
         self.clipsToBounds = true
@@ -17,6 +22,14 @@ class CustomLabel: UILabel {
         self.textColor = UIColor(named: "Milky")
         self.font = UIFont(name: "SFProText-Semibold", size: 12.0)
         self.textAlignment = .center
-        
+    }
+    override func drawText(in rect: CGRect) {
+        let insets = UIEdgeInsets.init(top: topInset, left: leftInset, bottom: bottomInset, right: rightInset)
+        super.drawText(in: rect.inset(by: insets))
+    }
+
+    override var intrinsicContentSize: CGSize {
+    let size = super.intrinsicContentSize
+    return CGSize(width: size.width + leftInset + rightInset, height: size.height + topInset + bottomInset)
     }
 }

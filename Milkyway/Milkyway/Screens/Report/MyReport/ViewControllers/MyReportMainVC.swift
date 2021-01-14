@@ -239,13 +239,13 @@ extension MyReportMainVC: UITableViewDataSource {
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: CompletedTVCell.identifier) as? CompletedTVCell else {
                     return UITableViewCell()
                 }
-                cell.setCell(category: myReportData.done[indexPath.row].category!)
+                cell.setCell()
+                cell.setCategory(category: myReportData.done[indexPath.row].category!)
                 cell.dateLabel.text = myReportData.done[indexPath.row].createdAt
                 cell.cafeNameLabel.text = myReportData.done[indexPath.row].cafeName
                 cell.addressLabel.text = myReportData.done[indexPath.row].cafeAddress
                 
 //                let category = myReportData.done[indexPath.row].category!
-                print(myReportData.done[indexPath.row].category!.count)
 //                for i in 0...myReportData.done[indexPath.row].category!.count-1 {
 //                    cell.viewWithTag(category[i])?.isHidden = false
 //                }

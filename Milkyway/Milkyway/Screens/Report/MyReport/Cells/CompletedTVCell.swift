@@ -17,21 +17,13 @@ class CompletedTVCell: UITableViewCell {
     @IBOutlet var cafeNameLabel: UILabel!
     @IBOutlet var addressLabel: UILabel!
     
-    @IBOutlet var categoryLabel1: CustomLabel!
-    @IBOutlet var categoryLabel2: CustomLabel!
-    @IBOutlet var categoryLabel3: CustomLabel!
-    @IBOutlet var categoryLabel4: CustomLabel!
+    @IBOutlet var categoryLabel: CustomLabel!
     
-    @IBOutlet var decafWidth: NSLayoutConstraint!
-    @IBOutlet var soyWidth: NSLayoutConstraint!
-    @IBOutlet var lowWidth: NSLayoutConstraint!
-    @IBOutlet var freeWidth: NSLayoutConstraint!
-    
-    
+//    var categoryLabel = [CustomLabel]()
     var date: String = ""
     
     // 나중에 밑에 라벨붙는거,,
-    var menuTag: [String] = ["", "디카페인", "두유", "저지방우유", "무지방우유"]
+    var tagStr: [String] = ["", "디카페인", "두유", "저지방우유", "무지방우유"]
     var category = [Int]()
     
     override func awakeFromNib() {
@@ -44,16 +36,7 @@ class CompletedTVCell: UITableViewCell {
 }
 
 extension CompletedTVCell {
-    func setCell(category: [Int]) {
-//        categoryLabel1.isHidden = true
-//        categoryLabel2.isHidden = true
-//        categoryLabel3.isHidden = true
-//        categoryLabel4.isHidden = true
-        decafWidth.constant = 0
-//        soyWidth.constant = 0
-//        lowWidth.constant = 0
-        freeWidth.constant = 0
-        
+    func setCell() {
         cardView.borderWidth = 1
         cardView.borderColor = UIColor(displayP3Red: 229/255, green: 229/255, blue: 229/255, alpha: 1.0)
         cardView.backgroundColor = UIColor(named: "lightGrey")
@@ -63,10 +46,17 @@ extension CompletedTVCell {
         cardView.layer.shadowOffset = CGSize(width: 2, height: 2)
         cardView.layer.shadowRadius = 8
         cardView.layer.masksToBounds = false
-        
+    }
+    
+    func setCategory(category: [Int]) {
+        self.category = category
+        print("완료제보 카테고리 \(category), \(category.count)")
 
-//        for i in 0...myReportData.done[indexPath.row].category!.count-1 {
-//            cell.viewWithTag(category[i])?.isHidden = false
-//        }
+        categoryLabel.text = tagStr[1]
+        for i in 0...category.count-1 {
+//            categoryLabel.translatesAutoresizingMaskIntoConstraints = false
+//            cardView.addSubview(categoryLabel)
+            print("i 몇 번 나오게!\(i)")
+        }
     }
 }

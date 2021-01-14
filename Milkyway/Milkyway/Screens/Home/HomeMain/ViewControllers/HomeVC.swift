@@ -629,6 +629,7 @@ extension HomeVC: NMFMapViewCameraDelegate {
             //            cafeCardVC.view.isHidden = true
             beforeMarker?.iconImage = beforeIS ? self.uniUnSelectedImage : unselectedImage
             cafeCardVC.view.isHidden = true
+            bottomCardVC.view.isHidden = false
         }
     }
 }

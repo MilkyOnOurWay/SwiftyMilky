@@ -65,8 +65,9 @@ class MyUniverseVC: UIViewController, UIGestureRecognizerDelegate{
     }
     
     override func viewDidLoad(){
-        print("myUniverse - viewDidLoad()")
         
+        print("myUniverse - viewDidLoad()")
+        locationBtn.isEnabled = false
         super.viewDidLoad()
         notiGather()
         delegateGather()
@@ -330,7 +331,7 @@ extension MyUniverseVC {
             case .networkFail:
                 print("networkFail")
             }
-            
+            locationBtn.isEnabled = true
             
         }
     }

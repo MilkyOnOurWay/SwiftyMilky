@@ -26,6 +26,10 @@ class HomeVC: UIViewController, UIGestureRecognizerDelegate {
     
     @IBOutlet var locationBtn: UIButton!
     
+    
+    // 어떤 옵션이 선택되어있는지
+    var cafeState = 0
+    
     var homeData = HomeData(result: [AroundCafe](), nickName: "")
     var filterData = CategoryData(result: [CategoryCafe](), nickName: "")
     
@@ -92,17 +96,17 @@ class HomeVC: UIViewController, UIGestureRecognizerDelegate {
         setLocation()
         
         self.navigationController?.interactivePopGestureRecognizer?.delegate = self
-
+        
         // 로티관련 노티
         NotificationCenter.default.addObserver(self, selector: #selector(showLoadingLottie), name: Notification.Name("startlottiehome"),object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(stopLottieAnimation), name: Notification.Name("stoplottiehome"),object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(setService), name: Notification.Name("homeMarkerSet"),object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(serviceFunc), name: Notification.Name("homeMarkerSet"),object: nil)
         
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        setService()
+        serviceFunc()
         
     }
     // MARK: - 검색화면으로 이동
@@ -176,6 +180,25 @@ extension HomeVC {
         filterBtn3.addTarget(self, action: #selector(filterButtonDidTap), for: UIControl.Event.touchUpInside)
         filterBtn4.addTarget(self, action: #selector(filterButtonDidTap), for: UIControl.Event.touchUpInside)
     }
+    
+    @objc func filterButtonDidTap(_ sender:DLRadioButton){
+        
+        if filterState[sender.tag] == true {
+            sender.isSelected = false
+            cafeState = 0
+        }
+        else {
+            cafeState = sender.tag
+        }
+        serviceFunc()
+        
+        filterState[1] = filterBtn1.isSelected
+        filterState[2] = filterBtn2.isSelected
+        filterState[3] = filterBtn3.isSelected
+        filterState[4] = filterBtn4.isSelected
+        
+    }
+    
     func delegateGather() {
         locationManager.delegate = self
         mapView.addCameraDelegate(delegate: self)
@@ -199,7 +222,6 @@ extension HomeVC {
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.startUpdatingLocation()
         let coor = locationManager.location?.coordinate
-        print(coor)
         move(at: coor)
     }
     
@@ -353,35 +375,6 @@ extension HomeVC {
     }
     
     
-    @objc func setService() {
-        showLoadingLottie()
-        print("setService")
-        HomeService.shared.GetMilkyHome() { [self] (networkResult) -> (Void) in
-            switch networkResult {
-            case .success(let data):
-                if let loadData = data as? HomeData {
-                    print("success")
-                    
-                    homeData = loadData
-                    setMarker()
-                    // 유저닉네임 전역변수로 설정
-                    let ad = UIApplication.shared.delegate as? AppDelegate
-                    print("nickName:\(homeData.nickName)")
-                    ad?.userNickNameInHere = homeData.nickName
-                    setNickNameLabel()
-                }
-            case .requestErr( _):
-                print("requestErr")
-            case .pathErr:
-                print("pathErr")
-            case .serverErr:
-                print("serverErr")
-            case .networkFail:
-                print("networkFail")
-            }
-            stopLottieAnimation()
-        }
-    }
     func setMapButton() {
         locationBtn.setImage(UIImage(named: "btnCurrentLocation"), for: UIControl.State.normal)
         locationBtn.setImage(UIImage(named: "compassIc"), for: UIControl.State.selected)
@@ -393,18 +386,45 @@ extension HomeVC {
             marker[i].mapView = nil
         }
     }
-    @objc func filterButtonDidTap(_ sender:DLRadioButton) {
+    
+    
+    
+    @objc func serviceFunc() {
         showLoadingLottie()
         
-        if filterState[sender.tag] == true {
-            sender.isSelected = false
-            //            markerReset(marker: markers)
-            setMarker()
+        if cafeState == 0 {
+            
+            print("홈 전체 서비스 - 필터 없음")
+            HomeService.shared.GetMilkyHome() { [self] (networkResult) -> (Void) in
+                switch networkResult {
+                case .success(let data):
+                    if let loadData = data as? HomeData {
+                        print("success")
+                        
+                        homeData = loadData
+                        setMarker()
+                        // 유저닉네임 전역변수로 설정
+                        let ad = UIApplication.shared.delegate as? AppDelegate
+                        print("nickName:\(homeData.nickName)")
+                        ad?.userNickNameInHere = homeData.nickName
+                        setNickNameLabel()
+                    }
+                case .requestErr( _):
+                    print("requestErr")
+                case .pathErr:
+                    print("pathErr")
+                case .serverErr:
+                    print("serverErr")
+                case .networkFail:
+                    print("networkFail")
+                }
+                stopLottieAnimation()
+            }
+        }
+
+        else {
             //            markerReset(marker: filterMarkers)
-            stopLottieAnimation()
-        } else {
-            //            markerReset(marker: filterMarkers)
-            HomeService.shared.GetCategoryCafe(categoryId: sender.tag) { [self] (networkResult) -> (Void) in
+            HomeService.shared.GetCategoryCafe(categoryId: cafeState) { [self] (networkResult) -> (Void) in
                 switch networkResult {
                 case .success(let data):
                     if let loadData = data as? CategoryData {
@@ -426,16 +446,16 @@ extension HomeVC {
                 }
                 stopLottieAnimation()
             }
-            print(sender.icon, filterData.result.count)
+            
             //            markerReset(marker: markers)
         }
-        
-        filterState[1] = filterBtn1.isSelected
-        filterState[2] = filterBtn2.isSelected
-        filterState[3] = filterBtn3.isSelected
-        filterState[4] = filterBtn4.isSelected
-        
     }
+    
+    
+    
+    
+    
+    
     
     @objc func locationButtonDidTap(_ sender:UIButton){
         mapView.zoomLevel = 14
@@ -633,3 +653,5 @@ extension HomeVC: NMFMapViewCameraDelegate {
         }
     }
 }
+
+

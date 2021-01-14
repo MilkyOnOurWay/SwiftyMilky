@@ -196,6 +196,7 @@ extension MyUniverseVC {
         cardVC.view.frame = CGRect(x:0, y: self.view.frame.height - tabbarFrame!.size.height - 125, width: self.view.bounds.width, height: 125)
         
         cardVC.view.isHidden = true
+        UniverseBottomVC.view.isHidden = false
     }
     
     
@@ -260,6 +261,8 @@ extension MyUniverseVC {
         markers[selectIndex].mapView = nil
         self.beforeMarker?.iconImage = self.unselectImage
         cardVC.view.isHidden = true
+        UniverseBottomVC.view.isHidden = false
+        serverlinked()
     }
     
     
@@ -293,6 +296,7 @@ extension MyUniverseVC {
                     selectedCardCafeID = myUniverse.aroundUniverse[index].id
                     cardVC.cafeID = selectedCardCafeID
                     cardVC.view.isHidden = false
+                    UniverseBottomVC.view.isHidden = true
                     return true
                 }
                 
@@ -337,6 +341,7 @@ extension MyUniverseVC: NMFMapViewTouchDelegate {
     func mapView(_ mapView: NMFMapView, didTapMap latlng: NMGLatLng, point: CGPoint) {
         print("\(latlng)")
         cardVC.view.isHidden = true
+        UniverseBottomVC.view.isHidden = false
         self.beforeMarker?.iconImage = self.unselectImage
         
     }
@@ -345,6 +350,7 @@ extension MyUniverseVC: NMFMapViewTouchDelegate {
         print(symbol)
         
         cardVC.view.isHidden = true
+        UniverseBottomVC.view.isHidden = false
         self.beforeMarker?.iconImage = self.unselectImage
         
         return true
@@ -360,6 +366,7 @@ extension MyUniverseVC: NMFMapViewCameraDelegate {
             mapView.locationOverlay.subIcon = nil
             
             cardVC.view.isHidden = true
+            UniverseBottomVC.view.isHidden = false
             self.beforeMarker?.iconImage = self.unselectImage
         }
         

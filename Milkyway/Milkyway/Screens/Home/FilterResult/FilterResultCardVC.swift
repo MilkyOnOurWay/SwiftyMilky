@@ -24,7 +24,7 @@ class FilterResultCardVC: UIViewController {
         super.viewDidLoad()
         setView()
         setUniverseButton()
-        rootView.layer.cornerRadius = 12
+       
     }
     
     @IBAction func wideBtnClicked(_ sender: Any) {
@@ -77,7 +77,13 @@ class FilterResultCardVC: UIViewController {
 extension FilterResultCardVC {
     
     func setView(){
-        
+        print("왜 안먹혀 샹")
+        rootView.layer.cornerRadius = 12
+        rootView.layer.shadowColor = UIColor.black.cgColor
+        rootView.layer.shadowOpacity = 0.1
+        rootView.layer.shadowOffset = CGSize(width: 0.0, height: -4.0)
+        rootView.layer.shadowRadius = 12
+        rootView.layer.masksToBounds = false
         
     }
     

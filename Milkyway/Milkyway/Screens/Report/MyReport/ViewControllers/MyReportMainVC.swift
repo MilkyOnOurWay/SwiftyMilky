@@ -159,8 +159,10 @@ extension MyReportMainVC {
         let getInfo = noti.object as! [Int]
         cancelVC.rejectReasonId = getInfo[0]
         cancelVC.cafeId = getInfo[1]
-        cancelVC.modalPresentationStyle = .overCurrentContext
-        present(cancelVC, animated: false, completion: nil)
+//        cancelVC.modalPresentationStyle = .overCurrentContext
+        cancelVC.modalPresentationStyle = .overFullScreen
+        cancelVC.modalTransitionStyle = .crossDissolve
+        present(cancelVC, animated: true, completion: nil)
         self.myReportTableView.reloadData()
     }
     

@@ -10,6 +10,9 @@ import XLPagerTabStrip
 import Lottie
 
 class CafeReportMainVC: UIViewController, IndicatorInfoProvider {
+    
+    
+    @IBOutlet var bottomView: UIView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var reportEndBtn: UIButton!
     @IBOutlet weak var reportImageView: UIImageView!
@@ -36,13 +39,12 @@ class CafeReportMainVC: UIViewController, IndicatorInfoProvider {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setAuto()
         delegateFunc()
         cellResister()
         notiGather()
 
     }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -214,6 +216,17 @@ extension CafeReportMainVC {
         tableView.delegate = self
         tableView.dataSource = self
 
+    }
+    
+    // 버튼 오토
+    
+    func setAuto() {
+        let margins = view.layoutMarginsGuide
+        
+        bottomView.translatesAutoresizingMaskIntoConstraints = false
+        bottomView.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: 0.0).isActive = true
+        bottomView.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: 0.0).isActive = true
+        bottomView.bottomAnchor.constraint(equalTo: margins.bottomAnchor, constant: 0.0).isActive = true
     }
 
     // 셀 등록

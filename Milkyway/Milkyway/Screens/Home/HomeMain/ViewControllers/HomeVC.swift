@@ -250,6 +250,7 @@ extension HomeVC {
                 }
                 
                 cafeCardVC.cafeId = homeData.result[index].id
+                print("isUniversed : \(homeData.result[index].isUniversed)")
                 cafeCardVC.buttonIsSelected = homeData.result[index].isUniversed
                 
                 // 이전 마커체크
@@ -350,6 +351,7 @@ extension HomeVC {
             case .success(let data):
                 if let loadData = data as? HomeData {
                     print("success")
+                    
                     homeData = loadData
                     setMarker()
                     // 유저닉네임 전역변수로 설정
@@ -615,7 +617,7 @@ extension HomeVC: NMFMapViewCameraDelegate {
             
             //            cafeCardVC.view.isHidden = true
             beforeMarker?.iconImage = beforeIS ? self.uniUnSelectedImage : unselectedImage
-            
+            cafeCardVC.view.isHidden = true
         }
     }
 }

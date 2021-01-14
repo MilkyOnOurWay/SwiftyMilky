@@ -28,8 +28,7 @@ class FilterResultCardVC: UIViewController {
     }
     
     @IBAction func wideBtnClicked(_ sender: Any) {
-        print("cafeId: \(cafeId)")
-        print("buttonIsSelected: \(buttonIsSelected)")
+        print ( " Home - DetailInfo \(cafeId)" )
         // 눌렀을 때 서버통신 !
         // 통신중일때 더이상 누를 수 없게 // 이중 클릭 방지
         self.wideBtn.isUserInteractionEnabled = false
@@ -96,6 +95,8 @@ extension FilterResultCardVC {
     }
     
     func addUniverse(){
+        
+        print("이건 원래 유니버스 \(buttonIsSelected)였다")
         print("home - addUniverse \(cafeId!)")
         ToastView.showIn(viewController: self, message: "카페가 나의 유니버스로 들어왔어요.", fromBottom: 40)
         universeButton.setImage(UIImage(named: "btnUniverseAdded"), for: .normal)
@@ -113,7 +114,7 @@ extension FilterResultCardVC {
                 let addUniverse = res as? AddUniverse
                 dump(addUniverse)
                 print("success")
-                universeButton.isEnabled = true
+                
                 
             case.requestErr(_):
                 print("requestErr")
@@ -126,6 +127,7 @@ extension FilterResultCardVC {
             case .networkFail:
                 print(".failureErr")
             }
+            universeButton.isEnabled = true
         }
         
     }
@@ -149,7 +151,6 @@ extension FilterResultCardVC {
                     print("success")
                     print(loadData)
                 }
-                universeButton.isEnabled = true
             case .requestErr( _):
                 print("requestErr")
             case .pathErr:
@@ -159,7 +160,7 @@ extension FilterResultCardVC {
             case .networkFail:
                 print("networkFail")
             }
-            
+            universeButton.isEnabled = true
         }
         
     }

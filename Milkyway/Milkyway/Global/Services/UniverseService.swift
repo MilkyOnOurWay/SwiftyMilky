@@ -71,6 +71,8 @@ struct UniverseService {
     // MARK: - 유니버스 추가
     func addUniverse(_ cafeId: Int, completion: @escaping(NetworkResult<Any>) -> Void) {
         
+        print("Server Universe add \(cafeId)")
+        
         let URL = APIConstants.addUniverse
         let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWR4Ijo1LCJpYXQiOjE2MDk3Nzg0NjksImV4cCI6MTYxMjM3MDQ2OSwiaXNzIjoibWlsa3lXYXkifQ.c2JAdyd0pGQzbmT0E_yl51eAGkcO71YfokwJebqqDME"
         
@@ -127,6 +129,8 @@ struct UniverseService {
     // MARK: - 유니버스 삭제
     
     func deleteUniverse(_ cafeId: Int, completion: @escaping(NetworkResult<Any>) -> Void) {
+        
+        print("Server Universe delete \(cafeId)")
         
         let URL = APIConstants.deleteUniverse + "\(cafeId)"
         let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWR4Ijo1LCJpYXQiOjE2MDk3Nzg0NjksImV4cCI6MTYxMjM3MDQ2OSwiaXNzIjoibWlsa3lXYXkifQ.c2JAdyd0pGQzbmT0E_yl51eAGkcO71YfokwJebqqDME"

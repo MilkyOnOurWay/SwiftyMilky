@@ -21,7 +21,7 @@ class DetailCafeMenuVC: UIViewController {
     var testCafe = CafeDatas(cafeInfo: CafeInfo(id: 0, cafeName: "", cafeAddress: "", businessHours: "", cafePhoneNum: "", cafeLink: "", honeyTip: [], universeCount: 0, isUniversed: 0), menu: [])
     
     
-    let cafeMenu = ["무지방우유","저지방우유","두유","디카페인"]
+    let cafeMenu = ["디카페인","두유","저지방우유","무지방우유"]
     var like: Bool = false
     
     

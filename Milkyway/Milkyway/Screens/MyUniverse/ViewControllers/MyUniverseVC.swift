@@ -262,6 +262,7 @@ extension MyUniverseVC {
         self.beforeMarker?.iconImage = self.unselectImage
         cardVC.view.isHidden = true
         UniverseBottomVC.view.isHidden = false
+        serverlinked()
     }
     
     

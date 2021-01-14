@@ -11,7 +11,7 @@ import DLRadioButton
 class MenuPlusVC: UIViewController {
     
     
-    @IBOutlet weak var menuScrollView: UIScrollView!
+    
     
     @IBOutlet weak var menuTF: FormTextField!
     @IBOutlet weak var priceTF: FormTextField!
@@ -45,8 +45,30 @@ class MenuPlusVC: UIViewController {
         // 처음에는 입력 완료를 누를 수 없다.
         editEndBtn.isUserInteractionEnabled = false
         
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(textDidChange(_:)),
+                                               name: UITextField.textDidChangeNotification,
+                                               object: priceTF)
+        
     }
     
+    /// 금액 , 찍어주기
+    @objc private func textDidChange(_ notification: Notification) {
+        if let textField = notification.object as? UITextField {
+            
+            let numberFormatter = NumberFormatter()
+            numberFormatter.numberStyle = .decimal
+            let pricetoDouble = Double(priceTF.text?.components(separatedBy: [","]).joined() ?? "")
+            let price = numberFormatter.string(from: NSNumber(value: pricetoDouble ?? 0)) ?? ""
+            textField.text = price == "0" ? "" : price
+            print(price)
+            
+            
+            
+        }
+        
+    }
 }
 
 extension MenuPlusVC  {
@@ -68,12 +90,7 @@ extension MenuPlusVC  {
         print(category)
         print("\(menuTF.text!) 메뉴 추가합니다")
         
-        let numberFormatter = NumberFormatter()
-        numberFormatter.numberStyle = .decimal
-        let changeToDouble = Double(priceTF.text ?? "0") ?? 0
-        let price = numberFormatter.string(from: NSNumber(value: changeToDouble))!
-        
-        let menu = Menu(menuName: menuTF.text ?? "", price: price, category: category )
+        let menu = Menu(menuName: menuTF.text ?? "", price: priceTF.text ?? "", category: category )
         
         NotificationCenter.default.post(name: Notification.Name("menuPlus"), object: menu)
         self.navigationController?.popViewController(animated: true)
@@ -85,12 +102,7 @@ extension MenuPlusVC  {
         self.priceTF.resignFirstResponder()
         countCategory()
         checkEditOK()
-        
-        
-        // se 때문에 넣어놓은것 ,,,
-        if UIScreen.main.bounds.height < 700 {
-        menuScrollView.contentOffset = CGPoint(x:0, y:80)
-        }
+       
     }
     
     
@@ -116,10 +128,6 @@ extension MenuPlusVC  {
     
     @objc func doneButtonAction() {
         self.priceTF.resignFirstResponder()
-        // se 때문에 넣어놓은것 ,,,
-        if UIScreen.main.bounds.height < 700 {
-        menuScrollView.contentOffset = CGPoint(x:0, y:80)
-        }
     }
     
     

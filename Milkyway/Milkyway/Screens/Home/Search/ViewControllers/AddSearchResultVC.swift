@@ -201,5 +201,14 @@ extension AddSearchResultVC: UITableViewDataSource {
 
 extension AddSearchResultVC: UITextFieldDelegate {
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        var str = textField.text
+        if str?.count != 0 {
+            
+            searchTextField.resignFirstResponder()
+            search(str ?? "")
+        }
+        return true
+    }
  
 }

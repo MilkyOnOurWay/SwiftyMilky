@@ -95,6 +95,8 @@ class HomeVC: UIViewController, UIGestureRecognizerDelegate {
         // 로티관련 노티
         NotificationCenter.default.addObserver(self, selector: #selector(showLoadingLottie), name: Notification.Name("startlottiehome"),object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(stopLottieAnimation), name: Notification.Name("stoplottiehome"),object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(setService), name: Notification.Name("homeMarkerSet"),object: nil)
+        
         
     }
     
@@ -343,7 +345,7 @@ extension HomeVC {
     }
     
     
-    func setService() {
+    @objc func setService() {
         showLoadingLottie()
         print("setService")
         HomeService.shared.GetMilkyHome() { [self] (networkResult) -> (Void) in

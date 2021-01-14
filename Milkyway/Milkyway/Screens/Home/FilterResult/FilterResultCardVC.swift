@@ -65,6 +65,7 @@ class FilterResultCardVC: UIViewController {
             NotificationCenter.default.post(name: Notification.Name("stoplottiehome"), object: nil)
             //다시 클릭 활성화
             self.wideBtn.isUserInteractionEnabled = true
+            
         }
         
         
@@ -128,6 +129,8 @@ extension FilterResultCardVC {
                 print(".failureErr")
             }
             universeButton.isEnabled = true
+            // 전체 리로드
+            NotificationCenter.default.post(name: Notification.Name("homeMarkerSet"), object: nil)
         }
         
     }
@@ -161,6 +164,8 @@ extension FilterResultCardVC {
                 print("networkFail")
             }
             universeButton.isEnabled = true
+            // 전체 리로드
+            NotificationCenter.default.post(name: Notification.Name("homeMarkerSet"), object: nil)
         }
         
     }

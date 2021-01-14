@@ -47,6 +47,7 @@ class MyUniverseVC: UIViewController, UIGestureRecognizerDelegate{
     let cardHandleAreaHeight:CGFloat = 84
     var selectedCardCafeID = 0
     var cardVisible = false
+    var selectIndex = 0
     
     var nextState:CardState {
         return cardVisible ? .collapsed : .expanded
@@ -256,8 +257,7 @@ extension MyUniverseVC {
     
     // MARK: - 삭제 누르고 팝업창 확인까지 눌리면 실행되는 함수
     @objc func removeBeforeCafe() {
-        setCamera()
-        serverlinked()
+        markers[selectIndex].mapView = nil
         self.beforeMarker?.iconImage = self.unselectImage
         cardVC.view.isHidden = true
     }

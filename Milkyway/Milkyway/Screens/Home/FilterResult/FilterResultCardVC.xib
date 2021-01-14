@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -36,8 +36,11 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2XK-um-ACZ">
-                    <rect key="frame" x="0.0" y="44" width="375" height="81"/>
+                    <rect key="frame" x="0.0" y="105" width="375" height="20"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="75x-Iq-BX5"/>
+                    </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="카페이름길어봤자얼마나길까카페" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Nx-Tb-miQ">
                     <rect key="frame" x="20" y="20" width="243" height="22"/>
@@ -101,7 +104,6 @@
                 <constraint firstItem="iPw-g5-4gL" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Ug4-1F-sHf"/>
                 <constraint firstItem="2XK-um-ACZ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="cya-aB-K1G"/>
                 <constraint firstItem="iPw-g5-4gL" firstAttribute="top" secondItem="xuf-UQ-SiD" secondAttribute="bottom" constant="5" id="eXA-OH-5SY"/>
-                <constraint firstItem="2XK-um-ACZ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="iy2-6Q-XMf"/>
                 <constraint firstItem="3Nx-Tb-miQ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="jLk-6d-Twk"/>
                 <constraint firstAttribute="bottom" secondItem="2XK-um-ACZ" secondAttribute="bottom" id="jVZ-qd-fyd"/>
                 <constraint firstAttribute="trailing" secondItem="lNq-tp-zA4" secondAttribute="trailing" constant="20" id="k8o-ql-N5C"/>
@@ -113,6 +115,11 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="iPw-g5-4gL" secondAttribute="bottom" constant="13" id="wmb-Kf-xxI"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                    <integer key="value" value="12"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
             <point key="canvasLocation" x="-927" y="276"/>
         </view>
     </objects>

@@ -95,6 +95,8 @@ extension MyReportMainVC {
     
     func notiGather() {
         NotificationCenter.default.addObserver(self, selector: #selector(cancelReasonTap(_:)), name: Notification.Name("cancelReason"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadTable), name: Notification.Name("cancelConfirm"), object: nil)
+        
     }
     func registerDelegate() {
         myReportTableView.dataSource = self
@@ -160,6 +162,10 @@ extension MyReportMainVC {
         cancelVC.modalPresentationStyle = .overCurrentContext
         present(cancelVC, animated: false, completion: nil)
         self.myReportTableView.reloadData()
+    }
+    
+    @objc func reloadTable() {
+        myReportTableView.reloadData()
     }
 }
 

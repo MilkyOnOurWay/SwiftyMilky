@@ -9,7 +9,6 @@ import UIKit
 
 class InfoModifyReqVC: UIViewController {
 
-    // 여기 네비는 테스트용으로 넣은 것!!
     
     @IBOutlet var mainLabel: UILabel!
     @IBOutlet var subLabel: UILabel!

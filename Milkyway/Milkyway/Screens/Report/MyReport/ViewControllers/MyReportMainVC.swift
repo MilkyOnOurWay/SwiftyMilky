@@ -13,6 +13,9 @@ class MyReportMainVC: UIViewController, IndicatorInfoProvider {
     
     
     @IBOutlet var myReportTableView: UITableView!
+    // 테이블 숨기고 나오는 뷰
+    
+    @IBOutlet var emptyView: UIView!
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var mainLabel: UILabel!
     @IBOutlet var subLabel: UILabel!
@@ -20,7 +23,6 @@ class MyReportMainVC: UIViewController, IndicatorInfoProvider {
     
     var tabName: String = ""
     var nickName: String = ""
-    var rejectReason = 0
     
     var myReportData = MyReportData(cancel: [MyReport](),
                                     ing: [MyReport](),
@@ -28,7 +30,6 @@ class MyReportMainVC: UIViewController, IndicatorInfoProvider {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setLabel()
         setAuto()
         notiGather()
         registerXib()
@@ -41,21 +42,7 @@ class MyReportMainVC: UIViewController, IndicatorInfoProvider {
         setService()
         myReportTableView.reloadData()
     }
-    func setAuto() {
-        let margins = view.layoutMarginsGuide
-        
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.topAnchor.constraint(equalTo: margins.topAnchor, constant: 143.0).isActive = true
-        imageView.centerXAnchor.constraint(equalTo: margins.centerXAnchor).isActive = true
-        
-        mainLabel.translatesAutoresizingMaskIntoConstraints = false
-        mainLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 40.0).isActive = true
-        mainLabel.centerXAnchor.constraint(equalTo: margins.centerXAnchor).isActive = true
-        
-        subLabel.translatesAutoresizingMaskIntoConstraints = false
-        subLabel.topAnchor.constraint(equalTo: mainLabel.bottomAnchor, constant: 16.0).isActive = true
-        subLabel.centerXAnchor.constraint(equalTo: margins.centerXAnchor).isActive = true
-    }
+    
     
     // MARK: - 데이터 로딩 중 Lottie 화면
     
@@ -89,16 +76,23 @@ extension MyReportMainVC {
         return IndicatorInfo(title: "\(tabName)")
     }
     
-    func setLabel() {
-        mainLabel.text = "제보한 장소를 확인하는 공간입니다"
-        mainLabel.textAlignment = .center
-        mainLabel.font = UIFont(name: "SFProText-Semibold", size: 20.0)
+    // empty view auto
+    func setAuto() {
+        let margins = view.layoutMarginsGuide
         
-        subLabel.text = "나만의 카페를 제보하고\n더욱 풍성해진 밀키웨이를 탐험해 보세요!"
-        subLabel.textAlignment = .center
-        subLabel.font = UIFont(name: "SFProText-Regular", size: 12.0)
-        subLabel.numberOfLines = 2
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.topAnchor.constraint(equalTo: margins.topAnchor, constant: 143.0).isActive = true
+        imageView.centerXAnchor.constraint(equalTo: margins.centerXAnchor).isActive = true
+        
+        mainLabel.translatesAutoresizingMaskIntoConstraints = false
+        mainLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 40.0).isActive = true
+        mainLabel.centerXAnchor.constraint(equalTo: margins.centerXAnchor).isActive = true
+        
+        subLabel.translatesAutoresizingMaskIntoConstraints = false
+        subLabel.topAnchor.constraint(equalTo: mainLabel.bottomAnchor, constant: 16.0).isActive = true
+        subLabel.centerXAnchor.constraint(equalTo: margins.centerXAnchor).isActive = true
     }
+    
     func notiGather() {
         NotificationCenter.default.addObserver(self, selector: #selector(cancelReasonTap(_:)), name: Notification.Name("cancelReason"), object: nil)
     }
@@ -112,13 +106,10 @@ extension MyReportMainVC {
         let completedTVCellNib = UINib(nibName: "CompletedTVCell", bundle: nil)
         let canceledTVCellNib = UINib(nibName: "CanceledTVCell", bundle: nil)
         
-        // 맨위 닉네임
+        // 맨위 닉네임, 취소된 제보, 진행 중인 제보, 완료된 제보
         myReportTableView.register(topTVCellNib, forCellReuseIdentifier: "TopTVCell")
-        // 취소된 제보
         myReportTableView.register(canceledTVCellNib, forCellReuseIdentifier: "CanceledTVCell")
-        // 진행 중인 제보
         myReportTableView.register(inProgressTVCellNib, forCellReuseIdentifier: "InProgressTVCell")
-        // 완료된 제보
         myReportTableView.register(completedTVCellNib, forCellReuseIdentifier: "CompletedTVCell")
     }
     func setService() {
@@ -136,9 +127,12 @@ extension MyReportMainVC {
                     
                     self.myReportTableView.reloadData()
                     if myReportData.cancel.isEmpty && myReportData.ing.isEmpty && myReportData.done.isEmpty {
-                        myReportTableView.isHidden = true
+//                        myReportTableView.isHidden = true
+//                        emptyView.isHidden = false
+                        emptyView.isHidden = true
                     } else {
                         myReportTableView.isHidden = false
+                        emptyView.isHidden = true
                     }
                 }
             case .requestErr( _):
@@ -154,6 +148,8 @@ extension MyReportMainVC {
         }
         
     }
+    
+    // 취소된 제보 탭하면 cancelReasonVC로 넘어가기
     @objc func cancelReasonTap(_ noti: NSNotification) {
         print("MyReport - cancelReason")
         guard let cancelVC = UIStoryboard(name: "MyReportMain", bundle: nil).instantiateViewController(withIdentifier:"CancelReasonVC") as? CancelReasonVC else {
@@ -175,28 +171,29 @@ extension MyReportMainVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        if section == 0 {
+        switch section {
+        case 0:
             return 1
-        } else if section == 1 {
+        case 1:
             return 1
-        } else if section == 2{
+        case 2:
             return 1
-        } else {
+        default:
             return myReportData.done.count
         }
 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        if indexPath.section == 0 { //닉네임
+        switch indexPath.section {
+        case 0: // 닉네임 셀
             guard let cell = tableView.dequeueReusableCell(withIdentifier: TopTVCell.identifier) as? TopTVCell else {
                 return UITableViewCell()
             }
             cell.setCell(nickName: nickName)
             cell.selectionStyle = .none
             return cell
-        } else if indexPath.section == 1 { //취소된 제보
+        case 1: // 취소된 제보
             guard let cell = tableView.dequeueReusableCell(withIdentifier: CanceledTVCell.identifier) as? CanceledTVCell else {
                 return UITableViewCell()
             }
@@ -206,13 +203,13 @@ extension MyReportMainVC: UITableViewDataSource {
                 cell.isHidden = true
                 cell.rootHeight.constant = 0
             } else {
-                cell.rootHeight.constant = 130 //cell.rootView.frame.height
+                cell.rootHeight.constant = 149 //cell.rootView.frame.height
                 cell.setCell(cancelData: myReportData.cancel)
                 print(myReportData.cancel)
             }
             cell.selectionStyle = .none
             return cell
-        } else if indexPath.section == 2 { // 진행중인 제보
+        case 2: // 진행중인 제보
             guard let cell = tableView.dequeueReusableCell(withIdentifier: InProgressTVCell.identifier) as? InProgressTVCell else {
                 return UITableViewCell()
             }
@@ -225,7 +222,7 @@ extension MyReportMainVC: UITableViewDataSource {
             }
             cell.selectionStyle = .none
             return cell
-        } else { // 완료된 제보
+        default: // 완료된 제보
             if myReportData.done.count == 0 {
                 let cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: nil)
                 cell.textLabel!.text = "\n\n현재 완료된 제보가 없습니다!"
@@ -245,10 +242,6 @@ extension MyReportMainVC: UITableViewDataSource {
                 cell.cafeNameLabel.text = myReportData.done[indexPath.row].cafeName
                 cell.addressLabel.text = myReportData.done[indexPath.row].cafeAddress
                 
-//                let category = myReportData.done[indexPath.row].category!
-//                for i in 0...myReportData.done[indexPath.row].category!.count-1 {
-//                    cell.viewWithTag(category[i])?.isHidden = false
-//                }
                 cell.selectionStyle = .none
                 return cell
             }
@@ -261,8 +254,6 @@ extension MyReportMainVC: UITableViewDataSource {
 extension MyReportMainVC: UITableViewDelegate {
     /// 상세페이지와 연결되는 부분
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        print("indexPath.row : \(indexPath.row)")
         
         if indexPath.section == 3 {
             
@@ -303,7 +294,5 @@ extension MyReportMainVC: UITableViewDelegate {
                 }
             }
         }
-        
-     
     }
 }

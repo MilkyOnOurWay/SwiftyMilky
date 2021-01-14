@@ -8,6 +8,14 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Pro-Text-Regular.otf">
+            <string>SFProText-Regular</string>
+        </array>
+        <array key="SF-Pro-Text-Semibold.otf">
+            <string>SFProText-Semibold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--My Report MainVC-->
         <scene sceneID="C5g-2T-Dxf">
@@ -17,42 +25,53 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgReport" id="Eyg-Nm-Dre">
-                                <rect key="frame" x="109" y="247" width="195" height="195"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kdM-dW-6Up">
-                                <rect key="frame" x="85" y="546" width="244" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <string key="text">나만의 카페를 제보하고 
-더욱 풍성해진 밀키웨이를 탐험해 보세요!</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제보한 장소를 확인하는 공간입니다" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vWA-7V-fMz">
-                                <rect key="frame" x="85" y="482" width="244" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Zh5-dc-EK4">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="778"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <sections/>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qzp-3b-3Ko">
+                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgReport" id="Eyg-Nm-Dre">
+                                        <rect key="frame" x="92" y="216" width="195" height="195"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kdM-dW-6Up">
+                                        <rect key="frame" x="65" y="461" width="244" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <string key="text">나만의 카페를 제보하고 
+더욱 풍성해진 밀키웨이를 탐험해 보세요!</string>
+                                        <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제보한 장소를 확인하는 공간입니다" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vWA-7V-fMz">
+                                        <rect key="frame" x="67" y="409" width="244" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="1B6-tw-ecR"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Zh5-dc-EK4" firstAttribute="leading" secondItem="1B6-tw-ecR" secondAttribute="leading" id="6gI-3Z-HKB"/>
+                            <constraint firstItem="1B6-tw-ecR" firstAttribute="bottom" secondItem="qzp-3b-3Ko" secondAttribute="bottom" id="7tp-df-xbe"/>
                             <constraint firstItem="Zh5-dc-EK4" firstAttribute="trailing" secondItem="1B6-tw-ecR" secondAttribute="trailing" id="BhW-Bh-160"/>
                             <constraint firstItem="1B6-tw-ecR" firstAttribute="bottom" secondItem="Zh5-dc-EK4" secondAttribute="bottom" id="LCy-06-c2t"/>
+                            <constraint firstItem="qzp-3b-3Ko" firstAttribute="leading" secondItem="1B6-tw-ecR" secondAttribute="leading" id="MaZ-sy-Dlt"/>
+                            <constraint firstItem="1B6-tw-ecR" firstAttribute="trailing" secondItem="qzp-3b-3Ko" secondAttribute="trailing" id="akk-S2-z0k"/>
+                            <constraint firstItem="qzp-3b-3Ko" firstAttribute="top" secondItem="1B6-tw-ecR" secondAttribute="top" id="hmk-hR-ZZG"/>
                             <constraint firstItem="Zh5-dc-EK4" firstAttribute="top" secondItem="Zff-A6-soK" secondAttribute="top" id="s1r-9g-3Tw"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="emptyView" destination="qzp-3b-3Ko" id="Ppa-oC-9S0"/>
                         <outlet property="imageView" destination="Eyg-Nm-Dre" id="2er-7T-YUX"/>
                         <outlet property="mainLabel" destination="vWA-7V-fMz" id="aIB-EQ-RFh"/>
                         <outlet property="myReportTableView" destination="Zh5-dc-EK4" id="BFf-Ia-fKu"/>

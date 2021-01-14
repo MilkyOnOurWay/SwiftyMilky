@@ -28,8 +28,7 @@ class FilterResultCardVC: UIViewController {
     }
     
     @IBAction func wideBtnClicked(_ sender: Any) {
-        print("cafeId: \(cafeId)")
-        print("buttonIsSelected: \(buttonIsSelected)")
+        print ( " Home - DetailInfo \(cafeId)" )
         // 눌렀을 때 서버통신 !
         // 통신중일때 더이상 누를 수 없게 // 이중 클릭 방지
         self.wideBtn.isUserInteractionEnabled = false
@@ -66,6 +65,7 @@ class FilterResultCardVC: UIViewController {
             NotificationCenter.default.post(name: Notification.Name("stoplottiehome"), object: nil)
             //다시 클릭 활성화
             self.wideBtn.isUserInteractionEnabled = true
+            
         }
         
         
@@ -96,13 +96,15 @@ extension FilterResultCardVC {
     }
     
     func addUniverse(){
+        
+        print("이건 원래 유니버스 \(buttonIsSelected)였다")
         print("home - addUniverse \(cafeId!)")
         ToastView.showIn(viewController: self, message: "카페가 나의 유니버스로 들어왔어요.", fromBottom: 40)
         universeButton.setImage(UIImage(named: "btnUniverseAdded"), for: .normal)
         universeCount += 1
         universeCountLabel.text = "\(universeCount)"
         universeCountLabel.textColor = UIColor(named: "Milky")
-        universeCountLabel.font = UIFont(name: "SF Pro Text Bold", size: 12.0)!
+        universeCountLabel.font = UIFont(name: "SF Pro Text Bold", size: 12.0) ?? .systemFont(ofSize: 12.0, weight: .bold)
         buttonIsSelected = true
         
         UniverseService.shared.addUniverse(cafeId!) { [self] (networkResult) -> (Void) in
@@ -113,7 +115,7 @@ extension FilterResultCardVC {
                 let addUniverse = res as? AddUniverse
                 dump(addUniverse)
                 print("success")
-                universeButton.isEnabled = true
+                
                 
             case.requestErr(_):
                 print("requestErr")
@@ -126,6 +128,9 @@ extension FilterResultCardVC {
             case .networkFail:
                 print(".failureErr")
             }
+            universeButton.isEnabled = true
+            // 전체 리로드
+            NotificationCenter.default.post(name: Notification.Name("homeMarkerSet"), object: nil)
         }
         
     }
@@ -139,7 +144,7 @@ extension FilterResultCardVC {
         universeCount -= 1
         universeCountLabel.text = "\(universeCount)"
         universeCountLabel.textColor = UIColor(named: "darkGrey")
-        universeCountLabel.font = UIFont(name: "SF Pro Text Regular", size: 12.0)!
+        universeCountLabel.font = UIFont(name: "SF Pro Text Regular", size: 12.0) ?? .systemFont(ofSize: 12.0, weight: .regular)
         buttonIsSelected = false
         
         UniverseService.shared.deleteUniverse(cafeId!) { [self] (networkResult) -> (Void) in
@@ -149,7 +154,6 @@ extension FilterResultCardVC {
                     print("success")
                     print(loadData)
                 }
-                universeButton.isEnabled = true
             case .requestErr( _):
                 print("requestErr")
             case .pathErr:
@@ -159,7 +163,9 @@ extension FilterResultCardVC {
             case .networkFail:
                 print("networkFail")
             }
-            
+            universeButton.isEnabled = true
+            // 전체 리로드
+            NotificationCenter.default.post(name: Notification.Name("homeMarkerSet"), object: nil)
         }
         
     }

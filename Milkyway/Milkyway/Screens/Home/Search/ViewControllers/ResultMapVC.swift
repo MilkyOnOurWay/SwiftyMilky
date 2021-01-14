@@ -111,7 +111,7 @@ extension ResultMapVC {
                     marker.mapView = mapView
                 }
                 print(homeData.result[index].universeCount)
-                cardVC.universeCountLabel.font = UIFont(name: "SF Pro Text Bold", size: 12.0)!
+                cardVC.universeCountLabel.font = UIFont(name: "SF Pro Text Bold", size: 12.0) ?? .systemFont(ofSize: 12.0, weight: .bold)
                 cardVC.universeCount = homeData.result[index].universeCount
                 cardVC.universeCountLabel.text = "\(homeData.result[index].universeCount)"
                 cardVC.cafeId = homeData.result[index].id

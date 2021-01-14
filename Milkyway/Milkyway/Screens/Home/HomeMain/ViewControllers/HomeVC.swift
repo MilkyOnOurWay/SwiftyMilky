@@ -95,6 +95,8 @@ class HomeVC: UIViewController, UIGestureRecognizerDelegate {
         // 로티관련 노티
         NotificationCenter.default.addObserver(self, selector: #selector(showLoadingLottie), name: Notification.Name("startlottiehome"),object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(stopLottieAnimation), name: Notification.Name("stoplottiehome"),object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(setService), name: Notification.Name("homeMarkerSet"),object: nil)
+        
         
     }
     
@@ -240,16 +242,17 @@ extension HomeVC {
                 if homeData.result[index].isUniversed {
                     cafeCardVC.universeButton.setImage(UIImage(named: "btnUniverseAdded"), for: .normal)
                     cafeCardVC.universeCountLabel.textColor = UIColor(named: "Milky")
-                    cafeCardVC.universeCountLabel.font = UIFont(name: "SF Pro Text Bold", size: 12.0)!
+                    cafeCardVC.universeCountLabel.font = UIFont(name: "SF Pro Text Bold", size: 12.0) ?? .systemFont(ofSize: 12.0, weight: .bold)
                 }
                 else {
                     cafeCardVC.universeButton.setImage(UIImage(named: "btnUniverse"), for: .normal)
                     cafeCardVC.universeCountLabel.textColor = UIColor(named: "darkGrey")
-                    cafeCardVC.universeCountLabel.font = UIFont(name: "SF Pro Text Regular", size: 12.0)!
+                    cafeCardVC.universeCountLabel.font = UIFont(name: "SF Pro Text Regular", size: 12.0) ?? .systemFont(ofSize: 8.0, weight: .regular)
                     
                 }
                 
                 cafeCardVC.cafeId = homeData.result[index].id
+                print("isUniversed : \(homeData.result[index].isUniversed)")
                 cafeCardVC.buttonIsSelected = homeData.result[index].isUniversed
                 
                 // 이전 마커체크
@@ -304,12 +307,12 @@ extension HomeVC {
                 if filterData.result[index].isUniversed {
                     cafeCardVC.universeButton.setImage(UIImage(named: "btnUniverseAdded"), for: .normal)
                     cafeCardVC.universeCountLabel.textColor = UIColor(named: "Milky")
-                    cafeCardVC.universeCountLabel.font = UIFont(name: "SF Pro Text Bold", size: 12.0)!
+                    cafeCardVC.universeCountLabel.font = UIFont(name: "SF Pro Text Bold", size: 12.0) ?? .systemFont(ofSize: 8.0, weight: .bold)
                 }
                 else {
                     cafeCardVC.universeButton.setImage(UIImage(named: "btnUniverse"), for: .normal)
                     cafeCardVC.universeCountLabel.textColor = UIColor(named: "darkGrey")
-                    cafeCardVC.universeCountLabel.font = UIFont(name: "SF Pro Text Regular", size: 12.0)!
+                    cafeCardVC.universeCountLabel.font = UIFont(name: "SF Pro Text Regular", size: 12.0) ?? .systemFont(ofSize: 12.0, weight: .regular)
                 }
                 cafeCardVC.cafeId = filterData.result[index].id
                 cafeCardVC.buttonIsSelected = filterData.result[index].isUniversed
@@ -342,7 +345,7 @@ extension HomeVC {
     }
     
     
-    func setService() {
+    @objc func setService() {
         showLoadingLottie()
         print("setService")
         HomeService.shared.GetMilkyHome() { [self] (networkResult) -> (Void) in
@@ -350,6 +353,7 @@ extension HomeVC {
             case .success(let data):
                 if let loadData = data as? HomeData {
                     print("success")
+                    
                     homeData = loadData
                     setMarker()
                     // 유저닉네임 전역변수로 설정
@@ -615,7 +619,7 @@ extension HomeVC: NMFMapViewCameraDelegate {
             
             //            cafeCardVC.view.isHidden = true
             beforeMarker?.iconImage = beforeIS ? self.uniUnSelectedImage : unselectedImage
-            
+            cafeCardVC.view.isHidden = true
         }
     }
 }

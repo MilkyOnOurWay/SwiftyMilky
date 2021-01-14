@@ -19,7 +19,6 @@ struct HomeService {
         
         let URL = APIConstants.homeResult
         print(URL)
-        //let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWR4Ijo1LCJpYXQiOjE2MDk3Nzg0NjksImV4cCI6MTYxMjM3MDQ2OSwiaXNzIjoibWlsa3lXYXkifQ.c2JAdyd0pGQzbmT0E_yl51eAGkcO71YfokwJebqqDME"
         let token = KeychainWrapper.standard.string(forKey: "Token")
         let headers: HTTPHeaders = [
             "Content-Type": "application/json",
@@ -74,7 +73,7 @@ struct HomeService {
         
         let URL = APIConstants.categoryHome + "\(categoryId)"
         print(URL)
-//        let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWR4Ijo1LCJpYXQiOjE2MDk3Nzg0NjksImV4cCI6MTYxMjM3MDQ2OSwiaXNzIjoibWlsa3lXYXkifQ.c2JAdyd0pGQzbmT0E_yl51eAGkcO71YfokwJebqqDME"
+
         let token = KeychainWrapper.standard.string(forKey: "Token")
         
         let headers: HTTPHeaders = [

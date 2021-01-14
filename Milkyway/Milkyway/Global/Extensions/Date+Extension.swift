@@ -91,6 +91,7 @@ extension Date {
         }
     }
     
+    
     func isCheckRoomOwner() -> String {
         let interval = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute],
                                                        from: self,
@@ -99,4 +100,5 @@ extension Date {
         return "\(7 - (interval.day ?? 0))"
     }
 
+   
 }

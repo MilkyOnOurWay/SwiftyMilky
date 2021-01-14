@@ -26,5 +26,17 @@ extension String {
         return encoded
     }
     
+    public func getDateFormat(time: String) -> String? {
+        
+        let timeSplit = time.components(separatedBy: ["T", "."])
+        let timeFormatted = timeSplit[0]
+        
+        let dateFormat = DateFormatter()
+        dateFormat.dateFormat = "YYYY.MM.dd"
+        let timeDateFormat = dateFormat.date(from: timeFormatted)
+        let stringDate = dateFormat.string(from: timeDateFormat!)
+        return stringDate
+    }
+    
     
 }

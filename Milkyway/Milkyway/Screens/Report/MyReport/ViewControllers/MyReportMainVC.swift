@@ -247,7 +247,13 @@ extension MyReportMainVC: UITableViewDataSource {
                 }
                 cell.setCell()
                 cell.setCategory(category: myReportData.done[indexPath.row].category!)
-                cell.dateLabel.text = myReportData.done[indexPath.row].createdAt
+                
+                // 시간 date formatt
+                let originAddTime = myReportData.done[indexPath.row].createdAt
+                let formattedTime = originAddTime.getDateFormat(time: originAddTime)
+              
+                cell.dateLabel.text = formattedTime
+                    
                 cell.cafeNameLabel.text = myReportData.done[indexPath.row].cafeName
                 cell.addressLabel.text = myReportData.done[indexPath.row].cafeAddress
                 

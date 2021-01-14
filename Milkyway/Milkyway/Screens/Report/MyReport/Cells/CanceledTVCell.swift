@@ -51,8 +51,12 @@ extension CanceledTVCell: UICollectionViewDataSource {
             return UICollectionViewCell()
         }
         cell.setCell(backName: "canceledReport")
+        // 시간부분 date formatt
+        let originAddTime = cancelData[indexPath.row].createdAt
+        let formattedTime = originAddTime.getDateFormat(time: originAddTime) ?? ""
+        print("포맷시간, \(formattedTime)")
         cell.setLabel(storeName: cancelData[indexPath.row].cafeName,
-                      date: cancelData[indexPath.row].createdAt,
+                      date: formattedTime,
                       color: "lightGrey")
         return cell
     }

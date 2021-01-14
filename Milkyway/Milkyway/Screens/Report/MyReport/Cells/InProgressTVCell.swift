@@ -66,7 +66,10 @@ extension InProgressTVCell: UICollectionViewDataSource {
             return UICollectionViewCell()
         }
         cell.setCell(backName: "InprogressReport")
-        cell.setLabel(storeName: ingData[indexPath.row].cafeName, date: ingData[indexPath.row].createdAt, color: "darkGrey")
+        // 시간부분 date formatt
+        let originAddTime = ingData[indexPath.row].createdAt
+        let formattedTime = originAddTime.getDateFormat(time: originAddTime) ?? ""
+        cell.setLabel(storeName: ingData[indexPath.row].cafeName, date: formattedTime, color: "darkGrey")
         return cell
     }
 }

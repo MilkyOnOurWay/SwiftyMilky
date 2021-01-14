@@ -103,7 +103,7 @@ struct UserService {
                             do {
                                 let decoder = JSONDecoder()
                                 let result = try decoder.decode(ResponseTempResult.self,from: value)
-                                
+                                print(result)
                             } catch {
                                 completion(.pathErr)
                             }

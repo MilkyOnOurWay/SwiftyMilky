@@ -7,6 +7,7 @@
 
 import UIKit
 import NMapsMap
+import Lottie
 
 class ResultMapVC: UIViewController {
     
@@ -54,11 +55,37 @@ class ResultMapVC: UIViewController {
         setDeleteButton()
         setCardView()
         
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(showLottie), name: Notification.Name("startlottiehome"),object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(stopLottie), name: Notification.Name("stoplottiehome"),object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadMap), name: Notification.Name("homeMarkerSet"), object: nil)
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.tabBarController?.tabBar.isHidden = false
+    }
+    
+    let loadingView = AnimationView(name: "loadingLottie")
+    
+    @objc func showLottie(){
+        
+        loadingView.frame = CGRect(x: 0, y: 0, width: 300, height: 300)
+        loadingView.center = self.view.center
+        loadingView.contentMode = .scaleAspectFill
+        loadingView.loopMode = .loop
+        self.view.addSubview(loadingView)
+        
+        loadingView.play()
+        
+        
+    }
+    
+    @objc func stopLottie(){
+        loadingView.stop()
+        loadingView.removeFromSuperview()
+        
     }
     
 }
@@ -91,8 +118,6 @@ extension ResultMapVC {
     }
     func setMarker(){
         
-        //let marker = NMFMarker(position: NMGLatLng(lat: latitude ?? 0.0, lng: longitude ?? 0.0), iconImage: selectedPickerImage)
-        // UniSelectedImage, 유니버스인 경우
         for index in 0..<homeData.result.count {
             let marker: NMFMarker
             if homeData.result[index].cafeName == cafeName && homeData.result[index].cafeAddress == cafeAddress {
@@ -115,6 +140,8 @@ extension ResultMapVC {
                 cardVC.universeCount = homeData.result[index].universeCount
                 cardVC.universeCountLabel.text = "\(homeData.result[index].universeCount)"
                 cardVC.cafeId = homeData.result[index].id
+                
+               
             }
         }
        
@@ -229,6 +256,7 @@ extension ResultMapVC {
     @objc func setAllCafes(){
         
         print("setService")
+        showLottie()
         HomeService.shared.GetMilkyHome() { [self] (networkResult) -> (Void) in
          
             switch networkResult {
@@ -251,10 +279,20 @@ extension ResultMapVC {
             case .networkFail:
                 print("networkFail")
             }
+            stopLottie()
         }
     }
     
-    
+    @objc func reloadMap(){
+        
+        
+        setAllCafes()
+        setMarker()
+        
+        
+        
+        
+    }
     
     
     

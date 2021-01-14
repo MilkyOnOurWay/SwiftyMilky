@@ -110,11 +110,12 @@ extension NicknameChangeVC {
     
     @objc func changeButtonDidTap(){
         
-        // 여기서 서버코드 연결할 것 
-//        let vc = UIStoryboard.init(name: "TabBar", bundle: nil).instantiateViewController(identifier: "TabBarController") as? TabBarController
-//        vc?.modalPresentationStyle = .fullScreen
-//        self.present(vc!, animated: true, completion: nil)
-       changeNicknameService(nickname ?? "")
+        // 여기서 서버코드 연결할 것
+        // 지금 닉네임 변경만 되고 홈 넘어가는게 안되는데 그 이슈 다시 생각해봐야할듯
+        let vc = UIStoryboard.init(name: "TabBar", bundle: nil).instantiateViewController(identifier: "TabBarController") as? TabBarController
+        vc?.modalPresentationStyle = .fullScreen
+        self.present(vc!, animated: true, completion: nil)
+       //changeNicknameService(nickname ?? "")
     }
     
     // MARK: - 닉네임 변경 서버

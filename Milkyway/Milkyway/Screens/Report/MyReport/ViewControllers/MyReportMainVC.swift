@@ -131,9 +131,9 @@ extension MyReportMainVC {
                     print("success")
                     myReportData = loadData
                     // 유저닉네임 전역변수로 설정
-//                    let ad = UIApplication.shared.delegate as? AppDelegate
-//                    ad?.userNickNameInHere =
-//                    print("table 들어옴")
+                    let ad = UIApplication.shared.delegate as? AppDelegate
+                    nickName = (ad?.userNickNameInHere)!
+                    
                     self.myReportTableView.reloadData()
                     if myReportData.cancel.isEmpty && myReportData.ing.isEmpty && myReportData.done.isEmpty {
                         myReportTableView.isHidden = true
@@ -193,7 +193,7 @@ extension MyReportMainVC: UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: TopTVCell.identifier) as? TopTVCell else {
                 return UITableViewCell()
             }
-            cell.setCell(nickName: "열매열매")
+            cell.setCell(nickName: nickName)
             cell.selectionStyle = .none
             return cell
         } else if indexPath.section == 1 { //취소된 제보

@@ -37,15 +37,15 @@ class CompletedTVCell: UITableViewCell {
 
 extension CompletedTVCell {
     func setCell() {
-        cardView.borderWidth = 1
-        cardView.borderColor = UIColor(displayP3Red: 229/255, green: 229/255, blue: 229/255, alpha: 1.0)
-        cardView.backgroundColor = UIColor(named: "lightGrey")
-        cardView.layer.cornerRadius = 8
-        cardView.layer.shadowColor = UIColor.black.cgColor
-        cardView.layer.shadowOpacity = 0.15
-        cardView.layer.shadowOffset = CGSize(width: 2, height: 2)
-        cardView.layer.shadowRadius = 8
-        cardView.layer.masksToBounds = false
+//        cardView.borderWidth = 1
+//        cardView.borderColor = UIColor(displayP3Red: 229/255, green: 229/255, blue: 229/255, alpha: 1.0)
+//        cardView.backgroundColor = UIColor(named: "lightGrey")
+//        cardView.layer.cornerRadius = 8
+//        cardView.layer.shadowColor = UIColor.black.cgColor
+//        cardView.layer.shadowOpacity = 0.15
+//        cardView.layer.shadowOffset = CGSize(width: 2, height: 2)
+//        cardView.layer.shadowRadius = 8
+//        cardView.layer.masksToBounds = false
     }
     
     func setCategory(category: [Int]) {

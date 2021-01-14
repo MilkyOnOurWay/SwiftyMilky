@@ -135,8 +135,8 @@
                                 <rect key="frame" x="0.0" y="72" width="375" height="595"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="group509" translatesAutoresizingMaskIntoConstraints="NO" id="MYZ-M4-o8P">
-                                <rect key="frame" x="0.0" y="72" width="375" height="674"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="group509" translatesAutoresizingMaskIntoConstraints="NO" id="MYZ-M4-o8P">
+                                <rect key="frame" x="0.0" y="72" width="375" height="595"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Zgl-bg-LFy"/>
@@ -159,7 +159,7 @@
                             <constraint firstItem="GcX-O0-WrO" firstAttribute="leading" secondItem="Zgl-bg-LFy" secondAttribute="leading" id="gZP-kr-9px"/>
                             <constraint firstItem="pjK-4v-GyW" firstAttribute="leading" secondItem="3o5-pG-75z" secondAttribute="trailing" constant="4" id="mti-ri-G7w"/>
                             <constraint firstItem="GcX-O0-WrO" firstAttribute="bottom" secondItem="Zgl-bg-LFy" secondAttribute="bottom" id="sfU-Ph-VSh"/>
-                            <constraint firstItem="MYZ-M4-o8P" firstAttribute="bottom" secondItem="Zgl-bg-LFy" secondAttribute="bottom" constant="79" id="ttO-ur-TFr"/>
+                            <constraint firstItem="MYZ-M4-o8P" firstAttribute="bottom" secondItem="Zgl-bg-LFy" secondAttribute="bottom" id="ttO-ur-TFr"/>
                             <constraint firstItem="MYZ-M4-o8P" firstAttribute="trailing" secondItem="Zgl-bg-LFy" secondAttribute="trailing" id="uJN-oL-S3Y"/>
                             <constraint firstItem="4PQ-N2-y2V" firstAttribute="leading" secondItem="3o5-pG-75z" secondAttribute="trailing" constant="21" id="ule-Nx-61S"/>
                             <constraint firstItem="MYZ-M4-o8P" firstAttribute="top" secondItem="3o5-pG-75z" secondAttribute="bottom" constant="8" symbolic="YES" id="xK8-6e-Hir"/>

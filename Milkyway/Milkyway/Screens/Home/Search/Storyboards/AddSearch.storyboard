@@ -135,12 +135,16 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="group509" translatesAutoresizingMaskIntoConstraints="NO" id="x6M-bz-8TM">
+                                <rect key="frame" x="0.0" y="72" width="375" height="595"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="pXg-we-xWE"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="pXg-we-xWE" firstAttribute="trailing" secondItem="gzJ-iB-PrD" secondAttribute="trailing" constant="31" id="3K3-VN-Yvh"/>
                             <constraint firstItem="7vI-sH-uea" firstAttribute="top" secondItem="pXg-we-xWE" secondAttribute="top" constant="20" id="8yw-8J-pPb"/>
+                            <constraint firstItem="x6M-bz-8TM" firstAttribute="bottom" secondItem="pXg-we-xWE" secondAttribute="bottom" id="BfX-ju-nz6"/>
                             <constraint firstItem="HK4-gx-Z6E" firstAttribute="top" secondItem="pXg-we-xWE" secondAttribute="top" constant="24" id="F1M-gM-dFM"/>
                             <constraint firstItem="HK4-gx-Z6E" firstAttribute="leading" secondItem="7vI-sH-uea" secondAttribute="trailing" constant="4" id="HzD-g5-h3E"/>
                             <constraint firstItem="q7G-jZ-jG8" firstAttribute="trailing" secondItem="pXg-we-xWE" secondAttribute="trailing" id="J47-WK-jOw"/>
@@ -155,27 +159,32 @@
                             <constraint firstItem="OMl-js-x9a" firstAttribute="top" secondItem="pXg-we-xWE" secondAttribute="top" constant="25" id="dUQ-M2-ygD"/>
                             <constraint firstItem="q7G-jZ-jG8" firstAttribute="leading" secondItem="pXg-we-xWE" secondAttribute="leading" id="dgQ-gH-NmI"/>
                             <constraint firstItem="pXg-we-xWE" firstAttribute="trailing" secondItem="OMl-js-x9a" secondAttribute="trailing" constant="48" id="fEk-3V-0Ki"/>
+                            <constraint firstItem="x6M-bz-8TM" firstAttribute="trailing" secondItem="pXg-we-xWE" secondAttribute="trailing" id="gi9-TF-owk"/>
                             <constraint firstItem="q7G-jZ-jG8" firstAttribute="top" secondItem="7vI-sH-uea" secondAttribute="bottom" constant="8" symbolic="YES" id="kFV-8f-DrK"/>
+                            <constraint firstItem="x6M-bz-8TM" firstAttribute="leading" secondItem="pXg-we-xWE" secondAttribute="leading" id="spp-BV-lRw"/>
                             <constraint firstItem="7vI-sH-uea" firstAttribute="leading" secondItem="pXg-we-xWE" secondAttribute="leading" constant="7" id="uUP-uX-pBG"/>
+                            <constraint firstItem="x6M-bz-8TM" firstAttribute="top" secondItem="7vI-sH-uea" secondAttribute="bottom" constant="8" symbolic="YES" id="wVu-5P-pVD"/>
                             <constraint firstItem="HK4-gx-Z6E" firstAttribute="leading" secondItem="7vI-sH-uea" secondAttribute="trailing" constant="4" id="xc2-YC-BLp"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="backButton" destination="7vI-sH-uea" id="QAR-9J-N2g"/>
                         <outlet property="deleteButton" destination="gzJ-iB-PrD" id="DiV-AC-Ima"/>
+                        <outlet property="noResultImageView" destination="x6M-bz-8TM" id="lDY-9O-KAQ"/>
                         <outlet property="searchTableView" destination="q7G-jZ-jG8" id="zWO-W5-omf"/>
                         <outlet property="searchTextField" destination="OMl-js-x9a" id="8fD-jC-ZSG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wgm-Dw-5bc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="530" y="332"/>
+            <point key="canvasLocation" x="528.79999999999995" y="331.48425787106447"/>
         </scene>
     </scenes>
     <resources>
         <image name="back" width="44" height="44"/>
         <image name="btnClear" width="28" height="28"/>
         <image name="btnSearch" width="24" height="24"/>
+        <image name="group509" width="375" height="674"/>
         <image name="rectangle155" width="304" height="36"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

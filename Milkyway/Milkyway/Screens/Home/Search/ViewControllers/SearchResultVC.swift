@@ -39,6 +39,9 @@ extension SearchResultVC {
         searchTableView.delegate = self
         searchTableView.dataSource = self
         noResultImageView.isHidden = true
+        
+        // 테이블뷰 라인 없애기
+        searchTableView.separatorStyle = .none
         let nibName = UINib(nibName: "SearchTVC", bundle: nil)
         searchTableView.register(nibName, forCellReuseIdentifier: "SearchTVC")
         
@@ -106,6 +109,14 @@ extension SearchResultVC {
                 
                 self.searchedCafe = res as? [CafeHomeResult]
                 
+                print("몇개일까\(self.searchedCafe?.count)")
+                if (self.searchedCafe?.count == 0)  {
+                    self.searchTableView.reloadData()
+                    self.noResultImageView.isHidden = false
+                    print("이게 맞나?")
+                }
+                // 테이블뷰 라인 살리기
+                self.searchTableView.separatorStyle = .singleLine
                 DispatchQueue.main.async {
                     self.searchTableView.reloadData()
                 }
@@ -147,12 +158,8 @@ extension SearchResultVC: UITableViewDataSource {
         // MARK: - 값 없으면 데이터 없음 이미지 띄우기
         // 아무값도 못 받으면 이미지 띄우기
         // 이거 수정해야해
-        if (searchedCafe?[indexPath.row] == nil) {
-            self.searchTableView.reloadData()
-            noResultImageView.isHidden = false
-            print("이게 맞나?")
-        }
-        
+       // print("졸리다\(cell.searchedCafe)")
+   
         return cell
     }
     

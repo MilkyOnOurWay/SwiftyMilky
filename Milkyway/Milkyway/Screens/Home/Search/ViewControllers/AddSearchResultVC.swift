@@ -13,6 +13,7 @@ class AddSearchResultVC: UIViewController {
     @IBOutlet weak var deleteButton: UIButton!
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var searchTableView: UITableView!
+    @IBOutlet weak var noResultImageView: UIImageView!
     
     var buttonIsSelected: Bool = true
     var cafeResult: String?
@@ -47,6 +48,8 @@ extension AddSearchResultVC {
         searchTableView.dataSource = self
         let nibName = UINib(nibName: "AddSearchTVC", bundle: nil)
         searchTableView.register(nibName, forCellReuseIdentifier: "AddSearchTVC")
+        noResultImageView.isHidden = true
+        searchTableView.separatorStyle = .none
        
     }
     
@@ -103,6 +106,11 @@ extension AddSearchResultVC {
             case .success(let res):
                 dump(res)
                 self.searchedCafe = res as? [CafeResult]
+                if (self.searchedCafe?.count == 0) {
+                    self.searchTableView.reloadData()
+                    self.noResultImageView.isHidden = false
+                }
+                self.searchTableView.separatorStyle = .singleLine
                 DispatchQueue.main.async {
                     self.searchTableView.reloadData()
                 }

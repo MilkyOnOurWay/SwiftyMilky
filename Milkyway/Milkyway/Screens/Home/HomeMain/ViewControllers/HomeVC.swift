@@ -240,12 +240,12 @@ extension HomeVC {
                 if homeData.result[index].isUniversed {
                     cafeCardVC.universeButton.setImage(UIImage(named: "btnUniverseAdded"), for: .normal)
                     cafeCardVC.universeCountLabel.textColor = UIColor(named: "Milky")
-                    cafeCardVC.universeCountLabel.font = UIFont(name: "SF Pro Text Bold", size: 12.0)!
+                    cafeCardVC.universeCountLabel.font = UIFont(name: "SF Pro Text Bold", size: 12.0) ?? .systemFont(ofSize: 12.0, weight: .bold)
                 }
                 else {
                     cafeCardVC.universeButton.setImage(UIImage(named: "btnUniverse"), for: .normal)
                     cafeCardVC.universeCountLabel.textColor = UIColor(named: "darkGrey")
-                    cafeCardVC.universeCountLabel.font = UIFont(name: "SF Pro Text Regular", size: 12.0)!
+                    cafeCardVC.universeCountLabel.font = UIFont(name: "SF Pro Text Regular", size: 12.0) ?? .systemFont(ofSize: 8.0, weight: .regular)
                     
                 }
                 
@@ -305,12 +305,12 @@ extension HomeVC {
                 if filterData.result[index].isUniversed {
                     cafeCardVC.universeButton.setImage(UIImage(named: "btnUniverseAdded"), for: .normal)
                     cafeCardVC.universeCountLabel.textColor = UIColor(named: "Milky")
-                    cafeCardVC.universeCountLabel.font = UIFont(name: "SF Pro Text Bold", size: 12.0)!
+                    cafeCardVC.universeCountLabel.font = UIFont(name: "SF Pro Text Bold", size: 12.0) ?? .systemFont(ofSize: 8.0, weight: .bold)
                 }
                 else {
                     cafeCardVC.universeButton.setImage(UIImage(named: "btnUniverse"), for: .normal)
                     cafeCardVC.universeCountLabel.textColor = UIColor(named: "darkGrey")
-                    cafeCardVC.universeCountLabel.font = UIFont(name: "SF Pro Text Regular", size: 12.0)!
+                    cafeCardVC.universeCountLabel.font = UIFont(name: "SF Pro Text Regular", size: 12.0) ?? .systemFont(ofSize: 12.0, weight: .regular)
                 }
                 cafeCardVC.cafeId = filterData.result[index].id
                 cafeCardVC.buttonIsSelected = filterData.result[index].isUniversed

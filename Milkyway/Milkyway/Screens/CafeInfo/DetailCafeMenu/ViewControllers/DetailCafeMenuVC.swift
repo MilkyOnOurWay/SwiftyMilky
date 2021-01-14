@@ -39,7 +39,7 @@ class DetailCafeMenuVC: UIViewController {
         
         if like {
             likeLabel.textColor = UIColor(named: "Milky")
-            likeLabel.font = UIFont(name: "SF Pro Text Bold", size: 8.0)!
+            likeLabel.font = UIFont(name: "SF Pro Text Bold", size: 8.0) ?? .systemFont(ofSize: 8.0, weight: .bold)
         }
         
     }
@@ -216,7 +216,7 @@ extension DetailCafeMenuVC {
         testCafe.cafeInfo.universeCount += 1
         likeLabel.text = "\(testCafe.cafeInfo.universeCount)"
         likeLabel.textColor = UIColor(named: "Milky")
-        likeLabel.font = UIFont(name: "SF Pro Text Bold", size: 8.0)!
+        likeLabel.font = UIFont(name: "SF Pro Text Bold", size: 8.0) ?? .systemFont(ofSize: 8.0, weight: .bold)
         like = true
         
         UniverseService.shared.addUniverse(testCafe.cafeInfo.id) { [self] (networkResult) -> (Void) in
@@ -252,7 +252,7 @@ extension DetailCafeMenuVC {
         testCafe.cafeInfo.universeCount -= 1
         likeLabel.text = "\(testCafe.cafeInfo.universeCount)"
         likeLabel.textColor = UIColor(named: "darkGrey")
-        likeLabel.font = UIFont(name: "SF Pro Text Regular", size: 8.0)!
+        likeLabel.font = UIFont(name: "SF Pro Text Regular", size: 8.0) ?? .systemFont(ofSize: 8.0, weight: .regular)
         like = false
         
         UniverseService.shared.deleteUniverse(testCafe.cafeInfo.id) { [self] (networkResult) -> (Void) in

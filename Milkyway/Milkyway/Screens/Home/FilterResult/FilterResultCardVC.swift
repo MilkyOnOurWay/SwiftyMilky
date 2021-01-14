@@ -103,7 +103,7 @@ extension FilterResultCardVC {
         universeCount += 1
         universeCountLabel.text = "\(universeCount)"
         universeCountLabel.textColor = UIColor(named: "Milky")
-        universeCountLabel.font = UIFont(name: "SF Pro Text Bold", size: 12.0)!
+        universeCountLabel.font = UIFont(name: "SF Pro Text Bold", size: 12.0) ?? .systemFont(ofSize: 12.0, weight: .bold)
         buttonIsSelected = true
         
         UniverseService.shared.addUniverse(cafeId!) { [self] (networkResult) -> (Void) in
@@ -141,7 +141,7 @@ extension FilterResultCardVC {
         universeCount -= 1
         universeCountLabel.text = "\(universeCount)"
         universeCountLabel.textColor = UIColor(named: "darkGrey")
-        universeCountLabel.font = UIFont(name: "SF Pro Text Regular", size: 12.0)!
+        universeCountLabel.font = UIFont(name: "SF Pro Text Regular", size: 12.0) ?? .systemFont(ofSize: 12.0, weight: .regular)
         buttonIsSelected = false
         
         UniverseService.shared.deleteUniverse(cafeId!) { [self] (networkResult) -> (Void) in

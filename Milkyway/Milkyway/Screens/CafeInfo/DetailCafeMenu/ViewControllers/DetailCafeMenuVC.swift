@@ -117,7 +117,7 @@ extension DetailCafeMenuVC: UITableViewDataSource {
             cell.openTimeLabel.text = testCafe.cafeInfo.businessHours
             cell.telNumBtn.setTitle(testCafe.cafeInfo.cafePhoneNum, for: .normal)
             cell.webPageBtn.setTitle(testCafe.cafeInfo.cafeLink, for: .normal)
-            if testCafe.cafeInfo.businessHours == nil || testCafe.cafeInfo.businessHours == "" {
+            if testCafe.cafeInfo.businessHours == nil || testCafe.cafeInfo.businessHours == " " {
                 cell.openTimeLabel.text = " 영업시간 정보가 없습니다."
             }
             

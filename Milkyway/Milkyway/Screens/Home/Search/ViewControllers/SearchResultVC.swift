@@ -217,7 +217,12 @@ extension SearchResultVC: UITextFieldDelegate {
     }
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        searchTextField.resignFirstResponder()
+        var str = textField.text
+        if str?.count != 0{
+            searchTextField.resignFirstResponder()
+            search(str ?? "")
+        }
+        
         return true
     }
 

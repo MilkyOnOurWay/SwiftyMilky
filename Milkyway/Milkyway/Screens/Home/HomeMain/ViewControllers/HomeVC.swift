@@ -9,6 +9,7 @@ import UIKit
 import NMapsMap
 import DLRadioButton
 import Lottie
+import CoreLocation
 
 class HomeVC: UIViewController, UIGestureRecognizerDelegate {
     
@@ -82,13 +83,13 @@ class HomeVC: UIViewController, UIGestureRecognizerDelegate {
     override func viewDidLoad(){
         super.viewDidLoad()
         delegateGather()
-        setLocation()
         setMap()
         setMapButton()
         setFilterButton()
         setBottomCard()
         setFirstCardView()
         setRadioBtn()
+        setLocation()
         
         self.navigationController?.interactivePopGestureRecognizer?.delegate = self
 
@@ -102,6 +103,7 @@ class HomeVC: UIViewController, UIGestureRecognizerDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         setService()
+        
     }
     // MARK: - 검색화면으로 이동
     @IBAction func searchBtnClicked(_ sender: Any) {
@@ -196,8 +198,8 @@ extension HomeVC {
         locationManager.requestWhenInUseAuthorization() //권한요청
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.startUpdatingLocation()
-        
         let coor = locationManager.location?.coordinate
+        print(coor)
         move(at: coor)
     }
     
@@ -209,11 +211,17 @@ extension HomeVC {
     func move(at coordinate: CLLocationCoordinate2D?) {
         let locationOverlay = mapView.locationOverlay
         
+        print("zoom level: \(mapView.zoomLevel)")
+        
+        let latitude = coordinate!.latitude
+        let longitude = coordinate!.longitude
+        let camera = NMFCameraUpdate(scrollTo: NMGLatLng(lat: latitude, lng: longitude))
+        
+        mapView.moveCamera(camera)
+        
         mapView.positionMode = .direction
         mapView.locationOverlay.icon = currentLImage
         mapView.locationOverlay.subIcon = directionImage
-        
-        print("zoom level: \(mapView.zoomLevel)")
         
         locationOverlay.circleRadius = 0 // 기본 원그림자 없애기
         locationOverlay.iconWidth = CGFloat(NMF_LOCATION_OVERLAY_SIZE_AUTO)
@@ -408,6 +416,7 @@ extension HomeVC {
                     print("requestErr")
                 case .pathErr:
                     print("pathErr")
+                    ToastView.showIn(viewController: self, message: "원하는 옵션에 맞는 카페가 없어요.\n 다른 옵션을 선택해 볼까요?", fromBottom: 10 + (self.tabBarController?.tabBar.frame.height)!)
                     markerReset(marker: filterMarkers)
                     markerReset(marker: markers)
                 case .serverErr:
@@ -613,7 +622,7 @@ extension HomeVC: NMFMapViewTouchDelegate {
 
 extension HomeVC: NMFMapViewCameraDelegate {
     func mapView(_ mapView: NMFMapView, cameraWillChangeByReason reason: Int, animated: Bool){
-        if reason == NMFMapChangedByGesture {
+        if reason == NMFMapChangedByGesture || reason == NMFMapChangedByDeveloper {
             //            print("지도 움직이는 중 zoom level: \(mapView.zoomLevel)")
             mapView.locationOverlay.icon = currentLImage
             

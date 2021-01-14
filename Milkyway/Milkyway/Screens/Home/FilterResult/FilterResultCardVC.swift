@@ -77,7 +77,6 @@ class FilterResultCardVC: UIViewController {
 extension FilterResultCardVC {
     
     func setView(){
-        print("왜 안먹혀 샹")
         rootView.layer.cornerRadius = 12
         rootView.layer.shadowColor = UIColor.black.cgColor
         rootView.layer.shadowOpacity = 0.1

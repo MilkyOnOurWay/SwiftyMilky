@@ -47,6 +47,7 @@ class CancelReasonVC: UIViewController {
             }
         }
         
+        NotificationCenter.default.post(name: Notification.Name("cancelConfirm"), object: nil)
         self.dismiss(animated: false)
     }
 }

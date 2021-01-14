@@ -39,6 +39,7 @@ class MyReportMainVC: UIViewController, IndicatorInfoProvider {
     }
     override func viewWillAppear(_ animated: Bool) {
         setService()
+        myReportTableView.reloadData()
     }
     func setAuto() {
         let margins = view.layoutMarginsGuide
@@ -99,7 +100,7 @@ extension MyReportMainVC {
         subLabel.numberOfLines = 2
     }
     func notiGather() {
-        NotificationCenter.default.addObserver(self, selector: #selector(cancelReasonTap), name: Notification.Name("cancelReason"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(cancelReasonTap(_:)), name: Notification.Name("cancelReason"), object: nil)
     }
     func registerDelegate() {
         myReportTableView.dataSource = self
@@ -134,7 +135,12 @@ extension MyReportMainVC {
 //                    ad?.userNickNameInHere =
 //                    print("table 들어옴")
                     self.myReportTableView.reloadData()
+                    if myReportData.cancel.isEmpty && myReportData.ing.isEmpty && myReportData.done.isEmpty {
+                        myReportTableView.isHidden = true
+                    } else {
+                        myReportTableView.isHidden = false
                     }
+                }
             case .requestErr( _):
                 print("requestErr")
             case .pathErr:
@@ -148,14 +154,17 @@ extension MyReportMainVC {
         }
         
     }
-    @objc func cancelReasonTap(_ sender: UITableView) {
+    @objc func cancelReasonTap(_ noti: NSNotification) {
         print("MyReport - cancelReason")
         guard let cancelVC = UIStoryboard(name: "MyReportMain", bundle: nil).instantiateViewController(withIdentifier:"CancelReasonVC") as? CancelReasonVC else {
             return
         }
-        cancelVC.rejectReasonId = rejectReason
+        let getInfo = noti.object as! [Int]
+        cancelVC.rejectReasonId = getInfo[0]
+        cancelVC.cafeId = getInfo[1]
         cancelVC.modalPresentationStyle = .overCurrentContext
         present(cancelVC, animated: false, completion: nil)
+        self.myReportTableView.reloadData()
     }
 }
 
@@ -180,11 +189,6 @@ extension MyReportMainVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        // 다 비어있으면 테이블 숨기고 안내 화면 보여주기
-//        if myReportData.cancel.isEmpty && myReportData.ing.isEmpty && myReportData.done.isEmpty {
-//            tableView.isHidden = true
-//        }
-        
         if indexPath.section == 0 { //닉네임
             guard let cell = tableView.dequeueReusableCell(withIdentifier: TopTVCell.identifier) as? TopTVCell else {
                 return UITableViewCell()
@@ -196,27 +200,29 @@ extension MyReportMainVC: UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: CanceledTVCell.identifier) as? CanceledTVCell else {
                 return UITableViewCell()
             }
-            cell.setCell(cancelData: myReportData.cancel)
-            print(myReportData.cancel)
-//            rejectReason = myReportData.cancel[indexPath.row].rejectReasonID!
             
-            print("여긴 취소된 제본데요,,\(myReportData.cancel.count)")
             // 취소된 제보 없애면 hidden하고 높이 0 만들기
-//            if myReportData.cancel.count == 0 {
-//                cell.isHidden = true
-//                cell.rootHeight.constant = 0
-//            } else {
-//
-//            }
+            if myReportData.cancel.count == 0 {
+                cell.isHidden = true
+                cell.rootHeight.constant = 0
+            } else {
+                cell.rootHeight.constant = 130 //cell.rootView.frame.height
+                cell.setCell(cancelData: myReportData.cancel)
+                print(myReportData.cancel)
+            }
             cell.selectionStyle = .none
             return cell
         } else if indexPath.section == 2 { // 진행중인 제보
             guard let cell = tableView.dequeueReusableCell(withIdentifier: InProgressTVCell.identifier) as? InProgressTVCell else {
                 return UITableViewCell()
             }
-            cell.setLabel()
-            print("여긴 진행중인 제본데요,,\(myReportData.ing.count)")
-            cell.setCell(ingData: myReportData.ing)
+            if myReportData.ing.count == 0 {
+                cell.collectionView.isHidden = true
+                cell.setLabel()
+            } else {
+                cell.collectionView.isHidden = false
+                cell.setCell(ingData: myReportData.ing)
+            }
             cell.selectionStyle = .none
             return cell
         } else { // 완료된 제보
@@ -257,6 +263,7 @@ extension MyReportMainVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         print("indexPath.row : \(indexPath.row)")
+        
         if indexPath.section == 3 {
             
             // 눌렀을 때 서버통신 !
@@ -294,8 +301,6 @@ extension MyReportMainVC: UITableViewDelegate {
                 case .networkFail:
                     print("networkFail")
                 }
-                
-                
             }
         }
         

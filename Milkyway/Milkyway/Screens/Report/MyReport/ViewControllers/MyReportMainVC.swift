@@ -127,9 +127,8 @@ extension MyReportMainVC {
                     
                     self.myReportTableView.reloadData()
                     if myReportData.cancel.isEmpty && myReportData.ing.isEmpty && myReportData.done.isEmpty {
-//                        myReportTableView.isHidden = true
-//                        emptyView.isHidden = false
-                        emptyView.isHidden = true
+                        myReportTableView.isHidden = true
+                        emptyView.isHidden = false
                     } else {
                         myReportTableView.isHidden = false
                         emptyView.isHidden = true
@@ -175,16 +174,25 @@ extension MyReportMainVC: UITableViewDataSource {
         case 0:
             return 1
         case 1:
-            return 1
+            if myReportData.cancel.count == 0 {
+                return 0
+            } else {
+                return 1
+            }
         case 2:
             return 1
         default:
-            return myReportData.done.count
+            if myReportData.done.count == 0 {
+                return 1
+            } else {
+                return myReportData.done.count
+            }
         }
 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         switch indexPath.section {
         case 0: // 닉네임 셀
             guard let cell = tableView.dequeueReusableCell(withIdentifier: TopTVCell.identifier) as? TopTVCell else {
@@ -197,16 +205,8 @@ extension MyReportMainVC: UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: CanceledTVCell.identifier) as? CanceledTVCell else {
                 return UITableViewCell()
             }
-            
-            // 취소된 제보 없애면 hidden하고 높이 0 만들기
-            if myReportData.cancel.count == 0 {
-                cell.isHidden = true
-                cell.rootHeight.constant = 0
-            } else {
-                cell.rootHeight.constant = 149 //cell.rootView.frame.height
-                cell.setCell(cancelData: myReportData.cancel)
-                print(myReportData.cancel)
-            }
+            cell.setCell(cancelData: myReportData.cancel)
+            print(myReportData.cancel)
             cell.selectionStyle = .none
             return cell
         case 2: // 진행중인 제보
@@ -230,6 +230,7 @@ extension MyReportMainVC: UITableViewDataSource {
                 cell.textLabel!.textAlignment = .center
                 cell.textLabel!.textColor = UIColor(named: "darkGrey")
                 cell.textLabel!.font = UIFont(name: "SFProText-Regular", size: 16.0)
+                
                 cell.selectionStyle = .none
                 return cell
             } else {

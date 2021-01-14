@@ -76,9 +76,9 @@ extension CancelReasonVC {
         if rejectReasonId == 1 {
             reasonLabel.text = "취소 사유 : 찾을 수 없는 카페 및 불명확한 메뉴"
         } else if rejectReasonId == 2 {
-            reasonLabel.text = "취소 사유 : 난 2번!"
+            reasonLabel.text = "취소 사유 : 찾을 수 없는 카페 정보"
         } else {
-            reasonLabel.text = "취소 사유 : 난 3번!"
+            reasonLabel.text = "취소 사유 : 불명확한 메뉴"
         }
     }
     func setButton() {

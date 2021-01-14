@@ -212,9 +212,9 @@ extension HomeVC {
         let locationOverlay = mapView.locationOverlay
         
         print("zoom level: \(mapView.zoomLevel)")
-        
-        let latitude = coordinate!.latitude
-        let longitude = coordinate!.longitude
+        guard let coordinate = coordinate else {return}
+        let latitude = coordinate.latitude
+        let longitude = coordinate.longitude
         let camera = NMFCameraUpdate(scrollTo: NMGLatLng(lat: latitude, lng: longitude))
         
         mapView.moveCamera(camera)

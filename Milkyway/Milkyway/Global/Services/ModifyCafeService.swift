@@ -7,6 +7,7 @@
 
 import Foundation
 import Alamofire
+import SwiftKeychainWrapper
 
 struct ModifyCafeService {
     
@@ -23,11 +24,12 @@ struct ModifyCafeService {
         // POST 카페 정보 수정 요청 report/:cafeId/editCafe
         let URL = APIConstants.fixCafeInfo + "\(cafeId)/editCafe"
         print(URL)
-        let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWR4Ijo1LCJpYXQiOjE2MDk3Nzg0NjksImV4cCI6MTYxMjM3MDQ2OSwiaXNzIjoibWlsa3lXYXkifQ.c2JAdyd0pGQzbmT0E_yl51eAGkcO71YfokwJebqqDME"
+        //let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWR4Ijo1LCJpYXQiOjE2MDk3Nzg0NjksImV4cCI6MTYxMjM3MDQ2OSwiaXNzIjoibWlsa3lXYXkifQ.c2JAdyd0pGQzbmT0E_yl51eAGkcO71YfokwJebqqDME"
+        let token = KeychainWrapper.standard.string(forKey: "Token")
         
         let headers: HTTPHeaders = [
             "Content-Type": "application/json",
-            "token": token
+            "token": token ?? ""
         ]
         
         let params = ["reason": editPost.reason]
@@ -82,11 +84,11 @@ struct ModifyCafeService {
         // POST 카페 정보 수정 요청 report/:cafeId/editCafe
         let URL = APIConstants.fixCafeInfo + "\(cafeId)/deleteCafe"
         print(URL)
-        let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWR4Ijo1LCJpYXQiOjE2MDk3Nzg0NjksImV4cCI6MTYxMjM3MDQ2OSwiaXNzIjoibWlsa3lXYXkifQ.c2JAdyd0pGQzbmT0E_yl51eAGkcO71YfokwJebqqDME"
-        
+        //let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWR4Ijo1LCJpYXQiOjE2MDk3Nzg0NjksImV4cCI6MTYxMjM3MDQ2OSwiaXNzIjoibWlsa3lXYXkifQ.c2JAdyd0pGQzbmT0E_yl51eAGkcO71YfokwJebqqDME"
+        let token = KeychainWrapper.standard.string(forKey: "Token")
         let headers: HTTPHeaders = [
             "Content-Type": "application/json",
-            "token": token
+            "token": token ?? ""
         ]
         
         let params = ["reason": deletePost.reason]

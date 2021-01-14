@@ -22,9 +22,12 @@ class LoginVC: UIViewController{
     var count = 0
     var uuid: String?
     var nickname: String?
+    var token : String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         setCheckBox()
         setButton()
         setLabel()
@@ -104,10 +107,10 @@ extension LoginVC {
         signUpService(uuid ?? "", nickname ?? "")
         
         // 뷰 전환 부분 함수 주석 해제하면 삭제하기
-//        let vc = UIStoryboard.init(name: "TabBar", bundle: nil).instantiateViewController(identifier: "TabBarController") as? TabBarController
-//        vc?.modalPresentationStyle = .fullScreen
-//        self.present(vc!, animated: true, completion: nil)
-
+        //        let vc = UIStoryboard.init(name: "TabBar", bundle: nil).instantiateViewController(identifier: "TabBarController") as? TabBarController
+        //        vc?.modalPresentationStyle = .fullScreen
+        //        self.present(vc!, animated: true, completion: nil)
+        
         
     }
     
@@ -122,11 +125,12 @@ extension LoginVC {
                 let response: Token = res as! Token
                 //뷰 전환
                 let vc = UIStoryboard.init(name: "TabBar", bundle: nil).instantiateViewController(identifier: "TabBarController") as? TabBarController
-
+                
                 vc?.modalPresentationStyle = .fullScreen
                 self.present(vc!, animated: true, completion: nil)
                 // keychainwrapper로 토큰생성하기
                 KeychainWrapper.standard.set(response.accessToken, forKey: "Token")
+                self.token = KeychainWrapper.standard.string(forKey: "Token")
                 
             case .requestErr(_):
                 print("내잘못/request error")
@@ -187,7 +191,7 @@ extension LoginVC: UITextFieldDelegate {
             backgroundImageView.image = UIImage(named: "inputError")
             return
         }else {
-         
+            
             stateLabel.isHidden = true
             startButton.setBackgroundImage(UIImage(named: "btnStart"), for: .normal)
             startButton.isEnabled = true

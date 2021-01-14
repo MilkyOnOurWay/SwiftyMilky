@@ -74,215 +74,195 @@
                                     <constraint firstAttribute="height" constant="1" id="kQy-7K-bkH"/>
                                 </constraints>
                             </view>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P88-Lv-OyH">
-                                <rect key="frame" x="0.0" y="104" width="414" height="792"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dec-Hq-tcX">
+                                <rect key="frame" x="0.0" y="104" width="414" height="758"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dec-Hq-tcX">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="686.5"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="메뉴이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="30l-cZ-TWn">
-                                                <rect key="frame" x="20" y="20" width="55.5" height="19"/>
-                                                <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="16"/>
-                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <textField opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="메뉴 이름을 입력해 주세요" textAlignment="natural" minimumFontSize="17" background="menuTextbox" translatesAutoresizingMaskIntoConstraints="NO" id="v4s-yN-sJE" customClass="FormTextField" customModule="Milkyway" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="55" width="374" height="50"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <color key="tintColor" name="darkGrey"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="zL5-4z-GL1"/>
-                                                </constraints>
-                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="16"/>
-                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="inset">
-                                                        <real key="value" value="20"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                            </textField>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btnInputOff" translatesAutoresizingMaskIntoConstraints="NO" id="SWA-UQ-Y4k">
-                                                <rect key="frame" x="20" y="608.5" width="374" height="58"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="SWA-UQ-Y4k" secondAttribute="height" multiplier="335:52" id="JZa-Zy-2gl"/>
-                                                </constraints>
-                                            </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rmP-hA-nGa">
-                                                <rect key="frame" x="20" y="608.5" width="374" height="58"/>
-                                                <connections>
-                                                    <action selector="menuPlusOkClicked:" destination="TbM-gw-Rbc" eventType="touchUpInside" id="cE4-zI-fgC"/>
-                                                </connections>
-                                            </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가격" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2GY-D7-zZ6">
-                                                <rect key="frame" x="20" y="125" width="28" height="19"/>
-                                                <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="16"/>
-                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="가격을 입력해 주세요" minimumFontSize="17" background="menuTextbox" translatesAutoresizingMaskIntoConstraints="NO" id="0Ng-0W-cFP" customClass="FormTextField" customModule="Milkyway" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="164" width="374" height="50"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <color key="tintColor" red="0.60392156860000001" green="0.59215686270000001" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="gMD-ww-YtY"/>
-                                                </constraints>
-                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="16"/>
-                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="done"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="inset">
-                                                        <real key="value" value="20"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                            </textField>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="카테고리" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jfg-GJ-WzV">
-                                                <rect key="frame" x="20" y="234" width="55.5" height="19"/>
-                                                <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="16"/>
-                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x6N-Kb-VaD" customClass="DLRadioButton">
-                                                <rect key="frame" x="0.0" y="269" width="414" height="50"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="aj6-yE-TZ6"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="16"/>
-                                                <state key="normal">
-                                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="image" keyPath="icon" value="categoryOff1"/>
-                                                    <userDefinedRuntimeAttribute type="image" keyPath="iconSelected" value="categoryOn1"/>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="iconColor">
-                                                        <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="indicatorColor">
-                                                        <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="categoryBtnClicked:" destination="TbM-gw-Rbc" eventType="touchUpInside" id="Qr5-vI-P31"/>
-                                                    <outletCollection property="otherButtons" destination="n4u-p2-sql" id="cxX-up-HYN"/>
-                                                    <outletCollection property="otherButtons" destination="Xqe-Pj-CdQ" id="Ex2-pO-wIi"/>
-                                                    <outletCollection property="otherButtons" destination="nlD-QJ-ygx" id="PHs-rq-Qap"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n4u-p2-sql" customClass="DLRadioButton">
-                                                <rect key="frame" x="0.0" y="329" width="414" height="50"/>
-                                                <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="16"/>
-                                                <state key="normal">
-                                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="image" keyPath="icon" value="categoryOff2"/>
-                                                    <userDefinedRuntimeAttribute type="image" keyPath="iconSelected" value="categoryOn2"/>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="categoryBtnClicked:" destination="TbM-gw-Rbc" eventType="touchUpInside" id="ll9-MT-TZ6"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xqe-Pj-CdQ" customClass="DLRadioButton">
-                                                <rect key="frame" x="0.0" y="389" width="414" height="50"/>
-                                                <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="16"/>
-                                                <state key="normal">
-                                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="image" keyPath="icon" value="categoryOff3"/>
-                                                    <userDefinedRuntimeAttribute type="image" keyPath="iconSelected" value="categoryOn3"/>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="categoryBtnClicked:" destination="TbM-gw-Rbc" eventType="touchUpInside" id="7m7-T9-OIU"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nlD-QJ-ygx" customClass="DLRadioButton">
-                                                <rect key="frame" x="0.0" y="449" width="414" height="50"/>
-                                                <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="16"/>
-                                                <state key="normal">
-                                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="image" keyPath="icon" value="categoryOff4"/>
-                                                    <userDefinedRuntimeAttribute type="image" keyPath="iconSelected" value="categoryOn4"/>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="categoryBtnClicked:" destination="TbM-gw-Rbc" eventType="touchUpInside" id="p9v-oD-eLk"/>
-                                                </connections>
-                                            </button>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZgF-S9-gzF">
-                                                <rect key="frame" x="0.0" y="499" width="414" height="89.5"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                            </view>
-                                        </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="메뉴이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="30l-cZ-TWn">
+                                        <rect key="frame" x="20" y="20" width="55.5" height="19"/>
+                                        <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="16"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="메뉴 이름을 입력해 주세요" textAlignment="natural" minimumFontSize="17" background="menuTextbox" translatesAutoresizingMaskIntoConstraints="NO" id="v4s-yN-sJE" customClass="FormTextField" customModule="Milkyway" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="55" width="374" height="50"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" name="darkGrey"/>
                                         <constraints>
-                                            <constraint firstItem="Xqe-Pj-CdQ" firstAttribute="width" secondItem="n4u-p2-sql" secondAttribute="width" id="1ql-1Z-0PI"/>
-                                            <constraint firstItem="Xqe-Pj-CdQ" firstAttribute="top" secondItem="n4u-p2-sql" secondAttribute="bottom" constant="10" id="55U-m7-kff"/>
-                                            <constraint firstItem="nlD-QJ-ygx" firstAttribute="top" secondItem="Xqe-Pj-CdQ" secondAttribute="bottom" constant="10" id="62R-9L-8Qr"/>
-                                            <constraint firstItem="rmP-hA-nGa" firstAttribute="trailing" secondItem="SWA-UQ-Y4k" secondAttribute="trailing" id="6Hc-iX-aVl"/>
-                                            <constraint firstItem="ZgF-S9-gzF" firstAttribute="top" secondItem="nlD-QJ-ygx" secondAttribute="bottom" id="6NC-ol-dAc"/>
-                                            <constraint firstAttribute="bottom" secondItem="SWA-UQ-Y4k" secondAttribute="bottom" constant="20" id="8gV-Kx-HGS"/>
-                                            <constraint firstItem="x6N-Kb-VaD" firstAttribute="leading" secondItem="dec-Hq-tcX" secondAttribute="leading" id="9Y3-o7-wsh"/>
-                                            <constraint firstItem="n4u-p2-sql" firstAttribute="width" secondItem="x6N-Kb-VaD" secondAttribute="width" id="9Zo-bx-MUC"/>
-                                            <constraint firstItem="30l-cZ-TWn" firstAttribute="top" secondItem="dec-Hq-tcX" secondAttribute="top" constant="20" id="By3-jX-RzT"/>
-                                            <constraint firstItem="rmP-hA-nGa" firstAttribute="bottom" secondItem="SWA-UQ-Y4k" secondAttribute="bottom" id="CGb-M3-SHJ"/>
-                                            <constraint firstItem="nlD-QJ-ygx" firstAttribute="width" secondItem="Xqe-Pj-CdQ" secondAttribute="width" id="COI-7V-OJp"/>
-                                            <constraint firstItem="30l-cZ-TWn" firstAttribute="leading" secondItem="dec-Hq-tcX" secondAttribute="leading" constant="20" id="DeG-eG-RB5"/>
-                                            <constraint firstItem="Xqe-Pj-CdQ" firstAttribute="leading" secondItem="n4u-p2-sql" secondAttribute="leading" id="EUB-7D-I2s"/>
-                                            <constraint firstItem="n4u-p2-sql" firstAttribute="leading" secondItem="x6N-Kb-VaD" secondAttribute="leading" id="Eg1-Ky-P9n"/>
-                                            <constraint firstItem="Jfg-GJ-WzV" firstAttribute="top" secondItem="0Ng-0W-cFP" secondAttribute="bottom" constant="20" id="FvP-G2-6aC"/>
-                                            <constraint firstItem="0Ng-0W-cFP" firstAttribute="top" secondItem="2GY-D7-zZ6" secondAttribute="bottom" constant="20" id="K6M-hP-dt1"/>
-                                            <constraint firstAttribute="trailing" secondItem="SWA-UQ-Y4k" secondAttribute="trailing" constant="20" id="P9B-iF-ds4"/>
-                                            <constraint firstItem="SWA-UQ-Y4k" firstAttribute="leading" secondItem="dec-Hq-tcX" secondAttribute="leading" constant="20" id="R10-bC-Jvw"/>
-                                            <constraint firstItem="v4s-yN-sJE" firstAttribute="leading" secondItem="30l-cZ-TWn" secondAttribute="leading" id="ScN-fO-LXP"/>
-                                            <constraint firstItem="2GY-D7-zZ6" firstAttribute="leading" secondItem="v4s-yN-sJE" secondAttribute="leading" id="ZGL-Q8-BNt"/>
-                                            <constraint firstItem="rmP-hA-nGa" firstAttribute="top" secondItem="SWA-UQ-Y4k" secondAttribute="top" id="ZZm-3I-yjt"/>
-                                            <constraint firstItem="x6N-Kb-VaD" firstAttribute="top" secondItem="Jfg-GJ-WzV" secondAttribute="bottom" constant="16" id="bjJ-0Y-TWg"/>
-                                            <constraint firstItem="Xqe-Pj-CdQ" firstAttribute="height" secondItem="n4u-p2-sql" secondAttribute="height" id="bmg-LQ-KUK"/>
-                                            <constraint firstItem="v4s-yN-sJE" firstAttribute="top" secondItem="30l-cZ-TWn" secondAttribute="bottom" constant="16" id="bqg-f5-CK1"/>
-                                            <constraint firstItem="n4u-p2-sql" firstAttribute="top" secondItem="x6N-Kb-VaD" secondAttribute="bottom" constant="10" id="bsy-fY-wXj"/>
-                                            <constraint firstAttribute="trailing" secondItem="ZgF-S9-gzF" secondAttribute="trailing" id="eLb-d7-Js8"/>
-                                            <constraint firstItem="nlD-QJ-ygx" firstAttribute="height" secondItem="Xqe-Pj-CdQ" secondAttribute="height" id="fKt-me-Svp"/>
-                                            <constraint firstItem="0Ng-0W-cFP" firstAttribute="trailing" secondItem="v4s-yN-sJE" secondAttribute="trailing" id="gQ2-eU-7wD"/>
-                                            <constraint firstAttribute="trailing" secondItem="x6N-Kb-VaD" secondAttribute="trailing" id="hUS-dP-gS9"/>
-                                            <constraint firstItem="nlD-QJ-ygx" firstAttribute="leading" secondItem="Xqe-Pj-CdQ" secondAttribute="leading" id="jPi-pi-Yyg"/>
-                                            <constraint firstItem="n4u-p2-sql" firstAttribute="height" secondItem="x6N-Kb-VaD" secondAttribute="height" id="kcm-19-ve0"/>
-                                            <constraint firstItem="Jfg-GJ-WzV" firstAttribute="leading" secondItem="0Ng-0W-cFP" secondAttribute="leading" id="lSg-qn-R3L"/>
-                                            <constraint firstAttribute="trailing" secondItem="v4s-yN-sJE" secondAttribute="trailing" constant="20" id="nFn-Za-tQc"/>
-                                            <constraint firstItem="0Ng-0W-cFP" firstAttribute="leading" secondItem="2GY-D7-zZ6" secondAttribute="leading" id="rXK-CK-LZ5"/>
-                                            <constraint firstItem="ZgF-S9-gzF" firstAttribute="leading" secondItem="dec-Hq-tcX" secondAttribute="leading" id="uaq-Tw-eyY"/>
-                                            <constraint firstItem="2GY-D7-zZ6" firstAttribute="top" secondItem="v4s-yN-sJE" secondAttribute="bottom" constant="20" id="xaG-9M-ruJ"/>
-                                            <constraint firstItem="rmP-hA-nGa" firstAttribute="leading" secondItem="SWA-UQ-Y4k" secondAttribute="leading" id="yYM-Km-KT2"/>
-                                            <constraint firstItem="SWA-UQ-Y4k" firstAttribute="top" secondItem="ZgF-S9-gzF" secondAttribute="bottom" constant="20" id="ytu-a5-qaa"/>
+                                            <constraint firstAttribute="height" constant="50" id="zL5-4z-GL1"/>
                                         </constraints>
-                                    </view>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="inset">
+                                                <real key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btnInputOff" translatesAutoresizingMaskIntoConstraints="NO" id="SWA-UQ-Y4k">
+                                        <rect key="frame" x="20" y="680" width="374" height="58"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="SWA-UQ-Y4k" secondAttribute="height" multiplier="335:52" id="JZa-Zy-2gl"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rmP-hA-nGa">
+                                        <rect key="frame" x="20" y="680" width="374" height="58"/>
+                                        <connections>
+                                            <action selector="menuPlusOkClicked:" destination="TbM-gw-Rbc" eventType="touchUpInside" id="cE4-zI-fgC"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가격" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2GY-D7-zZ6">
+                                        <rect key="frame" x="20" y="125" width="28" height="19"/>
+                                        <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="16"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="가격을 입력해 주세요" minimumFontSize="17" background="menuTextbox" translatesAutoresizingMaskIntoConstraints="NO" id="0Ng-0W-cFP" customClass="FormTextField" customModule="Milkyway" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="164" width="374" height="50"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" red="0.60392156860000001" green="0.59215686270000001" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="gMD-ww-YtY"/>
+                                        </constraints>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="done"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="inset">
+                                                <real key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="카테고리" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jfg-GJ-WzV">
+                                        <rect key="frame" x="20" y="234" width="55.5" height="19"/>
+                                        <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="16"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x6N-Kb-VaD" customClass="DLRadioButton">
+                                        <rect key="frame" x="0.0" y="269" width="414" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="aj6-yE-TZ6"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="16"/>
+                                        <state key="normal">
+                                            <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="icon" value="categoryOff1"/>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="iconSelected" value="categoryOn1"/>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="iconColor">
+                                                <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="indicatorColor">
+                                                <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="categoryBtnClicked:" destination="TbM-gw-Rbc" eventType="touchUpInside" id="Qr5-vI-P31"/>
+                                            <outletCollection property="otherButtons" destination="n4u-p2-sql" id="cxX-up-HYN"/>
+                                            <outletCollection property="otherButtons" destination="Xqe-Pj-CdQ" id="Ex2-pO-wIi"/>
+                                            <outletCollection property="otherButtons" destination="nlD-QJ-ygx" id="PHs-rq-Qap"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n4u-p2-sql" customClass="DLRadioButton">
+                                        <rect key="frame" x="0.0" y="329" width="414" height="50"/>
+                                        <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="16"/>
+                                        <state key="normal">
+                                            <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="icon" value="categoryOff2"/>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="iconSelected" value="categoryOn2"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="categoryBtnClicked:" destination="TbM-gw-Rbc" eventType="touchUpInside" id="ll9-MT-TZ6"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xqe-Pj-CdQ" customClass="DLRadioButton">
+                                        <rect key="frame" x="0.0" y="389" width="414" height="50"/>
+                                        <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="16"/>
+                                        <state key="normal">
+                                            <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="icon" value="categoryOff3"/>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="iconSelected" value="categoryOn3"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="categoryBtnClicked:" destination="TbM-gw-Rbc" eventType="touchUpInside" id="7m7-T9-OIU"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nlD-QJ-ygx" customClass="DLRadioButton">
+                                        <rect key="frame" x="0.0" y="449" width="414" height="50"/>
+                                        <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="16"/>
+                                        <state key="normal">
+                                            <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="icon" value="categoryOff4"/>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="iconSelected" value="categoryOn4"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="categoryBtnClicked:" destination="TbM-gw-Rbc" eventType="touchUpInside" id="p9v-oD-eLk"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="dec-Hq-tcX" firstAttribute="top" secondItem="P88-Lv-OyH" secondAttribute="top" id="CAA-tu-M2t"/>
-                                    <constraint firstItem="dec-Hq-tcX" firstAttribute="leading" secondItem="0dA-Rf-aN2" secondAttribute="leading" id="EtZ-hs-nt1"/>
-                                    <constraint firstItem="dec-Hq-tcX" firstAttribute="bottom" secondItem="0dA-Rf-aN2" secondAttribute="bottom" id="eBD-Ci-aA8"/>
-                                    <constraint firstItem="dec-Hq-tcX" firstAttribute="trailing" secondItem="0dA-Rf-aN2" secondAttribute="trailing" id="rin-6f-JGK"/>
+                                    <constraint firstItem="Xqe-Pj-CdQ" firstAttribute="width" secondItem="n4u-p2-sql" secondAttribute="width" id="1ql-1Z-0PI"/>
+                                    <constraint firstItem="Xqe-Pj-CdQ" firstAttribute="top" secondItem="n4u-p2-sql" secondAttribute="bottom" constant="10" id="55U-m7-kff"/>
+                                    <constraint firstItem="nlD-QJ-ygx" firstAttribute="top" secondItem="Xqe-Pj-CdQ" secondAttribute="bottom" constant="10" id="62R-9L-8Qr"/>
+                                    <constraint firstItem="rmP-hA-nGa" firstAttribute="trailing" secondItem="SWA-UQ-Y4k" secondAttribute="trailing" id="6Hc-iX-aVl"/>
+                                    <constraint firstAttribute="bottom" secondItem="SWA-UQ-Y4k" secondAttribute="bottom" constant="20" id="8gV-Kx-HGS"/>
+                                    <constraint firstItem="x6N-Kb-VaD" firstAttribute="leading" secondItem="dec-Hq-tcX" secondAttribute="leading" id="9Y3-o7-wsh"/>
+                                    <constraint firstItem="n4u-p2-sql" firstAttribute="width" secondItem="x6N-Kb-VaD" secondAttribute="width" id="9Zo-bx-MUC"/>
+                                    <constraint firstItem="30l-cZ-TWn" firstAttribute="top" secondItem="dec-Hq-tcX" secondAttribute="top" constant="20" id="By3-jX-RzT"/>
+                                    <constraint firstItem="rmP-hA-nGa" firstAttribute="bottom" secondItem="SWA-UQ-Y4k" secondAttribute="bottom" id="CGb-M3-SHJ"/>
+                                    <constraint firstItem="nlD-QJ-ygx" firstAttribute="width" secondItem="Xqe-Pj-CdQ" secondAttribute="width" id="COI-7V-OJp"/>
+                                    <constraint firstItem="30l-cZ-TWn" firstAttribute="leading" secondItem="dec-Hq-tcX" secondAttribute="leading" constant="20" id="DeG-eG-RB5"/>
+                                    <constraint firstItem="Xqe-Pj-CdQ" firstAttribute="leading" secondItem="n4u-p2-sql" secondAttribute="leading" id="EUB-7D-I2s"/>
+                                    <constraint firstItem="n4u-p2-sql" firstAttribute="leading" secondItem="x6N-Kb-VaD" secondAttribute="leading" id="Eg1-Ky-P9n"/>
+                                    <constraint firstItem="Jfg-GJ-WzV" firstAttribute="top" secondItem="0Ng-0W-cFP" secondAttribute="bottom" constant="20" id="FvP-G2-6aC"/>
+                                    <constraint firstItem="0Ng-0W-cFP" firstAttribute="top" secondItem="2GY-D7-zZ6" secondAttribute="bottom" constant="20" id="K6M-hP-dt1"/>
+                                    <constraint firstAttribute="trailing" secondItem="SWA-UQ-Y4k" secondAttribute="trailing" constant="20" id="P9B-iF-ds4"/>
+                                    <constraint firstItem="SWA-UQ-Y4k" firstAttribute="leading" secondItem="dec-Hq-tcX" secondAttribute="leading" constant="20" id="R10-bC-Jvw"/>
+                                    <constraint firstItem="v4s-yN-sJE" firstAttribute="leading" secondItem="30l-cZ-TWn" secondAttribute="leading" id="ScN-fO-LXP"/>
+                                    <constraint firstItem="2GY-D7-zZ6" firstAttribute="leading" secondItem="v4s-yN-sJE" secondAttribute="leading" id="ZGL-Q8-BNt"/>
+                                    <constraint firstItem="rmP-hA-nGa" firstAttribute="top" secondItem="SWA-UQ-Y4k" secondAttribute="top" id="ZZm-3I-yjt"/>
+                                    <constraint firstItem="x6N-Kb-VaD" firstAttribute="top" secondItem="Jfg-GJ-WzV" secondAttribute="bottom" constant="16" id="bjJ-0Y-TWg"/>
+                                    <constraint firstItem="Xqe-Pj-CdQ" firstAttribute="height" secondItem="n4u-p2-sql" secondAttribute="height" id="bmg-LQ-KUK"/>
+                                    <constraint firstItem="v4s-yN-sJE" firstAttribute="top" secondItem="30l-cZ-TWn" secondAttribute="bottom" constant="16" id="bqg-f5-CK1"/>
+                                    <constraint firstItem="n4u-p2-sql" firstAttribute="top" secondItem="x6N-Kb-VaD" secondAttribute="bottom" constant="10" id="bsy-fY-wXj"/>
+                                    <constraint firstAttribute="bottom" secondItem="SWA-UQ-Y4k" secondAttribute="bottom" constant="20" id="chV-7e-OWb"/>
+                                    <constraint firstItem="nlD-QJ-ygx" firstAttribute="height" secondItem="Xqe-Pj-CdQ" secondAttribute="height" id="fKt-me-Svp"/>
+                                    <constraint firstItem="0Ng-0W-cFP" firstAttribute="trailing" secondItem="v4s-yN-sJE" secondAttribute="trailing" id="gQ2-eU-7wD"/>
+                                    <constraint firstAttribute="trailing" secondItem="x6N-Kb-VaD" secondAttribute="trailing" id="hUS-dP-gS9"/>
+                                    <constraint firstItem="SWA-UQ-Y4k" firstAttribute="leading" secondItem="dec-Hq-tcX" secondAttribute="leading" constant="20" id="hsC-h6-wsv"/>
+                                    <constraint firstItem="nlD-QJ-ygx" firstAttribute="leading" secondItem="Xqe-Pj-CdQ" secondAttribute="leading" id="jPi-pi-Yyg"/>
+                                    <constraint firstItem="n4u-p2-sql" firstAttribute="height" secondItem="x6N-Kb-VaD" secondAttribute="height" id="kcm-19-ve0"/>
+                                    <constraint firstItem="Jfg-GJ-WzV" firstAttribute="leading" secondItem="0Ng-0W-cFP" secondAttribute="leading" id="lSg-qn-R3L"/>
+                                    <constraint firstAttribute="trailing" secondItem="v4s-yN-sJE" secondAttribute="trailing" constant="20" id="nFn-Za-tQc"/>
+                                    <constraint firstItem="0Ng-0W-cFP" firstAttribute="leading" secondItem="2GY-D7-zZ6" secondAttribute="leading" id="rXK-CK-LZ5"/>
+                                    <constraint firstAttribute="trailing" secondItem="SWA-UQ-Y4k" secondAttribute="trailing" constant="20" id="vpk-bm-MQD"/>
+                                    <constraint firstItem="2GY-D7-zZ6" firstAttribute="top" secondItem="v4s-yN-sJE" secondAttribute="bottom" constant="20" id="xaG-9M-ruJ"/>
+                                    <constraint firstItem="rmP-hA-nGa" firstAttribute="leading" secondItem="SWA-UQ-Y4k" secondAttribute="leading" id="yYM-Km-KT2"/>
                                 </constraints>
-                                <viewLayoutGuide key="contentLayoutGuide" id="0dA-Rf-aN2"/>
-                                <viewLayoutGuide key="frameLayoutGuide" id="xVX-MW-bpJ"/>
-                            </scrollView>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Coa-b1-0vU"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Coa-b1-0vU" firstAttribute="trailing" secondItem="Dys-1b-Y1D" secondAttribute="trailing" id="1H3-tQ-WEG"/>
-                            <constraint firstItem="P88-Lv-OyH" firstAttribute="trailing" secondItem="Coa-b1-0vU" secondAttribute="trailing" id="7GD-Fv-ePN"/>
-                            <constraint firstItem="P88-Lv-OyH" firstAttribute="leading" secondItem="Coa-b1-0vU" secondAttribute="leading" id="7JH-KQ-hrg"/>
                             <constraint firstItem="Dys-1b-Y1D" firstAttribute="top" secondItem="Coa-b1-0vU" secondAttribute="top" id="7ao-6e-ZiG"/>
                             <constraint firstItem="n7z-Ig-RBf" firstAttribute="leading" secondItem="IIf-bN-o3q" secondAttribute="leading" id="EjR-3H-0Y6"/>
-                            <constraint firstAttribute="bottom" secondItem="P88-Lv-OyH" secondAttribute="bottom" id="Exy-Wh-1tb"/>
-                            <constraint firstItem="P88-Lv-OyH" firstAttribute="top" secondItem="Dys-1b-Y1D" secondAttribute="bottom" id="ZcK-qg-DZ3"/>
+                            <constraint firstItem="dec-Hq-tcX" firstAttribute="leading" secondItem="Coa-b1-0vU" secondAttribute="leading" id="RkP-7D-SgF"/>
+                            <constraint firstItem="dec-Hq-tcX" firstAttribute="top" secondItem="Dys-1b-Y1D" secondAttribute="bottom" id="WmD-To-MGe"/>
+                            <constraint firstItem="Coa-b1-0vU" firstAttribute="bottom" secondItem="dec-Hq-tcX" secondAttribute="bottom" id="XD4-yw-R4o"/>
                             <constraint firstItem="n7z-Ig-RBf" firstAttribute="top" secondItem="Dys-1b-Y1D" secondAttribute="bottom" id="af5-bg-4UK"/>
                             <constraint firstAttribute="trailing" secondItem="n7z-Ig-RBf" secondAttribute="trailing" id="bZF-ut-aXY"/>
-                            <constraint firstItem="dec-Hq-tcX" firstAttribute="width" secondItem="IIf-bN-o3q" secondAttribute="width" id="coh-Om-A03"/>
-                            <constraint firstItem="ZgF-S9-gzF" firstAttribute="height" secondItem="IIf-bN-o3q" secondAttribute="height" multiplier="0.1" id="uZZ-kW-6xw"/>
+                            <constraint firstItem="dec-Hq-tcX" firstAttribute="trailing" secondItem="Coa-b1-0vU" secondAttribute="trailing" id="mWm-pL-g6H"/>
                             <constraint firstItem="Dys-1b-Y1D" firstAttribute="leading" secondItem="IIf-bN-o3q" secondAttribute="leading" id="x2t-1Z-agI"/>
                         </constraints>
                     </view>
@@ -290,7 +270,6 @@
                         <outlet property="categoryFirstBtn" destination="x6N-Kb-VaD" id="HQF-EZ-Jxz"/>
                         <outlet property="editEndBtn" destination="rmP-hA-nGa" id="Bjg-aX-sdz"/>
                         <outlet property="editImageView" destination="SWA-UQ-Y4k" id="JUX-5f-obh"/>
-                        <outlet property="menuScrollView" destination="P88-Lv-OyH" id="dmq-QY-V0y"/>
                         <outlet property="menuTF" destination="v4s-yN-sJE" id="mkM-Ba-PU2"/>
                         <outlet property="priceTF" destination="0Ng-0W-cFP" id="38Z-Ph-vIZ"/>
                     </connections>

@@ -98,8 +98,7 @@ struct MyReportService {
                         case 200:
                             do {
                               let decoder = JSONDecoder()
-                                let result = try decoder.decode(ResponseSimpleResult<ThrowUniverse>.self,from: value)
-                                completion(.success(result.data ?? Token.self))
+                                let result = try decoder.decode(ResponseTempResult.self,from: value)
                             } catch {
                                 completion(.pathErr)
                             }

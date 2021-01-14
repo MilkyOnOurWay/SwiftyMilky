@@ -31,7 +31,21 @@ class CancelReasonVC: UIViewController {
         print("MyReportMain - confirmBtnClicked")
 //        let presentingVC = self.presentingViewController
         
-        
+        MyReportService.shared.deleteCancelCafe(self.cafeId) { [self] (networkResult) -> (Void) in
+            switch networkResult {
+            case .success(let data):
+                print("success")
+            case .requestErr( _):
+                print("requestErr")
+            case .pathErr:
+                
+                print("pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        }
         
         self.dismiss(animated: false)
     }

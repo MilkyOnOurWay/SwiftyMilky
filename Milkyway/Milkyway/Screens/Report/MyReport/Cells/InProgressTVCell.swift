@@ -39,12 +39,6 @@ class InProgressTVCell: UITableViewCell {
 extension InProgressTVCell {
     
     func setLabel() {
-        inProgressLabel.text = "진행중인 제보"
-        inProgressLabel.font = UIFont(name:"SFProText-Bold", size: 16.0)
-        
-        completedLabel.text = "완료된 제보"
-        completedLabel.font = UIFont(name:"SFProText-Bold", size: 16.0)
-        
         emptyLabel.text = "지금 진행중인 제보가 없습니다!"
         emptyLabel.textAlignment = .center
         emptyLabel.font = UIFont(name:"SFProText-Regular", size: 16.0)
@@ -52,18 +46,14 @@ extension InProgressTVCell {
     }
     
     func setCell(ingData: [MyReport]) {
-        
         self.ingData = ingData
         let collectionViewCellNib = UINib(nibName: "RectangleCVCell", bundle: nil)
         collectionView.register(collectionViewCellNib, forCellWithReuseIdentifier: "RectangleCVCell")
-        
         collectionView.dataSource = self
         collectionView.delegate = self
-        
         collectionView.reloadData()
-//        if ingData.count == 0 {
-//            collectionView.isHidden = true
-//        }
+        
+        
     }
 }
 extension InProgressTVCell: UICollectionViewDataSource {

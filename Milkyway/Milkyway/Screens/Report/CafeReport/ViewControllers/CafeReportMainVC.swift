@@ -224,9 +224,11 @@ extension CafeReportMainVC {
         let margins = view.layoutMarginsGuide
         
         bottomView.translatesAutoresizingMaskIntoConstraints = false
+        bottomView.topAnchor.constraint(equalTo: tableView.bottomAnchor, constant: 0.0).isActive = true
         bottomView.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: 0.0).isActive = true
         bottomView.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: 0.0).isActive = true
         bottomView.bottomAnchor.constraint(equalTo: margins.bottomAnchor, constant: 0.0).isActive = true
+        reportEndBtn.addTarget(self, action: #selector(reportCompleteClicked(_:)), for: .touchUpInside)
     }
 
     // 셀 등록
@@ -249,7 +251,7 @@ extension CafeReportMainVC {
     // 제보완료 가능한지 ?
     func checkReportOK() {
 
-        if dummyData.menu.count > 0 {
+        if dummyData.menu.count > 0 && dummyData.cafeName != nil {
             reportImageView.image = UIImage(named: "btnReport")
             reportEndBtn.isUserInteractionEnabled = true
         }
@@ -338,7 +340,8 @@ extension CafeReportMainVC {
     }
 
 
-    @IBAction func reportCompleteClicked(_ sender: Any) {
+    @objc func reportCompleteClicked(_ sender: Any) {
+        print("touch")
         showLoadingLottie()
         
         ReportCafeService.shared.ReportCafe(cafepost: dummyData) { [self] responseData in

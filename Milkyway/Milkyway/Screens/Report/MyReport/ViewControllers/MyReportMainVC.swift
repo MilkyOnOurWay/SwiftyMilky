@@ -99,7 +99,7 @@ extension MyReportMainVC {
         subLabel.numberOfLines = 2
     }
     func notiGather() {
-        NotificationCenter.default.addObserver(self, selector: #selector(cancelReasonTap), name: Notification.Name("cancelReason"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(cancelReasonTap(_:)), name: Notification.Name("cancelReason"), object: nil)
     }
     func registerDelegate() {
         myReportTableView.dataSource = self
@@ -148,12 +148,14 @@ extension MyReportMainVC {
         }
         
     }
-    @objc func cancelReasonTap(_ sender: UITableView) {
+    @objc func cancelReasonTap(_ noti: NSNotification) {
         print("MyReport - cancelReason")
         guard let cancelVC = UIStoryboard(name: "MyReportMain", bundle: nil).instantiateViewController(withIdentifier:"CancelReasonVC") as? CancelReasonVC else {
             return
         }
-        cancelVC.rejectReasonId = rejectReason
+        var getInfo = noti.object as! [Int]
+        cancelVC.rejectReasonId = getInfo[0]
+        cancelVC.cafeId = getInfo[1]
         cancelVC.modalPresentationStyle = .overCurrentContext
         present(cancelVC, animated: false, completion: nil)
     }
@@ -196,18 +198,19 @@ extension MyReportMainVC: UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: CanceledTVCell.identifier) as? CanceledTVCell else {
                 return UITableViewCell()
             }
-            cell.setCell(cancelData: myReportData.cancel)
-            print(myReportData.cancel)
-//            rejectReason = myReportData.cancel[indexPath.row].rejectReasonID!
             
+//            rejectReason = myReportData.cancel[indexPath.row].rejectReasonID!
             print("여긴 취소된 제본데요,,\(myReportData.cancel.count)")
             // 취소된 제보 없애면 hidden하고 높이 0 만들기
-//            if myReportData.cancel.count == 0 {
-//                cell.isHidden = true
-//                cell.rootHeight.constant = 0
-//            } else {
-//
-//            }
+            if myReportData.cancel.count == 0 {
+                cell.isHidden = true
+                cell.rootHeight.constant = 0
+            } else {
+                cell.rootHeight.constant = 130 //cell.rootView.frame.height
+                cell.setCell(cancelData: myReportData.cancel)
+                print(myReportData.cancel)
+//                rejectReason = cell.cancelIndexPath
+            }
             cell.selectionStyle = .none
             return cell
         } else if indexPath.section == 2 { // 진행중인 제보
@@ -257,6 +260,7 @@ extension MyReportMainVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         print("indexPath.row : \(indexPath.row)")
+        
         if indexPath.section == 3 {
             
             // 눌렀을 때 서버통신 !

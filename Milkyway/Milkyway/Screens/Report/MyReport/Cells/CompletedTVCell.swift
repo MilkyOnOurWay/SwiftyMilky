@@ -12,14 +12,15 @@ class CompletedTVCell: UITableViewCell {
     static let identifier = "CompletedTVCell"
     
     @IBOutlet var rootView: UIView!
-    @IBOutlet var cardView: UIView!
     @IBOutlet var dateLabel: UILabel!
     @IBOutlet var cafeNameLabel: UILabel!
     @IBOutlet var addressLabel: UILabel!
     
-    @IBOutlet var categoryLabel: CustomLabel!
+    @IBOutlet var categoryLabel1: CustomLabel!
+    @IBOutlet var categoryLabel2: CustomLabel!
+    @IBOutlet var categoryLabel3: CustomLabel!
+    @IBOutlet var categoryLabel4: CustomLabel!
     
-//    var categoryLabel = [CustomLabel]()
     var date: String = ""
     
     // 나중에 밑에 라벨붙는거,,
@@ -37,26 +38,21 @@ class CompletedTVCell: UITableViewCell {
 
 extension CompletedTVCell {
     func setCell() {
-//        cardView.borderWidth = 1
-//        cardView.borderColor = UIColor(displayP3Red: 229/255, green: 229/255, blue: 229/255, alpha: 1.0)
-//        cardView.backgroundColor = UIColor(named: "lightGrey")
-//        cardView.layer.cornerRadius = 8
-//        cardView.layer.shadowColor = UIColor.black.cgColor
-//        cardView.layer.shadowOpacity = 0.15
-//        cardView.layer.shadowOffset = CGSize(width: 2, height: 2)
-//        cardView.layer.shadowRadius = 8
-//        cardView.layer.masksToBounds = false
+        categoryLabel1.isHidden = true
+        categoryLabel2.isHidden = true
+        categoryLabel3.isHidden = true
+        categoryLabel4.isHidden = true
     }
-    
     func setCategory(category: [Int]) {
         self.category = category
         print("완료제보 카테고리 \(category), \(category.count)")
 
-        categoryLabel.text = tagStr[1]
-        for i in 0...category.count-1 {
-//            categoryLabel.translatesAutoresizingMaskIntoConstraints = false
-//            cardView.addSubview(categoryLabel)
-            print("i 몇 번 나오게!\(i)")
+
+        for i in 0...self.category.count-1 {
+            let label = self.viewWithTag(i+1) as! UILabel
+            label.text = tagStr[self.category[i]]
+            label.isHidden = false
+            print("여기는 카테고리 \(self.viewWithTag(i+1)!)")
         }
     }
 }

@@ -208,10 +208,17 @@
                                             <action selector="categoryBtnClicked:" destination="TbM-gw-Rbc" eventType="touchUpInside" id="p9v-oD-eLk"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gg0-lF-S2y">
+                                        <rect key="frame" x="360" y="179.5" width="14" height="19"/>
+                                        <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="16"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="Xqe-Pj-CdQ" firstAttribute="width" secondItem="n4u-p2-sql" secondAttribute="width" id="1ql-1Z-0PI"/>
+                                    <constraint firstItem="0Ng-0W-cFP" firstAttribute="trailing" secondItem="Gg0-lF-S2y" secondAttribute="trailing" constant="20" id="2Zp-KS-aII"/>
                                     <constraint firstItem="Xqe-Pj-CdQ" firstAttribute="top" secondItem="n4u-p2-sql" secondAttribute="bottom" constant="10" id="55U-m7-kff"/>
                                     <constraint firstItem="nlD-QJ-ygx" firstAttribute="top" secondItem="Xqe-Pj-CdQ" secondAttribute="bottom" constant="10" id="62R-9L-8Qr"/>
                                     <constraint firstItem="rmP-hA-nGa" firstAttribute="trailing" secondItem="SWA-UQ-Y4k" secondAttribute="trailing" id="6Hc-iX-aVl"/>
@@ -236,6 +243,7 @@
                                     <constraint firstItem="v4s-yN-sJE" firstAttribute="top" secondItem="30l-cZ-TWn" secondAttribute="bottom" constant="16" id="bqg-f5-CK1"/>
                                     <constraint firstItem="n4u-p2-sql" firstAttribute="top" secondItem="x6N-Kb-VaD" secondAttribute="bottom" constant="10" id="bsy-fY-wXj"/>
                                     <constraint firstAttribute="bottom" secondItem="SWA-UQ-Y4k" secondAttribute="bottom" constant="20" id="chV-7e-OWb"/>
+                                    <constraint firstItem="Gg0-lF-S2y" firstAttribute="centerY" secondItem="0Ng-0W-cFP" secondAttribute="centerY" id="dWA-Ld-btj"/>
                                     <constraint firstItem="nlD-QJ-ygx" firstAttribute="height" secondItem="Xqe-Pj-CdQ" secondAttribute="height" id="fKt-me-Svp"/>
                                     <constraint firstItem="0Ng-0W-cFP" firstAttribute="trailing" secondItem="v4s-yN-sJE" secondAttribute="trailing" id="gQ2-eU-7wD"/>
                                     <constraint firstAttribute="trailing" secondItem="x6N-Kb-VaD" secondAttribute="trailing" id="hUS-dP-gS9"/>

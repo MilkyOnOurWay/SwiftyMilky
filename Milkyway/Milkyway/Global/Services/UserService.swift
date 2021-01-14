@@ -7,6 +7,7 @@
 
 import Foundation
 import Alamofire
+import SwiftKeychainWrapper
 
 struct UserService {
     
@@ -70,9 +71,10 @@ struct UserService {
     
     func changeNickname(_ nickName: String, completion: @escaping (NetworkResult<Any>) -> Void) {
         let URL = APIConstants.changeNick
+        let token = KeychainWrapper.standard.string(forKey: "Token")
         let headers: HTTPHeaders = [
             "Content-Type": "application/json",
-            "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWR4Ijo1LCJpYXQiOjE2MDk3Nzg0NjksImV4cCI6MTYxMjM3MDQ2OSwiaXNzIjoibWlsa3lXYXkifQ.c2JAdyd0pGQzbmT0E_yl51eAGkcO71YfokwJebqqDME"
+            "token": token ?? ""
         ]
         
         let body: Parameters = [

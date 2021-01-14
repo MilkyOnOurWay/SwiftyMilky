@@ -19,12 +19,12 @@ struct SearchCafeService {
                           completion: @escaping(NetworkResult<Any>) -> Void) {
         guard let cafe = cafe.stringByAddingPercentEncodingForFormData() else { return }
         let URL = APIConstants.searchForReport + "?query=" + cafe
-        //let token = KeychainWrapper.standard.string(forKey: "Token")
-        let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWR4IjozMywiaWF0IjoxNjEwNDQyODc1LCJleHAiOjE2MTMwMzQ4NzUsImlzcyI6Im1pbGt5V2F5In0.xMCBH3wzwo0U80MbGD6vCu_aigtSLcCasRI3MG-7l3A"
+        let token = KeychainWrapper.standard.string(forKey: "Token")
+        //let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWR4IjozMywiaWF0IjoxNjEwNDQyODc1LCJleHAiOjE2MTMwMzQ4NzUsImlzcyI6Im1pbGt5V2F5In0.xMCBH3wzwo0U80MbGD6vCu_aigtSLcCasRI3MG-7l3A"
         
         let headers: HTTPHeaders = [
             "Content-Type": "application/json",
-            "token": token
+            "token": token ?? ""
         ]
         
         let dataRequest = AF.request(URL,
@@ -81,10 +81,11 @@ struct SearchCafeService {
         
         guard let cafe = cafe.stringByAddingPercentEncodingForFormData() else { return }
         let URL = APIConstants.searchHome + cafe
-        let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWR4IjozMywiaWF0IjoxNjEwNDQyODc1LCJleHAiOjE2MTMwMzQ4NzUsImlzcyI6Im1pbGt5V2F5In0.xMCBH3wzwo0U80MbGD6vCu_aigtSLcCasRI3MG-7l3A"
+        //let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWR4IjozMywiaWF0IjoxNjEwNDQyODc1LCJleHAiOjE2MTMwMzQ4NzUsImlzcyI6Im1pbGt5V2F5In0.xMCBH3wzwo0U80MbGD6vCu_aigtSLcCasRI3MG-7l3A"
+        let token = KeychainWrapper.standard.string(forKey: "Token")
         let headers: HTTPHeaders = [
             "Content-Type": "application/json",
-            "token": token
+            "token": token ?? ""
         ]
         
         let dataRequest = AF.request(URL,

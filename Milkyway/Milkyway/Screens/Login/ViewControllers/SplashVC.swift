@@ -7,7 +7,7 @@
 
 import UIKit
 import Lottie
-
+import SwiftKeychainWrapper
 class SplashVC: UIViewController {
 
     override func viewDidLoad() {
@@ -15,12 +15,19 @@ class SplashVC: UIViewController {
         setSplashView()
         // Do any additional setup after loading the view.
         DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
-
+            
+            
+           if KeychainWrapper.standard.string(forKey: "Token") != nil {
+                let vc = UIStoryboard.init(name: "TabBar", bundle: nil).instantiateViewController(identifier: "TabBarController") as? TabBarController
+                vc?.modalPresentationStyle = .fullScreen
+                self.present(vc!, animated: true, completion: nil)
+            }
+            
             let vc = UIStoryboard.init(name: "Login", bundle: nil).instantiateViewController(identifier: "LoginNaviController")
             vc.modalPresentationStyle = .fullScreen
             self.present(vc, animated: false, completion: nil)
         })
-    
+        
     }
     
 }

@@ -126,7 +126,7 @@
                                 </constraints>
                                 <state key="normal" image="btnClear"/>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="카페 검색하기" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OMl-js-x9a">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="카페 이름을 검색해주세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OMl-js-x9a">
                                 <rect key="frame" x="72" y="25" width="255" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="Odh-Jy-Dk9"/>

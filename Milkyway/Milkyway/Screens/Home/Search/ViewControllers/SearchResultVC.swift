@@ -176,6 +176,7 @@ extension SearchResultVC: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = searchTableView.dequeueReusableCell(withIdentifier: "SearchTVC",for: indexPath) as! SearchTVC
+        cell.selectionStyle = .none
         cell.searchedCafe = searchedCafe?[indexPath.row]
         cell.cafeNameLabel.sizeToFit()
         cell.cafeAddressLabel.sizeToFit()

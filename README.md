@@ -6,7 +6,11 @@
 ## '속'상하기 쉬운 모두를 위한 카페 위치 제공 서비스, 밀키웨이
 `27th SOPT APPJAM` 3주 프로젝트
 </br>
+</br>
 📆  2020.12.26 ~ 2021.01.16
+</br>
+</br>
+[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FMilkyOnOurWay%2FSwiftyMilky&count_bg=%23391AD7&title_bg=%239C9C9C&icon=&icon_color=%23FFFFFF&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
 
 </br>
 </br>
@@ -102,6 +106,82 @@
 </br>
 </br>
 
+# 🌌 구현 코드
+
+
+### 📍 네이버 지도 위치 오버레이
+
+
+> NMFMapViewCameraDelegate를 활용하여 camera 위치 이동으로 인해 이미지가 바뀌는 현상 해결
+
+```swift
+extension ResultMapVC: NMFMapViewCameraDelegate {
+    
+    func mapView(_ mapView: NMFMapView, cameraWillChangeByReason reason: Int, animated: Bool){
+        if reason == NMFMapChangedByGesture {
+            
+            mapView.locationOverlay.icon = currentImage
+            
+            
+            beforeMarker?.iconImage = moveState ? self.uniUnSelectedImage : pickerImage
+            
+        }
+    }
+}
+
+```
+
+### 📍CoreLocation을 활용한 현위치 설정
+
+> CLLocationManager를 활용하여 사용자의 현위치를 받아올 수 있도록 구성
+
+```swift
+func setLocation(){
+        locationManager = CLLocationManager()
+        locationManager.requestWhenInUseAuthorization() //권한요청
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.startUpdatingLocation()
+        let coor = locationManager.location?.coordinate
+        move(at: coor)
+    }
+
+
+func move(at coordinate: CLLocationCoordinate2D?) {
+        let locationOverlay = mapView.locationOverlay
+        
+        print("zoom level: \(mapView.zoomLevel)")
+        guard let coordinate = coordinate else {return}
+        let latitude = coordinate.latitude
+        let longitude = coordinate.longitude
+        let camera = NMFCameraUpdate(scrollTo: NMGLatLng(lat: latitude, lng: longitude))
+        
+        mapView.moveCamera(camera)
+        
+        mapView.positionMode = .direction
+        mapView.locationOverlay.icon = currentLImage
+        mapView.locationOverlay.subIcon = directionImage
+        
+        locationOverlay.circleRadius = 0 // 기본 원그림자 없애기
+        locationOverlay.iconWidth = CGFloat(NMF_LOCATION_OVERLAY_SIZE_AUTO)
+        locationOverlay.iconHeight = CGFloat(NMF_LOCATION_OVERLAY_SIZE_AUTO)
+    }
+```
+
+> 사용자의 현위치를 받아오기 위해서는 info.plist 파일 권한 수정이 필요
+
+```swift
+<key>NSLocationWhenInUseUsageDescription</key>
+<string>사용자의 위치를 받습니다.</string>
+```
+
+## 📍팀원 별 코드 정리 
+
+- [윤진](https://github.com/MilkyOnOurWay/SwiftyMilky/wiki/%EC%9C%A4%EC%A7%84)
+- [소영](https://github.com/MilkyOnOurWay/SwiftyMilky/wiki/%EC%86%8C%EC%98%81)
+- [유진](https://github.com/MilkyOnOurWay/SwiftyMilky/wiki/%EC%9C%A0%EC%A7%84)
+
+</br>
+</br>
 
 # 🥛 The way we work remotely ✨
 
@@ -213,76 +293,3 @@
 </br>
 </br>
 
-# 🌌 구현 코드
-
-
-### 📍 네이버 지도 위치 오버레이
-
-
-> NMFMapViewCameraDelegate를 활용하여 camera 위치 이동으로 인해 이미지가 바뀌는 현상 해결
-
-```swift
-extension ResultMapVC: NMFMapViewCameraDelegate {
-    
-    func mapView(_ mapView: NMFMapView, cameraWillChangeByReason reason: Int, animated: Bool){
-        if reason == NMFMapChangedByGesture {
-            
-            mapView.locationOverlay.icon = currentImage
-            
-            
-            beforeMarker?.iconImage = moveState ? self.uniUnSelectedImage : pickerImage
-            
-        }
-    }
-}
-
-```
-
-### 📍CoreLocation을 활용한 현위치 설정
-
-> CLLocationManager를 활용하여 사용자의 현위치를 받아올 수 있도록 구성
-
-```swift
-func setLocation(){
-        locationManager = CLLocationManager()
-        locationManager.requestWhenInUseAuthorization() //권한요청
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.startUpdatingLocation()
-        let coor = locationManager.location?.coordinate
-        move(at: coor)
-    }
-
-
-func move(at coordinate: CLLocationCoordinate2D?) {
-        let locationOverlay = mapView.locationOverlay
-        
-        print("zoom level: \(mapView.zoomLevel)")
-        guard let coordinate = coordinate else {return}
-        let latitude = coordinate.latitude
-        let longitude = coordinate.longitude
-        let camera = NMFCameraUpdate(scrollTo: NMGLatLng(lat: latitude, lng: longitude))
-        
-        mapView.moveCamera(camera)
-        
-        mapView.positionMode = .direction
-        mapView.locationOverlay.icon = currentLImage
-        mapView.locationOverlay.subIcon = directionImage
-        
-        locationOverlay.circleRadius = 0 // 기본 원그림자 없애기
-        locationOverlay.iconWidth = CGFloat(NMF_LOCATION_OVERLAY_SIZE_AUTO)
-        locationOverlay.iconHeight = CGFloat(NMF_LOCATION_OVERLAY_SIZE_AUTO)
-    }
-```
-
-> 사용자의 현위치를 받아오기 위해서는 info.plist 파일 권한 수정이 필요
-
-```swift
-<key>NSLocationWhenInUseUsageDescription</key>
-<string>사용자의 위치를 받습니다.</string>
-```
-
-### 📍팀원 별 코드 정리
-
-- [윤진](https://github.com/MilkyOnOurWay/SwiftyMilky/wiki/%EC%9C%A4%EC%A7%84)
-- [소영](https://github.com/MilkyOnOurWay/SwiftyMilky/wiki/%EC%86%8C%EC%98%81)
-- [유진](https://github.com/MilkyOnOurWay/SwiftyMilky/wiki/%EC%9C%A0%EC%A7%84)

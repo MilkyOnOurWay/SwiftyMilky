@@ -276,5 +276,5 @@ func move(at coordinate: CLLocationCoordinate2D?) {
 📍팀원 별 코드 정리
 
 - 윤진 (위키링크연결)
-- 소영 (위키링크연결)
+- [소영](https://github.com/MilkyOnOurWay/SwiftyMilky/wiki/%EC%86%8C%EC%98%81)
 - 유진 (위키링크연결)

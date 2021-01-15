@@ -274,7 +274,7 @@ func move(at coordinate: CLLocationCoordinate2D?) {
     }
 ```
 
-> 사용자의 현위치를 받아오기 위해서는 info.plist 파일 권한 수정이 필요하다
+> 사용자의 현위치를 받아오기 위해서는 info.plist 파일 권한 수정이 필요
 
 ```swift
 <key>NSLocationWhenInUseUsageDescription</key>

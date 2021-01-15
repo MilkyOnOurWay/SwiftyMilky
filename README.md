@@ -39,7 +39,7 @@
 </br>
 
 # 📄 IA 
-<img src="https://user-images.githubusercontent.com/59593223/104714864-1296fe00-5769-11eb-925e-3d33baec65d1.jpeg" height="700"/>
+<img src="https://user-images.githubusercontent.com/59593223/104714864-1296fe00-5769-11eb-925e-3d33baec65d1.jpeg" height="900"/>
 
 </br>
 </br>
@@ -275,6 +275,6 @@ func move(at coordinate: CLLocationCoordinate2D?) {
 
 📍팀원 별 코드 정리
 
-- 윤진 (위키링크연결)
+- [윤진](https://github.com/MilkyOnOurWay/SwiftyMilky/wiki/%EC%9C%A4%EC%A7%84)
 - [소영](https://github.com/MilkyOnOurWay/SwiftyMilky/wiki/%EC%86%8C%EC%98%81)
-- 유진 (위키링크연결)
+- [유진](https://github.com/MilkyOnOurWay/SwiftyMilky/wiki/%EC%9C%A0%EC%A7%84)

@@ -79,7 +79,7 @@ extension LoginVC {
     
     func isValidNickname(_ nickname: String) -> Bool{
         
-        let nicknameRegEx = "[가-힣0-9]{2,10}"
+        let nicknameRegEx = "[가-힣0-9]{1,10}"
         let nicknameTest = NSPredicate(format: "SELF MATCHES %@", nicknameRegEx)
         
         return nicknameTest.evaluate(with: nickname)

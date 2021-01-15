@@ -135,7 +135,7 @@ extension SearchResultVC {
                 dump(res)
 
                 self.searchedCafe = res as? [CafeHomeResult]
-
+                print("현황\(self.searchedCafe)")
                 print("몇개일까\(self.searchedCafe?.count)")
                 if (self.searchedCafe?.count == 0)  {
                     self.searchTableView.reloadData()

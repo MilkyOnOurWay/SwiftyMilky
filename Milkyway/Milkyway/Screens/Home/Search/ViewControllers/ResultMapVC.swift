@@ -121,18 +121,18 @@ extension ResultMapVC {
         for index in 0..<homeData.result.count {
             let marker: NMFMarker
             if homeData.result[index].cafeName == cafeName && homeData.result[index].cafeAddress == cafeAddress {
-                print("aaa")
+                print("결과보여줘\(homeData.result[index])")
                 if homeData.result[index].isUniversed == true {
                     marker = NMFMarker(position: NMGLatLng(lat: latitude ?? 0.0, lng: longitude ?? 0.0), iconImage: UniSelectedImage)
                     cardVC.universeButton.setImage(UIImage(named: "btnUniverseAdded"), for: .normal)
                     cardVC.universeCountLabel.textColor = UIColor(named: "Milky")
-                   
+                    cardVC.buttonIsSelected = true
                     marker.mapView = mapView
                 } else {
                     marker = NMFMarker(position: NMGLatLng(lat: latitude ?? 0.0, lng: longitude ?? 0.0),iconImage: selectedPickerImage)
                     cardVC.universeButton.setImage(UIImage(named: "btnUniverse"), for: .normal)
                     cardVC.universeCountLabel.textColor = UIColor(named: "darkGrey")
-                   
+                    cardVC.buttonIsSelected = false
                     marker.mapView = mapView
                 }
                 print(homeData.result[index].universeCount)

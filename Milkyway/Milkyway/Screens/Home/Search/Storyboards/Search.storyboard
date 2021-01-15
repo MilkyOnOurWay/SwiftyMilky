@@ -227,14 +227,17 @@
                         <viewLayoutGuide key="safeArea" id="VQn-Id-4vU"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="VQn-Id-4vU" firstAttribute="trailing" secondItem="fpC-Yp-tPB" secondAttribute="trailing" constant="31" id="5fc-vK-F0c"/>
                             <constraint firstItem="VQn-Id-4vU" firstAttribute="trailing" secondItem="JNc-6M-kWA" secondAttribute="trailing" constant="16" id="5mg-zu-06t"/>
                             <constraint firstItem="uRh-ib-pmW" firstAttribute="leading" secondItem="p4Y-PC-BGG" secondAttribute="trailing" constant="7" id="7qx-ds-wkK"/>
                             <constraint firstItem="uRh-ib-pmW" firstAttribute="centerY" secondItem="p4Y-PC-BGG" secondAttribute="centerY" id="Cgq-Yd-no7"/>
+                            <constraint firstItem="fpC-Yp-tPB" firstAttribute="top" secondItem="VQn-Id-4vU" secondAttribute="top" constant="31" id="EkX-ac-LJv"/>
                             <constraint firstItem="LFv-R4-LeF" firstAttribute="trailing" secondItem="VQn-Id-4vU" secondAttribute="trailing" id="MDH-Fa-x4w"/>
                             <constraint firstItem="fpC-Yp-tPB" firstAttribute="centerY" secondItem="p4Y-PC-BGG" secondAttribute="centerY" id="Rup-Lf-PjF"/>
                             <constraint firstItem="VQn-Id-4vU" firstAttribute="bottom" secondItem="JNc-6M-kWA" secondAttribute="bottom" constant="170" id="b5z-Gy-HNm"/>
                             <constraint firstItem="p4Y-PC-BGG" firstAttribute="leading" secondItem="VQn-Id-4vU" secondAttribute="leading" constant="17" id="b6B-7S-n9D"/>
                             <constraint firstItem="p4Y-PC-BGG" firstAttribute="top" secondItem="VQn-Id-4vU" secondAttribute="top" constant="21" id="e3p-dm-AHi"/>
+                            <constraint firstItem="LFv-R4-LeF" firstAttribute="top" secondItem="fpC-Yp-tPB" secondAttribute="bottom" constant="18" id="hiZ-Ez-dbp"/>
                             <constraint firstItem="LFv-R4-LeF" firstAttribute="bottom" secondItem="VQn-Id-4vU" secondAttribute="bottom" id="idW-Ao-Feq"/>
                             <constraint firstItem="LFv-R4-LeF" firstAttribute="top" secondItem="p4Y-PC-BGG" secondAttribute="bottom" constant="8" symbolic="YES" id="kOV-Mb-OXX"/>
                             <constraint firstItem="LFv-R4-LeF" firstAttribute="leading" secondItem="VQn-Id-4vU" secondAttribute="leading" id="os3-TH-4pE"/>

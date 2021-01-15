@@ -12,7 +12,7 @@
 </br>
 
 ### 🍎 밀키웨이 아요 멤 - 바를 소개합니다 🍎
-| <img src="https://images.velog.io/images/sso0022/post/b6ad88b5-f18a-4d61-8df8-3364c6688feb/KakaoTalk_Photo_2020-12-28-02-51-04.jpeg" height="300" /> | <img src="https://images.velog.io/images/sso0022/post/8276334a-92f7-4747-bcb9-f428956f58f5/IMG_9679%20%E1%84%87%E1%85%A9%E1%86%A8%E1%84%89%E1%85%A1%E1%84%87%E1%85%A9%E1%86%AB%202.JPG" height="300" /> | <img src="https://user-images.githubusercontent.com/68267763/103199866-3c5dc180-492f-11eb-8cfc-5a5c2f1ffcd5.jpeg" height="300" /> |
+| <img src="https://images.velog.io/images/sso0022/post/b6ad88b5-f18a-4d61-8df8-3364c6688feb/KakaoTalk_Photo_2020-12-28-02-51-04.jpeg" height="300" /> | <img src="https://images.velog.io/images/sso0022/post/8276334a-92f7-4747-bcb9-f428956f58f5/IMG_9679%20%E1%84%87%E1%85%A9%E1%86%A8%E1%84%89%E1%85%A1%E1%84%87%E1%85%A9%E1%86%AB%202.JPG" height="300" /> | <img src="https://user-images.githubusercontent.com/45596615/104721818-f26b3d00-5770-11eb-8686-672d67ee5d9f.JPG" height="300" /> |
 | :----------------------------------------------------------: | :----------------------------------------------------------: |:------:|
 |                            이윤진 `lead`                  |                            이소영                            | 박유진 |
 |          [@profitjean](https://github.com/profitjean)          |           [@gwajeong](https://github.com/gwajeong)           |              [@brillantescene](https://github.com/brillantescene)              |

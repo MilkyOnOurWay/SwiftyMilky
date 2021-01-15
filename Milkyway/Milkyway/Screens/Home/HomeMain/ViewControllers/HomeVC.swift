@@ -298,7 +298,7 @@ extension HomeVC {
                 
                 
                 // 현재마커 변경
-                if homeData.result[index].isUniversed == true {
+                if filterData.result[index].isUniversed == true {
                     marker.iconImage = self.uniSelectedImage
                     beforeIS = true
                     beforeMarker = marker

@@ -167,7 +167,7 @@ extension MyReportMainVC {
     }
     
     @objc func reloadTable() {
-        myReportTableView.reloadData()
+        setService()
     }
 }
 

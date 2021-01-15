@@ -311,6 +311,7 @@ extension MyUniverseVC {
     
     // MARK: - 서버서버서버
     func serverlinked() {
+        showLoadingLottie()
         UniverseService.shared.GetUniverse() { [self] (networkResult) -> (Void) in
             switch networkResult {
             case .success(let data):
@@ -332,7 +333,7 @@ extension MyUniverseVC {
                 print("networkFail")
             }
             locationBtn.isEnabled = true
-            
+            stopLottieAnimation()
         }
     }
     

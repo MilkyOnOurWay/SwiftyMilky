@@ -39,7 +39,7 @@
 </br>
 
 # 📄 IA 
-<img src="https://user-images.githubusercontent.com/68267763/104697665-74e50400-5753-11eb-8b58-39b1a3f2a547.png" height="600"/>
+<img src="https://user-images.githubusercontent.com/68267763/104699913-c3e06880-5756-11eb-8c99-cbffc9cdb392.png" height="600"/>
 
 </br>
 </br>

@@ -318,6 +318,7 @@ extension CafeReportMainVC {
         dummyData.cafeAddress = nil
         dummyData.honeyTip = []
         dummyData.menu = []
+        NotificationCenter.default.post(name: Notification.Name("removeHoneyTips"), object: nil)
         checkReportOK()
         tableView.reloadData()
     }
@@ -344,6 +345,11 @@ extension CafeReportMainVC {
         print("touch")
         showLoadingLottie()
         
+        for i in 0..<dummyData.menu.count {
+            dummyData.menu[i].price = dummyData.menu[i].price.components(separatedBy: [","]).joined()
+        }
+        
+        print(dummyData)
         ReportCafeService.shared.ReportCafe(cafepost: dummyData) { [self] responseData in
             switch responseData {
             case .success(let res):

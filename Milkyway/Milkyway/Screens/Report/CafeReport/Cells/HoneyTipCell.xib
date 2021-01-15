@@ -73,7 +73,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D00-xh-UAC">
                         <rect key="frame" x="20" y="131" width="401" height="112"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="   #전메뉴우유가능   " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="726-rJ-ZqZ">
+                            <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="   #전메뉴두유가능   " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="726-rJ-ZqZ">
                                 <rect key="frame" x="0.0" y="0.0" width="133" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="naC-3O-JwV"/>

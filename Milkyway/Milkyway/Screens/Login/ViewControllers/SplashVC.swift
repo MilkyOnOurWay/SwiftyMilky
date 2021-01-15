@@ -16,7 +16,7 @@ class SplashVC: UIViewController {
         // Do any additional setup after loading the view.
         DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
             
-            
+
            if KeychainWrapper.standard.string(forKey: "Token") != nil {
                 let vc = UIStoryboard.init(name: "TabBar", bundle: nil).instantiateViewController(identifier: "TabBarController") as? TabBarController
                 vc?.modalPresentationStyle = .fullScreen

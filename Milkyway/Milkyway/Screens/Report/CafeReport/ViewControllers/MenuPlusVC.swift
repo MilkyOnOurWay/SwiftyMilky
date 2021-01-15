@@ -85,9 +85,8 @@ extension MenuPlusVC  {
         print(category)
         print("\(menuTF.text!) 메뉴 추가합니다")
         
-        let price = priceTF.text?.components(separatedBy: [","]).joined()
         
-        let menu = Menu(menuName: menuTF.text ?? "", price: price ?? "", category: category )
+        let menu = Menu(menuName: menuTF.text ?? "", price: priceTF.text ?? "", category: category )
         
         NotificationCenter.default.post(name: Notification.Name("menuPlus"), object: menu)
         self.navigationController?.popViewController(animated: true)

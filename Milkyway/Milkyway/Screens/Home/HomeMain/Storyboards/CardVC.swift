@@ -22,12 +22,6 @@ class CardVC: UIViewController {
     @IBOutlet var shinsaBtn: DLRadioButton!
     @IBOutlet var yuksamBtn: DLRadioButton!
     
-    // 서버에서 모든 시작이 1이라고 해서 tag 값을 1부터 설정함. 여섯개 넣어줌
-//    var beforeState: [Bool] = [false, false, false, false, false, false]
-    
-    // 망원 연남 한남 신사 역삼
-//    let searchLocation = [[0, 0], [37.555941, 126.910067], [37.555941, 126.910067], [37.555941, 126.910067], [37.555941, 126.910067], [37.555941, 126.910067]]
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setView()
@@ -48,10 +42,6 @@ extension CardVC {
     }
     func setHandler() {
         handleBar.layer.cornerRadius = handleBar.frame.height / 2
-        
-        mainLabel.textAlignment = .center
-        mainLabel.text = "다른 지역을 찾고있나요?"
-        mainLabel.font = UIFont(name:"SFProText-Regular", size: 16.0)
     }
     
     func resetRadioButton() {

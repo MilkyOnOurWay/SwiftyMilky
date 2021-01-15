@@ -45,6 +45,8 @@ class SearchResultVC: UIViewController {
         self.view.addSubview(loadingView)
 
         loadingView.play()
+        searchTableView.separatorStyle = .none
+
     }
 
     private func stopLottieAnimation() {
@@ -109,6 +111,7 @@ extension SearchResultVC {
 
     func search(_ cafe: String){
 
+        searchTableView.separatorStyle = .none
         searchCafe(cafe)
         deleteButton.setImage(UIImage(named: "btnClear"), for: .normal)
         buttonIsSelected = false
@@ -126,6 +129,8 @@ extension SearchResultVC {
 
     @objc func searchCafe(_ cafe: String){
         showLoadingLottie()
+        self.noResultImageView.isHidden = true
+       
         SearchCafeService.shared.homeSearchCafe(cafe) { [self]
 
             responseData in

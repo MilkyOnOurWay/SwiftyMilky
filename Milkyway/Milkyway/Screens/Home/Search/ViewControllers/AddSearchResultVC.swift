@@ -127,6 +127,7 @@ extension AddSearchResultVC {
     
     @objc func searchCafe(_ cafe: String){
         showLoadingLottie()
+        self.noResultImageView.isHidden = true
         SearchCafeService.shared.searchReportCafe(cafe){
             responseData in
             switch responseData {

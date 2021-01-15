@@ -1,6 +1,6 @@
 
 <div align="center">
-  
+
 <img src="https://user-images.githubusercontent.com/59593223/103671740-ad037e80-4fbe-11eb-80c0-4da6ef066260.png">
 
 # '속'상하기 쉬운 모두를 위한 카페 위치 제공 서비스, 밀키웨이
@@ -15,7 +15,7 @@
 | <img src="https://images.velog.io/images/sso0022/post/b6ad88b5-f18a-4d61-8df8-3364c6688feb/KakaoTalk_Photo_2020-12-28-02-51-04.jpeg" height="300" /> | <img src="https://images.velog.io/images/sso0022/post/8276334a-92f7-4747-bcb9-f428956f58f5/IMG_9679%20%E1%84%87%E1%85%A9%E1%86%A8%E1%84%89%E1%85%A1%E1%84%87%E1%85%A9%E1%86%AB%202.JPG" height="300" /> | <img src="https://user-images.githubusercontent.com/68267763/103199866-3c5dc180-492f-11eb-8cfc-5a5c2f1ffcd5.jpeg" height="300" /> |
 | :----------------------------------------------------------: | :----------------------------------------------------------: |:------:|
 |                            이윤진 `lead`                  |                            이소영                            | 박유진 |
-|          [@profitjean](https://github.com/profitjean)          |           [@gwajeong](https://github.com/gwajeong)           |              [@brillantescene](https://github.com/brillantescene)              | 
+|          [@profitjean](https://github.com/profitjean)          |           [@gwajeong](https://github.com/gwajeong)           |              [@brillantescene](https://github.com/brillantescene)              |
 
 ---
 
@@ -39,7 +39,7 @@
 </br>
 
 # 📄 IA 
-<img src="https://user-images.githubusercontent.com/68267763/104704836-7cf57180-575c-11eb-8eff-de3e2d47f22b.png" height="700"/>
+<img src="https://user-images.githubusercontent.com/59593223/104714864-1296fe00-5769-11eb-925e-3d33baec65d1.jpeg" height="700"/>
 
 </br>
 </br>
@@ -209,4 +209,72 @@ Milkyway // 전체적으로 공유하는 파일은 Global, 뷰 위주의 파일�
 
 # 🌌 구현 코드
 
-(추후 공개 예정)
+📍 네이버 지도 위치 오버레이
+
+> NMFMapViewCameraDelegate를 활용하여 camera 위치 이동으로 인해 이미지가 바뀌는 현상 해결
+
+```swift
+extension ResultMapVC: NMFMapViewCameraDelegate {
+    
+    func mapView(_ mapView: NMFMapView, cameraWillChangeByReason reason: Int, animated: Bool){
+        if reason == NMFMapChangedByGesture {
+            
+            mapView.locationOverlay.icon = currentImage
+            
+            
+            beforeMarker?.iconImage = moveState ? self.uniUnSelectedImage : pickerImage
+            
+        }
+    }
+}
+
+```
+
+📍CoreLocation을 활용한 현위치 설정
+
+> CLLocationManager를 활용하여 사용자의 현위치를 받아올 수 있도록 구성
+
+```swift
+func setLocation(){
+        locationManager = CLLocationManager()
+        locationManager.requestWhenInUseAuthorization() //권한요청
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.startUpdatingLocation()
+        let coor = locationManager.location?.coordinate
+        move(at: coor)
+    }
+
+
+func move(at coordinate: CLLocationCoordinate2D?) {
+        let locationOverlay = mapView.locationOverlay
+        
+        print("zoom level: \(mapView.zoomLevel)")
+        guard let coordinate = coordinate else {return}
+        let latitude = coordinate.latitude
+        let longitude = coordinate.longitude
+        let camera = NMFCameraUpdate(scrollTo: NMGLatLng(lat: latitude, lng: longitude))
+        
+        mapView.moveCamera(camera)
+        
+        mapView.positionMode = .direction
+        mapView.locationOverlay.icon = currentLImage
+        mapView.locationOverlay.subIcon = directionImage
+        
+        locationOverlay.circleRadius = 0 // 기본 원그림자 없애기
+        locationOverlay.iconWidth = CGFloat(NMF_LOCATION_OVERLAY_SIZE_AUTO)
+        locationOverlay.iconHeight = CGFloat(NMF_LOCATION_OVERLAY_SIZE_AUTO)
+    }
+```
+
+> 사용자의 현위치를 받아오기 위해서는 info.plist 파일 권한 수정이 필요하다
+
+```swift
+<key>NSLocationWhenInUseUsageDescription</key>
+<string>사용자의 위치를 받습니다.</string>
+```
+
+📍팀원 별 코드 정리
+
+- 윤진 (위키링크연결)
+- 소영 (위키링크연결)
+- 유진 (위키링크연결)

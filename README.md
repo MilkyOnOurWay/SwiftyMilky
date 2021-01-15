@@ -191,7 +191,7 @@ Milkyway // 전체적으로 공유하는 파일은 Global, 뷰 위주의 파일�
 
 # 🍒 git - flow
 
-<img src="https://user-images.githubusercontent.com/68267763/103177125-f9fa9d00-48ba-11eb-9197-d8d1d9844b3b.png" height="500" />
+<img src="https://user-images.githubusercontent.com/68267763/103177125-f9fa9d00-48ba-11eb-9197-d8d1d9844b3b.png" height="400" />
 
 
 우리는 `git flow`를 활용해요 

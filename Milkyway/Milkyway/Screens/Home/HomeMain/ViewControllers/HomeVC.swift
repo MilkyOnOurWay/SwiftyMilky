@@ -13,8 +13,6 @@ import CoreLocation
 
 class HomeVC: UIViewController, UIGestureRecognizerDelegate {
     
-    
-    
     @IBOutlet var mapView: NMFMapView!
     
     @IBOutlet var nickNameLabel: UILabel!
@@ -48,7 +46,7 @@ class HomeVC: UIViewController, UIGestureRecognizerDelegate {
     var bottomCardVC:CardVC!
     var cafeCardVC: FilterResultCardVC!
     
-    var cardHeight:CGFloat = 0 //363 //카드 높이 280 + 탭바높이 83 그냥 박는 버전
+    var cardHeight:CGFloat = 0 //363 카드 높이 280 + 탭바높이 83
     let cardHandleAreaHeight:CGFloat = 84
     
     var cardVisible = false
@@ -59,7 +57,7 @@ class HomeVC: UIViewController, UIGestureRecognizerDelegate {
     var runningAnimations = [UIViewPropertyAnimator]()
     var animationProgressWhenInterrupted:CGFloat = 0
     
-    // 서버에서 모든 시작이 1이라고 해서 tag 값을 1부터 설정함. 여섯개 넣어줌
+    // 서버에서 모든 시작이 1이라 tag 값을 1부터 설정함.
     var locationState: [Bool] = [false, false, false, false, false, false]
     var filterState: [Bool] = [false, false, false, false, false]
     
@@ -83,26 +81,20 @@ class HomeVC: UIViewController, UIGestureRecognizerDelegate {
     
     var placeMangWon = NMGLatLng(lat: 37.555941, lng: 126.910067)
     
+    let loadingView = AnimationView(name: "loadingLottie")
+    
     
     override func viewDidLoad(){
         super.viewDidLoad()
+        notiGather()
         delegateGather()
         setMap()
         setMapButton()
         setFilterButton()
         setBottomCard()
-        setFirstCardView()
+        setFilterResultCardView()
         setRadioBtn()
         setLocation()
-        
-        self.navigationController?.interactivePopGestureRecognizer?.delegate = self
-        
-        // 로티관련 노티
-        NotificationCenter.default.addObserver(self, selector: #selector(showLoadingLottie), name: Notification.Name("startlottiehome"),object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(stopLottieAnimation), name: Notification.Name("stoplottiehome"),object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(serviceFunc), name: Notification.Name("homeMarkerSet"),object: nil)
-        
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -116,40 +108,8 @@ class HomeVC: UIViewController, UIGestureRecognizerDelegate {
         guard let nvc = UIStoryboard(name: "Search", bundle: nil).instantiateViewController(withIdentifier:"SearchResultVC") as? SearchResultVC else {
             return
         }
-        
         self.navigationController?.pushViewController(nvc, animated: true)
     }
-    
-    
-    // MARK: - 데이터 로딩 중 Lottie 화면
-    
-    let loadingView = AnimationView(name: "loadingLottie")
-    
-    @ objc private func showLoadingLottie() {
-        print("start")
-        
-        loadingView.frame = CGRect(x: 0, y: 0, width: 300, height: 300)
-        loadingView.center = self.view.center
-        loadingView.contentMode = .scaleAspectFill
-        loadingView.loopMode = .loop
-        self.view.addSubview(loadingView)
-        
-        loadingView.play()
-    }
-    
-    
-    @objc private func stopLottieAnimation() {
-        print("end")
-        loadingView.stop()
-        loadingView.removeFromSuperview()
-    }
-    
-    
-    
-}
-
-extension HomeVC: CLLocationManagerDelegate {
-    
 }
 
 extension HomeVC {
@@ -173,7 +133,7 @@ extension HomeVC {
         nickNameLabel.numberOfLines = 2
     }
     
-    // 상단 필터 버튼
+    // 상단 카테고리 필터 버튼
     func setFilterButton() {
         filterBtn1.addTarget(self, action: #selector(filterButtonDidTap), for: UIControl.Event.touchUpInside)
         filterBtn2.addTarget(self, action: #selector(filterButtonDidTap), for: UIControl.Event.touchUpInside)
@@ -181,31 +141,21 @@ extension HomeVC {
         filterBtn4.addTarget(self, action: #selector(filterButtonDidTap), for: UIControl.Event.touchUpInside)
     }
     
-    @objc func filterButtonDidTap(_ sender:DLRadioButton){
-        
-        if filterState[sender.tag] == true {
-            sender.isSelected = false
-            cafeState = 0
-        }
-        else {
-            cafeState = sender.tag
-        }
-        serviceFunc()
-        
-        filterState[1] = filterBtn1.isSelected
-        filterState[2] = filterBtn2.isSelected
-        filterState[3] = filterBtn3.isSelected
-        filterState[4] = filterBtn4.isSelected
-        
+    func notiGather() {
+        // 로티관련 노티
+        NotificationCenter.default.addObserver(self, selector: #selector(showLoadingLottie), name: Notification.Name("startlottiehome"),object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(stopLottieAnimation), name: Notification.Name("stoplottiehome"),object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(serviceFunc), name: Notification.Name("homeMarkerSet"),object: nil)
     }
     
     func delegateGather() {
         locationManager.delegate = self
         mapView.addCameraDelegate(delegate: self)
         mapView.touchDelegate = self
+        self.navigationController?.interactivePopGestureRecognizer?.delegate = self
     }
     
-    func setFirstCardView() {
+    func setFilterResultCardView() {
         cafeCardVC = FilterResultCardVC(nibName: "FilterResultCardVC", bundle: nil)
         self.addChild(cafeCardVC)
         self.view.addSubview(cafeCardVC.view)
@@ -262,7 +212,6 @@ extension HomeVC {
                 marker = NMFMarker(position: NMGLatLng(lat: homeData.result[index].latitude, lng: homeData.result[index].longitude), iconImage: unselectedImage)
             }
             
-            //                marker.isHideCollidedMarkers = true
             marker.touchHandler = { [self] (overlay: NMFOverlay) -> Bool in
                 cafeCardVC.cafeNameLabel.text = homeData.result[index].cafeName
                 cafeCardVC.cafeTimeLabel.text = homeData.result[index].businessHours
@@ -300,9 +249,6 @@ extension HomeVC {
                     beforeIS = false
                     beforeMarker = marker
                 }
-                
-                
-                
                 cafeCardVC.view.isHidden = false
                 bottomCardVC.view.isHidden = true
                 return true
@@ -325,7 +271,7 @@ extension HomeVC {
             } else {
                 marker = NMFMarker(position: NMGLatLng(lat: filterData.result[index].latitude, lng: filterData.result [index].longitude), iconImage: unselectedImage)
             }
-            //                marker.isHideCollidedMarkers = true
+            
             marker.touchHandler = { [self] (overlay: NMFOverlay) -> Bool in
                 
                 cafeCardVC.cafeNameLabel.text = filterData.result[index].cafeName
@@ -381,6 +327,7 @@ extension HomeVC {
         locationBtn.addTarget(self, action: #selector(locationButtonDidTap), for: UIControl.Event.touchUpInside)
     }
     
+    // 마커 쌓이지 않게 이전에 있던 마커 지워주기
     func markerReset(marker: [NMFMarker]){
         for i in 0..<marker.count {
             marker[i].mapView = nil
@@ -389,98 +336,14 @@ extension HomeVC {
     
     
     
-    @objc func serviceFunc() {
-        showLoadingLottie()
-        
-        if cafeState == 0 {
-            
-            print("홈 전체 서비스 - 필터 없음")
-            HomeService.shared.GetMilkyHome() { [self] (networkResult) -> (Void) in
-                switch networkResult {
-                case .success(let data):
-                    if let loadData = data as? HomeData {
-                        print("success")
-                        
-                        homeData = loadData
-                        setMarker()
-                        // 유저닉네임 전역변수로 설정
-                        let ad = UIApplication.shared.delegate as? AppDelegate
-                        print("nickName:\(homeData.nickName)")
-                        ad?.userNickNameInHere = homeData.nickName
-                        setNickNameLabel()
-                    }
-                case .requestErr( _):
-                    print("requestErr")
-                case .pathErr:
-                    print("pathErr")
-                case .serverErr:
-                    print("serverErr")
-                case .networkFail:
-                    print("networkFail")
-                }
-                stopLottieAnimation()
-            }
-        }
-
-        else {
-            //            markerReset(marker: filterMarkers)
-            HomeService.shared.GetCategoryCafe(categoryId: cafeState) { [self] (networkResult) -> (Void) in
-                switch networkResult {
-                case .success(let data):
-                    if let loadData = data as? CategoryData {
-                        print("success")
-                        filterData = loadData
-                        setFilterMarker()
-                    }
-                case .requestErr( _):
-                    print("requestErr")
-                case .pathErr:
-                    print("pathErr")
-                    ToastView.showIn(viewController: self, message: "원하는 옵션에 맞는 카페가 없어요.\n 다른 옵션을 선택해 볼까요?", fromBottom: 10 + (self.tabBarController?.tabBar.frame.height)!)
-                    markerReset(marker: filterMarkers)
-                    markerReset(marker: markers)
-                case .serverErr:
-                    print("serverErr")
-                case .networkFail:
-                    print("networkFail")
-                }
-                stopLottieAnimation()
-            }
-            
-            //            markerReset(marker: markers)
-        }
+    
+    func setRadioBtn() {
+        bottomCardVC.mangwonBtn.addTarget(self, action: #selector(sendBtnTag(_:)), for: .touchUpInside)
+        bottomCardVC.younnamBtn.addTarget(self, action: #selector(sendBtnTag(_:)), for: .touchUpInside)
+        bottomCardVC.hannamBtn.addTarget(self, action: #selector(sendBtnTag(_:)), for: .touchUpInside)
+        bottomCardVC.shinsaBtn.addTarget(self, action: #selector(sendBtnTag(_:)), for: .touchUpInside)
+        bottomCardVC.yuksamBtn.addTarget(self, action: #selector(sendBtnTag(_:)), for: .touchUpInside)
     }
-    
-    
-    
-    
-    
-    
-    
-    @objc func locationButtonDidTap(_ sender:UIButton){
-        mapView.zoomLevel = 14
-        cafeCardVC.view.isHidden = true
-        bottomCardVC.view.isHidden = false
-        
-        if sender.isSelected == true {
-            sender.isSelected = false
-            print("direction btn | zoom level \(mapView.zoomLevel)")
-            
-            mapView.positionMode = .direction
-            mapView.locationOverlay.icon = currentLImage
-            mapView.locationOverlay.subIcon = directionImage
-        } else {
-            sender.isSelected = true
-            print("compass btn | zoom level \(mapView.zoomLevel)")
-            
-            mapView.positionMode = .compass
-            mapView.locationOverlay.icon = currentLImage
-            mapView.locationOverlay.subIcon = compassImage
-        }
-    }
-    
-    
-    
     
     // MARK: - Bottom Card Setting GitHub -> https://github.com/brianadvent/InteractiveCardViewAnimation
     
@@ -493,16 +356,12 @@ extension HomeVC {
         // 탭바 높이
         let tabbarFrame = self.tabBarController?.tabBar.frame;
         
-        // SE에서 너무 많이 올라와서 이렇게 해봤는데 탭바 높이가 짧아서 덜 나오게 됨.
-        
+        // SE 고려
         if tabbarFrame!.size.height < 83 {
             cardHeight = self.mapView.frame.height / 2 + tabbarFrame!.size.height + (83 - tabbarFrame!.size.height)
         } else {
             cardHeight = self.mapView.frame.height / 2 + tabbarFrame!.size.height
         }
-        //        cardHeight = self.mapView.frame.height / 2 + tabbarFrame!.size.height
-        //        print("탭바 높이 \(tabbarFrame!.size.height)")
-        //        print("card 높이 \(cardHeight)")
         
         //탭바 높이만큼 더하기
         bottomCardVC.view.frame = CGRect(x: 0, y: self.view.frame.height - cardHandleAreaHeight - tabbarFrame!.size.height, width: self.view.bounds.width, height: cardHeight)
@@ -514,13 +373,6 @@ extension HomeVC {
         
         bottomCardVC.handleArea.addGestureRecognizer(tapGestureRecognizer)
         bottomCardVC.handleArea.addGestureRecognizer(panGestureRecognizer)
-    }
-    func setRadioBtn() {
-        bottomCardVC.mangwonBtn.addTarget(self, action: #selector(sendBtnTag(_:)), for: .touchUpInside)
-        bottomCardVC.younnamBtn.addTarget(self, action: #selector(sendBtnTag(_:)), for: .touchUpInside)
-        bottomCardVC.hannamBtn.addTarget(self, action: #selector(sendBtnTag(_:)), for: .touchUpInside)
-        bottomCardVC.shinsaBtn.addTarget(self, action: #selector(sendBtnTag(_:)), for: .touchUpInside)
-        bottomCardVC.yuksamBtn.addTarget(self, action: #selector(sendBtnTag(_:)), for: .touchUpInside)
     }
     func animateTransitionIfNeeded (state:CardState, duration:TimeInterval) {
         
@@ -577,10 +429,41 @@ extension HomeVC {
         }
     }
     
+    // MARK: - @objc
+    
+    @objc func filterButtonDidTap(_ sender:DLRadioButton){
+        if filterState[sender.tag] == true {
+            sender.isSelected = false
+            cafeState = 0
+        }
+        else {
+            cafeState = sender.tag
+        }
+        serviceFunc()
+        
+        filterState[1] = filterBtn1.isSelected
+        filterState[2] = filterBtn2.isSelected
+        filterState[3] = filterBtn3.isSelected
+        filterState[4] = filterBtn4.isSelected
+    }
+    @objc func locationButtonDidTap(_ sender:UIButton){
+        mapView.zoomLevel = 14
+        cafeCardVC.view.isHidden = true
+        bottomCardVC.view.isHidden = false
+        
+        if sender.isSelected == true {
+            sender.isSelected = false
+            mapView.positionMode = .direction
+            mapView.locationOverlay.icon = currentLImage
+            mapView.locationOverlay.subIcon = directionImage
+        } else {
+            sender.isSelected = true
+            mapView.positionMode = .compass
+            mapView.locationOverlay.icon = currentLImage
+            mapView.locationOverlay.subIcon = compassImage
+        }
+    }
     @objc func sendBtnTag(_ sender:DLRadioButton) {
-        
-        print(sender.tag)
-        
         cameraUpdate = NMFCameraUpdate(scrollTo: NMGLatLng(lat: searchLocation[sender.tag][0], lng: searchLocation[sender.tag][1]))
         cameraUpdate.animation = .easeIn
         cameraUpdate.animationDuration = 0.5
@@ -595,9 +478,66 @@ extension HomeVC {
         locationState[4] = bottomCardVC.shinsaBtn.isSelected
         locationState[5] = bottomCardVC.yuksamBtn.isSelected
     }
-    
-    @objc
-    func handleCardTap(recognzier:UITapGestureRecognizer) {
+    @objc func serviceFunc() {
+        showLoadingLottie()
+        
+        if cafeState == 0 {
+            
+            print("홈 전체 서비스 - 필터 없음")
+            HomeService.shared.GetMilkyHome() { [self] (networkResult) -> (Void) in
+                switch networkResult {
+                case .success(let data):
+                    if let loadData = data as? HomeData {
+                        print("success")
+                        
+                        homeData = loadData
+                        setMarker()
+                        // 유저닉네임 전역변수로 설정
+                        let ad = UIApplication.shared.delegate as? AppDelegate
+                        print("nickName:\(homeData.nickName)")
+                        ad?.userNickNameInHere = homeData.nickName
+                        setNickNameLabel()
+                    }
+                case .requestErr( _):
+                    print("requestErr")
+                case .pathErr:
+                    print("pathErr")
+                case .serverErr:
+                    print("serverErr")
+                case .networkFail:
+                    print("networkFail")
+                }
+                stopLottieAnimation()
+            }
+        }
+
+        else {
+            HomeService.shared.GetCategoryCafe(categoryId: cafeState) { [self] (networkResult) -> (Void) in
+                switch networkResult {
+                case .success(let data):
+                    if let loadData = data as? CategoryData {
+                        print("success")
+                        filterData = loadData
+                        setFilterMarker()
+                    }
+                case .requestErr( _):
+                    print("requestErr")
+                case .pathErr:
+                    print("pathErr")
+                    ToastView.showIn(viewController: self, message: "원하는 옵션에 맞는 카페가 없어요.\n 다른 옵션을 선택해 볼까요?", fromBottom: 10 + (self.tabBarController?.tabBar.frame.height)!)
+                    markerReset(marker: filterMarkers)
+                    markerReset(marker: markers)
+                case .serverErr:
+                    print("serverErr")
+                case .networkFail:
+                    print("networkFail")
+                }
+                stopLottieAnimation()
+            }
+        }
+    }
+    // MARK: - 바텀 지역 카드 objc
+    @objc func handleCardTap(recognzier:UITapGestureRecognizer) {
         switch recognzier.state {
         case .ended:
             animateTransitionIfNeeded(state: nextState, duration: 0.9)
@@ -606,8 +546,7 @@ extension HomeVC {
         }
     }
     
-    @objc
-    func handleCardPan (recognizer:UIPanGestureRecognizer) {
+    @objc func handleCardPan (recognizer:UIPanGestureRecognizer) {
         switch recognizer.state {
         case .began:
             startInteractiveTransition(state: nextState, duration: 0.9)
@@ -622,7 +561,28 @@ extension HomeVC {
             break
         }
     }
+    
+    // MARK: - 데이터 로딩 중 Lottie 화면
+
+    @objc private func showLoadingLottie() {
+        print("start")
+        
+        loadingView.frame = CGRect(x: 0, y: 0, width: 300, height: 300)
+        loadingView.center = self.view.center
+        loadingView.contentMode = .scaleAspectFill
+        loadingView.loopMode = .loop
+        self.view.addSubview(loadingView)
+        
+        loadingView.play()
+    }
+    
+    @objc private func stopLottieAnimation() {
+        print("end")
+        loadingView.stop()
+        loadingView.removeFromSuperview()
+    }
 }
+
 extension HomeVC: NMFMapViewTouchDelegate {
     func mapView(_ mapView: NMFMapView, didTapMap latlng: NMGLatLng, point: CGPoint) {
         print("\(latlng)")
@@ -643,15 +603,16 @@ extension HomeVC: NMFMapViewTouchDelegate {
 extension HomeVC: NMFMapViewCameraDelegate {
     func mapView(_ mapView: NMFMapView, cameraWillChangeByReason reason: Int, animated: Bool){
         if reason == NMFMapChangedByGesture || reason == NMFMapChangedByDeveloper  {
-            //            print("지도 움직이는 중 zoom level: \(mapView.zoomLevel)")
             mapView.locationOverlay.icon = currentLImage
-            
-            //            cafeCardVC.view.isHidden = true
             beforeMarker?.iconImage = beforeIS ? self.uniUnSelectedImage : unselectedImage
             cafeCardVC.view.isHidden = true
             bottomCardVC.view.isHidden = false
         }
     }
+}
+
+extension HomeVC: CLLocationManagerDelegate {
+    
 }
 
 

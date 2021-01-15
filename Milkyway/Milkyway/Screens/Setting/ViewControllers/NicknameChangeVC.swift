@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Lottie
+import SwiftKeychainWrapper
 
 class NicknameChangeVC: UIViewController {
     
@@ -19,9 +21,11 @@ class NicknameChangeVC: UIViewController {
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var checkBoxImageView: UIImageView!
     
+    @IBOutlet weak var backButton: UIButton!
+    var uuid: String?
     var count = 0
     var nickname: String?
-    
+    let loadingView = AnimationView(name: "loadingLottie")
     override func viewDidLoad() {
         super.viewDidLoad()
         setButton()
@@ -29,6 +33,10 @@ class NicknameChangeVC: UIViewController {
         setTextfield()
         setCheckBox()
         addKeyboardNotification()
+        setBackButton()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(showLottie), name: Notification.Name("startlottiehome"),object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(stopLottie), name: Notification.Name("stoplottiehome"),object: nil)
         // Do any additional setup after loading the view.
     }
     
@@ -41,6 +49,24 @@ class NicknameChangeVC: UIViewController {
 
 extension NicknameChangeVC {
     
+    @objc func showLottie(){
+        
+        loadingView.frame = CGRect(x: 0, y: 0, width: 300, height: 300)
+        loadingView.center = self.view.center
+        loadingView.contentMode = .scaleAspectFill
+        loadingView.loopMode = .loop
+        self.view.addSubview(loadingView)
+        
+        loadingView.play()
+        
+    }
+    
+    @objc func stopLottie(){
+        
+        loadingView.stop()
+        loadingView.removeFromSuperview()
+        
+    }
     func setLabel(){
         countLabel.isHidden = true
         stateLabel.isHidden = true
@@ -62,6 +88,10 @@ extension NicknameChangeVC {
         changeButton.isEnabled = false
     }
     
+    func setBackButton(){
+        
+        backButton.addTarget(self, action: #selector(backbuttondidTap), for: .touchUpInside)
+    }
     
     func isValidNickname(_ nickname: String) -> Bool{
         
@@ -109,29 +139,41 @@ extension NicknameChangeVC {
     }
     
     @objc func changeButtonDidTap(){
-        
+        uuid = UUID().uuidString
         // 여기서 서버코드 연결할 것
         // 지금 닉네임 변경만 되고 홈 넘어가는게 안되는데 그 이슈 다시 생각해봐야할듯
+        //        let vc = UIStoryboard.init(name: "TabBar", bundle: nil).instantiateViewController(identifier: "TabBarController") as? TabBarController
+        //        vc?.modalPresentationStyle = .fullScreen
+        //        self.present(vc!, animated: true, completion: nil)
+        changeNicknameService(nickname ?? "", uuid ?? "")
         let vc = UIStoryboard.init(name: "TabBar", bundle: nil).instantiateViewController(identifier: "TabBarController") as? TabBarController
         vc?.modalPresentationStyle = .fullScreen
         self.present(vc!, animated: true, completion: nil)
-       //changeNicknameService(nickname ?? "")
+    }
+    
+    @objc func backbuttondidTap(){
+        
+        self.dismiss(animated: true, completion: nil)
     }
     
     // MARK: - 닉네임 변경 서버
     
-    func changeNicknameService(_ nickname: String){
+    func changeNicknameService(_ nickname: String, _ uuid: String){
         
         UserService.shared.changeNickname(nickname) {
             responseData in
             switch responseData {
             case .success(let res):
-                dump(res)
-                let response = res as! ResponseTempResult
                 
-                let vc = UIStoryboard.init(name: "TabBar", bundle: nil).instantiateViewController(identifier: "TabBarController") as? TabBarController
-                vc?.modalPresentationStyle = .fullScreen
-                self.present(vc!, animated: true, completion: nil)
+                let response = res as! ResponseTempResult
+                //                self.showLottie()
+                //                print(response.message ?? "")
+                let changedNickname = nickname
+                print(changedNickname)
+            //self.loginService(self.uuid ?? "", changedNickname)
+            //                let vc = UIStoryboard.init(name: "TabBar", bundle: nil).instantiateViewController(identifier: "TabBarController") as? TabBarController
+            //                vc?.modalPresentationStyle = .fullScreen
+            //                self.present(vc!, animated: true, completion: nil)
             case .requestErr(_):
                 print(".requestErr")
             case .pathErr:
@@ -141,6 +183,32 @@ extension NicknameChangeVC {
             case .networkFail:
                 print(".networkErr")
             }
+        }
+    }
+    
+    @objc func loginService(_ uuid: String, _ nickname: String){
+        
+        UserService.shared.signIn(uuid, nickname) { responseData in
+            switch responseData {
+            
+            case .success(let res):
+                dump(res)
+                let response: Token = res as! Token
+                KeychainWrapper.standard.set(response.accessToken, forKey: "Token")
+                
+                let vc = UIStoryboard.init(name: "TabBar", bundle: nil).instantiateViewController(identifier: "TabBarController") as? TabBarController
+                self.stopLottie()
+                vc?.modalPresentationStyle = .fullScreen
+            case .requestErr(_):
+                print("requestErr")
+            case .pathErr:
+                print("pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("")
+            }
+            
         }
     }
     

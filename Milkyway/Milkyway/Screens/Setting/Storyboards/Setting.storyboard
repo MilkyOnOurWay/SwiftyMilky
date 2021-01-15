@@ -171,6 +171,14 @@
                                 <color key="textColor" name="darkGrey"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wpd-ey-nx5">
+                                <rect key="frame" x="8" y="8" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="K8B-Mq-rSc"/>
+                                    <constraint firstAttribute="width" constant="44" id="ckB-dX-Kpl"/>
+                                </constraints>
+                                <state key="normal" image="back"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gHG-9D-H3f"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -179,6 +187,7 @@
                             <constraint firstItem="Odh-j7-rAE" firstAttribute="leading" secondItem="yNa-Ks-TbM" secondAttribute="leading" id="6BG-ab-ruS"/>
                             <constraint firstItem="gHG-9D-H3f" firstAttribute="trailing" secondItem="yNa-Ks-TbM" secondAttribute="trailing" constant="20" id="B1d-Me-bqg"/>
                             <constraint firstItem="QCE-04-4HK" firstAttribute="leading" secondItem="gHG-9D-H3f" secondAttribute="leading" constant="20" id="ErM-v9-4zp"/>
+                            <constraint firstItem="wpd-ey-nx5" firstAttribute="top" secondItem="gHG-9D-H3f" secondAttribute="top" constant="8" id="NSN-7S-CyY"/>
                             <constraint firstItem="8Kd-OQ-vzD" firstAttribute="leading" secondItem="yNa-Ks-TbM" secondAttribute="leading" id="PWm-RH-5jd"/>
                             <constraint firstItem="8Z8-9t-kTP" firstAttribute="top" secondItem="QCE-04-4HK" secondAttribute="top" id="PfX-H4-fVb"/>
                             <constraint firstItem="hcF-T5-Qxr" firstAttribute="leading" secondItem="KFn-Im-tiZ" secondAttribute="trailing" constant="35" id="Wse-U8-pyi"/>
@@ -187,10 +196,12 @@
                             <constraint firstItem="hcF-T5-Qxr" firstAttribute="top" secondItem="gHG-9D-H3f" secondAttribute="top" constant="269" id="ZuO-zt-hwU"/>
                             <constraint firstItem="no0-xa-kj8" firstAttribute="leading" secondItem="yNa-Ks-TbM" secondAttribute="leading" id="aBB-Tw-NAN"/>
                             <constraint firstItem="KFn-Im-tiZ" firstAttribute="top" secondItem="8Kd-OQ-vzD" secondAttribute="bottom" constant="67" id="ags-qz-zR4"/>
+                            <constraint firstItem="gzD-cd-VOI" firstAttribute="top" secondItem="wpd-ey-nx5" secondAttribute="bottom" constant="5" id="gy4-GA-13j"/>
                             <constraint firstItem="yNa-Ks-TbM" firstAttribute="leading" secondItem="gHG-9D-H3f" secondAttribute="leading" constant="20" id="jry-RZ-Ixv"/>
                             <constraint firstItem="gHG-9D-H3f" firstAttribute="trailing" secondItem="8Kd-OQ-vzD" secondAttribute="trailing" constant="133" id="ko9-qM-Fel"/>
                             <constraint firstItem="gHG-9D-H3f" firstAttribute="trailing" secondItem="gzD-cd-VOI" secondAttribute="trailing" constant="189" id="lYd-4R-amo"/>
                             <constraint firstItem="Odh-j7-rAE" firstAttribute="bottom" secondItem="KFn-Im-tiZ" secondAttribute="bottom" id="lps-W1-zbd"/>
+                            <constraint firstItem="wpd-ey-nx5" firstAttribute="leading" secondItem="gHG-9D-H3f" secondAttribute="leading" constant="8" id="mqy-nl-NHz"/>
                             <constraint firstItem="QCE-04-4HK" firstAttribute="top" secondItem="Odh-j7-rAE" secondAttribute="bottom" constant="8" symbolic="YES" id="p8C-vd-Xhq"/>
                             <constraint firstItem="gzD-cd-VOI" firstAttribute="top" secondItem="gHG-9D-H3f" secondAttribute="top" constant="57" id="pSC-lD-vl2"/>
                             <constraint firstItem="gHG-9D-H3f" firstAttribute="bottom" secondItem="yNa-Ks-TbM" secondAttribute="bottom" constant="20" id="pWd-MO-rDs"/>
@@ -200,6 +211,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backButton" destination="wpd-ey-nx5" id="465-Nq-CFl"/>
                         <outlet property="backgroundImageView" destination="Odh-j7-rAE" id="6VV-0p-hxh"/>
                         <outlet property="bottomConstraint" destination="pWd-MO-rDs" id="xcG-5R-PSy"/>
                         <outlet property="changeButton" destination="yNa-Ks-TbM" id="dMz-o0-6CW"/>
@@ -216,6 +228,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="back" width="44" height="44"/>
         <image name="btnStartDisabled" width="335" height="52"/>
         <image name="checkOn" width="24" height="24"/>
         <image name="iMOnMyMilkyWay" width="169.5" height="76.5"/>

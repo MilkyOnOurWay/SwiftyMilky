@@ -62,12 +62,7 @@ class MenuPlusVC: UIViewController {
             let pricetoDouble = Double(priceTF.text?.components(separatedBy: [","]).joined() ?? "")
             let price = numberFormatter.string(from: NSNumber(value: pricetoDouble ?? 0)) ?? ""
             textField.text = price == "0" ? "" : price
-            print(price)
-            
-            
-            
         }
-        
     }
 }
 

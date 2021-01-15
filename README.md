@@ -39,7 +39,7 @@
 </br>
 
 # 📄 IA 
-<img src="https://user-images.githubusercontent.com/59593223/104714864-1296fe00-5769-11eb-925e-3d33baec65d1.jpeg" height="900"/>
+<img src="https://user-images.githubusercontent.com/59593223/104714864-1296fe00-5769-11eb-925e-3d33baec65d1.jpeg" width="1400"/>
 
 </br>
 </br>
@@ -67,7 +67,8 @@
 | lottie-ios      | splash view        |
 
 
-
+</br>
+</br>
 
 # 💻 기능 소개
 
@@ -98,7 +99,8 @@
 |                  |          기타 기능          | 윤진 |    ✅       |
 
 
-
+</br>
+</br>
 
 
 # 🥛 The way we work remotely ✨
@@ -150,36 +152,38 @@
 </br>
 
 ```
-Milkyway // 전체적으로 공유하는 파일은 Global, 뷰 위주의 파일은 Screens
-  |── Global  // 델리게이트파일 및 익스텐션 관리. 서버 모델 및 서비스 파일 정리
-  │   |── Delegate
+
+
+📦Milkyway // 전체적으로 공유하는 파일은 Global, 뷰 위주의 파일은 Screens
+  |── 📂Global  // 델리게이트파일 및 익스텐션 관리. 서버 모델 및 서비스 파일 정리
+  │   |── 📂Delegate
   │   │     │── SceneDelegate.swift
   │   │     └── AppDelegate.swift
-  │   |── Enums  // 폰트 파일 연결
+  │   |── 📂Enums  // 폰트 파일 연결
   │   │     └── Font+Enum.swift
-  │   |── Extensions // 익스텐션 파일(약간 치트키 느낌)
+  │   |── 📂Extensions // 익스텐션 파일(약간 치트키 느낌)
   │   │     │── UITableView+Extension.swift
   │   │     └── UIView+Extension.swift
-  │   |── Models // 서버 통신에 필요한 모델 파일 추가하기
+  │   |── 📂Models // 서버 통신에 필요한 모델 파일 추가하기
   │   │     │── ....swift
   │   │     └── Model.swift
-  │   ├── Resources 
+  │   ├── 📂Resources 
   │   │     │── Assets.xcassets
   │   │     └── LaunchScreen.storyboard
-  │   ├── Service // 서버 API 관리    
+  │   ├── 📂Service // 서버 API 관리    
   │   │    └── APIConstants.swift
-  │   └── Supporting Files 
+  │   └── 📂Supporting Files 
   │         └── Info.plist
-  |── Screens 
-  │   └── View // 뷰 별로 파일을 만들어 줍니다(밑에 Home, Search 참조)
+  |── 📂Screens 
+  │   └── 📂View // 뷰 별로 파일을 만들어 줍니다(밑에 Home, Search 참조)
   │         ├── Cell // 테이블뷰랑 콜렉션뷰 셀 파일 , xib 파일 정리
   │         │     └── TableviewCell / CollectionviewCell.swift
   │         ├── Storyboards // 뷰 별 스토리보드 추가해주기
   │         │      └── View.storyboard
   │         └── ViewControllers
   │               └── ViewVC.swift
-  |  └── Home
-  |  └── Search
+  |  └── 📂Home
+  |  └── 📂Search
   |                   ......
   ├── Milkyway.xcdatamodeld/
   ├── Milkyway.xcworkspace/
@@ -206,10 +210,14 @@ Milkyway // 전체적으로 공유하는 파일은 Global, 뷰 위주의 파일�
   * 우리는 Github의 [칸반보드](https://github.com/MilkyOnOurWay/SwiftyMilky/projects/1)를 활용해요! 
 
 
+</br>
+</br>
 
 # 🌌 구현 코드
 
-📍 네이버 지도 위치 오버레이
+
+### 📍 네이버 지도 위치 오버레이
+
 
 > NMFMapViewCameraDelegate를 활용하여 camera 위치 이동으로 인해 이미지가 바뀌는 현상 해결
 
@@ -230,7 +238,7 @@ extension ResultMapVC: NMFMapViewCameraDelegate {
 
 ```
 
-📍CoreLocation을 활용한 현위치 설정
+### 📍CoreLocation을 활용한 현위치 설정
 
 > CLLocationManager를 활용하여 사용자의 현위치를 받아올 수 있도록 구성
 
@@ -273,7 +281,7 @@ func move(at coordinate: CLLocationCoordinate2D?) {
 <string>사용자의 위치를 받습니다.</string>
 ```
 
-📍팀원 별 코드 정리
+### 📍팀원 별 코드 정리
 
 - [윤진](https://github.com/MilkyOnOurWay/SwiftyMilky/wiki/%EC%9C%A4%EC%A7%84)
 - [소영](https://github.com/MilkyOnOurWay/SwiftyMilky/wiki/%EC%86%8C%EC%98%81)

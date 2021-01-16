@@ -52,7 +52,7 @@ extension CompletedTVCell {
             let label = self.viewWithTag(i+1) as! UILabel
             label.text = tagStr[self.category[i]]
             label.isHidden = false
-            print("여기는 카테고리 \(self.viewWithTag(i+1)!)")
+            //print("여기는 카테고리 \(self.viewWithTag(i+1)!)")
         }
     }
 }

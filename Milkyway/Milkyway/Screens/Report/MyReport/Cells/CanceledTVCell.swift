@@ -106,7 +106,7 @@ extension CanceledTVCell: UICollectionViewDelegate {
         cafeId = cancelData[indexPath.row].id
         
         NotificationCenter.default.post(name: Notification.Name("cancelReason"),
-                                        object: [rejectId, cafeId])
+                                        object: [rejectId, cafeId,indexPath.row])
     }
 }
 

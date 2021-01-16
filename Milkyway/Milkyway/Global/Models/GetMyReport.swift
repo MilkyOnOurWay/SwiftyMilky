@@ -9,7 +9,7 @@ import Foundation
 
 // MARK: - MyReportData
 struct MyReportData: Codable {
-    let cancel, ing, done: [MyReport]
+    var cancel, ing, done: [MyReport]
 }
 
 // MARK: - Cancel

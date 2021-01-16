@@ -35,20 +35,20 @@ class CancelReasonVC: UIViewController {
             switch networkResult {
             case .success(let data):
                 print("success")
+                NotificationCenter.default.post(name: Notification.Name("cancelremove"), object: nil)
             case .requestErr( _):
                 print("requestErr")
             case .pathErr:
-                
                 print("pathErr")
             case .serverErr:
                 print("serverErr")
             case .networkFail:
                 print("networkFail")
+
             }
+            
+            self.dismiss(animated: true)
         }
-        
-        NotificationCenter.default.post(name: Notification.Name("cancelConfirm"), object: nil)
-        self.dismiss(animated: true)
     }
 }
 

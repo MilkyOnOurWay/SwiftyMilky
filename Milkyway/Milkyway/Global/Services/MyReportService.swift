@@ -19,7 +19,7 @@ struct MyReportService {
     func GetMyReport(completion: @escaping (NetworkResult<Any>) -> Void) {
         let URL = APIConstants.showMyReport
         print(URL)
-        
+        //let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWR4IjoxODcsImlhdCI6MTYxMDcyNjg0MCwiZXhwIjoxNjEzMzE4ODQwLCJpc3MiOiJtaWxreVdheSJ9.vpLw3nCURheodiv6hPu14kXwVueHXOZ5Fwyv_BqRTPY"
         let token = KeychainWrapper.standard.string(forKey: "Token")
         let headers: HTTPHeaders = [
             "Content-Type": "application/json",
@@ -40,7 +40,7 @@ struct MyReportService {
             case .success(_):
                 if let value = response.value {
                     if let status = response.response?.statusCode {
-                        print("home server")
+                        print("myreport - get server")
                         switch status {
                         case 200:
                             do {
@@ -74,7 +74,7 @@ struct MyReportService {
         
         let URL = APIConstants.deleteReport + "\(cafeId)"
         let token = KeychainWrapper.standard.string(forKey: "Token")
-      
+        //let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWR4IjoxODcsImlhdCI6MTYxMDcyNjg0MCwiZXhwIjoxNjEzMzE4ODQwLCJpc3MiOiJtaWxreVdheSJ9.vpLw3nCURheodiv6hPu14kXwVueHXOZ5Fwyv_BqRTPY"
         let headers: HTTPHeaders = [
             "Content-Type": "application/json",
             "token": token ?? ""
@@ -100,6 +100,7 @@ struct MyReportService {
                             do {
                               let decoder = JSONDecoder()
                                 let result = try decoder.decode(ResponseTempResult.self,from: value)
+                                completion(.success(Token.self))
                             } catch {
                                 completion(.pathErr)
                             }

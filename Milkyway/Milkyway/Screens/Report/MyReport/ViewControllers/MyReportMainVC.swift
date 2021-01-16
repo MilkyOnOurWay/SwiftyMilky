@@ -23,7 +23,7 @@ class MyReportMainVC: UIViewController, IndicatorInfoProvider {
     
     var tabName: String = ""
     var nickName: String = ""
-    
+    var wanttoDelete: Int?
     var myReportData = MyReportData(cancel: [MyReport](),
                                     ing: [MyReport](),
                                     done: [MyReport]())
@@ -34,15 +34,22 @@ class MyReportMainVC: UIViewController, IndicatorInfoProvider {
         notiGather()
         registerXib()
         registerDelegate()
+        
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         setService()
         myReportTableView.reloadData()
     }
     
+    @objc func removeCancelCell() {
+        print("removeCancelCell is called")
+        setService()
+    }
     
     // MARK: - 데이터 로딩 중 Lottie 화면
     
@@ -55,7 +62,7 @@ class MyReportMainVC: UIViewController, IndicatorInfoProvider {
         loadingView.center = self.view.center
         loadingView.contentMode = .scaleAspectFill
         loadingView.loopMode = .loop
-        self.view.addSubview(loadingView)
+        self.myReportTableView.addSubview(loadingView)
         
         loadingView.play()
     }
@@ -95,7 +102,9 @@ extension MyReportMainVC {
     
     func notiGather() {
         NotificationCenter.default.addObserver(self, selector: #selector(cancelReasonTap(_:)), name: Notification.Name("cancelReason"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(reloadTable), name: Notification.Name("cancelConfirm"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(removeCancelCell), name: Notification.Name("cancelremove"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(showLoadingLottie), name: Notification.Name("startlottiereport"),object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(stopLottieAnimation), name: Notification.Name("stoplottiereport"),object: nil)
         
     }
     func registerDelegate() {
@@ -114,8 +123,12 @@ extension MyReportMainVC {
         myReportTableView.register(inProgressTVCellNib, forCellReuseIdentifier: "InProgressTVCell")
         myReportTableView.register(completedTVCellNib, forCellReuseIdentifier: "CompletedTVCell")
     }
+    
+    
+    
+    
+    
     func setService() {
-        showLoadingLottie()
         print("my report setService")
         MyReportService.shared.GetMyReport() { [self] (networkResult) -> (Void) in
             switch networkResult {
@@ -123,6 +136,7 @@ extension MyReportMainVC {
                 if let loadData = data as? MyReportData {
                     print("success")
                     myReportData = loadData
+                    print(myReportData)
                     // 유저닉네임 전역변수로 설정
                     let ad = UIApplication.shared.delegate as? AppDelegate
                     nickName = (ad?.userNickNameInHere)!
@@ -145,7 +159,6 @@ extension MyReportMainVC {
             case .networkFail:
                 print("networkFail")
             }
-            stopLottieAnimation()
         }
         
     }
@@ -159,6 +172,7 @@ extension MyReportMainVC {
         let getInfo = noti.object as! [Int]
         cancelVC.rejectReasonId = getInfo[0]
         cancelVC.cafeId = getInfo[1]
+        wanttoDelete = getInfo[2]
 //        cancelVC.modalPresentationStyle = .overCurrentContext
         cancelVC.modalPresentationStyle = .overFullScreen
         cancelVC.modalTransitionStyle = .crossDissolve
@@ -166,9 +180,6 @@ extension MyReportMainVC {
         self.myReportTableView.reloadData()
     }
     
-    @objc func reloadTable() {
-        setService()
-    }
 }
 
 extension MyReportMainVC: UITableViewDataSource {
@@ -214,7 +225,7 @@ extension MyReportMainVC: UITableViewDataSource {
                 return UITableViewCell()
             }
             cell.setCell(cancelData: myReportData.cancel)
-            print(myReportData.cancel)
+            //print(myReportData.cancel)
             cell.selectionStyle = .none
             return cell
         case 2: // 진행중인 제보

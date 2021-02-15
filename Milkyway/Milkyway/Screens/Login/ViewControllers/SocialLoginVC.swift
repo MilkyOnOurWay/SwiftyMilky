@@ -6,19 +6,37 @@
 //
 
 import UIKit
+import AuthenticationServices
 import KakaoSDKAuth
 import KakaoSDKUser
 
 class SocialLoginVC: UIViewController {
 
     @IBOutlet var kakaoSignInBtn: UIButton!
+    @IBOutlet var appleSignInBtn: UIStackView!
+    
+    var userIdentifier: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setLoginButton()
     }
     
-    @IBAction func kakaoLoginDidTap(_ sender: Any) {
+}
+
+extension SocialLoginVC {
+    func setLoginButton() {
+        kakaoSignInBtn.addTarget(self, action: #selector(kakaoLogin), for: .touchUpInside)
+        
+        let authorizationButton = ASAuthorizationAppleIDButton(type: .signIn, style: .white)
+        
+        // cornerRadius 왜 갑자기 오류나고 난리임;
+//        authorizationButton.cornerRadius = 20 //authorizationButton.frame.height / 2
+        authorizationButton.addTarget(self, action: #selector(appleSignInButtonPress), for: .touchUpInside)
+        self.appleSignInBtn.addArrangedSubview(authorizationButton)
+    }
+    // MARK: - KAKAO Login
+    @objc func kakaoLogin() {
         // 카카오톡 설치 여부 확인
         if (AuthApi.isKakaoTalkLoginAvailable()) {
             // 카카오톡 로그인. api 호출 결과를 클로저로 전달.
@@ -57,8 +75,6 @@ class SocialLoginVC: UIViewController {
             }
         }
     }
-}
-extension SocialLoginVC {
     func moveToNickView() {
         UserApi.shared.me() {(user, error) in
             if let error = error {
@@ -88,5 +104,95 @@ extension SocialLoginVC {
                 self.navigationController?.pushViewController(nickVC, animated: true)
             }
         }
+    }
+    
+    //MARK:- APPLE Login
+    @objc func appleSignInButtonPress() {
+        let appleIDProvider = ASAuthorizationAppleIDProvider()
+        let request = appleIDProvider.createRequest()
+        request.requestedScopes = [.fullName, .email]
+            
+        let authorizationController = ASAuthorizationController(authorizationRequests: [request])
+        authorizationController.delegate = self
+        authorizationController.presentationContextProvider = self
+        authorizationController.performRequests()
+    }
+}
+extension SocialLoginVC: ASAuthorizationControllerPresentationContextProviding {
+    func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
+        return self.view.window!
+    }
+}
+extension SocialLoginVC: ASAuthorizationControllerDelegate {
+    // Apple ID 연동 성공 시
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
+        switch authorization.credential {
+        // Apple ID
+        case let appleIDCredential as ASAuthorizationAppleIDCredential:
+                
+            // 계정 정보 가져오기
+            userIdentifier = appleIDCredential.user
+            let fullName = appleIDCredential.fullName
+            let email = appleIDCredential.email
+                
+            print("User ID : \(userIdentifier)")
+            print("User Email : \(email ?? "")")
+            print("User Name : \((fullName?.givenName ?? "") + (fullName?.familyName ?? ""))")
+     
+            self.saveUserInKeychain(userIdentifier)
+            self.showResultViewController(userIdentifier: userIdentifier, fullName: fullName, email: email)
+            
+        case let passwordCredential as ASPasswordCredential:
+        
+            // Sign in using an existing iCloud Keychain credential.
+            let username = passwordCredential.user
+            let password = passwordCredential.password
+            
+            // For the purpose of this demo app, show the password credential as an alert.
+            DispatchQueue.main.async {
+                self.showPasswordCredentialAlert(username: username, password: password)
+            }
+        default:
+            break
+        }
+    }
+    private func saveUserInKeychain(_ userIdentifier: String) {
+        do {
+            try KeychainItem(service: "com.milkys.Milkyway", account: "userIdentifier").saveItem(userIdentifier)
+        } catch {
+            print("Unable to save userIdentifier to keychain.")
+        }
+    }
+    
+    private func showResultViewController(userIdentifier: String, fullName: PersonNameComponents?, email: String?) {
+        guard let NickVC = storyboard?.instantiateViewController(withIdentifier: "LoginVC") as? LoginVC else {
+            return
+        }
+//        NickVC.snsId = userIdentifier
+//        NickVC.provider = "apple"
+        self.navigationController?.pushViewController(NickVC, animated: true)
+
+        DispatchQueue.main.async {
+//            viewController.userIdentifierLabel.text = userIdentifier
+//            if let givenName = fullName?.givenName {
+//                viewController.givenNameLabel.text = givenName
+//            }
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
+    
+    private func showPasswordCredentialAlert(username: String, password: String) {
+        let message = "The app has received your selected credential from the keychain. \n\n Username: \(username)\n Password: \(password)"
+        let alertController = UIAlertController(title: "Keychain Credential Received",
+                                                message: message,
+                                                preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    // Apple ID 연동 실패 시
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
+        // Handle error.
+        print("apple id 연동 실패")
     }
 }

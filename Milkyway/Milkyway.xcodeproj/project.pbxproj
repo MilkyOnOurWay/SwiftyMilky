@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4799C2F4CFD3497A225FA29A /* Pods_Milkyway.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F3F5BD99D092D8D80FFA68F /* Pods_Milkyway.framework */; };
 		6B197F9F25DA379300881899 /* SocialLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B197F9E25DA379300881899 /* SocialLoginVC.swift */; };
+		6B197FB225DA481F00881899 /* KeychainItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B197FB125DA481F00881899 /* KeychainItem.swift */; };
 		6B27B99D25A6C5B900E14799 /* RectangleCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B27B99B25A6C5B900E14799 /* RectangleCVCell.swift */; };
 		6B27B99E25A6C5B900E14799 /* RectangleCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B27B99C25A6C5B900E14799 /* RectangleCVCell.xib */; };
 		6B27B9A425A7228C00E14799 /* CanceledTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B27B9A225A7228C00E14799 /* CanceledTVCell.swift */; };
@@ -149,6 +150,7 @@
 /* Begin PBXFileReference section */
 		2F3F5BD99D092D8D80FFA68F /* Pods_Milkyway.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Milkyway.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B197F9E25DA379300881899 /* SocialLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLoginVC.swift; sourceTree = "<group>"; };
+		6B197FB125DA481F00881899 /* KeychainItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainItem.swift; sourceTree = "<group>"; };
 		6B27B99B25A6C5B900E14799 /* RectangleCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleCVCell.swift; sourceTree = "<group>"; };
 		6B27B99C25A6C5B900E14799 /* RectangleCVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RectangleCVCell.xib; sourceTree = "<group>"; };
 		6B27B9A225A7228C00E14799 /* CanceledTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanceledTVCell.swift; sourceTree = "<group>"; };
@@ -825,6 +827,7 @@
 		F2BA62FB2598E03200A49020 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6B197FB125DA481F00881899 /* KeychainItem.swift */,
 				F2BA62EE2598DE6400A49020 /* Info.plist */,
 			);
 			path = "Supporting Files";
@@ -1067,6 +1070,7 @@
 				D1F2283B259F70DA0018C472 /* ReportTabBarViewController.swift in Sources */,
 				6B657FE625AD5C15002648A1 /* PostModifyModel.swift in Sources */,
 				F2BA631A2598E5AA00A49020 /* UIImageView+Extension.swift in Sources */,
+				6B197FB225DA481F00881899 /* KeychainItem.swift in Sources */,
 				D1D95DDD25A30BB100B95F79 /* CafeMenuCell.swift in Sources */,
 				F2BA62E82598DE5F00A49020 /* Milkyway.xcdatamodeld in Sources */,
 				F215A21825ACDA6E00FB7D86 /* String+Extensions.swift in Sources */,

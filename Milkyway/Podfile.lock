@@ -1,5 +1,13 @@
 PODS:
+  - Alamofire (5.4.1)
   - DLRadioButton (1.4.12)
+  - KakaoSDKAuth (2.2.0):
+    - KakaoSDKCommon (= 2.2.0)
+  - KakaoSDKCommon (2.2.0):
+    - Alamofire (~> 5.1)
+  - KakaoSDKUser (2.2.0):
+    - KakaoSDKAuth (= 2.2.0)
+    - KakaoSDKCommon (= 2.2.0)
   - lottie-ios (3.1.9)
   - NMapsMap (3.10.1)
   - SwiftKeychainWrapper (4.0.1)
@@ -7,6 +15,9 @@ PODS:
 
 DEPENDENCIES:
   - DLRadioButton (~> 1.4)
+  - KakaoSDKAuth
+  - KakaoSDKCommon
+  - KakaoSDKUser
   - lottie-ios
   - NMapsMap
   - SwiftKeychainWrapper
@@ -14,19 +25,27 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - Alamofire
     - DLRadioButton
+    - KakaoSDKAuth
+    - KakaoSDKCommon
+    - KakaoSDKUser
     - lottie-ios
     - NMapsMap
     - SwiftKeychainWrapper
     - XLPagerTabStrip
 
 SPEC CHECKSUMS:
+  Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
   DLRadioButton: d7c4e225ed0e8013cef7be61455230c7557ad7c1
+  KakaoSDKAuth: a6fa63eb1a6a4e03de55d87da597a2976aad9cbf
+  KakaoSDKCommon: 90adb38b946ff42f26d70aadb67e679f79fe139c
+  KakaoSDKUser: b5ddfcdaf4adce40f172cafc9d4864d1a8b4f938
   lottie-ios: 3a3758ef5a008e762faec9c9d50a39842f26d124
   NMapsMap: 1dc27ca06eac287ce1f001a972172766dca2abe1
   SwiftKeychainWrapper: 807ba1d63c33a7d0613288512399cd1eda1e470c
   XLPagerTabStrip: 61c57fd61f611ee5f01ff1495ad6fbee8bf496c5
 
-PODFILE CHECKSUM: a4b5f2f3f42c083c9f24c9b14185abf15c083721
+PODFILE CHECKSUM: 85c5829981bdf9ba2c75b23b332fdac428bdbeda
 
 COCOAPODS: 1.10.0

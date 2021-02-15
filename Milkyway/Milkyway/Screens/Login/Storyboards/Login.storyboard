@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="D6Z-F2-rCR">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -23,11 +23,11 @@
             <objects>
                 <viewController id="xwm-ed-wYY" customClass="LoginVC" customModule="Milkyway" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="d9Y-sF-w26">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cg1-lm-N6x">
-                                <rect key="frame" x="20" y="595" width="335" height="52"/>
+                                <rect key="frame" x="20" y="772" width="350" height="52"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="335" id="kyH-E3-QmM"/>
                                     <constraint firstAttribute="height" constant="52" id="ytv-jh-WdQ"/>
@@ -43,7 +43,7 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="최대 10자, 영어 및 특수문자 불가" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9c9-lM-p8D">
-                                <rect key="frame" x="32" y="264" width="243" height="37"/>
+                                <rect key="frame" x="32" y="308" width="243" height="37"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="37" id="ZLi-0w-hRQ"/>
                                     <constraint firstAttribute="width" constant="243" id="oxf-Za-psW"/>
@@ -56,7 +56,7 @@
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="사용 불가한 닉네임 입니다." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k6B-Oq-JIj">
-                                <rect key="frame" x="20" y="309" width="132" height="14"/>
+                                <rect key="frame" x="20" y="353" width="132" height="14"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="14" id="Tco-rn-MqB"/>
                                     <constraint firstAttribute="width" constant="132" id="moN-I3-sm2"/>
@@ -66,7 +66,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eOb-pB-8Wl">
-                                <rect key="frame" x="326" y="309" width="25" height="15"/>
+                                <rect key="frame" x="326" y="353" width="25" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="15" id="dnx-dX-mTQ"/>
                                 </constraints>
@@ -75,13 +75,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iMOnMyMilkyWay" translatesAutoresizingMaskIntoConstraints="NO" id="71D-Zx-01d">
-                                <rect key="frame" x="20" y="57" width="166" height="80"/>
+                                <rect key="frame" x="20" y="101" width="181" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="zJk-cg-xjp"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="밀키웨이에서 사용할 닉네임을 설정해주세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fQZ-L8-Ir9">
-                                <rect key="frame" x="20" y="163" width="247" height="17"/>
+                                <rect key="frame" x="20" y="207" width="247" height="17"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="247" id="0Dz-WF-Ru1"/>
                                     <constraint firstAttribute="height" constant="17" id="Kzx-dS-neg"/>
@@ -91,14 +91,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkOn" translatesAutoresizingMaskIntoConstraints="NO" id="RV5-6p-87I">
-                                <rect key="frame" x="310" y="269" width="24" height="24"/>
+                                <rect key="frame" x="310" y="313" width="24" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="24" id="7mp-VH-akf"/>
                                     <constraint firstAttribute="height" constant="24" id="dmx-s2-AfX"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*영어, 특수문자, 이모티콘은 사용 불가합니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sfg-A2-Vqy">
-                                <rect key="frame" x="20" y="184" width="222" height="13"/>
+                                <rect key="frame" x="20" y="228" width="237" height="13"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="13" id="28j-9d-sQh"/>
                                 </constraints>
@@ -107,7 +107,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="input" translatesAutoresizingMaskIntoConstraints="NO" id="hnE-6T-g2P">
-                                <rect key="frame" x="20" y="261" width="335" height="40"/>
+                                <rect key="frame" x="20" y="305" width="335" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="335" id="gW0-hS-opH"/>
                                     <constraint firstAttribute="height" constant="40" id="qXc-Sb-BKf"/>
@@ -179,7 +179,7 @@
             <objects>
                 <viewController id="D6Z-F2-rCR" customClass="SplashVC" customModule="Milkyway" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jDh-SD-IAI">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="VqY-s7-K20"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -189,12 +189,45 @@
             </objects>
             <point key="canvasLocation" x="204" y="-693"/>
         </scene>
+        <!--Social LoginVC-->
+        <scene sceneID="gRF-bp-7Gb">
+            <objects>
+                <viewController storyboardIdentifier="SocialLoginVC" id="keg-Nb-Pp8" customClass="SocialLoginVC" customModule="Milkyway" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wcs-Xl-LBU">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="iMOnMyMilkyWay" translatesAutoresizingMaskIntoConstraints="NO" id="C0h-S0-n30">
+                                <rect key="frame" x="105" y="232" width="181" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ErL-Eo-3dA">
+                                <rect key="frame" x="46" y="533" width="300" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="kakao_login_medium_wide"/>
+                                <connections>
+                                    <action selector="kakaoLoginDidTap:" destination="keg-Nb-Pp8" eventType="touchUpInside" id="RB2-4n-ktT"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="nDb-9m-RXT"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <connections>
+                        <outlet property="kakaoSignInBtn" destination="ErL-Eo-3dA" id="8JT-Tg-8ce"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RGx-eZ-Hoe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1057" y="-693"/>
+        </scene>
     </scenes>
     <resources>
         <image name="btnStartDisabled" width="335" height="52"/>
         <image name="checkOn" width="24" height="24"/>
-        <image name="iMOnMyMilkyWay" width="169.5" height="76.5"/>
+        <image name="iMOnMyMilkyWay" width="169.66667175292969" height="76.333335876464844"/>
         <image name="input" width="335" height="40"/>
+        <image name="kakao_login_medium_wide" width="300" height="45"/>
         <namedColor name="Milky">
             <color red="0.20000000298023224" green="0.125" blue="0.65100002288818359" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

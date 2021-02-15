@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="D6Z-F2-rCR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="keg-Nb-Pp8">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -197,29 +197,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="iMOnMyMilkyWay" translatesAutoresizingMaskIntoConstraints="NO" id="C0h-S0-n30">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pickerUniverseSelected" translatesAutoresizingMaskIntoConstraints="NO" id="C0h-S0-n30">
                                 <rect key="frame" x="105" y="232" width="181" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="W1D-I2-OcO">
+                                <rect key="frame" x="46" y="610" width="300" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </stackView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ErL-Eo-3dA">
                                 <rect key="frame" x="46" y="533" width="300" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="kakao_login_medium_wide"/>
-                                <connections>
-                                    <action selector="kakaoLoginDidTap:" destination="keg-Nb-Pp8" eventType="touchUpInside" id="RB2-4n-ktT"/>
-                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nDb-9m-RXT"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="Milky"/>
                     </view>
                     <connections>
+                        <outlet property="appleSignInBtn" destination="W1D-I2-OcO" id="Wqa-aM-u1D"/>
                         <outlet property="kakaoSignInBtn" destination="ErL-Eo-3dA" id="8JT-Tg-8ce"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RGx-eZ-Hoe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1057" y="-693"/>
+            <point key="canvasLocation" x="1056.9230769230769" y="-693.12796208530801"/>
         </scene>
     </scenes>
     <resources>
@@ -228,6 +235,7 @@
         <image name="iMOnMyMilkyWay" width="169.66667175292969" height="76.333335876464844"/>
         <image name="input" width="335" height="40"/>
         <image name="kakao_login_medium_wide" width="300" height="45"/>
+        <image name="pickerUniverseSelected" width="60" height="75"/>
         <namedColor name="Milky">
             <color red="0.20000000298023224" green="0.125" blue="0.65100002288818359" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

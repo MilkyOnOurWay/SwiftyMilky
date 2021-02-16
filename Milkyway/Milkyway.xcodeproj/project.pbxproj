@@ -33,6 +33,8 @@
 		6B869C5025A2F9960068BFD2 /* CardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B869C4E25A2F9960068BFD2 /* CardVC.swift */; };
 		6B869C5125A2F9960068BFD2 /* CardVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B869C4F25A2F9960068BFD2 /* CardVC.xib */; };
 		6B96A13625A9C809004E529D /* CancelReasonVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B96A13525A9C809004E529D /* CancelReasonVC.swift */; };
+		6BA30D9125DBAE3300132788 /* CategoryLabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA30D8F25DBAE3300132788 /* CategoryLabelCell.swift */; };
+		6BA30D9225DBAE3300132788 /* CategoryLabelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BA30D9025DBAE3300132788 /* CategoryLabelCell.xib */; };
 		6BD05A6B25A41FFE00B2643F /* CompletedTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BD05A6525A41FFE00B2643F /* CompletedTVCell.xib */; };
 		6BD05A6C25A41FFE00B2643F /* TopTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BD05A6625A41FFE00B2643F /* TopTVCell.xib */; };
 		6BD05A6D25A41FFE00B2643F /* CompletedTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD05A6725A41FFE00B2643F /* CompletedTVCell.swift */; };
@@ -174,6 +176,8 @@
 		6B869C4E25A2F9960068BFD2 /* CardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardVC.swift; sourceTree = "<group>"; };
 		6B869C4F25A2F9960068BFD2 /* CardVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardVC.xib; sourceTree = "<group>"; };
 		6B96A13525A9C809004E529D /* CancelReasonVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelReasonVC.swift; sourceTree = "<group>"; };
+		6BA30D8F25DBAE3300132788 /* CategoryLabelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryLabelCell.swift; sourceTree = "<group>"; };
+		6BA30D9025DBAE3300132788 /* CategoryLabelCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryLabelCell.xib; sourceTree = "<group>"; };
 		6BD05A6525A41FFE00B2643F /* CompletedTVCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CompletedTVCell.xib; sourceTree = "<group>"; };
 		6BD05A6625A41FFE00B2643F /* TopTVCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopTVCell.xib; sourceTree = "<group>"; };
 		6BD05A6725A41FFE00B2643F /* CompletedTVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompletedTVCell.swift; sourceTree = "<group>"; };
@@ -328,6 +332,8 @@
 				6B27B99C25A6C5B900E14799 /* RectangleCVCell.xib */,
 				6B27B9A225A7228C00E14799 /* CanceledTVCell.swift */,
 				6B27B9A325A7228C00E14799 /* CanceledTVCell.xib */,
+				6BA30D8F25DBAE3300132788 /* CategoryLabelCell.swift */,
+				6BA30D9025DBAE3300132788 /* CategoryLabelCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -981,6 +987,7 @@
 				D1D95DD425A30B9700B95F79 /* CafeBasicCell.xib in Resources */,
 				F2242A57259C4AA600455604 /* MyUniverse.storyboard in Resources */,
 				6B869C5125A2F9960068BFD2 /* CardVC.xib in Resources */,
+				6BA30D9225DBAE3300132788 /* CategoryLabelCell.xib in Resources */,
 				F2BA62EA2598DE6400A49020 /* Assets.xcassets in Resources */,
 				D154440025A33AF9007773BF /* CafeNameResultCell.xib in Resources */,
 				F2242A28259BB02100455604 /* Home.storyboard in Resources */,
@@ -1126,6 +1133,7 @@
 				D1996E0425A2290500B8F40B /* DetailCafeMenuVC.swift in Sources */,
 				D11AB9CA25A5BC0600C1927E /* MenuPlusVC.swift in Sources */,
 				6BF6DAA525A6084E001CDB9A /* paddingLabel.swift in Sources */,
+				6BA30D9125DBAE3300132788 /* CategoryLabelCell.swift in Sources */,
 				F2BA63112598E55000A49020 /* UIButton+Extension.swift in Sources */,
 				6B27B99D25A6C5B900E14799 /* RectangleCVCell.swift in Sources */,
 				F2C0642525A8BDBF00BDD16D /* NetworkResult.swift in Sources */,

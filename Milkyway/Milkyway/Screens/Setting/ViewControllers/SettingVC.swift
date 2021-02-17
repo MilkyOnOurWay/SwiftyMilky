@@ -6,21 +6,48 @@
 //
 
 import UIKit
+import MessageUI
 
-class SettingVC: UIViewController {
+class SettingVC: UIViewController, MFMailComposeViewControllerDelegate {
     
-    @IBOutlet weak var SettingTableView: UITableView!
-    
-    let menu1 = ["닉네임 변경", "문의하기", "평점 매기기"]
-    let menu2 = ["로그아웃","서비스 탈퇴"]
-    let headerHeight: CGFloat = 10
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        setTableView()
         setNavi()
-        
-        
     }
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func btnClicked(_ sender: UIButton) {
+        switch sender.tag {
+        case 0:
+            guard let nvc = self.storyboard?.instantiateViewController(identifier: "NicknameChangeVC") as? NicknameChangeVC else { return }
+            nvc.modalPresentationStyle = .fullScreen
+            self.present(nvc, animated: true, completion: nil)
+        case 1:
+            let mc = MFMailComposeViewController()
+            mc.mailComposeDelegate = self
+            // 나중에 밀키웨이 메일로 변경해야함
+            mc.setToRecipients(["sso_0022@naver.com"])
+            if MFMailComposeViewController.canSendMail() { self.present(mc, animated: true, completion: nil) }
+            else { let alertController: UIAlertController = UIAlertController(title:"메일 보내기", message:"현재 디바이스에서 이메일을 \n보낼 수가 없습니다.\n설정에서 이메일 관련 \n설정을 확인해주세요", preferredStyle: .alert)
+                let defaultAction = UIAlertAction(title: "확인", style: .default, handler: { (alert: UIAlertAction!) in })
+                alertController.addAction(defaultAction)
+                present(alertController, animated: true, completion: nil)
+                
+            }
+        case 3:
+            makeAlert(title: "로그아웃", message: "정말 로그아웃 하시겠습니까?", vc: self)
+        case 4:
+            makeAlert(title: "서비스 탈퇴", message: "서비스 탈퇴 하시나요? 😢", vc: self)
+        default:
+            print("nothing")
+        }
+      
+    }
+    
     
     
 }
@@ -28,82 +55,11 @@ class SettingVC: UIViewController {
 extension SettingVC {
     
     
-    func setTableView(){
-       
-        SettingTableView.delegate = self
-        SettingTableView.dataSource = self
-        
-        
-        
-    }
-    
     func setNavi(){
         self.navigationController?.navigationBar.topItem?.title = "설정"
         
     }
 }
-extension SettingVC: UITableViewDelegate {
-    
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let nvc = self.storyboard?.instantiateViewController(identifier: "NicknameChangeVC") as? NicknameChangeVC else { return }
-        nvc.modalPresentationStyle = .fullScreen
-        self.present(nvc, animated: true, completion: nil)
-        //        guard let nvc = self.storyboard?.instantiateViewController(identifier:
-        //                "SearchEntryMoimVC") as? SearchEntryMoimVC else { return }
-    }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
-    }
 
- 
-    
-}
-
-extension SettingVC: UITableViewDataSource {
-    
-    func tableview(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat{
-        
-     
-        return headerHeight
-    }
-    
-   func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return ""
-    }
-
-
-func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    
-    if section == 0 {
-        
-        return menu1.count
-    } else if section == 1 {
-        
-        return menu2.count
-    } else {
-        return 0
-    }
-    
-}
-
-func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: "SettingTVCell", for: indexPath) as! SettingTVCell
-    
-    if indexPath.section == 0 {
-        cell.settingLabel.text = "\(menu1[indexPath.row])"
-        
-    } else if indexPath.section == 1 {
-        cell.settingLabel.text = "\(menu2[indexPath.row])"
-    }else{
-        
-        return UITableViewCell()
-    }
-    return cell
-}
-
-
-}
 
 

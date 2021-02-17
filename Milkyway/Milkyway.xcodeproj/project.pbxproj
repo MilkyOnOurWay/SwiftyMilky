@@ -68,6 +68,7 @@
 		D1983CA725A72BF200C74CED /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1983CA625A72BF200C74CED /* UITextField+Extension.swift */; };
 		D1996E0425A2290500B8F40B /* DetailCafeMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1996E0325A2290500B8F40B /* DetailCafeMenuVC.swift */; };
 		D1996E0725A2290E00B8F40B /* DetailCafeMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1996E0625A2290E00B8F40B /* DetailCafeMenu.storyboard */; };
+		D1B1763B25DD673D00E07717 /* UIView + AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B1763A25DD673D00E07717 /* UIView + AlertView.swift */; };
 		D1CA104825A9A70E004E42DC /* cafePopUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CA104725A9A70E004E42DC /* cafePopUpVC.swift */; };
 		D1CA107725AA06E6004E42DC /* PostCafeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CA107625AA06E6004E42DC /* PostCafeModel.swift */; };
 		D1CA107A25AA06F1004E42DC /* GetDetailCafeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CA107925AA06F1004E42DC /* GetDetailCafeModel.swift */; };
@@ -213,6 +214,8 @@
 		D1983CA625A72BF200C74CED /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		D1996E0325A2290500B8F40B /* DetailCafeMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCafeMenuVC.swift; sourceTree = "<group>"; };
 		D1996E0625A2290E00B8F40B /* DetailCafeMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailCafeMenu.storyboard; sourceTree = "<group>"; };
+		D1B1763825DD5C5D00E07717 /* Milkyway.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Milkyway.entitlements; sourceTree = "<group>"; };
+		D1B1763A25DD673D00E07717 /* UIView + AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + AlertView.swift"; sourceTree = "<group>"; };
 		D1CA104725A9A70E004E42DC /* cafePopUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cafePopUpVC.swift; sourceTree = "<group>"; };
 		D1CA107625AA06E6004E42DC /* PostCafeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCafeModel.swift; sourceTree = "<group>"; };
 		D1CA107925AA06F1004E42DC /* GetDetailCafeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDetailCafeModel.swift; sourceTree = "<group>"; };
@@ -775,6 +778,7 @@
 		F2BA62DC2598DE5F00A49020 /* Milkyway */ = {
 			isa = PBXGroup;
 			children = (
+				D1B1763825DD5C5D00E07717 /* Milkyway.entitlements */,
 				F2BA62F52598DED200A49020 /* Global */,
 				F2BA62F72598DEEA00A49020 /* Screens */,
 				F2BA62E62598DE5F00A49020 /* Milkyway.xcdatamodeld */,
@@ -856,6 +860,7 @@
 				D11ABA4F25A64F3B00C1927E /* ToastView.swift */,
 				D1983CA625A72BF200C74CED /* UITextField+Extension.swift */,
 				F215A21725ACDA6E00FB7D86 /* String+Extensions.swift */,
+				D1B1763A25DD673D00E07717 /* UIView + AlertView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1099,6 +1104,7 @@
 				F2BA62DE2598DE5F00A49020 /* AppDelegate.swift in Sources */,
 				F2C0642225A8BCD100BDD16D /* UserService.swift in Sources */,
 				F2242A24259BAFFC00455604 /* HomeVC.swift in Sources */,
+				D1B1763B25DD673D00E07717 /* UIView + AlertView.swift in Sources */,
 				F2138D5425AC4B2A00736CAA /* SettingTVCell.swift in Sources */,
 				F240771725A731EB008B691B /* SplashVC.swift in Sources */,
 				F215A21525ACD77000FB7D86 /* SearchCafeService.swift in Sources */,
@@ -1283,6 +1289,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Milkyway/Milkyway.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 269D672VZ4;
 				INFOPLIST_FILE = "Milkyway/Global/Supporting Files/Info.plist";
@@ -1304,6 +1311,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Milkyway/Milkyway.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 269D672VZ4;
 				INFOPLIST_FILE = "Milkyway/Global/Supporting Files/Info.plist";

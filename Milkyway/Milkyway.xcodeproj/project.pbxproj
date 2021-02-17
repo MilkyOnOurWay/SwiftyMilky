@@ -183,6 +183,7 @@
 		6BD05A6625A41FFE00B2643F /* TopTVCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopTVCell.xib; sourceTree = "<group>"; };
 		6BD05A6725A41FFE00B2643F /* CompletedTVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompletedTVCell.swift; sourceTree = "<group>"; };
 		6BD05A6825A41FFE00B2643F /* TopTVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopTVCell.swift; sourceTree = "<group>"; };
+		6BD2966825DD6007000BCB3C /* Milkyway.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Milkyway.entitlements; sourceTree = "<group>"; };
 		6BF6DA6D25A57DF5001CDB9A /* CardState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardState.swift; sourceTree = "<group>"; };
 		6BF6DAA125A603A7001CDB9A /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
 		6BF6DAA425A6084E001CDB9A /* paddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = paddingLabel.swift; sourceTree = "<group>"; };
@@ -778,7 +779,7 @@
 		F2BA62DC2598DE5F00A49020 /* Milkyway */ = {
 			isa = PBXGroup;
 			children = (
-				D1B1763825DD5C5D00E07717 /* Milkyway.entitlements */,
+				6BD2966825DD6007000BCB3C /* Milkyway.entitlements */,
 				F2BA62F52598DED200A49020 /* Global */,
 				F2BA62F72598DEEA00A49020 /* Screens */,
 				F2BA62E62598DE5F00A49020 /* Milkyway.xcdatamodeld */,

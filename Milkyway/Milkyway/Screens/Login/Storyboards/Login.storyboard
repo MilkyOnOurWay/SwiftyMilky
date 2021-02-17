@@ -21,7 +21,7 @@
         <!--LoginVC-->
         <scene sceneID="AtE-lv-Em1">
             <objects>
-                <viewController id="xwm-ed-wYY" customClass="LoginVC" customModule="Milkyway" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginVC" id="xwm-ed-wYY" customClass="LoginVC" customModule="Milkyway" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="d9Y-sF-w26">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

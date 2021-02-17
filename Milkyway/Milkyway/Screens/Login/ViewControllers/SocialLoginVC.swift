@@ -53,7 +53,6 @@ extension SocialLoginVC {
                     let accessToken = oauthToken?.accessToken
                     
                     //카카오 로그인을 통해 사용자 토큰을 발급 받은 후 닉네임 설정 뷰로 이동
-                    
                     self.moveToNickView()
                 }
             }
@@ -88,7 +87,7 @@ extension SocialLoginVC {
                 guard let nickVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginVC") as? LoginVC else {
                     return
                 }
-                print("id: \(user?.id)")
+                print("kakao id: \(user?.id)")
                 
                 // id, sns 구분자
 //                if let snsId = user?.id {

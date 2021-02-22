@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Z0T-L8-CGc">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,6 +12,12 @@
     <customFonts key="customFonts">
         <array key="SF-Pro-Text-Bold.otf">
             <string>SFProText-Bold</string>
+        </array>
+        <array key="SF-Pro-Text-Regular.otf">
+            <string>SFProText-Regular</string>
+        </array>
+        <array key="SF-Pro-Text-Semibold.otf">
+            <string>SFProText-Semibold</string>
         </array>
     </customFonts>
     <scenes>
@@ -22,35 +29,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Jw-Us-JaT">
-                                <rect key="frame" x="20" y="125" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="수정할 정보를 작성해주세요" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Jw-Us-JaT">
+                                <rect key="frame" x="20" y="125" width="163.66666666666666" height="18"/>
+                                <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bhT-23-7JR">
-                                <rect key="frame" x="20" y="154" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*최소 5글자 이상 입력해 주세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bhT-23-7JR">
+                                <rect key="frame" x="20" y="151" width="152.33333333333334" height="14"/>
+                                <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="12"/>
+                                <color key="textColor" name="darkGrey"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="u5u-pe-nmb">
-                                <rect key="frame" x="20" y="195" width="335" height="230"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <rect key="frame" x="20" y="185" width="335" height="230"/>
+                                <color key="backgroundColor" red="0.96470588235294119" green="0.96078431372549022" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="230" id="NgO-lX-sGI"/>
                                 </constraints>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UmJ-t8-ORJ">
-                                <rect key="frame" x="20" y="445" width="335" height="52"/>
+                                <rect key="frame" x="20" y="435" width="335" height="52"/>
+                                <color key="backgroundColor" name="darkGrey"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="52" id="Vxg-2i-msc"/>
                                 </constraints>
-                                <state key="normal" title="정보 수정"/>
+                                <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="15"/>
+                                <state key="normal" title="정보 수정 요청">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="submitBtnClicked:" destination="Z0T-L8-CGc" eventType="touchUpInside" id="QsW-bE-gsH"/>
                                 </connections>
@@ -137,24 +152,30 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ncR-5E-B7s">
                                 <rect key="frame" x="20" y="295" width="335" height="222"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r0C-0e-6sn">
-                                        <rect key="frame" x="74" y="77" width="186" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r0C-0e-6sn">
+                                        <rect key="frame" x="77.666666666666671" y="80" width="179.66666666666663" height="28"/>
+                                        <string key="text">꼼꼼히 검토 후 적용하도록 하겠습니다
+감사합니다!</string>
+                                        <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="12"/>
+                                        <color key="textColor" red="0.31372549019607843" green="0.33333333333333331" blue="0.36078431372549019" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="raX-Jw-w5f">
-                                        <rect key="frame" x="91" y="40" width="153" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="요청이 접수 되었습니다" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="raX-Jw-w5f">
+                                        <rect key="frame" x="76.000000000000014" y="40" width="183.33333333333337" height="24"/>
+                                        <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xce-Fi-eTU">
                                         <rect key="frame" x="20" y="150" width="295" height="52"/>
+                                        <color key="backgroundColor" name="Milky"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="52" id="Zox-iv-Oe2"/>
                                         </constraints>
-                                        <state key="normal" title="Button"/>
+                                        <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="15"/>
+                                        <state key="normal" title="확인">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <connections>
                                             <action selector="confirmBtnClicked:" destination="aiH-Cf-6MX" eventType="touchUpInside" id="IpP-eY-qsw"/>
                                         </connections>
@@ -162,21 +183,24 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="r0C-0e-6sn" secondAttribute="trailing" constant="75" id="7sF-Xx-qEb"/>
                                     <constraint firstAttribute="bottom" secondItem="xce-Fi-eTU" secondAttribute="bottom" constant="20" id="8XR-P8-Dgz"/>
+                                    <constraint firstItem="r0C-0e-6sn" firstAttribute="centerX" secondItem="ncR-5E-B7s" secondAttribute="centerX" id="BfQ-cL-BbL"/>
                                     <constraint firstAttribute="trailing" secondItem="xce-Fi-eTU" secondAttribute="trailing" constant="20" id="CyG-6U-HR4"/>
                                     <constraint firstItem="raX-Jw-w5f" firstAttribute="top" secondItem="ncR-5E-B7s" secondAttribute="top" constant="40" id="ENS-EH-y3f"/>
-                                    <constraint firstItem="raX-Jw-w5f" firstAttribute="leading" secondItem="ncR-5E-B7s" secondAttribute="leading" constant="91" id="Tvh-EY-erE"/>
                                     <constraint firstItem="r0C-0e-6sn" firstAttribute="top" secondItem="raX-Jw-w5f" secondAttribute="bottom" constant="16" id="U8O-ML-NMd"/>
-                                    <constraint firstItem="r0C-0e-6sn" firstAttribute="leading" secondItem="ncR-5E-B7s" secondAttribute="leading" constant="74" id="VEc-sT-feO"/>
                                     <constraint firstItem="xce-Fi-eTU" firstAttribute="leading" secondItem="ncR-5E-B7s" secondAttribute="leading" constant="20" id="XWS-Or-hqe"/>
                                     <constraint firstAttribute="height" constant="222" id="aFB-tT-zbj"/>
-                                    <constraint firstAttribute="trailing" secondItem="raX-Jw-w5f" secondAttribute="trailing" constant="91" id="ruo-Cs-Uzx"/>
+                                    <constraint firstItem="raX-Jw-w5f" firstAttribute="centerX" secondItem="ncR-5E-B7s" secondAttribute="centerX" id="rhh-7u-p2L"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="cdg-oU-c1e"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="ncR-5E-B7s" firstAttribute="centerY" secondItem="su5-L9-qEp" secondAttribute="centerY" id="AxM-Ba-uQl"/>
                             <constraint firstItem="ncR-5E-B7s" firstAttribute="leading" secondItem="cdg-oU-c1e" secondAttribute="leading" constant="20" id="JYh-Rm-8C3"/>
@@ -198,6 +222,12 @@
     </scenes>
     <resources>
         <image name="back" width="44" height="44"/>
+        <namedColor name="Milky">
+            <color red="0.20000000298023224" green="0.125" blue="0.65100002288818359" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="darkGrey">
+            <color red="0.60399997234344482" green="0.59200000762939453" blue="0.57300001382827759" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

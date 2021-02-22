@@ -20,7 +20,6 @@ class ModifyVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setLabel()
         setTextView()
         setButton()
     }
@@ -58,36 +57,17 @@ class ModifyVC: UIViewController {
 
 extension ModifyVC {
     
-    func setLabel() {
-        mainLabel.textAlignment = .center
-        mainLabel.text = "수정할 정보를 작성해주세요"
-        mainLabel.font = UIFont(name:"SFProText-Bold", size: 15.0)
-        
-        subLabel.textAlignment = .left
-        subLabel.text = "*최소 5글자 이상"
-        subLabel.font = UIFont(name:"SFProText-Regular", size: 12.0)
-        subLabel.textColor = UIColor(named: "darkGrey")
-    }
-    
     func setTextView() {
         modifyTextView.delegate = self
         
-        modifyTextView.text = "ex. 두유 밖에 팔지 않아요.\n콜드브루만 디카페인이래요."
-        modifyTextView.font = UIFont(name:"SFProText-Regular", size: 16.0)
+        modifyTextView.text = "ex. 두유 옵션만 가능해요!\n콜드브루만 디카페인이래요."
         modifyTextView.textColor = .gray
-
-        modifyTextView.backgroundColor = UIColor(displayP3Red: 246/255, green: 245/255, blue: 242/255, alpha: 1)
-        modifyTextView.layer.cornerRadius = 10
         modifyTextView.textContainerInset = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16);
     }
 
     func setButton() {
         submitBtn.isEnabled = false
         submitBtn.layer.cornerRadius = submitBtn.frame.height / 2
-        submitBtn.setTitle("정보 수정 요청", for: .normal)
-        submitBtn.setTitleColor(.white, for: .normal)
-        submitBtn.backgroundColor = UIColor(named: "darkGrey")
-        submitBtn.titleLabel?.font = UIFont(name:"SFProText-Semibold", size: 15.0)
     }
 }
 
@@ -102,7 +82,7 @@ extension ModifyVC: UITextViewDelegate {
     // TextView Place Holder
     func textViewDidEndEditing(_ textView: UITextView) {
         if textView.text.isEmpty {
-            textView.text = "ex. 두유 밖에 팔지 않아요.\n콜드브루만 디카페인이래요."
+            textView.text = "ex. 두유 옵션만 가능해요!\n콜드브루만 디카페인이래요."
             textView.textColor = UIColor.gray
         }
     }

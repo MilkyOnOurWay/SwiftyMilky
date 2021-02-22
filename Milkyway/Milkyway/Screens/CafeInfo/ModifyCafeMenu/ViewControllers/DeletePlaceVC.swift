@@ -15,13 +15,13 @@ class DeletePlaceVC: UIViewController {
     @IBOutlet var deleteReasonView: UIView!
     
     @IBOutlet var mainLabel: UILabel!
-    @IBOutlet var barLabel: UILabel! //구분선
     
     @IBOutlet var radioBtn1: DLRadioButton!
     @IBOutlet var radioBtn2: DLRadioButton!
     @IBOutlet var radioBtn3: DLRadioButton!
     @IBOutlet var radioBtn4: DLRadioButton!
     
+    @IBOutlet var cancelBtn: UIButton!
     @IBOutlet var submitBtn: UIButton!
     
     var tag: Int = 0
@@ -29,9 +29,7 @@ class DeletePlaceVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setConfirmView()
-        setLabel()
         setRadioButton()
-        setSubmitButton()
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
@@ -41,6 +39,9 @@ class DeletePlaceVC: UIViewController {
         }
     }
     
+    @IBAction func cancelBtnClicked(_ sender: Any) {
+        self.dismiss(animated: false, completion: nil)
+    }
     @IBAction func submitBtnClicked(_ sender: Any) {
         print("submitBtnClicked")
         
@@ -74,17 +75,9 @@ class DeletePlaceVC: UIViewController {
 
 extension DeletePlaceVC {
     func setConfirmView() {
-        rootView.backgroundColor = UIColor(displayP3Red: 0/255, green: 0/255, blue: 0/255, alpha: 0.7)
-        
-        deleteReasonView.layer.cornerRadius = 8
-    }
-    
-    func setLabel() {
-        mainLabel.textAlignment = .center
-        mainLabel.text = "삭제를 요청하시는 이유를 알려주세요"
-        mainLabel.font = UIFont(name:"SFProText-Bold", size: 16.0)
-        
-        barLabel.backgroundColor = UIColor(red: 229, green: 229, blue: 229)
+        submitBtn.isEnabled = false
+        submitBtn.layer.cornerRadius = submitBtn.frame.height / 2
+        cancelBtn.layer.cornerRadius = cancelBtn.frame.height / 2
     }
     
     func setRadioButton() {
@@ -103,26 +96,12 @@ extension DeletePlaceVC {
         radioBtn2.iconSelected = UIImage(named: "checkOn") ?? radioBtn2.iconSelected
         radioBtn3.iconSelected = UIImage(named: "checkOn") ?? radioBtn3.iconSelected
         radioBtn4.iconSelected = UIImage(named: "checkOn") ?? radioBtn4.iconSelected
-        
-        radioBtn1.titleLabel?.font = UIFont(name:"SFProText-Regular", size: 16.0)
-        radioBtn2.titleLabel?.font = UIFont(name:"SFProText-Regular", size: 16.0)
-        radioBtn3.titleLabel?.font = UIFont(name:"SFProText-Regular", size: 16.0)
-        radioBtn4.titleLabel?.font = UIFont(name:"SFProText-Regular", size: 16.0)
             
         radioBtn1.setTitleColor(UIColor(named: "Milky"), for: .selected)
         radioBtn2.setTitleColor(UIColor(named: "Milky"), for: .selected)
         radioBtn3.setTitleColor(UIColor(named: "Milky"), for: .selected)
         radioBtn4.setTitleColor(UIColor(named: "Milky"), for: .selected)
         
-    }
-    
-    func setSubmitButton() {
-        submitBtn.isEnabled = false
-        submitBtn.layer.cornerRadius = submitBtn.frame.height / 2
-        submitBtn.setTitle("선택 완료", for: .normal)
-        submitBtn.setTitleColor(.white, for: .normal)
-        submitBtn.backgroundColor = .darkGray
-        submitBtn.titleLabel?.font = UIFont(name:"SFProText-Semibold", size: 15.0)
     }
     
     @objc func sendBtnTag(_ sender:DLRadioButton) {

@@ -102,7 +102,7 @@ extension CompletedTVCell: UICollectionViewDataSource {
 
 extension CompletedTVCell: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = self.collectionView.frame.width / 3 - 16
+        let width = self.collectionView.frame.width / 3 - 23
         return CGSize(width: width,  height: self.collectionView.frame.height )
     }
     func collectionView(_ collectionView: UICollectionView,

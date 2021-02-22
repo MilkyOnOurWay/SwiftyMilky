@@ -260,7 +260,7 @@ extension MyReportMainVC: UITableViewDataSource {
             // 원래
 //            if myReportData.done.count == 0 {
 //                let cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: nil)
-//                cell.textLabel!.text = "\n\n현재 완료된 제보가 없습니다!"
+//                cell.textLabel!.text = "\n\n현재 완료된 등록이 없습니다!"
 //                cell.textLabel!.numberOfLines = 3
 //                cell.textLabel!.textAlignment = .center
 //                cell.textLabel!.textColor = UIColor(named: "darkGrey")

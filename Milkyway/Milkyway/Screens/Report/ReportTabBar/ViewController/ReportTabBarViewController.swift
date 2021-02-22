@@ -34,11 +34,11 @@ class ReportTabBarViewController: ButtonBarPagerTabStripViewController, UIGestur
     /// 상단 탭바 부분
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
         let cafeReport = UIStoryboard.init(name: "CafeReportMain", bundle: nil).instantiateViewController(withIdentifier: "CafeReportMainVC") as! CafeReportMainVC
-        cafeReport.tabName = "카페 제보"
+        cafeReport.tabName = "카페 등록"
         
         
         let myReport = UIStoryboard(name: "MyReportMain", bundle: nil).instantiateViewController(withIdentifier: "MyReportMainVC") as! MyReportMainVC
-        myReport.tabName = "나의 제보"
+        myReport.tabName = "나의 등록"
         
         
         return [cafeReport, myReport]

@@ -25,8 +25,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="407" height="178"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="completedReport" translatesAutoresizingMaskIntoConstraints="NO" id="0RR-VP-2Ey">
-                        <rect key="frame" x="20" y="6" width="366" height="142"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="completedReport" translatesAutoresizingMaskIntoConstraints="NO" id="0RR-VP-2Ey">
+                        <rect key="frame" x="20" y="6" width="370" height="142"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="0RR-VP-2Ey" secondAttribute="height" multiplier="335:130" id="DXC-0l-t8f"/>
                         </constraints>
@@ -50,7 +50,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Q3V-fM-ope">
-                        <rect key="frame" x="38" y="102" width="308" height="26"/>
+                        <rect key="frame" x="38" y="102" width="326" height="26"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="26" id="ZxX-J9-QDx"/>
@@ -66,11 +66,11 @@
                 <constraints>
                     <constraint firstItem="n5H-Bd-zkc" firstAttribute="leading" secondItem="0RR-VP-2Ey" secondAttribute="leading" constant="18" id="1gl-lD-cTX"/>
                     <constraint firstItem="n5H-Bd-zkc" firstAttribute="top" secondItem="0RR-VP-2Ey" secondAttribute="top" constant="16" id="1y3-5C-UBx"/>
+                    <constraint firstItem="0RR-VP-2Ey" firstAttribute="trailing" secondItem="Q3V-fM-ope" secondAttribute="trailing" constant="22" id="83X-2h-nKp"/>
                     <constraint firstAttribute="bottom" secondItem="0RR-VP-2Ey" secondAttribute="bottom" constant="6" id="9Tw-KA-HHk"/>
                     <constraint firstItem="Q3V-fM-ope" firstAttribute="bottom" secondItem="0RR-VP-2Ey" secondAttribute="bottom" constant="-20" id="Gak-MW-OBW"/>
                     <constraint firstItem="THc-Zg-xkq" firstAttribute="leading" secondItem="n5H-Bd-zkc" secondAttribute="leading" id="M7K-v3-l5C"/>
-                    <constraint firstItem="0RR-VP-2Ey" firstAttribute="trailing" secondItem="Q3V-fM-ope" secondAttribute="trailing" constant="40" id="Toj-iw-fjm"/>
-                    <constraint firstAttribute="trailing" secondItem="0RR-VP-2Ey" secondAttribute="trailing" constant="20" id="TrW-vT-6JA"/>
+                    <constraint firstAttribute="trailing" secondItem="0RR-VP-2Ey" secondAttribute="trailing" constant="16" id="TrW-vT-6JA"/>
                     <constraint firstItem="0RR-VP-2Ey" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="V2o-th-hRO"/>
                     <constraint firstItem="qHd-Se-ed8" firstAttribute="top" secondItem="n5H-Bd-zkc" secondAttribute="bottom" constant="12" id="f0L-XR-ZGG"/>
                     <constraint firstItem="THc-Zg-xkq" firstAttribute="top" secondItem="qHd-Se-ed8" secondAttribute="bottom" constant="4" id="hjU-jX-bj6"/>

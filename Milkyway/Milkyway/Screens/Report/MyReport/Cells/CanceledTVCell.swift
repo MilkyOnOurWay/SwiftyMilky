@@ -69,9 +69,6 @@ extension CanceledTVCell {
         
         self.cancelData = cancelData
         
-        canceledLabel.text = "취소된 제보"
-        canceledLabel.font = UIFont(name:"SFProText-Bold", size: 16.0)
-        
         let collectionViewCellNib = UINib(nibName: "RectangleCVCell", bundle: nil)
         collectionView.register(collectionViewCellNib, forCellWithReuseIdentifier: "RectangleCVCell")
         

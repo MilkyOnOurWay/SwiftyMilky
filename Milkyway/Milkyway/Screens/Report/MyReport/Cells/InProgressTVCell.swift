@@ -39,10 +39,7 @@ class InProgressTVCell: UITableViewCell {
 extension InProgressTVCell {
     
     func setLabel() {
-        emptyLabel.text = "지금 진행중인 제보가 없습니다!"
-        emptyLabel.textAlignment = .center
-        emptyLabel.font = UIFont(name:"SFProText-Regular", size: 16.0)
-        emptyLabel.textColor = UIColor(named: "darkGrey")
+        emptyLabel.text = "현재 진행중인 등록이 없습니다!"
     }
     
     func setCell(ingData: [MyReport]) {

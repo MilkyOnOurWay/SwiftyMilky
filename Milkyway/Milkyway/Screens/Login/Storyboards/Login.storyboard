@@ -10,6 +10,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="SF-Pro-Text-Bold.otf">
+            <string>SFProText-Bold</string>
+        </array>
         <array key="SF-Pro-Text-Regular.otf">
             <string>SFProText-Regular</string>
         </array>
@@ -197,27 +200,59 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pickerUniverseSelected" translatesAutoresizingMaskIntoConstraints="NO" id="C0h-S0-n30">
-                                <rect key="frame" x="105" y="232" width="181" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="W1D-I2-OcO">
-                                <rect key="frame" x="46" y="610" width="300" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L4c-An-MJ3">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                                <color key="backgroundColor" name="Milky"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dX4-he-EnM">
+                                <rect key="frame" x="106.33333333333333" y="407" width="177.66666666666669" height="33.666666666666686"/>
+                                <string key="text">‘속’ 상하기 쉬운 모두를 위한 
+카페 위치 제공 서비스, 밀키웨이</string>
+                                <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="W1D-I2-OcO">
+                                <rect key="frame" x="20" y="691" width="350" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Dlh-8o-h1j"/>
+                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="20"/>
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ErL-Eo-3dA">
-                                <rect key="frame" x="46" y="533" width="300" height="45"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="kakao_login_medium_wide"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ErL-Eo-3dA">
+                                <rect key="frame" x="20" y="635" width="350" height="44"/>
+                                <color key="backgroundColor" red="0.99607843137254903" green="0.89803921568627454" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="5Mv-M3-e5Y"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="16"/>
+                                <state key="normal" title="카카오톡으로 시작하기">
+                                    <color key="titleColor" systemColor="labelColor"/>
+                                </state>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nDb-9m-RXT"/>
-                        <color key="backgroundColor" name="Milky"/>
+                        <constraints>
+                            <constraint firstItem="dX4-he-EnM" firstAttribute="centerX" secondItem="wcs-Xl-LBU" secondAttribute="centerX" id="5st-OT-vuG"/>
+                            <constraint firstItem="L4c-An-MJ3" firstAttribute="leading" secondItem="nDb-9m-RXT" secondAttribute="leading" id="AQo-lf-Ubl"/>
+                            <constraint firstAttribute="top" secondItem="L4c-An-MJ3" secondAttribute="top" id="EQv-cN-prk"/>
+                            <constraint firstItem="nDb-9m-RXT" firstAttribute="trailing" secondItem="L4c-An-MJ3" secondAttribute="trailing" id="KsJ-dE-y2u"/>
+                            <constraint firstItem="nDb-9m-RXT" firstAttribute="trailing" secondItem="W1D-I2-OcO" secondAttribute="trailing" constant="20" id="Ov5-rS-VJC"/>
+                            <constraint firstItem="W1D-I2-OcO" firstAttribute="leading" secondItem="nDb-9m-RXT" secondAttribute="leading" constant="20" id="VjV-do-VKq"/>
+                            <constraint firstItem="L4c-An-MJ3" firstAttribute="bottom" secondItem="wcs-Xl-LBU" secondAttribute="bottom" id="aau-Yv-7y9"/>
+                            <constraint firstItem="nDb-9m-RXT" firstAttribute="trailing" secondItem="ErL-Eo-3dA" secondAttribute="trailing" constant="20" id="anr-Q0-7Zt"/>
+                            <constraint firstItem="W1D-I2-OcO" firstAttribute="top" secondItem="ErL-Eo-3dA" secondAttribute="bottom" constant="12" id="htB-Pz-93f"/>
+                            <constraint firstItem="nDb-9m-RXT" firstAttribute="bottom" secondItem="W1D-I2-OcO" secondAttribute="bottom" constant="75" id="qSW-0z-eNV"/>
+                            <constraint firstItem="dX4-he-EnM" firstAttribute="top" secondItem="nDb-9m-RXT" secondAttribute="top" constant="363" id="tP1-g8-Wlf"/>
+                            <constraint firstItem="ErL-Eo-3dA" firstAttribute="leading" secondItem="nDb-9m-RXT" secondAttribute="leading" constant="20" id="yWs-Uk-jfE"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="appleSignInBtn" destination="W1D-I2-OcO" id="Wqa-aM-u1D"/>
@@ -234,14 +269,15 @@
         <image name="checkOn" width="24" height="24"/>
         <image name="iMOnMyMilkyWay" width="169.66667175292969" height="76.333335876464844"/>
         <image name="input" width="335" height="40"/>
-        <image name="kakao_login_medium_wide" width="300" height="45"/>
-        <image name="pickerUniverseSelected" width="60" height="75"/>
         <namedColor name="Milky">
             <color red="0.20000000298023224" green="0.125" blue="0.65100002288818359" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="darkGrey">
             <color red="0.60399997234344482" green="0.59200000762939453" blue="0.57300001382827759" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

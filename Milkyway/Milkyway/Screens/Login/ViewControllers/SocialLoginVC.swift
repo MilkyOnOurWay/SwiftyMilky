@@ -26,12 +26,12 @@ class SocialLoginVC: UIViewController {
 
 extension SocialLoginVC {
     func setLoginButton() {
+        kakaoSignInBtn.layer.cornerRadius = kakaoSignInBtn.frame.height / 2
         kakaoSignInBtn.addTarget(self, action: #selector(kakaoLogin), for: .touchUpInside)
         
         let authorizationButton = ASAuthorizationAppleIDButton(type: .signIn, style: .white)
         
-        // cornerRadius 왜 갑자기 오류나고 난리임;
-//        authorizationButton.cornerRadius = 20 //authorizationButton.frame.height / 2
+        authorizationButton.setValue(authorizationButton.frame.height / 2, forKey: "cornerRadius")
         authorizationButton.addTarget(self, action: #selector(appleSignInButtonPress), for: .touchUpInside)
         self.appleSignInBtn.addArrangedSubview(authorizationButton)
     }

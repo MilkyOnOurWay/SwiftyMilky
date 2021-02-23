@@ -26,7 +26,7 @@ class SocialLoginVC: UIViewController {
 
 extension SocialLoginVC {
     func setLoginButton() {
-        kakaoSignInBtn.layer.cornerRadius = kakaoSignInBtn.frame.height / 2
+//        kakaoSignInBtn.layer.cornerRadius = kakaoSignInBtn.frame.height / 2
         kakaoSignInBtn.addTarget(self, action: #selector(kakaoLogin), for: .touchUpInside)
         
         let authorizationButton = ASAuthorizationAppleIDButton(type: .signIn, style: .white)
@@ -100,7 +100,8 @@ extension SocialLoginVC {
 //                   let data = try? Data(contentsOf: url) {
 //                    self.profileImageView.image = UIImage(data: data)
 //                }
-                self.navigationController?.pushViewController(nickVC, animated: true)
+                nickVC.modalPresentationStyle = .fullScreen
+                self.present(nickVC, animated: false, completion: nil)
             }
         }
     }
@@ -164,12 +165,13 @@ extension SocialLoginVC: ASAuthorizationControllerDelegate {
     }
     
     private func showResultViewController(userIdentifier: String, fullName: PersonNameComponents?, email: String?) {
-        guard let NickVC = storyboard?.instantiateViewController(withIdentifier: "LoginVC") as? LoginVC else {
+        guard let nickVC = storyboard?.instantiateViewController(withIdentifier: "LoginVC") as? LoginVC else {
             return
         }
 //        NickVC.snsId = userIdentifier
 //        NickVC.provider = "apple"
-        self.navigationController?.pushViewController(NickVC, animated: true)
+        nickVC.modalPresentationStyle = .fullScreen
+        self.present(nickVC, animated: false, completion: nil)
 
         DispatchQueue.main.async {
 //            viewController.userIdentifierLabel.text = userIdentifier

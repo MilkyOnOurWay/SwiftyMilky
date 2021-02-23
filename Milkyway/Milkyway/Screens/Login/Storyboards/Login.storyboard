@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="keg-Nb-Pp8">
-    <device id="retina6_0" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="D6Z-F2-rCR">
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -26,11 +26,11 @@
             <objects>
                 <viewController storyboardIdentifier="LoginVC" id="xwm-ed-wYY" customClass="LoginVC" customModule="Milkyway" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="d9Y-sF-w26">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cg1-lm-N6x">
-                                <rect key="frame" x="20" y="772" width="350" height="52"/>
+                                <rect key="frame" x="20" y="854" width="388" height="52"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="335" id="kyH-E3-QmM"/>
                                     <constraint firstAttribute="height" constant="52" id="ytv-jh-WdQ"/>
@@ -78,7 +78,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iMOnMyMilkyWay" translatesAutoresizingMaskIntoConstraints="NO" id="71D-Zx-01d">
-                                <rect key="frame" x="20" y="101" width="181" height="80"/>
+                                <rect key="frame" x="20" y="101" width="219" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="zJk-cg-xjp"/>
                                 </constraints>
@@ -101,7 +101,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*영어, 특수문자, 이모티콘은 사용 불가합니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sfg-A2-Vqy">
-                                <rect key="frame" x="20" y="228" width="237" height="13"/>
+                                <rect key="frame" x="20" y="228" width="275" height="13"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="13" id="28j-9d-sQh"/>
                                 </constraints>
@@ -158,31 +158,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TmW-oh-stH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1057" y="13"/>
-        </scene>
-        <!--Login Navi Controller-->
-        <scene sceneID="Geh-Bu-nny">
-            <objects>
-                <navigationController storyboardIdentifier="LoginNaviController" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="R8Q-pi-gb2" customClass="LoginNaviController" customModule="Milkyway" customModuleProvider="target" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="D7K-Bk-iVU">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="xwm-ed-wYY" kind="relationship" relationship="rootViewController" id="Jxb-3I-WXP"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="LJx-Bv-rEC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="204" y="13.300492610837439"/>
+            <point key="canvasLocation" x="1986.1538461538462" y="12.796208530805687"/>
         </scene>
         <!--SplashVC-->
         <scene sceneID="erZ-XD-O1h">
             <objects>
                 <viewController id="D6Z-F2-rCR" customClass="SplashVC" customModule="Milkyway" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jDh-SD-IAI">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="VqY-s7-K20"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -197,23 +180,14 @@
             <objects>
                 <viewController storyboardIdentifier="SocialLoginVC" id="keg-Nb-Pp8" customClass="SocialLoginVC" customModule="Milkyway" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wcs-Xl-LBU">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L4c-An-MJ3">
-                                <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
-                                <color key="backgroundColor" name="Milky"/>
-                            </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dX4-he-EnM">
-                                <rect key="frame" x="106.33333333333333" y="407" width="177.66666666666669" height="33.666666666666686"/>
-                                <string key="text">‘속’ 상하기 쉬운 모두를 위한 
-카페 위치 제공 서비스, 밀키웨이</string>
-                                <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="14"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LoginBackground" translatesAutoresizingMaskIntoConstraints="NO" id="F2Q-wH-MFZ">
+                                <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="W1D-I2-OcO">
-                                <rect key="frame" x="20" y="691" width="350" height="44"/>
+                                <rect key="frame" x="20" y="773" width="388" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="Dlh-8o-h1j"/>
                                 </constraints>
@@ -227,33 +201,31 @@
                                 </userDefinedRuntimeAttributes>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ErL-Eo-3dA">
-                                <rect key="frame" x="20" y="635" width="350" height="44"/>
-                                <color key="backgroundColor" red="0.99607843137254903" green="0.89803921568627454" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="20" y="717" width="388" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="5Mv-M3-e5Y"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="16"/>
-                                <state key="normal" title="카카오톡으로 시작하기">
+                                <state key="normal" image="signinKakao">
                                     <color key="titleColor" systemColor="labelColor"/>
                                 </state>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nDb-9m-RXT"/>
                         <constraints>
-                            <constraint firstItem="dX4-he-EnM" firstAttribute="centerX" secondItem="wcs-Xl-LBU" secondAttribute="centerX" id="5st-OT-vuG"/>
-                            <constraint firstItem="L4c-An-MJ3" firstAttribute="leading" secondItem="nDb-9m-RXT" secondAttribute="leading" id="AQo-lf-Ubl"/>
-                            <constraint firstAttribute="top" secondItem="L4c-An-MJ3" secondAttribute="top" id="EQv-cN-prk"/>
-                            <constraint firstItem="nDb-9m-RXT" firstAttribute="trailing" secondItem="L4c-An-MJ3" secondAttribute="trailing" id="KsJ-dE-y2u"/>
+                            <constraint firstAttribute="bottom" secondItem="F2Q-wH-MFZ" secondAttribute="bottom" id="6mf-Pi-4F6"/>
+                            <constraint firstItem="F2Q-wH-MFZ" firstAttribute="leading" secondItem="nDb-9m-RXT" secondAttribute="leading" id="DyT-4j-ThW"/>
                             <constraint firstItem="nDb-9m-RXT" firstAttribute="trailing" secondItem="W1D-I2-OcO" secondAttribute="trailing" constant="20" id="Ov5-rS-VJC"/>
+                            <constraint firstItem="F2Q-wH-MFZ" firstAttribute="top" secondItem="wcs-Xl-LBU" secondAttribute="top" id="SMI-6m-mzR"/>
                             <constraint firstItem="W1D-I2-OcO" firstAttribute="leading" secondItem="nDb-9m-RXT" secondAttribute="leading" constant="20" id="VjV-do-VKq"/>
-                            <constraint firstItem="L4c-An-MJ3" firstAttribute="bottom" secondItem="wcs-Xl-LBU" secondAttribute="bottom" id="aau-Yv-7y9"/>
                             <constraint firstItem="nDb-9m-RXT" firstAttribute="trailing" secondItem="ErL-Eo-3dA" secondAttribute="trailing" constant="20" id="anr-Q0-7Zt"/>
                             <constraint firstItem="W1D-I2-OcO" firstAttribute="top" secondItem="ErL-Eo-3dA" secondAttribute="bottom" constant="12" id="htB-Pz-93f"/>
                             <constraint firstItem="nDb-9m-RXT" firstAttribute="bottom" secondItem="W1D-I2-OcO" secondAttribute="bottom" constant="75" id="qSW-0z-eNV"/>
-                            <constraint firstItem="dX4-he-EnM" firstAttribute="top" secondItem="nDb-9m-RXT" secondAttribute="top" constant="363" id="tP1-g8-Wlf"/>
+                            <constraint firstItem="nDb-9m-RXT" firstAttribute="trailing" secondItem="F2Q-wH-MFZ" secondAttribute="trailing" id="x5Q-Wl-GuO"/>
                             <constraint firstItem="ErL-Eo-3dA" firstAttribute="leading" secondItem="nDb-9m-RXT" secondAttribute="leading" constant="20" id="yWs-Uk-jfE"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="4Vp-Z5-0Oi"/>
                     <connections>
                         <outlet property="appleSignInBtn" destination="W1D-I2-OcO" id="Wqa-aM-u1D"/>
                         <outlet property="kakaoSignInBtn" destination="ErL-Eo-3dA" id="8JT-Tg-8ce"/>
@@ -261,14 +233,33 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RGx-eZ-Hoe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1056.9230769230769" y="-693.12796208530801"/>
+            <point key="canvasLocation" x="1130.7692307692307" y="12.796208530805687"/>
+        </scene>
+        <!--Login Navi Controller-->
+        <scene sceneID="jKl-eF-gJ7">
+            <objects>
+                <navigationController storyboardIdentifier="LoginNaviController" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="W1l-gf-P1m" customClass="LoginNaviController" customModule="Milkyway" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="c0f-B0-3Lo">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="keg-Nb-Pp8" kind="relationship" relationship="rootViewController" id="Zao-1i-mag"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ILH-Im-Mj1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="201.53846153846152" y="12.796208530805687"/>
         </scene>
     </scenes>
     <resources>
+        <image name="LoginBackground" width="375" height="812"/>
         <image name="btnStartDisabled" width="335" height="52"/>
         <image name="checkOn" width="24" height="24"/>
         <image name="iMOnMyMilkyWay" width="169.66667175292969" height="76.333335876464844"/>
         <image name="input" width="335" height="40"/>
+        <image name="signinKakao" width="335" height="44"/>
         <namedColor name="Milky">
             <color red="0.20000000298023224" green="0.125" blue="0.65100002288818359" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

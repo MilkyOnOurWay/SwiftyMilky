@@ -51,13 +51,10 @@ class SplashVC: UIViewController {
 //                self.present(vc!, animated: true, completion: nil)
 //            }
 //            else {
-//                let vc = UIStoryboard.init(name: "Login", bundle: nil).instantiateViewController(identifier: "SocialLoginVC")
+//                let vc = UIStoryboard.init(name: "Login", bundle: nil).instantiateViewController(identifier: "LoginNaviController")
 //                vc.modalPresentationStyle = .fullScreen
 //                self.present(vc, animated: false, completion: nil)
 //            }
-//            let vc = UIStoryboard.init(name: "Login", bundle: nil).instantiateViewController(identifier: "SocialLoginVC")
-//            vc.modalPresentationStyle = .fullScreen
-//            self.present(vc, animated: false, completion: nil)
         })
         
     }
@@ -74,17 +71,17 @@ extension SplashVC {
         animationView.play()
     }
     func kakaoLogin() {
-            UserApi.shared.me() {(user, error) in
-                if let error = error {
-                    print(error)
-                }
-                else {
-                    print("splash kakao me() success.")
-                    _ = user
-                    if let snsId = user?.id {
-                        self.kakaoId = String(snsId)
-                    }
+        UserApi.shared.me() {(user, error) in
+            if let error = error {
+                print(error)
+            }
+            else {
+                print("splash kakao me() success.")
+                _ = user
+                if let snsId = user?.id {
+                    self.kakaoId = String(snsId)
                 }
             }
         }
+    }
 }

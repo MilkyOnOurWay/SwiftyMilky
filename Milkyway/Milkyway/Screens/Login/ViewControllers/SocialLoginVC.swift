@@ -26,7 +26,7 @@ class SocialLoginVC: UIViewController {
 
 extension SocialLoginVC {
     func setLoginButton() {
-        kakaoSignInBtn.layer.cornerRadius = kakaoSignInBtn.frame.height / 2
+//        kakaoSignInBtn.layer.cornerRadius = kakaoSignInBtn.frame.height / 2
         kakaoSignInBtn.addTarget(self, action: #selector(kakaoLogin), for: .touchUpInside)
         
         let authorizationButton = ASAuthorizationAppleIDButton(type: .signIn, style: .white)

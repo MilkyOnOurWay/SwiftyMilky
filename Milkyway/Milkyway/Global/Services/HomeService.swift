@@ -46,6 +46,7 @@ struct HomeService {
                                 let decoder = JSONDecoder()
                                 let result = try decoder.decode(ResponseSimpleResult<HomeData>.self,
                                                                 from: value)
+                                dump(result)
                                 completion(.success(result.data ?? Token.self))
 
                             } catch {

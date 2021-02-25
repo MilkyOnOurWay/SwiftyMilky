@@ -487,9 +487,9 @@ extension HomeVC {
             HomeService.shared.GetMilkyHome() { [self] (networkResult) -> (Void) in
                 switch networkResult {
                 case .success(let data):
+                    dump(data)
                     if let loadData = data as? HomeData {
                         print("success")
-                        
                         homeData = loadData
                         setMarker()
                         // 유저닉네임 전역변수로 설정

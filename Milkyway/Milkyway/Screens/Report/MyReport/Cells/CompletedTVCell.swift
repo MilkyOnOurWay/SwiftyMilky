@@ -23,6 +23,10 @@ class CompletedTVCell: UITableViewCell {
     // 나중에 밑에 라벨붙는거,,
     var tagStr: [String] = ["", "디카페인", "두유", "저지방우유", "무지방우유"]
     var category = [Int]()
+//    var categoryData = [String]()
+    var categoryData: [String] = ["디카페인", "두유", "저지방우유", "무지방우유", "웅앵", "웅앵"]
+//    var size: CGFloat!
+//    var text: NSAttributedString!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -30,11 +34,14 @@ class CompletedTVCell: UITableViewCell {
         collectionView.register(categoryCVCellNib, forCellWithReuseIdentifier: "CategoryLabelCell")
         collectionView.dataSource = self
         collectionView.delegate = self
+        
+//        NotificationCenter.default.addObserver(self, selector: #selector(categoryLabelSize), name: Notification.Name("categoryLabelSize"),object: nil)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
+    
 }
 
 extension CompletedTVCell {
@@ -48,14 +55,21 @@ extension CompletedTVCell {
         self.category = category
         print("완료제보 카테고리 \(category), \(category.count)")
 
-
-        for i in 0...self.category.count-1 {
-            let label = self.viewWithTag(i+1) as! UILabel
-            label.text = tagStr[self.category[i]]
-            label.isHidden = false
-            //print("여기는 카테고리 \(self.viewWithTag(i+1)!)")
+        for i in 0...self.category.count-1 {            categoryData.append(tagStr[self.category[i]])
         }
+
+//        for i in 0...self.category.count-1 {
+//            let label = self.viewWithTag(i+1) as! UILabel
+//            label.text = tagStr[self.category[i]]
+//            label.isHidden = false
+//            //print("여기는 카테고리 \(self.viewWithTag(i+1)!)")
+//        }
     }
+//
+//    @objc func categoryLabelSize(_ noti: NSNotification) {
+//        size = noti.object as! CGFloat
+//        print(size)
+//    }
 }
 extension CompletedTVCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -63,57 +77,32 @@ extension CompletedTVCell: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        switch indexPath.row {
-        case 0:
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryLabelCell.identifier, for: indexPath) as? CategoryLabelCell else {
-                return UICollectionViewCell()
-            }
-            cell.setCell(category: "디카페인")
-            return cell
-        case 1:
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryLabelCell.identifier, for: indexPath) as? CategoryLabelCell else {
-                return UICollectionViewCell()
-            }
-            cell.setCell(category: "두유")
-            return cell
-        case 2:
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryLabelCell.identifier, for: indexPath) as? CategoryLabelCell else {
-                return UICollectionViewCell()
-            }
-            cell.setCell(category: "무지방우유")
-            return cell
-        case 3:
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryLabelCell.identifier, for: indexPath) as? CategoryLabelCell else {
-                return UICollectionViewCell()
-            }
-            cell.setCell(category: "저지방우유")
-            return cell
-        default:
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryLabelCell.identifier, for: indexPath) as? CategoryLabelCell else {
-                return UICollectionViewCell()
-            }
-            cell.setCell(category: "웅앵")
-            return cell
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryLabelCell.identifier, for: indexPath) as? CategoryLabelCell else {
+            return UICollectionViewCell()
         }
-        
+        cell.setCell(category: categoryData[indexPath.row])
+        return cell
     }
 }
 
 extension CompletedTVCell: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = self.collectionView.frame.width / 3 - 23
+        let dynamicFrame = NSAttributedString(string: categoryData[indexPath.item])
+        let width = dynamicFrame.size().width + 25
         return CGSize(width: width,  height: self.collectionView.frame.height )
+        
+        
+        
     }
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 8
+        return 0
     }
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
+        return 8
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)

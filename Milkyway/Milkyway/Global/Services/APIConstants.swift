@@ -7,7 +7,7 @@
 
 struct APIConstants {
     
-    static let BaseURL = "http://18.217.155.194/"
+    static let BaseURL = "http://milkyway-284707575.ap-northeast-2.elb.amazonaws.com/"
     
     // 일단 위키 기준으로 현재 나온 것들만 작성함.
     // 혹시 추가적으로 나온 API가 있다면 하단 예시를 참고하여 새롭게 생성해주면 됩니다.

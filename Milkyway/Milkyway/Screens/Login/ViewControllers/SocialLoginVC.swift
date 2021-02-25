@@ -168,17 +168,9 @@ extension SocialLoginVC: ASAuthorizationControllerDelegate {
         guard let nickVC = storyboard?.instantiateViewController(withIdentifier: "LoginVC") as? LoginVC else {
             return
         }
-//        NickVC.snsId = userIdentifier
-//        NickVC.provider = "apple"
-        nickVC.modalPresentationStyle = .fullScreen
-        self.present(nickVC, animated: false, completion: nil)
-
         DispatchQueue.main.async {
-//            viewController.userIdentifierLabel.text = userIdentifier
-//            if let givenName = fullName?.givenName {
-//                viewController.givenNameLabel.text = givenName
-//            }
-            self.dismiss(animated: true, completion: nil)
+            nickVC.modalPresentationStyle = .fullScreen
+            self.present(nickVC, animated: false, completion: nil)
         }
     }
     

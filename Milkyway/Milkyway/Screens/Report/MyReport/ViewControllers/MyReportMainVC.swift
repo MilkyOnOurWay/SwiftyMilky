@@ -30,8 +30,8 @@ class MyReportMainVC: UIViewController, IndicatorInfoProvider {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        myReportTableView.isHidden = false
-        emptyView.isHidden = true
+//        myReportTableView.isHidden = false
+//        emptyView.isHidden = true
         setAuto()
         notiGather()
         registerXib()
@@ -44,7 +44,7 @@ class MyReportMainVC: UIViewController, IndicatorInfoProvider {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-//        setService()
+        setService()
         myReportTableView.reloadData()
     }
     
@@ -204,11 +204,11 @@ extension MyReportMainVC: UITableViewDataSource {
             return 1
         default:
             return 3
-//            if myReportData.done.count == 0 {
-//                return 1
-//            } else {
-//                return myReportData.done.count
-//            }
+            if myReportData.done.count == 0 {
+                return 1
+            } else {
+                return myReportData.done.count
+            }
         }
 
     }
@@ -246,46 +246,46 @@ extension MyReportMainVC: UITableViewDataSource {
             return cell
         default: // 완료된 제보
             //dummy
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: CompletedTVCell.identifier) as? CompletedTVCell else {
-                return UITableViewCell()
-            }
-            cell.setCell()
-//            cell.setCategory(category: [1, 2])
-            cell.dateLabel.text = "2020.12.13"
-            cell.cafeNameLabel.text = "혜리의 라떼는 카페"
-            cell.addressLabel.text = "서울시 종로구 21-9(1층)"
-            
-            cell.selectionStyle = .none
-            return cell
-            // 원래
-//            if myReportData.done.count == 0 {
-//                let cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: nil)
-//                cell.textLabel!.text = "\n\n현재 완료된 등록이 없습니다!"
-//                cell.textLabel!.numberOfLines = 3
-//                cell.textLabel!.textAlignment = .center
-//                cell.textLabel!.textColor = UIColor(named: "darkGrey")
-//                cell.textLabel!.font = UIFont(name: "SFProText-Regular", size: 16.0)
-//
-//                cell.selectionStyle = .none
-//                return cell
-//            } else {
-//                guard let cell = tableView.dequeueReusableCell(withIdentifier: CompletedTVCell.identifier) as? CompletedTVCell else {
-//                    return UITableViewCell()
-//                }
-//                cell.setCell()
-//                cell.setCategory(category: myReportData.done[indexPath.row].category!)
-//
-//                // 시간 date formatt
-//                let originAddTime = myReportData.done[indexPath.row].createdAt
-//                let formattedTime = originAddTime.getDateFormat(time: originAddTime)
-//
-//                cell.dateLabel.text = formattedTime
-//
-//                cell.cafeNameLabel.text = myReportData.done[indexPath.row].cafeName
-//                cell.addressLabel.text = myReportData.done[indexPath.row].cafeAddress
-//
-//                return cell
+//            guard let cell = tableView.dequeueReusableCell(withIdentifier: CompletedTVCell.identifier) as? CompletedTVCell else {
+//                return UITableViewCell()
 //            }
+//            cell.setCell()
+////            cell.setCategory(category: [1, 2])
+//            cell.dateLabel.text = "2020.12.13"
+//            cell.cafeNameLabel.text = "혜리의 라떼는 카페"
+//            cell.addressLabel.text = "서울시 종로구 21-9(1층)"
+//
+//            cell.selectionStyle = .none
+//            return cell
+            // 원래
+            if myReportData.done.count == 0 {
+                let cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: nil)
+                cell.textLabel!.text = "\n\n현재 완료된 등록이 없습니다!"
+                cell.textLabel!.numberOfLines = 3
+                cell.textLabel!.textAlignment = .center
+                cell.textLabel!.textColor = UIColor(named: "darkGrey")
+                cell.textLabel!.font = UIFont(name: "SFProText-Regular", size: 16.0)
+
+                cell.selectionStyle = .none
+                return cell
+            } else {
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: CompletedTVCell.identifier) as? CompletedTVCell else {
+                    return UITableViewCell()
+                }
+                cell.setCell()
+                cell.setCategory(category: myReportData.done[indexPath.row].category!)
+
+                // 시간 date formatt
+                let originAddTime = myReportData.done[indexPath.row].createdAt
+                let formattedTime = originAddTime.getDateFormat(time: originAddTime)
+
+                cell.dateLabel.text = formattedTime
+
+                cell.cafeNameLabel.text = myReportData.done[indexPath.row].cafeName
+                cell.addressLabel.text = myReportData.done[indexPath.row].cafeAddress
+
+                return cell
+            }
         }
     }
     

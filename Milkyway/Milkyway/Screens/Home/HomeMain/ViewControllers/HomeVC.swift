@@ -178,6 +178,9 @@ extension HomeVC {
     func setMap() {
         mapView.minZoomLevel = 5
         mapView.maxZoomLevel = 18
+        
+        mapView.logoAlign = .rightTop
+        mapView.logoMargin = UIEdgeInsets(top: 62, left: 0, bottom: 0, right: 20)
     }
     
     func move(at coordinate: CLLocationCoordinate2D?) {

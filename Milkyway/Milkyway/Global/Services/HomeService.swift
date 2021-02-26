@@ -19,10 +19,10 @@ struct HomeService {
         
         let URL = APIConstants.homeResult
         print(URL)
-        let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWR4IjoyLCJpYXQiOjE2MTQwNTEwODUsImV4cCI6MTYxNjY0MzA4NSwiaXNzIjoibWlsa3lXYXkifQ.Z7BEPNwsI8RovCa2QFN5jy7M_POdENPqSkoMePL-Jqs" //KeychainWrapper.standard.string(forKey: "Token")
+        let token = KeychainWrapper.standard.string(forKey: "Token") //"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWR4IjoyLCJpYXQiOjE2MTQwNTEwODUsImV4cCI6MTYxNjY0MzA4NSwiaXNzIjoibWlsa3lXYXkifQ.Z7BEPNwsI8RovCa2QFN5jy7M_POdENPqSkoMePL-Jqs"
         let headers: HTTPHeaders = [
             "Content-Type": "application/json",
-            "token": token 
+            "token": token ?? ""
         ]
         
         print("headers: \(headers)")

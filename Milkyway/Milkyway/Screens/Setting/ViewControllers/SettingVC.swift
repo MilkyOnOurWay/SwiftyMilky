@@ -29,8 +29,8 @@ class SettingVC: UIViewController, MFMailComposeViewControllerDelegate {
         case 1:
             let mc = MFMailComposeViewController()
             mc.mailComposeDelegate = self
-            // 나중에 밀키웨이 메일로 변경해야함
-            mc.setToRecipients(["sso_0022@naver.com"])
+            
+            mc.setToRecipients(["wemakemilkyway@gmail.com"])
             if MFMailComposeViewController.canSendMail() { self.present(mc, animated: true, completion: nil) }
             else { let alertController: UIAlertController = UIAlertController(title:"메일 보내기", message:"현재 디바이스에서 이메일을 \n보낼 수가 없습니다.\n설정에서 이메일 관련 \n설정을 확인해주세요", preferredStyle: .alert)
                 let defaultAction = UIAlertAction(title: "확인", style: .default, handler: { (alert: UIAlertAction!) in })

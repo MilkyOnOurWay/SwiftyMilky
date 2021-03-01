@@ -39,9 +39,15 @@ class SettingVC: UIViewController, MFMailComposeViewControllerDelegate {
                 
             }
         case 3:
-            makeAlert(title: "로그아웃", message: "정말 로그아웃 하시겠습니까?", vc: self)
+            guard let loginVC = self.storyboard?.instantiateViewController(identifier: "LogoutVC") as? LogoutVC else { return }
+            loginVC.modalPresentationStyle = .overFullScreen
+            loginVC.modalTransitionStyle = .crossDissolve
+            self.present(loginVC, animated: true, completion: nil)
         case 4:
-            makeAlert(title: "서비스 탈퇴", message: "서비스 탈퇴 하시나요? 😢", vc: self)
+            guard let withdrawVC = self.storyboard?.instantiateViewController(identifier: "WithdrawVC") as? WithdrawVC else { return }
+            withdrawVC.modalPresentationStyle = .overFullScreen
+            withdrawVC.modalTransitionStyle = .crossDissolve
+            self.present(withdrawVC, animated: true, completion: nil)
         default:
             print("nothing")
         }

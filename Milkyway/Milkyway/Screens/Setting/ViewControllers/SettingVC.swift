@@ -29,8 +29,8 @@ class SettingVC: UIViewController, MFMailComposeViewControllerDelegate {
         case 1:
             let mc = MFMailComposeViewController()
             mc.mailComposeDelegate = self
-            // 나중에 밀키웨이 메일로 변경해야함
-            mc.setToRecipients(["sso_0022@naver.com"])
+            
+            mc.setToRecipients(["wemakemilkyway@gmail.com"])
             if MFMailComposeViewController.canSendMail() { self.present(mc, animated: true, completion: nil) }
             else { let alertController: UIAlertController = UIAlertController(title:"메일 보내기", message:"현재 디바이스에서 이메일을 \n보낼 수가 없습니다.\n설정에서 이메일 관련 \n설정을 확인해주세요", preferredStyle: .alert)
                 let defaultAction = UIAlertAction(title: "확인", style: .default, handler: { (alert: UIAlertAction!) in })
@@ -39,9 +39,15 @@ class SettingVC: UIViewController, MFMailComposeViewControllerDelegate {
                 
             }
         case 3:
-            makeAlert(title: "로그아웃", message: "정말 로그아웃 하시겠습니까?", vc: self)
+            guard let loginVC = self.storyboard?.instantiateViewController(identifier: "LogoutVC") as? LogoutVC else { return }
+            loginVC.modalPresentationStyle = .overFullScreen
+            loginVC.modalTransitionStyle = .crossDissolve
+            self.present(loginVC, animated: true, completion: nil)
         case 4:
-            makeAlert(title: "서비스 탈퇴", message: "서비스 탈퇴 하시나요? 😢", vc: self)
+            guard let withdrawVC = self.storyboard?.instantiateViewController(identifier: "WithdrawVC") as? WithdrawVC else { return }
+            withdrawVC.modalPresentationStyle = .overFullScreen
+            withdrawVC.modalTransitionStyle = .crossDissolve
+            self.present(withdrawVC, animated: true, completion: nil)
         default:
             print("nothing")
         }
